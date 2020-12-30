@@ -13,5 +13,5 @@ spec:
     - alert: Applikasjon nede
       expr: sum(up{app="samtale-stotte-arbeidsgiver", job="kubernetes-pods"}) == 0
       for: 30s
-      description: "forebygge-sykefravaer er nede"
+      description: "samtale-stotte-arbeidsgiver er nede"
       action: "Sjekk logs.adeo.no for logger, og Grafana-dashboardet vårt: https://grafana.adeo.no/d/MwhvlzSMz/team-ia-samledashboard"
