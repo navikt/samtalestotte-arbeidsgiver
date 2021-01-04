@@ -1,7 +1,7 @@
 apiVersion: "nais.io/v1"
 kind: "Alert"
 metadata:
-  name: samtale-stotte-arbeidsgiver
+  name: samtalestotte-arbeidsgiver
   labels:
     team: arbeidsgiver
 spec:
@@ -11,7 +11,7 @@ spec:
       prependText: '<!here> | '
   alerts:
     - alert: Applikasjon nede
-      expr: sum(up{app="samtale-stotte-arbeidsgiver", job="kubernetes-pods"}) == 0
+      expr: sum(up{app="samtalestotte-arbeidsgiver", job="kubernetes-pods"}) == 0
       for: 30s
-      description: "samtale-stotte-arbeidsgiver er nede"
+      description: "samtalestotte-arbeidsgiver er nede"
       action: "Sjekk logs.adeo.no for logger, og Grafana-dashboardet vårt: https://grafana.adeo.no/d/MwhvlzSMz/team-ia-samledashboard"

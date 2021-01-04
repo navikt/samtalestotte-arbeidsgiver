@@ -1,7 +1,7 @@
 apiVersion: nais.io/v1alpha1
 kind: Application
 metadata:
-  name: samtale-stotte-arbeidsgiver
+  name: samtalestotte-arbeidsgiver
   namespace: arbeidsgiver
   labels:
     team: arbeidsgiver
@@ -10,18 +10,17 @@ spec:
   team: arbeidsgiver
   port: 3000
   ingresses:
-    - https://arbeidsgiver-gcp.dev.nav.no/samtale-stotte-arbeidsgiver
+    - https://arbeidsgiver-gcp.dev.nav.no/samtalestotte-arbeidsgiver
+    - https://arbeidsgiver.labs.nais.io/samtalestotte-arbeidsgiver
   liveness:
-    path: /samtale-stotte-arbeidsgiver/internal/isReady
+    path: /samtalestotte-arbeidsgiver/internal/isReady
     initialDelay: 10
   readiness:
-    path: /samtale-stotte-arbeidsgiver/internal/isReady
+    path: /samtalestotte-arbeidsgiver/internal/isReady
     initialDelay: 10
   accessPolicy:
     outbound:
       external:
-        - host: i.vimeocdn.com
-        - host: api.vimeo.com
         - host: dekoratoren.dev.nav.no
   envFrom:
     - secret: forebygge-sykefravaer-secrets
