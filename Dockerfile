@@ -6,6 +6,7 @@ COPY pages/ pages/
 COPY public/ public/
 COPY package.json /
 COPY yarn.lock /
+COPY .next/ .next/
 
 RUN yarn install --frozen-lockfile
 
