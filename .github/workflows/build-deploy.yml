@@ -14,18 +14,6 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: '12.x'
-            - uses: actions/cache@v1
-              with:
-                  path: ./node_modules
-                  key: ${{ runner.os }}-node-cache-${{ hashFiles('yarn.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-node-cache-
-            - name: Install dependencies
-              run: |
-                  yarn install --frozen-lockfile
-            - name: Build application
-              run: |
-                  yarn run build
             - name: Build tag and push Docker container
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
