@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import './InternLenke.less';
 
 interface Props {
     pathname: string;
