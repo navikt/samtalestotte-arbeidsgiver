@@ -1,4 +1,5 @@
-module.exports = {
+const withLess = require('@zeit/next-less')
+module.exports =withLess( {
     basePath: '/samtalestotte-arbeidsgiver',
     async rewrites() {
         return [
@@ -13,3 +14,4 @@ module.exports = {
         ]
     }
 }
+)

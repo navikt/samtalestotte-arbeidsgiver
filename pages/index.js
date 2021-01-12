@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import LesMerPanel from "./felleskomponenter/LesMerPanel/LesMerPanel";
 
 export default function Home() {
   return (
@@ -10,7 +11,9 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <LesMerPanel åpneLabel={'open label'}>
+            <p>this is test </p>
+          </LesMerPanel>
         </h1>
 
         <p className="description">
