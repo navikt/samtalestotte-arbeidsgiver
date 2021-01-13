@@ -1,16 +1,19 @@
 import Head from 'next/head'
+import LesMerPanel from "./felleskomponenter/LesMerPanel/LesMerPanel";
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Samtalestøtte for arbeidsgiver</title>
+        <link rel="icon" href="favicon.ico" />
       </Head>
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <LesMerPanel åpneLabel={'open label'}>
+            <p>this is test </p>
+          </LesMerPanel>
         </h1>
 
         <p className="description">
