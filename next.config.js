@@ -1,18 +1,21 @@
-const withLess = require('@zeit/next-less')
+const withLess = require('@zeit/next-less');
+const packageJson = require('./package.json');
+const navFrontendModuler = [];
 
-module.exports =withLess( {
-    basePath: '/samtalestotte-arbeidsgiver',
-    async rewrites() {
-        return [
-            {
-                source: '/internal/isAlive',
-                destination: '/api/alive-and-ready'
-            },
-            {
-                source: '/internal/isReady',
-                destination: '/api/alive-and-ready'
-            }
-        ]
+Object.keys(packageJson.dependencies).forEach((key) => {
+    if (key.startsWith('nav-frontend-')) {
+        navFrontendModuler.push(key);
     }
-}
-)
+});
+
+const nextTranspileModules = require('next-transpile-modules');
+const withTranspileModules = nextTranspileModules(navFrontendModuler);
+
+module.exports = withTranspileModules(
+    withLess({
+        basePath: '/samtalestotte-arbeidsgiver',
+        target: 'server',
+        trailingSlash: false,
+        reactStrictMode: true,
+    })
+);
