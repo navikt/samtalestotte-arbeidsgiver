@@ -1,4 +1,4 @@
-import { PageBanner } from '../PageBanner';
+import { PageBanner } from '../PageBanner/PageBanner';
 import { DecoratorHeader } from '../decorator/DecoratorHeader';
 import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
@@ -22,7 +22,7 @@ export const Layout = (props: {
             </Head>
             <DecoratorHeader html={props.decoratorParts?.decoratorHeader} />
             <div id="app" className="app">
-                <PageBanner isFrontPage={props.isFrontPage} title={props.title} iconUrl={props.bannerIconUrl} />
+                <PageBanner isFrontPage={true} title={props.title} iconUrl={props.bannerIconUrl} />
                 <div className="content">{props.children}</div>
             </div>
             <DecoratorFooter html={props.decoratorParts?.decoratorFooter} />
