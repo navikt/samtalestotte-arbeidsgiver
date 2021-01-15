@@ -1,9 +1,9 @@
-import { PageBanner } from './PageBanner';
-import { DecoratorHeader } from './decorator/DecoratorHeader';
-import { DecoratorFooter } from './decorator/DecoratorFooter';
+import { PageBanner } from '../PageBanner';
+import { DecoratorHeader } from '../decorator/DecoratorHeader';
+import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
-import { DecoratorParts } from '../../utils/dekorator';
-import { DecoratorEnv } from './decorator/DecoratorEnv';
+import { DecoratorParts } from '../../../utils/dekorator';
+import { DecoratorEnv } from '../decorator/DecoratorEnv';
 
 export const Layout = (props: {
     title: string;
@@ -13,7 +13,7 @@ export const Layout = (props: {
     children: React.ReactChild;
 }) => {
     return (
-        <>
+        <div className="layout">
             <Head>
                 {props.decoratorParts?.linkTags.map((attrs, index) => {
                     attrs.key = 'props.linkTags' + index;
@@ -27,6 +27,6 @@ export const Layout = (props: {
             </div>
             <DecoratorFooter html={props.decoratorParts?.decoratorFooter} />
             <DecoratorEnv env={props.decoratorParts?.decoratorEnv} />
-        </>
+        </div>
     );
 };
