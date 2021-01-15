@@ -1,14 +1,13 @@
 import Head from 'next/head';
-import InternLenke from './felleskomponenter/InternLenke/InternLenke';
 import { EkspanderbartInfopanel } from './felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import { Layout } from './felleskomponenter/Layout';
-import { PageProps } from './pageProps';
+import {getPageProps, PageProps} from "./pageProps";
 
-export default function Home(props: { page: PageProps }) {
+const Home = (props: { page: PageProps }) => {
     return (
         <div className="container">
             <Head>
-                <title>Samtalestøtte for arbeidsgiver</title>
+                <title>{props.page.appTitle}</title>
                 <link rel="icon" href="favicon.ico" />
             </Head>
 
@@ -16,7 +15,7 @@ export default function Home(props: { page: PageProps }) {
                 <Layout
                     title={props.page ? props.page.title : 'kunne ikke hente tittel'}
                     isFrontPage={true}
-                    bannerIconUrl="test"
+                    //bannerIconUrl=""
                     decoratorParts={props.page.decorator}
                 >
                     <EkspanderbartInfopanel></EkspanderbartInfopanel>
@@ -172,3 +171,21 @@ export default function Home(props: { page: PageProps }) {
         </div>
     );
 }
+
+interface StaticProps {
+    props: {
+        page: PageProps;
+    };
+    revalidate: number;
+}
+
+export const getStaticProps = async (): Promise<StaticProps> => {
+    const page = await getPageProps("Samtalestøtte for arbeidsgiver", '/');
+
+    return {
+        props: { page },
+        revalidate: 60,
+    };
+};
+
+export default Home;

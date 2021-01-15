@@ -31,7 +31,7 @@ const getDecoratorCached = async (decoratorParams: DecoratorParams) => {
                 chatbot: false,
                 breadcrumbs: [
                     {
-                        title: 'Økonomi- og gjeldsrådgivinig',
+                        title: 'Samtalestøtte',
                         url: process.env.APP_URL,
                     },
                 ].concat(decoratorParams.breadcrumbs),

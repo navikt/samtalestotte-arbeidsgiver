@@ -1,10 +1,4 @@
 import { DecoratorParts, fetchDecoratorParts } from '../utils/dekorator';
-//import { fetchFrontpage } from './utils/sanity-fetch';
-
-export interface StaticPathProps {
-    paths: { params: { slug: string } }[];
-    fallback: boolean;
-}
 
 export interface PageProps {
     appTitle: string;
@@ -16,27 +10,22 @@ export interface PageProps {
 
 export const getPageProps = async (
     title: string,
-    metaDescription: string,
-    slug: string,
-    pageType: 'index' | 'article' | 'group'
+    slug: string
 ): Promise<PageProps> => {
-   // const frontPage = await fetchFrontpage();
-    const breadcrumbs =
-        pageType === 'index'
-            ? []
-            : [{ title: encodeURIComponent(title), url: `${process.env.APP_URL}/${pageType}/${slug}` }];
-    const cacheKey = pageType === 'index' ? 'index' : `${pageType}-${slug}`;
+    // TODO: trenger vi breadcrumbs
+    const breadcrumbs = [{ title: encodeURIComponent(title), url: `${process.env.APP_URL}` }];
+    const cacheKey = 'index';
 
     const decorator = await fetchDecoratorParts({
-        siteTitle:"samtalestøtte site tittel", //frontPage.title,
+        siteTitle: title,
         cacheKey,
         breadcrumbs,
     });
 
     return {
-        appTitle: "samtalstøtte app tittel" ,//frontPage.title,
+        appTitle: title,
         title,
-        metaDescription,
+        metaDescription: "Samtalestøtte for arbeidsgiver",
         slug,
         decorator,
     };
