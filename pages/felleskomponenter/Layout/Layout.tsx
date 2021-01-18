@@ -4,6 +4,7 @@ import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
 import { DecoratorParts } from '../../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
+import './Layout.less';
 
 export const Layout = (props: {
     title: string;
@@ -23,7 +24,9 @@ export const Layout = (props: {
             <DecoratorHeader html={props.decoratorParts?.decoratorHeader} />
             <div id="app" className="app">
                 <PageBanner isFrontPage={true} title={props.title} iconUrl={props.bannerIconUrl} />
-                <div className="content">{props.children}</div>
+                <div className="layout__wrapper">
+                    <div className="layout__content">{props.children}</div>
+                </div>
             </div>
             <DecoratorFooter html={props.decoratorParts?.decoratorFooter} />
             <DecoratorEnv env={props.decoratorParts?.decoratorEnv} />

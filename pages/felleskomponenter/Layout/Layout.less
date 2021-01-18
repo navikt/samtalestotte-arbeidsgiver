@@ -1,4 +1,19 @@
-.layout{
-  //TODO vi kommer til å style her
-  margin: 1rem ;
+@import '~nav-frontend-core/less/_variabler';
+
+.layout {
+    //TODO vi kommer til å style her
+    //margin: 1rem ;
+    &__wrapper {
+        background-color: @navLysGra;
+        min-height: 50rem;
+        padding: 1.5rem 1rem 5rem;
+    }
+    &__content {
+        max-width: 60rem;
+        background-color: white;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        margin: auto;
+        border-radius: 0.25rem;
+    }
 }
