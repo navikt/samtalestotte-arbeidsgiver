@@ -6,6 +6,7 @@ import { OppChevron } from 'nav-frontend-chevron';
 interface Props {
     children: React.ReactNode;
     unikId: string;
+    tittel: string;
 }
 
 export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) => {
@@ -14,7 +15,7 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
 
     return (
         <EkspanderbartpanelBase
-            tittel="Når kan oppfølgingssamtale være aktuelt?"
+            tittel={props.tittel}
             id={'info-1'}
             apen={erÅpen}
             onClick={() => {
