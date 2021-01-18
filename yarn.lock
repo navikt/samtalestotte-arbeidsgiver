@@ -3048,6 +3048,11 @@ nav-frontend-chevron-style@^1.0.2:
   resolved "https://registry.yarnpkg.com/nav-frontend-chevron-style/-/nav-frontend-chevron-style-1.0.2.tgz#9e8d921b0e82d72475c86cc506d6f82d7a65b9af"
   integrity sha512-NSEYLgVpfOF2R9RnGraVlivpTxPtlMZgWfXziixsVoggz8N95WJ3j42363azcHwF7YYITMjCFrFNtT1aZdbpUQ==
 
+nav-frontend-chevron@^1.0.25:
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/nav-frontend-chevron/-/nav-frontend-chevron-1.0.25.tgz#0ee3d9ebc50a286f8a74d7158f4af9371e311e26"
+  integrity sha512-dRzDx1THbO60Tcim/yu3j8xQey9f7CdqGdwuqGIOSymUV7Lac1ZvI4tIrpknIprq+yxn9KmoGiGQOuiiBistMw==
+
 nav-frontend-core@^5.0.11:
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/nav-frontend-core/-/nav-frontend-core-5.0.11.tgz#d2611a79f5f5372166a467a5f6e5eaccb8725086"
@@ -3069,6 +3074,16 @@ nav-frontend-js-utils@^1.0.15:
   integrity sha512-ZVejqv71eVS7SSkIP4c5/kEloTq79Q0WrTDr+4tmP2tVv+c2rFYMYGhYkLozZ8yDF/6eM7yheutnYxtYsctayQ==
   dependencies:
     lodash.throttle "^4.1.1"
+
+nav-frontend-lenker-style@^0.2.41:
+  version "0.2.41"
+  resolved "https://registry.yarnpkg.com/nav-frontend-lenker-style/-/nav-frontend-lenker-style-0.2.41.tgz#f808c7ba93727983f85ae7a91cc056e567c9355f"
+  integrity sha512-r6jktN0VsBrY8oV8FcRiAbdQ+dYaKtkxMVzUv3CpLx5ItzxEAaXT9ukKXhES/+Ccr1gTgxEVZIQYIBgAEpDjSA==
+
+nav-frontend-lenker@^1.0.56:
+  version "1.0.56"
+  resolved "https://registry.yarnpkg.com/nav-frontend-lenker/-/nav-frontend-lenker-1.0.56.tgz#f623c54c4262eeb3e937162edc8b987fd5ce3ecd"
+  integrity sha512-7aVRAim1yJQ77M5olCmmBHTShAqZhd+zcTJwJ0zPXVsFbjfIR4wArg2vpKY6c4fOkaWH7t8xgb7MKGjdGW5zow==
 
 nav-frontend-paneler-style@^0.3.33:
   version "0.3.33"

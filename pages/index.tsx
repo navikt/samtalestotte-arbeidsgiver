@@ -3,6 +3,7 @@ import { EkspanderbartInfopanel } from './felleskomponenter/EkspanderbartInfopan
 import { Layout } from './felleskomponenter/Layout/Layout';
 import { getPageProps, PageProps } from './pageProps';
 import './index.less';
+import {Normaltekst} from "nav-frontend-typografi";
 
 const Home = (props: { page: PageProps }) => {
     return (
@@ -19,7 +20,17 @@ const Home = (props: { page: PageProps }) => {
                     //bannerIconUrl=""
                     decoratorParts={props.page.decorator}
                 >
-                    <EkspanderbartInfopanel></EkspanderbartInfopanel>
+                    <EkspanderbartInfopanel unikId={'nå-kan-være-samtalen-aktuelt'}>
+                        <Normaltekst className="ekspanderbart-infopanel__innhold">
+                            En oppfølgingssamtale gjennomføres hvis du eller din medarbeider opplever
+                            utfordringer med arbeidet. Utfordringer kan for eksempel skyldes sykdom eller andre
+                            forhold. Du bør ikke vente til medarbeideren har blitt sykmeldt.
+                        </Normaltekst>
+                        <Normaltekst className="ekspanderbart-infopanel__innhold">
+                            Det finnes ingen oppskrift på en god samtale som gjelder alle situasjoner. Men det
+                            finnes noen grep som ofte bidrar til gode samtaler.
+                        </Normaltekst>
+                    </EkspanderbartInfopanel>
                 </Layout>
             </main>
 
