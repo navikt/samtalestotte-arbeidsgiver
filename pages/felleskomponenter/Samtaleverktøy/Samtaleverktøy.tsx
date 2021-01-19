@@ -50,7 +50,8 @@ export const Samtaleverktøy: FunctionComponent = () => {
                     behandling og forhold hjemme er privat.
                 </UndertekstBold>
             </EkspanderbartInfopanel>
-            <EkspanderbartInfopanel tittel={'Suksesskriterier'} unikId={'Suksesskriterier'}>
+            <EkspanderbartInfopanel tittel={'Suksesskriterier'} unikId={'Suksesskriterier'}
+            bakgrunn={'navBakgrunn'}>
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     <li>· Lytt til hva medarbeideren har å si · · · · · </li>
                     <li>

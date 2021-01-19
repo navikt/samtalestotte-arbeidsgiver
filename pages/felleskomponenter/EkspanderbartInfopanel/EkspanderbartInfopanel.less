@@ -1,4 +1,5 @@
 @import '../../../variables.less';
+@import '~nav-frontend-core/less/_variabler';
 
 .ekspanderbart-infopanel {
     &__innhold {
@@ -24,5 +25,17 @@
     &__lukk-chevron {
         color: @navBla;
         margin-left: 0.5rem;
+    }
+    &__tittel {
+        background-color: @navGronnLighten80 !important;
+    }
+    &__gronnbakgrunn {
+        .mixin(true);
+    }
+}
+
+.mixin (@setbakgrunn-farge) when (@setbakgrunn-farge = true) {
+    .ekspanderbartPanel__hode {
+        background-color: @navGronnLighten80;
     }
 }

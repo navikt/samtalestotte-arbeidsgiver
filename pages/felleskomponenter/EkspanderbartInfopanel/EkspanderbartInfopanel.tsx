@@ -2,11 +2,13 @@ import { FunctionComponent, useState } from 'react';
 import './EkspanderbartInfopanel.less';
 import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
+import classNames from 'classnames';
 
 interface Props {
     children: React.ReactNode;
     unikId: string;
     tittel: string;
+    bakgrunn?: string;
 }
 
 export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) => {
@@ -21,7 +23,14 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
             onClick={() => {
                 setErÅpen(!erÅpen);
             }}
-            className="ekspanderbart-infopanel__panel"
+            className={
+                !props.bakgrunn
+                    ? 'ekspanderbart-infopanel__panel'
+                    : classNames(
+                          'ekspanderbart-infopanel__panel',
+                          'ekspanderbart-infopanel__gronnbakgrunn'
+                      )
+            }
         >
             <div>{props.children}</div>
 
