@@ -21,14 +21,30 @@ export const Layout = (props: {
                     return <link {...attrs} />;
                 })}
             </Head>
-            <DecoratorHeader html={props.decoratorParts?.decoratorHeader} />
+            <DecoratorHeader
+                html={
+                    props.decoratorParts?.decoratorHeader === undefined
+                        ? ''
+                        : props.decoratorParts?.decoratorHeader
+                }
+            />
             <div id="app" className="app">
-                <PageBanner isFrontPage={true} title={props.title} iconUrl={props.bannerIconUrl} />
+                <PageBanner
+                    isFrontPage={true}
+                    title={props.title}
+                    iconUrl={props.bannerIconUrl === undefined ? '' : props.bannerIconUrl}
+                />
                 <div className="layout__wrapper">
                     <div className="layout__content">{props.children}</div>
                 </div>
             </div>
-            <DecoratorFooter html={props.decoratorParts?.decoratorFooter} />
+            <DecoratorFooter
+                html={
+                    props.decoratorParts?.decoratorFooter === undefined
+                        ? ''
+                        : props.decoratorParts?.decoratorFooter
+                }
+            />
             <DecoratorEnv env={props.decoratorParts?.decoratorEnv} />
         </div>
     );
