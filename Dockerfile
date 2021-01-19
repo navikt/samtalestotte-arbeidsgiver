@@ -4,8 +4,8 @@ WORKDIR /usr/src/app
 
 ENV NODE_ENV=production
 
-COPY pages/ pages/
-COPY public/ public/
+COPY src/pages/ pages/
+COPY src/public/ public/
 COPY package.json package.json
 COPY yarn.lock yarn.lock
 COPY next.config.js next.config.js

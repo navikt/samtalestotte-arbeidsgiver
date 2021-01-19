@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import { Layout } from '../src/felleskomponenter/Layout/Layout';
-import { getPageProps, PageProps } from '../src/pageProps';
+import { Layout } from '../felleskomponenter/Layout/Layout';
+import { getPageProps, PageProps } from '../pageProps';
 import './index.less';
-import { Samtaleverktøy } from '../src/felleskomponenter/Samtaleverktøy/Samtaleverktøy';
-import { OppfølgingssamtaleGjennomføring } from '../src/felleskomponenter/OppfølgingssamtaleGjennomføring/OppfølgingssamtaleGjennomføring';
+import { Samtaleverktøy } from '../felleskomponenter/Samtaleverktøy/Samtaleverktøy';
+import { OppfølgingssamtaleGjennomføring } from '../felleskomponenter/OppfølgingssamtaleGjennomføring/OppfølgingssamtaleGjennomføring';
 
 const Home = (props: { page: PageProps }) => {
     return (

@@ -1,4 +1,4 @@
-import { DecoratorParts, fetchDecoratorParts } from '../utils/dekorator';
+import { DecoratorParts, fetchDecoratorParts } from './utils/dekorator';
 
 export interface PageProps {
     appTitle: string;
