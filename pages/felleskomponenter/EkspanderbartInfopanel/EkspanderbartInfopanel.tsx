@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, ReactComponentElement, ReactNode, useState } from 'react';
 import './EkspanderbartInfopanel.less';
 import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
@@ -9,6 +9,7 @@ interface Props {
     unikId: string;
     tittel: string;
     bakgrunn?: string;
+    ikon?: React.ReactNode;
 }
 
 export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) => {
@@ -17,7 +18,15 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
 
     return (
         <EkspanderbartpanelBase
-            tittel={props.tittel}
+            tittel={
+                props.ikon ? (
+                    <>
+                        {props.ikon} {props.tittel}
+                    </>
+                ) : (
+                    props.tittel
+                )
+            }
             id={'info-1'}
             apen={erÅpen}
             onClick={() => {

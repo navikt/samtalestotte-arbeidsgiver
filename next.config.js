@@ -1,5 +1,6 @@
 const withLess = require('@zeit/next-less');
 const packageJson = require('./package.json');
+//const withReactSvg = require('next-react-svg');
 const navFrontendModuler = [];
 
 Object.keys(packageJson.dependencies).forEach((key) => {
