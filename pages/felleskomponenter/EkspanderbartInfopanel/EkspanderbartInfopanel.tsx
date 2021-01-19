@@ -1,11 +1,15 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, ReactComponentElement, ReactNode, useState } from 'react';
 import './EkspanderbartInfopanel.less';
 import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
+import classNames from 'classnames';
 
 interface Props {
     children: React.ReactNode;
     unikId: string;
+    tittel: string;
+    bakgrunn?: string;
+    ikon?: React.ReactNode;
 }
 
 export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) => {
@@ -14,13 +18,28 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
 
     return (
         <EkspanderbartpanelBase
-            tittel="Når kan oppfølgingssamtale være aktuelt?"
+            tittel={
+                props.ikon ? (
+                    <>
+                        {props.ikon} {props.tittel}
+                    </>
+                ) : (
+                    props.tittel
+                )
+            }
             id={'info-1'}
             apen={erÅpen}
             onClick={() => {
                 setErÅpen(!erÅpen);
             }}
-            className="ekspanderbart-infopanel__panel"
+            className={
+                !props.bakgrunn
+                    ? 'ekspanderbart-infopanel__panel'
+                    : classNames(
+                          'ekspanderbart-infopanel__panel',
+                          'ekspanderbart-infopanel__gronnbakgrunn'
+                      )
+            }
         >
             <div>{props.children}</div>
 
