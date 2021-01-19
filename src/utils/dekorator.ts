@@ -11,13 +11,21 @@ export interface DecoratorParts {
     scriptTags: any[];
 }
 
+export interface Breadcrumb {
+    title: string;
+    url: string;
+}
+
 export interface DecoratorParams {
     siteTitle: string;
     cacheKey: string;
-    breadcrumbs: {
-        title: string;
-        url: string;
-    }[];
+    breadcrumbs: Breadcrumb[];
+}
+
+interface QueryParam {
+    feedback: boolean,
+    chatbot: boolean,
+    breadcrumbs: Breadcrumb[]
 }
 
 const getDecoratorCached = async (decoratorParams: DecoratorParams) => {
@@ -26,19 +34,20 @@ const getDecoratorCached = async (decoratorParams: DecoratorParams) => {
         if (decorator) {
             resolve(decorator);
         } else {
-            const queryParams = {
+            const queryParams: QueryParam = {
                 feedback: false,
                 chatbot: false,
                 breadcrumbs: [
                     {
                         title: 'Samtalestøtte',
-                        url: process.env.APP_URL,
+                        url: process.env.APP_URL === undefined? "" : process.env.APP_URL,
                     },
                 ].concat(decoratorParams.breadcrumbs),
             };
             const queryString = Object.keys(queryParams)
-                .map((key: string) => {
-                    return key + '=' + JSON.stringify(queryParams[key]);
+                .map( key => {
+                    const value = queryParams[key as keyof QueryParam];
+                    return key + '=' + JSON.stringify(value);
                 })
                 .join('&');
             const dekoratorUrl = process.env.DECORATOR_URL + '?' + queryString;
@@ -72,32 +81,38 @@ export const fetchDecoratorParts = async (decoratorParams: DecoratorParams): Pro
     const decoratorSrc = (await getDecoratorCached(decoratorParams)) as string;
 
     const $ = cheerio.load(decoratorSrc);
-    const scriptTags = [];
 
+    const scriptTags: { [attr: string]: string }[] = [];
     $('#scripts script').each((index, element) => {
-        element.attribs.key = objHash(element.attribs);
-        scriptTags.push({ ...element.attribs });
+        const tagElement:cheerio.TagElement = element as cheerio.TagElement;
+        tagElement.attribs.key = objHash(tagElement.attribs);
+        scriptTags.push({ ...tagElement.attribs });
     });
     $('#megamenu-resources script').each((index, element) => {
-        element.attribs.key = objHash(element.attribs);
-        scriptTags.push({ ...element.attribs });
+        const tagElement:cheerio.TagElement = element as cheerio.TagElement;
+        tagElement.attribs.key = objHash(tagElement.attribs);
+        scriptTags.push({ ...tagElement.attribs });
     });
-    const linkTags = [];
+
+    const linkTags: { [attr: string]: string }[] = [];
     $('#styles link').each((index, element) => {
-        element.attribs.key = objHash(element.attribs);
-        linkTags.push({ ...element.attribs });
+        const tagElement:cheerio.TagElement = element as cheerio.TagElement;
+        tagElement.attribs.key = objHash(tagElement.attribs);
+        linkTags.push({ ...tagElement.attribs });
     });
     $('#megamenu-resources link').each((index, element) => {
-        element.attribs.key = objHash(element.attribs);
-        linkTags.push({ ...element.attribs });
+        const tagElement:cheerio.TagElement = element as cheerio.TagElement;
+        tagElement.attribs.key = objHash(tagElement.attribs);
+        linkTags.push({ ...tagElement.attribs });
     });
+
     scriptTags.map((attrib) => {
         if (attrib.id === 'google-tag-manager-props') {
-            attrib.defer = true;
-            attrib.async = true;
+            attrib.defer = String(true);
+            attrib.async = String(true);
         }
         if (attrib.src.indexOf('app.min.js')) {
-            attrib.defer = true;
+            attrib.defer = String(true);
         }
     });
 
@@ -105,7 +120,9 @@ export const fetchDecoratorParts = async (decoratorParams: DecoratorParams): Pro
         decoratorHeader: $.html($('#decorator-header')),
         decoratorFooter: $.html($('#decorator-footer')),
         decoratorEnv: {
+            //@ts-ignore
             dataSrc: $('#decorator-env').attr('data-src'),
+            //@ts-ignore
             scriptUrl: $('#scripts script').attr('src'),
         },
         scriptTags: scriptTags,

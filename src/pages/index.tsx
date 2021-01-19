@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import { Layout } from './felleskomponenter/Layout/Layout';
-import { getPageProps, PageProps } from './pageProps';
+import { Layout } from '../felleskomponenter/Layout/Layout';
+import { getPageProps, PageProps } from '../pageProps';
 import './index.less';
-import { Samtaleverktøy } from './felleskomponenter/Samtaleverktøy/Samtaleverktøy';
-import { OppfølgingssamtaleGjennomføring } from './OppfølgingssamtaleGjennomføring/OppfølgingssamtaleGjennomføring';
+import { Samtaleverktøy } from '../felleskomponenter/Samtaleverktøy/Samtaleverktøy';
+import { OppfølgingssamtaleGjennomføring } from '../felleskomponenter/OppfølgingssamtaleGjennomføring/OppfølgingssamtaleGjennomføring';
 
 const Home = (props: { page: PageProps }) => {
     return (
@@ -21,7 +21,6 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                 >
                     <Samtaleverktøy />
-                    <OppfølgingssamtaleGjennomføring />
                 </Layout>
             </main>
 

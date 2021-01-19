@@ -2,7 +2,7 @@ import { PageBanner } from '../PageBanner/PageBanner';
 import { DecoratorHeader } from '../decorator/DecoratorHeader';
 import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
-import { DecoratorParts } from '../../../utils/dekorator';
+import { DecoratorParts } from '../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
 import './Layout.less';
 
@@ -21,14 +21,30 @@ export const Layout = (props: {
                     return <link {...attrs} />;
                 })}
             </Head>
-            <DecoratorHeader html={props.decoratorParts?.decoratorHeader} />
+            <DecoratorHeader
+                html={
+                    props.decoratorParts?.decoratorHeader === undefined
+                        ? ''
+                        : props.decoratorParts?.decoratorHeader
+                }
+            />
             <div id="app" className="app">
-                <PageBanner isFrontPage={true} title={props.title} iconUrl={props.bannerIconUrl} />
+                <PageBanner
+                    isFrontPage={true}
+                    title={props.title}
+                    iconUrl={props.bannerIconUrl === undefined ? '' : props.bannerIconUrl}
+                />
                 <div className="layout__wrapper">
                     <div className="layout__content">{props.children}</div>
                 </div>
             </div>
-            <DecoratorFooter html={props.decoratorParts?.decoratorFooter} />
+            <DecoratorFooter
+                html={
+                    props.decoratorParts?.decoratorFooter === undefined
+                        ? ''
+                        : props.decoratorParts?.decoratorFooter
+                }
+            />
             <DecoratorEnv env={props.decoratorParts?.decoratorEnv} />
         </div>
     );
