@@ -1,7 +1,9 @@
-import { FunctionComponent } from 'react';
-import { Normaltekst, Systemtittel, UndertekstBold, Undertittel } from 'nav-frontend-typografi';
-import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import {FunctionComponent} from 'react';
+import {Normaltekst, Systemtittel, UndertekstBold} from 'nav-frontend-typografi';
+import {EkspanderbartInfopanel} from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './Samtaleverktøy.less';
+import {LyspæreSVG} from './LyspæreSVG';
+//import { ReactComponent as Lyspære } from './lyspære.svg';
 
 export const Samtaleverktøy: FunctionComponent = () => {
     return (
@@ -50,8 +52,11 @@ export const Samtaleverktøy: FunctionComponent = () => {
                     behandling og forhold hjemme er privat.
                 </UndertekstBold>
             </EkspanderbartInfopanel>
-            <EkspanderbartInfopanel tittel={'Suksesskriterier'} unikId={'Suksesskriterier'}
-            bakgrunn={'navBakgrunn'}>
+            <EkspanderbartInfopanel
+                tittel={'Suksesskriterier'}
+                unikId={'Suksesskriterier'}
+                ikon={<LyspæreSVG />}
+            >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     <li>· Lytt til hva medarbeideren har å si · · · · · </li>
                     <li>
