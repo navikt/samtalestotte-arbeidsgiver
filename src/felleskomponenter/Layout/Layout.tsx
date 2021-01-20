@@ -11,7 +11,7 @@ export const Layout = (props: {
     isFrontPage: boolean;
     bannerIconUrl?: string;
     decoratorParts?: DecoratorParts;
-    children: React.ReactChild;
+    children: React.ReactChild[];
 }) => {
     return (
         <div className="layout">

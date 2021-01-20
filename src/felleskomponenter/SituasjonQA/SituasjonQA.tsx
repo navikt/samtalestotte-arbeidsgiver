@@ -1,17 +1,23 @@
-import {FunctionComponent} from 'react';
-import {Normaltekst, Systemtittel, UndertekstBold} from 'nav-frontend-typografi';
-import {EkspanderbartInfopanel} from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
-import './Samtaleverktøy.less';
-import {LyspæreSVG} from './LyspæreSVG';
-//import { ReactComponent as Lyspære } from './lyspære.svg';
+import { FunctionComponent } from 'react';
+import { Normaltekst, Systemtittel, UndertekstBold, Undertittel } from 'nav-frontend-typografi';
+import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import './SituasjonQA.less';
+//import {ReactComponent as Nummer1IListe} from '../../public/text.svg';
 
-export const Samtaleverktøy: FunctionComponent = () => {
+export const SituasjonQA: FunctionComponent = () => {
     return (
         <>
-            <Systemtittel className="samtaleverktøy__tittel">Samtaleverktøy</Systemtittel>
+            <Systemtittel className="oppfølgingssamtaleGjennomføring__tittel">
+                Slik gjennomfører du en 'riktig ord kommer' oppfølgingssamtale
+            </Systemtittel>
+            <Undertittel className="oppfølgingssamtaleGjennomføring__tittel">
+                Samtalen kan deles inn i faser, vi har gjort det enkelt for deg å forstå innholdet
+                og bruke det aktivt i din hverdag
+            </Undertittel>
             <EkspanderbartInfopanel
-                tittel={'Når kan oppfølgingssamtale være aktuelt?'}
+                tittel={'Slik forbreder du samtalen'}
                 unikId={'nå-kan-være-samtalen-aktuelt'}
+                //ikon={Nummer1IListe}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     En oppfølgingssamtale gjennomføres hvis du eller din medarbeider opplever
@@ -55,7 +61,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
             <EkspanderbartInfopanel
                 tittel={'Suksesskriterier'}
                 unikId={'Suksesskriterier'}
-                ikon={<LyspæreSVG />}
+                bakgrunn={'navBakgrunn'}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     <li>· Lytt til hva medarbeideren har å si · · · · · </li>

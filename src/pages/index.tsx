@@ -21,6 +21,7 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                 >
                     <Samtaleverktøy />
+                    <OppfølgingssamtaleGjennomføring/>
                 </Layout>
             </main>
 

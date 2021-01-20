@@ -3,6 +3,7 @@ import './EkspanderbartInfopanel.less';
 import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
 import classNames from 'classnames';
+import { LyspæreSVG } from '../Samtaleverktøy/LyspæreSVG';
 
 interface Props {
     children: React.ReactNode;
@@ -20,9 +21,9 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
         <EkspanderbartpanelBase
             tittel={
                 props.ikon ? (
-                    <>
+                    <div className="ekspanderbart-infopanel__tittel-med-ikon">
                         {props.ikon} {props.tittel}
-                    </>
+                    </div>
                 ) : (
                     props.tittel
                 )
