@@ -5,10 +5,20 @@
     &__innhold {
         padding-bottom: 1rem;
         padding-right: 2rem;
+        &-ny-avsnitt {
+            margin-top: 1rem;
+        }
+        &-avsnitt-med-bakgrunn {
+            background-color: #e0f5fb;
+            padding: 1.5rem 1.5rem;
+            border-radius: 0.5rem;
+
+        }
     }
 
     &__panel {
         margin: 0 2rem 2rem;
+        .mixinborder(true);
     }
 
     &__lukk-knapp {
@@ -32,14 +42,26 @@
     &__tittel-med-ikon {
         display: flex;
         align-items: center;
+        .mixin(true);
+    }
+    &__tittel-uten-ikon {
+        padding: 0.5rem 0;
     }
     &__gronnbakgrunn {
         .mixin(true);
     }
 }
-
+.ekspanderbartPanel__hode {
+    border-bottom: 3px solid;
+}
 .mixin (@setbakgrunn-farge) when (@setbakgrunn-farge = true) {
     .ekspanderbartPanel__hode {
         background-color: @navGronnLighten80;
+    }
+}
+.mixinborder (@setBorder) when (@setBorder = true) {
+    .ekspanderbartPanel__hode {
+        border-bottom: 1px solid;
+        border-radius: 4px;
     }
 }

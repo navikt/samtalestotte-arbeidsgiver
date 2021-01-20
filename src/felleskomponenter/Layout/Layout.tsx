@@ -1,9 +1,9 @@
-import { PageBanner } from '../PageBanner/PageBanner';
-import { DecoratorHeader } from '../decorator/DecoratorHeader';
-import { DecoratorFooter } from '../decorator/DecoratorFooter';
+import {PageBanner} from '../PageBanner/PageBanner';
+import {DecoratorHeader} from '../decorator/DecoratorHeader';
+import {DecoratorFooter} from '../decorator/DecoratorFooter';
 import Head from 'next/head';
-import { DecoratorParts } from '../../utils/dekorator';
-import { DecoratorEnv } from '../decorator/DecoratorEnv';
+import {DecoratorParts} from '../../utils/dekorator';
+import {DecoratorEnv} from '../decorator/DecoratorEnv';
 import './Layout.less';
 
 export const Layout = (props: {

@@ -1,6 +1,6 @@
-import { FunctionComponent } from 'react';
-import { Normaltekst, Systemtittel, UndertekstBold, Undertittel } from 'nav-frontend-typografi';
-import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import {FunctionComponent} from 'react';
+import {Normaltekst, Systemtittel, UndertekstBold, Undertittel} from 'nav-frontend-typografi';
+import {EkspanderbartInfopanel} from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './SituasjonQA.less';
 //import {ReactComponent as Nummer1IListe} from '../../public/text.svg';
 

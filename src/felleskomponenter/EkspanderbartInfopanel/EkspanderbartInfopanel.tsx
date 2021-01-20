@@ -1,9 +1,8 @@
-import { FunctionComponent, ReactComponentElement, ReactNode, useState } from 'react';
+import {FunctionComponent, useState} from 'react';
 import './EkspanderbartInfopanel.less';
-import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
-import { OppChevron } from 'nav-frontend-chevron';
+import {EkspanderbartpanelBase} from 'nav-frontend-ekspanderbartpanel';
+import {OppChevron} from 'nav-frontend-chevron';
 import classNames from 'classnames';
-import { LyspæreSVG } from '../Samtaleverktøy/LyspæreSVG';
 
 interface Props {
     children: React.ReactNode;
@@ -25,7 +24,7 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
                         {props.ikon} {props.tittel}
                     </div>
                 ) : (
-                    props.tittel
+                    <div className="ekspanderbart-infopanel__tittel-uten-ikon">{props.tittel}</div>
                 )
             }
             id={'info-1'}

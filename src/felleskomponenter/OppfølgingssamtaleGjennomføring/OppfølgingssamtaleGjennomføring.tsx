@@ -1,8 +1,9 @@
-import { FunctionComponent } from 'react';
-import { Normaltekst, Systemtittel, UndertekstBold, Undertittel } from 'nav-frontend-typografi';
-import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import {FunctionComponent} from 'react';
+import {Element, Ingress, Normaltekst, Systemtittel, UndertekstBold,} from 'nav-frontend-typografi';
+import {EkspanderbartInfopanel} from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './OppfølgingssamtaleGjennomføring.less';
-//import {ReactComponent as Nummer1IListe} from '../../public/text.svg';
+import {Steg1SVG} from './Steg1SVG';
+import Lenke from 'nav-frontend-lenker';
 
 export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
     return (
@@ -10,24 +11,81 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             <Systemtittel className="oppfølgingssamtaleGjennomføring__tittel">
                 Slik gjennomfører du en 'riktig ord kommer' oppfølgingssamtale
             </Systemtittel>
-            <Undertittel className="oppfølgingssamtaleGjennomføring__tittel">
+            <Ingress className="oppfølgingssamtaleGjennomføring__ingress">
                 Samtalen kan deles inn i faser, vi har gjort det enkelt for deg å forstå innholdet
                 og bruke det aktivt i din hverdag
-            </Undertittel>
+            </Ingress>
             <EkspanderbartInfopanel
-                tittel={'Slik forbreder du samtalen'}
-                unikId={'nå-kan-være-samtalen-aktuelt'}
-                //ikon={Nummer1IListe}
+                tittel={'Slik forbereder du samtalen'}
+                unikId={'Slik-forbereder-du-samtalen'}
+                ikon={<Steg1SVG />}
             >
-                <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    En oppfølgingssamtale gjennomføres hvis du eller din medarbeider opplever
-                    utfordringer med arbeidet. Utfordringer kan for eksempel skyldes sykdom eller
-                    andre forhold. Du bør ikke vente til medarbeideren har blitt sykmeldt.
-                </Normaltekst>
-                <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    Det finnes ingen oppskrift på en god samtale som gjelder alle situasjoner. Men
-                    det finnes noen grep som ofte bidrar til gode samtaler.
-                </Normaltekst>
+                <div className="ekspanderbart-infopanel__innhold">
+                    <Element>Lederens rolle i en oppfølgingssamtale</Element>
+                    <li>Du er ansvarlig for å gjennomføre og dokumentere oppfølgingssamtaler.</li>
+                    <li>
+                        Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen, se mer
+                        i tema for oppfølgingssamtalen
+                    </li>
+                    <li>Din viktigste oppgave er å få medarbeideren til å snakke</li>
+
+                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        Kjente fallgruver:
+                    </Element>
+                    <li>Du påtar deg for stort ansvar for helsa til medarbeideren</li>
+                    <li>Fokuset handler om behandling eller forhold i privatlivet</li>
+
+                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        Tema for oppfølgingssamtalen
+                    </Element>
+                    <li>En oppfølgingssamtale handler om</li>
+                    <li>gjennomgang av arbeidsoppgaver</li>
+                    <li>
+                        vurdering av hvilke oppgaver som kan gjennomføres med eller uten
+                        tilrettelegging eventuelt alternative arbeidsoppgaver
+                    </li>
+                    <li>plan for videre oppfølging</li>
+                </div>
+                <div className="ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn">
+                    <Element>Noen tips til egen forberedelse før samtalen</Element>
+                    <li>Hva er dine mål med samtalen?</li>
+                    <li>
+                        Hvordan er din relasjon og holdninger til medarbeideren, og hvordan kan
+                        dette påvirke dialogen?
+                    </li>
+                    <li>
+                        Hva har du observert? Du kan være tydelig på dine observasjoner og hvordan
+                        du tolker disse, men gi medarbeideren anledning til å korrigere hvis du har
+                        tatt feil.
+                    </li>
+                    <li>
+                        Hvilke tilretteleggingsmuligheter finnes på egen arbeidsplass og eventuelt
+                        ellers i organisasjonen og hvor er grensene for ditt handlingsrom?
+                    </li>
+                    <li>
+                        <Lenke href="https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap">
+                            Les mer om tilrettelegging
+                        </Lenke>
+                    </li>
+                    <li>
+                        <Lenke href="https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge">
+                            Les mer om NAVs virkemidler
+                        </Lenke>
+                    </li>
+                    <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        <Element>Praktiske råd</Element>
+                        <li>Avtal tid og sted som passer deg og medarbeideren.</li>
+                        <li>
+                            Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis det
+                            passer best.
+                        </li>
+                        <li>
+                            Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Du kan
+                            for eksempel sende spørsmål dere skal snakke om på forhånd. Når begge er
+                            forberedt, blir det enklere å finne løsninger sammen.
+                        </li>
+                    </div>
+                </div>
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
                 tittel={'Dette kan du spørre medarbeideren om'}

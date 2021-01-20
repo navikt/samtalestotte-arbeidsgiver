@@ -1,4 +1,4 @@
-import { Sidetittel, Systemtittel } from 'nav-frontend-typografi';
+import {Sidetittel} from 'nav-frontend-typografi';
 //import { HeaderIcon } from '../icons/HeaderIcon';
 import './PageBanner.less';
 
