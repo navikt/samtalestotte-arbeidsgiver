@@ -1,9 +1,16 @@
-import {FunctionComponent} from 'react';
-import {Element, Ingress, Normaltekst, Systemtittel, UndertekstBold,} from 'nav-frontend-typografi';
-import {EkspanderbartInfopanel} from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import { FunctionComponent } from 'react';
+import {
+    Element,
+    Ingress,
+    Normaltekst,
+    Systemtittel,
+    UndertekstBold,
+} from 'nav-frontend-typografi';
+import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './OppfølgingssamtaleGjennomføring.less';
-import {Steg1SVG} from './Steg1SVG';
+import { Steg1SVG } from './Steg1SVG';
 import Lenke from 'nav-frontend-lenker';
+import { Steg2SVG } from './Steg2SVG';
 
 export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
     return (
@@ -88,33 +95,39 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 </div>
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
-                tittel={'Dette kan du spørre medarbeideren om'}
-                unikId={'Dette-kan-du-spørre-medarbeideren-om'}
+                tittel={'Slik innleder du samtalen'}
+                unikId={'Slik-innleder-du-samtalen'}
+                ikon={<Steg2SVG />}
             >
-                <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    Du kan stille spørsmål til medarbeider som handler om forhold på arbeidsplassen.
-                </Normaltekst>
-                <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    <li>Mulighetene til å utføre egne eller alternative arbeidsoppgaver</li>
-                    <li>Behov for tilrettelegging </li>
-                    <li>
-                        Om medarbeideren kjenner til rutiner og tilretteleggingsmuligheter i deres
-                        virksomhet
-                    </li>
-                    <li>Hvor lenge medarbeideren tror fraværet vil vare </li>
-                    <li>
-                        Om det er forhold på arbeidsplassen som påvirker sykefraværet eller
-                        helsesituasjonen
-                    </li>
-                    <li>
-                        Om medarbeideren ønsker kontakt med NAV, bedriftshelsetjenesten eller andre
-                        samarbeidspartnere for å få hjelp med tilrettelegging og oppfølging
-                    </li>
-                </Normaltekst>
-                <UndertekstBold className="ekspanderbart-infopanel__innhold">
-                    Husk at sykefravær ikke er en privatsak, det påvirker arbeidsplassen. Diagnose,
-                    behandling og forhold hjemme er privat.
-                </UndertekstBold>
+                <div className="ekspanderbart-infopanel__innhold">
+                    <Element>Innled samtalen med å klargjøre mål og hensikt</Element>
+                    <Normaltekst>
+                        Å innlede en samtale handler om å skape trygghet og sette rammer for
+                        samtalen. Rammene hjelper dere med å holde fokus og tid.
+                    </Normaltekst>
+                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        Vanlige tema i innledning:
+                    </Element>
+                    <li>Ønske velkommen</li>
+                    <li>Informere om tidsrammene for møtet</li>
+                    <li>Informere om målet med møtet</li>
+                    <li>Gå igjennom agenda</li>
+                    <li>Spørre hva medarbeideren tenker om mål og agenda</li>
+
+                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        Eksempler på spørsmål:
+                    </Element>
+                    <li>Hvordan vil du beskrive arbeidsdagen din?</li>
+                    <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
+                    <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
+                    <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
+                    <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
+                    <li>Hvordan vil du beskrive stressnivået?</li>
+                    <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
+                    <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
+                    <li>Hva motiverer deg mest akkurat nå?</li>
+                    <li>Hva oppfatter du som dine styrker nå?</li>
+                </div>
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
                 tittel={'Suksesskriterier'}
