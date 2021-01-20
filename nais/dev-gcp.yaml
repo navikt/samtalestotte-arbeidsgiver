@@ -15,7 +15,7 @@ spec:
     path: /samtalestotte-arbeidsgiver/api/isAlive
     initialDelay: 10
   readiness:
-    path: /samtalestotte-arbeidsgiver/api/isAlive
+    path: /samtalestotte-arbeidsgiver/api/isReady
     initialDelay: 10
   accessPolicy:
     outbound:
