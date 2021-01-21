@@ -1,16 +1,14 @@
 import { FunctionComponent } from 'react';
-import {
-    Element,
-    Ingress,
-    Normaltekst,
-    Systemtittel,
-    UndertekstBold,
-} from 'nav-frontend-typografi';
+import { Element, Ingress, Normaltekst, Systemtittel } from 'nav-frontend-typografi';
 import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './OppfølgingssamtaleGjennomføring.less';
-import { Steg1SVG } from './Steg1SVG';
 import Lenke from 'nav-frontend-lenker';
+import classNames from 'classnames';
+import { Steg1SVG } from './Steg1SVG';
 import { Steg2SVG } from './Steg2SVG';
+import { Steg3SVG } from './Steg3SVG';
+import { Steg4SVG } from './Steg4SVG';
+import { Steg5SVG } from './Steg5SVG';
 
 export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
     return (
@@ -127,6 +125,148 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
                     <li>Hva motiverer deg mest akkurat nå?</li>
                     <li>Hva oppfatter du som dine styrker nå?</li>
+                </div>
+            </EkspanderbartInfopanel>
+            <EkspanderbartInfopanel
+                tittel={'Slik snakker dere om arbeidssituasjonen'}
+                unikId={'Slik-snakker-dere-om-arbeidssituasjonen'}
+                ikon={<Steg3SVG />}
+            >
+                <div className="ekspanderbart-infopanel__innhold">
+                    <Normaltekst>
+                        En oppfølgingssamtale handler om medarbeideren. Din oppgave er å legge til
+                        rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene og
+                        arbeidsdagen oppleves. Unngå å stille for mange spørsmål etter hverandre
+                        uten å la medarbeideren få tid til å svare.
+                    </Normaltekst>
+                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        Vanlige tema i samtalen om arbeidssituasjonen:
+                    </Element>
+                    <li>arbeidsoppgaver</li>
+                    <li>arbeidstid</li>
+                    <li>samarbeid</li>
+                    <li>arbeidsmiljø</li>
+                    <li>tidligere tiltak</li>
+                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        Eksempler på spørsmål:
+                    </Element>
+                    <li> Hvordan vil du beskrive arbeidsdagen din?</li>
+                    <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
+                    <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
+                    <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
+                    <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
+                    <li>Hvordan vil du beskrive stressnivået?</li>
+                    <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
+                    <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
+                    <li>Hva motiverer deg mest akkurat nå?</li>
+                    <li>Hva oppfatter du som dine styrker nå?</li>
+                </div>
+            </EkspanderbartInfopanel>
+            <EkspanderbartInfopanel
+                tittel={'Slik finner dere løsninger sammen'}
+                unikId={'Slik-finner-dere-løsninger-sammen'}
+                ikon={<Steg4SVG />}
+            >
+                <Normaltekst className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                    Det er nyttig å sikre en felles forståelse av arbeidssituasjonen før dere går
+                    videre til å snakke om løsninger og tiltak. Medarbeidere som uttrykker
+                    løsningsforslag selv, vil ofte få økt motivasjon ved gjennomføring.
+                </Normaltekst>
+                <Element
+                    className={classNames(
+                        'ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn',
+                        'ekspanderbart-infopanel__innhold-display-flex'
+                    )}
+                >
+                    Husk&nbsp;
+                    <Normaltekst>
+                        at dersom medarbeideren har negativer erfaringer, for eksempel at tiltak
+                        ikke har fungert bør du anerkjenne dette. Fokuset bør ligge framover i tid
+                        og på hvilke muligheter som finnes.
+                    </Normaltekst>
+                </Element>
+
+                <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                    <li>Tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
+                    <li>Tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
+                    <li>Tilpasse organisering av arbeidet</li>
+                    <li>Tilpasse samarbeid og samhandling med andre</li>
+                    <li>alternative arbeidsoppgaver</li>
+                    <li>behov for informasjon og tilbakemeldinger</li>
+                    <li>arbeidsmiljø</li>
+                    <li>kompetanse</li>
+                    <li>fysisk utforming av arbeidsplassen</li>
+                    <li>
+                        <Lenke
+                            href={'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse'}
+                        >
+                            hjelpemidler
+                        </Lenke>
+                    </li>
+
+                    <li>andre forhold</li>
+                    <li>
+                        <Lenke href={'kommer'}>måter å tilrettelegge på</Lenke>
+                    </li>
+                </div>
+                <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                    Eksempler på spørsmål:
+                </Element>
+                <li> Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
+                <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
+                <li>Hvordan bør tiden disponeres?</li>
+                <li>
+                    Hvordan kan endringer i tempo, arbeidstid eller arbeidssted øke mulighetene for
+                    arbeid?
+                </li>
+                <li>
+                    Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt eller
+                    delvis?
+                </li>
+                <li>Hvilke løsninger ser du for deg?</li>
+                <li>Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?</li>
+                <li>Hvordan ser du for deg veien videre?</li>
+                <li>Hvordan ser du for deg det videre sykmeldingsforløpet?</li>
+                <li>Hvilke tiltak bør vi prøve først?</li>
+            </EkspanderbartInfopanel>
+            <EkspanderbartInfopanel
+                tittel={'Slik avslutter du samtalen'}
+                unikId={'Slik-avslutter-du-samtalen'}
+                ikon={<Steg5SVG />}
+            >
+                <Normaltekst className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                    En samtale avsluttes med at du og medarbeideren oppsummerer.
+                </Normaltekst>
+                <Element>
+                    Når medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
+                </Element>
+                <Normaltekst>
+                    <Lenke href={'kommer'}>Les mer om lovverket</Lenke>
+                </Normaltekst>
+                <Element className={'ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn'}>
+                    Vanlige tema i avslutningen:
+                </Element>
+                <Normaltekst>
+                    <li>avtaler, tilrettelegginger og tiltak</li>
+                    <li>om tilrettelegging er midlertidig eller permanent</li>
+                    <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
+                    <li>
+                        dato for neste samtale og hvor ofte oppfølgingssamtaler skal gjennomføres
+                    </li>
+                    <li>hvem som er ansvarlig for å følge opp</li>
+                    <li>om det er behov for videre avklaring eller hjelp fra andre</li>
+                </Normaltekst>
+
+                <div className="ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn">
+                    <Normaltekst>
+                        Av og til blir du og medarbeideren ikke å bli enige om løsningene og det er
+                        greit.{' '}
+                    </Normaltekst>
+                    <Normaltekst>
+                        Da dokumenterer du begges synspunkter i oppsummeringen eller
+                        oppfølgingsplanen.{' '}
+                    </Normaltekst>
+                    <Element>Tips: gjennomfør flere oppfølgingssamtaler regelmessig. </Element>
                 </div>
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
