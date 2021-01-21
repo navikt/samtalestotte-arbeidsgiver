@@ -269,7 +269,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element>Tips: gjennomfør flere oppfølgingssamtaler regelmessig. </Element>
                 </div>
             </EkspanderbartInfopanel>
-            <EkspanderbartInfopanel
+            {/*<EkspanderbartInfopanel
                 tittel={'Suksesskriterier'}
                 unikId={'Suksesskriterier'}
                 bakgrunn={'navBakgrunn'}
@@ -284,7 +284,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <li>Ikke hopp rett til konklusjoner og løsninger</li>
                     <li>Gjennomfør oppfølgingssamtaler regelmessigr</li>
                 </Normaltekst>
-            </EkspanderbartInfopanel>
+            </EkspanderbartInfopanel>*/}
         </>
     );
-};
+}
