@@ -1,29 +1,46 @@
-import { FunctionComponent, useState } from 'react';
+import { Dispatch, FunctionComponent, SetStateAction } from 'react';
 import { Radio, RadioGruppe } from 'nav-frontend-skjema';
 import './Svar.less';
 
-export const Svar: FunctionComponent = () => {
-    const [valgtSvar, setValgtSvar] = useState<'ja' | 'nei' | 'ikke-svart-enda'>('ikke-svart-enda');
+export type SvarType = 'ja' | 'nei' | undefined;
 
-    return (
-            <RadioGruppe className="svar__radio-gruppe">
-                <Radio
-                    label={'Ja'}
-                    name="svar-ja"
-                    value={'svar-ja'}
-                    checked={valgtSvar === 'ja'}
-                    onChange={() => setValgtSvar('ja')}
-                    className="svar__radio-box"
-                />
-                <Radio
-                    label={'Nei'}
-                    name="svar-nei"
-                    value={'svar-nei'}
-                    checked={valgtSvar === 'nei'}
-                    onChange={() => setValgtSvar('nei')}
-                    className="svar__radio-box"
-                />
-            </RadioGruppe>
+type SvarProps =     {
+    name: string;
+    callback: Dispatch<SetStateAction<SvarType>>
+    svar: SvarType;
+}
 
-    );
-};
+export const Svar: FunctionComponent<SvarProps> = ({name, callback, svar}) => (
+    <RadioGruppe className="svar__radio-gruppe">
+        <Radio
+            readOnly={true}
+            label={'Ja'}
+            name={`svar-ja-${name}`}
+            value={svar}
+            checked={svar === 'ja'}
+            onClick={() => {
+                if(svar !== 'ja'){
+                    callback('ja')
+                } else {
+                    callback(undefined)
+                }
+            }}
+            className="svar__radio-box"
+        />
+        <Radio
+            readOnly={true}
+            label={'Nei'}
+            name={`svar-nei-${name}`}
+            value={svar}
+            checked={svar === 'nei'}
+            onClick={() => {
+                if(svar !== 'nei'){
+                    callback('nei')
+                } else {
+                    callback(undefined)
+                }
+            }}
+            className="svar__radio-box"
+        />
+    </RadioGruppe>
+);
