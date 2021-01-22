@@ -58,7 +58,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 ikon={<LyspæreSVG />}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    <li>· Lytt til hva medarbeideren har å si · · · · · </li>
+                    <li>Lytt til hva medarbeideren har å si</li>
                     <li>
                         Snakk om arbeidsevne ikke diagnose
                         <li>Bygg på medarbeiderens motivasjon</li>
