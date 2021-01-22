@@ -269,22 +269,6 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element>Tips: gjennomfør flere oppfølgingssamtaler regelmessig. </Element>
                 </div>
             </EkspanderbartInfopanel>
-            {/*<EkspanderbartInfopanel
-                tittel={'Suksesskriterier'}
-                unikId={'Suksesskriterier'}
-                bakgrunn={'navBakgrunn'}
-            >
-                <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    <li>· Lytt til hva medarbeideren har å si · · · · · </li>
-                    <li>
-                        Snakk om arbeidsevne ikke diagnose
-                        <li>Bygg på medarbeiderens motivasjon</li>
-                    </li>
-                    <li>La medarbeideren komme med de gode løsningene</li>
-                    <li>Ikke hopp rett til konklusjoner og løsninger</li>
-                    <li>Gjennomfør oppfølgingssamtaler regelmessigr</li>
-                </Normaltekst>
-            </EkspanderbartInfopanel>*/}
         </>
     );
 }
