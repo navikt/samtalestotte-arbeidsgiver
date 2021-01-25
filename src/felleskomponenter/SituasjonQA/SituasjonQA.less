@@ -1,14 +1,28 @@
+@import '../../../node_modules/nav-frontend-core/less/_variabler';
+
 .situasjonqa {
-  padding-right: 2rem;
+    padding-right: 2rem;
 
-  &__tittel {
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-  }
+    &__tittel {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+    }
 
-  &__undertittel {
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-  }
-
+    &__undertittel {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+    }
+    div &__info-panel {
+            margin: 1rem auto;
+        &-ja {
+            background-color: @navGronnLighten80;
+        }
+        &-nei {
+            background-color: @navLysBlaLighten80;
+        }
+        span &.bold{
+            font-weight: bold;
+            background-color: #254b6d;
+        }
+    }
 }
