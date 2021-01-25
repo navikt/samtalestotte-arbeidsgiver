@@ -12,7 +12,7 @@ spec:
   ingresses:
     - https://arbeidsgiver.labs.nais.io/samtalestotte-arbeidsgiver
   liveness:
-    path: /samtalestotte-arbeidsgiver/api/isReady
+    path: /samtalestotte-arbeidsgiver/api/isAlive
     initialDelay: 10
   readiness:
     path: /samtalestotte-arbeidsgiver/api/isReady
