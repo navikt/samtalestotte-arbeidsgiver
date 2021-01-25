@@ -21,5 +21,3 @@ spec:
     outbound:
       external:
         - host: dekoratoren.dev.nav.no
-  envFrom:
-    - secret: forebygge-sykefravaer-secrets
