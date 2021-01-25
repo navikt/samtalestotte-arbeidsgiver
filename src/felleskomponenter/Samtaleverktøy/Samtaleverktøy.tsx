@@ -1,8 +1,8 @@
-import {FunctionComponent} from 'react';
-import {Normaltekst, Systemtittel, UndertekstBold} from 'nav-frontend-typografi';
-import {EkspanderbartInfopanel} from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import { FunctionComponent } from 'react';
+import { Normaltekst, Systemtittel, UndertekstBold } from 'nav-frontend-typografi';
+import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './Samtaleverktøy.less';
-import {LyspæreSVG} from './LyspæreSVG';
+import { LyspæreSVG } from './LyspæreSVG';
 //import { ReactComponent as Lyspære } from './lyspære.svg';
 
 export const Samtaleverktøy: FunctionComponent = () => {
@@ -31,21 +31,24 @@ export const Samtaleverktøy: FunctionComponent = () => {
                     Du kan stille spørsmål til medarbeider som handler om forhold på arbeidsplassen.
                 </Normaltekst>
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    <li>Mulighetene til å utføre egne eller alternative arbeidsoppgaver</li>
-                    <li>Behov for tilrettelegging </li>
-                    <li>
-                        Om medarbeideren kjenner til rutiner og tilretteleggingsmuligheter i deres
-                        virksomhet
-                    </li>
-                    <li>Hvor lenge medarbeideren tror fraværet vil vare </li>
-                    <li>
-                        Om det er forhold på arbeidsplassen som påvirker sykefraværet eller
-                        helsesituasjonen
-                    </li>
-                    <li>
-                        Om medarbeideren ønsker kontakt med NAV, bedriftshelsetjenesten eller andre
-                        samarbeidspartnere for å få hjelp med tilrettelegging og oppfølging
-                    </li>
+                    <ul>
+                        <li>Mulighetene til å utføre egne eller alternative arbeidsoppgaver</li>
+                        <li>Behov for tilrettelegging </li>
+                        <li>
+                            Om medarbeideren kjenner til rutiner og tilretteleggingsmuligheter i
+                            deres virksomhet
+                        </li>
+                        <li>Hvor lenge medarbeideren tror fraværet vil vare </li>
+                        <li>
+                            Om det er forhold på arbeidsplassen som påvirker sykefraværet eller
+                            helsesituasjonen
+                        </li>
+                        <li>
+                            Om medarbeideren ønsker kontakt med NAV, bedriftshelsetjenesten eller
+                            andre samarbeidspartnere for å få hjelp med tilrettelegging og
+                            oppfølging
+                        </li>
+                    </ul>
                 </Normaltekst>
                 <UndertekstBold className="ekspanderbart-infopanel__innhold">
                     Husk at sykefravær ikke er en privatsak, det påvirker arbeidsplassen. Diagnose,
@@ -58,14 +61,16 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 ikon={<LyspæreSVG />}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    <li>Lytt til hva medarbeideren har å si</li>
-                    <li>
-                        Snakk om arbeidsevne ikke diagnose
-                        <li>Bygg på medarbeiderens motivasjon</li>
-                    </li>
-                    <li>La medarbeideren komme med de gode løsningene</li>
-                    <li>Ikke hopp rett til konklusjoner og løsninger</li>
-                    <li>Gjennomfør oppfølgingssamtaler regelmessigr</li>
+                    <ul>
+                        <li>Lytt til hva medarbeideren har å si</li>
+                        <li>
+                            Snakk om arbeidsevne ikke diagnose
+                            <li>Bygg på medarbeiderens motivasjon</li>
+                        </li>
+                        <li>La medarbeideren komme med de gode løsningene</li>
+                        <li>Ikke hopp rett til konklusjoner og løsninger</li>
+                        <li>Gjennomfør oppfølgingssamtaler regelmessigr</li>
+                    </ul>
                 </Normaltekst>
             </EkspanderbartInfopanel>
         </>

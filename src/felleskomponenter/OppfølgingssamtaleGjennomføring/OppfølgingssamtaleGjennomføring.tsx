@@ -27,68 +27,79 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Element>Lederens rolle i en oppfølgingssamtale</Element>
-                    <li>Du er ansvarlig for å gjennomføre og dokumentere oppfølgingssamtaler.</li>
-                    <li>
-                        Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen, se mer
-                        i tema for oppfølgingssamtalen
-                    </li>
-                    <li>Din viktigste oppgave er å få medarbeideren til å snakke</li>
-
+                    <ul>
+                        <li>
+                            Du er ansvarlig for å gjennomføre og dokumentere oppfølgingssamtaler.
+                        </li>
+                        <li>
+                            Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen, se
+                            mer i tema for oppfølgingssamtalen
+                        </li>
+                        <li>Din viktigste oppgave er å få medarbeideren til å snakke</li>
+                    </ul>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Kjente fallgruver:
                     </Element>
-                    <li>Du påtar deg for stort ansvar for helsa til medarbeideren</li>
-                    <li>Fokuset handler om behandling eller forhold i privatlivet</li>
-
+                    <ul>
+                        <li>Du påtar deg for stort ansvar for helsa til medarbeideren</li>
+                        <li>Fokuset handler om behandling eller forhold i privatlivet</li>
+                    </ul>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Tema for oppfølgingssamtalen
                     </Element>
-                    <li>En oppfølgingssamtale handler om</li>
-                    <li>gjennomgang av arbeidsoppgaver</li>
-                    <li>
-                        vurdering av hvilke oppgaver som kan gjennomføres med eller uten
-                        tilrettelegging eventuelt alternative arbeidsoppgaver
-                    </li>
-                    <li>plan for videre oppfølging</li>
+                    <ul>
+                        <li>En oppfølgingssamtale handler om</li>
+                        <li>gjennomgang av arbeidsoppgaver</li>
+                        <li>
+                            vurdering av hvilke oppgaver som kan gjennomføres med eller uten
+                            tilrettelegging eventuelt alternative arbeidsoppgaver
+                        </li>
+                        <li>plan for videre oppfølging</li>
+                    </ul>
                 </div>
                 <div className="ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn">
                     <Element>Noen tips til egen forberedelse før samtalen</Element>
-                    <li>Hva er dine mål med samtalen?</li>
-                    <li>
-                        Hvordan er din relasjon og holdninger til medarbeideren, og hvordan kan
-                        dette påvirke dialogen?
-                    </li>
-                    <li>
-                        Hva har du observert? Du kan være tydelig på dine observasjoner og hvordan
-                        du tolker disse, men gi medarbeideren anledning til å korrigere hvis du har
-                        tatt feil.
-                    </li>
-                    <li>
-                        Hvilke tilretteleggingsmuligheter finnes på egen arbeidsplass og eventuelt
-                        ellers i organisasjonen og hvor er grensene for ditt handlingsrom?
-                    </li>
-                    <li>
-                        <Lenke href="https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap">
-                            Les mer om tilrettelegging
-                        </Lenke>
-                    </li>
-                    <li>
-                        <Lenke href="https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge">
-                            Les mer om NAVs virkemidler
-                        </Lenke>
-                    </li>
+                    <ul>
+                        <li>Hva er dine mål med samtalen?</li>
+                        <li>
+                            Hvordan er din relasjon og holdninger til medarbeideren, og hvordan kan
+                            dette påvirke dialogen?
+                        </li>
+                        <li>
+                            Hva har du observert? Du kan være tydelig på dine observasjoner og
+                            hvordan du tolker disse, men gi medarbeideren anledning til å korrigere
+                            hvis du har tatt feil.
+                        </li>
+                        <li>
+                            Hvilke tilretteleggingsmuligheter finnes på egen arbeidsplass og
+                            eventuelt ellers i organisasjonen og hvor er grensene for ditt
+                            handlingsrom?
+                        </li>
+                        <li>
+                            <Lenke href="https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap">
+                                Les mer om tilrettelegging
+                            </Lenke>
+                        </li>
+                        <li>
+                            <Lenke href="https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge">
+                                Les mer om NAVs virkemidler
+                            </Lenke>
+                        </li>
+                    </ul>
                     <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         <Element>Praktiske råd</Element>
-                        <li>Avtal tid og sted som passer deg og medarbeideren.</li>
-                        <li>
-                            Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis det
-                            passer best.
-                        </li>
-                        <li>
-                            Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Du kan
-                            for eksempel sende spørsmål dere skal snakke om på forhånd. Når begge er
-                            forberedt, blir det enklere å finne løsninger sammen.
-                        </li>
+                        <ul>
+                            <li>Avtal tid og sted som passer deg og medarbeideren.</li>
+                            <li>
+                                Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis
+                                det passer best.
+                            </li>
+                            <li>
+                                Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Du
+                                kan for eksempel sende spørsmål dere skal snakke om på forhånd. Når
+                                begge er forberedt, blir det enklere å finne løsninger sammen.
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </EkspanderbartInfopanel>
@@ -106,25 +117,28 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Vanlige tema i innledning:
                     </Element>
-                    <li>Ønske velkommen</li>
-                    <li>Informere om tidsrammene for møtet</li>
-                    <li>Informere om målet med møtet</li>
-                    <li>Gå igjennom agenda</li>
-                    <li>Spørre hva medarbeideren tenker om mål og agenda</li>
-
+                    <ul>
+                        <li>Ønske velkommen</li>
+                        <li>Informere om tidsrammene for møtet</li>
+                        <li>Informere om målet med møtet</li>
+                        <li>Gå igjennom agenda</li>
+                        <li>Spørre hva medarbeideren tenker om mål og agenda</li>
+                    </ul>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Eksempler på spørsmål:
                     </Element>
-                    <li>Hvordan vil du beskrive arbeidsdagen din?</li>
-                    <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
-                    <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
-                    <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
-                    <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
-                    <li>Hvordan vil du beskrive stressnivået?</li>
-                    <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
-                    <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
-                    <li>Hva motiverer deg mest akkurat nå?</li>
-                    <li>Hva oppfatter du som dine styrker nå?</li>
+                    <ul>
+                        <li>Hvordan vil du beskrive arbeidsdagen din?</li>
+                        <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
+                        <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
+                        <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
+                        <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
+                        <li>Hvordan vil du beskrive stressnivået?</li>
+                        <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
+                        <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
+                        <li>Hva motiverer deg mest akkurat nå?</li>
+                        <li>Hva oppfatter du som dine styrker nå?</li>
+                    </ul>
                 </div>
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
@@ -142,24 +156,28 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Vanlige tema i samtalen om arbeidssituasjonen:
                     </Element>
-                    <li>arbeidsoppgaver</li>
-                    <li>arbeidstid</li>
-                    <li>samarbeid</li>
-                    <li>arbeidsmiljø</li>
-                    <li>tidligere tiltak</li>
+                    <ul>
+                        <li>arbeidsoppgaver</li>
+                        <li>arbeidstid</li>
+                        <li>samarbeid</li>
+                        <li>arbeidsmiljø</li>
+                        <li>tidligere tiltak</li>
+                    </ul>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Eksempler på spørsmål:
                     </Element>
-                    <li> Hvordan vil du beskrive arbeidsdagen din?</li>
-                    <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
-                    <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
-                    <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
-                    <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
-                    <li>Hvordan vil du beskrive stressnivået?</li>
-                    <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
-                    <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
-                    <li>Hva motiverer deg mest akkurat nå?</li>
-                    <li>Hva oppfatter du som dine styrker nå?</li>
+                    <ul>
+                        <li> Hvordan vil du beskrive arbeidsdagen din?</li>
+                        <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
+                        <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
+                        <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
+                        <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
+                        <li>Hvordan vil du beskrive stressnivået?</li>
+                        <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
+                        <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
+                        <li>Hva motiverer deg mest akkurat nå?</li>
+                        <li>Hva oppfatter du som dine styrker nå?</li>
+                    </ul>
                 </div>
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
@@ -187,47 +205,53 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 </Element>
 
                 <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                    <li>Tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
-                    <li>Tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
-                    <li>Tilpasse organisering av arbeidet</li>
-                    <li>Tilpasse samarbeid og samhandling med andre</li>
-                    <li>alternative arbeidsoppgaver</li>
-                    <li>behov for informasjon og tilbakemeldinger</li>
-                    <li>arbeidsmiljø</li>
-                    <li>kompetanse</li>
-                    <li>fysisk utforming av arbeidsplassen</li>
-                    <li>
-                        <Lenke
-                            href={'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse'}
-                        >
-                            hjelpemidler
-                        </Lenke>
-                    </li>
+                    <ul>
+                        <li>Tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
+                        <li>Tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
+                        <li>Tilpasse organisering av arbeidet</li>
+                        <li>Tilpasse samarbeid og samhandling med andre</li>
+                        <li>alternative arbeidsoppgaver</li>
+                        <li>behov for informasjon og tilbakemeldinger</li>
+                        <li>arbeidsmiljø</li>
+                        <li>kompetanse</li>
+                        <li>fysisk utforming av arbeidsplassen</li>
+                        <li>
+                            <Lenke
+                                href={
+                                    'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse'
+                                }
+                            >
+                                hjelpemidler
+                            </Lenke>
+                        </li>
 
-                    <li>andre forhold</li>
-                    <li>
-                        <Lenke href={'kommer'}>måter å tilrettelegge på</Lenke>
-                    </li>
+                        <li>andre forhold</li>
+                        <li>
+                            <Lenke href={'kommer'}>måter å tilrettelegge på</Lenke>
+                        </li>
+                    </ul>
                 </div>
                 <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                     Eksempler på spørsmål:
                 </Element>
-                <li> Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
-                <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
-                <li>Hvordan bør tiden disponeres?</li>
-                <li>
-                    Hvordan kan endringer i tempo, arbeidstid eller arbeidssted øke mulighetene for
-                    arbeid?
-                </li>
-                <li>
-                    Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt eller
-                    delvis?
-                </li>
-                <li>Hvilke løsninger ser du for deg?</li>
-                <li>Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?</li>
-                <li>Hvordan ser du for deg veien videre?</li>
-                <li>Hvordan ser du for deg det videre sykmeldingsforløpet?</li>
-                <li>Hvilke tiltak bør vi prøve først?</li>
+                <ul>
+                    <li> Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
+                    <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
+                    <li>Hvordan bør tiden disponeres?</li>
+                    <li>
+                        Hvordan kan endringer i tempo, arbeidstid eller arbeidssted øke mulighetene
+                        for arbeid?
+                    </li>
+                    <li>
+                        Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt eller
+                        delvis?
+                    </li>
+                    <li>Hvilke løsninger ser du for deg?</li>
+                    <li>Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?</li>
+                    <li>Hvordan ser du for deg veien videre?</li>
+                    <li>Hvordan ser du for deg det videre sykmeldingsforløpet?</li>
+                    <li>Hvilke tiltak bør vi prøve først?</li>
+                </ul>
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
                 tittel={'Slik avslutter du samtalen'}
@@ -247,14 +271,17 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     Vanlige tema i avslutningen:
                 </Element>
                 <Normaltekst>
-                    <li>avtaler, tilrettelegginger og tiltak</li>
-                    <li>om tilrettelegging er midlertidig eller permanent</li>
-                    <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
-                    <li>
-                        dato for neste samtale og hvor ofte oppfølgingssamtaler skal gjennomføres
-                    </li>
-                    <li>hvem som er ansvarlig for å følge opp</li>
-                    <li>om det er behov for videre avklaring eller hjelp fra andre</li>
+                    <ul>
+                        <li>avtaler, tilrettelegginger og tiltak</li>
+                        <li>om tilrettelegging er midlertidig eller permanent</li>
+                        <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
+                        <li>
+                            dato for neste samtale og hvor ofte oppfølgingssamtaler skal
+                            gjennomføres
+                        </li>
+                        <li>hvem som er ansvarlig for å følge opp</li>
+                        <li>om det er behov for videre avklaring eller hjelp fra andre</li>
+                    </ul>
                 </Normaltekst>
 
                 <div className="ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn">
@@ -271,4 +298,4 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             </EkspanderbartInfopanel>
         </>
     );
-}
+};
