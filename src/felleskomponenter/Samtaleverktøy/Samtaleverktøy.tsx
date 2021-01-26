@@ -10,8 +10,8 @@ export const Samtaleverktøy: FunctionComponent = () => {
         <>
             <Systemtittel className="samtaleverktøy__tittel">Samtaleverktøy</Systemtittel>
             <EkspanderbartInfopanel
-                tittel={'Når kan oppfølgingssamtale være aktuelt?'}
-                unikId={'nå-kan-være-samtalen-aktuelt'}
+                tittel={'Når kan en samtale om arbeidssituasjonen være aktuelt?'}
+                unikId={'når-kan-en-samtale-om-arbeidssituasjonen-være-aktuelt?'}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     En oppfølgingssamtale gjennomføres hvis du eller din medarbeider opplever

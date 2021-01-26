@@ -238,10 +238,16 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     En samtale avsluttes med at du og medarbeideren oppsummerer.
                 </Normaltekst>
                 <Element>
-                    Når medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
+                    Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
                 </Element>
                 <Normaltekst>
-                    <Lenke href={'kommer'}>Les mer om lovverket</Lenke>
+                    <Lenke
+                        href={
+                            'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap'
+                        }
+                    >
+                        Les mer om oppfølgingsplan
+                    </Lenke>
                 </Normaltekst>
                 <Element className={'ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn'}>
                     Vanlige tema i avslutningen:
@@ -271,4 +277,4 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             </EkspanderbartInfopanel>
         </>
     );
-}
+};
