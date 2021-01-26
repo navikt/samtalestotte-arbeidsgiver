@@ -14,9 +14,16 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 unikId={'når-kan-en-samtale-om-arbeidssituasjonen-være-aktuelt?'}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    En oppfølgingssamtale gjennomføres hvis du eller din medarbeider opplever
-                    utfordringer med arbeidet. Utfordringer kan for eksempel skyldes sykdom eller
-                    andre forhold. Du bør ikke vente til medarbeideren har blitt sykmeldt.
+                    En samtale om arbeidssituasjonen gjennomføres hvis
+                    <ul className="samtaleverktøy__ul_tett">
+                        <li>
+                            Du eller din medarbeider opplever utfordringer med arbeidet og det
+                            skyldes sykdom eller andre forhold.
+                        </li>
+                        <li>Medarbeideren står i fare for å bli sykmeldt.</li>
+                        <li>Medarbeideren er sykmeldt.</li>
+                        <li>Medarbeideren har vært sykmeldt </li>
+                    </ul>
                 </Normaltekst>
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     Det finnes ingen oppskrift på en god samtale som gjelder alle situasjoner. Men
@@ -51,8 +58,8 @@ export const Samtaleverktøy: FunctionComponent = () => {
                     </ul>
                 </Normaltekst>
                 <UndertekstBold className="ekspanderbart-infopanel__innhold">
-                    Husk at sykefravær ikke er en privatsak, det påvirker arbeidsplassen. Diagnose,
-                    behandling og forhold hjemme er privat.
+                    Husk at sykefravær ikke er en privatsak, det påvirker arbeidsplassen.
+                    <br /> Diagnose, behandling og forhold hjemme er privat.
                 </UndertekstBold>
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
@@ -63,13 +70,11 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     <ul>
                         <li>Lytt til hva medarbeideren har å si</li>
-                        <li>
-                            Snakk om arbeidsevne ikke diagnose
-                            <li>Bygg på medarbeiderens motivasjon</li>
-                        </li>
+                        <li>Snakk om arbeidsevne ikke diagnose</li>
+                        <li>Bygg på medarbeiderens motivasjon</li>
                         <li>La medarbeideren komme med de gode løsningene</li>
                         <li>Ikke hopp rett til konklusjoner og løsninger</li>
-                        <li>Gjennomfør oppfølgingssamtaler regelmessigr</li>
+                        <li>Gjennomfør samtaler regelmessig</li>
                     </ul>
                 </Normaltekst>
             </EkspanderbartInfopanel>
