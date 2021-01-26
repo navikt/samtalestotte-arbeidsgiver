@@ -27,7 +27,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Element>Lederens rolle i en samtale om arbeidssituasjonen</Element>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>
                             Du er ansvarlig for å gjennomføre og dokumentere oppfølgingssamtaler.
                         </li>
@@ -37,7 +37,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Kjente fallgruver:
                     </Element>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>Du påtar deg for stort ansvar for helsa til medarbeideren</li>
                         <li>Fokuset handler om behandling eller forhold i privatlivet</li>
                     </ul>
@@ -45,7 +45,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                         Tema for samtalen
                     </Element>
                     <span>En samtale om arbeidssituasjon handler om</span>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>gjennomgang av arbeidsoppgaver</li>
                         <li>
                             vurdering av hvilke oppgaver som kan gjennomføres med eller uten
@@ -56,7 +56,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 </div>
                 <div className="ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn">
                     <Element>Noen tips til egen forberedelse før samtalen</Element>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>Hva er dine mål med samtalen?</li>
                         <li>
                             Hvordan er din relasjon og holdninger til medarbeideren, og hvordan kan
@@ -85,7 +85,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     </ul>
                     <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         <Element>Praktiske råd</Element>
-                        <ul>
+                        <ul className="ekspanderbart-infopanel__ul-tett">
                             <li>Avtal tid og sted som passer deg og medarbeideren.</li>
                             <li>
                                 Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis
@@ -117,7 +117,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Vanlige tema i innledning:
                     </Element>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>ønske velkommen</li>
                         <li>informere om tidsrammene for møtet</li>
                         <li>informere om målet med møtet</li>
@@ -141,7 +141,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Vanlige tema i samtalen om arbeidssituasjonen:
                     </Element>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>arbeidsoppgaver</li>
                         <li>arbeidstid</li>
                         <li>samarbeid</li>
@@ -151,7 +151,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Eksempler på spørsmål:
                     </Element>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>Hvordan vil du beskrive arbeidsdagen din?</li>
                         <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
                         <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
@@ -192,7 +192,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
 
                 <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                     <Element>Vanlige tema når dere finner løsninger sammen:</Element>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
                         <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
                         <li>tilpasse organisering av arbeidet</li>
@@ -218,7 +218,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                     Eksempler på spørsmål:
                 </Element>
-                <ul>
+                <ul className="ekspanderbart-infopanel__ul-tett">
                     <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
                     <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
                     <li>Hvordan bør tiden disponeres?</li>
@@ -262,7 +262,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     Vanlige tema i avslutningen:
                 </Element>
                 <Normaltekst>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>avtaler, tilrettelegginger og tiltak</li>
                         <li>om tilrettelegging er midlertidig eller permanent</li>
                         <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
