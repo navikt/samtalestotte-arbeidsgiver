@@ -8,16 +8,12 @@ type SvarProps = {
     name: string;
     callback: Dispatch<SetStateAction<SvarType>>;
     svar: SvarType;
-    cookieSvar: string;
-    callbackCookie: Dispatch<string>;
 };
 
 export const Svar: FunctionComponent<SvarProps> = ({
     name,
     callback,
-    svar,
-    callbackCookie,
-    cookieSvar,
+    svar
 }) => {
     return (
         <RadioGruppe className="svar__radio-gruppe">
@@ -26,14 +22,12 @@ export const Svar: FunctionComponent<SvarProps> = ({
                 label={'Ja'}
                 name={`svar-ja-${name}`}
                 value={svar}
-                checked={svar === 'ja' || cookieSvar === 'ja'}
+                checked={svar === 'ja'}
                 onClick={() => {
                     if (svar !== 'ja') {
                         callback('ja');
-                        callbackCookie('ja');
                     } else {
                         callback(undefined);
-                        callbackCookie('undefined');
                     }
                 }}
                 className="svar__radio-box"
@@ -43,14 +37,12 @@ export const Svar: FunctionComponent<SvarProps> = ({
                 label={'Nei'}
                 name={`svar-nei-${name}`}
                 value={svar}
-                checked={svar === 'nei' || cookieSvar === 'nei'}
+                checked={svar === 'nei'}
                 onClick={() => {
                     if (svar !== 'nei') {
                         callback('nei');
-                        callbackCookie('nei');
                     } else {
                         callback(undefined);
-                        callbackCookie('undefined');
                     }
                 }}
                 className="svar__radio-box"
