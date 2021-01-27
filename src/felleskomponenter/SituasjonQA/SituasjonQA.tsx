@@ -34,6 +34,7 @@ export const SituasjonQA: FunctionComponent = () => {
             {forutsigbar === 'nei' && (
                 <ForutsigbarInfopanelSvarNei />
             )}
+            <div className="skillelinje"/>
             <Undertittel className="situasjonqa__undertittel">
                 Var rutinene kjent for både deg og medarbeideren i forkant av samtalen?
             </Undertittel>
@@ -44,6 +45,7 @@ export const SituasjonQA: FunctionComponent = () => {
             {kjent === 'nei' && (
                 <KjentInfopanelSvarNei />
             )}
+            <div className="skillelinje"/>
             <Undertittel className="situasjonqa__undertittel">
                 Kjente du og medarbeideren til tilretteleggingsmuligheter på egen arbeidsplass?
             </Undertittel>
@@ -54,6 +56,7 @@ export const SituasjonQA: FunctionComponent = () => {
             {tillrettelagt === 'nei' && (
                 <TillrettelagtInfopanelSvarNei />
             )}
+            <div className="skillelinje"/>
             {(forutsigbar === 'nei' || kjent === 'nei' || tillrettelagt === 'nei') && (
                 <InfoPanelEnNei />
             )}
