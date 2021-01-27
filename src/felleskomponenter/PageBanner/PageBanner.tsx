@@ -1,5 +1,4 @@
 import {Sidetittel} from 'nav-frontend-typografi';
-//import { HeaderIcon } from '../icons/HeaderIcon';
 import './PageBanner.less';
 
 export const PageBanner = (props: { isFrontPage: boolean; title: string; iconUrl: string }) => {

@@ -1,9 +1,8 @@
-import { FunctionComponent } from 'react';
-import { Normaltekst, Systemtittel, UndertekstBold } from 'nav-frontend-typografi';
-import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import {FunctionComponent} from 'react';
+import {Normaltekst, Systemtittel, UndertekstBold} from 'nav-frontend-typografi';
+import {EkspanderbartInfopanel} from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './Samtaleverktøy.less';
-import { LyspæreSVG } from './LyspæreSVG';
-//import { ReactComponent as Lyspære } from './lyspære.svg';
+import {LyspæreSVG} from './LyspæreSVG';
 
 export const Samtaleverktøy: FunctionComponent = () => {
     return (
