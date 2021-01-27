@@ -1,7 +1,6 @@
 import { Dispatch, FunctionComponent, SetStateAction } from 'react';
 import { Radio, RadioGruppe } from 'nav-frontend-skjema';
 import './Svar.less';
-import useCookie from 'react-use-cookie';
 
 export type SvarType = 'ja' | 'nei' | undefined;
 
@@ -9,10 +8,17 @@ type SvarProps = {
     name: string;
     callback: Dispatch<SetStateAction<SvarType>>;
     svar: SvarType;
+    cookieSvar: string;
     callbackCookie: Dispatch<string>;
 };
 
-export const Svar: FunctionComponent<SvarProps> = ({ name, callback, svar, callbackCookie }) => {
+export const Svar: FunctionComponent<SvarProps> = ({
+    name,
+    callback,
+    svar,
+    callbackCookie,
+    cookieSvar,
+}) => {
     return (
         <RadioGruppe className="svar__radio-gruppe">
             <Radio
@@ -20,7 +26,7 @@ export const Svar: FunctionComponent<SvarProps> = ({ name, callback, svar, callb
                 label={'Ja'}
                 name={`svar-ja-${name}`}
                 value={svar}
-                checked={svar === 'ja'}
+                checked={svar === 'ja' || cookieSvar === 'ja'}
                 onClick={() => {
                     if (svar !== 'ja') {
                         callback('ja');
@@ -37,7 +43,7 @@ export const Svar: FunctionComponent<SvarProps> = ({ name, callback, svar, callb
                 label={'Nei'}
                 name={`svar-nei-${name}`}
                 value={svar}
-                checked={svar === 'nei'}
+                checked={svar === 'nei' || cookieSvar === 'nei'}
                 onClick={() => {
                     if (svar !== 'nei') {
                         callback('nei');

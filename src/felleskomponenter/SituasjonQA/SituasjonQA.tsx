@@ -20,13 +20,13 @@ export const SituasjonQA: FunctionComponent = () => {
     const [tillrettelagt, setTillrettelagt] = useState<SvarType>(undefined);
     const [userTokenForutsigbar, setUserTokenForutsigbar] = useCookie(
         'SamtalestotteArbeidsgiverSvar-forutsigbarhet',
-        'ikke-svar-enda'
+        'undefined'
     );const [userTokenKjent, setUserTokenKjent] = useCookie(
         'SamtalestotteArbeidsgiverSvar-kjent',
-        'ikke-svar-enda'
+        'undefined'
     );const [userTokenTilrettelagt, setUserTokentilrettelagt] = useCookie(
         'SamtalestotteArbeidsgiverSvar-tilrettelagt',
-        'ikke-svar-enda'
+        'undefined'
     );
     return (
         <div className="situasjonqa">
@@ -38,7 +38,7 @@ export const SituasjonQA: FunctionComponent = () => {
                 Bidro sykefraværsrutinene på arbeidsplassen til forutsigbarhet rundt oppgaver og
                 ansvar?
             </Undertittel>
-            <Svar name="forutsigbar" callback={setForutsigbar} svar={forutsigbar} callbackCookie={setUserTokenForutsigbar} />
+            <Svar name="forutsigbar" callback={setForutsigbar} svar={forutsigbar} cookieSvar={userTokenForutsigbar} callbackCookie={setUserTokenForutsigbar} />
             {forutsigbar === 'ja' && (
                 <ForutsigbarInfopanelSvarJa />
             )}
@@ -48,7 +48,7 @@ export const SituasjonQA: FunctionComponent = () => {
             <Undertittel className="situasjonqa__undertittel">
                 Var rutinene kjent for både deg og medarbeideren i forkant av samtalen?
             </Undertittel>
-            <Svar name="kjent" callback={setKjent} svar={kjent} callbackCookie={setUserTokenKjent} />
+            <Svar name="kjent" callback={setKjent} svar={kjent} cookieSvar={userTokenKjent} callbackCookie={setUserTokenKjent} />
             {kjent === 'ja' && (
                 <KjentInfopanelSvarJa />
             )}
@@ -58,7 +58,7 @@ export const SituasjonQA: FunctionComponent = () => {
             <Undertittel className="situasjonqa__undertittel">
                 Kjente du og medarbeideren til tilretteleggingsmuligheter på egen arbeidsplass?
             </Undertittel>
-            <Svar name="tillrettelagt" callback={setTillrettelagt} svar={tillrettelagt} callbackCookie={setUserTokentilrettelagt} />
+            <Svar name="tillrettelagt" callback={setTillrettelagt} svar={tillrettelagt} cookieSvar={userTokenTilrettelagt} callbackCookie={setUserTokentilrettelagt} />
             {tillrettelagt === 'ja' && (
                 <TillrettelagtInfopanelSvarJa />
             )}
