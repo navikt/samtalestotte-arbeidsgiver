@@ -14,7 +14,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
     return (
         <>
             <Systemtittel className="oppfølgingssamtaleGjennomføring__tittel">
-                Slik gjennomfører du en samtale om arbeidssituasjonen
+                Slik gjennomfører du en nyttig samtale om arbeidssituasjonen
             </Systemtittel>
             <Ingress className="oppfølgingssamtaleGjennomføring__ingress">
                 Samtalen kan deles inn i faser, vi har gjort det enkelt for deg å forstå innholdet
@@ -29,7 +29,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element>Lederens rolle i en samtale om arbeidssituasjonen</Element>
                     <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>
-                            Du er ansvarlig for å gjennomføre og dokumentere oppfølgingssamtaler.
+                            Du er ansvarlig for å gjennomføre og dokumentere samtaler om arbeidssituasjonen
                         </li>
                         <li>Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen</li>
                         <li>Din viktigste oppgave er å få medarbeideren til å snakke</li>
@@ -110,9 +110,8 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Normaltekst>
-                        Innled samtalen med å klargjøre mål og hensikt
-                        <br />Å innlede en samtale handler om å skape trygghet og sette rammer for
-                        samtalen. Rammene hjelper dere med å holde fokus og tid.
+                        Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.
+                        <br />Rammene hjelper dere med å holde fokus og tid.
                     </Normaltekst>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Vanlige tema i innledning:

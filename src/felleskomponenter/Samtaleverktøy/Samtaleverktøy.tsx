@@ -34,7 +34,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 unikId={'Dette-kan-du-spørre-medarbeideren-om'}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    Du kan stille spørsmål til medarbeider som handler om forhold på arbeidsplassen.
+                    Du kan stille spørsmål til medarbeideren som handler om forhold på arbeidsplassen.
                 </Normaltekst>
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     <ul>
