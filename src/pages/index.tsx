@@ -4,7 +4,7 @@ import { getPageProps, PageProps } from '../pageProps';
 import './index.less';
 import { Samtaleverktøy } from '../felleskomponenter/Samtaleverktøy/Samtaleverktøy';
 import { OppfølgingssamtaleGjennomføring } from '../felleskomponenter/OppfølgingssamtaleGjennomføring/OppfølgingssamtaleGjennomføring';
-import {SituasjonQA} from "../felleskomponenter/SituasjonQA/SituasjonQA";
+import { SituasjonQA } from '../felleskomponenter/SituasjonQA/SituasjonQA';
 
 const Home = (props: { page: PageProps }) => {
     return (
@@ -22,8 +22,8 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                 >
                     <Samtaleverktøy />
-                    <OppfølgingssamtaleGjennomføring/>
-                    <SituasjonQA/>
+                    <OppfølgingssamtaleGjennomføring />
+                    <SituasjonQA />
                 </Layout>
             </main>
 
