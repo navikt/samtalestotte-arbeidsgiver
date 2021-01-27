@@ -1,10 +1,11 @@
-import {PageBanner} from '../PageBanner/PageBanner';
-import {DecoratorHeader} from '../decorator/DecoratorHeader';
-import {DecoratorFooter} from '../decorator/DecoratorFooter';
+import { PageBanner } from '../PageBanner/PageBanner';
+import { DecoratorHeader } from '../decorator/DecoratorHeader';
+import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
-import {DecoratorParts} from '../../utils/dekorator';
-import {DecoratorEnv} from '../decorator/DecoratorEnv';
+import { DecoratorParts } from '../../utils/dekorator';
+import { DecoratorEnv } from '../decorator/DecoratorEnv';
 import './Layout.less';
+import { CookiesProvider } from 'react-cookie';
 
 export const Layout = (props: {
     title: string;
@@ -29,14 +30,16 @@ export const Layout = (props: {
                 }
             />
             <div id="app" className="app">
-                <PageBanner
-                    isFrontPage={true}
-                    title={props.title}
-                    iconUrl={props.bannerIconUrl === undefined ? '' : props.bannerIconUrl}
-                />
-                <div className="layout__wrapper">
-                    <div className="layout__content">{props.children}</div>
-                </div>
+                <CookiesProvider>
+                    <PageBanner
+                        isFrontPage={true}
+                        title={props.title}
+                        iconUrl={props.bannerIconUrl === undefined ? '' : props.bannerIconUrl}
+                    />
+                    <div className="layout__wrapper">
+                        <div className="layout__content">{props.children}</div>
+                    </div>
+                </CookiesProvider>
             </div>
             <DecoratorFooter
                 html={

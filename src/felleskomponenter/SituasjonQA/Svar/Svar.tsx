@@ -2,13 +2,13 @@ import React, { FunctionComponent } from 'react';
 import { RadioPanelGruppe } from 'nav-frontend-skjema';
 import './Svar.less';
 
-export type SvarType = 'ja' | 'nei' | undefined
+export type SvarType = 'ja' | 'nei' | undefined;
 
-type SvarProps =     {
+type SvarProps = {
     name: string;
     callback: (svar: SvarType) => any
     svar: SvarType;
-}
+};
 
 export const Svar: FunctionComponent<SvarProps> = ({name, callback, svar}) => {
     const toggleCallback = (value: SvarType) => {
