@@ -14,7 +14,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
     return (
         <>
             <Systemtittel className="oppfølgingssamtaleGjennomføring__tittel">
-                Slik gjennomfører du en 'riktig ord kommer' oppfølgingssamtale
+                Slik gjennomfører du en nyttig samtale om arbeidssituasjonen
             </Systemtittel>
             <Ingress className="oppfølgingssamtaleGjennomføring__ingress">
                 Samtalen kan deles inn i faser, vi har gjort det enkelt for deg å forstå innholdet
@@ -26,29 +26,26 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 ikon={<Steg1SVG />}
             >
                 <div className="ekspanderbart-infopanel__innhold">
-                    <Element>Lederens rolle i en oppfølgingssamtale</Element>
-                    <ul>
+                    <Element>Lederens rolle i en samtale om arbeidssituasjonen</Element>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>
-                            Du er ansvarlig for å gjennomføre og dokumentere oppfølgingssamtaler.
+                            Du er ansvarlig for å gjennomføre og dokumentere samtaler om arbeidssituasjonen
                         </li>
-                        <li>
-                            Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen, se
-                            mer i tema for oppfølgingssamtalen
-                        </li>
+                        <li>Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen</li>
                         <li>Din viktigste oppgave er å få medarbeideren til å snakke</li>
                     </ul>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Kjente fallgruver:
                     </Element>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>Du påtar deg for stort ansvar for helsa til medarbeideren</li>
                         <li>Fokuset handler om behandling eller forhold i privatlivet</li>
                     </ul>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                        Tema for oppfølgingssamtalen
+                        Tema for samtalen
                     </Element>
-                    <ul>
-                        <li>En oppfølgingssamtale handler om</li>
+                    <span>En samtale om arbeidssituasjon handler om</span>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>gjennomgang av arbeidsoppgaver</li>
                         <li>
                             vurdering av hvilke oppgaver som kan gjennomføres med eller uten
@@ -59,7 +56,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 </div>
                 <div className="ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn">
                     <Element>Noen tips til egen forberedelse før samtalen</Element>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>Hva er dine mål med samtalen?</li>
                         <li>
                             Hvordan er din relasjon og holdninger til medarbeideren, og hvordan kan
@@ -88,16 +85,19 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     </ul>
                     <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         <Element>Praktiske råd</Element>
-                        <ul>
+                        <ul className="ekspanderbart-infopanel__ul-tett">
                             <li>Avtal tid og sted som passer deg og medarbeideren.</li>
                             <li>
                                 Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis
                                 det passer best.
                             </li>
                             <li>
-                                Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Du
-                                kan for eksempel sende spørsmål dere skal snakke om på forhånd. Når
+                                Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når
                                 begge er forberedt, blir det enklere å finne løsninger sammen.
+                            </li>
+                            <li>
+                                Du kan sende spørsmål til medarbeideren på forhånd. Velg noen av de
+                                viktigste for deg fra eksemplene i fase tre og fire
                             </li>
                         </ul>
                     </div>
@@ -109,25 +109,48 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 ikon={<Steg2SVG />}
             >
                 <div className="ekspanderbart-infopanel__innhold">
-                    <Element>Innled samtalen med å klargjøre mål og hensikt</Element>
                     <Normaltekst>
-                        Å innlede en samtale handler om å skape trygghet og sette rammer for
-                        samtalen. Rammene hjelper dere med å holde fokus og tid.
+                        Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.
+                        <br />Rammene hjelper dere med å holde fokus og tid.
                     </Normaltekst>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Vanlige tema i innledning:
                     </Element>
-                    <ul>
-                        <li>Ønske velkommen</li>
-                        <li>Informere om tidsrammene for møtet</li>
-                        <li>Informere om målet med møtet</li>
-                        <li>Gå igjennom agenda</li>
-                        <li>Spørre hva medarbeideren tenker om mål og agenda</li>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
+                        <li>ønske velkommen</li>
+                        <li>informere om tidsrammene for møtet</li>
+                        <li>informere om målet med møtet</li>
+                        <li>gå igjennom agenda</li>
+                        <li>spørre hva medarbeideren tenker om mål og agenda</li>
+                    </ul>
+                </div>
+            </EkspanderbartInfopanel>
+            <EkspanderbartInfopanel
+                tittel={'Slik snakker dere om arbeidssituasjonen'}
+                unikId={'Slik-snakker-dere-om-arbeidssituasjonen'}
+                ikon={<Steg3SVG />}
+            >
+                <div className="ekspanderbart-infopanel__innhold">
+                    <Normaltekst>
+                        En samtale om arbeidssituasjonen handler om medarbeideren. Din oppgave er å
+                        legge til rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene
+                        og arbeidsdagen oppleves. Unngå å stille for mange spørsmål etter hverandre
+                        uten å la medarbeideren få tid til å svare.
+                    </Normaltekst>
+                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        Vanlige tema i samtalen om arbeidssituasjonen:
+                    </Element>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
+                        <li>arbeidsoppgaver</li>
+                        <li>arbeidstid</li>
+                        <li>samarbeid</li>
+                        <li>arbeidsmiljø</li>
+                        <li>tidligere tiltak</li>
                     </ul>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Eksempler på spørsmål:
                     </Element>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>Hvordan vil du beskrive arbeidsdagen din?</li>
                         <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
                         <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
@@ -139,45 +162,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                         <li>Hva motiverer deg mest akkurat nå?</li>
                         <li>Hva oppfatter du som dine styrker nå?</li>
                     </ul>
-                </div>
-            </EkspanderbartInfopanel>
-            <EkspanderbartInfopanel
-                tittel={'Slik snakker dere om arbeidssituasjonen'}
-                unikId={'Slik-snakker-dere-om-arbeidssituasjonen'}
-                ikon={<Steg3SVG />}
-            >
-                <div className="ekspanderbart-infopanel__innhold">
-                    <Normaltekst>
-                        En oppfølgingssamtale handler om medarbeideren. Din oppgave er å legge til
-                        rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene og
-                        arbeidsdagen oppleves. Unngå å stille for mange spørsmål etter hverandre
-                        uten å la medarbeideren få tid til å svare.
-                    </Normaltekst>
-                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                        Vanlige tema i samtalen om arbeidssituasjonen:
-                    </Element>
-                    <ul>
-                        <li>arbeidsoppgaver</li>
-                        <li>arbeidstid</li>
-                        <li>samarbeid</li>
-                        <li>arbeidsmiljø</li>
-                        <li>tidligere tiltak</li>
-                    </ul>
-                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                        Eksempler på spørsmål:
-                    </Element>
-                    <ul>
-                        <li> Hvordan vil du beskrive arbeidsdagen din?</li>
-                        <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
-                        <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
-                        <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
-                        <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
-                        <li>Hvordan vil du beskrive stressnivået?</li>
-                        <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
-                        <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
-                        <li>Hva motiverer deg mest akkurat nå?</li>
-                        <li>Hva oppfatter du som dine styrker nå?</li>
-                    </ul>
+                    <p>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
                 </div>
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
@@ -196,20 +181,21 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                         'ekspanderbart-infopanel__innhold-display-flex'
                     )}
                 >
-                    Husk&nbsp;
                     <Normaltekst>
-                        at dersom medarbeideren har negativer erfaringer, for eksempel at tiltak
-                        ikke har fungert bør du anerkjenne dette. Fokuset bør ligge framover i tid
-                        og på hvilke muligheter som finnes.
+                        <span className="ekspanderbart-infopanel__innhold-bold">Husk</span> at
+                        dersom medarbeideren har negative erfaringer, for eksempel at tiltak ikke
+                        har fungert bør du anerkjenne dette. Fokuset bør ligge framover i tid og på
+                        hvilke muligheter som finnes.
                     </Normaltekst>
                 </Element>
 
                 <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                    <ul>
-                        <li>Tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
-                        <li>Tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
-                        <li>Tilpasse organisering av arbeidet</li>
-                        <li>Tilpasse samarbeid og samhandling med andre</li>
+                    <Element>Vanlige tema når dere finner løsninger sammen:</Element>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
+                        <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
+                        <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
+                        <li>tilpasse organisering av arbeidet</li>
+                        <li>tilpasse samarbeid og samhandling med andre</li>
                         <li>alternative arbeidsoppgaver</li>
                         <li>behov for informasjon og tilbakemeldinger</li>
                         <li>arbeidsmiljø</li>
@@ -226,16 +212,13 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                         </li>
 
                         <li>andre forhold</li>
-                        <li>
-                            <Lenke href={'kommer'}>måter å tilrettelegge på</Lenke>
-                        </li>
                     </ul>
                 </div>
                 <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                     Eksempler på spørsmål:
                 </Element>
-                <ul>
-                    <li> Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
+                <ul className="ekspanderbart-infopanel__ul-tett">
+                    <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
                     <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
                     <li>Hvordan bør tiden disponeres?</li>
                     <li>
@@ -252,6 +235,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <li>Hvordan ser du for deg det videre sykmeldingsforløpet?</li>
                     <li>Hvilke tiltak bør vi prøve først?</li>
                 </ul>
+                <span>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</span>
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
                 tittel={'Slik avslutter du samtalen'}
@@ -259,19 +243,25 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 ikon={<Steg5SVG />}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                    En samtale avsluttes med at du og medarbeideren oppsummerer.
+                    En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren
+                    oppsummerer.
+                    <br />
+                    Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
                 </Normaltekst>
-                <Element>
-                    Når medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
-                </Element>
                 <Normaltekst>
-                    <Lenke href={'kommer'}>Les mer om lovverket</Lenke>
+                    <Lenke
+                        href={
+                            'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap'
+                        }
+                    >
+                        Les mer om oppfølgingsplan
+                    </Lenke>
                 </Normaltekst>
-                <Element className={'ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn'}>
+                <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                     Vanlige tema i avslutningen:
                 </Element>
                 <Normaltekst>
-                    <ul>
+                    <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>avtaler, tilrettelegginger og tiltak</li>
                         <li>om tilrettelegging er midlertidig eller permanent</li>
                         <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
@@ -291,7 +281,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     </Normaltekst>
                     <Normaltekst>
                         Da dokumenterer du begges synspunkter i oppsummeringen eller
-                        oppfølgingsplanen.{' '}
+                        oppfølgingsplanen.
                     </Normaltekst>
                     <Element>Tips: gjennomfør flere oppfølgingssamtaler regelmessig. </Element>
                 </div>

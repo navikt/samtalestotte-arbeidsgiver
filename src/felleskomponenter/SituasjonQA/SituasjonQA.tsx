@@ -24,7 +24,7 @@ export const SituasjonQA: FunctionComponent = () => {
             </Systemtittel>
             <SlikKanDisseSpørsmåleneHjelpeDeg />
             <Undertittel className="situasjonqa__undertittel">
-                Bidrar sykefraværsrutinene på arbeidsplassen til forutsigbarhet rundt oppgaver og
+                Bidro sykefraværsrutinene på arbeidsplassen til forutsigbarhet rundt oppgaver og
                 ansvar?
             </Undertittel>
             <Svar name="forutsigbar" callback={setForutsigbar} svar={forutsigbar} />
@@ -35,7 +35,7 @@ export const SituasjonQA: FunctionComponent = () => {
                 <ForutsigbarInfopanelSvarNei />
             )}
             <Undertittel className="situasjonqa__undertittel">
-                Er rutinene kjent for både deg og medarbeideren i forkant av samtalen?
+                Var rutinene kjent for både deg og medarbeideren i forkant av samtalen?
             </Undertittel>
             <Svar name="kjent" callback={setKjent} svar={kjent} />
             {kjent === 'ja' && (
@@ -45,7 +45,7 @@ export const SituasjonQA: FunctionComponent = () => {
                 <KjentInfopanelSvarNei />
             )}
             <Undertittel className="situasjonqa__undertittel">
-                Kjenner du og medarbeideren til tilretteleggingsmuligheter på egen arbeidsplass?
+                Kjente du og medarbeideren til tilretteleggingsmuligheter på egen arbeidsplass?
             </Undertittel>
             <Svar name="tillrettelagt" callback={setTillrettelagt} svar={tillrettelagt} />
             {tillrettelagt === 'ja' && (
