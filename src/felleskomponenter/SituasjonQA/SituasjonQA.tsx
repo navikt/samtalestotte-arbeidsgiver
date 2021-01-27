@@ -11,12 +11,23 @@ import {
     KjentInfopanelSvarNei,
     TillrettelagtInfopanelSvarJa, TillrettelagtInfopanelSvarNei,
 } from './Infopaneler/Infopaneler';
+import {UseCookieVerktøy} from "../UseCookieVerktøy/UseCookieVerktøy";
+import useCookie from "react-use-cookie";
 
 export const SituasjonQA: FunctionComponent = () => {
     const [forutsigbar, setForutsigbar] = useState<SvarType>(undefined);
     const [kjent, setKjent] = useState<SvarType>(undefined);
     const [tillrettelagt, setTillrettelagt] = useState<SvarType>(undefined);
-
+    const [userTokenForutsigbar, setUserTokenForutsigbar] = useCookie(
+        'SamtalestotteArbeidsgiverSvar-forutsigbarhet',
+        'ikke-svar-enda'
+    );const [userTokenKjent, setUserTokenKjent] = useCookie(
+        'SamtalestotteArbeidsgiverSvar-kjent',
+        'ikke-svar-enda'
+    );const [userTokenTilrettelagt, setUserTokentilrettelagt] = useCookie(
+        'SamtalestotteArbeidsgiverSvar-tilrettelagt',
+        'ikke-svar-enda'
+    );
     return (
         <div className="situasjonqa">
             <Systemtittel className="situasjonqa__tittel">
@@ -27,7 +38,7 @@ export const SituasjonQA: FunctionComponent = () => {
                 Bidro sykefraværsrutinene på arbeidsplassen til forutsigbarhet rundt oppgaver og
                 ansvar?
             </Undertittel>
-            <Svar name="forutsigbar" callback={setForutsigbar} svar={forutsigbar} />
+            <Svar name="forutsigbar" callback={setForutsigbar} svar={forutsigbar} callbackCookie={setUserTokenForutsigbar} />
             {forutsigbar === 'ja' && (
                 <ForutsigbarInfopanelSvarJa />
             )}
@@ -37,7 +48,7 @@ export const SituasjonQA: FunctionComponent = () => {
             <Undertittel className="situasjonqa__undertittel">
                 Var rutinene kjent for både deg og medarbeideren i forkant av samtalen?
             </Undertittel>
-            <Svar name="kjent" callback={setKjent} svar={kjent} />
+            <Svar name="kjent" callback={setKjent} svar={kjent} callbackCookie={setUserTokenKjent} />
             {kjent === 'ja' && (
                 <KjentInfopanelSvarJa />
             )}
@@ -47,7 +58,7 @@ export const SituasjonQA: FunctionComponent = () => {
             <Undertittel className="situasjonqa__undertittel">
                 Kjente du og medarbeideren til tilretteleggingsmuligheter på egen arbeidsplass?
             </Undertittel>
-            <Svar name="tillrettelagt" callback={setTillrettelagt} svar={tillrettelagt} />
+            <Svar name="tillrettelagt" callback={setTillrettelagt} svar={tillrettelagt} callbackCookie={setUserTokentilrettelagt} />
             {tillrettelagt === 'ja' && (
                 <TillrettelagtInfopanelSvarJa />
             )}
