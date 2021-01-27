@@ -1,8 +1,10 @@
 import { FunctionComponent, useEffect, useState } from 'react';
+import dynamic from 'next/dynamic'
+import { useCookies } from 'react-cookie';
 import { Systemtittel, Undertittel } from 'nav-frontend-typografi';
 import './SituasjonQA.less';
 import { SlikKanDisseSpørsmåleneHjelpeDeg } from './SlikKanDisseSpørsmåleneHjelpeDeg/SlikKanDisseSpørsmåleneHjelpeDeg';
-import { Svar, SvarType } from './Svar/Svar';
+import { SvarType, SvarProps } from './Svar/Svar';
 import {
     ForutsigbarInfopanelSvarJa,
     ForutsigbarInfopanelSvarNei,
@@ -12,7 +14,9 @@ import {
     TillrettelagtInfopanelSvarJa,
     TillrettelagtInfopanelSvarNei,
 } from './Infopaneler/Infopaneler';
-import { useCookies } from 'react-cookie';
+
+// Svar komponenten renderer ikke riktig på serverside. Dette sørger for at den blir rendret clientside.
+const Svar = dynamic<SvarProps>(() => import("./Svar/Svar").then(module => module.Svar), {ssr: false});
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 
@@ -64,21 +68,21 @@ export const SituasjonQA: FunctionComponent = () => {
             <Svar name="forutsigbar" callback={setForutsigbar} svar={forutsigbar} />
             {forutsigbar === 'ja' && <ForutsigbarInfopanelSvarJa />}
             {forutsigbar === 'nei' && <ForutsigbarInfopanelSvarNei />}
-            <div className="skillelinje"/>
+            <hr className="skillelinje"/>
             <Undertittel className="situasjonqa__undertittel">
                 Var rutinene kjent for både deg og medarbeideren i forkant av samtalen?
             </Undertittel>
             <Svar name="kjent" callback={setKjent} svar={kjent} />
             {kjent === 'ja' && <KjentInfopanelSvarJa />}
             {kjent === 'nei' && <KjentInfopanelSvarNei />}
-            <div className="skillelinje"/>
+            <hr className="skillelinje"/>
             <Undertittel className="situasjonqa__undertittel">
                 Kjente du og medarbeideren til tilretteleggingsmuligheter på egen arbeidsplass?
             </Undertittel>
             <Svar name="tillrettelagt" callback={setTillrettelagt} svar={tillrettelagt} />
             {tillrettelagt === 'ja' && <TillrettelagtInfopanelSvarJa />}
             {tillrettelagt === 'nei' && <TillrettelagtInfopanelSvarNei />}
-            <div className="skillelinje"/>
+            <hr className="skillelinje"/>
             {(forutsigbar === 'nei' || kjent === 'nei' || tillrettelagt === 'nei') && (
                 <InfoPanelEnNei />
             )}

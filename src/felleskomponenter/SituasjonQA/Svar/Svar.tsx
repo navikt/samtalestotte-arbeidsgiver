@@ -4,7 +4,7 @@ import './Svar.less';
 
 export type SvarType = 'ja' | 'nei' | undefined;
 
-type SvarProps = {
+export type SvarProps = {
     name: string;
     callback: (svar: SvarType) => any
     svar: SvarType;
