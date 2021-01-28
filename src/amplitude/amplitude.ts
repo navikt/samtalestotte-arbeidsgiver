@@ -1,4 +1,4 @@
-import amplitude from 'amplitude-js';
+let initiated = false;
 
 const getApiKey = () => {
     return window.location.hostname === 'arbeidsgiver.nav.no'
@@ -6,33 +6,20 @@ const getApiKey = () => {
         : '55477baea93c5227d8c0f6b813653615';
 };
 
-const instance = amplitude.getInstance();
-instance.init(getApiKey(), '', {
-    apiEndpoint: 'amplitude.nav.no/collect',
-    saveEvents: false,
-    includeUtm: true,
-    batchEvents: false,
-    includeReferrer: true,
-});
+export default function logEvent(eventName: string, data?: any): Promise<any> {
+    const amplitude = require('amplitude-js');
 
-export type EventData = { [key: string]: any };
-
-export const sendEventDirekte = (område: string, hendelse: string, data?: EventData): void => {
-    instance.logEvent(['#samtalestotte-arbeidsgiver', område, hendelse].join('-'), data);
-};
-
-
-/*
-event: 'side-lastet' | 'lenke-trykket-på' | 'knapp-trykket-på' | 'radio'
-
-properties/data:
-{
-    app: ALLE
-    url: (case 'side-lastet')
-    label: (case 'knapp-trykket-på', 'radio')
-    url-fra: (case 'lenke-trykket-på')
-    url-til: (case 'lenke-trykket-på')
-    lenketekst: (case 'lenke-trykket-på')
+    if (!initiated) {
+        amplitude.getInstance().init(getApiKey(), '', {
+            apiEndpoint: 'amplitude.nav.no/collect',
+            saveEvents: false,
+            includeUtm: true,
+            batchEvents: false,
+            includeReferrer: true,
+        });
+        initiated = true;
+    }
+    return new Promise(function (resolve) {
+        amplitude.getInstance().logEvent(eventName, {app: 'samtalestøtte-arbeidsgiver', ...data}, resolve);
+    });
 }
-
- */
