@@ -10,7 +10,7 @@ spec:
   team: arbeidsgiver
   port: 3000
   ingresses:
-    - https://arbeidsgiver.labs.nais.io/samtalestotte-arbeidsgiver
+    - https://arbeidsgiver.labs.nais.io/samtalestotte
   liveness:
     path: /samtalestotte-arbeidsgiver/api/isAlive
     initialDelay: 10
