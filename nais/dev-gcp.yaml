@@ -12,10 +12,10 @@ spec:
   ingresses:
     - https://arbeidsgiver-gcp.dev.nav.no/samtalestotte
   liveness:
-    path: /samtalestotte-arbeidsgiver/api/isAlive
+    path: /samtalestotte/api/isAlive
     initialDelay: 10
   readiness:
-    path: /samtalestotte-arbeidsgiver/api/isReady
+    path: /samtalestotte/api/isReady
     initialDelay: 10
   accessPolicy:
     outbound:
