@@ -23,3 +23,14 @@ export default function logEvent(eventName: string, data?: any): Promise<any> {
         amplitude.getInstance().logEvent(eventName, {app: 'samtalestøtte-arbeidsgiver', ...data}, resolve);
     });
 }
+
+export const logLenke = (url: string, lenketekst: string) => {
+    if(window !== undefined) {
+        logEvent("lenke", {
+            "URL-fra": window.location.href,
+            "URL-til": url,
+            "lenketekst": lenketekst,
+            "app": "Samtalestøtte-Arbeidsgiver"
+        })
+    }
+};

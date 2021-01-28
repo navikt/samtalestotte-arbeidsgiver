@@ -9,8 +9,15 @@ import { Steg2SVG } from './Steg2SVG';
 import { Steg3SVG } from './Steg3SVG';
 import { Steg4SVG } from './Steg4SVG';
 import { Steg5SVG } from './Steg5SVG';
+import logEvent, { logLenke } from "../../amplitude/amplitude"
 
 export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
+
+    const tilretteleggingUrl = "https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap";
+    const virkemidlerUrl = "https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge";
+    const hjelpemidlerUrl = 'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse';
+    const oppfølgningsplanUrl = 'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap'
+
     return (
         <>
             <Systemtittel className="oppfølgingssamtaleGjennomføring__tittel">
@@ -73,12 +80,18 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                             handlingsrom?
                         </li>
                         <li>
-                            <Lenke href="https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap">
+                            <Lenke
+                                onClick={()=>logLenke(tilretteleggingUrl, "Les mer om tilrettelegging")}
+                                href={tilretteleggingUrl}
+                            >
                                 Les mer om tilrettelegging
                             </Lenke>
                         </li>
                         <li>
-                            <Lenke href="https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge">
+                            <Lenke
+                                onClick={()=>logLenke(virkemidlerUrl, "Les mer om NAVs virkemidler")}
+                                href={virkemidlerUrl}
+                            >
                                 Les mer om NAVs virkemidler
                             </Lenke>
                         </li>
@@ -203,9 +216,8 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                         <li>fysisk utforming av arbeidsplassen</li>
                         <li>
                             <Lenke
-                                href={
-                                    'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse'
-                                }
+                                onClick={()=>logLenke(hjelpemidlerUrl, "hjelpemidler")}
+                                href={hjelpemidlerUrl}
                             >
                                 hjelpemidler
                             </Lenke>
@@ -250,9 +262,8 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 </Normaltekst>
                 <Normaltekst>
                     <Lenke
-                        href={
-                            'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap'
-                        }
+                        onClick={()=>logLenke(oppfølgningsplanUrl, "Les mer om oppfølgingsplan")}
+                        href={oppfølgningsplanUrl}
                     >
                         Les mer om oppfølgingsplan
                     </Lenke>
