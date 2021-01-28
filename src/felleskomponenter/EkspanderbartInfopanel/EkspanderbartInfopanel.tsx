@@ -1,8 +1,10 @@
-import {FunctionComponent, useState} from 'react';
+import { FunctionComponent, useState } from 'react';
 import './EkspanderbartInfopanel.less';
-import {EkspanderbartpanelBase} from 'nav-frontend-ekspanderbartpanel';
-import {OppChevron} from 'nav-frontend-chevron';
+import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
+import { OppChevron } from 'nav-frontend-chevron';
 import classNames from 'classnames';
+import { AmplitudeEventProps } from '../../amplitude/AmplitudeWrapper';
+import dynamic from 'next/dynamic';
 
 interface Props {
     children: React.ReactNode;
@@ -15,6 +17,11 @@ interface Props {
 export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) => {
     const [erÅpen, setErÅpen] = useState<boolean>(false);
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId;
+
+    const AmplitudeWrapper = dynamic<AmplitudeEventProps>(
+        () => import('../../amplitude/AmplitudeWrapper').then((module) => module.AmplitudeWrapper),
+        { ssr: false }
+    );
 
     return (
         <EkspanderbartpanelBase
@@ -41,6 +48,11 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
                       )
             }
         >
+            {erÅpen ? (
+                <AmplitudeWrapper område={'samtalestøtte-arbeidsgiver'} hendelse={"knapp"} />
+            ) : (
+                <></>
+            )}
             <div>{props.children}</div>
 
             <button

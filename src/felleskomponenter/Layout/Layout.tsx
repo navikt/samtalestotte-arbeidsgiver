@@ -6,7 +6,6 @@ import { DecoratorParts } from '../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
 import './Layout.less';
 import { CookiesProvider } from 'react-cookie';
-import {sendEventDirekte} from "../../amplitude/amplitude";
 
 export const Layout = (props: {
     title: string;
@@ -15,7 +14,6 @@ export const Layout = (props: {
     decoratorParts?: DecoratorParts;
     children: React.ReactChild[];
 }) => {
-    sendEventDirekte("app","sidelastet")
     return (
         <div className="layout">
             <Head>

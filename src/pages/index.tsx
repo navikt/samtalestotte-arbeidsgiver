@@ -5,8 +5,15 @@ import './index.less';
 import { Samtaleverktøy } from '../felleskomponenter/Samtaleverktøy/Samtaleverktøy';
 import { OppfølgingssamtaleGjennomføring } from '../felleskomponenter/OppfølgingssamtaleGjennomføring/OppfølgingssamtaleGjennomføring';
 import { SituasjonQA } from '../felleskomponenter/SituasjonQA/SituasjonQA';
+import dynamic from 'next/dynamic';
+import { AmplitudeEventProps } from '../amplitude/AmplitudeWrapper';
 
 const Home = (props: { page: PageProps }) => {
+    const AmplitudeWrapper = dynamic<AmplitudeEventProps>(
+        () => import('../amplitude/AmplitudeWrapper').then((module) => module.AmplitudeWrapper),
+        { ssr: false }
+    );
+
     return (
         <div>
             <Head>
@@ -21,6 +28,7 @@ const Home = (props: { page: PageProps }) => {
                     //bannerIconUrl=""
                     decoratorParts={props.page.decorator}
                 >
+                    <AmplitudeWrapper område={'app'} hendelse={'sidelastet'} />
                     <Samtaleverktøy />
                     <OppfølgingssamtaleGjennomføring />
                     <SituasjonQA />
