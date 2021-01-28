@@ -1,22 +1,16 @@
 import { FunctionComponent } from 'react';
+import classNames from 'classnames';
 import { Element, Ingress, Normaltekst, Systemtittel } from 'nav-frontend-typografi';
 import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './OppfølgingssamtaleGjennomføring.less';
-import Lenke from 'nav-frontend-lenker';
-import classNames from 'classnames';
 import { Steg1SVG } from './Steg1SVG';
 import { Steg2SVG } from './Steg2SVG';
 import { Steg3SVG } from './Steg3SVG';
 import { Steg4SVG } from './Steg4SVG';
 import { Steg5SVG } from './Steg5SVG';
-import logEvent, { logLenke } from "../../amplitude/amplitude"
+import LoggbarLenke from '../LoggbarLenke/LoggbarLenke';
 
 export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
-
-    const tilretteleggingUrl = "https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap";
-    const virkemidlerUrl = "https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge";
-    const hjelpemidlerUrl = 'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse';
-    const oppfølgningsplanUrl = 'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap'
 
     return (
         <>
@@ -80,20 +74,14 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                             handlingsrom?
                         </li>
                         <li>
-                            <Lenke
-                                onClick={()=>logLenke(tilretteleggingUrl, "Les mer om tilrettelegging")}
-                                href={tilretteleggingUrl}
-                            >
+                            <LoggbarLenke href="https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap">
                                 Les mer om tilrettelegging
-                            </Lenke>
+                            </LoggbarLenke>
                         </li>
                         <li>
-                            <Lenke
-                                onClick={()=>logLenke(virkemidlerUrl, "Les mer om NAVs virkemidler")}
-                                href={virkemidlerUrl}
-                            >
+                            <LoggbarLenke href={"https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge"}>
                                 Les mer om NAVs virkemidler
-                            </Lenke>
+                            </LoggbarLenke>
                         </li>
                     </ul>
                     <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
@@ -215,12 +203,9 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                         <li>kompetanse</li>
                         <li>fysisk utforming av arbeidsplassen</li>
                         <li>
-                            <Lenke
-                                onClick={()=>logLenke(hjelpemidlerUrl, "hjelpemidler")}
-                                href={hjelpemidlerUrl}
-                            >
+                            <LoggbarLenke href={'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse'}>
                                 hjelpemidler
-                            </Lenke>
+                            </LoggbarLenke>
                         </li>
 
                         <li>andre forhold</li>
@@ -261,12 +246,9 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
                 </Normaltekst>
                 <Normaltekst>
-                    <Lenke
-                        onClick={()=>logLenke(oppfølgningsplanUrl, "Les mer om oppfølgingsplan")}
-                        href={oppfølgningsplanUrl}
-                    >
+                    <LoggbarLenke href='https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap'>
                         Les mer om oppfølgingsplan
-                    </Lenke>
+                    </LoggbarLenke>
                 </Normaltekst>
                 <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                     Vanlige tema i avslutningen:

@@ -1,8 +1,7 @@
 import classNames from 'classnames';
 import Panel from 'nav-frontend-paneler';
-import Lenke from 'nav-frontend-lenker';
 import { FunctionComponent } from 'react';
-import { logLenke } from '../../../amplitude/amplitude';
+import LoggbarLenke from '../../LoggbarLenke/LoggbarLenke';
 
 export const ForutsigbarInfopanelSvarJa: FunctionComponent = () => (
     <Panel
@@ -18,10 +17,8 @@ export const ForutsigbarInfopanelSvarJa: FunctionComponent = () => (
     </Panel>
 );
 
-export const ForutsigbarInfopanelSvarNei: FunctionComponent = () => {
-    const sykefravaersrutineUrl = 'https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene';
-    const sykefravaersoppfolgingUrl = "https://www.idebanken.org/kloke-grep/artikler/rutiner-og-retningslinjer-for-sykefravaersoppfolging";
-    return <Panel
+export const ForutsigbarInfopanelSvarNei: FunctionComponent = () => (
+    <Panel
         border
         className={classNames('situasjonqa__info-panel', 'situasjonqa__info-panel-nei')}
     >
@@ -34,24 +31,18 @@ export const ForutsigbarInfopanelSvarNei: FunctionComponent = () => {
         <br />
         <span className="bold">Slik kan du evaluere rutinene</span>
         <br />
-        <Lenke
-            onClick={() => logLenke(sykefravaersrutineUrl, sykefravaersrutineUrl)}
-            href={sykefravaersrutineUrl}
-        >
-            {sykefravaersrutineUrl}
-        </Lenke>
+        <LoggbarLenke href='https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene'>
+            https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene
+        </LoggbarLenke>
         <br />
         <br />
         <span className="bold">Slik kan du utarbeide sykefraværsrutiner</span>
         <br />
-        <Lenke
-            onClick={() => logLenke(sykefravaersoppfolgingUrl, sykefravaersoppfolgingUrl)}
-            href={sykefravaersoppfolgingUrl}
-        >
-            {sykefravaersoppfolgingUrl}
-        </Lenke>
+        <LoggbarLenke href="https://www.idebanken.org/kloke-grep/artikler/rutiner-og-retningslinjer-for-sykefravaersoppfolging">
+            https://www.idebanken.org/kloke-grep/artikler/rutiner-og-retningslinjer-for-sykefravaersoppfolging
+        </LoggbarLenke>
     </Panel>
-};
+);
 
 export const KjentInfopanelSvarJa: FunctionComponent = () => (
     <Panel
@@ -89,9 +80,8 @@ export const TillrettelagtInfopanelSvarJa: FunctionComponent = () => (
     </Panel>
 );
 
-export const TillrettelagtInfopanelSvarNei: FunctionComponent = () => {
-    const url = "https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen"
-    return <Panel
+export const TillrettelagtInfopanelSvarNei: FunctionComponent = () => (
+    <Panel
         border
         className={classNames('situasjonqa__info-panel', 'situasjonqa__info-panel-nei')}
     >
@@ -104,16 +94,15 @@ export const TillrettelagtInfopanelSvarNei: FunctionComponent = () => {
                             Slik kan du utarbeide liste med tilretteleggingsmuligheter:
                         </span>
         <br />
-        <Lenke onClick={() => logLenke(url, url)} href={url}>
-            {url}
-        </Lenke>
+        <LoggbarLenke href="https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen">
+            https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen
+        </LoggbarLenke>
         <br />
     </Panel>
-};
+);
 
-export const InfoPanelEnNei: FunctionComponent = () => {
-    const url = "kommer"
-    return <Panel
+export const InfoPanelEnNei: FunctionComponent = () => (
+    <Panel
         border
         className={classNames(
             'situasjonqa__info-panel',
@@ -131,13 +120,10 @@ export const InfoPanelEnNei: FunctionComponent = () => {
         TODO skaff en fungerende url for denne lenken
         <br />
         Les mer om tjenestene og{' '}
-        <Lenke
-            onClick={() => logLenke(url, "hvordan du kontakter NAV for å forebygge sykefravær")}
-            href="kommer"
-        >
+        <LoggbarLenke href="kommer">
             hvordan du kontakter NAV for å forebygge sykefravær
-        </Lenke>
+        </LoggbarLenke>
         <br />
         */}
     </Panel>
-};
+);
