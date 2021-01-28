@@ -1,0 +1,24 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: samtalestotte-arbeidsgiver
+  namespace: arbeidsgiver
+  labels:
+    team: arbeidsgiver
+spec:
+  image: {{image}}
+  team: arbeidsgiver
+  port: 3000
+  ingresses:
+    - https://arbeidsgiver.nav.no/samtalestotte-arbeidsgiver
+  liveness:
+    path: /samtalestotte-arbeidsgiver/api/isAlive
+    initialDelay: 10
+  readiness:
+    path: /samtalestotte-arbeidsgiver/api/isReady
+    initialDelay: 10
+  accessPolicy:
+    outbound:
+      external:
+        - host: dekoratoren.nav.no
+        - host: www.nav.no
