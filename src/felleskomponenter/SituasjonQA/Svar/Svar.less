@@ -1,22 +1,22 @@
 @import '../../../variables';
 
-.svar {
+.svar__radio-panel-gruppe {
 
-  &__radio-box {
-    margin-right: 1rem;
-    padding-left: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-right: 5rem;
-    border: 1px solid @navGra40;
-    border-radius: 0.25rem;
+  label.inputPanel.radioPanel {
+    flex-basis: 9rem;
+    margin-bottom: 0;
   }
-  &__radio-gruppe {
+
+  @media (min-width: 400px) {
+    label.inputPanel.radioPanel:not(:first-child) {
+      margin-left: 1rem;
+    }
+  }
+
+  div.inputPanelGruppe__inner {
     display: flex;
     flex-direction: row;
-    //margin-left: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid @navLysGra;
+    flex-wrap: wrap;
+    align-items: stretch;
   }
-
 }

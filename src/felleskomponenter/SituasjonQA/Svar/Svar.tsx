@@ -1,52 +1,56 @@
-import { Dispatch, FunctionComponent, SetStateAction } from 'react';
-import { Radio, RadioGruppe } from 'nav-frontend-skjema';
+import React, { FunctionComponent } from 'react';
+import { RadioPanelGruppe } from 'nav-frontend-skjema';
 import './Svar.less';
 
 export type SvarType = 'ja' | 'nei' | undefined;
 
-type SvarProps = {
+export type SvarProps = {
     name: string;
-    callback: Dispatch<SetStateAction<SvarType>>;
+    callback: (svar: SvarType) => any
     svar: SvarType;
 };
 
-export const Svar: FunctionComponent<SvarProps> = ({
-    name,
-    callback,
-    svar
-}) => {
-    return (
-        <RadioGruppe className="svar__radio-gruppe">
-            <Radio
-                readOnly={true}
-                label={'Ja'}
-                name={`svar-ja-${name}`}
-                value={svar}
-                checked={svar === 'ja'}
-                onClick={() => {
-                    if (svar !== 'ja') {
-                        callback('ja');
-                    } else {
-                        callback(undefined);
+export const Svar: FunctionComponent<SvarProps> = ({name, callback, svar}) => {
+    const toggleCallback = (value: SvarType) => {
+        if(svar !== value) {
+            callback(value);
+        } else {
+            callback(undefined);
+        }
+    }
+
+    return <RadioPanelGruppe
+        className={"svar__radio-panel-gruppe"}
+        name={`svar-${name}`}
+        checked={svar}
+        radios={[
+            {
+                label: "ja",
+                value: "ja",
+                onClick: () => {
+                    toggleCallback("ja")
+                },
+                onKeyDown: (event) => {
+                    if(event.code === "Space" || event.code === "Enter"){
+                        event.preventDefault();
+                        toggleCallback("ja")
                     }
-                }}
-                className="svar__radio-box"
-            />
-            <Radio
-                readOnly={true}
-                label={'Nei'}
-                name={`svar-nei-${name}`}
-                value={svar}
-                checked={svar === 'nei'}
-                onClick={() => {
-                    if (svar !== 'nei') {
-                        callback('nei');
-                    } else {
-                        callback(undefined);
+                },
+            },
+            {
+                label: "nei",
+                value: "nei",
+                onClick: () => {
+                    toggleCallback("nei")
+                },
+                onKeyDown: (event) => {
+                    if(event.code === "Space" || event.code === "Enter"){
+                        event.preventDefault();
+                        toggleCallback("nei")
                     }
-                }}
-                className="svar__radio-box"
-            />
-        </RadioGruppe>
-    );
+                },
+            }
+        ]}
+        onChange= {()=> {}}
+    />
 };
