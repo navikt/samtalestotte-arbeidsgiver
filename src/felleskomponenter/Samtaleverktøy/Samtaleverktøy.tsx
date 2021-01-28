@@ -6,7 +6,7 @@ import {LyspæreSVG} from './LyspæreSVG';
 
 export const Samtaleverktøy: FunctionComponent = () => {
     return (
-        <div className="samtaleverktøy">
+        <>
             <Systemtittel className="samtaleverktøy__tittel">Samtaleverktøy</Systemtittel>
             <EkspanderbartInfopanel
                 tittel={'Når kan en samtale om arbeidssituasjonen være aktuelt?'}
@@ -77,6 +77,6 @@ export const Samtaleverktøy: FunctionComponent = () => {
                     </ul>
                 </Normaltekst>
             </EkspanderbartInfopanel>
-        </div>
+        </>
     );
 };
