@@ -116,14 +116,11 @@ export const InfoPanelEnNei: FunctionComponent = () => (
         Vi tilbyr digitale tjenester og kan også gi rådgivning hos dere på
         arbeidsplassen.
         <br />
-        {/*
-        TODO skaff en fungerende url for denne lenken
         <br />
         Les mer om tjenestene og{' '}
-        <LoggbarLenke href="kommer">
+        <LoggbarLenke href="https://arbeidsgiver.nav.no/forebygge-sykefravaer/#oppfolging-fra-nav-arbeidslivssenter">
             hvordan du kontakter NAV for å forebygge sykefravær
         </LoggbarLenke>
         <br />
-        */}
     </Panel>
 );
