@@ -5,8 +5,17 @@ import './index.less';
 import { Samtaleverktøy } from '../felleskomponenter/Samtaleverktøy/Samtaleverktøy';
 import { OppfølgingssamtaleGjennomføring } from '../felleskomponenter/OppfølgingssamtaleGjennomføring/OppfølgingssamtaleGjennomføring';
 import { SituasjonQA } from '../felleskomponenter/SituasjonQA/SituasjonQA';
+import { useEffect } from 'react';
+import logEvent from '../amplitude/amplitude';
 
 const Home = (props: { page: PageProps }) => {
+    useEffect(() => {
+        const timer = setTimeout(async () => {
+            await logEvent('sidevisning', { url: 'samtalestotte-arbeidsgiver' });
+        }, 500);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <div>
             <Head>

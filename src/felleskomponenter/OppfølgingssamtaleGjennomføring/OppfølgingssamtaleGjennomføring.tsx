@@ -1,16 +1,17 @@
 import { FunctionComponent } from 'react';
+import classNames from 'classnames';
 import { Element, Ingress, Normaltekst, Systemtittel } from 'nav-frontend-typografi';
 import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './OppfølgingssamtaleGjennomføring.less';
-import Lenke from 'nav-frontend-lenker';
-import classNames from 'classnames';
 import { Steg1SVG } from './Steg1SVG';
 import { Steg2SVG } from './Steg2SVG';
 import { Steg3SVG } from './Steg3SVG';
 import { Steg4SVG } from './Steg4SVG';
 import { Steg5SVG } from './Steg5SVG';
+import LoggbarLenke from '../LoggbarLenke/LoggbarLenke';
 
 export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
+
     return (
         <>
             <Systemtittel className="oppfølgingssamtaleGjennomføring__tittel">
@@ -73,14 +74,14 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                             handlingsrom?
                         </li>
                         <li>
-                            <Lenke href="https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap">
+                            <LoggbarLenke href="https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap">
                                 Les mer om tilrettelegging
-                            </Lenke>
+                            </LoggbarLenke>
                         </li>
                         <li>
-                            <Lenke href="https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge">
+                            <LoggbarLenke href={"https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge"}>
                                 Les mer om NAVs virkemidler
-                            </Lenke>
+                            </LoggbarLenke>
                         </li>
                     </ul>
                     <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
@@ -202,13 +203,9 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                         <li>kompetanse</li>
                         <li>fysisk utforming av arbeidsplassen</li>
                         <li>
-                            <Lenke
-                                href={
-                                    'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse'
-                                }
-                            >
+                            <LoggbarLenke href={'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse'}>
                                 hjelpemidler
-                            </Lenke>
+                            </LoggbarLenke>
                         </li>
 
                         <li>andre forhold</li>
@@ -249,13 +246,9 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
                 </Normaltekst>
                 <Normaltekst>
-                    <Lenke
-                        href={
-                            'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap'
-                        }
-                    >
+                    <LoggbarLenke href='https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap'>
                         Les mer om oppfølgingsplan
-                    </Lenke>
+                    </LoggbarLenke>
                 </Normaltekst>
                 <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                     Vanlige tema i avslutningen:

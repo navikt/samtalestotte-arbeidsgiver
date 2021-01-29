@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import Panel from 'nav-frontend-paneler';
-import Lenke from 'nav-frontend-lenker';
 import { FunctionComponent } from 'react';
+import LoggbarLenke from '../../LoggbarLenke/LoggbarLenke';
 
 export const ForutsigbarInfopanelSvarJa: FunctionComponent = () => (
     <Panel
@@ -31,20 +31,16 @@ export const ForutsigbarInfopanelSvarNei: FunctionComponent = () => (
         <br />
         <span className="bold">Slik kan du evaluere rutinene</span>
         <br />
-        <Lenke
-            href={
-                'https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene'
-            }
-        >
+        <LoggbarLenke href='https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene'>
             https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene
-        </Lenke>
+        </LoggbarLenke>
         <br />
         <br />
         <span className="bold">Slik kan du utarbeide sykefraværsrutiner</span>
         <br />
-        <Lenke href="https://www.idebanken.org/kloke-grep/artikler/rutiner-og-retningslinjer-for-sykefravaersoppfolging">
+        <LoggbarLenke href="https://www.idebanken.org/kloke-grep/artikler/rutiner-og-retningslinjer-for-sykefravaersoppfolging">
             https://www.idebanken.org/kloke-grep/artikler/rutiner-og-retningslinjer-for-sykefravaersoppfolging
-        </Lenke>
+        </LoggbarLenke>
     </Panel>
 );
 
@@ -84,7 +80,7 @@ export const TillrettelagtInfopanelSvarJa: FunctionComponent = () => (
     </Panel>
 );
 
-export const TillrettelagtInfopanelSvarNei: FunctionComponent = () =>(
+export const TillrettelagtInfopanelSvarNei: FunctionComponent = () => (
     <Panel
         border
         className={classNames('situasjonqa__info-panel', 'situasjonqa__info-panel-nei')}
@@ -98,9 +94,9 @@ export const TillrettelagtInfopanelSvarNei: FunctionComponent = () =>(
                             Slik kan du utarbeide liste med tilretteleggingsmuligheter:
                         </span>
         <br />
-        <Lenke href="https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen">
+        <LoggbarLenke href="https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen">
             https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen
-        </Lenke>
+        </LoggbarLenke>
         <br />
     </Panel>
 );
@@ -122,7 +118,9 @@ export const InfoPanelEnNei: FunctionComponent = () => (
         <br />
         <br />
         Les mer om tjenestene og{' '}
-        <Lenke href="kommer">hvordan du kontakter NAV for å forebygge sykefravær</Lenke>
+        <LoggbarLenke href="https://arbeidsgiver.nav.no/forebygge-sykefravaer/#oppfolging-fra-nav-arbeidslivssenter">
+            hvordan du kontakter NAV for å forebygge sykefravær
+        </LoggbarLenke>
         <br />
     </Panel>
 );

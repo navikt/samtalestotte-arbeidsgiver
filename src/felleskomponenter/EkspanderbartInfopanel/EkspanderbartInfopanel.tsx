@@ -1,8 +1,9 @@
-import {FunctionComponent, ReactNode, useState} from 'react';
+import { FunctionComponent, ReactNode, useEffect, useState } from 'react';
 import './EkspanderbartInfopanel.less';
-import {EkspanderbartpanelBase} from 'nav-frontend-ekspanderbartpanel';
-import {OppChevron} from 'nav-frontend-chevron';
+import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
+import { OppChevron } from 'nav-frontend-chevron';
 import classNames from 'classnames';
+import logEvent from '../../amplitude/amplitude';
 
 interface Props {
     children: ReactNode;
@@ -16,6 +17,13 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
     const [erÅpen, setErÅpen] = useState<boolean>(false);
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId;
 
+    useEffect(() => {
+        const timer = setTimeout(async () => {
+            erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
+        }, 500);
+        return () => clearTimeout(timer);
+    }, [erÅpen]);
+
     return (
         <EkspanderbartpanelBase
             tittel={
@@ -27,7 +35,7 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
                     <div className="ekspanderbart-infopanel__tittel-uten-ikon">{props.tittel}</div>
                 )
             }
-            id={"ekspanderbart-infopanel__" + props.unikId + "-base"}
+            id={'ekspanderbart-infopanel__' + props.unikId + '-base'}
             apen={erÅpen}
             onClick={() => {
                 setErÅpen(!erÅpen);
