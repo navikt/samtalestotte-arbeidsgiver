@@ -15,8 +15,7 @@ const LoggbarLenke: FunctionComponent<LoggbarLenkeProps> = ({ children, href, cl
             logEvent("lenke", {
                 "URL-fra": window.location.href,
                 "URL-til": url,
-                "lenketekst": lenketekst,
-                "app": "Samtalestøtte-Arbeidsgiver"
+                "lenketekst": lenketekst
             })
         }
     };
