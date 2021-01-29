@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { RadioPanelGruppe } from 'nav-frontend-skjema';
 import './Svar.less';
+import logEvent from "../../../amplitude/amplitude";
 
 export type SvarType = 'ja' | 'nei' | undefined;
 
@@ -28,7 +29,8 @@ export const Svar: FunctionComponent<SvarProps> = ({name, callback, svar}) => {
                 label: "ja",
                 value: "ja",
                 onClick: () => {
-                    toggleCallback("ja")
+                    toggleCallback("ja");
+                    logEvent("")
                 },
                 onKeyDown: (event) => {
                     if(event.code === "Space" || event.code === "Enter"){
