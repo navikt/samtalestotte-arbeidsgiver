@@ -16,12 +16,12 @@ export const Samtaleverktøy: FunctionComponent = () => {
                     En samtale om arbeidssituasjonen gjennomføres hvis
                     <ul className="samtaleverktøy__ul_tett">
                         <li>
-                            Du eller din medarbeider opplever utfordringer med arbeidet og det
-                            skyldes sykdom eller andre forhold.
+                            du eller din medarbeider opplever utfordringer med arbeidet og det
+                            skyldes sykdom eller andre forhold
                         </li>
-                        <li>Medarbeideren står i fare for å bli sykmeldt.</li>
-                        <li>Medarbeideren er sykmeldt.</li>
-                        <li>Medarbeideren har vært sykmeldt </li>
+                        <li>medarbeideren står i fare for å bli sykmeldt</li>
+                        <li>medarbeideren er sykmeldt</li>
+                        <li>medarbeideren har vært sykmeldt</li>
                     </ul>
                 </Normaltekst>
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
@@ -38,21 +38,21 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 </Normaltekst>
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     <ul>
-                        <li>Mulighetene til å utføre egne eller alternative arbeidsoppgaver</li>
-                        <li>Behov for tilrettelegging </li>
+                        <li>Mulighetene til å utføre egne eller alternative arbeidsoppgaver.</li>
+                        <li>Behov for tilrettelegging.</li>
                         <li>
                             Om medarbeideren kjenner til rutiner og tilretteleggingsmuligheter i
-                            deres virksomhet
+                            deres virksomhet.
                         </li>
-                        <li>Hvor lenge medarbeideren tror fraværet vil vare </li>
+                        <li>Hvor lenge medarbeideren tror fraværet vil vare.</li>
                         <li>
                             Om det er forhold på arbeidsplassen som påvirker sykefraværet eller
-                            helsesituasjonen
+                            helsesituasjonen.
                         </li>
                         <li>
                             Om medarbeideren ønsker kontakt med NAV, bedriftshelsetjenesten eller
                             andre samarbeidspartnere for å få hjelp med tilrettelegging og
-                            oppfølging
+                            oppfølging.
                         </li>
                     </ul>
                 </Normaltekst>
@@ -68,12 +68,12 @@ export const Samtaleverktøy: FunctionComponent = () => {
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     <ul>
-                        <li>Lytt til hva medarbeideren har å si</li>
-                        <li>Snakk om arbeidsevne ikke diagnose</li>
-                        <li>Bygg på medarbeiderens motivasjon</li>
-                        <li>La medarbeideren komme med de gode løsningene</li>
-                        <li>Ikke hopp rett til konklusjoner og løsninger</li>
-                        <li>Gjennomfør samtaler regelmessig</li>
+                        <li>Lytt til hva medarbeideren har å si.</li>
+                        <li>Snakk om arbeidsevne, ikke diagnose.</li>
+                        <li>Bygg på medarbeiderens motivasjon.</li>
+                        <li>La medarbeideren komme med de gode løsningene.</li>
+                        <li>Ikke hopp rett til konklusjoner og løsninger.</li>
+                        <li>Gjennomfør samtaler regelmessig.</li>
                     </ul>
                 </Normaltekst>
             </EkspanderbartInfopanel>

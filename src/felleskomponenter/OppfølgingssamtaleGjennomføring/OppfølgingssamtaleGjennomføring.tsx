@@ -18,8 +18,8 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 Slik gjennomfører du en nyttig samtale om arbeidssituasjonen
             </Systemtittel>
             <Ingress className="oppfølgingssamtaleGjennomføring__ingress">
-                Samtalen kan deles inn i faser, vi har gjort det enkelt for deg å forstå innholdet
-                og bruke det aktivt i din hverdag
+                Samtalen kan deles inn i faser. Vi har gjort det enkelt for deg å forstå innholdet
+                og bruke det aktivt i din hverdag.
             </Ingress>
             <EkspanderbartInfopanel
                 tittel={'Slik forbereder du samtalen'}
@@ -30,17 +30,17 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element>Lederens rolle i en samtale om arbeidssituasjonen</Element>
                     <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>
-                            Du er ansvarlig for å gjennomføre og dokumentere samtaler om arbeidssituasjonen
+                            Du er ansvarlig for å gjennomføre og dokumentere samtaler om arbeidssituasjonen.
                         </li>
-                        <li>Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen</li>
-                        <li>Din viktigste oppgave er å få medarbeideren til å snakke</li>
+                        <li>Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen.</li>
+                        <li>Din viktigste oppgave er å få medarbeideren til å snakke.</li>
                     </ul>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                        Kjente fallgruver:
+                        Kjente fallgruver
                     </Element>
                     <ul className="ekspanderbart-infopanel__ul-tett">
-                        <li>Du påtar deg for stort ansvar for helsa til medarbeideren</li>
-                        <li>Fokuset handler om behandling eller forhold i privatlivet</li>
+                        <li>Du påtar deg for stort ansvar for helsa til medarbeideren.</li>
+                        <li>Fokuset handler om behandling eller forhold i privatlivet.</li>
                     </ul>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Tema for samtalen
@@ -75,12 +75,12 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                         </li>
                         <li>
                             <LoggbarLenke href="https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap">
-                                Les mer om tilrettelegging
+                                Les mer om tilrettelegging.
                             </LoggbarLenke>
                         </li>
                         <li>
                             <LoggbarLenke href={"https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge"}>
-                                Les mer om NAVs virkemidler
+                                Les mer om NAVs virkemidler.
                             </LoggbarLenke>
                         </li>
                     </ul>
@@ -98,7 +98,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                             </li>
                             <li>
                                 Du kan sende spørsmål til medarbeideren på forhånd. Velg noen av de
-                                viktigste for deg fra eksemplene i fase tre og fire
+                                viktigste for deg fra eksemplene i fase tre og fire.
                             </li>
                         </ul>
                     </div>
@@ -185,7 +185,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Normaltekst>
                         <span className="ekspanderbart-infopanel__innhold-bold">Husk</span> at
                         dersom medarbeideren har negative erfaringer, for eksempel at tiltak ikke
-                        har fungert bør du anerkjenne dette. Fokuset bør ligge framover i tid og på
+                        har fungert, bør du anerkjenne dette. Fokuset bør ligge framover i tid og på
                         hvilke muligheter som finnes.
                     </Normaltekst>
                 </Element>
@@ -269,7 +269,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
 
                 <div className="ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn">
                     <Normaltekst>
-                        Av og til blir du og medarbeideren ikke å bli enige om løsningene og det er
+                        Av og til blir du og medarbeideren ikke enige om løsningene og det er
                         greit.{' '}
                     </Normaltekst>
                     <Normaltekst>
