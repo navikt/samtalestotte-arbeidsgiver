@@ -10,7 +10,7 @@ spec:
   team: arbeidsgiver
   port: 3000
   ingresses:
-    - https://arbeidsgiver-gcp.dev.nav.no/samtalestotte
+    - https://arbeidsgiver.nav.no/samtalestotte
   liveness:
     path: /samtalestotte/api/isAlive
     initialDelay: 10
@@ -20,4 +20,5 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: dekoratoren.dev.nav.no
+        - host: dekoratoren.nav.no
+        - host: www.nav.no

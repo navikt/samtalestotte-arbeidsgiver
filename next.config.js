@@ -15,7 +15,7 @@ const withTranspileModules = nextTranspileModules(navFrontendModuler);
 
 module.exports = withTranspileModules(
     withLess({
-        basePath: '/samtalestotte-arbeidsgiver',
+        basePath: '/samtalestotte',
         target: 'server',
         trailingSlash: false,
         reactStrictMode: true,
