@@ -61,7 +61,7 @@ export const SituasjonQA: FunctionComponent = () => {
     const callbackIntercept = (callback: (svar: SvarType) => any, label: string) => (
         svarType: SvarType
     ) => {
-        logEvent('knapp', { label: label, funksjon: 'svar__radio' });
+        logEvent('knapp', { label: label, funksjon: 'svar__radio', svar: svarType });
         callback(svarType);
     };
     return (
