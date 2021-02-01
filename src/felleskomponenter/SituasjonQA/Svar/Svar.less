@@ -7,16 +7,24 @@
     margin-bottom: 0;
   }
 
-  @media (min-width: 400px) {
-    label.inputPanel.radioPanel:not(:first-child) {
+  label.inputPanel.radioPanel:not(:first-child) {
+    @media (min-width: 400px) {
       margin-left: 1rem;
     }
+    @media (max-width: 383px) {
+      margin-top: 1rem;
+    }
   }
+
 
   div.inputPanelGruppe__inner {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: stretch;
+
+    @media (max-width: 399px) {
+      justify-content: space-between;
+    }
   }
 }
