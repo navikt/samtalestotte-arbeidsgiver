@@ -2,6 +2,10 @@
 @import '../../../node_modules/nav-frontend-core/less/_variabler';
 
 .ekspanderbart-infopanel {
+    &__print-innhold {
+        display: none;
+    }
+
     &__innhold {
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -18,13 +22,9 @@
         &-display-flex {
             display: flex;
         }
-        &-bold{
+        &-bold {
             font-weight: bold;
         }
-
-    }
-    &__print-innhold{
-        display: none;
     }
 
     &__panel {
@@ -61,20 +61,27 @@
     &__gronnbakgrunn {
         .mixin(true);
     }
-    &__ul-tett{
+    &__ul-tett {
         margin-block-start: 0;
     }
-@media print {
-    &__print-innhold{
-        display: block;
+    @media print {
+
+        &__print-innhold {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-right: 2rem;
+            &__print-innhold {
+                display: none;
+            }
+            display: block;
+        }
+        &__lukk-knapp {
+            display: none;
+        }
+        &__innhold-no-print {
+            display: none;
+        }
     }
-    &__lukk-knapp{
-        display: none;
-    }
-    &__innhold{
-        display: none;
-    }
-}
 }
 button.ekspanderbartPanel__hode {
     height: 64px;
@@ -88,7 +95,7 @@ button.ekspanderbartPanel__hode {
     }
 }
 div.ekspanderbartPanel__flex-wrapper {
-    width: 100%
+    width: 100%;
 }
 .mixinborder (@setBorder) when (@setBorder = true) {
     .ekspanderbartPanel__hode {

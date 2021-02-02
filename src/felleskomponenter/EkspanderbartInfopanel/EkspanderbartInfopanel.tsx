@@ -57,7 +57,14 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
                           )
                 }
             >
-                <div className="ekspanderbart-infopanel__innhold">{innhold}</div>
+                <div
+                    className={classNames(
+                        'ekspanderbart-infopanel__innhold',
+                        'ekspanderbart-infopanel__innhold-no-print'
+                    )}
+                >
+                    {innhold}
+                </div>
                 <button
                     className="ekspanderbart-infopanel__lukk-knapp"
                     onClick={() => {

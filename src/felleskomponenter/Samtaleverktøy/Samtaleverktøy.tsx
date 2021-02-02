@@ -13,9 +13,6 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 unikId={'når-kan-en-samtale-om-arbeidssituasjonen-være-aktuelt?'}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
-                    dette er tulletettest døfgmdølgjsøl
-                </Normaltekst>
-                <Normaltekst className="ekspanderbart-infopanel__innhold">
                     En samtale om arbeidssituasjonen gjennomføres hvis
                     <ul className="samtaleverktøy__ul_tett">
                         <li>
