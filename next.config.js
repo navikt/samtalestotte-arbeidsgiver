@@ -14,6 +14,10 @@ const withTranspileModules = nextTranspileModules(navFrontendModuler);
 module.exports = withTranspileModules(
     withLess({
         basePath: '/samtalestotte',
+        i18n: {
+            locales: ['no'],
+            defaultLocale: 'no',
+        },
         target: 'server',
         trailingSlash: false,
         reactStrictMode: true,
