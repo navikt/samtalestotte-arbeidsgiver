@@ -7,9 +7,8 @@ import { DecoratorEnv } from '../decorator/DecoratorEnv';
 import './Layout.less';
 import { CookiesProvider } from 'react-cookie';
 import { useRef } from 'react';
-import logEvent from '../../amplitude/amplitude';
 import ReactToPrint from 'react-to-print';
-import {Knapp} from "nav-frontend-knapper";
+import classNames from 'classnames';
 
 export const Layout = (props: {
     title: string;
@@ -44,25 +43,27 @@ export const Layout = (props: {
                         iconUrl={props.bannerIconUrl === undefined ? '' : props.bannerIconUrl}
                     />
                     <div className="layout__wrapper">
-                        <div className="layout__content"  ref={panelRef}>
-                                <ReactToPrint
-                                    onBeforePrint={() => {/*logEvent('knapp',{funksjon: "print"})*/}}
-                                    onAfterPrint={() => {
-                                        if (lastNedKnappRef.current) {
-                                            lastNedKnappRef.current.focus();
-                                        }
-                                    }}
-                                    content={() => panelRef.current}
-                                    trigger={() => (
-                                        <button
-                                            ref={lastNedKnappRef}
-                                            className="layout__knapp knapp"
-                                        >
-                                            Last ned
-                                        </button>
-                                    )}
-                                />
-                                {props.children}
+                        <div className="layout__content" ref={panelRef}>
+                            <ReactToPrint
+                                onBeforePrint={() => {
+                                    /*logEvent('knapp',{funksjon: "print"})*/
+                                }}
+                                onAfterPrint={() => {
+                                    if (lastNedKnappRef.current) {
+                                        lastNedKnappRef.current.focus();
+                                    }
+                                }}
+                                content={() => panelRef.current}
+                                trigger={() => (
+                                    <button
+                                        ref={lastNedKnappRef}
+                                        className={classNames('layout__knapp', 'knapp')}
+                                    >
+                                        Last ned
+                                    </button>
+                                )}
+                            />
+                            {props.children}
                         </div>
                     </div>
                 </CookiesProvider>

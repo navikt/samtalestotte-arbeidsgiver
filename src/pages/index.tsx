@@ -28,7 +28,6 @@ const Home = (props: { page: PageProps }) => {
                 <Layout
                     title={props.page ? props.page.title : 'kunne ikke hente tittel'}
                     isFrontPage={true}
-                    //bannerIconUrl=""
                     decoratorParts={props.page.decorator}
                 >
                     <Samtaleverktøy />

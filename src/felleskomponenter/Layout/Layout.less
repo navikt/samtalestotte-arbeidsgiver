@@ -17,13 +17,23 @@
         border-radius: 0.25rem;
     }
 
-    @media print, (min-width: @screen-sm-min) {
-        padding: 2rem;
+    &__knapp {
+        display: none;
+    }
 
+    @media print, (min-width: @screen-sm-min) {
         &__knapp {
             display: block;
             position: absolute;
-            right: 5rem;
+            right: 2rem;
+
         }
     }
+
+    @media print {
+        &__knapp {
+            display: none;
+        }
+    }
+
 }
