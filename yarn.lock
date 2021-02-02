@@ -3162,12 +3162,22 @@ nav-frontend-ekspanderbartpanel@^3.0.48:
   resolved "https://registry.yarnpkg.com/nav-frontend-ekspanderbartpanel/-/nav-frontend-ekspanderbartpanel-3.0.49.tgz#1e908be003d98857dd8dad9a0966ce1e5ae84a90"
   integrity sha512-Iol0KxtUULi7gS3D7NrhosBB93dHOEGoYUCcllq/WgOZREB++SUBbZAE05lDuH/jewRLnsM40RFhiWxIojTgmA==
 
-nav-frontend-js-utils@^1.0.15:
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/nav-frontend-js-utils/-/nav-frontend-js-utils-1.0.15.tgz#d5dc090ad6194f595175048a2717615eba8aed53"
-  integrity sha512-ZVejqv71eVS7SSkIP4c5/kEloTq79Q0WrTDr+4tmP2tVv+c2rFYMYGhYkLozZ8yDF/6eM7yheutnYxtYsctayQ==
+nav-frontend-js-utils@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/nav-frontend-js-utils/-/nav-frontend-js-utils-1.0.16.tgz#2b14903a1ecd17e2390b924a8f2f6a89389e9437"
+  integrity sha512-NtLUbrCFTnjOyDOBUSU/I1ThcUHK1SixKV4l+EHb0Z0e02QqZXA9WGKqlG/7uADFs5bHDWnKLBAjW6Ruji1Vcw==
   dependencies:
     lodash.throttle "^4.1.1"
+
+nav-frontend-knapper-style@^1.0.15:
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/nav-frontend-knapper-style/-/nav-frontend-knapper-style-1.0.15.tgz#22f3c925be788b8b7900dbeeec63af69fe6b3906"
+  integrity sha512-Grb8lk7Un5FZFalE/Mi8VYmNZjRd7gbd4XtKXBb0O4h7/+oLl92nO4wg64QDGK4G2osIe4fhFEZcm/qmvZMsHw==
+
+nav-frontend-knapper@^2.0.30:
+  version "2.0.30"
+  resolved "https://registry.yarnpkg.com/nav-frontend-knapper/-/nav-frontend-knapper-2.0.30.tgz#2460d18cd626b20bf6d6c6fd7395bb045bc81725"
+  integrity sha512-uTgvMANu5vKEykLx/415ysQmi1b6M/IaTrhAL7vHAhAAmm73VSnaLyrT6/on6Tw1vKlg2G2n3tTKBE7XcAh+eQ==
 
 nav-frontend-lenker-style@^0.2.41:
   version "0.2.41"
@@ -3199,10 +3209,10 @@ nav-frontend-skjema@^3.0.44:
   resolved "https://registry.yarnpkg.com/nav-frontend-skjema/-/nav-frontend-skjema-3.0.44.tgz#914887b0de613008fbe67ff69d25a5e5d2192eb6"
   integrity sha512-G8OIZROdQ+fAi0jO99BvNEyHQqHkKTONuuX5SaY/e61wRCT34vn5zfj5S6U/+a0F4ybrt5ZDsjdx9Pj9hoLHrg==
 
-nav-frontend-typografi-style@^1.0.32:
-  version "1.0.32"
-  resolved "https://registry.yarnpkg.com/nav-frontend-typografi-style/-/nav-frontend-typografi-style-1.0.32.tgz#554cbf1dce9795f957c670681c7e780ccce78b5a"
-  integrity sha512-f/sBWQCvIhvEN0XdwJfRnlFJGWiWdSSVztE2O0Q0viURZQ7KrSEoUHKJCXdSlOmpWHSeOXi+87YVzQir3pDqfQ==
+nav-frontend-typografi-style@^1.0.33:
+  version "1.0.33"
+  resolved "https://registry.yarnpkg.com/nav-frontend-typografi-style/-/nav-frontend-typografi-style-1.0.33.tgz#ed1c9214662da8bd714d64ec2a2833736158d692"
+  integrity sha512-HKNQXVEG99YDlgNz22/hTFcN9yyKs3N67xUonQ8Esh7Cr8lJwT1BnAYlkiT3DimJL+oKyx7bnfA/lPJF8aSl2A==
   dependencies:
     nav-frontend-core "^5.0.11"
 

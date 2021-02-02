@@ -9,6 +9,7 @@ import { CookiesProvider } from 'react-cookie';
 import { useRef } from 'react';
 import logEvent from '../../amplitude/amplitude';
 import ReactToPrint from 'react-to-print';
+import {Knapp} from "nav-frontend-knapper";
 
 export const Layout = (props: {
     title: string;
@@ -55,7 +56,7 @@ export const Layout = (props: {
                                     trigger={() => (
                                         <button
                                             ref={lastNedKnappRef}
-                                            className="sammenligningspanel-barnehage__knapp knapp"
+                                            className="layout__knapp knapp"
                                         >
                                             Last ned
                                         </button>
