@@ -5,4 +5,17 @@
   &__ingress{
     margin: 0.5rem 0 1rem 2rem;
   }
+
+  @media print {
+    &__tittel {
+      margin-top: 3rem;
+    }
+
+    &__page-break {
+      margin-top: 1rem;
+      display: block;
+      page-break-after: always;
+    }
+  }
+
 }

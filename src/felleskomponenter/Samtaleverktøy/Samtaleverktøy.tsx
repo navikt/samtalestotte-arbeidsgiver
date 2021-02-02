@@ -84,6 +84,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
                     </ul>
                 </Normaltekst>
             </EkspanderbartInfopanel>
+            <div className="samtaleverktøy__page-break" />
         </>
     );
 };

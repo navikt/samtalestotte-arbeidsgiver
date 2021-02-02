@@ -104,6 +104,9 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     </div>
                 </div>
             </EkspanderbartInfopanel>
+
+            <div className="oppfølgingssamtaleGjennomføring__page-break"/>
+
             <EkspanderbartInfopanel
                 tittel={'Slik innleder du samtalen'}
                 unikId={'Slik-innleder-du-samtalen'}
@@ -126,6 +129,9 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     </ul>
                 </div>
             </EkspanderbartInfopanel>
+
+            <div className="oppfølgingssamtaleGjennomføring__page-break"/>
+
             <EkspanderbartInfopanel
                 tittel={'Slik snakker dere om arbeidssituasjonen'}
                 unikId={'Slik-snakker-dere-om-arbeidssituasjonen'}
@@ -166,6 +172,9 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <p>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
                 </div>
             </EkspanderbartInfopanel>
+
+            <div className="oppfølgingssamtaleGjennomføring__page-break"/>
+
             <EkspanderbartInfopanel
                 tittel={'Slik finner dere løsninger sammen'}
                 unikId={'Slik-finner-dere-løsninger-sammen'}
@@ -234,6 +243,9 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 </ul>
                 <span>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</span>
             </EkspanderbartInfopanel>
+
+            <div className="oppfølgingssamtaleGjennomføring__page-break"/>
+
             <EkspanderbartInfopanel
                 tittel={'Slik avslutter du samtalen'}
                 unikId={'Slik-avslutter-du-samtalen'}

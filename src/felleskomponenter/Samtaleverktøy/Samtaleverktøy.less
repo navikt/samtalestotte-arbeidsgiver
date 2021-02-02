@@ -6,4 +6,13 @@
   &__ul_tett{
     margin-block-start: 0;
   }
+
+  @media print {
+    &__page-break {
+      margin-top: 1rem;
+      display: block;
+      page-break-after: always;
+    }
+  }
+
 }
