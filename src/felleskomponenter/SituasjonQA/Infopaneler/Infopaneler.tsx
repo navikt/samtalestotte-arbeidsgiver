@@ -87,7 +87,7 @@ export const TillrettelagtInfopanelSvarNei: FunctionComponent = () => (
     >
         Hvis du og medarbeideren er godt kjent med hvilke muligheter for tilrettelegging
         som finnes på deres arbeidsplass, kan det bli enklere å finne gode løsninger i
-        oppfølgingssamtaler.
+        samtalen.
         <br />
         <br />
         <span className="bold">
