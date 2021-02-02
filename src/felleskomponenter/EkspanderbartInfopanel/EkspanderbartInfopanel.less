@@ -23,6 +23,9 @@
         }
 
     }
+    &__print-innhold{
+        display: none;
+    }
 
     &__panel {
         margin: 0 2rem 1rem;
@@ -61,7 +64,17 @@
     &__ul-tett{
         margin-block-start: 0;
     }
-
+@media print {
+    &__print-innhold{
+        display: block;
+    }
+    &__lukk-knapp{
+        display: none;
+    }
+    &__innhold{
+        display: none;
+    }
+}
 }
 button.ekspanderbartPanel__hode {
     height: 64px;

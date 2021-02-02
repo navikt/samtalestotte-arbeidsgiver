@@ -45,7 +45,7 @@ export const Layout = (props: {
                     <div className="layout__wrapper">
                         <div className="layout__content"  ref={panelRef}>
                                 <ReactToPrint
-                                    onBeforePrint={() => logEvent('forside barnehage', 'print')}
+                                    onBeforePrint={() => {/*logEvent('knapp',{funksjon: "print"})*/}}
                                     onAfterPrint={() => {
                                         if (lastNedKnappRef.current) {
                                             lastNedKnappRef.current.focus();
