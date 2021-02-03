@@ -12,6 +12,7 @@ import classNames from 'classnames';
 import { Normaltekst } from 'nav-frontend-typografi';
 import { PROD_URL } from '../../utils/konstanter';
 import { Knapp } from 'nav-frontend-knapper';
+import logEvent from '../../amplitude/amplitude';
 
 export const Layout = (props: {
     title: string;
@@ -50,25 +51,30 @@ export const Layout = (props: {
                             <div className="layout__print-header">
                                 <Normaltekst>{PROD_URL}</Normaltekst>
                             </div>
-                            <div className="layout__react-to-print-wrapper"><ReactToPrint
-                                onBeforePrint={() => {
-                                    /*logEvent('knapp',{funksjon: "print"})*/
-                                }}
-                                onAfterPrint={() => {
-                                    if (lastNedKnappRef.current) {
-                                        lastNedKnappRef.current.focus();
-                                    }
-                                }}
-                                content={() => panelRef.current}
-                                trigger={() => (
-                                    <button
-                                        ref={lastNedKnappRef}
-                                        className={classNames('layout__knapp', 'knapp')}
-                                    >
-                                        Last ned
-                                    </button>
-                                )}
-                            /></div>
+                            <div className="layout__react-to-print-wrapper">
+                                <ReactToPrint
+                                    onBeforePrint={() => {
+                                        logEvent('knapp', {
+                                            label: 'last-ned',
+                                            funksjon: 'last-ned',
+                                        });
+                                    }}
+                                    onAfterPrint={() => {
+                                        if (lastNedKnappRef.current) {
+                                            lastNedKnappRef.current.focus();
+                                        }
+                                    }}
+                                    content={() => panelRef.current}
+                                    trigger={() => (
+                                        <button
+                                            ref={lastNedKnappRef}
+                                            className={classNames('layout__knapp', 'knapp')}
+                                        >
+                                            Last ned
+                                        </button>
+                                    )}
+                                />
+                            </div>
                             {props.children}
                         </div>
                     </div>
