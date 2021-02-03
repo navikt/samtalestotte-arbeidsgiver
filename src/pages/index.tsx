@@ -49,7 +49,10 @@ interface StaticProps {
 }
 
 export const getStaticProps = async (): Promise<StaticProps> => {
-    const page = await getPageProps('Samtalestøtte for arbeidsgiver', '/');
+    const page = await getPageProps(
+        'Samtalestøtte for arbeidsgiver',
+        'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.'
+    );
 
     return {
         props: { page },
