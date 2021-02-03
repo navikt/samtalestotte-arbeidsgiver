@@ -35,6 +35,9 @@ export const Layout = (props: {
                         isFrontPage={true}
                         title={props.title}
                         iconUrl={props.bannerIconUrl === undefined ? '' : props.bannerIconUrl}
+                        kontekst={
+                            'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid'
+                        }
                     />
                     <div className="layout__wrapper">
                         <div className="layout__content">{props.children}</div>

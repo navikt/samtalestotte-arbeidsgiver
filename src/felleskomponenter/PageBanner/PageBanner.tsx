@@ -1,7 +1,7 @@
 import {Normaltekst, Sidetittel} from 'nav-frontend-typografi';
 import './PageBanner.less';
 
-export const PageBanner = (props: { isFrontPage: boolean; title: string; iconUrl: string }) => {
+export const PageBanner = (props: { isFrontPage: boolean; title: string; iconUrl: string ; kontekst:string}) => {
     return (
         <div className="page-banner">
             <div className="page-banner__innhold">
@@ -10,8 +10,7 @@ export const PageBanner = (props: { isFrontPage: boolean; title: string; iconUrl
                         {props.title}
                     </Sidetittel>
                     <Normaltekst className="page-banner__kontekst-tekst">
-                        Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke
-                        erfaringene til forebyggende arbeid
+                        {props.kontekst}
                     </Normaltekst>
                 </div>
             </div>
