@@ -13,6 +13,7 @@ import { Normaltekst } from 'nav-frontend-typografi';
 import { PROD_URL } from '../../utils/konstanter';
 import { Knapp } from 'nav-frontend-knapper';
 import logEvent from '../../amplitude/amplitude';
+import "nav-frontend-knapper-style";
 
 export const Layout = (props: {
     title: string;
@@ -88,7 +89,6 @@ export const Layout = (props: {
                 }
             />
             <DecoratorEnv env={props.decoratorParts?.decoratorEnv} />
-            <Knapp style={{ display: 'none' }} />
         </div>
     );
 };
