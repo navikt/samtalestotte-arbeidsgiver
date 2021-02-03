@@ -9,7 +9,8 @@ import { CookiesProvider } from 'react-cookie';
 import { useRef } from 'react';
 import ReactToPrint from 'react-to-print';
 import classNames from 'classnames';
-import {Normaltekst} from "nav-frontend-typografi";
+import { Normaltekst } from 'nav-frontend-typografi';
+import { PROD_URL } from '../../utils/konstanter';
 
 export const Layout = (props: {
     title: string;
@@ -46,9 +47,7 @@ export const Layout = (props: {
                     <div className="layout__wrapper">
                         <div className="layout__content" ref={panelRef}>
                             <div className="layout__print-header">
-                                <Normaltekst>
-                                    {window.location.href}
-                                </Normaltekst>
+                                <Normaltekst>{PROD_URL}</Normaltekst>
                             </div>
                             <ReactToPrint
                                 onBeforePrint={() => {
