@@ -76,7 +76,7 @@ export const TillrettelagtInfopanelSvarJa: FunctionComponent = () => (
         Fint. Oversikt over tilretteleggingsmuligheter er et godt utgangspunkt for å
         finne gode løsninger.
         <br />
-        <span className="bold">Tips: </span>husker dere å dele med sykmelder?
+        <span className="bold">Tips: </span>Husker dere å dele informasjonen med den som sykmelder medarbeideren?
     </Panel>
 );
 
@@ -87,7 +87,7 @@ export const TillrettelagtInfopanelSvarNei: FunctionComponent = () => (
     >
         Hvis du og medarbeideren er godt kjent med hvilke muligheter for tilrettelegging
         som finnes på deres arbeidsplass, kan det bli enklere å finne gode løsninger i
-        oppfølgingssamtaler.
+        samtalen.
         <br />
         <br />
         <span className="bold">
