@@ -1,8 +1,10 @@
 @import '../../../node_modules/nav-frontend-core/less/_variabler';
 
 .layout {
-    //TODO vi kommer til å style her
-    //margin: 1rem ;
+    &__print-header {
+        display: none
+    }
+
     &__wrapper {
         background-color: @navLysGra;
         min-height: 50rem;
@@ -21,7 +23,7 @@
         display: none;
     }
 
-    @media print, (min-width: @screen-sm-min) {
+    @media (min-width: @screen-sm-min) {
         &__knapp {
             display: block;
             position: absolute;
@@ -31,6 +33,12 @@
     }
 
     @media print {
+        &__print-header {
+            display: block;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+        }
+
         &__knapp {
             display: none;
         }

@@ -7,8 +7,8 @@
     }
 
     &__innhold {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
         padding-right: 2rem;
 
         &-ny-avsnitt {
@@ -91,6 +91,12 @@
         }
     }
 
+}
+
+@media print {
+    .ekspanderbartPanel {
+        margin-top: 2rem;
+    }
 }
 
 button.ekspanderbartPanel__hode {

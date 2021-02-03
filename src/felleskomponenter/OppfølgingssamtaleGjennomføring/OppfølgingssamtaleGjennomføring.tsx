@@ -11,7 +11,6 @@ import { Steg5SVG } from './Steg5SVG';
 import LoggbarLenke from '../LoggbarLenke/LoggbarLenke';
 
 export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
-
     return (
         <>
             <Systemtittel className="oppfølgingssamtaleGjennomføring__tittel">
@@ -30,9 +29,12 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                     <Element>Lederens rolle i en samtale om arbeidssituasjonen</Element>
                     <ul className="ekspanderbart-infopanel__ul-tett">
                         <li>
-                            Du er ansvarlig for å gjennomføre og dokumentere samtaler om arbeidssituasjonen.
+                            Du er ansvarlig for å gjennomføre og dokumentere samtaler om
+                            arbeidssituasjonen.
                         </li>
-                        <li>Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen.</li>
+                        <li>
+                            Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen.
+                        </li>
                         <li>Din viktigste oppgave er å få medarbeideren til å snakke.</li>
                     </ul>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
@@ -79,7 +81,11 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                             </LoggbarLenke>
                         </li>
                         <li>
-                            <LoggbarLenke href={"https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge"}>
+                            <LoggbarLenke
+                                href={
+                                    'https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge'
+                                }
+                            >
                                 Les mer om NAVs virkemidler.
                             </LoggbarLenke>
                         </li>
@@ -105,7 +111,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 </div>
             </EkspanderbartInfopanel>
 
-            <div className="oppfølgingssamtaleGjennomføring__page-break"/>
+            <div className="oppfølgingssamtaleGjennomføring__page-break" />
 
             <EkspanderbartInfopanel
                 tittel={'Slik innleder du samtalen'}
@@ -114,8 +120,10 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Normaltekst>
-                        Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.
-                        <br />Rammene hjelper dere med å holde fokus og tid.
+                        Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre
+                        mål og hensikt.
+                        <br />
+                        Rammene hjelper dere med å holde fokus og tid.
                     </Normaltekst>
                     <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
                         Vanlige tema i innledning:
@@ -130,7 +138,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 </div>
             </EkspanderbartInfopanel>
 
-            <div className="oppfølgingssamtaleGjennomføring__page-break"/>
+            <div className="oppfølgingssamtaleGjennomføring__page-break" />
 
             <EkspanderbartInfopanel
                 tittel={'Slik snakker dere om arbeidssituasjonen'}
@@ -173,122 +181,133 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 </div>
             </EkspanderbartInfopanel>
 
-            <div className="oppfølgingssamtaleGjennomføring__page-break"/>
+            <div className="oppfølgingssamtaleGjennomføring__page-break" />
 
             <EkspanderbartInfopanel
                 tittel={'Slik finner dere løsninger sammen'}
                 unikId={'Slik-finner-dere-løsninger-sammen'}
                 ikon={<Steg4SVG />}
             >
-                <Normaltekst className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                    Det er nyttig å sikre en felles forståelse av arbeidssituasjonen før dere går
-                    videre til å snakke om løsninger og tiltak. Medarbeidere som uttrykker
-                    løsningsforslag selv, vil ofte få økt motivasjon ved gjennomføring.
-                </Normaltekst>
-                <Element
-                    className={classNames(
-                        'ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn',
-                        'ekspanderbart-infopanel__innhold-display-flex'
-                    )}
-                >
-                    <Normaltekst>
-                        <span className="ekspanderbart-infopanel__innhold-bold">Husk</span> at
-                        dersom medarbeideren har negative erfaringer, for eksempel at tiltak ikke
-                        har fungert, bør du anerkjenne dette. Fokuset bør ligge framover i tid og på
-                        hvilke muligheter som finnes.
+                <div className="ekspanderbart-infopanel__innhold">
+                    <Normaltekst className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        Det er nyttig å sikre en felles forståelse av arbeidssituasjonen før dere
+                        går videre til å snakke om løsninger og tiltak. Medarbeidere som uttrykker
+                        løsningsforslag selv, vil ofte få økt motivasjon ved gjennomføring.
                     </Normaltekst>
-                </Element>
+                    <Element
+                        className={classNames(
+                            'ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn',
+                            'ekspanderbart-infopanel__innhold-display-flex'
+                        )}
+                    >
+                        <Normaltekst>
+                            <span className="ekspanderbart-infopanel__innhold-bold">Husk</span> at
+                            dersom medarbeideren har negative erfaringer, for eksempel at tiltak
+                            ikke har fungert, bør du anerkjenne dette. Fokuset bør ligge framover i
+                            tid og på hvilke muligheter som finnes.
+                        </Normaltekst>
+                    </Element>
 
-                <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                    <Element>Vanlige tema når dere finner løsninger sammen:</Element>
+                    <div className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        <Element>Vanlige tema når dere finner løsninger sammen:</Element>
+                        <ul className="ekspanderbart-infopanel__ul-tett">
+                            <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
+                            <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
+                            <li>tilpasse organisering av arbeidet</li>
+                            <li>tilpasse samarbeid og samhandling med andre</li>
+                            <li>alternative arbeidsoppgaver</li>
+                            <li>behov for informasjon og tilbakemeldinger</li>
+                            <li>arbeidsmiljø</li>
+                            <li>kompetanse</li>
+                            <li>fysisk utforming av arbeidsplassen</li>
+                            <li>
+                                <LoggbarLenke
+                                    href={
+                                        'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse'
+                                    }
+                                >
+                                    hjelpemidler
+                                </LoggbarLenke>
+                            </li>
+
+                            <li>andre forhold</li>
+                        </ul>
+                    </div>
+                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        Eksempler på spørsmål:
+                    </Element>
                     <ul className="ekspanderbart-infopanel__ul-tett">
-                        <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
-                        <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
-                        <li>tilpasse organisering av arbeidet</li>
-                        <li>tilpasse samarbeid og samhandling med andre</li>
-                        <li>alternative arbeidsoppgaver</li>
-                        <li>behov for informasjon og tilbakemeldinger</li>
-                        <li>arbeidsmiljø</li>
-                        <li>kompetanse</li>
-                        <li>fysisk utforming av arbeidsplassen</li>
+                        <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
+                        <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
+                        <li>Hvordan bør tiden disponeres?</li>
                         <li>
-                            <LoggbarLenke href={'https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse'}>
-                                hjelpemidler
-                            </LoggbarLenke>
+                            Hvordan kan endringer i tempo, arbeidstid eller arbeidssted øke
+                            mulighetene for arbeid?
                         </li>
-
-                        <li>andre forhold</li>
+                        <li>
+                            Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt
+                            eller delvis?
+                        </li>
+                        <li>Hvilke løsninger ser du for deg?</li>
+                        <li>Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?</li>
+                        <li>Hvordan ser du for deg veien videre?</li>
+                        <li>Hvordan ser du for deg det videre sykmeldingsforløpet?</li>
+                        <li>Hvilke tiltak bør vi prøve først?</li>
                     </ul>
+                    <span>
+                        Velg noen av eksemplene som er relevante for akkurat denne samtalen.
+                    </span>
                 </div>
-                <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                    Eksempler på spørsmål:
-                </Element>
-                <ul className="ekspanderbart-infopanel__ul-tett">
-                    <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
-                    <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
-                    <li>Hvordan bør tiden disponeres?</li>
-                    <li>
-                        Hvordan kan endringer i tempo, arbeidstid eller arbeidssted øke mulighetene
-                        for arbeid?
-                    </li>
-                    <li>
-                        Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt eller
-                        delvis?
-                    </li>
-                    <li>Hvilke løsninger ser du for deg?</li>
-                    <li>Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?</li>
-                    <li>Hvordan ser du for deg veien videre?</li>
-                    <li>Hvordan ser du for deg det videre sykmeldingsforløpet?</li>
-                    <li>Hvilke tiltak bør vi prøve først?</li>
-                </ul>
-                <span>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</span>
             </EkspanderbartInfopanel>
 
-            <div className="oppfølgingssamtaleGjennomføring__page-break"/>
+            <div className="oppfølgingssamtaleGjennomføring__page-break" />
 
             <EkspanderbartInfopanel
                 tittel={'Slik avslutter du samtalen'}
                 unikId={'Slik-avslutter-du-samtalen'}
                 ikon={<Steg5SVG />}
             >
-                <Normaltekst className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                    En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren
-                    oppsummerer.
-                    <br />
-                    Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
-                </Normaltekst>
-                <Normaltekst>
-                    <LoggbarLenke href='https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap'>
-                        Les mer om oppfølgingsplan
-                    </LoggbarLenke>
-                </Normaltekst>
-                <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
-                    Vanlige tema i avslutningen:
-                </Element>
-                <Normaltekst>
-                    <ul className="ekspanderbart-infopanel__ul-tett">
-                        <li>avtaler, tilrettelegginger og tiltak</li>
-                        <li>om tilrettelegging er midlertidig eller permanent</li>
-                        <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
-                        <li>
-                            dato for neste samtale og hvor ofte oppfølgingssamtaler skal
-                            gjennomføres
-                        </li>
-                        <li>hvem som er ansvarlig for å følge opp</li>
-                        <li>om det er behov for videre avklaring eller hjelp fra andre</li>
-                    </ul>
-                </Normaltekst>
+                <div className="ekspanderbart-infopanel__innhold">
+                    <Normaltekst className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren
+                        oppsummerer.
+                        <br />
+                        Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en
+                        oppfølgingsplan.
+                    </Normaltekst>
+                    <Normaltekst>
+                        <LoggbarLenke href="https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap">
+                            Les mer om oppfølgingsplan
+                        </LoggbarLenke>
+                    </Normaltekst>
+                    <Element className="ekspanderbart-infopanel__innhold-ny-avsnitt">
+                        Vanlige tema i avslutningen:
+                    </Element>
+                    <Normaltekst>
+                        <ul className="ekspanderbart-infopanel__ul-tett">
+                            <li>avtaler, tilrettelegginger og tiltak</li>
+                            <li>om tilrettelegging er midlertidig eller permanent</li>
+                            <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
+                            <li>
+                                dato for neste samtale og hvor ofte oppfølgingssamtaler skal
+                                gjennomføres
+                            </li>
+                            <li>hvem som er ansvarlig for å følge opp</li>
+                            <li>om det er behov for videre avklaring eller hjelp fra andre</li>
+                        </ul>
+                    </Normaltekst>
 
-                <div className="ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn">
-                    <Normaltekst>
-                        Av og til blir du og medarbeideren ikke enige om løsningene og det er
-                        greit.{' '}
-                    </Normaltekst>
-                    <Normaltekst>
-                        Da dokumenterer du begges synspunkter i oppsummeringen eller
-                        oppfølgingsplanen.
-                    </Normaltekst>
-                    <Element>Tips: gjennomfør flere oppfølgingssamtaler regelmessig. </Element>
+                    <div className="ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn">
+                        <Normaltekst>
+                            Av og til blir du og medarbeideren ikke enige om løsningene og det er
+                            greit.{' '}
+                        </Normaltekst>
+                        <Normaltekst>
+                            Da dokumenterer du begges synspunkter i oppsummeringen eller
+                            oppfølgingsplanen.
+                        </Normaltekst>
+                        <Element>Tips: gjennomfør flere oppfølgingssamtaler regelmessig. </Element>
+                    </div>
                 </div>
             </EkspanderbartInfopanel>
         </>
