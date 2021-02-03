@@ -2,7 +2,7 @@
 
 .layout {
     &__print-header {
-        display: none
+        display: none;
     }
 
     &__wrapper {
@@ -19,16 +19,15 @@
         border-radius: 0.25rem;
     }
 
-    &__knapp {
+    &__react-to-print-wrapper {
         display: none;
     }
 
     @media (min-width: @screen-sm-min) {
-        &__knapp {
-            display: block;
-            position: absolute;
-            right: 2rem;
-
+        &__react-to-print-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 2rem;
         }
     }
 
@@ -43,5 +42,4 @@
             display: none;
         }
     }
-
 }

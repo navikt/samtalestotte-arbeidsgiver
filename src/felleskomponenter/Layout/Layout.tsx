@@ -11,6 +11,7 @@ import ReactToPrint from 'react-to-print';
 import classNames from 'classnames';
 import { Normaltekst } from 'nav-frontend-typografi';
 import { PROD_URL } from '../../utils/konstanter';
+import { Knapp } from 'nav-frontend-knapper';
 
 export const Layout = (props: {
     title: string;
@@ -49,7 +50,7 @@ export const Layout = (props: {
                             <div className="layout__print-header">
                                 <Normaltekst>{PROD_URL}</Normaltekst>
                             </div>
-                            <ReactToPrint
+                            <div className="layout__react-to-print-wrapper"><ReactToPrint
                                 onBeforePrint={() => {
                                     /*logEvent('knapp',{funksjon: "print"})*/
                                 }}
@@ -67,7 +68,7 @@ export const Layout = (props: {
                                         Last ned
                                     </button>
                                 )}
-                            />
+                            /></div>
                             {props.children}
                         </div>
                     </div>
@@ -81,6 +82,7 @@ export const Layout = (props: {
                 }
             />
             <DecoratorEnv env={props.decoratorParts?.decoratorEnv} />
+            <Knapp style={{ display: 'none' }} />
         </div>
     );
 };
