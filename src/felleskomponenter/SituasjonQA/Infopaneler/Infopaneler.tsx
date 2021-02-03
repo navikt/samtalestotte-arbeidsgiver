@@ -76,7 +76,7 @@ export const TillrettelagtInfopanelSvarJa: FunctionComponent = () => (
         Fint. Oversikt over tilretteleggingsmuligheter er et godt utgangspunkt for å
         finne gode løsninger.
         <br />
-        <span className="bold">Tips: </span>husker dere å dele med sykmelder?
+        <span className="bold">Tips: </span>Husker dere å dele informasjonen med den som sykmelder medarbeideren?
     </Panel>
 );
 
