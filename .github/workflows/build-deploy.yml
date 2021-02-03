@@ -39,7 +39,7 @@ jobs:
                   PRINT_PAYLOAD: true
     deploy-to-labs-gcp:
         name: Deploy to labs-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/legge-til-eventer-til-radio-knapp'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/skriv-ut-knapp'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
