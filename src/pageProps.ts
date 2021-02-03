@@ -13,6 +13,7 @@ export const getPageProps = async (
     slug: string
 ): Promise<PageProps> => {
     // TODO: trenger vi breadcrumbs
+    // TODO: Vi bør fikse breadcrumbs
     const breadcrumbs = [{ title: encodeURIComponent(title), url: `${process.env.APP_URL}` }];
     const cacheKey = 'index';
 
