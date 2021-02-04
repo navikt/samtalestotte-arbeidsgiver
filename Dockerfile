@@ -10,6 +10,7 @@ COPY yarn.lock yarn.lock
 COPY next.config.js next.config.js
 COPY .env .env
 
+RUN chown -R apprunner /usr/src/app
 RUN yarn install --frozen-lockfile
 RUN yarn build
 
