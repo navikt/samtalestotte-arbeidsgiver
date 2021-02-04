@@ -1,6 +1,8 @@
 FROM navikt/node-express:14-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /var/server
+
+USER apprunner
 
 ENV NODE_ENV=production
 
