@@ -1,10 +1,10 @@
 FROM navikt/node-express:14-alpine
 
-WORKDIR /usr/src/app
-#RUN apt-get update
-#RUN apt-get install sudo
+USER root
 RUN chown -R apprunner /usr/src/app
 
+USER apprunner
+WORKDIR /usr/src/app
 ENV NODE_ENV=production
 
 COPY src/ src/
