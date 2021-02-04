@@ -1,18 +1,18 @@
-import {PageBanner} from '../PageBanner/PageBanner';
-import {DecoratorHeader} from '../decorator/DecoratorHeader';
-import {DecoratorFooter} from '../decorator/DecoratorFooter';
+import { PageBanner } from '../PageBanner/PageBanner';
+import { DecoratorHeader } from '../decorator/DecoratorHeader';
+import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
-import {DecoratorParts} from '../../utils/dekorator';
-import {DecoratorEnv} from '../decorator/DecoratorEnv';
+import { DecoratorParts } from '../../utils/dekorator';
+import { DecoratorEnv } from '../decorator/DecoratorEnv';
 import './Layout.less';
-import {CookiesProvider} from 'react-cookie';
-import {useRef} from 'react';
+import { CookiesProvider } from 'react-cookie';
+import { useRef } from 'react';
 import ReactToPrint from 'react-to-print';
 import classNames from 'classnames';
-import {Normaltekst} from 'nav-frontend-typografi';
-import {PROD_URL} from '../../utils/konstanter';
+import { Normaltekst } from 'nav-frontend-typografi';
+import { PROD_URL } from '../../utils/konstanter';
 import logEvent from '../../amplitude/amplitude';
-import "nav-frontend-knapper-style";
+import 'nav-frontend-knapper-style';
 
 export const Layout = (props: {
     title: string;
