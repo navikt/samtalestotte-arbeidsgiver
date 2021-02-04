@@ -1,7 +1,7 @@
 @import '../../../node_modules/nav-frontend-core/less/_variabler';
 
 .page-banner {
-    height: 7.5rem;
+    height: 16.5rem;
     background-color: @navBlaLighten80;
     border-bottom: 0.2rem solid @navBlaLighten60;
     padding-left: 1.25rem;
@@ -11,11 +11,17 @@
         margin: 0 auto;
         max-width: @screen-md-min;
         height: 100%;
-        display: flex;
+        display: grid;
         align-items: center;
         justify-content: space-between;
     }
-
+    &__tekst-og-kontekst {
+        margin: 1rem 1rem;
+    }
+    &__tekst {
+        margin-top: 0.5rem;
+        font-size: 2.25rem;
+    }
     &__illustrasjon {
         display: none;
     }
