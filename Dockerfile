@@ -1,9 +1,9 @@
 FROM navikt/node-express:14-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /var/server
 
-USER root
-RUN chown -R apprunner /usr/src/app
+#USER root
+#RUN chown -R apprunner /usr/src/app
 USER apprunner
 
 ENV NODE_ENV=production
