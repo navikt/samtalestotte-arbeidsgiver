@@ -15,7 +15,7 @@ import {
     TillrettelagtInfopanelSvarNei,
 } from './Infopaneler/Infopaneler';
 import logEvent from '../../amplitude/amplitude';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 // Svar komponenten renderer ikke riktig på serverside. Dette sørger for at den blir rendret clientside.
 const Svar = dynamic<SvarProps>(() => import('./Svar/Svar').then((module) => module.Svar), {
@@ -66,7 +66,7 @@ export const SituasjonQA: FunctionComponent = () => {
         callback(svarType);
     };
     return (
-        <div className={classNames("situasjonqa", "situasjonqa__innhold-no-print")}>
+        <div className={classNames('situasjonqa', 'situasjonqa__innhold-no-print')}>
             <Systemtittel className="situasjonqa__tittel">
                 Hvordan er situasjonen hos dere?
             </Systemtittel>
@@ -79,6 +79,7 @@ export const SituasjonQA: FunctionComponent = () => {
                 name="forutsigbar"
                 callback={callbackIntercept(setForutsigbar, 'forutsigbar-spørsmål')}
                 svar={forutsigbar}
+                ariaTittel={'Bidro sykefraværsrutinene til forutsigbarhet rundt oppgaver og ansvar?'}
             />
             {forutsigbar === 'ja' && <ForutsigbarInfopanelSvarJa />}
             {forutsigbar === 'nei' && <ForutsigbarInfopanelSvarNei />}
@@ -90,6 +91,7 @@ export const SituasjonQA: FunctionComponent = () => {
                 name="kjent"
                 callback={callbackIntercept(setKjent, 'kjent-spørsmål')}
                 svar={kjent}
+                ariaTittel={'Var rutinene kjent i forkant av samtalen?'}
             />
             {kjent === 'ja' && <KjentInfopanelSvarJa />}
             {kjent === 'nei' && <KjentInfopanelSvarNei />}
@@ -101,6 +103,9 @@ export const SituasjonQA: FunctionComponent = () => {
                 name="tillrettelagt"
                 callback={callbackIntercept(setTillrettelagt, 'tilrettelagt-spørsmål')}
                 svar={tillrettelagt}
+                ariaTittel={
+                    'Kjente du og medarbeideren til tilretteleggingsmuligheter på egen arbeidsplass?'
+                }
             />
             {tillrettelagt === 'ja' && <TillrettelagtInfopanelSvarJa />}
             {tillrettelagt === 'nei' && <TillrettelagtInfopanelSvarNei />}
