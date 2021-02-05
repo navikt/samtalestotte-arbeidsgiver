@@ -289,7 +289,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                             <li>om tilrettelegging er midlertidig eller permanent</li>
                             <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
                             <li>
-                                dato for neste samtale og hvor ofte oppfølgingssamtaler skal
+                                dato for neste samtale og hvor ofte samtaler skal
                                 gjennomføres
                             </li>
                             <li>hvem som er ansvarlig for å følge opp</li>
@@ -306,7 +306,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                             Da dokumenterer du begges synspunkter i oppsummeringen eller
                             oppfølgingsplanen.
                         </Normaltekst>
-                        <Element>Tips: gjennomfør flere oppfølgingssamtaler regelmessig. </Element>
+                        <Element>Tips: gjennomfør flere samtaler regelmessig. </Element>
                     </div>
                 </div>
             </EkspanderbartInfopanel>
