@@ -83,7 +83,7 @@ export const SituasjonQA: FunctionComponent = () => {
             />
             {forutsigbar === 'ja' && <ForutsigbarInfopanelSvarJa />}
             {forutsigbar === 'nei' && <ForutsigbarInfopanelSvarNei />}
-            <hr className="skillelinje" />
+            <hr aria-label={''} className="skillelinje" />
             <Undertittel className="situasjonqa__undertittel">
                 Var rutinene kjent for både deg og medarbeideren i forkant av samtalen?
             </Undertittel>
@@ -95,7 +95,7 @@ export const SituasjonQA: FunctionComponent = () => {
             />
             {kjent === 'ja' && <KjentInfopanelSvarJa />}
             {kjent === 'nei' && <KjentInfopanelSvarNei />}
-            <hr className="skillelinje" />
+            <hr aria-label={''} className="skillelinje" />
             <Undertittel className="situasjonqa__undertittel">
                 Kjente du og medarbeideren til tilretteleggingsmuligheter på egen arbeidsplass?
             </Undertittel>
@@ -109,7 +109,7 @@ export const SituasjonQA: FunctionComponent = () => {
             />
             {tillrettelagt === 'ja' && <TillrettelagtInfopanelSvarJa />}
             {tillrettelagt === 'nei' && <TillrettelagtInfopanelSvarNei />}
-            <hr className="skillelinje" />
+            <hr aria-label={''} className="skillelinje" />
             {(forutsigbar === 'nei' || kjent === 'nei' || tillrettelagt === 'nei') && (
                 <InfoPanelEnNei />
             )}
