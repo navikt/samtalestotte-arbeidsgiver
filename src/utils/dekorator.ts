@@ -45,7 +45,7 @@ const getDecoratorCached = async (decoratorParams: DecoratorParams) => {
                     return key + '=' + JSON.stringify(value);
                 })
                 .join('&');
-            const dekoratorUrl = process.env.DECORATOR_URL + '?' + queryString;
+            const dekoratorUrl = process.env.DECORATOR_URL + '&' + queryString;
             fetch(dekoratorUrl)
                 .then((res) => {
                     if (!res.ok) {
