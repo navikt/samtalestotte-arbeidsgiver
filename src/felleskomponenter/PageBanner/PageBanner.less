@@ -1,23 +1,27 @@
 @import '../../../node_modules/nav-frontend-core/less/_variabler';
 
 .page-banner {
-    min-height: 7.5rem;
+    height: 16.5rem;
     background-color: @navBlaLighten80;
     border-bottom: 0.2rem solid @navBlaLighten60;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 
     &__innhold {
         margin: 0 auto;
-        max-width: 60rem;
+        max-width: @screen-md-min;
         height: 100%;
-        display: flex;
+        display: grid;
         align-items: center;
         justify-content: space-between;
-        padding-left: 2rem;
-        padding-right: 2rem;
     }
-
+    &__tekst-og-kontekst {
+        margin: 1rem 1rem;
+    }
+    &__tekst {
+        margin-top: 0.5rem;
+        font-size: 2.25rem;
+    }
     &__illustrasjon {
         display: none;
     }

@@ -5,4 +5,17 @@
     margin-top: 0.5rem;
     margin-bottom: 1rem;
   }
+
+  @media print {
+    &__tittel {
+      margin-top: 3rem;
+    }
+
+    &__page-break {
+      margin-top: 1rem;
+      display: block;
+      page-break-after: always;
+    }
+  }
+
 }

@@ -15,6 +15,7 @@ import {
     TillrettelagtInfopanelSvarNei,
 } from './Infopaneler/Infopaneler';
 import logEvent from '../../amplitude/amplitude';
+import classNames from "classnames";
 
 // Svar komponenten renderer ikke riktig på serverside. Dette sørger for at den blir rendret clientside.
 const Svar = dynamic<SvarProps>(() => import('./Svar/Svar').then((module) => module.Svar), {
@@ -65,7 +66,7 @@ export const SituasjonQA: FunctionComponent = () => {
         callback(svarType);
     };
     return (
-        <div className="situasjonqa">
+        <div className={classNames("situasjonqa", "situasjonqa__innhold-no-print")}>
             <Systemtittel className="situasjonqa__tittel">
                 Hvordan er situasjonen hos dere?
             </Systemtittel>

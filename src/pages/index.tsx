@@ -5,8 +5,9 @@ import './index.less';
 import { Samtaleverktøy } from '../felleskomponenter/Samtaleverktøy/Samtaleverktøy';
 import { OppfølgingssamtaleGjennomføring } from '../felleskomponenter/OppfølgingssamtaleGjennomføring/OppfølgingssamtaleGjennomføring';
 import { SituasjonQA } from '../felleskomponenter/SituasjonQA/SituasjonQA';
-import { useEffect } from 'react';
+import {useEffect, useRef} from 'react';
 import logEvent from '../amplitude/amplitude';
+import ReactToPrint from "react-to-print";
 
 const Home = (props: { page: PageProps }) => {
     useEffect(() => {
@@ -27,7 +28,6 @@ const Home = (props: { page: PageProps }) => {
                 <Layout
                     title={props.page ? props.page.title : 'kunne ikke hente tittel'}
                     isFrontPage={true}
-                    //bannerIconUrl=""
                     decoratorParts={props.page.decorator}
                 >
                     <Samtaleverktøy />
@@ -49,7 +49,10 @@ interface StaticProps {
 }
 
 export const getStaticProps = async (): Promise<StaticProps> => {
-    const page = await getPageProps('Samtalestøtte for arbeidsgiver', '/');
+    const page = await getPageProps(
+        'Samtalestøtte for arbeidsgiver',
+        'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.'
+    );
 
     return {
         props: { page },

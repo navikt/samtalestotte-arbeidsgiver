@@ -1,8 +1,10 @@
 @import '../../../node_modules/nav-frontend-core/less/_variabler';
 
 .layout {
-    //TODO vi kommer til å style her
-    //margin: 1rem ;
+    &__print-header {
+        display: none;
+    }
+
     &__wrapper {
         background-color: @navLysGra;
         min-height: 50rem;
@@ -14,5 +16,33 @@
         padding: 2rem;
         margin: auto;
         border-radius: 0.25rem;
+    }
+
+    &__react-to-print-wrapper {
+        display: none;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        &__react-to-print-wrapper {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    @media print {
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        &__print-header {
+            display: block;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+        }
+
+        &__knapp {
+            display: none;
+        }
     }
 }
