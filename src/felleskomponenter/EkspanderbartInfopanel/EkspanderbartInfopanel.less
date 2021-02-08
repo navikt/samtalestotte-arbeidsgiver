@@ -1,15 +1,26 @@
 @import '../../variables.less';
 @import '../../../node_modules/nav-frontend-core/less/_variabler';
 
+span.ekspanderbartPanel__tittel {
+    div {
+        font-size: 20px;
+        min-width: 2rem;
+        overflow-wrap: anywhere;
+    }
+}
 .ekspanderbart-infopanel {
     &__print-innhold {
         display: none;
     }
 
     &__innhold {
+        overflow-wrap: break-word;
         padding-top: .5rem;
         padding-bottom: .5rem;
-        padding-right: 2rem;
+
+        @media(min-width: @screen-sm-min){
+            padding-right: 2rem;
+        }
 
         &-ny-avsnitt {
             padding-top: 1rem;
