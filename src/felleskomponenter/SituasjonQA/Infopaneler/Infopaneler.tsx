@@ -12,6 +12,7 @@ export const ForutsigbarInfopanelSvarJa: FunctionComponent = () => (
         <br />
         Hva fungerer bra hos dere?
         <br />
+        <br />
         <span className="bold">Tips:</span> Evaluering av rutiner bør settes inn i deres
         plan for å forebygge sykefravær slik at du kan dokumentere arbeidet.
     </Panel>
@@ -23,7 +24,8 @@ export const ForutsigbarInfopanelSvarNei: FunctionComponent = () => (
         className={classNames('situasjonqa__info-panel', 'situasjonqa__info-panel-nei')}
     >
         Gode rutiner effektiviserer arbeidet og skaper forutsigbarhet. Rutiner bør
-        evalueres og justeres hvis de ikke gir ønsket verdi. <br />
+        evalueres og justeres hvis de ikke gir ønsket verdi.
+        <br />
         <br />
         <span className="bold">Tips:</span> Arbeidet med rutiner bør settes inn i deres
         plan for å forebygge sykefravær slik at du kan dokumentere arbeidet.
@@ -60,7 +62,8 @@ export const KjentInfopanelSvarNei: FunctionComponent = () => (
     >
         Mange har gode rutiner som ledere eller medarbeidere ikke kjenner så godt til,
         kanskje fordi det er lenge siden de var i bruk? Rutiner bør revideres og
-        repeteres regelmessig. <br />
+        repeteres regelmessig.
+        <br />
         <br />
         <span className="bold">Tips:</span> Arbeidet med rutiner bør settes inn i deres
         plan for å forebygge sykefravær slik at du kan dokumentere arbeidet.
@@ -75,6 +78,7 @@ export const TillrettelagtInfopanelSvarJa: FunctionComponent = () => (
     >
         Fint. Oversikt over tilretteleggingsmuligheter er et godt utgangspunkt for å
         finne gode løsninger.
+        <br />
         <br />
         <span className="bold">Tips: </span>husker dere å dele med sykmelder?
     </Panel>
