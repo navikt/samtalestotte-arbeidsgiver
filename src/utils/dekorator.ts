@@ -37,12 +37,7 @@ const getDecoratorCached = async (decoratorParams: DecoratorParams) => {
             const queryParams: QueryParam = {
                 feedback: false,
                 chatbot: false,
-                breadcrumbs: [
-                    {
-                        title: 'Samtalestøtte',
-                        url: process.env.APP_URL === undefined? "" : process.env.APP_URL,
-                    },
-                ].concat(decoratorParams.breadcrumbs),
+                breadcrumbs: decoratorParams.breadcrumbs,
             };
             const queryString = Object.keys(queryParams)
                 .map( key => {
