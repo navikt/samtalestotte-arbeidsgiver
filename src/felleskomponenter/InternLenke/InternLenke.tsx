@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 
 interface Props {
     pathname: string;
@@ -8,12 +8,7 @@ interface Props {
 }
 
 const InternLenke: FunctionComponent<Props> = (props) => {
-
-    return (
-        <div>
-           test
-        </div>
-    );
+    return <div>test</div>;
 };
 
 export default InternLenke;

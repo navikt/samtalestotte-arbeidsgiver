@@ -288,10 +288,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                             <li>avtaler, tilrettelegginger og tiltak</li>
                             <li>om tilrettelegging er midlertidig eller permanent</li>
                             <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
-                            <li>
-                                dato for neste samtale og hvor ofte samtaler skal
-                                gjennomføres
-                            </li>
+                            <li>dato for neste samtale og hvor ofte samtaler skal gjennomføres</li>
                             <li>hvem som er ansvarlig for å følge opp</li>
                             <li>om det er behov for videre avklaring eller hjelp fra andre</li>
                         </ul>

@@ -8,10 +8,7 @@ export interface PageProps {
     decorator: DecoratorParts;
 }
 
-export const getPageProps = async (
-    title: string,
-    slug: string
-): Promise<PageProps> => {
+export const getPageProps = async (title: string, slug: string): Promise<PageProps> => {
     // TODO: trenger vi breadcrumbs
     // TODO: Vi bør fikse breadcrumbs
     const breadcrumbs = [{ title: encodeURIComponent(title), url: `${process.env.APP_URL}` }];
@@ -26,7 +23,7 @@ export const getPageProps = async (
     return {
         appTitle: title,
         title,
-        metaDescription: "Samtalestøtte for arbeidsgiver",
+        metaDescription: 'Samtalestøtte for arbeidsgiver',
         slug,
         decorator,
     };

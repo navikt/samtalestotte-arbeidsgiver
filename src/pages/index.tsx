@@ -5,9 +5,9 @@ import './index.less';
 import { Samtaleverktøy } from '../felleskomponenter/Samtaleverktøy/Samtaleverktøy';
 import { OppfølgingssamtaleGjennomføring } from '../felleskomponenter/OppfølgingssamtaleGjennomføring/OppfølgingssamtaleGjennomføring';
 import { SituasjonQA } from '../felleskomponenter/SituasjonQA/SituasjonQA';
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 import logEvent from '../amplitude/amplitude';
-import ReactToPrint from "react-to-print";
+import ReactToPrint from 'react-to-print';
 
 const Home = (props: { page: PageProps }) => {
     useEffect(() => {
