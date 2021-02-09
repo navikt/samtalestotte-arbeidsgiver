@@ -79,7 +79,9 @@ export const SituasjonQA: FunctionComponent = () => {
                 name="forutsigbar"
                 callback={callbackIntercept(setForutsigbar, 'forutsigbar-spørsmål')}
                 svar={forutsigbar}
-                ariaTittel={'Bidro sykefraværsrutinene til forutsigbarhet rundt oppgaver og ansvar?'}
+                ariaTittel={
+                    'Bidro sykefraværsrutinene til forutsigbarhet rundt oppgaver og ansvar?'
+                }
             />
             {forutsigbar === 'ja' && <ForutsigbarInfopanelSvarJa />}
             {forutsigbar === 'nei' && <ForutsigbarInfopanelSvarNei />}

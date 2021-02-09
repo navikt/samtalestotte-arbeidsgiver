@@ -1,7 +1,12 @@
-import {Normaltekst, Sidetittel} from 'nav-frontend-typografi';
+import { Normaltekst, Sidetittel } from 'nav-frontend-typografi';
 import './PageBanner.less';
 
-export const PageBanner = (props: { isFrontPage: boolean; title: string; iconUrl: string ; kontekst:string}) => {
+export const PageBanner = (props: {
+    isFrontPage: boolean;
+    title: string;
+    iconUrl: string;
+    kontekst: string;
+}) => {
     return (
         <div className="page-banner">
             <div className="page-banner__innhold">

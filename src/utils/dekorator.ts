@@ -23,9 +23,9 @@ export interface DecoratorParams {
 }
 
 interface QueryParam {
-    feedback: boolean,
-    chatbot: boolean,
-    breadcrumbs: Breadcrumb[]
+    feedback: boolean;
+    chatbot: boolean;
+    breadcrumbs: Breadcrumb[];
 }
 
 const getDecoratorCached = async (decoratorParams: DecoratorParams) => {
@@ -40,7 +40,7 @@ const getDecoratorCached = async (decoratorParams: DecoratorParams) => {
                 breadcrumbs: decoratorParams.breadcrumbs,
             };
             const queryString = Object.keys(queryParams)
-                .map( key => {
+                .map((key) => {
                     const value = queryParams[key as keyof QueryParam];
                     return key + '=' + JSON.stringify(value);
                 })
@@ -72,31 +72,33 @@ const objHash = (obj: any): string => {
     return createHash('md5').update(str).digest('hex');
 };
 
-export const fetchDecoratorParts = async (decoratorParams: DecoratorParams): Promise<DecoratorParts> => {
+export const fetchDecoratorParts = async (
+    decoratorParams: DecoratorParams
+): Promise<DecoratorParts> => {
     const decoratorSrc = (await getDecoratorCached(decoratorParams)) as string;
 
     const $ = cheerio.load(decoratorSrc);
 
     const scriptTags: { [attr: string]: string }[] = [];
     $('#scripts script').each((index, element) => {
-        const tagElement:cheerio.TagElement = element as cheerio.TagElement;
+        const tagElement: cheerio.TagElement = element as cheerio.TagElement;
         tagElement.attribs.key = objHash(tagElement.attribs);
         scriptTags.push({ ...tagElement.attribs });
     });
     $('#megamenu-resources script').each((index, element) => {
-        const tagElement:cheerio.TagElement = element as cheerio.TagElement;
+        const tagElement: cheerio.TagElement = element as cheerio.TagElement;
         tagElement.attribs.key = objHash(tagElement.attribs);
         scriptTags.push({ ...tagElement.attribs });
     });
 
     const linkTags: { [attr: string]: string }[] = [];
     $('#styles link').each((index, element) => {
-        const tagElement:cheerio.TagElement = element as cheerio.TagElement;
+        const tagElement: cheerio.TagElement = element as cheerio.TagElement;
         tagElement.attribs.key = objHash(tagElement.attribs);
         linkTags.push({ ...tagElement.attribs });
     });
     $('#megamenu-resources link').each((index, element) => {
-        const tagElement:cheerio.TagElement = element as cheerio.TagElement;
+        const tagElement: cheerio.TagElement = element as cheerio.TagElement;
         tagElement.attribs.key = objHash(tagElement.attribs);
         linkTags.push({ ...tagElement.attribs });
     });

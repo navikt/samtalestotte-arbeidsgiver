@@ -17,15 +17,15 @@ export const SlikKanDisseSpørsmåleneHjelpeDeg: FunctionComponent<Props> = (pro
             <div className="slik-kan-disse-spørsmålene-hjelpe-deg__innhold">
                 <ul>
                     <li>
-                        Lavt sykefravær og god dialog fører til motiverte medarbeidere og god lønnsomhet.
+                        Lavt sykefravær og god dialog fører til motiverte medarbeidere og god
+                        lønnsomhet.
                     </li>
                     <li>
-                        Systematisk arbeid med arbeidsmiljøet er en lovpålagt oppgave. Evaluering av samtaler om arbeidssituasjonen gir en verdifull
-                        kartlegging.   Denne bør du bruke når du jobber med forebyggende arbeidsmiljøarbeid.
+                        Systematisk arbeid med arbeidsmiljøet er en lovpålagt oppgave. Evaluering av
+                        samtaler om arbeidssituasjonen gir en verdifull kartlegging. Denne bør du
+                        bruke når du jobber med forebyggende arbeidsmiljøarbeid.
                     </li>
-                    <li>
-                        Vi hjelper deg videre med relevante tips ut fra dine svar.
-                    </li>
+                    <li>Vi hjelper deg videre med relevante tips ut fra dine svar.</li>
                 </ul>
             </div>
         </LesMerPanel>

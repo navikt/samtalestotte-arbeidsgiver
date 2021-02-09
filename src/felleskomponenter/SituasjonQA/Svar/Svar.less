@@ -1,30 +1,28 @@
 @import '../../../variables';
 
 .svar__radio-panel-gruppe {
-
-  label.inputPanel.radioPanel {
-    flex-basis: 3rem;
-    margin-bottom: 0;
-    min-width: 9rem;
-  }
-
-  label.inputPanel.radioPanel:not(:first-child) {
-    @media (min-width: @screen-sm-min) {
-      margin-left: 1rem;
-      margin-top: 0;
+    label.inputPanel.radioPanel {
+        flex-basis: 3rem;
+        margin-bottom: 0;
+        min-width: 9rem;
     }
-    margin-top: 1rem;
-  }
 
-
-  div.inputPanelGruppe__inner {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: stretch;
-
-    @media (min-width: @screen-sm-min) {
-      flex-direction: row;
+    label.inputPanel.radioPanel:not(:first-child) {
+        @media (min-width: @screen-sm-min) {
+            margin-left: 1rem;
+            margin-top: 0;
+        }
+        margin-top: 1rem;
     }
-  }
+
+    div.inputPanelGruppe__inner {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+
+        @media (min-width: @screen-sm-min) {
+            flex-direction: row;
+        }
+    }
 }

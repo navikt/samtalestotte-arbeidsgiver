@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 
 export const DecoratorEnv = (props: { env?: { dataSrc: string; scriptUrl: string } }) => {
     useEffect(() => {
