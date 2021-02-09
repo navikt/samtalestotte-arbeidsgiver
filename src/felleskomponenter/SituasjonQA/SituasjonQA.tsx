@@ -22,7 +22,7 @@ const Svar = dynamic<SvarProps>(() => import('./Svar/Svar').then((module) => mod
     ssr: false,
 });
 
-const ETT_ÅR_I_SEKUNDER = 31536000;
+export const ETT_ÅR_I_SEKUNDER = 31536000;
 
 export const SituasjonQA: FunctionComponent = () => {
     const [cookies, setCookie] = useCookies(['samtalestotte-arbeidsgiver-qa']);

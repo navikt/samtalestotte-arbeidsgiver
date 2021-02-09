@@ -1,16 +1,70 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { Normaltekst, Systemtittel, UndertekstBold } from 'nav-frontend-typografi';
-import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import {
+    EkspanderbartInfopanel,
+    PanelLestSituasjon,
+} from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './Samtaleverktøy.less';
 import { LyspæreSVG } from './LyspæreSVG';
+import { useCookies } from 'react-cookie';
+import logEvent from '../../amplitude/amplitude';
+import { ETT_ÅR_I_SEKUNDER } from '../SituasjonQA/SituasjonQA';
 
 export const Samtaleverktøy: FunctionComponent = () => {
+    const [cookies, setCookie] = useCookies(['samtalestotte-arbeidsgiver-panel-lest']);
+
+    const [arbeidssituasjonSamtale, setArbeidssituasjonSamtale] = useState<PanelLestSituasjon>(
+        cookies['samtalestotte-arbeidsgiver-panel-lest']?.arbeidssituasjonSamtale === undefined
+            ? undefined
+            : cookies['samtalestotte-arbeidsgiver-panel-lest'].arbeidssituasjonSamtale
+    );
+
+    const [spørMedarbeiderOm, setSpørMedarbeiderOm] = useState<PanelLestSituasjon>(
+        cookies['samtalestotte-arbeidsgiver-panel-lest']?.spørMedarbeiderOm === undefined
+            ? undefined
+            : cookies['samtalestotte-arbeidsgiver-panel-lest'].spørMedarbeiderOm
+    );
+    const [suksesskriterier, setSuksesskriterier] = useState<PanelLestSituasjon>(
+        cookies['samtalestotte-arbeidsgiver-panel-lest']?.suksesskriterier === undefined
+            ? undefined
+            : cookies['samtalestotte-arbeidsgiver-panel-lest'].suksesskriterier
+    );
+
+    useEffect(() => {
+        setCookie(
+            'samtalestotte-arbeidsgiver-panel-lest',
+            JSON.stringify({
+                arbeidssituasjonSamtale: arbeidssituasjonSamtale,
+                spørMedarbeiderOm: spørMedarbeiderOm,
+                suksesskriterier: suksesskriterier,
+            }),
+            {
+                path: '/',
+                maxAge: ETT_ÅR_I_SEKUNDER,
+                sameSite: true,
+            }
+        );
+    }, [arbeidssituasjonSamtale, spørMedarbeiderOm, suksesskriterier]);
+
+    const callbackIntercept = (
+        callback: (panelLestSituasjon: PanelLestSituasjon) => any,
+        label: string
+    ) => (panelLestSituasjon: PanelLestSituasjon) => {
+        logEvent('knapp', {
+            label: label,
+            funksjon: 'panel-lest',
+            panelLestSituasjon: panelLestSituasjon,
+        });
+        callback(panelLestSituasjon);
+    };
     return (
         <>
             <Systemtittel className="samtaleverktøy__tittel">Samtaleverktøy</Systemtittel>
             <EkspanderbartInfopanel
                 tittel={'Når kan en samtale om arbeidssituasjonen være aktuelt?'}
-                unikId={'når-kan-en-samtale-om-arbeidssituasjonen-være-aktuelt?'}
+                unikId={'arbeidssituasjonSamtale'}
+                callBack={callbackIntercept(setArbeidssituasjonSamtale, 'arbeidssituasjonSamtale')}
+                panelLestSituasjon={arbeidssituasjonSamtale}
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Normaltekst>
@@ -33,7 +87,12 @@ export const Samtaleverktøy: FunctionComponent = () => {
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
                 tittel={'Dette kan du spørre medarbeideren om'}
-                unikId={'Dette-kan-du-spørre-medarbeideren-om'}
+                unikId={'detteKanDuSpørreMedarbeiderenOm'}
+                callBack={callbackIntercept(
+                    setSpørMedarbeiderOm,
+                    'detteKanDuSpørreMedarbeiderenOm'
+                )}
+                panelLestSituasjon={spørMedarbeiderOm}
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Normaltekst>
@@ -70,8 +129,10 @@ export const Samtaleverktøy: FunctionComponent = () => {
             </EkspanderbartInfopanel>
             <EkspanderbartInfopanel
                 tittel={'Suksesskriterier'}
-                unikId={'Suksesskriterier'}
+                unikId={'suksesskriterier'}
+                callBack={callbackIntercept(setSuksesskriterier, 'suksesskriterier')}
                 ikon={<LyspæreSVG />}
+                panelLestSituasjon={suksesskriterier}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">
                     <ul>

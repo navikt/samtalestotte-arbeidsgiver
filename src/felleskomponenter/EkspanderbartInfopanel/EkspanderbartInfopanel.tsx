@@ -1,28 +1,41 @@
-import { FunctionComponent, ReactNode, useEffect, useState } from 'react';
+import {FunctionComponent, ReactNode, useEffect, useState} from 'react';
 import './EkspanderbartInfopanel.less';
-import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
-import { OppChevron } from 'nav-frontend-chevron';
+import {EkspanderbartpanelBase} from 'nav-frontend-ekspanderbartpanel';
+import {OppChevron} from 'nav-frontend-chevron';
 import classNames from 'classnames';
 import logEvent from '../../amplitude/amplitude';
 
+export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 interface Props {
     children: ReactNode;
     unikId: string;
     tittel: string;
     bakgrunn?: string;
+    panelLestSituasjon?: PanelLestSituasjon;
     ikon?: ReactNode;
+    callBack: (panelLestSituasjon: PanelLestSituasjon) => any;
 }
 
 export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) => {
     const [erÅpen, setErÅpen] = useState<boolean>(false);
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId;
+    const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
+        if (props.panelLestSituasjon !== panelLestSituasjon) {
+            props.callBack(panelLestSituasjon);
+        } else {
+            props.callBack(undefined);
+        }
+    };
 
     useEffect(() => {
         const timer = setTimeout(async () => {
+            console.log('unikid', props.unikId);
             erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
+            erÅpen && props.panelLestSituasjon !== 'lest' && toggleCallback('lest');
         }, 500);
         return () => clearTimeout(timer);
     }, [erÅpen]);
+
     const innhold = (
         <>
             <div>{props.children}</div>
@@ -49,7 +62,7 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
                     setErÅpen(!erÅpen);
                 }}
                 className={
-                    !props.bakgrunn
+                    props.panelLestSituasjon !== 'lest'
                         ? 'ekspanderbart-infopanel__panel'
                         : classNames(
                               'ekspanderbart-infopanel__panel',
