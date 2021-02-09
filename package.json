@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "prettier -w ./src"
+    "prettier": "prettier -w ./src"
   },
   "dependencies": {
     "@navikt/fnrvalidator": "^1.1.3",
