@@ -4,6 +4,7 @@ import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
 import classNames from 'classnames';
 import logEvent from '../../amplitude/amplitude';
+import { LestSVG } from './LestSVG';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 interface Props {
@@ -59,12 +60,22 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
             <EkspanderbartpanelBase
                 tittel={
                     props.ikon ? (
-                        <div className="ekspanderbart-infopanel__tittel-med-ikon">
-                            {props.ikon} {props.tittel}
+                        <div >
+                            <div className="ekspanderbart-infopanel__tittel-med-ikon">
+                                {props.ikon} {props.tittel}
+                            </div>
+                            <div style={{ marginTop: '1rem' }}>
+                                <LestSVG />
+                            </div>
                         </div>
                     ) : (
                         <div className="ekspanderbart-infopanel__tittel-uten-ikon">
-                            {props.tittel}
+                            <div className="ekspanderbart-infopanel__kun-tittel">
+                                {props.tittel}
+                            </div>
+                            <div>
+                                <LestSVG />
+                            </div>
                         </div>
                     )
                 }

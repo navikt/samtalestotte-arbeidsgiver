@@ -4,7 +4,7 @@ import { useCookies } from 'react-cookie';
 import { Systemtittel, Undertittel } from 'nav-frontend-typografi';
 import './SituasjonQA.less';
 import { SlikKanDisseSpørsmåleneHjelpeDeg } from './SlikKanDisseSpørsmåleneHjelpeDeg/SlikKanDisseSpørsmåleneHjelpeDeg';
-import { SvarType, SvarProps } from './Svar/Svar';
+import {SvarType, SvarProps} from './Svar/Svar';
 import {
     ForutsigbarInfopanelSvarJa,
     ForutsigbarInfopanelSvarNei,
@@ -42,6 +42,7 @@ export const SituasjonQA: FunctionComponent = () => {
             ? undefined
             : cookies['samtalestotte-arbeidsgiver-qa'].tilrettelagt
     );
+    console.log('cookies-situasjonQA', cookies['samtalestotte-arbeidsgiver-qa']);
 
     useEffect(() => {
         setCookie(

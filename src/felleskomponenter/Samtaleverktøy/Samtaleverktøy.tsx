@@ -11,25 +11,50 @@ import logEvent from '../../amplitude/amplitude';
 import { ETT_ÅR_I_SEKUNDER } from '../SituasjonQA/SituasjonQA';
 
 export const Samtaleverktøy: FunctionComponent = () => {
-    const [cookies, setCookie] = useCookies(['samtalestotte-arbeidsgiver-panel-lest']);
+    const [cookies, setCookie] = useCookies([
+        'samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest',
+    ]);
 
     const [arbeidssituasjonSamtale, setArbeidssituasjonSamtale] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-panel-lest']?.arbeidssituasjonSamtale === undefined
+        cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']
+            ?.arbeidssituasjonSamtale === undefined
             ? undefined
-            : cookies['samtalestotte-arbeidsgiver-panel-lest'].arbeidssituasjonSamtale
+            : cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']
+                  .arbeidssituasjonSamtale
     );
 
     const [spørMedarbeiderOm, setSpørMedarbeiderOm] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-panel-lest']?.spørMedarbeiderOm === undefined
+        cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']?.spørMedarbeiderOm ===
+            undefined
             ? undefined
-            : cookies['samtalestotte-arbeidsgiver-panel-lest'].spørMedarbeiderOm
+            : cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest'].spørMedarbeiderOm
     );
     const [suksesskriterier, setSuksesskriterier] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-panel-lest']?.suksesskriterier === undefined
+        cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']?.suksesskriterier ===
+            undefined
             ? undefined
-            : cookies['samtalestotte-arbeidsgiver-panel-lest'].suksesskriterier
+            : cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest'].suksesskriterier
     );
-
+    useEffect(() => {
+        setCookie(
+            'samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest',
+            JSON.stringify({
+                arbeidssituasjonSamtale: arbeidssituasjonSamtale,
+                spørMedarbeiderOm: spørMedarbeiderOm,
+                suksesskriterier: suksesskriterier,
+            }),
+            {
+                path: '/',
+                maxAge: ETT_ÅR_I_SEKUNDER,
+                sameSite: true,
+            }
+        );
+        setArbeidssituasjonSamtale(
+            cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']
+                .arbeidssituasjonSamtale
+        );
+        console.log('inside useEffect', 'cookies', cookies);
+    }, [arbeidssituasjonSamtale, spørMedarbeiderOm, suksesskriterier]);
     useEffect(() => {
         setCookie(
             'samtalestotte-arbeidsgiver-panel-lest',
@@ -44,22 +69,11 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 sameSite: true,
             }
         );
-    }, [arbeidssituasjonSamtale, spørMedarbeiderOm, suksesskriterier]);
-    /*useEffect(() => {
-        setCookie(
-            'samtalestotte-arbeidsgiver-panel-lest',
-            JSON.stringify({
-                arbeidssituasjonSamtale: arbeidssituasjonSamtale,
-                spørMedarbeiderOm: spørMedarbeiderOm,
-                suksesskriterier: suksesskriterier,
-            }),
-            {
-                path: '/',
-                maxAge: ETT_ÅR_I_SEKUNDER,
-                sameSite: true,
-            }
+        setArbeidssituasjonSamtale(
+            cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']
+                .arbeidssituasjonSamtale
         );
-    }, []);*/
+    }, []);
 
     const callbackIntercept = (
         callback: (panelLestSituasjon: PanelLestSituasjon) => any,
@@ -79,7 +93,9 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 tittel={'Når kan en samtale om arbeidssituasjonen være aktuelt?'}
                 unikId={'arbeidssituasjonSamtale'}
                 callBack={callbackIntercept(setArbeidssituasjonSamtale, 'arbeidssituasjonSamtale')}
-                panelLestSituasjon={arbeidssituasjonSamtale}
+                panelLestSituasjon={
+                    arbeidssituasjonSamtale === 'lest' ? 'lest' : arbeidssituasjonSamtale
+                }
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Normaltekst>
