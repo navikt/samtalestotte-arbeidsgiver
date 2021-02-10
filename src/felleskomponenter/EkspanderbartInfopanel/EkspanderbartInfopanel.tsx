@@ -1,7 +1,7 @@
-import {FunctionComponent, ReactNode, useEffect, useState} from 'react';
+import { FunctionComponent, ReactNode, useEffect, useState } from 'react';
 import './EkspanderbartInfopanel.less';
-import {EkspanderbartpanelBase} from 'nav-frontend-ekspanderbartpanel';
-import {OppChevron} from 'nav-frontend-chevron';
+import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
+import { OppChevron } from 'nav-frontend-chevron';
 import classNames from 'classnames';
 import logEvent from '../../amplitude/amplitude';
 
@@ -30,6 +30,12 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
     useEffect(() => {
         const timer = setTimeout(async () => {
             console.log('unikid', props.unikId);
+            console.log(
+                'props.panelLestSituasjon',
+                props.panelLestSituasjon,
+                'unikid',
+                props.unikId
+            );
             erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
             erÅpen && props.panelLestSituasjon !== 'lest' && toggleCallback('lest');
         }, 500);
@@ -41,9 +47,15 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
             <div>{props.children}</div>
         </>
     );
-
     return (
         <>
+            {console.log(
+                'inside return',
+                'props.unikid',
+                props.unikId,
+                'props.panelLestSituasjon',
+                props.panelLestSituasjon
+            )}
             <EkspanderbartpanelBase
                 tittel={
                     props.ikon ? (

@@ -45,6 +45,21 @@ export const Samtaleverktøy: FunctionComponent = () => {
             }
         );
     }, [arbeidssituasjonSamtale, spørMedarbeiderOm, suksesskriterier]);
+    /*useEffect(() => {
+        setCookie(
+            'samtalestotte-arbeidsgiver-panel-lest',
+            JSON.stringify({
+                arbeidssituasjonSamtale: arbeidssituasjonSamtale,
+                spørMedarbeiderOm: spørMedarbeiderOm,
+                suksesskriterier: suksesskriterier,
+            }),
+            {
+                path: '/',
+                maxAge: ETT_ÅR_I_SEKUNDER,
+                sameSite: true,
+            }
+        );
+    }, []);*/
 
     const callbackIntercept = (
         callback: (panelLestSituasjon: PanelLestSituasjon) => any,
