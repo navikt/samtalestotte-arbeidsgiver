@@ -11,6 +11,7 @@ import logEvent from '../../amplitude/amplitude';
 import { ETT_ÅR_I_SEKUNDER } from '../SituasjonQA/SituasjonQA';
 
 export const Samtaleverktøy: FunctionComponent = () => {
+
     const [cookies, setCookie] = useCookies([
         'samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest',
     ]);
@@ -46,7 +47,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
             }),
             {
                 path: '/',
-                maxAge: ETT_ÅR_I_SEKUNDER,
+                expires: undefined,
                 sameSite: true,
             }
         );
