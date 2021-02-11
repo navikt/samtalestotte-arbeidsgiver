@@ -22,22 +22,16 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     props: EkspanderbartInfopanelProps
 ) => {
     const [erÅpen, setErÅpen] = useState<boolean>(false);
-    const [erLest, setErLest] = useState<boolean>(props.panelLestSituasjon === 'lest');
-
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId;
 
     const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
         if (props.panelLestSituasjon !== panelLestSituasjon) {
-            setErLest(true);
             props.callBack(panelLestSituasjon);
         } else {
             props.callBack(undefined);
         }
     };
 
-    useEffect(() => {
-        setErLest(props.panelLestSituasjon === 'lest');
-    }, [props.panelLestSituasjon]);
 
     useEffect(() => {
         const timer = setTimeout(async () => {
@@ -82,7 +76,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                     setErÅpen(!erÅpen);
                 }}
                 className={
-                    !erLest
+                    props.panelLestSituasjon !=='lest'
                         ? 'ekspanderbart-infopanel__panel'
                         : classNames(
                               'ekspanderbart-infopanel__panel',
