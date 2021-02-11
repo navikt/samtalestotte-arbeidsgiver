@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import { Normaltekst, Systemtittel, UndertekstBold } from 'nav-frontend-typografi';
 import {
-    EkspanderbartInfopanel,
+    EkspanderbartInfopanelProps,
     PanelLestSituasjon,
 } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './Samtaleverktøy.less';
@@ -9,6 +9,7 @@ import { LyspæreSVG } from './LyspæreSVG';
 import { useCookies } from 'react-cookie';
 import logEvent from '../../amplitude/amplitude';
 import { ETT_ÅR_I_SEKUNDER } from '../SituasjonQA/SituasjonQA';
+import dynamic from 'next/dynamic';
 
 export const Samtaleverktøy: FunctionComponent = () => {
     const [cookies, setCookie] = useCookies([
@@ -35,6 +36,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
             ? undefined
             : cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest'].suksesskriterier
     );
+
     useEffect(() => {
         setCookie(
             'samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest',
@@ -49,31 +51,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 sameSite: true,
             }
         );
-        setArbeidssituasjonSamtale(
-            cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']
-                .arbeidssituasjonSamtale
-        );
-        console.log('inside useEffect', 'cookies', cookies);
     }, [arbeidssituasjonSamtale, spørMedarbeiderOm, suksesskriterier]);
-    useEffect(() => {
-        setCookie(
-            'samtalestotte-arbeidsgiver-panel-lest',
-            JSON.stringify({
-                arbeidssituasjonSamtale: arbeidssituasjonSamtale,
-                spørMedarbeiderOm: spørMedarbeiderOm,
-                suksesskriterier: suksesskriterier,
-            }),
-            {
-                path: '/',
-                maxAge: ETT_ÅR_I_SEKUNDER,
-                sameSite: true,
-            }
-        );
-        setArbeidssituasjonSamtale(
-            cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']
-                .arbeidssituasjonSamtale
-        );
-    }, []);
 
     const callbackIntercept = (
         callback: (panelLestSituasjon: PanelLestSituasjon) => any,
@@ -86,6 +64,17 @@ export const Samtaleverktøy: FunctionComponent = () => {
         });
         callback(panelLestSituasjon);
     };
+
+    const EkspanderbartInfopanel = dynamic<EkspanderbartInfopanelProps>(
+        () =>
+            import('../EkspanderbartInfopanel/EkspanderbartInfopanel').then(
+                (module) => module.EkspanderbartInfopanel
+            ),
+        {
+            ssr: false,
+        }
+    );
+
     return (
         <>
             <Systemtittel className="samtaleverktøy__tittel">Samtaleverktøy</Systemtittel>

@@ -42,7 +42,6 @@ export const SituasjonQA: FunctionComponent = () => {
             ? undefined
             : cookies['samtalestotte-arbeidsgiver-qa'].tilrettelagt
     );
-    console.log('cookies-situasjonQA', cookies['samtalestotte-arbeidsgiver-qa']);
 
     useEffect(() => {
         setCookie(

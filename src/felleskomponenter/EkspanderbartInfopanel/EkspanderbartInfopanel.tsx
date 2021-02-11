@@ -7,36 +7,38 @@ import logEvent from '../../amplitude/amplitude';
 import { LestSVG } from './LestSVG';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
-interface Props {
+
+export interface EkspanderbartInfopanelProps {
     children: ReactNode;
     unikId: string;
     tittel: string;
     bakgrunn?: string;
-    panelLestSituasjon?: PanelLestSituasjon;
+    panelLestSituasjon: PanelLestSituasjon;
     ikon?: ReactNode;
     callBack: (panelLestSituasjon: PanelLestSituasjon) => any;
 }
 
-export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) => {
+export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelProps> = (props: EkspanderbartInfopanelProps) => {
     const [erÅpen, setErÅpen] = useState<boolean>(false);
+    const [erLest, setErLest] = useState<boolean>(props.panelLestSituasjon === 'lest');
+
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId;
+
     const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
         if (props.panelLestSituasjon !== panelLestSituasjon) {
+            setErLest(true);
             props.callBack(panelLestSituasjon);
         } else {
             props.callBack(undefined);
         }
     };
 
+    useEffect( () => {
+        setErLest(props.panelLestSituasjon === 'lest')
+    }, [props.panelLestSituasjon])
+
     useEffect(() => {
         const timer = setTimeout(async () => {
-            console.log('unikid', props.unikId);
-            console.log(
-                'props.panelLestSituasjon',
-                props.panelLestSituasjon,
-                'unikid',
-                props.unikId
-            );
             erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
             erÅpen && props.panelLestSituasjon !== 'lest' && toggleCallback('lest');
         }, 500);
@@ -50,13 +52,6 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
     );
     return (
         <>
-            {console.log(
-                'inside return',
-                'props.unikid',
-                props.unikId,
-                'props.panelLestSituasjon',
-                props.panelLestSituasjon
-            )}
             <EkspanderbartpanelBase
                 tittel={
                     props.ikon ? (
@@ -85,7 +80,7 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
                     setErÅpen(!erÅpen);
                 }}
                 className={
-                    props.panelLestSituasjon !== 'lest'
+                    !erLest
                         ? 'ekspanderbart-infopanel__panel'
                         : classNames(
                               'ekspanderbart-infopanel__panel',
