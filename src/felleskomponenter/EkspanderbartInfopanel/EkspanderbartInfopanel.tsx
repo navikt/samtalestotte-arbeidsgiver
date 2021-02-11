@@ -22,16 +22,18 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     props: EkspanderbartInfopanelProps
 ) => {
     const [erÅpen, setErÅpen] = useState<boolean>(false);
+    const [erLest, setErLest] = useState<boolean>(false);
+
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId;
 
     const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
         if (props.panelLestSituasjon !== panelLestSituasjon) {
+            setErLest(true);
             props.callBack(panelLestSituasjon);
         } else {
             props.callBack(undefined);
         }
     };
-
 
     useEffect(() => {
         const timer = setTimeout(async () => {
@@ -40,6 +42,10 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
         }, 500);
         return () => clearTimeout(timer);
     }, [erÅpen]);
+
+    useEffect(() => {
+        setErLest(props.panelLestSituasjon === 'lest');
+    }, [props.panelLestSituasjon]);
 
     const innhold = (
         <>
@@ -55,7 +61,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                             <div className="ekspanderbart-infopanel__tittel-med-ikon">
                                 {props.ikon} {props.tittel}
                             </div>
-                            {props.panelLestSituasjon && (
+                            {erLest && (
                                 <div style={{ marginTop: '1rem' }}>
                                     <LestSVG />
                                 </div>
@@ -66,7 +72,11 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                             <div className="ekspanderbart-infopanel__kun-tittel">
                                 {props.tittel}
                             </div>
-                            <div>{props.panelLestSituasjon === 'lest' && <LestSVG />}</div>
+                            {erLest && (
+                                <div>
+                                    <LestSVG />
+                                </div>
+                            )}
                         </div>
                     )
                 }
@@ -76,7 +86,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                     setErÅpen(!erÅpen);
                 }}
                 className={
-                    props.panelLestSituasjon !=='lest'
+                    !erLest
                         ? 'ekspanderbart-infopanel__panel'
                         : classNames(
                               'ekspanderbart-infopanel__panel',

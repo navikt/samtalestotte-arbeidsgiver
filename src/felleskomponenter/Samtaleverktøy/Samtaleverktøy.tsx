@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import { Normaltekst, Systemtittel, UndertekstBold } from 'nav-frontend-typografi';
 import {
-    EkspanderbartInfopanelProps,
+    EkspanderbartInfopanel,
     PanelLestSituasjon,
 } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './Samtaleverktøy.less';
@@ -9,7 +9,6 @@ import { LyspæreSVG } from './LyspæreSVG';
 import { useCookies } from 'react-cookie';
 import logEvent from '../../amplitude/amplitude';
 import { ETT_ÅR_I_SEKUNDER } from '../SituasjonQA/SituasjonQA';
-import dynamic from 'next/dynamic';
 
 export const Samtaleverktøy: FunctionComponent = () => {
     const [cookies, setCookie] = useCookies([
@@ -64,16 +63,6 @@ export const Samtaleverktøy: FunctionComponent = () => {
         });
         callback(panelLestSituasjon);
     };
-
-    const EkspanderbartInfopanel = dynamic<EkspanderbartInfopanelProps>(
-        () =>
-            import('../EkspanderbartInfopanel/EkspanderbartInfopanel').then(
-                (module) => module.EkspanderbartInfopanel
-            ),
-        {
-            ssr: false,
-        }
-    );
 
     return (
         <>
