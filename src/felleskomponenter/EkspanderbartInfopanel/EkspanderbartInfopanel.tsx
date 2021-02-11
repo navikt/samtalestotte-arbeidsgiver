@@ -57,12 +57,12 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
             <EkspanderbartpanelBase
                 tittel={
                     props.ikon ? (
-                        <div>
+                        <div className="ekspanderbart-infopanel__tittel-med-ikon-wrapper">
                             <div className="ekspanderbart-infopanel__tittel-med-ikon">
-                                {props.ikon} {props.tittel}
+                                <div className="ekspanderbart-infopanel__kun-ikon">{props.ikon}</div> {props.tittel}
                             </div>
                             {erLest && (
-                                <div style={{ marginTop: '1rem' }}>
+                                <div className="ekspanderbart-infopanel__kun-lest-ikon">
                                     <LestSVG />
                                 </div>
                             )}
@@ -73,7 +73,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                                 {props.tittel}
                             </div>
                             {erLest && (
-                                <div>
+                                <div  className="ekspanderbart-infopanel__kun-lest-ikon">
                                     <LestSVG />
                                 </div>
                             )}

@@ -8,6 +8,9 @@ span.ekspanderbartPanel__tittel {
         overflow-wrap: anywhere;
     }
 }
+.ekspanderbartPanel__tittel {
+    width: 100%;
+}
 .ekspanderbart-infopanel {
     &__print-innhold {
         display: none;
@@ -43,6 +46,12 @@ span.ekspanderbartPanel__tittel {
     }
     &__kun-tittel {
         margin-bottom: 1rem;
+    }
+    &__kun-ikon{
+        margin-right: 1rem;
+    }
+    &__kun-lest-ikon{
+        margin-top: 0.5rem;
     }
     &__panel {
         margin-top: 0;
@@ -101,6 +110,23 @@ span.ekspanderbartPanel__tittel {
         }
         &__innhold-no-print {
             display: none;
+        }
+    }
+    @media (min-width: @screen-sm-min) {
+        &__tittel-uten-ikon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 1rem;
+        }
+        &__kun-tittel {
+            margin-bottom: 0;
+        }
+        &__tittel-med-ikon-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 1rem;
         }
     }
 }

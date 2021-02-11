@@ -1,6 +1,5 @@
 export const Steg2SVG = () => {
     return (
-        <div style={{ marginRight: '0.5rem' }}>
             <svg
                 width="40"
                 height="40"
@@ -15,6 +14,5 @@ export const Steg2SVG = () => {
                     fill="#3E3832"
                 />
             </svg>
-        </div>
     );
 };

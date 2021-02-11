@@ -6,6 +6,7 @@ export const LestSVG = () => {
             viewBox="0 0 78 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-label={'Lest'}
         >
             <rect x="0.5" y="0.5" width="77" height="23" rx="11.5" fill="white" stroke="#117938" />
             <path

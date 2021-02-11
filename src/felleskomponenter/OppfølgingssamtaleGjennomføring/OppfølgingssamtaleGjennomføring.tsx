@@ -58,7 +58,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             }),
             {
                 path: '/',
-                maxAge: ETT_ÅR_I_SEKUNDER,
+                expires: undefined,
                 sameSite: true,
             }
         );
