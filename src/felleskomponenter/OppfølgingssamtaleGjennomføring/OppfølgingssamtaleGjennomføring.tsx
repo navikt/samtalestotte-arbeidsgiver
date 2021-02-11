@@ -13,14 +13,19 @@ import { Steg4SVG } from './Steg4SVG';
 import { Steg5SVG } from './Steg5SVG';
 import LoggbarLenke from '../LoggbarLenke/LoggbarLenke';
 import { useCookies } from 'react-cookie';
-import { ETT_ÅR_I_SEKUNDER } from '../SituasjonQA/SituasjonQA';
 import logEvent from '../../amplitude/amplitude';
+import { Steg1GronnSVG } from './Steg1GronnSVG';
+import { Steg2GronnSVG } from './Steg2GronnSVG';
+import { Steg3GronnSVG } from './Steg3GronnSVG';
+import { Steg4GronnSVG } from './Steg4GronnSVG';
+import { Steg5GronnSVG } from './Steg5GronnSVG';
 
 export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
     const [cookies, setCookie] = useCookies(['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']);
 
     const [steg1Forberedelse, setSteg1Forberedelse] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg1Forberedelse === undefined
+        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg1Forberedelse ===
+            undefined
             ? undefined
             : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg1Forberedelse
     );
@@ -36,7 +41,8 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg3Snakk
     );
     const [steg4FinnLøsning, setSteg4FinnLøsning] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg4FinnLøsning === undefined
+        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg4FinnLøsning ===
+            undefined
             ? undefined
             : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg4FinnLøsning
     );
@@ -62,7 +68,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 sameSite: true,
             }
         );
-    }, [steg1Forberedelse, steg2Innledning, steg4FinnLøsning, steg4FinnLøsning, steg5Avslutning]);
+    }, [steg1Forberedelse, steg2Innledning, steg3Snakk, steg4FinnLøsning, steg5Avslutning]);
 
     const callbackIntercept = (
         callback: (panelLestSituasjon: PanelLestSituasjon) => any,
@@ -88,6 +94,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 tittel={'Slik forbereder du samtalen'}
                 unikId={'steg1Forberedelse'}
                 ikon={<Steg1SVG />}
+                lestIkon={<Steg1GronnSVG />}
                 callBack={callbackIntercept(setSteg1Forberedelse, 'steg1Forberedelse')}
                 panelLestSituasjon={steg1Forberedelse}
             >
@@ -183,6 +190,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 tittel={'Slik innleder du samtalen'}
                 unikId={'steg2Innledning'}
                 ikon={<Steg2SVG />}
+                lestIkon={<Steg2GronnSVG />}
                 callBack={callbackIntercept(setSteg2Innledning, 'steg2Innledning')}
                 panelLestSituasjon={steg2Innledning}
             >
@@ -212,6 +220,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 tittel={'Slik snakker dere om arbeidssituasjonen'}
                 unikId={'steg3Snakk'}
                 ikon={<Steg3SVG />}
+                lestIkon={<Steg3GronnSVG />}
                 callBack={callbackIntercept(setSteg3Snakk, 'steg3Snakk')}
                 panelLestSituasjon={steg3Snakk}
             >
@@ -257,6 +266,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 tittel={'Slik finner dere løsninger sammen'}
                 unikId={'steg4FinnLøsning'}
                 ikon={<Steg4SVG />}
+                lestIkon={<Steg4GronnSVG />}
                 callBack={callbackIntercept(setSteg4FinnLøsning, 'steg4FinnLøsning')}
                 panelLestSituasjon={steg4FinnLøsning}
             >
@@ -338,6 +348,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 tittel={'Slik avslutter du samtalen'}
                 unikId={'steg5Avslutning'}
                 ikon={<Steg5SVG />}
+                lestIkon={<Steg5GronnSVG />}
                 callBack={callbackIntercept(setSteg5Avslutning, 'steg5Avslutning')}
                 panelLestSituasjon={steg5Avslutning}
             >

@@ -8,10 +8,8 @@ import './Samtaleverktøy.less';
 import { LyspæreSVG } from './LyspæreSVG';
 import { useCookies } from 'react-cookie';
 import logEvent from '../../amplitude/amplitude';
-import { ETT_ÅR_I_SEKUNDER } from '../SituasjonQA/SituasjonQA';
 
 export const Samtaleverktøy: FunctionComponent = () => {
-
     const [cookies, setCookie] = useCookies([
         'samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest',
     ]);
@@ -142,6 +140,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
                 unikId={'suksesskriterier'}
                 callBack={callbackIntercept(setSuksesskriterier, 'suksesskriterier')}
                 ikon={<LyspæreSVG />}
+                lestIkon={<LyspæreSVG />}
                 panelLestSituasjon={suksesskriterier}
             >
                 <Normaltekst className="ekspanderbart-infopanel__innhold">

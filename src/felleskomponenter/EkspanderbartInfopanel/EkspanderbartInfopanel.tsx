@@ -15,6 +15,7 @@ export interface EkspanderbartInfopanelProps {
     bakgrunn?: string;
     panelLestSituasjon: PanelLestSituasjon;
     ikon?: ReactNode;
+    lestIkon?: ReactNode;
     callBack: (panelLestSituasjon: PanelLestSituasjon) => any;
 }
 
@@ -59,7 +60,10 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                     props.ikon ? (
                         <div className="ekspanderbart-infopanel__tittel-med-ikon-wrapper">
                             <div className="ekspanderbart-infopanel__tittel-med-ikon">
-                                <div className="ekspanderbart-infopanel__kun-ikon">{props.ikon}</div> {props.tittel}
+                                <div className="ekspanderbart-infopanel__kun-ikon">
+                                    {erLest ? props.lestIkon : props.ikon}
+                                </div>
+                                {props.tittel}
                             </div>
                             {erLest && (
                                 <div className="ekspanderbart-infopanel__kun-lest-ikon">
@@ -73,7 +77,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                                 {props.tittel}
                             </div>
                             {erLest && (
-                                <div  className="ekspanderbart-infopanel__kun-lest-ikon">
+                                <div className="ekspanderbart-infopanel__kun-lest-ikon">
                                     <LestSVG />
                                 </div>
                             )}
