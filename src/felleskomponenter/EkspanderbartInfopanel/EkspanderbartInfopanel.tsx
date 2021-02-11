@@ -18,7 +18,9 @@ export interface EkspanderbartInfopanelProps {
     callBack: (panelLestSituasjon: PanelLestSituasjon) => any;
 }
 
-export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelProps> = (props: EkspanderbartInfopanelProps) => {
+export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelProps> = (
+    props: EkspanderbartInfopanelProps
+) => {
     const [erÅpen, setErÅpen] = useState<boolean>(false);
     const [erLest, setErLest] = useState<boolean>(props.panelLestSituasjon === 'lest');
 
@@ -33,9 +35,9 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
         }
     };
 
-    useEffect( () => {
-        setErLest(props.panelLestSituasjon === 'lest')
-    }, [props.panelLestSituasjon])
+    useEffect(() => {
+        setErLest(props.panelLestSituasjon === 'lest');
+    }, [props.panelLestSituasjon]);
 
     useEffect(() => {
         const timer = setTimeout(async () => {
@@ -55,22 +57,22 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
             <EkspanderbartpanelBase
                 tittel={
                     props.ikon ? (
-                        <div >
+                        <div>
                             <div className="ekspanderbart-infopanel__tittel-med-ikon">
                                 {props.ikon} {props.tittel}
                             </div>
-                            <div style={{ marginTop: '1rem' }}>
-                                <LestSVG />
-                            </div>
+                            {props.panelLestSituasjon && (
+                                <div style={{ marginTop: '1rem' }}>
+                                    <LestSVG />
+                                </div>
+                            )}
                         </div>
                     ) : (
                         <div className="ekspanderbart-infopanel__tittel-uten-ikon">
                             <div className="ekspanderbart-infopanel__kun-tittel">
                                 {props.tittel}
                             </div>
-                            <div>
-                                <LestSVG />
-                            </div>
+                            <div>{props.panelLestSituasjon === 'lest' && <LestSVG />}</div>
                         </div>
                     )
                 }
