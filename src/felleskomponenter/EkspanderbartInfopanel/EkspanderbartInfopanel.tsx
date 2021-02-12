@@ -4,42 +4,83 @@ import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
 import classNames from 'classnames';
 import logEvent from '../../amplitude/amplitude';
+import { LestSVG } from './LestSVG';
 
-interface Props {
+export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
+
+export interface EkspanderbartInfopanelProps {
     children: ReactNode;
     unikId: string;
     tittel: string;
     bakgrunn?: string;
+    panelLestSituasjon: PanelLestSituasjon;
     ikon?: ReactNode;
+    lestIkon?: ReactNode;
+    callBack: (panelLestSituasjon: PanelLestSituasjon) => any;
 }
 
-export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) => {
+export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelProps> = (
+    props: EkspanderbartInfopanelProps
+) => {
     const [erÅpen, setErÅpen] = useState<boolean>(false);
+    const [erLest, setErLest] = useState<boolean>(false);
+
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId;
+
+    const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
+        if (props.panelLestSituasjon !== panelLestSituasjon) {
+            setErLest(true);
+            props.callBack(panelLestSituasjon);
+        } else {
+            props.callBack(undefined);
+        }
+    };
 
     useEffect(() => {
         const timer = setTimeout(async () => {
             erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
+            erÅpen && props.panelLestSituasjon !== 'lest' && toggleCallback('lest');
         }, 500);
         return () => clearTimeout(timer);
     }, [erÅpen]);
+
+    useEffect(() => {
+        setErLest(props.panelLestSituasjon === 'lest');
+    }, [props.panelLestSituasjon]);
+
     const innhold = (
         <>
             <div>{props.children}</div>
         </>
     );
-
     return (
         <>
             <EkspanderbartpanelBase
                 tittel={
                     props.ikon ? (
-                        <div className="ekspanderbart-infopanel__tittel-med-ikon">
-                            {props.ikon} {props.tittel}
+                        <div className="ekspanderbart-infopanel__tittel-med-ikon-wrapper">
+                            <div className="ekspanderbart-infopanel__tittel-med-ikon">
+                                <div className="ekspanderbart-infopanel__kun-ikon">
+                                    {erLest ? props.lestIkon : props.ikon}
+                                </div>
+                                {props.tittel}
+                            </div>
+                            {erLest && (
+                                <div className="ekspanderbart-infopanel__kun-lest-ikon">
+                                    <LestSVG />
+                                </div>
+                            )}
                         </div>
                     ) : (
                         <div className="ekspanderbart-infopanel__tittel-uten-ikon">
-                            {props.tittel}
+                            <div className="ekspanderbart-infopanel__kun-tittel">
+                                {props.tittel}
+                            </div>
+                            {erLest && (
+                                <div className="ekspanderbart-infopanel__kun-lest-ikon">
+                                    <LestSVG />
+                                </div>
+                            )}
                         </div>
                     )
                 }
@@ -49,7 +90,7 @@ export const EkspanderbartInfopanel: FunctionComponent<Props> = (props: Props) =
                     setErÅpen(!erÅpen);
                 }}
                 className={
-                    !props.bakgrunn
+                    !erLest
                         ? 'ekspanderbart-infopanel__panel'
                         : classNames(
                               'ekspanderbart-infopanel__panel',

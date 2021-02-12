@@ -4,7 +4,7 @@ import { useCookies } from 'react-cookie';
 import { Systemtittel, Undertittel } from 'nav-frontend-typografi';
 import './SituasjonQA.less';
 import { SlikKanDisseSpørsmåleneHjelpeDeg } from './SlikKanDisseSpørsmåleneHjelpeDeg/SlikKanDisseSpørsmåleneHjelpeDeg';
-import { SvarType, SvarProps } from './Svar/Svar';
+import {SvarType, SvarProps} from './Svar/Svar';
 import {
     ForutsigbarInfopanelSvarJa,
     ForutsigbarInfopanelSvarNei,
@@ -22,7 +22,7 @@ const Svar = dynamic<SvarProps>(() => import('./Svar/Svar').then((module) => mod
     ssr: false,
 });
 
-const ETT_ÅR_I_SEKUNDER = 31536000;
+export const ETT_ÅR_I_SEKUNDER = 31536000;
 
 export const SituasjonQA: FunctionComponent = () => {
     const [cookies, setCookie] = useCookies(['samtalestotte-arbeidsgiver-qa']);

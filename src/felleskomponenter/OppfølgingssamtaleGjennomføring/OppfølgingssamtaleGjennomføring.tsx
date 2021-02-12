@@ -1,7 +1,10 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Element, Ingress, Normaltekst, Systemtittel } from 'nav-frontend-typografi';
-import { EkspanderbartInfopanel } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import {
+    EkspanderbartInfopanel,
+    PanelLestSituasjon,
+} from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './OppfølgingssamtaleGjennomføring.less';
 import { Steg1SVG } from './Steg1SVG';
 import { Steg2SVG } from './Steg2SVG';
@@ -9,8 +12,75 @@ import { Steg3SVG } from './Steg3SVG';
 import { Steg4SVG } from './Steg4SVG';
 import { Steg5SVG } from './Steg5SVG';
 import LoggbarLenke from '../LoggbarLenke/LoggbarLenke';
+import { useCookies } from 'react-cookie';
+import logEvent from '../../amplitude/amplitude';
+import { Steg1GronnSVG } from './Steg1GronnSVG';
+import { Steg2GronnSVG } from './Steg2GronnSVG';
+import { Steg3GronnSVG } from './Steg3GronnSVG';
+import { Steg4GronnSVG } from './Steg4GronnSVG';
+import { Steg5GronnSVG } from './Steg5GronnSVG';
 
 export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
+    const [cookies, setCookie] = useCookies(['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']);
+
+    const [steg1Forberedelse, setSteg1Forberedelse] = useState<PanelLestSituasjon>(
+        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg1Forberedelse ===
+            undefined
+            ? undefined
+            : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg1Forberedelse
+    );
+
+    const [steg2Innledning, setSteg2Innledning] = useState<PanelLestSituasjon>(
+        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg2Innledning === undefined
+            ? undefined
+            : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg2Innledning
+    );
+    const [steg3Snakk, setSteg3Snakk] = useState<PanelLestSituasjon>(
+        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg3Snakk === undefined
+            ? undefined
+            : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg3Snakk
+    );
+    const [steg4FinnLøsning, setSteg4FinnLøsning] = useState<PanelLestSituasjon>(
+        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg4FinnLøsning ===
+            undefined
+            ? undefined
+            : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg4FinnLøsning
+    );
+    const [steg5Avslutning, setSteg5Avslutning] = useState<PanelLestSituasjon>(
+        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg5Avslutning === undefined
+            ? undefined
+            : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg5Avslutning
+    );
+
+    useEffect(() => {
+        setCookie(
+            'samtalestotte-arbeidsgiver-oppfolgingspaneler-lest',
+            JSON.stringify({
+                steg1Forberedelse: steg1Forberedelse,
+                steg2Innledning: steg2Innledning,
+                steg3Snakk: steg3Snakk,
+                steg4FinnLøsning: steg4FinnLøsning,
+                steg5Avslutning: steg5Avslutning,
+            }),
+            {
+                path: '/',
+                expires: undefined,
+                sameSite: true,
+            }
+        );
+    }, [steg1Forberedelse, steg2Innledning, steg3Snakk, steg4FinnLøsning, steg5Avslutning]);
+
+    const callbackIntercept = (
+        callback: (panelLestSituasjon: PanelLestSituasjon) => any,
+        label: string
+    ) => (panelLestSituasjon: PanelLestSituasjon) => {
+        logEvent('knapp', {
+            label: label,
+            funksjon: 'panel-lest',
+            panelLestSituasjon: panelLestSituasjon,
+        });
+        callback(panelLestSituasjon);
+    };
     return (
         <>
             <Systemtittel className="oppfølgingssamtaleGjennomføring__tittel">
@@ -22,8 +92,11 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             </Ingress>
             <EkspanderbartInfopanel
                 tittel={'Slik forbereder du samtalen'}
-                unikId={'Slik-forbereder-du-samtalen'}
+                unikId={'steg1Forberedelse'}
                 ikon={<Steg1SVG />}
+                lestIkon={<Steg1GronnSVG />}
+                callBack={callbackIntercept(setSteg1Forberedelse, 'steg1Forberedelse')}
+                panelLestSituasjon={steg1Forberedelse}
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Element>Lederens rolle i en samtale om arbeidssituasjonen</Element>
@@ -115,8 +188,11 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
 
             <EkspanderbartInfopanel
                 tittel={'Slik innleder du samtalen'}
-                unikId={'Slik-innleder-du-samtalen'}
+                unikId={'steg2Innledning'}
                 ikon={<Steg2SVG />}
+                lestIkon={<Steg2GronnSVG />}
+                callBack={callbackIntercept(setSteg2Innledning, 'steg2Innledning')}
+                panelLestSituasjon={steg2Innledning}
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Normaltekst>
@@ -142,8 +218,11 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
 
             <EkspanderbartInfopanel
                 tittel={'Slik snakker dere om arbeidssituasjonen'}
-                unikId={'Slik-snakker-dere-om-arbeidssituasjonen'}
+                unikId={'steg3Snakk'}
                 ikon={<Steg3SVG />}
+                lestIkon={<Steg3GronnSVG />}
+                callBack={callbackIntercept(setSteg3Snakk, 'steg3Snakk')}
+                panelLestSituasjon={steg3Snakk}
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Normaltekst>
@@ -185,8 +264,11 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
 
             <EkspanderbartInfopanel
                 tittel={'Slik finner dere løsninger sammen'}
-                unikId={'Slik-finner-dere-løsninger-sammen'}
+                unikId={'steg4FinnLøsning'}
                 ikon={<Steg4SVG />}
+                lestIkon={<Steg4GronnSVG />}
+                callBack={callbackIntercept(setSteg4FinnLøsning, 'steg4FinnLøsning')}
+                panelLestSituasjon={steg4FinnLøsning}
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Normaltekst className="ekspanderbart-infopanel__innhold-ny-avsnitt">
@@ -264,8 +346,11 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
 
             <EkspanderbartInfopanel
                 tittel={'Slik avslutter du samtalen'}
-                unikId={'Slik-avslutter-du-samtalen'}
+                unikId={'steg5Avslutning'}
                 ikon={<Steg5SVG />}
+                lestIkon={<Steg5GronnSVG />}
+                callBack={callbackIntercept(setSteg5Avslutning, 'steg5Avslutning')}
+                panelLestSituasjon={steg5Avslutning}
             >
                 <div className="ekspanderbart-infopanel__innhold">
                     <Normaltekst className="ekspanderbart-infopanel__innhold-ny-avsnitt">
