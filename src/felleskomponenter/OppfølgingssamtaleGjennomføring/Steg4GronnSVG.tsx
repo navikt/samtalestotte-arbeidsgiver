@@ -6,6 +6,7 @@ export const Steg4GronnSVG = () => {
             viewBox="0 0 40 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-label={'Fase 4'}
         >
             <circle cx="20" cy="20" r="19.5" fill="#117938" stroke="white" />
             <path
