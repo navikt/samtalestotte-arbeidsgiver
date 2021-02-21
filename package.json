@@ -22,7 +22,7 @@
     "cheerio": "^1.0.0-rc.5",
     "classnames": "^2.2.6",
     "express": "^4.17.1",
-    "less": "^4.1.0",
+    "less": "^4.1.1",
     "lodash.throttle": "^4.1.1",
     "nav-frontend-chevron": "^1.0.25",
     "nav-frontend-chevron-style": "^1.0.2",
