@@ -3179,10 +3179,10 @@ nav-frontend-lenker@^1.0.58:
   resolved "https://registry.yarnpkg.com/nav-frontend-lenker/-/nav-frontend-lenker-1.0.60.tgz#ab32a842c4dd2ed842479ae1e9c742df8f05499e"
   integrity sha512-Bv7McvpXRARaNsQCYCt/JW1iZYetlYc+kAPxPKaBDSGiZYp5u3ZOM4sorTIiCXMXOe/y3cahO4i3oF2q78/mNA==
 
-nav-frontend-paneler-style@^0.3.33:
-  version "0.3.33"
-  resolved "https://registry.yarnpkg.com/nav-frontend-paneler-style/-/nav-frontend-paneler-style-0.3.33.tgz#135038a71174f01beefd5079173678a8f6841f58"
-  integrity sha512-WBYdxt6WL+U6UxFk7rie/Mg74oENH9Z8x9fRTR/IhsWxiE47nBieqLfWC/rVJCzzg6O4iYxilVmChrKM4HS9AQ==
+nav-frontend-paneler-style@^0.3.34:
+  version "0.3.34"
+  resolved "https://registry.yarnpkg.com/nav-frontend-paneler-style/-/nav-frontend-paneler-style-0.3.34.tgz#48bc6a4331262658490644976c65258d6b3cbcec"
+  integrity sha512-ufqCAPGofVHrof7yh7TGdby9hMHI6HPr4x4KegeTSXg83jPsW5ElynznkBtfMpsGWTD8MoxBxIJkSOlqEvzbvg==
 
 nav-frontend-paneler@^2.0.26:
   version "2.0.31"
