@@ -3199,10 +3199,10 @@ nav-frontend-skjema@^3.0.45:
   resolved "https://registry.yarnpkg.com/nav-frontend-skjema/-/nav-frontend-skjema-3.0.51.tgz#ad99c759404021b03986dbb1dc72226f211acd2a"
   integrity sha512-PS2wP0kxuvosf+yK2CmcqgwmgTT08YcHr6Unh+Xa2uvo0VRdr0u4jKac4vsI5mcdbQGqywTFYfVFMrExVNMqlw==
 
-nav-frontend-typografi-style@^1.0.33:
-  version "1.0.33"
-  resolved "https://registry.yarnpkg.com/nav-frontend-typografi-style/-/nav-frontend-typografi-style-1.0.33.tgz#ed1c9214662da8bd714d64ec2a2833736158d692"
-  integrity sha512-HKNQXVEG99YDlgNz22/hTFcN9yyKs3N67xUonQ8Esh7Cr8lJwT1BnAYlkiT3DimJL+oKyx7bnfA/lPJF8aSl2A==
+nav-frontend-typografi-style@^1.0.34:
+  version "1.0.34"
+  resolved "https://registry.yarnpkg.com/nav-frontend-typografi-style/-/nav-frontend-typografi-style-1.0.34.tgz#ab377665e5b6130d1c5c1bd8c073a9d914f06538"
+  integrity sha512-hEREMKAXLVjpE+ss605ZXU3T7MX4FLMH7qKLnsaHazoNGOSca5tRNbC53IfJmdMEQAAIbxch/HMknEpVKAXbGw==
   dependencies:
     nav-frontend-core "^5.0.11"
 
