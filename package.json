@@ -18,7 +18,7 @@
     "@types/react": "^17.0.0",
     "@types/react-collapse": "^5.0.0",
     "@zeit/next-less": "^1.0.1",
-    "amplitude-js": "^7.4.1",
+    "amplitude-js": "^7.4.2",
     "cheerio": "^1.0.0-rc.5",
     "classnames": "^2.2.6",
     "express": "^4.17.1",
