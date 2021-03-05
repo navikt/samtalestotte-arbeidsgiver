@@ -21,23 +21,25 @@ import { Steg5GronnSVG } from './Steg5GronnSVG';
 import { CookieReducerAction, OppfølgingSamtaleState } from '../../cookie/CookieReducer';
 
 interface OppfølgingssamtaleGjennomføringProps {
-    oppfølgingSamtaleState: Partial<OppfølgingSamtaleState>
-    dispatch: Dispatch<CookieReducerAction>
+    oppfølgingSamtaleState: Partial<OppfølgingSamtaleState>;
+    dispatch: Dispatch<CookieReducerAction>;
 }
 
-export const OppfølgingssamtaleGjennomføring: FunctionComponent<OppfølgingssamtaleGjennomføringProps> = ({ oppfølgingSamtaleState, dispatch }) => {
+export const OppfølgingssamtaleGjennomføring: FunctionComponent<OppfølgingssamtaleGjennomføringProps> = ({
+    oppfølgingSamtaleState,
+    dispatch,
+}) => {
     const {
         steg1Forberedelse,
         steg2Innledning,
         steg3Snakk,
         steg4FinnLøsning,
-        steg5Avslutning
-    } = oppfølgingSamtaleState as {[key: string]: PanelLestSituasjon};
+        steg5Avslutning,
+    } = oppfølgingSamtaleState as { [key: string]: PanelLestSituasjon };
 
-    const callbackIntercept = (
-        type: keyof OppfølgingSamtaleState,
-        label: string
-    ) => (panelLestSituasjon: PanelLestSituasjon) => {
+    const callbackIntercept = (type: keyof OppfølgingSamtaleState, label: string) => (
+        panelLestSituasjon: PanelLestSituasjon
+    ) => {
         logEvent('knapp', {
             label: label,
             funksjon: 'panel-lest',

@@ -22,21 +22,22 @@ const Svar = dynamic<SvarProps>(() => import('./Svar/Svar').then((module) => mod
     ssr: false,
 });
 
-
 interface SituasjonQAProps {
-    situasjonQAState: Partial<SituasjonQAState>
-    dispatch: Dispatch<CookieReducerAction>
+    situasjonQAState: Partial<SituasjonQAState>;
+    dispatch: Dispatch<CookieReducerAction>;
 }
 
-export const SituasjonQA: FunctionComponent<SituasjonQAProps> = ({ situasjonQAState, dispatch }) => {
-
-    const {forutsigbar, kjent, tilrettelagt} = situasjonQAState as {[key: string]: SvarType};
+export const SituasjonQA: FunctionComponent<SituasjonQAProps> = ({
+    situasjonQAState,
+    dispatch,
+}) => {
+    const { forutsigbar, kjent, tilrettelagt } = situasjonQAState as { [key: string]: SvarType };
 
     const callbackIntercept = (type: keyof SituasjonQAState, label: string) => (
         svarValue: SvarType
     ) => {
         logEvent('knapp', { label: label, funksjon: 'svar__radio', svar: svarValue });
-        dispatch({type: type, payload: svarValue});
+        dispatch({ type: type, payload: svarValue });
     };
     return (
         <div className={classNames('situasjonqa', 'situasjonqa__innhold-no-print')}>
@@ -50,7 +51,7 @@ export const SituasjonQA: FunctionComponent<SituasjonQAProps> = ({ situasjonQASt
             </Undertittel>
             <Svar
                 name="forutsigbar"
-                callback={callbackIntercept('forutsigbar','forutsigbar-spørsmål')}
+                callback={callbackIntercept('forutsigbar', 'forutsigbar-spørsmål')}
                 svar={forutsigbar}
                 ariaTittel={
                     'Bidro sykefraværsrutinene til forutsigbarhet rundt oppgaver og ansvar?'

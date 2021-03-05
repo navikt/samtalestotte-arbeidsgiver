@@ -10,18 +10,23 @@ import logEvent from '../../amplitude/amplitude';
 import { CookieReducerAction, SamtaleverktøyState } from '../../cookie/CookieReducer';
 
 interface SamtaleverktøyProps {
-    samtaleverktøyState: Partial<SamtaleverktøyState>
-    dispatch: Dispatch<CookieReducerAction>
+    samtaleverktøyState: Partial<SamtaleverktøyState>;
+    dispatch: Dispatch<CookieReducerAction>;
 }
 
-export const Samtaleverktøy: FunctionComponent<SamtaleverktøyProps> = ({ samtaleverktøyState, dispatch }) => {
+export const Samtaleverktøy: FunctionComponent<SamtaleverktøyProps> = ({
+    samtaleverktøyState,
+    dispatch,
+}) => {
+    const {
+        arbeidssituasjonSamtale,
+        spørMedarbeiderOm,
+        suksesskriterier,
+    } = samtaleverktøyState as { [key: string]: PanelLestSituasjon };
 
-    const {arbeidssituasjonSamtale, spørMedarbeiderOm, suksesskriterier} = samtaleverktøyState as {[key: string]: PanelLestSituasjon};
-
-    const callbackIntercept = (
-        type: keyof SamtaleverktøyState,
-        label: string
-    ) => (panelLestSituasjon: PanelLestSituasjon) => {
+    const callbackIntercept = (type: keyof SamtaleverktøyState, label: string) => (
+        panelLestSituasjon: PanelLestSituasjon
+    ) => {
         logEvent('knapp', {
             label: label,
             funksjon: 'panel-lest',
