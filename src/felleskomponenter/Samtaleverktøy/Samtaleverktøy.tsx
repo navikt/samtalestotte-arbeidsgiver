@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { Dispatch, FunctionComponent } from 'react';
 import { Normaltekst, Systemtittel, UndertekstBold } from 'nav-frontend-typografi';
 import {
     EkspanderbartInfopanel,
@@ -6,53 +6,20 @@ import {
 } from '../EkspanderbartInfopanel/EkspanderbartInfopanel';
 import './Samtaleverktøy.less';
 import { LyspæreSVG } from './LyspæreSVG';
-import { useCookies } from 'react-cookie';
 import logEvent from '../../amplitude/amplitude';
+import { CookieReducerAction, SamtaleverktøyState } from '../../cookie/CookieReducer';
 
-export const Samtaleverktøy: FunctionComponent = () => {
-    const [cookies, setCookie] = useCookies([
-        'samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest',
-    ]);
+interface SamtaleverktøyProps {
+    samtaleverktøyState: Partial<SamtaleverktøyState>
+    dispatch: Dispatch<CookieReducerAction>
+}
 
-    const [arbeidssituasjonSamtale, setArbeidssituasjonSamtale] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']
-            ?.arbeidssituasjonSamtale === undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']
-                  .arbeidssituasjonSamtale
-    );
+export const Samtaleverktøy: FunctionComponent<SamtaleverktøyProps> = ({ samtaleverktøyState, dispatch }) => {
 
-    const [spørMedarbeiderOm, setSpørMedarbeiderOm] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']?.spørMedarbeiderOm ===
-            undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest'].spørMedarbeiderOm
-    );
-    const [suksesskriterier, setSuksesskriterier] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest']?.suksesskriterier ===
-            undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest'].suksesskriterier
-    );
-
-    useEffect(() => {
-        setCookie(
-            'samtalestotte-arbeidsgiver-samtaleverktoy-paneler-lest',
-            JSON.stringify({
-                arbeidssituasjonSamtale: arbeidssituasjonSamtale,
-                spørMedarbeiderOm: spørMedarbeiderOm,
-                suksesskriterier: suksesskriterier,
-            }),
-            {
-                path: '/',
-                expires: undefined,
-                sameSite: true,
-            }
-        );
-    }, [arbeidssituasjonSamtale, spørMedarbeiderOm, suksesskriterier]);
+    const {arbeidssituasjonSamtale, spørMedarbeiderOm, suksesskriterier} = samtaleverktøyState as {[key: string]: PanelLestSituasjon};
 
     const callbackIntercept = (
-        callback: (panelLestSituasjon: PanelLestSituasjon) => any,
+        type: keyof SamtaleverktøyState,
         label: string
     ) => (panelLestSituasjon: PanelLestSituasjon) => {
         logEvent('knapp', {
@@ -60,7 +27,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
             funksjon: 'panel-lest',
             panelLestSituasjon: panelLestSituasjon,
         });
-        callback(panelLestSituasjon);
+        dispatch({ type: type, payload: panelLestSituasjon });
     };
 
     return (
@@ -69,7 +36,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
             <EkspanderbartInfopanel
                 tittel={'Når kan en samtale om arbeidssituasjonen være aktuelt?'}
                 unikId={'arbeidssituasjonSamtale'}
-                callBack={callbackIntercept(setArbeidssituasjonSamtale, 'arbeidssituasjonSamtale')}
+                callBack={callbackIntercept('arbeidssituasjonSamtale', 'arbeidssituasjonSamtale')}
                 panelLestSituasjon={
                     arbeidssituasjonSamtale === 'lest' ? 'lest' : arbeidssituasjonSamtale
                 }
@@ -96,10 +63,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
             <EkspanderbartInfopanel
                 tittel={'Dette kan du spørre medarbeideren om'}
                 unikId={'detteKanDuSpørreMedarbeiderenOm'}
-                callBack={callbackIntercept(
-                    setSpørMedarbeiderOm,
-                    'detteKanDuSpørreMedarbeiderenOm'
-                )}
+                callBack={callbackIntercept('spørMedarbeiderOm', 'detteKanDuSpørreMedarbeiderenOm')}
                 panelLestSituasjon={spørMedarbeiderOm}
             >
                 <div className="ekspanderbart-infopanel__innhold">
@@ -138,7 +102,7 @@ export const Samtaleverktøy: FunctionComponent = () => {
             <EkspanderbartInfopanel
                 tittel={'Suksesskriterier'}
                 unikId={'suksesskriterier'}
-                callBack={callbackIntercept(setSuksesskriterier, 'suksesskriterier')}
+                callBack={callbackIntercept('suksesskriterier', 'suksesskriterier')}
                 ikon={<LyspæreSVG />}
                 lestIkon={<LyspæreSVG />}
                 panelLestSituasjon={suksesskriterier}

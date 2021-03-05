@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { Dispatch, FunctionComponent } from 'react';
 import classNames from 'classnames';
 import { Element, Ingress, Normaltekst, Systemtittel } from 'nav-frontend-typografi';
 import {
@@ -12,66 +12,30 @@ import { Steg3SVG } from './Steg3SVG';
 import { Steg4SVG } from './Steg4SVG';
 import { Steg5SVG } from './Steg5SVG';
 import LoggbarLenke from '../LoggbarLenke/LoggbarLenke';
-import { useCookies } from 'react-cookie';
 import logEvent from '../../amplitude/amplitude';
 import { Steg1GronnSVG } from './Steg1GronnSVG';
 import { Steg2GronnSVG } from './Steg2GronnSVG';
 import { Steg3GronnSVG } from './Steg3GronnSVG';
 import { Steg4GronnSVG } from './Steg4GronnSVG';
 import { Steg5GronnSVG } from './Steg5GronnSVG';
+import { CookieReducerAction, OppfølgingSamtaleState } from '../../cookie/CookieReducer';
 
-export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
-    const [cookies, setCookie] = useCookies(['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']);
+interface OppfølgingssamtaleGjennomføringProps {
+    oppfølgingSamtaleState: Partial<OppfølgingSamtaleState>
+    dispatch: Dispatch<CookieReducerAction>
+}
 
-    const [steg1Forberedelse, setSteg1Forberedelse] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg1Forberedelse ===
-            undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg1Forberedelse
-    );
-
-    const [steg2Innledning, setSteg2Innledning] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg2Innledning === undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg2Innledning
-    );
-    const [steg3Snakk, setSteg3Snakk] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg3Snakk === undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg3Snakk
-    );
-    const [steg4FinnLøsning, setSteg4FinnLøsning] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg4FinnLøsning ===
-            undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg4FinnLøsning
-    );
-    const [steg5Avslutning, setSteg5Avslutning] = useState<PanelLestSituasjon>(
-        cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest']?.steg5Avslutning === undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-oppfolgingspaneler-lest'].steg5Avslutning
-    );
-
-    useEffect(() => {
-        setCookie(
-            'samtalestotte-arbeidsgiver-oppfolgingspaneler-lest',
-            JSON.stringify({
-                steg1Forberedelse: steg1Forberedelse,
-                steg2Innledning: steg2Innledning,
-                steg3Snakk: steg3Snakk,
-                steg4FinnLøsning: steg4FinnLøsning,
-                steg5Avslutning: steg5Avslutning,
-            }),
-            {
-                path: '/',
-                expires: undefined,
-                sameSite: true,
-            }
-        );
-    }, [steg1Forberedelse, steg2Innledning, steg3Snakk, steg4FinnLøsning, steg5Avslutning]);
+export const OppfølgingssamtaleGjennomføring: FunctionComponent<OppfølgingssamtaleGjennomføringProps> = ({ oppfølgingSamtaleState, dispatch }) => {
+    const {
+        steg1Forberedelse,
+        steg2Innledning,
+        steg3Snakk,
+        steg4FinnLøsning,
+        steg5Avslutning
+    } = oppfølgingSamtaleState as {[key: string]: PanelLestSituasjon};
 
     const callbackIntercept = (
-        callback: (panelLestSituasjon: PanelLestSituasjon) => any,
+        type: keyof OppfølgingSamtaleState,
         label: string
     ) => (panelLestSituasjon: PanelLestSituasjon) => {
         logEvent('knapp', {
@@ -79,7 +43,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
             funksjon: 'panel-lest',
             panelLestSituasjon: panelLestSituasjon,
         });
-        callback(panelLestSituasjon);
+        dispatch({ type: type, payload: panelLestSituasjon });
     };
     return (
         <>
@@ -95,7 +59,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 unikId={'steg1Forberedelse'}
                 ikon={<Steg1SVG />}
                 lestIkon={<Steg1GronnSVG />}
-                callBack={callbackIntercept(setSteg1Forberedelse, 'steg1Forberedelse')}
+                callBack={callbackIntercept('steg1Forberedelse', 'steg1Forberedelse')}
                 panelLestSituasjon={steg1Forberedelse}
             >
                 <div className="ekspanderbart-infopanel__innhold">
@@ -191,7 +155,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 unikId={'steg2Innledning'}
                 ikon={<Steg2SVG />}
                 lestIkon={<Steg2GronnSVG />}
-                callBack={callbackIntercept(setSteg2Innledning, 'steg2Innledning')}
+                callBack={callbackIntercept('steg2Innledning', 'steg2Innledning')}
                 panelLestSituasjon={steg2Innledning}
             >
                 <div className="ekspanderbart-infopanel__innhold">
@@ -221,7 +185,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 unikId={'steg3Snakk'}
                 ikon={<Steg3SVG />}
                 lestIkon={<Steg3GronnSVG />}
-                callBack={callbackIntercept(setSteg3Snakk, 'steg3Snakk')}
+                callBack={callbackIntercept('steg3Snakk', 'steg3Snakk')}
                 panelLestSituasjon={steg3Snakk}
             >
                 <div className="ekspanderbart-infopanel__innhold">
@@ -267,7 +231,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 unikId={'steg4FinnLøsning'}
                 ikon={<Steg4SVG />}
                 lestIkon={<Steg4GronnSVG />}
-                callBack={callbackIntercept(setSteg4FinnLøsning, 'steg4FinnLøsning')}
+                callBack={callbackIntercept('steg4FinnLøsning', 'steg4FinnLøsning')}
                 panelLestSituasjon={steg4FinnLøsning}
             >
                 <div className="ekspanderbart-infopanel__innhold">
@@ -349,7 +313,7 @@ export const OppfølgingssamtaleGjennomføring: FunctionComponent = () => {
                 unikId={'steg5Avslutning'}
                 ikon={<Steg5SVG />}
                 lestIkon={<Steg5GronnSVG />}
-                callBack={callbackIntercept(setSteg5Avslutning, 'steg5Avslutning')}
+                callBack={callbackIntercept('steg5Avslutning', 'steg5Avslutning')}
                 panelLestSituasjon={steg5Avslutning}
             >
                 <div className="ekspanderbart-infopanel__innhold">
