@@ -37,7 +37,8 @@ const Home = (props: { page: PageProps }) => {
             state.sendtStatistikk === 'nei' &&
             [state.situasjonQA, state.oppfølgingSamtale, state.samtaleverktøy].some(isNotEmpty)
         ) {
-            fetch('http://localhost:3000/sendstatistics');
+            // TODO legg til kall mot ia-metrikker
+            //fetch('http://localhost:3000/sendstatistics');
             dispatch({ type: 'sendtStatistikk', payload: 'ja' });
         }
         setCookie(
