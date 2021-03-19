@@ -28,7 +28,7 @@ export const tilIsoDatoMedUtcTimezoneUtenMillis = (dato: Date): String => {
 
 export const sendIATjenesteMetrikk = async () => {
     const iaTjenesteMetrikk: IatjenesteMetrikk = {
-        kilde: 'SYKEFRAVÆRSSTATISTIKK',
+        kilde: 'SAMTALESTØTTE',
         type: 'DIGITAL_IA_TJENESTE',
         tjenesteMottakkelsesdato: tilIsoDatoMedUtcTimezoneUtenMillis(new Date()),
     };
