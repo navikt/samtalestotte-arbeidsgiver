@@ -40,48 +40,46 @@ export const Layout = (props: {
                 }
             />
             <div id="app" className="app">
-                <CookiesProvider>
-                    <PageBanner
-                        isFrontPage={true}
-                        title={props.title}
-                        iconUrl={props.bannerIconUrl === undefined ? '' : props.bannerIconUrl}
-                        kontekst={
-                            'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid'
-                        }
-                    />
-                    <div className="layout__wrapper">
-                        <div className="layout__content" ref={panelRef}>
-                            <div className="layout__print-header">
-                                <Normaltekst>{PROD_URL}</Normaltekst>
-                            </div>
-                            <div className="layout__react-to-print-wrapper">
-                                <ReactToPrint
-                                    onBeforePrint={() => {
-                                        logEvent('knapp', {
-                                            label: 'last-ned',
-                                            funksjon: 'last-ned',
-                                        });
-                                    }}
-                                    onAfterPrint={() => {
-                                        if (lastNedKnappRef.current) {
-                                            lastNedKnappRef.current.focus();
-                                        }
-                                    }}
-                                    content={() => panelRef.current}
-                                    trigger={() => (
-                                        <button
-                                            ref={lastNedKnappRef}
-                                            className={classNames('layout__knapp', 'knapp')}
-                                        >
-                                            Last ned
-                                        </button>
-                                    )}
-                                />
-                            </div>
-                            {props.children}
+                <PageBanner
+                    isFrontPage={true}
+                    title={props.title}
+                    iconUrl={props.bannerIconUrl === undefined ? '' : props.bannerIconUrl}
+                    kontekst={
+                        'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid'
+                    }
+                />
+                <div className="layout__wrapper">
+                    <div className="layout__content" ref={panelRef}>
+                        <div className="layout__print-header">
+                            <Normaltekst>{PROD_URL}</Normaltekst>
                         </div>
+                        <div className="layout__react-to-print-wrapper">
+                            <ReactToPrint
+                                onBeforePrint={() => {
+                                    logEvent('knapp', {
+                                        label: 'last-ned',
+                                        funksjon: 'last-ned',
+                                    });
+                                }}
+                                onAfterPrint={() => {
+                                    if (lastNedKnappRef.current) {
+                                        lastNedKnappRef.current.focus();
+                                    }
+                                }}
+                                content={() => panelRef.current}
+                                trigger={() => (
+                                    <button
+                                        ref={lastNedKnappRef}
+                                        className={classNames('layout__knapp', 'knapp')}
+                                    >
+                                        Last ned
+                                    </button>
+                                )}
+                            />
+                        </div>
+                        {props.children}
                     </div>
-                </CookiesProvider>
+                </div>
             </div>
             <DecoratorFooter
                 html={
