@@ -3160,10 +3160,10 @@ nav-frontend-ekspanderbartpanel@^3.0.50:
   resolved "https://registry.yarnpkg.com/nav-frontend-ekspanderbartpanel/-/nav-frontend-ekspanderbartpanel-3.0.54.tgz#f2b99d3bcaf6f40f53863230dc95a096924222d3"
   integrity sha512-vhY0iwQB5w/CLa9F5tpoK+QYzQlVCVpPvIaG9jW8kmnevmn9yfwfwdPFY1YTHJEA8n4g9s2aKDFoCRWEh1FT0g==
 
-nav-frontend-js-utils@^1.0.16:
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/nav-frontend-js-utils/-/nav-frontend-js-utils-1.0.16.tgz#2b14903a1ecd17e2390b924a8f2f6a89389e9437"
-  integrity sha512-NtLUbrCFTnjOyDOBUSU/I1ThcUHK1SixKV4l+EHb0Z0e02QqZXA9WGKqlG/7uADFs5bHDWnKLBAjW6Ruji1Vcw==
+nav-frontend-js-utils@^1.0.17:
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/nav-frontend-js-utils/-/nav-frontend-js-utils-1.0.17.tgz#a39160bce2ec194bd6ab0f262529ee242ea44ff6"
+  integrity sha512-iP4N25iuPi9uJO6UQUsTQq/D09kgSeEysNz+VqiUdXveJ+U8iAO/ik/tMUO5nIcZt117BvxB5URD4wAV1FkdFg==
   dependencies:
     lodash.throttle "^4.1.1"
 
