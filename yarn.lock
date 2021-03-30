@@ -495,10 +495,10 @@ ajv@^6.1.0, ajv@^6.10.2, ajv@^6.12.4, ajv@^6.12.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-amplitude-js@^7.4.1:
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/amplitude-js/-/amplitude-js-7.4.1.tgz#ad1b47fefca3b1c9afe257f8b8164cce95e671cf"
-  integrity sha512-AiqYt9z0tzWBxcE0ILVDNOksXuPdZa4Jiak2VSWwBpgt+CUJ4jZzT3daGZPbw50o2/KnSIfMfAojcT7PpmKxLA==
+amplitude-js@^7.4.2:
+  version "7.4.4"
+  resolved "https://registry.yarnpkg.com/amplitude-js/-/amplitude-js-7.4.4.tgz#1abd76f96a44ebdbf90e7371b37d071010deffe6"
+  integrity sha512-3Ojj1draRcXvfxi5P+Ye/6Y4roxtf1lQEjczcLDnHU9vxbPtT4fDblC9+cdJy7XmlJkGoq+KvnItlWfLuHV9GQ==
   dependencies:
     "@amplitude/ua-parser-js" "0.7.24"
     "@amplitude/utils" "^1.0.5"
