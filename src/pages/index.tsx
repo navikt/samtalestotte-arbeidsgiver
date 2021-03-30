@@ -73,6 +73,7 @@ const Home = (props: { page: PageProps }) => {
                     title={props.page ? props.page.title : 'kunne ikke hente tittel'}
                     isFrontPage={true}
                     decoratorParts={props.page.decorator}
+                    logEvent={logEvent}
                 >
                     <Samtaleverktøy
                         dispatch={dispatch}

@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import LesMerPanel from '../../LesMerPanel/LesMerPanel';
-import { Normaltekst } from 'nav-frontend-typografi';
 import './SlikKanDisseSpørsmåleneHjelpeDeg.less';
 
 interface Props {

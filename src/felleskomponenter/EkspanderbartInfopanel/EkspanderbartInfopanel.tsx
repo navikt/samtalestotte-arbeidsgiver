@@ -38,8 +38,8 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
 
     useEffect(() => {
         const timer = setTimeout(async () => {
-            erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
             erÅpen && props.panelLestSituasjon !== 'lest' && toggleCallback('lest');
+            erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
         }, 500);
         return () => clearTimeout(timer);
     }, [erÅpen]);
