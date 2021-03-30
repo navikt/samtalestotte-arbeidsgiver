@@ -1,6 +1,5 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { Dispatch, FunctionComponent } from 'react';
 import dynamic from 'next/dynamic';
-import { useCookies } from 'react-cookie';
 import { Systemtittel, Undertittel } from 'nav-frontend-typografi';
 import './SituasjonQA.less';
 import { SlikKanDisseSpørsmåleneHjelpeDeg } from './SlikKanDisseSpørsmåleneHjelpeDeg/SlikKanDisseSpørsmåleneHjelpeDeg';
@@ -16,54 +15,29 @@ import {
 } from './Infopaneler/Infopaneler';
 import logEvent from '../../amplitude/amplitude';
 import classNames from 'classnames';
+import { CookieReducerAction, SituasjonQAState } from '../../cookie/CookieReducer';
 
 // Svar komponenten renderer ikke riktig på serverside. Dette sørger for at den blir rendret clientside.
 const Svar = dynamic<SvarProps>(() => import('./Svar/Svar').then((module) => module.Svar), {
     ssr: false,
 });
 
-export const ETT_ÅR_I_SEKUNDER = 31536000;
+interface SituasjonQAProps {
+    situasjonQAState: Partial<SituasjonQAState>;
+    dispatch: Dispatch<CookieReducerAction>;
+}
 
-export const SituasjonQA: FunctionComponent = () => {
-    const [cookies, setCookie] = useCookies(['samtalestotte-arbeidsgiver-qa']);
+export const SituasjonQA: FunctionComponent<SituasjonQAProps> = ({
+    situasjonQAState,
+    dispatch,
+}) => {
+    const { forutsigbar, kjent, tilrettelagt } = situasjonQAState as { [key: string]: SvarType };
 
-    const [forutsigbar, setForutsigbar] = useState<SvarType>(
-        cookies['samtalestotte-arbeidsgiver-qa']?.forutsigbar === undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-qa'].forutsigbar
-    );
-    const [kjent, setKjent] = useState<SvarType>(
-        cookies['samtalestotte-arbeidsgiver-qa']?.kjent === undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-qa'].kjent
-    );
-    const [tillrettelagt, setTillrettelagt] = useState<SvarType>(
-        cookies['samtalestotte-arbeidsgiver-qa']?.tilrettelagt === undefined
-            ? undefined
-            : cookies['samtalestotte-arbeidsgiver-qa'].tilrettelagt
-    );
-
-    useEffect(() => {
-        setCookie(
-            'samtalestotte-arbeidsgiver-qa',
-            JSON.stringify({
-                forutsigbar: forutsigbar,
-                kjent: kjent,
-                tilrettelagt: tillrettelagt,
-            }),
-            {
-                path: '/',
-                maxAge: ETT_ÅR_I_SEKUNDER,
-                sameSite: true,
-            }
-        );
-    }, [forutsigbar, kjent, tillrettelagt]);
-
-    const callbackIntercept = (callback: (svar: SvarType) => any, label: string) => (
-        svarType: SvarType
+    const callbackIntercept = (type: keyof SituasjonQAState, label: string) => (
+        svarValue: SvarType
     ) => {
-        logEvent('knapp', { label: label, funksjon: 'svar__radio', svar: svarType });
-        callback(svarType);
+        logEvent('knapp', { label: label, funksjon: 'svar__radio', svar: svarValue });
+        dispatch({ type: type, payload: svarValue });
     };
     return (
         <div className={classNames('situasjonqa', 'situasjonqa__innhold-no-print')}>
@@ -77,7 +51,7 @@ export const SituasjonQA: FunctionComponent = () => {
             </Undertittel>
             <Svar
                 name="forutsigbar"
-                callback={callbackIntercept(setForutsigbar, 'forutsigbar-spørsmål')}
+                callback={callbackIntercept('forutsigbar', 'forutsigbar-spørsmål')}
                 svar={forutsigbar}
                 ariaTittel={
                     'Bidro sykefraværsrutinene til forutsigbarhet rundt oppgaver og ansvar?'
@@ -91,7 +65,7 @@ export const SituasjonQA: FunctionComponent = () => {
             </Undertittel>
             <Svar
                 name="kjent"
-                callback={callbackIntercept(setKjent, 'kjent-spørsmål')}
+                callback={callbackIntercept('kjent', 'kjent-spørsmål')}
                 svar={kjent}
                 ariaTittel={'Var rutinene kjent i forkant av samtalen?'}
             />
@@ -103,16 +77,16 @@ export const SituasjonQA: FunctionComponent = () => {
             </Undertittel>
             <Svar
                 name="tillrettelagt"
-                callback={callbackIntercept(setTillrettelagt, 'tilrettelagt-spørsmål')}
-                svar={tillrettelagt}
+                callback={callbackIntercept('tilrettelagt', 'tilrettelagt-spørsmål')}
+                svar={tilrettelagt}
                 ariaTittel={
                     'Kjente du og medarbeideren til tilretteleggingsmuligheter på egen arbeidsplass?'
                 }
             />
-            {tillrettelagt === 'ja' && <TillrettelagtInfopanelSvarJa />}
-            {tillrettelagt === 'nei' && <TillrettelagtInfopanelSvarNei />}
+            {tilrettelagt === 'ja' && <TillrettelagtInfopanelSvarJa />}
+            {tilrettelagt === 'nei' && <TillrettelagtInfopanelSvarNei />}
             <hr aria-label={''} className="skillelinje" />
-            {(forutsigbar === 'nei' || kjent === 'nei' || tillrettelagt === 'nei') && (
+            {(forutsigbar === 'nei' || kjent === 'nei' || tilrettelagt === 'nei') && (
                 <InfoPanelEnNei />
             )}
         </div>
