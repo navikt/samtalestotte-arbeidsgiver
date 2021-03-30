@@ -14,10 +14,6 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: '12.x'
-            - name: Installere moduler
-              run: yarn install
-            - name: Kjøre tester
-              run: yarn test
             - name: Build tag and push Docker container
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -29,7 +25,7 @@ jobs:
 
     deploy-to-dev-gcp:
         name: Deploy to dev-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/add_tests'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/946-sende-mottatt-ia-tjeneste-til-ia-tjenste-meterikker'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
