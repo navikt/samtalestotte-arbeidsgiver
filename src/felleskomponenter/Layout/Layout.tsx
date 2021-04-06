@@ -17,6 +17,7 @@ import 'nav-frontend-knapper-style';
 export const Layout = (props: {
     title: string;
     isFrontPage: boolean;
+    logEvent: (eventName: string, data?: any) => Promise<any>;
     bannerIconUrl?: string;
     decoratorParts?: DecoratorParts;
     children: React.ReactChild[];
@@ -56,7 +57,7 @@ export const Layout = (props: {
                         <div className="layout__react-to-print-wrapper">
                             <ReactToPrint
                                 onBeforePrint={() => {
-                                    logEvent('knapp', {
+                                    props.logEvent('knapp', {
                                         label: 'last-ned',
                                         funksjon: 'last-ned',
                                     });
