@@ -7,11 +7,12 @@ import { OppfølgingssamtaleGjennomføring } from '../felleskomponenter/Oppfølg
 import { SituasjonQA } from '../felleskomponenter/SituasjonQA/SituasjonQA';
 import { useEffect, useReducer } from 'react';
 import logEvent from '../amplitude/amplitude';
-import ReactToPrint from 'react-to-print';
 import { useCookies } from 'react-cookie';
 import { cookieInitializer, cookieReducer } from '../cookie/CookieReducer';
+import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
+let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
 const isNotEmpty = (object: Object) => {
     return object !== undefined && Object.keys(object).length > 0;
@@ -35,11 +36,14 @@ const Home = (props: { page: PageProps }) => {
     useEffect(() => {
         if (
             state.sendtStatistikk === 'nei' &&
-            [state.situasjonQA, state.oppfølgingSamtale, state.samtaleverktøy].some(isNotEmpty)
+            [state.situasjonQA, state.oppfølgingSamtale, state.samtaleverktøy].some(isNotEmpty) &&
+            antallForsøkSendTilIaTjenesterMetrikker < 5
         ) {
-            // TODO legg til kall mot ia-metrikker
-            //fetch('http://localhost:3000/sendstatistics');
-            dispatch({ type: 'sendtStatistikk', payload: 'ja' });
+            sendIATjenesteMetrikk().then((erMetrikkSendt) => {
+                const payload: string = erMetrikkSendt? 'ja' : 'nei';
+                dispatch({ type: 'sendtStatistikk', payload: payload });
+            });
+            antallForsøkSendTilIaTjenesterMetrikker++;
         }
         setCookie(
             'samtalestotte',
@@ -55,7 +59,7 @@ const Home = (props: { page: PageProps }) => {
                 sameSite: true,
             }
         );
-    }, [state]);
+    }, [state.situasjonQA, state.oppfølgingSamtale, state.samtaleverktøy]);
 
     return (
         <div>
@@ -94,6 +98,7 @@ interface StaticProps {
     revalidate: number;
 }
 
+// NextJS kaller denne
 export const getStaticProps = async (): Promise<StaticProps> => {
     const page = await getPageProps(
         'Samtalestøtte for arbeidsgiver',

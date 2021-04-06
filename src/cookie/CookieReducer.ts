@@ -121,7 +121,7 @@ const situasjonQAReducer = (
 
 const sendtStatistikkReducer = (state: 'ja' | 'nei', action: CookieReducerAction): 'ja' | 'nei' => {
     if (action.type === 'sendtStatistikk') {
-        return 'ja';
+        return action.payload === 'ja'? 'ja' : 'nei';
     } else {
         return state;
     }
