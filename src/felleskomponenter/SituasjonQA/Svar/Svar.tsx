@@ -22,12 +22,12 @@ export const Svar: FunctionComponent<SvarProps> = ({ name, callback, svar, ariaT
             radios={[
                 {
                     'aria-label': ariaLabelJa,
-                    label: 'ja',
+                    label: 'Ja',
                     value: 'ja',
                 },
                 {
                     'aria-label': ariaLabelNei,
-                    label: 'nei',
+                    label: 'Nei',
                     value: 'nei',
                 },
             ]}
