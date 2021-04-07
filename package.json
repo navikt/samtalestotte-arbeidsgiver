@@ -41,7 +41,7 @@
     "nav-frontend-skjema-style": "^2.0.29",
     "nav-frontend-typografi": "^2.0.39",
     "nav-frontend-typografi-style": "^1.0.34",
-    "next": "^10.0.0",
+    "next": "^10.0.6",
     "next-react-svg": "^1.1.2",
     "next-transpile-modules": "^6.1.0",
     "node-cache": "^5.1.2",
@@ -52,6 +52,7 @@
     "react-cookie": "^4.0.3",
     "react-dom": "^17.0.1",
     "react-to-print": "^2.12.3",
+    "ssri": "^8.0.1",
     "typescript": "^4.1.4"
   },
   "devDependencies": {
@@ -72,6 +73,8 @@
     "prettier": "^2.2.1",
     "pretty": "^2.0.0",
     "react-test-renderer": "^17.0.2",
-    "ts-jest": "^26.5.4"
+    "ts-jest": "^26.5.4",
+    "webpack": "4.44.1",
+    "webpack-sources": "1.4.3"
   }
 }
