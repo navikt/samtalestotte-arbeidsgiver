@@ -39,6 +39,7 @@ test('Should use callback when clicked', async () => {
     act(() => {
         ReactDOM.render(<SituasjonQA dispatch={mockDispatch} situasjonQAState={{}} />, container);
     });
+    console.log(pretty(container.innerHTML));
 
     type QaSpørsmål = {
         ja: HTMLInputElement;
