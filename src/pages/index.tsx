@@ -11,6 +11,7 @@ import { useCookies } from 'react-cookie';
 import { cookieInitializer, cookieReducer } from '../cookie/CookieReducer';
 import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
 import * as Sentry from '@sentry/browser';
+import { getMiljø } from '../utils/miljøUtils';
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
@@ -26,7 +27,11 @@ const Home = (props: { page: PageProps }) => {
         cookies['samtalestotte'],
         cookieInitializer
     );
-    Sentry.init({dsn: "https://97af8a51172e4f9bb74ac9c05920b1d2@sentry.gc.nav.no/77"});
+    Sentry.init({
+        dsn: 'https://97af8a51172e4f9bb74ac9c05920b1d2@sentry.gc.nav.no/77',
+        environment: getMiljø(),
+        enabled: getMiljø() !== 'local',
+    });
 
     useEffect(() => {
         const timer = setTimeout(async () => {
@@ -42,7 +47,7 @@ const Home = (props: { page: PageProps }) => {
             antallForsøkSendTilIaTjenesterMetrikker < 5
         ) {
             sendIATjenesteMetrikk().then((erMetrikkSendt) => {
-                const payload: string = erMetrikkSendt? 'ja' : 'nei';
+                const payload: string = erMetrikkSendt ? 'ja' : 'nei';
                 dispatch({ type: 'sendtStatistikk', payload: payload });
             });
             antallForsøkSendTilIaTjenesterMetrikker++;
