@@ -31,7 +31,7 @@ afterEach(() => {
     jest.spyOn(global.Math, 'random').mockRestore();
 });
 
-test('Should use callback when clicked', async () => {
+test.skip('Should use callback when clicked', async () => {
     if (container === null) {
         fail();
     }
