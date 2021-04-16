@@ -1336,7 +1336,7 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/cheerio@^0.22.23":
+"@types/cheerio@^0.22.27":
   version "0.22.28"
   resolved "https://registry.yarnpkg.com/@types/cheerio/-/cheerio-0.22.28.tgz#90808aabb44fec40fa2950f4c72351e3e4eb065b"
   integrity sha512-ehUMGSW5IeDxJjbru4awKYMlKGmo1wSSGUVqXtYwlgmUM8X1a0PZttEIm6yEY7vHsY/hh6iPnklF213G0UColw==
@@ -1403,10 +1403,15 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*", "@types/node@^14.14.22":
+"@types/node@*":
   version "14.14.37"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.37.tgz#a3dd8da4eb84a996c36e331df98d82abd76b516e"
   integrity sha512-XYmBiy+ohOR4Lh5jE379fV2IU+6Jn4g5qASinhitfyO71b/sCo6MKsMLF5tc7Zf2CE8hViVQyYSobJNke8OvUw==
+
+"@types/node@^14.14.35":
+  version "14.14.39"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.39.tgz#9ef394d4eb52953d2890e4839393c309aa25d2d1"
+  integrity sha512-Qipn7rfTxGEDqZiezH+wxqWYR8vcXq5LRpZrETD19Gs4o8LbklbmqotSUsMU+s5G3PJwMRDfNEYoxrcBwIxOuw==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -1449,7 +1454,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.1":
+"@types/react@*", "@types/react@^17.0.3":
   version "17.0.3"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.3.tgz#ba6e215368501ac3826951eef2904574c262cc79"
   integrity sha512-wYOUxIgs2HZZ0ACNiIayItyluADNbONl7kt8lkLjVK8IitMH5QMyAh75Fwhmo37r1m7L2JaFj03sIfxBVDvRAg==
@@ -5483,12 +5488,12 @@ nav-frontend-core@^5.0.11, nav-frontend-core@^5.1.1:
   resolved "https://registry.yarnpkg.com/nav-frontend-core/-/nav-frontend-core-5.1.1.tgz#564df53fdfa61f084950841bd6e3668fab41bfeb"
   integrity sha512-oK6VFJggnMIHsEBWXArsv+d9IO9uqUc1dp4kplHrRmTeYT2tN+pb1DA6BUOHXplGe062DIe241zYz4/lrGsmAg==
 
-nav-frontend-ekspanderbartpanel-style@^1.0.38:
+nav-frontend-ekspanderbartpanel-style@^1.0.42:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/nav-frontend-ekspanderbartpanel-style/-/nav-frontend-ekspanderbartpanel-style-1.1.1.tgz#05d922c7f2792dffc7d9f6ae82f25c035f871e5b"
   integrity sha512-JJh1UwdM7VuJvmt43UEP/krVCKKmJ1F2dLg30AJ5SBUnOUJqoJvFZQy8uAmr4RlWstO1n6suBW/I/INjqtk57A==
 
-nav-frontend-ekspanderbartpanel@^3.0.50:
+nav-frontend-ekspanderbartpanel@^3.0.56:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/nav-frontend-ekspanderbartpanel/-/nav-frontend-ekspanderbartpanel-3.1.1.tgz#2acc3ae20b3e0e7c66595f1c519f3a6636c5e2a6"
   integrity sha512-rG+UURPQuqTVNybTlduayG9JsZLuH9HCAbhSPiRIXd1bWGTFas6mCw4Abn0BRp1LhIpUb+J9/W67nzoQKHjWNg==
@@ -5500,12 +5505,12 @@ nav-frontend-js-utils@^1.0.17:
   dependencies:
     lodash.throttle "^4.1.1"
 
-nav-frontend-knapper-style@^1.0.16:
+nav-frontend-knapper-style@^1.0.17:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/nav-frontend-knapper-style/-/nav-frontend-knapper-style-1.1.1.tgz#b1c81dfc9137c3dc6a62aa8aec367a1bb4c56379"
   integrity sha512-DV48BQsqX66PZy2g6Za730FmR5H76R06cnsngZ53teG9V2eTyYZmRgqDvpsI0qk6uhLwu7rPaGyXBdMUocL0xA==
 
-nav-frontend-knapper@^2.0.31:
+nav-frontend-knapper@^2.0.32:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/nav-frontend-knapper/-/nav-frontend-knapper-2.1.1.tgz#367a835ef10347f7cb3ab047931c5d592bfb7669"
   integrity sha512-zoq8wafd7JhySuli+RCYn35hvSsu0m4exODnOSNOfl+xv95sAxNPgdbW3DexIw2RPoTl01dlCSEGVGPnvnkEjw==
@@ -5530,12 +5535,12 @@ nav-frontend-paneler@^2.0.26:
   resolved "https://registry.yarnpkg.com/nav-frontend-paneler/-/nav-frontend-paneler-2.1.1.tgz#3fdf2bef1a4c3416d053051691de8329baf5f1bd"
   integrity sha512-o0RJnmNAnzoVluEAmA8b2wl9EQ03zjJI1HjsPJD3hqFj5upRS4MrW/fpB9u5PDK+CSc6y2ICM4um9kHrHG0low==
 
-nav-frontend-skjema-style@^2.0.29:
+nav-frontend-skjema-style@^2.1.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/nav-frontend-skjema-style/-/nav-frontend-skjema-style-2.2.1.tgz#5537e6ec1e89a670065d33fc15b93291d0cd7458"
   integrity sha512-V8M9IeSWHVpQjKnbDJewdmAcPluNcpJX1zgAJ9e66cwGhRe3bEygsYIHhn9W8Bjl/oAvByxPuklT+TEn2UFwEw==
 
-nav-frontend-skjema@^3.0.45:
+nav-frontend-skjema@^3.1.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/nav-frontend-skjema/-/nav-frontend-skjema-3.2.1.tgz#8cddce61cce97c606401c9df70c98d0c4f0fceea"
   integrity sha512-4yhfei0B23E5z4HETWnWAvcAuZT1IHpODMzOfMPhYKXBGCkum5WpBIFvf9lhlxMva9I/xE03T2zL0MFfPzWOhw==
