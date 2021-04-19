@@ -52,7 +52,7 @@ test('Snapshot test', async () => {
                     <div class=\\"layout__print-header\\">
                       <p class=\\"typo-normal\\">https://arbeidsgiver.nav.no/samtalestotte</p>
                     </div>
-                    <div class=\\"layout__react-to-print-wrapper\\"><button class=\\"layout__knapp knapp\\">Last ned</button></div>
+                    <div class=\\"layout__react-to-print-wrapper\\"><button class=\\"layout__knapp knapp\\">Skriv ut</button></div>
                     <h2 class=\\"typo-systemtittel samtaleverktøy__tittel\\">Samtaleverktøy</h2>
                     <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__arbeidssituasjonSamtale-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
                         <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-uten-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-tittel\\">Når kan en samtale om arbeidssituasjonen være aktuelt?</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>

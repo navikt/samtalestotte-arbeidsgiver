@@ -58,8 +58,8 @@ export const Layout = (props: {
                             <ReactToPrint
                                 onBeforePrint={() => {
                                     props.logEvent('knapp', {
-                                        label: 'last-ned',
-                                        funksjon: 'last-ned',
+                                        label: 'skriv-ut',
+                                        funksjon: 'skriv-ut',
                                     });
                                 }}
                                 onAfterPrint={() => {
@@ -73,7 +73,7 @@ export const Layout = (props: {
                                         ref={lastNedKnappRef}
                                         className={classNames('layout__knapp', 'knapp')}
                                     >
-                                        Last ned
+                                        Skriv ut
                                     </button>
                                 )}
                             />

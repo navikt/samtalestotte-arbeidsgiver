@@ -77,7 +77,7 @@ test('snapshot test', () => {
                 <div class=\\"layout__print-header\\">
                   <p class=\\"typo-normal\\">https://arbeidsgiver.nav.no/samtalestotte</p>
                 </div>
-                <div class=\\"layout__react-to-print-wrapper\\"><button class=\\"layout__knapp knapp\\">Last ned</button></div>
+                <div class=\\"layout__react-to-print-wrapper\\"><button class=\\"layout__knapp knapp\\">Skriv ut</button></div>
                 <p>Children</p>
                 <p>Children</p>
               </div>
