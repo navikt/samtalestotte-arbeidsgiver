@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import pretty from 'pretty';
-import {
-    EkspanderbartInfopanel
-} from '../../../src/felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import { EkspanderbartInfopanel } from '../../../src/felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 
 let container: HTMLDivElement | null;
 
@@ -128,13 +126,15 @@ test('Snapshot test', () => {
         );
     });
     expect(pretty(container.innerHTML)).toMatchInlineSnapshot(`
-        "<div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__RenderTest-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
-            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-uten-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-tittel\\">Test title</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
-          </button>
-          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__RenderTest-base\\"></div>
-        </div>
-        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
-          <div>Test Child</div>
+        "<div class=\\"ekspanderbart-infopanel__root\\">
+          <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__RenderTest-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+              <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-uten-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-tittel\\">Test title</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+            </button>
+            <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__RenderTest-base\\"></div>
+          </div>
+          <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+            <div>Test Child</div>
+          </div>
         </div>"
     `);
 
@@ -144,19 +144,21 @@ test('Snapshot test', () => {
         .dispatchEvent(new MouseEvent('click', { bubbles: true }));
 
     expect(pretty(container.innerHTML)).toMatchInlineSnapshot(`
-        "<div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--apen ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__RenderTest-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"true\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
-            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-uten-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-tittel\\">Test title</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
-          </button>
-          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__RenderTest-base\\">
-            <div class=\\"ekspanderbartPanel__innhold\\">
-              <div class=\\"ekspanderbart-infopanel__innhold ekspanderbart-infopanel__innhold-no-print\\">
-                <div>Test Child</div>
-              </div><button class=\\"ekspanderbart-infopanel__lukk-knapp\\"><span class=\\"typo-normal \\">Lukk</span><span class=\\"nav-frontend-chevron chevronboks ekspanderbart-infopanel__lukk-chevron chevron--opp\\"></span></button>
+        "<div class=\\"ekspanderbart-infopanel__root\\">
+          <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--apen ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__RenderTest-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"true\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+              <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-uten-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-tittel\\">Test title</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+            </button>
+            <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__RenderTest-base\\">
+              <div class=\\"ekspanderbartPanel__innhold\\">
+                <div class=\\"ekspanderbart-infopanel__innhold ekspanderbart-infopanel__innhold-no-print\\">
+                  <div>Test Child</div>
+                </div><button class=\\"ekspanderbart-infopanel__lukk-knapp\\"><span class=\\"typo-normal \\">Lukk</span><span class=\\"nav-frontend-chevron chevronboks ekspanderbart-infopanel__lukk-chevron chevron--opp\\"></span></button>
+              </div>
             </div>
           </div>
-        </div>
-        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
-          <div>Test Child</div>
+          <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+            <div>Test Child</div>
+          </div>
         </div>"
     `);
 });
