@@ -54,7 +54,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
         </>
     );
     return (
-        <>
+        <div className={"ekspanderbart-infopanel__root"}>
             <EkspanderbartpanelBase
                 tittel={
                     props.ikon ? (
@@ -119,6 +119,6 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                 </button>
             </EkspanderbartpanelBase>
             <div className="ekspanderbart-infopanel__print-innhold">{innhold}</div>
-        </>
+        </div>
     );
 };

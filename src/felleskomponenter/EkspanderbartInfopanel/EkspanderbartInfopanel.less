@@ -12,6 +12,13 @@ span.ekspanderbartPanel__tittel {
     width: 100%;
 }
 .ekspanderbart-infopanel {
+    &__root {
+        @media print {
+            display: block;
+            break-inside: avoid;
+        }
+    }
+
     &__print-innhold {
         display: none;
     }
