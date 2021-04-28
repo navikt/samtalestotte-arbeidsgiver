@@ -1,4 +1,5 @@
 import { Normaltekst, Sidetittel } from 'nav-frontend-typografi';
+import { PageBannerSVG } from './PageBannerSVG';
 import './PageBanner.less';
 
 export const PageBanner = (props: {
@@ -18,6 +19,7 @@ export const PageBanner = (props: {
                         {props.kontekst}
                     </Normaltekst>
                 </div>
+                <PageBannerSVG className={"page-banner__svg"}/>
             </div>
         </div>
     );
