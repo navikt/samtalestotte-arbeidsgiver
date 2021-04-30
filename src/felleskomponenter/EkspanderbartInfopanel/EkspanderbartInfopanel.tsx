@@ -24,8 +24,10 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
 ) => {
     const [erÅpen, setErÅpen] = useState<boolean>(false);
     const [erLest, setErLest] = useState<boolean>(false);
+    const [panelKnapp, setPanelKnapp] = useState<HTMLElement | null>(null);
+    const [hovedMeny, setHovedMeny] = useState<HTMLElement | null>(null);
 
-    const panelknappID = 'ekspanderbart-infopanel__' + props.unikId;
+    const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
 
     const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
         if (props.panelLestSituasjon !== panelLestSituasjon) {
@@ -47,6 +49,11 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     useEffect(() => {
         setErLest(props.panelLestSituasjon === 'lest');
     }, [props.panelLestSituasjon]);
+
+    useEffect(() => {
+        setPanelKnapp(document.getElementById(panelknappID));
+        setHovedMeny(document.getElementById('hovedmeny'));
+    }, []);
 
     const innhold = (
         <>
@@ -84,7 +91,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                         </div>
                     )
                 }
-                id={'ekspanderbart-infopanel__' + props.unikId + '-base'}
+                id={panelknappID}
                 apen={erÅpen}
                 onClick={() => {
                     setErÅpen(!erÅpen);
@@ -110,8 +117,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                     className="ekspanderbart-infopanel__lukk-knapp"
                     onClick={() => {
                         setErÅpen(false);
-                        const panelknapp = document.getElementById(panelknappID);
-                        panelknapp && panelknapp.scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(()=>onLukkScroll(panelKnapp, hovedMeny), 0);
                     }}
                 >
                     <span className="typo-normal ">Lukk</span>
@@ -122,3 +128,33 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
         </div>
     );
 };
+
+const onLukkScroll = (panelKnapp: HTMLElement | null, hovedMeny: HTMLElement | null) => {
+    if(panelKnapp === null || window === null || window === undefined) {
+        return;
+    }
+    /**
+     * spacingOffset : Offset for å skape 'luft' over elementet
+     * pageYOffset : Hvor langt selve siden har blitt scrollet ned
+     * hovedMenyOffset : Offset tilsvarende høyden på hovedmeny hvis den er synlig
+     * elementPosition : Hvor toppen av det ekspanderbarte panelet er relativt til viewscreen
+     *                      Negative verdier representerer posisjon over det du ser på skjermen
+     *
+     */
+    const spacingOffset = -16;
+    const pageYOffset = window.pageYOffset;
+    const elementPosition = panelKnapp.getBoundingClientRect().top;
+    const hovedMenyOffset = getHovedmenyOffset(hovedMeny);
+    if (elementPosition < 0) {
+        window.scrollTo({
+            top: elementPosition + pageYOffset + spacingOffset - hovedMenyOffset,
+            behavior: "auto"
+        });
+    }
+}
+
+const getHovedmenyOffset = (hovedmeny: HTMLElement | null) : number => {
+    if(hovedmeny === null) return 0;
+    const rect = hovedmeny.getBoundingClientRect();
+    return rect.height + rect.top > 0 ? rect.height : 0;
+}
