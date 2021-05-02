@@ -5,6 +5,7 @@ import { OppChevron } from 'nav-frontend-chevron';
 import classNames from 'classnames';
 import logEvent from '../../amplitude/amplitude';
 import { LestSVG } from './LestSVG';
+import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
@@ -24,8 +25,10 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
 ) => {
     const [erÅpen, setErÅpen] = useState<boolean>(false);
     const [erLest, setErLest] = useState<boolean>(false);
+    const [panelKnapp, setPanelKnapp] = useState<HTMLElement | null>(null);
+    const [hovedMeny, setHovedMeny] = useState<HTMLElement | null>(null);
 
-    const panelknappID = 'ekspanderbart-infopanel__' + props.unikId;
+    const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
 
     const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
         if (props.panelLestSituasjon !== panelLestSituasjon) {
@@ -47,6 +50,11 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     useEffect(() => {
         setErLest(props.panelLestSituasjon === 'lest');
     }, [props.panelLestSituasjon]);
+
+    useEffect(() => {
+        setPanelKnapp(document.getElementById(panelknappID));
+        setHovedMeny(document.getElementById('hovedmeny'));
+    }, []);
 
     const innhold = (
         <>
@@ -84,7 +92,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                         </div>
                     )
                 }
-                id={'ekspanderbart-infopanel__' + props.unikId + '-base'}
+                id={panelknappID}
                 apen={erÅpen}
                 onClick={() => {
                     setErÅpen(!erÅpen);
@@ -110,8 +118,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                     className="ekspanderbart-infopanel__lukk-knapp"
                     onClick={() => {
                         setErÅpen(false);
-                        const panelknapp = document.getElementById(panelknappID);
-                        panelknapp && panelknapp.scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(()=>onLukkScroll(panelKnapp, getStickyHeaderOffset(hovedMeny)), 0);
                     }}
                 >
                     <span className="typo-normal ">Lukk</span>
