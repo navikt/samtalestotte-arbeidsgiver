@@ -121,7 +121,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                         setTimeout(()=>onLukkScroll(panelKnapp, getStickyHeaderOffset(hovedMeny)), 0);
                     }}
                 >
-                    <span className="typo-normal ">Lukk</span>
+                    <span className="typo-normal ">Lukk dette panelet</span>
                     <OppChevron className="ekspanderbart-infopanel__lukk-chevron" />
                 </button>
             </EkspanderbartpanelBase>

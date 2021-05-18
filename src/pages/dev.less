@@ -1,0 +1,70 @@
+@import '../../node_modules/nav-frontend-core/less/_variabler';
+
+.index {
+    max-width: @screen-md-min;
+    padding: 1.25rem 1.25rem 3rem;
+    background-color: white;
+
+    @media (min-width: 700px) {
+        margin: 0 auto;
+    }
+}
+
+.viste-du-container {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    grid-template-rows: repeat(1fr, 4);
+}
+
+.viste-du-header {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 33px;
+}
+
+.viste-du-icon {
+    grid-column: 1;
+    margin-right: 1em;
+}
+.viste-du-paragraf {
+    grid-column: 2;
+    margin-top: 0;
+}
+.viste-du-link {
+    grid-column: 2;
+}
+
+
+.lenkepanel-sykefravaer-kalkulator{
+    border: 1px solid rgba(106, 106, 106, 1)
+}
+
+.lenkepanel-sykefravaer-child-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+}
+
+.lenkepanel-sykefravaer-ikon {
+    margin-right: 1em;
+    grid-row: 1 / 3;
+}
+
+.lenkepanel-sykefravaer-child-wrapper p {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+    margin: 0;
+    grid-row: 1 / 3;
+}
+
+.lenkepanel-sykefravaer-child-wrapper span {
+    margin-right: 1em;
+}
