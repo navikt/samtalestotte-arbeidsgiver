@@ -8,6 +8,8 @@ import { LenkepanelBase } from 'nav-frontend-lenkepanel';
 import { cookieInitializer, cookieReducer } from '../cookie/CookieReducer';
 import { EkspanderbartInfopanel } from '../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import Locked from '../felleskomponenter/Ikoner/Locked';
+import { LyspæreSVG } from '../felleskomponenter/Samtaleverktøy/LyspæreSVG';
+import { Normaltekst } from 'nav-frontend-typografi';
 
 const PlaceholderEkspanderbar = ({ text }: {text: string}) => (
     <div style={{
@@ -171,11 +173,46 @@ const Dev = (props: { page: PageProps }) => {
                             <PlaceHolderIcon className={"lenkepanel-sykefravaer-ikon"}/>
                             <p>Se hvor mye sykefraværet ditt koster</p>
                             <span>Gå til kalkulatoren</span>
-                            <div><Locked /> <span>Krever innlogging</span></div>
+                            <span><Locked /> Krever innlogging</span>
                         </div>
                     </LenkepanelBase>
-                    <PlaceholderEkspanderbar text={"Se hvor mye sykefraværet ditt koster"} />
-                    <PlaceholderEkspanderbar text={"Suksesskriterier" } />
+                    <EkspanderbartInfopanel
+                        tittel={'Suksesskriterier'}
+                        unikId={'suksesskriterier'}
+                        callBack={()=>{}}
+                        ikon={<LyspæreSVG />}
+                        lestIkon={<LyspæreSVG />}
+                        panelLestSituasjon={"ulest"}
+                    >
+                        <ul>
+                            <li>
+                                Gjennomfør samtalen tidlig.
+                            </li>
+                            <li>
+                                Snakk om arbeidsoppgaver og muligheter på arbeidsplassen, ikke diagnose.
+                            </li>
+                            <li>
+                                Lytt til medarbeideren, gi muligheter til å fortelle og bidra med løsninger.
+                            </li>
+                            <li>
+                                Gjennomfør samtaler regelmessig.
+                            </li>
+                            <li>
+                                Jobb kontinuerlig med relasjoner til alle medarbeidere og forutsigbarhet gjennom rutiner.
+                            </li>
+                        </ul>
+                        <strong>
+                            Kjente fallgruver
+                        </strong>
+                        <ul>
+                            <li>
+                                Du påtar deg for stort ansvar for helsa til medarbeideren.
+                            </li>
+                            <li>
+                                Fokuset handler om behandling eller forhold i privatlivet i stedet for forhold på arbeidsplassen.
+                            </li>
+                        </ul>
+                    </EkspanderbartInfopanel>
                     <h2>
                         Slik skaper du gode samtaler
                     </h2>

@@ -1,4 +1,4 @@
-export default ({className, width="1em", height="1em"}: {className?: string, width?: string, height?: string}) => (
+const Locked = ({className, width="1em", height="1em"}: {className?: string, width?: string, height?: string}) => (
     <svg className={className} width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             fillRule="evenodd"
@@ -9,3 +9,5 @@ export default ({className, width="1em", height="1em"}: {className?: string, wid
         </path>
     </svg>
 )
+
+export default Locked
