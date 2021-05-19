@@ -238,8 +238,6 @@ const Dev = (props: { page: PageProps }) => {
                         tittel={"Skape gode rammer"}
                         panelLestSituasjon={"ulest"}
                         callBack={()=>{}}
-                        ikon={<PlaceHolderIcon />}
-                        lestIkon={<PlaceHolderIcon />}
                     >
                         <h3>Gode samtaler forutsetter trygghet</h3>
                         <p>
@@ -345,6 +343,44 @@ const Dev = (props: { page: PageProps }) => {
                             Arbeidet med rutiner bør settes inn i arbeidsplassens plan for å forebygge sykefravær slik at du kan dokumentere arbeidet.
                         </p>
                     </EkspanderbartInfopanel>
+                    <EkspanderbartInfopanel unikId={"planleggeInnholdISamtalen"} tittel={"Planlegge innhold i samtalen"} panelLestSituasjon={"ulest"} callBack={()=>{}}>
+                        <p>
+                            Legg en plan for hva du ønsker å oppnå og hvordan du kan gjennomføre samtalen. Husk å lytte til medarbeiderens behov.
+                        </p>
+                        <ul className={"alternatingDiscList"}>
+                            <li>
+                                <strong>
+                                    Hva er dine mål med samtalen?
+                                </strong>
+                            </li>
+                            <li>
+                                Noter ned målet, og ha det framme når du er i samtalen.
+                            </li>
+                            <li>
+                                <strong>
+                                    Hvor trygg er du når du skal strukturere samtalen?
+                                </strong>
+                            </li>
+                            <li>
+                                Velg tema og hjelpespørsmål under “gjennomføring av samtalen” lenger ned på siden.
+                            </li>
+                        </ul>
+                        <p>
+                            Hvis du skal ta opp et tema du synes er vanskelig, bør du bør være konkret og tydelig på dine observasjoner.
+                            Du kan fortelle hvordan du tolker observasjonene, og gi medarbeideren anledning til å korrigere.
+                        </p>
+                        <ul className={"alternatingDiscList"}>
+                            <li>
+                                <strong>
+                                    Hva har du observert?
+                                </strong>
+                            </li>
+                            <li>
+                                Eksempler kan være endring i fravær, i atferd eller i hvordan arbeidsoppgavene blir utført. Husk å           gi konkrete eksempler på det medarbeideren er god på.
+                                Noter  gjerne ned og ta med i samtalen.
+                            </li>
+                        </ul>
+                    </EkspanderbartInfopanel>
                     <PlaceholderEkspanderbar text={"Planlegge innhold i samtalen "} />
                     <PlaceholderEkspanderbar text={"Forbered medarbeideren din "} />
                     <h3>
@@ -391,3 +427,4 @@ export const getStaticProps = async (): Promise<StaticProps> => {
 };
 
 export default Dev;
+
