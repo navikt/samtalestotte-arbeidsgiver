@@ -256,7 +256,7 @@ const Dev = (props: { page: PageProps }) => {
                         </ul>
                         <strong>Dette kan du gjøre:</strong>
                         <div className={"infoPanel-kolonner"}>
-                            <div>
+                            <div className={"gra-avrundet-boks"}>
                                 <h4>
                                     på kort sikt:
                                 </h4>
@@ -269,7 +269,7 @@ const Dev = (props: { page: PageProps }) => {
                                     </li>
                                 </ul>
                             </div>
-                            <div>
+                            <div className={"gra-avrundet-boks"}>
                                 <h4>
                                     over tid og som kontinuerlig arbeid:
                                 </h4>
@@ -306,7 +306,7 @@ const Dev = (props: { page: PageProps }) => {
                         </ul>
                         <strong>Dette kan du gjøre:</strong>
                         <div className={"infoPanel-kolonner"}>
-                            <div>
+                            <div className={"gra-avrundet-boks"}>
                                 <h4>
                                     på kort sikt:
                                 </h4>
@@ -319,7 +319,7 @@ const Dev = (props: { page: PageProps }) => {
                                     </li>
                                 </ul>
                             </div>
-                            <div>
+                            <div className={"gra-avrundet-boks"}>
                                 <h4>
                                     over tid og som kontinuerlig arbeid:
                                 </h4>
@@ -381,22 +381,305 @@ const Dev = (props: { page: PageProps }) => {
                             </li>
                         </ul>
                     </EkspanderbartInfopanel>
-                    <PlaceholderEkspanderbar text={"Planlegge innhold i samtalen "} />
-                    <PlaceholderEkspanderbar text={"Forbered medarbeideren din "} />
+                    <EkspanderbartInfopanel unikId={"forberedMedarbeiderenDin"} tittel={"Forbered medarbeideren din"} panelLestSituasjon={"ulest"} callBack={()=>{}}>
+                        <ul>
+                            <li>
+                                Avtal tid og sted som passer deg og medarbeideren.
+                            </li>
+                            <li>
+                                Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis det passer best.
+                            </li>
+                            <li>
+                                Les mer om “Enkle tips for digitale samtaler” lengre ned på siden.
+                            </li>
+                            <li>
+                                Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt, blir det enklere å finne løsninger sammen.
+                            </li>
+                            <li>
+                                Du kan sende tema eller spørsmål til medarbeideren på forhånd.
+                            </li>
+                            <li>
+                                Velg noen av de viktigste fra eksemplene under “gjennomføring av samtalen” lenger ned på siden.
+                            </li>
+                        </ul>
+                    </EkspanderbartInfopanel>
                     <h3>
                         Gjennomføring av samtalen:
                     </h3>
-                    <PlaceholderEkspanderbar text={"Innled samtalen"} />
-                    <PlaceholderEkspanderbar text={"Snakk om arbeid"} />
-                    <PlaceholderEkspanderbar text={"Finn løsninger sammen"}/>
-                    <PlaceholderEkspanderbar text={"Planlegg veien videre sammen"}/>
+                    <EkspanderbartInfopanel unikId={"innledSamtalen"} tittel={"Innled samtalen"} panelLestSituasjon={"ulest"} callBack={()=>{}}>
+                        <h3>
+                            Innled samtalen
+                        </h3>
+                        <p>
+                            Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.
+                            Rammene hjelper dere med å holde fokus og tid.
+                        </p>
+                        <strong>
+                            Vanlige tema i innledning:
+                        </strong>
+                        <ul>
+                            <li>
+                                ønske velkommen
+                            </li>
+                            <li>
+                                informere om tidsrammene for møtet
+                            </li>
+                            <li>
+                                informere om målet med møtet
+                            </li>
+                            <li>
+                                gå igjennom agenda
+                            </li>
+                            <li>
+                                spørre om medarbeideren har innspill til mål og agenda
+                            </li>
+                        </ul>
+                    </EkspanderbartInfopanel>
+                    <EkspanderbartInfopanel unikId={"snakkOmArbeid"} tittel={"Snakk om arbeid"} panelLestSituasjon={"ulest"} callBack={()=>{}}>
+                        <h3>
+                            En samtale for å forebygge eller følge opp sykefravær handler om medarbeideren.
+                        </h3>
+                        <p>
+                            Din oppgave er å legge til rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene og arbeidsdagen oppleves.
+                        </p>
+
+                        <strong>Tips:</strong>
+                        <ul>
+                            <li>Bruk åpne spørsmål med spørreord som hva, hvor, hvordan, hvem eller når.</li>
+                            <li>Unngå ordet “hvorfor”. Hvorfor kan ofte oppleves som en anklage eller for å fordele skyld.</li>
+                            <li>Tål stillhet slik at medarbeideren får tid til å tenke før de må svare.</li>
+                        </ul>
+
+                        <strong>Vanlige tema i samtalen om arbeidssituasjonen:</strong>
+                        <ul>
+                            <li>arbeidsoppgaver</li>
+                            <li>arbeidstid</li>
+                            <li>samarbeid</li>
+                            <li>arbeidsmiljø</li>
+                            <li>tidligere tiltak</li>
+                        </ul>
+
+                        <strong>Eksempler på spørsmål:</strong>
+                        <p>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
+
+                        <div className={"gra-avrundet-boks margin-bunn-2em "}>
+                            <strong>Arbeidsoppgaver</strong>
+                            <ul>
+                                <li>Hvordan vil du beskrive arbeidsdagen din?</li>
+                                <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
+                                <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
+                            </ul>
+                        </div>
+
+                        <div className={"gra-avrundet-boks margin-bunn-2em "}>
+                            <strong>Arbeidsmiljø</strong>
+                            <ul>
+                                <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
+                                <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
+                                <li>Hvordan vil du beskrive stressnivået?</li>
+                                <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
+                            </ul>
+                        </div>
+
+                        <div className={"gra-avrundet-boks margin-bunn-2em "}>
+                            <strong>Samarbeid og motivasjon</strong>
+                            <ul>
+                                <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
+                                <li>Hva motiverer deg mest akkurat nå?</li>
+                                <li>Hva oppfatter du som dine styrker nå?</li>
+                            </ul>
+                        </div>
+                    </EkspanderbartInfopanel>
+                    <EkspanderbartInfopanel unikId={"finnLøsningerSammen"} tittel={"Finn løsninger sammen"} panelLestSituasjon={"ulest"} callBack={()=>{}}>
+                        <h3>Hjelp medarbeideren med å finne løsninger.</h3>
+                        <p>
+                            Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først,
+                            kan det bli enklere å se løsningsforslag selv.
+                            Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.
+                        </p>
+                        <strong>Tips:</strong>
+                        <p>
+                            Snakk om det som skal skje framover i tid og på hvilke muligheter som finnes.
+                        </p>
+                        <strong>Vanlige tema når dere finner løsninger sammen:</strong>
+                        <ul>
+                            <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
+                            <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
+                            <li>tilpasse organisering av arbeidet</li>
+                            <li>tilpasse samarbeid og samhandling med andre</li>
+                            <li className={"margin-bunn-2em"}>alternative arbeidsoppgaver</li>
+                            <li>behov for informasjon og tilbakemeldinger</li>
+                            <li>arbeidsmiljø</li>
+                            <li className={"margin-bunn-2em"}>kompetanse</li>
+                            <li>fysisk utforming av arbeidsplassen</li>
+                            <li>hjelpemidler</li>
+                            <li>andre forhold</li>
+                        </ul>
+
+                        <strong>Eksempler på spørsmål:</strong>
+                        <p>
+                            Velg noen av eksemplene som er relevante for akkurat denne samtalen.
+                        </p>
+                        <div className={"gra-avrundet-boks margin-bunn-2em"}>
+                            <strong>Hvordan kan jeg som leder hjelpe deg?</strong>
+                            <ul>
+                                <li>Hva ville være god og støttende hjelp for deg i en travel arbeidsdag?</li>
+                                <li className={"margin-bunn-2em"}>Hva vil du oppleve som god støtte?</li>
+
+                                <li>Hva kan jeg som leder hjelpe deg med, når det gjelder arbeidsoppgaver?</li>
+                                <li>Hvordan kan jeg som leder hjelpe deg med å få en mindre stressende arbeidsdag?</li>
+                            </ul>
+                        </div>
+                        <div className={"gra-avrundet-boks"}>
+                            <strong>Løsninger</strong>
+                            <ul>
+                                <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
+                                <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
+                                <li>Hvordan bør tiden disponeres?</li>
+                                <li>Hvordan kan endringer i tempo, arbeidstid eller arbeidssted øke mulighetene for arbeid?</li>
+                                <li>Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt eller delvis?</li>
+                                <li>Hvilke løsninger ser du for deg?</li>
+                                <li>Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?</li>
+                                <li>Hvilke tiltak bør vi prøve først?</li>
+                            </ul>
+                        </div>
+                    </EkspanderbartInfopanel>
+                    <EkspanderbartInfopanel unikId={"planleggVeienVidereSammen"} tittel={"Planlegg veien videre sammen"} panelLestSituasjon={"ulest"} callBack={()=>{}}>
+                        <h3>Oppsummer i felleskap</h3>
+                        <p>
+                            En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer det dere er blitt enige om og at dere lager en plan for videre oppfølging.
+                        </p>
+
+                        <strong>Tips:</strong>
+                        <p>
+                            Det er lurt med flere korte oppsummeringer til hvert punkt dere har avtalt. Bruk spørsmål som kan besvares med ja eller nei for å sjekke at dere har felles forståelse.
+                        </p>
+                        <p>
+                        Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
+                        </p>
+                        <p>
+                            <a href={"#"}>Les mer om oppfølgingsplan på nav.no.</a>
+                        </p>
+                        <strong>Vanlige tema i avslutningen:</strong>
+                        <ul>
+                            <li className={"margin-bunn-2em"}>dato for neste samtale og hvor ofte samtaler skal gjennomføres</li>
+
+                            <li>avtaler, tilrettelegginger og tiltak</li>
+                            <li>om tilretteleggingen er midlertidig eller permanent</li>
+                            <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
+                            <li className={"margin-bunn-2em"}>avklare om det er behov for å informere andre kollegaer om tilrettelegging som er avtalt</li>
+
+                            <li>hvem som er ansvarlig for å følge opp</li>
+                            <li>om det er behov for videre avklaring eller hjelp fra andre</li>
+                        </ul>
+                        <p>
+                            Av og til blir du og medarbeideren ikke enige om løsningene og det er greit.  Da dokumenterer du begges synspunkter i oppsummeringen eller oppfølgingsplanen.
+                        </p>
+                        <p>
+                            <strong>Tips:</strong> gjennomfør flere samtaler regelmessig.
+                        </p>
+                    </EkspanderbartInfopanel>
                     <h2>
                         Mer inspirasjon og gode grep
                     </h2>
-                    <PlaceholderEkspanderbar text={"Enkle tips for digitale samtaler "} />
-                    <PlaceholderEkspanderbar text={"Gode grep for å bygge relasjoner  "} />
-                    <PlaceholderEkspanderbar text={"Tips om tilrettelegging"} />
+                    <EkspanderbartInfopanel unikId={"enkleTipsForDigitaleSamtaler"} tittel={"Enkle tips for digitale samtaler"} panelLestSituasjon={"ulest"} callBack={()=>{}}>
+                        <ul>
+                            <li>Husk forberedelse og struktur også i digitale samtaler.</li>
+                            <li>Bli enige om tittel på avtalen når du bruker digital innkalling og digitale møterom.</li>
+                            <li>La kamera være på.</li>
+                            <li>Det er bedre med flere korte, enn en lang digital samtale.</li>
+                            <li>Digitale samtaler trenger trygghet og gode relasjoner.</li>
+                            <li>Gi medarbeideren rom til å fortelle, tål pauser og stillhet.</li>
+                            <li>Bruk sikre digitale verktøy for å ivareta personvern og taushetsplikt</li>
+                            <li>Hvis dere har mulighet, kan dere skrive referat eller oppfølgingsplan sammen og underveis i samtalen.</li>
+                        </ul>
+                    </EkspanderbartInfopanel>
+                    <EkspanderbartInfopanel unikId={"godeGrepForAByggeRelasjoner"} tittel={"Gode grep for å bygge relasjoner"} panelLestSituasjon={"ulest"} callBack={()=>{}}>
+                        <ul>
+                            <li>Bruk tid på å bli kjent med alle dine medarbeidere.</li>
+                            <li>Hvem er du i møte med den enkelte medarbeideren?</li>
+                            <li>Hva slags relasjon har dere?</li>
+                            <li>Vær forutsigbar.</li>
+                            <li>Vis at du har tillit til medarbeideren.</li>
+                            <li>Vær en støttende leder.</li>
+                            <li>Be om tilbakemelding slik at du kan lære og utvikle deg som leder.</li>
+                        </ul>
+                    </EkspanderbartInfopanel>
+                    <EkspanderbartInfopanel unikId={"tipsOmTilrettelegging"} tittel={"Tips om tilrettelegging"} panelLestSituasjon={"ulest"} callBack={()=>{}}>
+                        <h3>Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.</h3>
+                        <p>
+                            Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i samtalen
+                            med gjensidige forventninger til hva som er mulig.
+                        </p>
+                        <p>
+                            Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter som finnes.
+                        </p>
+                        <p>
+                            Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med verneombud og
+                            tillitsvalgte. Hensikten er en felles vurdering av hvilken tilrettelegging er mulig hos dere.
+                        </p>
+                        <ul>
+                            <li><strong>Hvilke tilretteleggingsmuligheter finnes på deres arbeidsplass og ellers i organisasjonen?</strong></li>
+                            <li><strong>Hvor går grensene for ditt handlingsrom til å lage avtaler? Er det behov for å gjøre avklaringer?</strong></li>
+                        </ul>
+                        <strong>Dette kan du gjøre:</strong>
+                        <div className={"infoPanel-kolonner"}>
+                            <div className={"gra-avrundet-boks"}>
+                                <strong>på kort sikt:</strong>
+                                <ul>
+                                    <li className={"margin-bunn-2em"}>
+                                        Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for din arbeidsplass,
+                                        hvis dere har en personalavdeling kan disse ofte hjelpe deg
+                                    </li>
+                                    <li>
+                                        Vurder om du bør dele oversikt over tilretteleggingsmuligheter med medarbeideren før samtalen
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className={"gra-avrundet-boks"}>
+                                <strong>over tid og som kontinuerlig arbeid:</strong>
+                                <ul>
+                                    <li className={"margin-bunn-2em"}>
+                                        Lag en liste med tilretteleggingsmuligheter <a href={"#"}>Gå til beskrivelse av prosess hos idebanken.</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
+                        <h3>Lær mer om tilrettelegging</h3>
+
+                        <strong>Dette kan du gjøre:</strong>
+                        <div className={"infoPanel-kolonner margin-bunn-2em"}>
+                            <div className={"gra-avrundet-boks"}>
+                                <strong>på kort sikt:</strong>
+                                <ul>
+                                    <li className={"margin-bunn-2em"}>
+                                        <a href={"#"}>
+                                            Les mer om arbeidsgivers plikter til å tilrettelegge på arbeidsplassen hos arbeidstilsynet.
+                                        </a>
+                                    </li>
+                                    <li className={"margin-bunn-2em"}>
+                                        NAV tilbyr nettkurs  (12 min) om arbeidsgivers tilretteleggingsplikt og medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging. <a href={"#"}>Gå til nettkurs.</a>
+                                    </li>
+                                    <li className={"margin-bunn-2em"}>
+                                        <a href={"#"}>Les mer om tilrettelegging i sykefraværsoppfølging</a>
+                                    </li>
+                                    <li>
+                                        <a href={"#"}>Les mer om NAVs økonomiske virkemidler</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className={"gra-avrundet-boks"}>
+                                <strong>over tid og som kontinuerlig arbeid:</strong>
+                                <ul>
+                                    <li className={"margin-bunn-2em"}>
+                                        Lag en plan for gjennomføring av aktiviteter hvis du ikke har tid til å gjennomføre alle nå.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </EkspanderbartInfopanel>
                     <VisteDuAtInfoBlock />
                 </Layout>
             </main>
