@@ -9,6 +9,8 @@ import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
+export type EkspanderbartCallback = (panelLestSituasjon: PanelLestSituasjon) => any;
+
 export interface EkspanderbartInfopanelProps {
     children: ReactNode;
     unikId: string;
@@ -17,7 +19,7 @@ export interface EkspanderbartInfopanelProps {
     panelLestSituasjon: PanelLestSituasjon;
     ikon?: ReactNode;
     lestIkon?: ReactNode;
-    callBack: (panelLestSituasjon: PanelLestSituasjon) => any;
+    callBack: EkspanderbartCallback;
 }
 
 export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelProps> = (
