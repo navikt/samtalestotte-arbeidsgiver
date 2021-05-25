@@ -3,9 +3,10 @@ import { Layout } from '../felleskomponenter/Layout/Layout';
 import { getPageProps, PageProps } from '../pageProps';
 import './dev.less';
 import logEvent from '../amplitude/amplitude';
-import HvorforBrukeTidPaaSamtaler from '../felleskomponenter/InfoPanel/HvorforBrukeTidPaaSamtaler';
-import SlikSkaperDuGodeSamtaler from '../felleskomponenter/InfoPanel/SlikSkaperDuGodeSamtaler';
-import MerInspirasjonOgGodeGrep from '../felleskomponenter/InfoPanel/MerInspirasjonOgGodeGrep';
+import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
+import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
+import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
+import Information from '../felleskomponenter/Ikoner/Information';
 
 const VisteDuAtInfoBlock = () => (
     <div
@@ -20,16 +21,8 @@ const VisteDuAtInfoBlock = () => (
         <h3 className={"viste-du-header"}>
             Visste du at NAV hjelper virksomheter med å forebygge sykefravær?
         </h3>
-        <div
-            className={"viste-du-icon"}
-            style={{
-                display:'block',
-                background:"rgba(86, 144, 162, 1)",
-                borderRadius: "100px",
-                height: "61px",
-                width: "61px"
-             }}
-        />
+        <Information className={"viste-du-icon"} width={"4rem"} height={"4rem"}/>
+
         <p className={"viste-du-paragraf"}>
             NAV hjelper virksomheter med å forebygge sykefravær.
             Du får digitale tjenester og veiledning for å gjennomføre enkeltsamtaler.

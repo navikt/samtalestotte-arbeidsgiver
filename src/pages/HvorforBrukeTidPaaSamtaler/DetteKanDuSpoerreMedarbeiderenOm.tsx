@@ -1,5 +1,6 @@
-import { EkspanderbartInfopanel } from '../../EkspanderbartInfopanel/EkspanderbartInfopanel';
-import InfoPanelProps from '../InfoPanelProps';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
+import ChatBubbleCheckmark from '../../felleskomponenter/Ikoner/ChatBubbleCheckmark';
 
 
 const DetteKanDuSpoerreMedarbeiderenOm = ({callback, ikon, lestIkon}: InfoPanelProps) => {
@@ -8,8 +9,8 @@ const DetteKanDuSpoerreMedarbeiderenOm = ({callback, ikon, lestIkon}: InfoPanelP
         tittel={"Dette kan du spørre medarbeideren om"}
         panelLestSituasjon={"ulest"}
         callBack={() => callback}
-        ikon={ikon}
-        lestIkon={lestIkon}
+        ikon={<ChatBubbleCheckmark width={"3rem"} height={"3rem"}/>}
+        lestIkon={<ChatBubbleCheckmark width={"3rem"} height={"3rem"}/>}
     >
         <strong>
             Du kan stille spørsmål som handler om fravær og forhold på arbeidsplassen.

@@ -19,8 +19,10 @@ export interface EkspanderbartInfopanelProps {
     panelLestSituasjon: PanelLestSituasjon;
     ikon?: ReactNode;
     lestIkon?: ReactNode;
-    callBack: EkspanderbartCallback;
+    callBack?: EkspanderbartCallback;
 }
+
+const noOperation = () => {}
 
 export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelProps> = (
     props: EkspanderbartInfopanelProps
@@ -31,13 +33,14 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const [hovedMeny, setHovedMeny] = useState<HTMLElement | null>(null);
 
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
+    const callback = props.callBack? props.callBack : noOperation;
 
     const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
         if (props.panelLestSituasjon !== panelLestSituasjon) {
             setErLest(true);
-            props.callBack(panelLestSituasjon);
+            callback(panelLestSituasjon);
         } else {
-            props.callBack(undefined);
+            callback(undefined);
         }
     };
 

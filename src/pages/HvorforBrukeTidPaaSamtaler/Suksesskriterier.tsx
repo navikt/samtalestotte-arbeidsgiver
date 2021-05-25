@@ -1,13 +1,14 @@
-import InfoPanelProps from '../InfoPanelProps';
-import { EkspanderbartInfopanel } from '../../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import Lightbulb from '../../felleskomponenter/Ikoner/Lightbulb';
 
 const Suksesskriterier = ({callback, ikon, lestIkon}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         tittel={'Suksesskriterier'}
         unikId={'suksesskriterier'}
         callBack={callback}
-        ikon={ikon}
-        lestIkon={lestIkon}
+        ikon={<Lightbulb width={"3rem"} height={"3rem"}/>}
+        lestIkon={<Lightbulb width={"3rem"} height={"3rem"}/>}
         panelLestSituasjon={"ulest"}
     >
         <ul>

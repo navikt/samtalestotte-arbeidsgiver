@@ -1,5 +1,5 @@
-import InfoPanelProps from '../InfoPanelProps';
-import { EkspanderbartInfopanel } from '../../EkspanderbartInfopanel/EkspanderbartInfopanel';
+import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 
 const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel

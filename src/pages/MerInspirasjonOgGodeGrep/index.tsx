@@ -7,9 +7,9 @@ const MerInspirasjonOgGodeGrep = () => {
         <h2>
             Mer inspirasjon og gode grep
         </h2>
-        <EnkleTipsForDigitaleSamtaler callback={()=>{}} />
-        <GodeGrepForAByggeRelasjoner callback={()=>{}} />
-        <TipsOmTilrettelegging callback={()=>{}} />
+        <EnkleTipsForDigitaleSamtaler/>
+        <GodeGrepForAByggeRelasjoner/>
+        <TipsOmTilrettelegging/>
     </>
 };
 

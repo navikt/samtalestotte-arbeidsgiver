@@ -1,5 +1,6 @@
-import { EkspanderbartInfopanel } from '../../EkspanderbartInfopanel/EkspanderbartInfopanel';
-import InfoPanelProps from '../InfoPanelProps';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
+import ChatDoubleBubble from '../../felleskomponenter/Ikoner/ChatDoubleBubble';
 
 
 const NaarKanEnSamtaleVaereAktuelt = ({callback, ikon, lestIkon}: InfoPanelProps) => {
@@ -8,8 +9,8 @@ const NaarKanEnSamtaleVaereAktuelt = ({callback, ikon, lestIkon}: InfoPanelProps
         tittel={'Når kan en samtale være aktuelt?'}
         panelLestSituasjon={'ulest'}
         callBack={callback}
-        ikon={ikon}
-        lestIkon={lestIkon}
+        ikon={<ChatDoubleBubble width={"3rem"} height={"3rem"}/>}
+        lestIkon={<ChatDoubleBubble width={"3rem"} height={"3rem"}/>}
     >
         <p>
             En samtale for å forebygge eller følge opp sykefravær handler om arbeidssituasjonen.

@@ -1,9 +1,10 @@
 import NaarKanEnSamtaleVaereAktuelt from './NaarKanEnSamtaleVaereAktuelt';
 import DetteKanDuSpoerreMedarbeiderenOm from './DetteKanDuSpoerreMedarbeiderenOm';
 import { LenkepanelBase } from 'nav-frontend-lenkepanel';
-import Locked from '../../Ikoner/Locked';
+import Locked from '../../felleskomponenter/Ikoner/Locked';
 import Suksesskriterier from './Suksesskriterier';
-import { LyspæreSVG } from '../../Samtaleverktøy/LyspæreSVG';
+import { LyspæreSVG } from '../../felleskomponenter/Samtaleverktøy/LyspæreSVG';
+import SeHvorMyeSykefravaeretDittKoster from './SeHvorMyeSykefravaeretDittKoster';
 
 const PlaceHolderIcon = ({className}: { className?: string }) => (
     <div className={className} style={{width: "48px", height: "48px", background:"rgba(86, 144, 162, 1)", borderRadius: "100px"}} />
@@ -38,17 +39,10 @@ const HvorforBrukeTidPaaSamtaler = () => {
             Gode samtaler er en metode for hvordan du fyller lovkravene, slik at de gir størst verdi for deg
             og medarbeiderne dine.
         </p>
-        <NaarKanEnSamtaleVaereAktuelt callback={()=>{}} ikon={<PlaceHolderIcon />} lestIkon={<PlaceHolderIcon />}/>
-        <DetteKanDuSpoerreMedarbeiderenOm callback={()=>{}} ikon={<PlaceHolderIcon />} lestIkon={<PlaceHolderIcon />} />
-        <LenkepanelBase className={"lenkepanel-sykefravaer-kalkulator"} href={"#"}>
-            <div className={"lenkepanel-sykefravaer-child-wrapper"}>
-                <PlaceHolderIcon className={"lenkepanel-sykefravaer-ikon"} />
-                <p>Se hvor mye sykefraværet ditt koster</p>
-                <span>Gå til kalkulatoren</span>
-                <span><Locked /> Krever innlogging</span>
-            </div>
-        </LenkepanelBase>
-        <Suksesskriterier callback={()=>{}} ikon={<LyspæreSVG />} lestIkon={<LyspæreSVG />}/>
+        <NaarKanEnSamtaleVaereAktuelt ikon={<PlaceHolderIcon />} lestIkon={<PlaceHolderIcon />}/>
+        <DetteKanDuSpoerreMedarbeiderenOm ikon={<PlaceHolderIcon />} lestIkon={<PlaceHolderIcon />} />
+        <SeHvorMyeSykefravaeretDittKoster/>
+        <Suksesskriterier ikon={<LyspæreSVG />} lestIkon={<LyspæreSVG />}/>
     </>
 }
 

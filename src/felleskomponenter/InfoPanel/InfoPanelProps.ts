@@ -2,7 +2,7 @@ import { EkspanderbartCallback } from '../EkspanderbartInfopanel/EkspanderbartIn
 import { ReactNode } from 'react';
 
 type InfoPanelProps = {
-    callback: EkspanderbartCallback,
+    callback?: EkspanderbartCallback,
     ikon?: ReactNode
     lestIkon?: ReactNode
 }

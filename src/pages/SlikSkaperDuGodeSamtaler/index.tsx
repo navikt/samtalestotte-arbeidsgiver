@@ -28,16 +28,16 @@ const SlikSkaperDuGodeSamtaler = () => {
         <h3>
             Forbered deg ved å:
         </h3>
-        <SkapeGodeRammer callback={()=>{}}/>
-        <PlanleggeInnholdISamtalen callback={()=>{}}/>
-        <ForberedMedarbeiderenDin callback={()=>{}}/>
+        <SkapeGodeRammer/>
+        <PlanleggeInnholdISamtalen/>
+        <ForberedMedarbeiderenDin/>
         <h3>
             Gjennomføring av samtalen:
         </h3>
-        <InnledSamtalen callback={()=>{}} />
-        <SnakkOmArbeid callback={()=>{}} />
-        <FinnLosningerSammen callback={()=>{}} />
-        <PlanleggVeienVidereSammen callback={()=>{}}/>
+        <InnledSamtalen/>
+        <SnakkOmArbeid/>
+        <FinnLosningerSammen/>
+        <PlanleggVeienVidereSammen/>
     </>
 }
 
