@@ -1,5 +1,5 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
-import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 
 const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -36,7 +36,7 @@ const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
         <strong>Eksempler på spørsmål:</strong>
         <p>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
 
-        <div className={"gra-avrundet-boks margin-bunn-2em "}>
+        <div className={"gra-avrundet-boks margin-bunn-2rem "}>
             <strong>Arbeidsoppgaver</strong>
             <ul>
                 <li>Hvordan vil du beskrive arbeidsdagen din?</li>
@@ -45,7 +45,7 @@ const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
             </ul>
         </div>
 
-        <div className={"gra-avrundet-boks margin-bunn-2em "}>
+        <div className={"gra-avrundet-boks margin-bunn-2rem "}>
             <strong>Arbeidsmiljø</strong>
             <ul>
                 <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
@@ -55,7 +55,7 @@ const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
             </ul>
         </div>
 
-        <div className={"gra-avrundet-boks margin-bunn-2em "}>
+        <div className={"gra-avrundet-boks margin-bunn-2rem "}>
             <strong>Samarbeid og motivasjon</strong>
             <ul>
                 <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>

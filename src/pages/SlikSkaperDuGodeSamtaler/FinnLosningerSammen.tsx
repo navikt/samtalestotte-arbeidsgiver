@@ -1,5 +1,5 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
-import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 
 const FinnLosningerSammen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -23,10 +23,10 @@ const FinnLosningerSammen = ({callback}: InfoPanelProps) => {
             <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
             <li>tilpasse organisering av arbeidet</li>
             <li>tilpasse samarbeid og samhandling med andre</li>
-            <li className={"margin-bunn-2em"}>alternative arbeidsoppgaver</li>
+            <li className={"margin-bunn-2rem"}>alternative arbeidsoppgaver</li>
             <li>behov for informasjon og tilbakemeldinger</li>
             <li>arbeidsmiljø</li>
-            <li className={"margin-bunn-2em"}>kompetanse</li>
+            <li className={"margin-bunn-2rem"}>kompetanse</li>
             <li>fysisk utforming av arbeidsplassen</li>
             <li>hjelpemidler</li>
             <li>andre forhold</li>
@@ -36,11 +36,11 @@ const FinnLosningerSammen = ({callback}: InfoPanelProps) => {
         <p>
             Velg noen av eksemplene som er relevante for akkurat denne samtalen.
         </p>
-        <div className={"gra-avrundet-boks margin-bunn-2em"}>
+        <div className={"gra-avrundet-boks margin-bunn-2rem"}>
             <strong>Hvordan kan jeg som leder hjelpe deg?</strong>
             <ul>
                 <li>Hva ville være god og støttende hjelp for deg i en travel arbeidsdag?</li>
-                <li className={"margin-bunn-2em"}>Hva vil du oppleve som god støtte?</li>
+                <li className={"margin-bunn-2rem"}>Hva vil du oppleve som god støtte?</li>
 
                 <li>Hva kan jeg som leder hjelpe deg med, når det gjelder arbeidsoppgaver?</li>
                 <li>Hvordan kan jeg som leder hjelpe deg med å få en mindre stressende arbeidsdag?</li>

@@ -1,4 +1,4 @@
-import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import ChatDoubleBubble from '../../felleskomponenter/Ikoner/ChatDoubleBubble';
 

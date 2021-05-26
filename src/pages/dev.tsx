@@ -10,7 +10,7 @@ import Information from '../felleskomponenter/Ikoner/Information';
 
 const VisteDuAtInfoBlock = () => (
     <div
-        className={"viste-du-container"}
+        className={"viste-du-container margin-topp-4rem"}
         style={{
             borderRadius: "10px",
             background: "#FAFAFA;",

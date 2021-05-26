@@ -1,5 +1,5 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
-import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 
 const PlanleggVeienVidereSammen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -27,14 +27,14 @@ const PlanleggVeienVidereSammen = ({callback}: InfoPanelProps) => {
         </p>
         <strong>Vanlige tema i avslutningen:</strong>
         <ul>
-            <li className={"margin-bunn-2em"}>dato for neste samtale og hvor ofte samtaler skal
+            <li className={"margin-bunn-2rem"}>dato for neste samtale og hvor ofte samtaler skal
                 gjennomføres
             </li>
 
             <li>avtaler, tilrettelegginger og tiltak</li>
             <li>om tilretteleggingen er midlertidig eller permanent</li>
             <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
-            <li className={"margin-bunn-2em"}>avklare om det er behov for å informere andre kollegaer om
+            <li className={"margin-bunn-2rem"}>avklare om det er behov for å informere andre kollegaer om
                 tilrettelegging som er avtalt
             </li>
 

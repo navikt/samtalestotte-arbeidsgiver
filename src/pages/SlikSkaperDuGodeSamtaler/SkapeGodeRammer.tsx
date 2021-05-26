@@ -1,5 +1,5 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
-import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 
 const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -8,7 +8,7 @@ const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
         panelLestSituasjon={"ulest"}
         callBack={callback}
     >
-        <h3>Gode samtaler forutsetter trygghet</h3>
+        <h3 className={"sub-section-header"}>Gode samtaler forutsetter trygghet</h3>
         <p>
             Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne og rammene rundt
             samtalen er forutsigbare for alle.
@@ -26,7 +26,7 @@ const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
             </li>
         </ul>
         <strong>Dette kan du gjøre:</strong>
-        <div className={"infoPanel-kolonner"}>
+        <div className={"infoPanel-kolonner margin-bunn-1rem"}>
             <div className={"gra-avrundet-boks"}>
                 <h4>
                     på kort sikt:
@@ -67,8 +67,8 @@ const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
                 </ul>
             </div>
         </div>
-
-        <h3>
+        <div className={"horizontal-line"} />
+        <h3 className={"sub-section-header"}>
             Gode rutiner effektiviserer arbeidet og skaper forutsigbarhet for deg og din medarbeider.
         </h3>
         <p>
@@ -81,7 +81,7 @@ const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
             </li>
         </ul>
         <strong>Dette kan du gjøre:</strong>
-        <div className={"infoPanel-kolonner"}>
+        <div className={"infoPanel-kolonner margin-bunn-1rem"}>
             <div className={"gra-avrundet-boks"}>
                 <h4>
                     på kort sikt:

@@ -1,5 +1,5 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
-import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 
 const TipsOmTilrettelegging = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -32,7 +32,7 @@ const TipsOmTilrettelegging = ({callback}: InfoPanelProps) => {
             <div className={"gra-avrundet-boks"}>
                 <strong>på kort sikt:</strong>
                 <ul>
-                    <li className={"margin-bunn-2em"}>
+                    <li className={"margin-bunn-2rem"}>
                         Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for din
                         arbeidsplass,
                         hvis dere har en personalavdeling kan disse ofte hjelpe deg
@@ -46,7 +46,7 @@ const TipsOmTilrettelegging = ({callback}: InfoPanelProps) => {
             <div className={"gra-avrundet-boks"}>
                 <strong>over tid og som kontinuerlig arbeid:</strong>
                 <ul>
-                    <li className={"margin-bunn-2em"}>
+                    <li className={"margin-bunn-2rem"}>
                         Lag en liste med tilretteleggingsmuligheter <a href={"#"}>Gå til beskrivelse av
                         prosess hos idebanken.</a>
                     </li>
@@ -57,22 +57,22 @@ const TipsOmTilrettelegging = ({callback}: InfoPanelProps) => {
         <h3>Lær mer om tilrettelegging</h3>
 
         <strong>Dette kan du gjøre:</strong>
-        <div className={"infoPanel-kolonner margin-bunn-2em"}>
+        <div className={"infoPanel-kolonner margin-bunn-2rem"}>
             <div className={"gra-avrundet-boks"}>
                 <strong>på kort sikt:</strong>
                 <ul>
-                    <li className={"margin-bunn-2em"}>
+                    <li className={"margin-bunn-2rem"}>
                         <a href={"#"}>
                             Les mer om arbeidsgivers plikter til å tilrettelegge på arbeidsplassen hos
                             arbeidstilsynet.
                         </a>
                     </li>
-                    <li className={"margin-bunn-2em"}>
+                    <li className={"margin-bunn-2rem"}>
                         NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt og
                         medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging. <a
                         href={"#"}>Gå til nettkurs.</a>
                     </li>
-                    <li className={"margin-bunn-2em"}>
+                    <li className={"margin-bunn-2rem"}>
                         <a href={"#"}>Les mer om tilrettelegging i sykefraværsoppfølging</a>
                     </li>
                     <li>
@@ -83,7 +83,7 @@ const TipsOmTilrettelegging = ({callback}: InfoPanelProps) => {
             <div className={"gra-avrundet-boks"}>
                 <strong>over tid og som kontinuerlig arbeid:</strong>
                 <ul>
-                    <li className={"margin-bunn-2em"}>
+                    <li className={"margin-bunn-2rem"}>
                         Lag en plan for gjennomføring av aktiviteter hvis du ikke har tid til å
                         gjennomføre alle nå.
                     </li>
