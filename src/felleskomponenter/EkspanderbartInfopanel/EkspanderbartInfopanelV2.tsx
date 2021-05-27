@@ -70,38 +70,11 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
         <div className={"ekspanderbart-infopanel__root"}>
             <EkspanderbartpanelBase
                 tittel={
-                    props.ikon ? (
-                        <div className={classNames(
-                            "ekspanderbart-infopanel__tittel-med-ikon-wrapper",
-                            "ekspanderbart-infopanel__tittel-justify-start"
-                        )}>
-                            <div className="ekspanderbart-infopanel__tittel-med-ikon">
-                                <div className="ekspanderbart-infopanel__kun-ikon">
-                                    {props.ikon}
-                                </div>
-                                {props.tittel}
-                            </div>
-                            {erLest && (
-                                <div className="ekspanderbart-infopanel__kun-lest-ikon">
-                                    <Lest width={"62px"} height={"24px"}/>
-                                </div>
-                            )}
-                        </div>
-                    ) : (
-                        <div className={classNames(
-                            "ekspanderbart-infopanel__tittel-uten-ikon",
-                            "ekspanderbart-infopanel__tittel-justify-start"
-                        )}>
-                            <div className="ekspanderbart-infopanel__kun-tittel">
-                                {props.tittel}
-                            </div>
-                            {erLest && (
-                                <div className="ekspanderbart-infopanel__kun-lest-ikon">
-                                    <Lest width={"62px"} height={"24px"}/>
-                                </div>
-                            )}
-                        </div>
-                    )
+                    <div className={"ekspanderbart-infopanel__tittel-grid"}>
+                        {props.ikon}
+                        <div>{props.tittel}</div>
+                        {erLest && <Lest width={"62px"} height={"24px"} />}
+                    </div>
                 }
                 id={panelknappID}
                 apen={erÅpen}

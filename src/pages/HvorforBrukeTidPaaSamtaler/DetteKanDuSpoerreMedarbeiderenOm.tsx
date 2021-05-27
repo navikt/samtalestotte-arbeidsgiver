@@ -1,10 +1,10 @@
-import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
+import { EkspanderbartInfopanel, } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import ChatBubbleCheckmark from '../../felleskomponenter/Ikoner/ChatBubbleCheckmark';
 
 
-const DetteKanDuSpoerreMedarbeiderenOm = ({callback, ikon, lestIkon}: InfoPanelProps) => {
-    return                     <EkspanderbartInfopanel
+const DetteKanDuSpoerreMedarbeiderenOm = ({callback}: InfoPanelProps) => {
+    return <EkspanderbartInfopanel
         unikId={"detteKanDuSpoerreMedarbeiderenOm"}
         tittel={"Dette kan du spørre medarbeideren om"}
         panelLestSituasjon={"ulest"}

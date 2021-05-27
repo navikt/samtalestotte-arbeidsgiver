@@ -1,6 +1,11 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 
+const DENVIKTIGESAMTALEN_URL = "#";
+const GODEGREPFORAABYGGERELASJONER_URL = "#";
+const SJEKKLISTEHOSIDEBANKEN_URL = "#";
+const LAGERUTINERIDEBANKEN_URL = "#";
+
 const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         unikId={"skapeGodeRammer"}
@@ -31,10 +36,10 @@ const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
                 <h4>
                     på kort sikt:
                 </h4>
-                <ul>
+                <ul className={"spaced-list"}>
                     <li>
-                        Planlegg bruk av samtaleteknikker for å sikre medvirkning i samtalen. Les mer i
-                        heftet “Den viktige samtalen” hos idebanken.
+                        Planlegg bruk av samtaleteknikker for å sikre medvirkning i
+                        samtalen. <a href={DENVIKTIGESAMTALEN_URL}>Les mer i heftet «Den viktige samtalen» hos idebanken.</a>
                     </li>
                     <li>
                         Be om veiledning før samtalen. Veiledning kan du få fra kollegaer,
@@ -46,14 +51,13 @@ const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
                 <h4>
                     over tid og som kontinuerlig arbeid:
                 </h4>
-                <ul>
+                <ul className={"spaced-list"}>
                     <li>
-                        Lær mer om samtaler og samtaleteknikker. Les mer i heftet “Den viktige samtalen”
-                        hos idebanken.
+                        Lær mer om samtaler og samtaleteknikker. <a href={DENVIKTIGESAMTALEN_URL}>Les mer i heftet «Den viktige samtalen» hos idebanken.</a>
                     </li>
                     <li>
-                        Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere. Se «Gode
-                        grep for å bygge relasjoner».
+                        Jobb aktivt med å bygge trygge relasjoner til alle dine
+                        medarbeidere. <a href={GODEGREPFORAABYGGERELASJONER_URL}>Se «Gode grep for å bygge relasjoner».</a>
                     </li>
                     <li>
                         Tren på å gjennomføre samtaler, og be om tilbakemeldinger.
@@ -86,7 +90,7 @@ const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
                 <h4>
                     på kort sikt:
                 </h4>
-                <ul>
+                <ul className={"spaced-list"}>
                     <li>
                         Bruk sykefraværsrutinene i din virksomhet, for å skape forutsigbarhet for deg og
                         medarbeideren.
@@ -100,13 +104,12 @@ const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
                 <h4>
                     over tid og som kontinuerlig arbeid:
                 </h4>
-                <ul>
+                <ul className={"spaced-list"}>
                     <li>
-                        Evaluer rutinene dine. Gå til sjekkliste hos idébanken.
+                        Evaluer rutinene dine. <a href={SJEKKLISTEHOSIDEBANKEN_URL}>Gå til sjekkliste hos idébanken.</a>
                     </li>
                     <li>
-                        Utarbeid sykefraværsrutiner. Les mer om hvordan dere kan lage rutiner hos
-                        Idébanken.
+                        Utarbeid sykefraværsrutiner. <a href={LAGERUTINERIDEBANKEN_URL}>Les mer om hvordan dere kan lage rutiner hos Idébanken.</a>
                     </li>
                     <li>
                         Informer alle ansatte om rutinene og hvor de finner dem.
