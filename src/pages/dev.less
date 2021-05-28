@@ -49,7 +49,13 @@
 
 
 .lenkepanel-sykefravaer-kalkulator{
-    border: 1px solid rgba(106, 106, 106, 1)
+    border: 1px solid #6A6A6A;
+    * {
+        color: @navBla;
+    }
+    &:hover * {
+        text-decoration-line: underline;
+    }
 }
 
 .lenkepanel-sykefravaer-child-wrapper {
@@ -81,12 +87,20 @@
     font-weight: 600;
     line-height: 25px;
     margin: 0;
+
     grid-area: tittel;
 }
 
 .lenkepanel-sykefravaer-child-wrapper span {
     margin-right: 1rem;
     justify-self: end;
+}
+
+.lenkepanel-sykefravaer-child-wrapper span.lenkepanel-sykefravaer-require-login {
+    color: black;
+    & * {
+        color: black;
+    }
 }
 
 .lenkepanel-sykefravaer-child-wrapper div {

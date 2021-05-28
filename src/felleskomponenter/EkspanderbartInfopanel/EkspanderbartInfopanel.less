@@ -156,9 +156,13 @@ div.ekspanderbart-infopanel__kun-lest-ikon {
     }
 }
 
-button.ekspanderbartPanel__hode {
+div.ekspanderbartPanel--border {
+    border: 1px solid #6A6A6A;
+}
+
+.ekspanderbart-infopanel__panel button.ekspanderbartPanel__hode {
     min-height: 80px;
-    border-bottom: 3px solid;
+    border: 0;
     display: flex;
     align-items: center;
 }
@@ -201,5 +205,28 @@ div.ekspanderbart-infopanel__tittel-flex-container {
         overflow-wrap: normal;
         align-self: center;
         margin-right: 1rem;
+
+        color: @navBla;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+
+        & :hover{
+            text-decoration-line: underline;
+        }
+    }
+}
+
+div.ekspanderbart-infopanel__tittel-text {
+    display: flex;
+    align-items: center;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    color: @navBla;
+    & :hover{
+        text-decoration-line: underline;
     }
 }

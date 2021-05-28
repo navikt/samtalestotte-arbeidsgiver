@@ -10,7 +10,7 @@ const SeHvorMyeSykefravaeretDittKoster = () => {
             <p>Se hvor mye sykefraværet ditt koster</p>
             <div>
                 <span>Gå til kalkulatoren</span>
-                <span><Locked /> Krever innlogging</span>
+                <span className={"lenkepanel-sykefravaer-require-login"}><Locked/> Krever innlogging</span>
             </div>
         </div>
     </LenkepanelBase>
