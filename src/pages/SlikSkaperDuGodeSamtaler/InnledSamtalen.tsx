@@ -1,5 +1,6 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
+import "./InnledSamtalen.less";
 
 const InnledSamtalen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -7,17 +8,17 @@ const InnledSamtalen = ({callback}: InfoPanelProps) => {
         tittel={"Innled samtalen"}
         panelLestSituasjon={"ulest"}
         callBack={callback}>
-        <h3>
+        <h3 className={"sub-section-header innled-samtalen-header"}>
             Innled samtalen
         </h3>
-        <p>
+        <p className={"innled-samtalen-paragraf"}>
             Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.
             Rammene hjelper dere med å holde fokus og tid.
         </p>
-        <strong>
+        <strong className={"innled-samtalen-strong"}>
             Vanlige tema i innledning:
         </strong>
-        <ul>
+        <ul className={"innled-samtalen-liste"}>
             <li>
                 ønske velkommen
             </li>

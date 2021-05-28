@@ -1,5 +1,8 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
+import "./PlanleggveienVidereSammen.less";
+
+const OPPFOLGNINGSPLAN_URL = "#";
 
 const PlanleggVeienVidereSammen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -8,25 +11,25 @@ const PlanleggVeienVidereSammen = ({callback}: InfoPanelProps) => {
         panelLestSituasjon={"ulest"}
         callBack={callback}
     >
-        <h3>Oppsummer i felleskap</h3>
-        <p>
+        <h3 className={"sub-section-header planlegg-veien-videre-sammen-no-margin-bottom"}>Oppsummer i felleskap</h3>
+        <p className={"planlegg-veien-videre-sammen-no-margin-top"}>
             En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer det dere
             er blitt enige om og at dere lager en plan for videre oppfølging.
         </p>
 
         <strong>Tips:</strong>
-        <p>
+        <p className={"planlegg-veien-videre-sammen-no-margin-top"}>
             Det er lurt med flere korte oppsummeringer til hvert punkt dere har avtalt. Bruk spørsmål
             som kan besvares med ja eller nei for å sjekke at dere har felles forståelse.
         </p>
-        <p>
+        <p className={"planlegg-veien-videre-sammen-no-margin-bottom"}>
             Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
         </p>
-        <p>
-            <a href={"#"}>Les mer om oppfølgingsplan på nav.no.</a>
+        <p className={"planlegg-veien-videre-sammen-no-margin-top"}>
+            <a href={OPPFOLGNINGSPLAN_URL}>Les mer om oppfølgingsplan på nav.no.</a>
         </p>
         <strong>Vanlige tema i avslutningen:</strong>
-        <ul>
+        <ul className={"planlegg-veien-videre-sammen-no-margin-top"}>
             <li className={"margin-bunn-2rem"}>dato for neste samtale og hvor ofte samtaler skal
                 gjennomføres
             </li>

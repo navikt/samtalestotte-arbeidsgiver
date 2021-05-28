@@ -1,0 +1,35 @@
+div.viste-du-container {
+  border-radius: 10px;
+  background: #FAFAFA;
+  border: 1px solid black;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-rows: repeat(1fr, 4);
+  grid-template-areas:
+    "header header"
+    "ikon paragraf"
+    ". link"
+    ". link"
+;
+}
+
+.viste-du-header {
+  grid-area: header;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 33px;
+}
+
+.viste-du-icon {
+  grid-area: ikon;
+  margin-right: 1rem;
+}
+.viste-du-paragraf {
+  grid-area: paragraf;
+  margin-top: 0;
+}
+.viste-du-link {
+  grid-column: 2;
+}

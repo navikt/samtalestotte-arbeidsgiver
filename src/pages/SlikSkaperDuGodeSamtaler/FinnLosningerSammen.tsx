@@ -1,5 +1,6 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
+import "./FinnLosningerSammen.less"
 
 const FinnLosningerSammen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -7,18 +8,20 @@ const FinnLosningerSammen = ({callback}: InfoPanelProps) => {
         tittel={"Finn løsninger sammen"}
         panelLestSituasjon={"ulest"}
         callBack={callback}>
-        <h3>Hjelp medarbeideren med å finne løsninger.</h3>
-        <p>
+        <h3 className={"sub-section-header finn-losninger-sammen-header"}>
+            Hjelp medarbeideren med å finne løsninger.
+        </h3>
+        <p className={"finn-losninger-sammen-paragraf"}>
             Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først,
             kan det bli enklere å se løsningsforslag selv.
             Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.
         </p>
         <strong>Tips:</strong>
-        <p>
+        <p className={"finn-losninger-sammen-paragraf"}>
             Snakk om det som skal skje framover i tid og på hvilke muligheter som finnes.
         </p>
         <strong>Vanlige tema når dere finner løsninger sammen:</strong>
-        <ul>
+        <ul className={"finn-losninger-sammen-liste"}>
             <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
             <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
             <li>tilpasse organisering av arbeidet</li>
@@ -33,7 +36,7 @@ const FinnLosningerSammen = ({callback}: InfoPanelProps) => {
         </ul>
 
         <strong>Eksempler på spørsmål:</strong>
-        <p>
+        <p className={"finn-losninger-sammen-paragraf"}>
             Velg noen av eksemplene som er relevante for akkurat denne samtalen.
         </p>
         <div className={"gra-avrundet-boks margin-bunn-2rem"}>

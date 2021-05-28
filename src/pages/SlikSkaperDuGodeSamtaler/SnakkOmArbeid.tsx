@@ -1,5 +1,6 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
+import "./SnakkOmArbeid.less";
 
 const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -7,16 +8,16 @@ const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
         tittel={"Snakk om arbeid"}
         panelLestSituasjon={"ulest"}
         callBack={callback}>
-        <h3>
+        <h3 className={"sub-section-header snakk-om-arbeid-header"}>
             En samtale for å forebygge eller følge opp sykefravær handler om medarbeideren.
         </h3>
-        <p>
+        <p className={"snakk-om-arbeid-paragraf"}>
             Din oppgave er å legge til rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene
             og arbeidsdagen oppleves.
         </p>
 
         <strong>Tips:</strong>
-        <ul>
+        <ul className={"snakk-om-arbeid-liste"}>
             <li>Bruk åpne spørsmål med spørreord som hva, hvor, hvordan, hvem eller når.</li>
             <li>Unngå ordet “hvorfor”. Hvorfor kan ofte oppleves som en anklage eller for å fordele
                 skyld.
@@ -25,7 +26,7 @@ const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
         </ul>
 
         <strong>Vanlige tema i samtalen om arbeidssituasjonen:</strong>
-        <ul>
+        <ul className={"snakk-om-arbeid-liste"}>
             <li>arbeidsoppgaver</li>
             <li>arbeidstid</li>
             <li>samarbeid</li>
@@ -34,7 +35,7 @@ const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
         </ul>
 
         <strong>Eksempler på spørsmål:</strong>
-        <p>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
+        <p className={"snakk-om-arbeid-paragraf"}>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
 
         <div className={"gra-avrundet-boks margin-bunn-2rem "}>
             <strong>Arbeidsoppgaver</strong>
