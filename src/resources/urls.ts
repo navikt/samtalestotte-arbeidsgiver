@@ -1,3 +1,4 @@
+export const TILBAKE = 'https://www.nav.no/no/bedrift';
 export const OKONOMISKE_VIRKEMIDLER = 'https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge'
 export const FOLGE_OPP_TILRETTELEGGING = 'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap'
 export const NETTKURS = 'https://vimeo.com/showcase/6728595'
