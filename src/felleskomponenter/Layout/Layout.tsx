@@ -54,7 +54,7 @@ export const Layout = (props: {
                 />
                 <div className="layout__wrapper">
                     <div className="layout__content" ref={panelRef}>
-                        <Lenke href={TILBAKE}><VenstreChevron/>Tilbake</Lenke>
+                        <Lenke href={TILBAKE} className={"layout__link-no-print"}><VenstreChevron/>Tilbake</Lenke>
                         <div className="layout__print-header">
                             <Normaltekst>{PROD_URL}</Normaltekst>
                         </div>
