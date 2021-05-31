@@ -80,7 +80,7 @@ test('Snapshot test', async () => {
                   </div>
                 </div>
                 <div class=\\"layout__wrapper\\">
-                  <div class=\\"layout__content\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"lenke\\"><span class=\\"nav-frontend-chevron chevronboks chevron--venstre\\"></span>Tilbake</a>
+                  <div class=\\"layout__content\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"lenke layout__link-no-print\\"><span class=\\"nav-frontend-chevron chevronboks chevron--venstre\\"></span>Tilbake</a>
                     <div class=\\"layout__print-header\\">
                       <p class=\\"typo-normal\\">https://arbeidsgiver.nav.no/samtalestotte</p>
                     </div>
