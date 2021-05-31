@@ -8,7 +8,7 @@ import { MINSIDE_ARBEIDSGIVER } from '../../resources/urls';
 const SeHvorMyeSykefravaeretDittKoster = () => {
     return <LenkepanelBase className={"lenkepanel-sykefravaer-kalkulator"} href={MINSIDE_ARBEIDSGIVER}>
         <div className={"lenkepanel-sykefravaer-child-wrapper"}>
-            <Calculator className={"lenkepanel-sykefravaer-ikon"} height={"3rem"} width={"3rem"}/>
+            <Calculator className={"lenkepanel-sykefravaer-ikon"} height={"44px"} width={"44px"}/>
             <p>Se hvor mye sykefraværet ditt koster</p>
             <div>
                 <span>Gå til kalkulatoren</span>

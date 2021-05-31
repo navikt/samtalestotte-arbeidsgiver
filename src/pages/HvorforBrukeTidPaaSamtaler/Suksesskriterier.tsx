@@ -2,13 +2,13 @@ import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 import Lightbulb from '../../felleskomponenter/Ikoner/Lightbulb';
 
-const Suksesskriterier = ({callback, ikon, lestIkon}: InfoPanelProps) => {
+const Suksesskriterier = ({ callback }: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         tittel={'Suksesskriterier'}
         unikId={'suksesskriterier'}
         callBack={callback}
-        ikon={<Lightbulb width={"3rem"} height={"3rem"}/>}
-        lestIkon={<Lightbulb width={"3rem"} height={"3rem"}/>}
+        ikon={<Lightbulb width={"44px"} height={"44px"}/>}
+        lestIkon={<Lightbulb width={"44px"} height={"44px"}/>}
         panelLestSituasjon={"ulest"}
     >
         <ul>

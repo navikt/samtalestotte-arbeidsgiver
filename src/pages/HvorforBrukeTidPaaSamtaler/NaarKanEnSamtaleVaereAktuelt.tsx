@@ -9,8 +9,8 @@ const NaarKanEnSamtaleVaereAktuelt = ({callback}: InfoPanelProps) => {
         tittel={'Når kan en samtale være aktuelt?'}
         panelLestSituasjon={'ulest'}
         callBack={callback}
-        ikon={<ChatDoubleBubble width={"3rem"} height={"3rem"}/>}
-        lestIkon={<ChatDoubleBubble width={"3rem"} height={"3rem"}/>}
+        ikon={<ChatDoubleBubble width={"44px"} height={"44px"}/>}
+        lestIkon={<ChatDoubleBubble width={"44px"} height={"44px"}/>}
     >
         <p>
             En samtale for å forebygge eller følge opp sykefravær handler om arbeidssituasjonen.

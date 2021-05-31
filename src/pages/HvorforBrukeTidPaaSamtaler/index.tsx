@@ -1,7 +1,6 @@
 import NaarKanEnSamtaleVaereAktuelt from './NaarKanEnSamtaleVaereAktuelt';
 import DetteKanDuSpoerreMedarbeiderenOm from './DetteKanDuSpoerreMedarbeiderenOm';
 import Suksesskriterier from './Suksesskriterier';
-import { LyspæreSVG } from '../../felleskomponenter/Samtaleverktøy/LyspæreSVG';
 import SeHvorMyeSykefravaeretDittKoster from './SeHvorMyeSykefravaeretDittKoster';
 
 const HvorforBrukeTidPaaSamtaler = () => {
@@ -36,7 +35,7 @@ const HvorforBrukeTidPaaSamtaler = () => {
         <NaarKanEnSamtaleVaereAktuelt/>
         <DetteKanDuSpoerreMedarbeiderenOm/>
         <SeHvorMyeSykefravaeretDittKoster/>
-        <Suksesskriterier ikon={<LyspæreSVG />} lestIkon={<LyspæreSVG />}/>
+        <Suksesskriterier/>
     </section>
 }
 

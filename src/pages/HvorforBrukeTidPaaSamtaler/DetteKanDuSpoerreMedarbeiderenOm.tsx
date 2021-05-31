@@ -9,8 +9,8 @@ const DetteKanDuSpoerreMedarbeiderenOm = ({callback}: InfoPanelProps) => {
         tittel={"Dette kan du spørre medarbeideren om"}
         panelLestSituasjon={"ulest"}
         callBack={() => callback}
-        ikon={<ChatBubbleCheckmark width={"3rem"} height={"3rem"}/>}
-        lestIkon={<ChatBubbleCheckmark width={"3rem"} height={"3rem"}/>}
+        ikon={<ChatBubbleCheckmark width={"44px"} height={"44px"}/>}
+        lestIkon={<ChatBubbleCheckmark width={"44px"} height={"44px"}/>}
     >
         <strong>
             Du kan stille spørsmål som handler om fravær og forhold på arbeidsplassen.
