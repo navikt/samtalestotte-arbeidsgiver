@@ -7,7 +7,7 @@ import FinnLosningerSammen from './FinnLosningerSammen';
 import PlanleggVeienVidereSammen from './PlanleggVeienVidereSammen';
 
 const SlikSkaperDuGodeSamtaler = () => {
-    return <>
+    return <section className={"SlikSkaperDuGodeSamtaler"}>
         <h2 className={"section-header margin-topp-4rem"}>
             Slik skaper du gode samtaler
         </h2>
@@ -38,7 +38,7 @@ const SlikSkaperDuGodeSamtaler = () => {
         <SnakkOmArbeid/>
         <FinnLosningerSammen/>
         <PlanleggVeienVidereSammen/>
-    </>
+    </section>
 }
 
 export default SlikSkaperDuGodeSamtaler;

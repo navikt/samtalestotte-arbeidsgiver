@@ -5,7 +5,7 @@ import { LyspæreSVG } from '../../felleskomponenter/Samtaleverktøy/LyspæreSVG
 import SeHvorMyeSykefravaeretDittKoster from './SeHvorMyeSykefravaeretDittKoster';
 
 const HvorforBrukeTidPaaSamtaler = () => {
-    return <>
+    return <section className={"HvorforBrukeTidPaaSamtaler"}>
         <h2 className={"section-header"}>
             Hvorfor bruke tid på samtaler?
         </h2>
@@ -37,7 +37,7 @@ const HvorforBrukeTidPaaSamtaler = () => {
         <DetteKanDuSpoerreMedarbeiderenOm/>
         <SeHvorMyeSykefravaeretDittKoster/>
         <Suksesskriterier ikon={<LyspæreSVG />} lestIkon={<LyspæreSVG />}/>
-    </>
+    </section>
 }
 
 export default HvorforBrukeTidPaaSamtaler;
