@@ -3,7 +3,7 @@ import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import ChatDoubleBubble from '../../felleskomponenter/Ikoner/ChatDoubleBubble';
 
 
-const NaarKanEnSamtaleVaereAktuelt = ({callback, ikon, lestIkon}: InfoPanelProps) => {
+const NaarKanEnSamtaleVaereAktuelt = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         unikId={'naarKanEnsamtaleVaereAktuelt'}
         tittel={'Når kan en samtale være aktuelt?'}

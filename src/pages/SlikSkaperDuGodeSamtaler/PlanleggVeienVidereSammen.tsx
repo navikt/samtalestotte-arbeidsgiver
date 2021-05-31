@@ -1,8 +1,8 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 import "./PlanleggveienVidereSammen.less";
-
-const OPPFOLGNINGSPLAN_URL = "#";
+import Lenke from 'nav-frontend-lenker';
+import { FOLGE_OPP_TILRETTELEGGING } from '../../resources/urls';
 
 const PlanleggVeienVidereSammen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -26,7 +26,7 @@ const PlanleggVeienVidereSammen = ({callback}: InfoPanelProps) => {
             Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
         </p>
         <p className={"planlegg-veien-videre-sammen-no-margin-top"}>
-            <a href={OPPFOLGNINGSPLAN_URL}>Les mer om oppfølgingsplan på nav.no.</a>
+            <Lenke href={FOLGE_OPP_TILRETTELEGGING}>Les mer om oppfølgingsplan på nav.no.</Lenke>
         </p>
         <strong>Vanlige tema i avslutningen:</strong>
         <ul className={"planlegg-veien-videre-sammen-no-margin-top"}>

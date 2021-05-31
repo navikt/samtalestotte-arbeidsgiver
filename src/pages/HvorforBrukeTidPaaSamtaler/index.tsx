@@ -4,10 +4,6 @@ import Suksesskriterier from './Suksesskriterier';
 import { LyspæreSVG } from '../../felleskomponenter/Samtaleverktøy/LyspæreSVG';
 import SeHvorMyeSykefravaeretDittKoster from './SeHvorMyeSykefravaeretDittKoster';
 
-const PlaceHolderIcon = ({className}: { className?: string }) => (
-    <div className={className} style={{width: "48px", height: "48px", background:"rgba(86, 144, 162, 1)", borderRadius: "100px"}} />
-)
-
 const HvorforBrukeTidPaaSamtaler = () => {
     return <>
         <h2 className={"section-header"}>
@@ -37,8 +33,8 @@ const HvorforBrukeTidPaaSamtaler = () => {
             Gode samtaler er en metode for hvordan du fyller lovkravene, slik at de gir størst verdi for deg
             og medarbeiderne dine.
         </p>
-        <NaarKanEnSamtaleVaereAktuelt ikon={<PlaceHolderIcon />} lestIkon={<PlaceHolderIcon />}/>
-        <DetteKanDuSpoerreMedarbeiderenOm ikon={<PlaceHolderIcon />} lestIkon={<PlaceHolderIcon />} />
+        <NaarKanEnSamtaleVaereAktuelt/>
+        <DetteKanDuSpoerreMedarbeiderenOm/>
         <SeHvorMyeSykefravaeretDittKoster/>
         <Suksesskriterier ikon={<LyspæreSVG />} lestIkon={<LyspæreSVG />}/>
     </>

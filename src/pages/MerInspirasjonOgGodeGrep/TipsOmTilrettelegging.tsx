@@ -1,12 +1,14 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 import "./TipsOmTilrettelegging.less";
-
-const BESKRIVELSEAVPROSESSOGMALER_URL = "#";
-const ARBEIDSGIVERSPLIKTER_URL = "#";
-const NETTKURSPLIKTER_URL = "#";
-const SYKEFRAVAERSOPPFOLGNING_URL = "#";
-const OKONOMISKEVIRKEMIDLER_URL = "#";
+import Lenke from 'nav-frontend-lenker';
+import {
+    FOLGE_OPP_TILRETTELEGGING,
+    NETTKURS,
+    OKONOMISKE_VIRKEMIDLER,
+    SLIK_LYKKES_DERE,
+    TILRETTELEGGING,
+} from '../../resources/urls';
 
 const TipsOmTilrettelegging = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -54,7 +56,7 @@ const TipsOmTilrettelegging = ({callback}: InfoPanelProps) => {
                 <strong>over tid og som kontinuerlig arbeid:</strong>
                 <ul className={"tips-om-tilrettelegging-no-margin-top"}>
                     <li className={"margin-bunn-2rem"}>
-                        Lag en liste med tilretteleggingsmuligheter <a href={BESKRIVELSEAVPROSESSOGMALER_URL }>Se beskrivelse av prosess og maler på idebanken</a>
+                        Lag en liste med tilretteleggingsmuligheter <Lenke href={SLIK_LYKKES_DERE}>Se beskrivelse av prosess og maler på idebanken</Lenke>
                     </li>
                 </ul>
             </div>
@@ -70,21 +72,21 @@ const TipsOmTilrettelegging = ({callback}: InfoPanelProps) => {
                 <strong>på kort sikt:</strong>
                 <ul>
                     <li className={"margin-bunn-2rem"}>
-                        <a href={ARBEIDSGIVERSPLIKTER_URL}>
+                        <Lenke href={TILRETTELEGGING}>
                             Les mer om arbeidsgivers plikter til å tilrettelegge på arbeidsplassen hos
                             arbeidstilsynet.
-                        </a>
+                        </Lenke>
                     </li>
                     <li className={"margin-bunn-2rem"}>
                         NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt og
-                        medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging. <a
-                        href={NETTKURSPLIKTER_URL}>Gå til nettkurs.</a>
+                        medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging. <Lenke
+                        href={NETTKURS}>Gå til nettkurs.</Lenke>
                     </li>
                     <li className={"margin-bunn-2rem"}>
-                        <a href={SYKEFRAVAERSOPPFOLGNING_URL}>Les mer om tilrettelegging i sykefraværsoppfølging</a>
+                        <Lenke href={FOLGE_OPP_TILRETTELEGGING}>Les mer om tilrettelegging i sykefraværsoppfølging</Lenke>
                     </li>
                     <li>
-                        <a href={OKONOMISKEVIRKEMIDLER_URL}>Les mer om NAVs økonomiske virkemidler</a>
+                        <Lenke href={OKONOMISKE_VIRKEMIDLER}>Les mer om NAVs økonomiske virkemidler</Lenke>
                     </li>
                 </ul>
             </div>

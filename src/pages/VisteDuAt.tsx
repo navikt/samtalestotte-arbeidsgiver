@@ -1,5 +1,7 @@
 import Information from '../felleskomponenter/Ikoner/Information';
 import "./VisteDuAt.less";
+import Lenke from 'nav-frontend-lenker';
+import { FOREBYGGE_SYKEFRAVAER, KONTAKT_OSS } from '../resources/urls';
 
 const VisteDuAt = () => (
     <div
@@ -15,8 +17,8 @@ const VisteDuAt = () => (
             Du får digitale tjenester og veiledning for å gjennomføre enkeltsamtaler.
             NAV kan også gi mer omfattende rådgivning hos dere på arbeidsplassen.
         </p>
-        <a className={"viste-du-link"} href={"#"}>Kontakt NAV</a>
-        <a className={"viste-du-link"} href={"#"}>Les mer om NAVs tjenester for å forebygge sykefravær.</a>
+        <Lenke className={"viste-du-link"} href={KONTAKT_OSS}>Kontakt NAV</Lenke>
+        <Lenke className={"viste-du-link"} href={FOREBYGGE_SYKEFRAVAER}>Les mer om NAVs tjenester for å forebygge sykefravær.</Lenke>
     </div>
 )
 

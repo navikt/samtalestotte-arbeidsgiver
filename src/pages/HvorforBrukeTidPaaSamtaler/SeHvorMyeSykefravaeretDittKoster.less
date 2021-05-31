@@ -1,0 +1,63 @@
+@import '../../../node_modules/nav-frontend-core/less/_variabler';
+
+.lenkepanel-sykefravaer-kalkulator{
+  border: 1px solid @navGra60;
+  * {
+    color: @navBla;
+  }
+  &:hover * {
+    text-decoration-line: underline;
+  }
+}
+
+.lenkepanel-sykefravaer-child-wrapper {
+  width: 100%;
+  display: grid;
+  @media (min-width: @screen-sm-min) {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+    column-gap: 1rem;
+    grid-template-areas:
+            "ikon tittel link";
+  }
+  align-items: center;
+  row-gap: 1rem;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+            "ikon link"
+            "tittel link";
+}
+
+.lenkepanel-sykefravaer-ikon {
+  grid-area: ikon;
+}
+
+.lenkepanel-sykefravaer-child-wrapper p {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+  margin: 0;
+
+  grid-area: tittel;
+}
+
+.lenkepanel-sykefravaer-child-wrapper span {
+  margin-right: 1rem;
+  justify-self: end;
+}
+
+.lenkepanel-sykefravaer-child-wrapper span.lenkepanel-sykefravaer-require-login {
+  color: black;
+  & * {
+    color: black;
+  }
+}
+
+.lenkepanel-sykefravaer-child-wrapper div {
+  grid-area: link;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
