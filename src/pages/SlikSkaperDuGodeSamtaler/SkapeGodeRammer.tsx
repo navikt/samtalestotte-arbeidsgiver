@@ -7,7 +7,7 @@ import {
     RETTNINGSLINJER_FOR_SYKEFRAVAERSOPPFOLGNING,
 } from '../../resources/urls';
 
-const GODEGREPFORAABYGGERELASJONER_URL = "#";
+const GODEGREPFORAABYGGERELASJONER_URL = "#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base";
 
 const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
