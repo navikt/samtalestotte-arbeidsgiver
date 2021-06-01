@@ -1,6 +1,14 @@
 @import '../../variables.less';
 @import '../../../node_modules/nav-frontend-core/less/_variabler';
 
+div.ekspanderbartPanel--border {
+    border: 1px solid @navGra60;
+}
+
+div.ekspanderbartPanel--apen button.ekspanderbartPanel__hode {
+    border-bottom: 1px solid @navGra60;
+}
+
 span.ekspanderbartPanel__tittel {
     div {
         font-size: 20px;
@@ -15,7 +23,6 @@ span.ekspanderbartPanel__tittel {
     &__root {
         @media print {
             display: block;
-            break-inside: avoid;
         }
     }
 
@@ -29,7 +36,8 @@ span.ekspanderbartPanel__tittel {
         padding-bottom: 0.5rem;
 
         @media (min-width: @screen-sm-min) {
-            padding-right: 2rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
         }
 
         &-ny-avsnitt {
@@ -138,15 +146,26 @@ span.ekspanderbartPanel__tittel {
     }
 }
 
+div.ekspanderbart-infopanel__tittel-justify-start {
+    @media (min-width: @screen-sm-min) {
+        justify-content: start;
+    }
+}
+div.ekspanderbart-infopanel__kun-lest-ikon {
+    @media (min-width: @screen-sm-min) {
+        margin-left: 1rem;
+    }
+}
+
 @media print {
     .ekspanderbartPanel {
         margin-top: 2rem;
     }
 }
 
-button.ekspanderbartPanel__hode {
+.ekspanderbart-infopanel__panel button.ekspanderbartPanel__hode {
     min-height: 80px;
-    border-bottom: 3px solid;
+    border: 0;
     display: flex;
     align-items: center;
 }
@@ -162,5 +181,55 @@ div.ekspanderbartPanel__flex-wrapper {
     .ekspanderbartPanel__hode {
         border-bottom: 1px solid;
         border-radius: 4px;
+    }
+}
+
+div.ekspanderbart-infopanel__tittel-grid {
+    width: 100%;
+    display: grid;
+    @media (min-width: @screen-sm-min) {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto;
+    }
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    justify-content: start;
+    justify-items: start;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+
+div.ekspanderbart-infopanel__tittel-flex-container {
+    display: flex;
+    justify-content: space-between;
+    > div.ekspanderbart-infopanel__tittel-apne {
+        overflow-wrap: normal;
+        align-self: center;
+        margin-right: 1rem;
+
+        color: @navBla;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+
+        & :hover{
+            text-decoration-line: underline;
+        }
+    }
+}
+
+div.ekspanderbart-infopanel__tittel-text {
+    display: flex;
+    align-items: center;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    color: @navBla;
+    & :hover{
+        text-decoration-line: underline;
     }
 }

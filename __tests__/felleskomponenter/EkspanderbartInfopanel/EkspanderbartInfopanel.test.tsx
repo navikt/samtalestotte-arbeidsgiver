@@ -152,7 +152,7 @@ test('Snapshot test', () => {
               <div class=\\"ekspanderbartPanel__innhold\\">
                 <div class=\\"ekspanderbart-infopanel__innhold ekspanderbart-infopanel__innhold-no-print\\">
                   <div>Test Child</div>
-                </div><button class=\\"ekspanderbart-infopanel__lukk-knapp\\"><span class=\\"typo-normal \\">Lukk</span><span class=\\"nav-frontend-chevron chevronboks ekspanderbart-infopanel__lukk-chevron chevron--opp\\"></span></button>
+                </div><button class=\\"ekspanderbart-infopanel__lukk-knapp\\"><span class=\\"typo-normal \\">Lukk dette panelet</span><span class=\\"nav-frontend-chevron chevronboks ekspanderbart-infopanel__lukk-chevron chevron--opp\\"></span></button>
               </div>
             </div>
           </div>
