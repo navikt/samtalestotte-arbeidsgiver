@@ -10,8 +10,7 @@ const GodeGrepForAByggeRelasjoner = ({callback}: InfoPanelProps) => {
     >
         <ul>
             <li>Bruk tid på å bli kjent med alle dine medarbeidere.</li>
-            <li>Hvem er du i møte med den enkelte medarbeideren?</li>
-            <li>Hva slags relasjon har dere?</li>
+            <li>Er det sider ved deg selv du bør styrke eller dempe i møte med medarbeideren?</li>
             <li>Vær forutsigbar.</li>
             <li>Vis at du har tillit til medarbeideren.</li>
             <li>Vær en støttende leder.</li>

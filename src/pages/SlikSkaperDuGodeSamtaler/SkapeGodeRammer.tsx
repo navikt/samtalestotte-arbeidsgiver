@@ -3,11 +3,10 @@ import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInf
 import Lenke from 'nav-frontend-lenker';
 import {
     DEN_VIKTIGE_SAMTALEN,
+    GODE_GREP_FOR_AA_BYGGE_RELASJONER,
     KVALITETEN_PAA_SYKEFRAVAERSRUTINENE,
     RETTNINGSLINJER_FOR_SYKEFRAVAERSOPPFOLGNING,
 } from '../../resources/urls';
-
-const GODEGREPFORAABYGGERELASJONER_URL = "#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base";
 
 const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -60,7 +59,7 @@ const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
                     </li>
                     <li>
                         Jobb aktivt med å bygge trygge relasjoner til alle dine
-                        medarbeidere. <Lenke href={GODEGREPFORAABYGGERELASJONER_URL}>Se «Gode grep for å bygge relasjoner».</Lenke>
+                        medarbeidere. <Lenke href={GODE_GREP_FOR_AA_BYGGE_RELASJONER}>Se «Gode grep for å bygge relasjoner» lengre ned på siden</Lenke>
                     </li>
                     <li>
                         Tren på å gjennomføre samtaler, og be om tilbakemeldinger.
@@ -124,8 +123,7 @@ const SkapeGodeRammer = ({callback}: InfoPanelProps) => {
             Tips:
         </strong>
         <p>
-            Arbeidet med rutiner bør settes inn i arbeidsplassens plan for å forebygge sykefravær slik
-            at du kan dokumentere arbeidet.
+            Arbeidet med rutiner bør settes inn i arbeidsplassens plan for å forebygge sykefravær slik at du kan dokumentere arbeidet.
         </p>
     </EkspanderbartInfopanel>
 };

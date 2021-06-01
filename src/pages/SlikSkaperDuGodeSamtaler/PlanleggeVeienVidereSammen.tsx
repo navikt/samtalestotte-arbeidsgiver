@@ -1,13 +1,13 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
-import "./PlanleggveienVidereSammen.less";
+import "./PlanleggeVeienVidereSammen.less";
 import Lenke from 'nav-frontend-lenker';
-import { FOLGE_OPP_TILRETTELEGGING } from '../../resources/urls';
+import { OPPFOLGNINGSPLAN } from '../../resources/urls';
 
-const PlanleggVeienVidereSammen = ({callback}: InfoPanelProps) => {
+const PlanleggeVeienVidereSammen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
-        unikId={"planleggVeienVidereSammen"}
-        tittel={"Planlegg veien videre sammen"}
+        unikId={"planleggeVeienVidereSammen"}
+        tittel={"Planlegge veien videre sammen"}
         panelLestSituasjon={"ulest"}
         callBack={callback}
     >
@@ -26,7 +26,7 @@ const PlanleggVeienVidereSammen = ({callback}: InfoPanelProps) => {
             Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
         </p>
         <p className={"planlegg-veien-videre-sammen-no-margin-top"}>
-            <Lenke href={FOLGE_OPP_TILRETTELEGGING}>Les mer om oppfølgingsplan på nav.no.</Lenke>
+            <Lenke href={OPPFOLGNINGSPLAN}>Les mer om oppfølgingsplan på nav.no.</Lenke>
         </p>
         <strong>Vanlige tema i avslutningen:</strong>
         <ul className={"planlegg-veien-videre-sammen-no-margin-top"}>
@@ -54,4 +54,4 @@ const PlanleggVeienVidereSammen = ({callback}: InfoPanelProps) => {
     </EkspanderbartInfopanel>
 };
 
-export default PlanleggVeienVidereSammen;
+export default PlanleggeVeienVidereSammen;
