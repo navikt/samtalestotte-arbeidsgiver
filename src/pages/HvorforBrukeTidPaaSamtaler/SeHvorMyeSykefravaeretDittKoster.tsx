@@ -1,8 +1,7 @@
-import { LenkepanelBase } from 'nav-frontend-lenkepanel';
 import Locked from '../../felleskomponenter/Ikoner/Locked';
 import Calculator from '../../felleskomponenter/Ikoner/Calculator';
 import './SeHvorMyeSykefravaeretDittKoster.less';
-import { MINSIDE_ARBEIDSGIVER } from '../../resources/urls';
+import { SYKEFRAVÆRSSTATISTIKK_KALKULATOR } from '../../resources/urls';
 import LoggbarLenkepanelBase from '../../felleskomponenter/LoggbarLenkepanelBase/LoggbarLenkepanelBase';
 
 const SeHvorMyeSykefravaeretDittKoster = () => {
@@ -10,7 +9,7 @@ const SeHvorMyeSykefravaeretDittKoster = () => {
     return (
         <LoggbarLenkepanelBase
             className={'lenkepanel-sykefravaer-kalkulator'}
-            href={MINSIDE_ARBEIDSGIVER}
+            href={SYKEFRAVÆRSSTATISTIKK_KALKULATOR}
             lenketekst={lenkeTekstConst}
         >
             <div className={'lenkepanel-sykefravaer-child-wrapper'}>
