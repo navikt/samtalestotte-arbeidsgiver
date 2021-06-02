@@ -114,8 +114,19 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
                     <strong>over tid og som kontinuerlig arbeid:</strong>
                     <ul>
                         <li className={'margin-bunn-2rem'}>
-                            Lag en plan for gjennomføring av aktiviteter hvis du ikke har tid til å
-                            gjennomføre alle nå.
+                            Lag en plan for å lære mer.
+                        </li>
+                        <li className={'margin-bunn-2rem'}>
+                            Hva du trenger å vite mer om?
+                        </li>
+                        <li className={'margin-bunn-2rem'}>
+                            Hvordan kan du lære mer?
+                        </li>
+                        <li className={'margin-bunn-2rem'}>
+                            Når du skal gjennomføre?
+                        </li>
+                        <li>
+                            Husk å ta med tillitsvalgte og verneombud slik at dere sammen lærer mer om tilrettelegging.
                         </li>
                     </ul>
                 </div>

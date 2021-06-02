@@ -1,5 +1,7 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
+import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
+import { GJENNOMFOR_SAMTALEN } from '../../resources/urls';
 
 const PlanleggeInnholdISamtalen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -26,7 +28,7 @@ const PlanleggeInnholdISamtalen = ({callback}: InfoPanelProps) => {
                 </strong>
             </li>
             <li>
-                Velg tema og hjelpespørsmål under “gjennomføring av samtalen” lenger ned på siden.
+                Velg tema og hjelpespørsmål under <LoggbarLenke href={GJENNOMFOR_SAMTALEN}>“gjennomføring av samtalen”</LoggbarLenke> lenger ned på siden.
             </li>
         </ul>
         <p>
@@ -43,7 +45,7 @@ const PlanleggeInnholdISamtalen = ({callback}: InfoPanelProps) => {
             </li>
             <li>
                 Eksempler kan være endring i fravær, i atferd eller i hvordan arbeidsoppgavene blir
-                utført. Husk å gi konkrete eksempler på det medarbeideren er god på.
+                utført. Husk å gi konkrete eksempler på det medarbeideren er god på også.
                 Noter gjerne ned og ta med i samtalen.
             </li>
         </ul>

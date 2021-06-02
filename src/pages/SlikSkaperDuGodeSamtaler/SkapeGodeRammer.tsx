@@ -3,14 +3,12 @@ import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInf
 import Lenke from 'nav-frontend-lenker';
 import {
     DEN_VIKTIGE_SAMTALEN,
+    GODE_GREP_FOR_AA_BYGGE_RELASJONER,
     KVALITETEN_PAA_SYKEFRAVAERSRUTINENE,
     RETTNINGSLINJER_FOR_SYKEFRAVAERSOPPFOLGNING,
 } from '../../resources/urls';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import LoggbarLenkepanelBase from "../../felleskomponenter/LoggbarLenkepanelBase/LoggbarLenkepanelBase";
-
-const GODEGREPFORAABYGGERELASJONER_URL =
-    '#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base';
 
 const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
     return (
@@ -22,11 +20,11 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
         >
             <h3 className={'sub-section-header'}>Gode samtaler forutsetter trygghet</h3>
             <p>
-                Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne og rammene
+                Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene
                 rundt samtalen er forutsigbare for alle.
             </p>
             <ul>
-                <li>Hvordan ville du selv like å bli møtt?</li>
+                <li>Hvordan ville du selv likt å bli møtt?</li>
                 <li>
                     Hvordan er din relasjon og holdning til medarbeideren, og hvordan kan dette
                     påvirke dialogen?
@@ -61,8 +59,8 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                         </li>
                         <li>
                             Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere.{' '}
-                            <LoggbarLenke href={GODEGREPFORAABYGGERELASJONER_URL}>
-                                Se «Gode grep for å bygge relasjoner».
+                            <LoggbarLenke href={GODE_GREP_FOR_AA_BYGGE_RELASJONER}>
+                                Se «Gode grep for å bygge relasjoner» lengre ned på siden
                             </LoggbarLenke>
                         </li>
                         <li>Tren på å gjennomføre samtaler, og be om tilbakemeldinger.</li>
