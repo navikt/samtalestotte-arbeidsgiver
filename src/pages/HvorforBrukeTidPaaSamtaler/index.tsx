@@ -2,17 +2,7 @@ import NaarKanEnSamtaleVaereAktuelt from './NaarKanEnSamtaleVaereAktuelt';
 import DetteKanDuSpoerreMedarbeiderenOm from './DetteKanDuSpoerreMedarbeiderenOm';
 import Suksesskriterier from './Suksesskriterier';
 import SeHvorMyeSykefravaeretDittKoster from './SeHvorMyeSykefravaeretDittKoster';
-/*
 
-
-Gode samtaler bidrar til: (Bold)
-
-
-
-
-
-
- */
 const HvorforBrukeTidPaaSamtaler = () => {
     return <section className={"HvorforBrukeTidPaaSamtaler"}>
         <h2 className={"section-header"}>
