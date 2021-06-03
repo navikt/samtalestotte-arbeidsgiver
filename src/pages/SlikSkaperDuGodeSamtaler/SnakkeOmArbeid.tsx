@@ -1,11 +1,11 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
-import "./SnakkOmArbeid.less";
+import "./SnakkeOmArbeid.less";
 
-const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
+const SnakkeOmArbeid = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
-        unikId={"snakkOmArbeid"}
-        tittel={"Snakk om arbeid"}
+        unikId={"snakkeOmArbeid"}
+        tittel={"Snakke om arbeid"}
         panelLestSituasjon={"ulest"}
         callBack={callback}>
         <h3 className={"sub-section-header snakk-om-arbeid-header"}>
@@ -22,7 +22,7 @@ const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
             <li>Unngå ordet “hvorfor”. Hvorfor kan ofte oppleves som en anklage eller for å fordele
                 skyld.
             </li>
-            <li>Tål stillhet slik at medarbeideren får tid til å tenke før de må svare.</li>
+            <li>Tål stillhet slik at medarbeideren får tid til å tenke før svarene kommer.</li>
         </ul>
 
         <strong>Vanlige tema i samtalen om arbeidssituasjonen:</strong>
@@ -67,4 +67,4 @@ const SnakkOmArbeid = ({callback}: InfoPanelProps) => {
     </EkspanderbartInfopanel>
 };
 
-export default SnakkOmArbeid;
+export default SnakkeOmArbeid;
