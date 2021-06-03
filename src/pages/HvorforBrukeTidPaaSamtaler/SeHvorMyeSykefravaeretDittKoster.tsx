@@ -11,8 +11,8 @@ const SeHvorMyeSykefravaeretDittKoster = () => {
             <Calculator className={"lenkepanel-sykefravaer-ikon"} height={"44px"} width={"44px"}/>
             <p>Se hvor mye sykefraværet ditt koster</p>
             <div>
-                <span>Gå til kalkulatoren</span>
-                <span className={"lenkepanel-sykefravaer-require-login"}><Locked/> Krever innlogging</span>
+                <span className={'lenkepanel-sykefravaer-link-text'}>Gå til kalkulatoren</span>
+                <span className={'lenkepanel-sykefravaer-require-login'}><Locked/> Krever innlogging</span>
             </div>
         </div>
     </LenkepanelBase>
