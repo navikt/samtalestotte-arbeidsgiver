@@ -1,11 +1,11 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
-import "./FinnLosningerSammen.less"
+import "./FinneLosningerSammen.less"
 
-const FinnLosningerSammen = ({callback}: InfoPanelProps) => {
+const FinneLosningerSammen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
-        unikId={"finnLøsningerSammen"}
-        tittel={"Finn løsninger sammen"}
+        unikId={"finneLøsningerSammen"}
+        tittel={"Finne løsninger sammen"}
         panelLestSituasjon={"ulest"}
         callBack={callback}>
         <h3 className={"sub-section-header finn-losninger-sammen-header"}>
@@ -68,4 +68,4 @@ const FinnLosningerSammen = ({callback}: InfoPanelProps) => {
     </EkspanderbartInfopanel>
 };
 
-export default FinnLosningerSammen;
+export default FinneLosningerSammen;

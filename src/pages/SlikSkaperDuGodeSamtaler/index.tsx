@@ -1,10 +1,10 @@
 import SkapeGodeRammer from './SkapeGodeRammer';
 import PlanleggeInnholdISamtalen from './PlanleggeInnholdISamtalen';
-import ForberedMedarbeiderenDin from './ForberedMedarbeiderenDin';
-import InnledSamtalen from './InnledSamtalen';
-import SnakkOmArbeid from './SnakkOmArbeid';
-import FinnLosningerSammen from './FinnLosningerSammen';
-import PlanleggVeienVidereSammen from './PlanleggVeienVidereSammen';
+import ForberedeMedarbeiderenDin from './ForberedeMedarbeiderenDin';
+import InnledeSamtalen from './InnledeSamtalen';
+import SnakkeOmArbeid from './SnakkeOmArbeid';
+import FinneLosningerSammen from './FinneLosningerSammen';
+import PlanleggeVeienVidereSammen from './PlanleggeVeienVidereSammen';
 
 const SlikSkaperDuGodeSamtaler = () => {
     return <section className={"SlikSkaperDuGodeSamtaler"}>
@@ -30,14 +30,14 @@ const SlikSkaperDuGodeSamtaler = () => {
         </h3>
         <SkapeGodeRammer/>
         <PlanleggeInnholdISamtalen/>
-        <ForberedMedarbeiderenDin/>
-        <h3 className={"sub-section-header margin-topp-4rem"}>
-            Gjennomføring av samtalen:
+        <ForberedeMedarbeiderenDin/>
+        <h3 className={"sub-section-header margin-topp-4rem"} id={"GjennomforSamtalen"}>
+            Gjennomfør samtalen ved å:
         </h3>
-        <InnledSamtalen/>
-        <SnakkOmArbeid/>
-        <FinnLosningerSammen/>
-        <PlanleggVeienVidereSammen/>
+        <InnledeSamtalen/>
+        <SnakkeOmArbeid/>
+        <FinneLosningerSammen/>
+        <PlanleggeVeienVidereSammen/>
     </section>
 }
 

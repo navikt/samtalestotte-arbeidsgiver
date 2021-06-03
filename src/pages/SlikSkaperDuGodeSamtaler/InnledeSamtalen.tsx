@@ -1,15 +1,15 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
-import "./InnledSamtalen.less";
+import "./InnledeSamtalen.less";
 
-const InnledSamtalen = ({callback}: InfoPanelProps) => {
+const InnledeSamtalen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
-        unikId={"innledSamtalen"}
-        tittel={"Innled samtalen"}
+        unikId={"innledeSamtalen"}
+        tittel={"Innlede samtalen"}
         panelLestSituasjon={"ulest"}
         callBack={callback}>
         <h3 className={"sub-section-header innled-samtalen-header"}>
-            Innled samtalen
+            Innlede samtalen
         </h3>
         <p className={"innled-samtalen-paragraf"}>
             Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.
@@ -38,4 +38,4 @@ const InnledSamtalen = ({callback}: InfoPanelProps) => {
     </EkspanderbartInfopanel>
 };
 
-export default InnledSamtalen;
+export default InnledeSamtalen;
