@@ -16,6 +16,7 @@ import 'nav-frontend-knapper-style';
 import Lenke from 'nav-frontend-lenker';
 import { VenstreChevron } from 'nav-frontend-chevron';
 import { TILBAKE } from '../../resources/urls';
+import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 
 export const Layout = (props: {
     title: string;
@@ -55,6 +56,7 @@ export const Layout = (props: {
                 <div className="layout__wrapper">
                     <div className="layout__content" ref={panelRef}>
                         <Lenke href={TILBAKE} className={"layout__link-no-print"}><VenstreChevron/>Tilbake</Lenke>
+                        <div className={'layout__small-screen-illustration'}><PageBannerSVG/></div>
                         <div className="layout__print-header">
                             <Normaltekst>{PROD_URL}</Normaltekst>
                         </div>

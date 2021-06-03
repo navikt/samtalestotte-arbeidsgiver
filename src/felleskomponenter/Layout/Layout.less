@@ -17,14 +17,29 @@
         border-radius: 0.25rem;
     }
 
+    &__small-screen-illustration {
+        display: flex;
+        justify-content: center;
+        background: @navBlaLighten80;
+        margin: 1rem -1rem 3rem;
+        svg {
+            flex-shrink: 0;
+        }
+    }
+
     &__react-to-print-wrapper {
         display: none;
     }
+
+
 
     @media (min-width: @screen-sm-min) {
         &__react-to-print-wrapper {
             display: flex;
             justify-content: flex-end;
+        }
+        &__small-screen-illustration {
+            display: none;
         }
     }
 

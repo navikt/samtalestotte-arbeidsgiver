@@ -1,7 +1,6 @@
 @import '../../../node_modules/nav-frontend-core/less/_variabler';
 
 .page-banner {
-    height: 16.5rem;
     background-color: @navBlaLighten80;
     border-bottom: 0.2rem solid @navBlaLighten60;
     padding-left: 1.25rem;
@@ -13,7 +12,7 @@
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
     }
     &__tekst-og-kontekst {
         margin: 1rem 1rem;
@@ -27,8 +26,11 @@
     }
 
     &__svg {
-        min-width: 200px;
-        min-height: 160px;
+        display: none;
+    }
+
+    &__kontekst-tekst {
+        display: none;
     }
 }
 
@@ -36,11 +38,25 @@
     .page-banner {
         height: 11rem;
 
+        &__innhold {
+            justify-content: space-between;
+        }
+
         &__illustrasjon {
             margin-bottom: -1px;
             display: block;
             align-self: flex-end;
             height: 9rem;
+        }
+
+        &__kontekst-tekst {
+            display: block;
+        }
+
+        &__svg {
+            display: block;
+            min-width: 200px;
+            min-height: 160px;
         }
     }
 }
