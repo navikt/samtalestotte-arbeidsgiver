@@ -25,15 +25,19 @@
   }
   align-items: center;
   row-gap: 1rem;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto;
   grid-template-rows: auto auto;
   grid-template-areas:
-            "ikon link"
-            "tittel link";
+            "tittel"
+            "link";
 }
 
 .lenkepanel-sykefravaer-ikon {
-  grid-area: ikon;
+  @media (min-width: @screen-sm-min) {
+    display: block;
+    grid-area: ikon;
+  }
+  display: none;
 }
 
 .lenkepanel-sykefravaer-child-wrapper p {
@@ -58,9 +62,19 @@
   }
 }
 
+.lenkepanel-sykefravaer-child-wrapper span.lenkepanel-sykefravaer-link-text {
+  @media (min-width: @screen-sm-min) {
+    display: block;
+  }
+  display: none;
+}
+
 .lenkepanel-sykefravaer-child-wrapper div {
+  @media (min-width: @screen-sm-min) {
+    align-items: flex-end;
+  }
   grid-area: link;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }

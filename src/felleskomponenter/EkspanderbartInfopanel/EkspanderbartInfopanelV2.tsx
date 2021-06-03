@@ -72,7 +72,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                 tittel={
                     <div className={"ekspanderbart-infopanel__tittel-flex-container"}>
                         <div className={"ekspanderbart-infopanel__tittel-grid"}>
-                            {props.ikon}
+                            <div className={'ekspanderbart-infopanel__ikon-container'}>{props.ikon}</div>
                             <div className={"ekspanderbart-infopanel__tittel-text"}>{props.tittel}</div>
                             {erLest && <Lest width={"62px"} height={"24px"} />}
                         </div>
