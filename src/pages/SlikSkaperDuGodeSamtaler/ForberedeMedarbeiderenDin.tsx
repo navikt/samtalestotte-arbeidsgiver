@@ -17,7 +17,7 @@ const ForberedeMedarbeiderenDin = ({callback}: InfoPanelProps) => {
                 Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis det passer best.
             </li>
             <li>
-                Les mer om <LoggbarLenke href={ENKLE_TIPS_FOR_DIGITALE_SAMTALER}>“Enkle tips for digitale samtaler”</LoggbarLenke> lengre ned på siden.
+                <LoggbarLenke href={ENKLE_TIPS_FOR_DIGITALE_SAMTALER}>Les mer om “Enkle tips for digitale samtaler” lengre ned på siden.</LoggbarLenke>
             </li>
             <li>
                 Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt,
@@ -27,8 +27,9 @@ const ForberedeMedarbeiderenDin = ({callback}: InfoPanelProps) => {
                 Du kan sende tema eller spørsmål til medarbeideren på forhånd.
             </li>
             <li>
-                Velg noen av de viktigste fra eksemplene under <LoggbarLenke href={GJENNOMFOR_SAMTALEN}>“gjennomføring av samtalen”</LoggbarLenke> lengre ned på
-                siden.
+                <LoggbarLenke href={GJENNOMFOR_SAMTALEN}>
+                    Velg noen av de viktigste fra eksemplene under “gjennomføring av samtalen” lengre ned på siden.
+                </LoggbarLenke>
             </li>
         </ul>
     </EkspanderbartInfopanel>;

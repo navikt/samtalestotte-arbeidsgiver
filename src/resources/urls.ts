@@ -20,5 +20,5 @@ export const SYKEFRAVÆRSSTATISTIKK_KALKULATOR =
 
 
 export const GODE_GREP_FOR_AA_BYGGE_RELASJONER = '#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base';
+export const ENKLE_TIPS_FOR_DIGITALE_SAMTALER = "#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base";
 export const GJENNOMFOR_SAMTALEN = '#GjennomforSamtalen';
-export const ENKLE_TIPS_FOR_DIGITALE_SAMTALER = "#enkleTipsForDigitaleSamtaler";

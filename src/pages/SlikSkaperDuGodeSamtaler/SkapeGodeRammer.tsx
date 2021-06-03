@@ -21,7 +21,7 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                 Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene
                 rundt samtalen er forutsigbare for alle.
             </p>
-            <ul>
+            <ul className={'margin-bunn-3rem'}>
                 <li>Hvordan ville du selv likt å bli møtt?</li>
                 <li>
                     Hvordan er din relasjon og holdning til medarbeideren, og hvordan kan dette
@@ -58,9 +58,8 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                         <li>
                             Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere.{' '}
                             <LoggbarLenke href={GODE_GREP_FOR_AA_BYGGE_RELASJONER}>
-                                Se “Gode grep for å bygge relasjoner”
+                                Se “Gode grep for å bygge relasjoner” lengre ned på siden
                             </LoggbarLenke>
-                            {' '}lengre ned på siden
                         </li>
                         <li>Tren på å gjennomføre samtaler, og be om tilbakemeldinger.</li>
                         <li>Del erfaringer og få veiledning av andre lederkollegaer.</li>
@@ -74,7 +73,7 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                 medarbeider.
             </h3>
             <p>Rutiner bør evalueres og justeres hvis de ikke bidrar til forutsigbarhet.</p>
-            <ul>
+            <ul className={'margin-bunn-3rem'}>
                 <li>
                     Hvordan bidrar sykefraværsrutinene i din virksomhet til forutsigbarhet rundt
                     oppgaver og ansvar?

@@ -15,7 +15,7 @@ const HvorforBrukeTidPaaSamtaler = () => {
         <p className={"bold-text"}>
             Gode samtaler bidrar til:
         </p>
-        <ul>
+        <ul className={'margin-bunn-4rem'}>
             <li>
                 lavt sykefravær og god lønnsomhet
             </li>
@@ -26,11 +26,6 @@ const HvorforBrukeTidPaaSamtaler = () => {
                 at du fyller dine lovpålagte plikter som arbeidsgiver
             </li>
         </ul>
-        <p className={"margin-bunn-2rem"}>
-            Lovverk og rutiner forteller deg hva du skal gjøre for å forebygge og følge opp sykefravær.
-            Gode samtaler er en metode for hvordan du fyller lovkravene, slik at de gir størst verdi for deg
-            og medarbeiderne dine.
-        </p>
         <NaarKanEnSamtaleVaereAktuelt/>
         <DetteKanDuSpoerreMedarbeiderenOm/>
         <SeHvorMyeSykefravaeretDittKoster/>

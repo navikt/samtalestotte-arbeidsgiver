@@ -12,8 +12,10 @@ const NaarKanEnSamtaleVaereAktuelt = ({callback}: InfoPanelProps) => {
         ikon={<ChatDoubleBubble width={"44px"} height={"44px"}/>}
         lestIkon={<ChatDoubleBubble width={"44px"} height={"44px"}/>}
     >
-        <p>
-            En samtale for å forebygge eller følge opp sykefravær handler om arbeidssituasjonen.
+        <p className={'margin-bunn-0rem'}>
+            <strong>En samtale for å forebygge eller følge opp sykefravær handler om arbeidssituasjonen.</strong>
+        </p>
+        <p className={'margin-topp-0rem'}>
             En samtale bør gjennomføres når
         </p>
         <ul>

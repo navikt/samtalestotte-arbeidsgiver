@@ -43,7 +43,6 @@ test('Snapshot test', async () => {
                   <div class=\\"page-banner__innhold\\">
                     <div class=\\"page-banner__tekst-og-kontekst\\">
                       <h1 class=\\"typo-sidetittel page-banner__tekst\\"></h1>
-                      <p class=\\"typo-normal page-banner__kontekst-tekst\\">Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid</p>
                     </div><svg class=\\"page-banner__svg\\" width=\\"200\\" height=\\"160\\" viewBox=\\"0 0 200 160\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                       <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M107.429 158H60.5709C58.5988 158 57 156.381 57 154.383V88.6171C57 86.6205 58.5988 85 60.5709 85H107.429C109.401 85 111 86.6205 111 88.6171V154.383C111 156.381 109.401 158 107.429 158\\" fill=\\"#A0A0A0\\"></path>
                       <rect width=\\"46\\" height=\\"55\\" transform=\\"translate(61 89)\\" fill=\\"white\\"></rect>

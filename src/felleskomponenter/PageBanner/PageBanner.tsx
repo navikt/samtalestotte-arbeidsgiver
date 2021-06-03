@@ -15,9 +15,6 @@ export const PageBanner = (props: {
                     <Sidetittel tag="h1" className="page-banner__tekst">
                         {props.title}
                     </Sidetittel>
-                    <Normaltekst className="page-banner__kontekst-tekst">
-                        {props.kontekst}
-                    </Normaltekst>
                 </div>
                 <PageBannerSVG className={"page-banner__svg"}/>
             </div>
