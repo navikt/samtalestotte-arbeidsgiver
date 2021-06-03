@@ -1,7 +1,6 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 import './TipsOmTilrettelegging.less';
-import Lenke from 'nav-frontend-lenker';
 import {
     FOLGE_OPP_TILRETTELEGGING,
     NETTKURS,

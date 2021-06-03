@@ -1,7 +1,6 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
 import './PlanleggeVeienVidereSammen.less';
-import Lenke from 'nav-frontend-lenker';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { OPPFOLGNINGSPLAN } from '../../resources/urls';
 

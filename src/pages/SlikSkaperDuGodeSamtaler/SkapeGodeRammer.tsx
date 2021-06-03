@@ -1,6 +1,5 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
-import Lenke from 'nav-frontend-lenker';
 import {
     DEN_VIKTIGE_SAMTALEN,
     GODE_GREP_FOR_AA_BYGGE_RELASJONER,
@@ -8,7 +7,6 @@ import {
     RETTNINGSLINJER_FOR_SYKEFRAVAERSOPPFOLGNING,
 } from '../../resources/urls';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
-import LoggbarLenkepanelBase from "../../felleskomponenter/LoggbarLenkepanelBase/LoggbarLenkepanelBase";
 
 const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
     return (
@@ -39,7 +37,7 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                         <li>
                             Planlegg bruk av samtaleteknikker for å sikre medvirkning i samtalen.{' '}
                             <LoggbarLenke href={DEN_VIKTIGE_SAMTALEN}>
-                                Les mer i heftet «Den viktige samtalen» hos idebanken.
+                                Les mer i heftet “Den viktige samtalen” hos idebanken.
                             </LoggbarLenke>
                         </li>
                         <li>
@@ -54,14 +52,15 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                         <li>
                             Lær mer om samtaler og samtaleteknikker.{' '}
                             <LoggbarLenke href={DEN_VIKTIGE_SAMTALEN}>
-                                Les mer i heftet «Den viktige samtalen» hos idebanken.
+                                Les mer i heftet “Den viktige samtalen” hos idebanken.
                             </LoggbarLenke>
                         </li>
                         <li>
                             Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere.{' '}
                             <LoggbarLenke href={GODE_GREP_FOR_AA_BYGGE_RELASJONER}>
-                                Se «Gode grep for å bygge relasjoner» lengre ned på siden
+                                Se “Gode grep for å bygge relasjoner”
                             </LoggbarLenke>
+                            {' '}lengre ned på siden
                         </li>
                         <li>Tren på å gjennomføre samtaler, og be om tilbakemeldinger.</li>
                         <li>Del erfaringer og få veiledning av andre lederkollegaer.</li>

@@ -1,6 +1,5 @@
 import Information from '../felleskomponenter/Ikoner/Information';
 import "./VisteDuAt.less";
-import Lenke from 'nav-frontend-lenker';
 import { FOREBYGGE_SYKEFRAVAER, KONTAKT_OSS } from '../resources/urls';
 import LoggbarLenke from "../felleskomponenter/LoggbarLenke/LoggbarLenke";
 
