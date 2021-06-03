@@ -37,8 +37,7 @@ const Suksesskriterier = ({ callback }: InfoPanelProps) => {
                 Du påtar deg for stort ansvar for helsa til medarbeideren.
             </li>
             <li>
-                Fokuset handler om behandling eller forhold i privatlivet i stedet for forhold på
-                arbeidsplassen.
+                Fokuset handler om behandling eller forhold i privatlivet i stedet for forhold på arbeidsplassen.
             </li>
         </ul>
     </EkspanderbartInfopanel>;
