@@ -2,31 +2,22 @@ import Head from 'next/head';
 import { Layout } from '../felleskomponenter/Layout/Layout';
 import { getPageProps, PageProps } from '../pageProps';
 import './index.less';
-import { Samtaleverktøy } from '../felleskomponenter/Samtaleverktøy/Samtaleverktøy';
-import { OppfølgingssamtaleGjennomføring } from '../felleskomponenter/OppfølgingssamtaleGjennomføring/OppfølgingssamtaleGjennomføring';
-import { SituasjonQA } from '../felleskomponenter/SituasjonQA/SituasjonQA';
-import { useEffect, useReducer } from 'react';
 import logEvent from '../amplitude/amplitude';
+import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
+import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
+import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
+import VisteDuAt from './VisteDuAt';
 import { useCookies } from 'react-cookie';
-import { cookieInitializer, cookieReducer } from '../cookie/CookieReducer';
-import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
+import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
+import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
-const isNotEmpty = (object: Object) => {
-    return object !== undefined && Object.keys(object).length > 0;
-};
-
 const Home = (props: { page: PageProps }) => {
     const [cookies, setCookie] = useCookies(['samtalestotte']);
-    const [state, dispatch] = useReducer(
-        cookieReducer,
-        cookies['samtalestotte'],
-        cookieInitializer
-    );
     Sentry.init({
         dsn: 'https://97af8a51172e4f9bb74ac9c05920b1d2@sentry.gc.nav.no/77',
         environment: getMiljø(),
@@ -42,31 +33,27 @@ const Home = (props: { page: PageProps }) => {
 
     useEffect(() => {
         if (
-            state.sendtStatistikk === 'nei' &&
-            [state.situasjonQA, state.oppfølgingSamtale, state.samtaleverktøy].some(isNotEmpty) &&
+            cookies.samtalestotte?.sendtStatistikk === undefined &&
             antallForsøkSendTilIaTjenesterMetrikker < 5
         ) {
             sendIATjenesteMetrikk().then((erMetrikkSendt) => {
-                const payload: string = erMetrikkSendt ? 'ja' : 'nei';
-                dispatch({ type: 'sendtStatistikk', payload: payload });
+                if(erMetrikkSendt) {
+                    setCookie(
+                        "samtalestotte",
+                        {sendtStatistikk: "ja" },
+                        {
+                            path: '/',
+                            maxAge: ETT_ÅR_I_SEKUNDER,
+                            sameSite: true,
+                        }
+                    );
+                }
             });
             antallForsøkSendTilIaTjenesterMetrikker++;
         }
-        setCookie(
-            'samtalestotte',
-            JSON.stringify({
-                ...state.situasjonQA,
-                ...state.samtaleverktøy,
-                ...state.oppfølgingSamtale,
-                sendtStatistikk: state.sendtStatistikk,
-            }),
-            {
-                path: '/',
-                maxAge: ETT_ÅR_I_SEKUNDER,
-                sameSite: true,
-            }
-        );
-    }, [state.situasjonQA, state.oppfølgingSamtale, state.samtaleverktøy]);
+    }, []);
+
+
 
     return (
         <div>
@@ -82,18 +69,12 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                     logEvent={logEvent}
                 >
-                    <Samtaleverktøy
-                        dispatch={dispatch}
-                        samtaleverktøyState={state.samtaleverktøy}
-                    />
-                    <OppfølgingssamtaleGjennomføring
-                        dispatch={dispatch}
-                        oppfølgingSamtaleState={state.oppfølgingSamtale}
-                    />
-                    <SituasjonQA dispatch={dispatch} situasjonQAState={state.situasjonQA} />
+                    <HvorforBrukeTidPaaSamtaler />
+                    <SlikSkaperDuGodeSamtaler />
+                    <MerInspirasjonOgGodeGrep />
+                    <VisteDuAt />
                 </Layout>
             </main>
-
             <footer></footer>
         </div>
     );

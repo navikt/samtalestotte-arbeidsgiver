@@ -117,40 +117,42 @@ test('Snapshot test', async () => {
                       <p class=\\"typo-normal\\">https://arbeidsgiver.nav.no/samtalestotte</p>
                     </div>
                     <div class=\\"layout__react-to-print-wrapper\\"><button class=\\"layout__knapp knapp\\">Skriv ut</button></div>
-                    <h2 class=\\"typo-systemtittel samtaleverktøy__tittel\\">Samtaleverktøy</h2>
-                    <div class=\\"ekspanderbart-infopanel__root\\">
-                      <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__arbeidssituasjonSamtale-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
-                          <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-uten-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-tittel\\">Når kan en samtale om arbeidssituasjonen være aktuelt?</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
-                        </button>
-                        <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__arbeidssituasjonSamtale-base\\"></div>
-                      </div>
-                      <div class=\\"ekspanderbart-infopanel__print-innhold\\">
-                        <div>
-                          <div class=\\"ekspanderbart-infopanel__innhold\\">
-                            <p class=\\"typo-normal\\">En samtale om arbeidssituasjonen gjennomføres hvis
-                            <ul class=\\"samtaleverktøy__ul_tett\\">
-                              <li>du eller din medarbeider opplever utfordringer med arbeidet og det skyldes sykdom eller andre forhold</li>
-                              <li>medarbeideren står i fare for å bli sykmeldt</li>
-                              <li>medarbeideren er sykmeldt</li>
-                              <li>medarbeideren har vært sykmeldt</li>
+                    <section class=\\"HvorforBrukeTidPaaSamtaler\\">
+                      <h2 class=\\"section-header\\">Hvorfor bruke tid på samtaler?</h2>
+                      <p class=\\"margin-bunn-2rem\\">Lovverk og rutiner forteller deg hva du skal gjøre for å forebygge og følge opp sykefravær. Gode samtaler er en metode for hvordan du fyller lovkravene, slik at de gir størst verdi for deg og medarbeiderne dine.</p>
+                      <p class=\\"bold-text\\">Gode samtaler bidrar til:</p>
+                      <ul class=\\"margin-bunn-4rem\\">
+                        <li>lavt sykefravær og god lønnsomhet</li>
+                        <li>motiverte medarbeidere og godt arbeidsmiljø</li>
+                        <li>at du fyller dine lovpålagte plikter som arbeidsgiver</li>
+                      </ul>
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__naarKanEnsamtaleVaereAktuelt-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"><svg width=\\"44px\\" height=\\"44px\\" viewBox=\\"0 0 39 39\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M3.45681 19.7359C1.19156 17.6744 0 15.0391 0 12.0714C0 5.52871 6.32613 0 13.8125 0C21.2989 0 27.625 5.52871 27.625 12.0714C27.625 18.7237 21.5862 24.3434 14.4387 24.3434C12.6375 24.3434 10.8714 23.9887 9.18439 23.2867L2.16396 25.9406C2.05714 25.9796 1.94848 26 1.83982 26C1.58383 26 1.33337 25.8923 1.15472 25.6936C0.900576 25.4094 0.847166 24.9971 1.01476 24.6554L3.45681 19.7359Z\\" fill=\\"#6AB889\\"></path><path d=\\"M35.9499 33.5189C37.9486 31.7151 39 29.4093 39 26.8125C39 21.0876 33.4181 16.25 26.8125 16.25C20.2069 16.25 14.625 21.0876 14.625 26.8125C14.625 32.6332 19.9534 37.5505 26.26 37.5505C27.8492 37.5505 29.4076 37.2401 30.8961 36.6259L37.0906 38.948C37.1849 38.9821 37.2808 39 37.3766 39C37.6025 39 37.8235 38.9058 37.9811 38.7319C38.2054 38.4832 38.2525 38.1225 38.1046 37.8235L35.9499 33.5189Z\\" fill=\\"#337C9B\\"></path></svg></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Når kan en samtale være aktuelt?</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__naarKanEnsamtaleVaereAktuelt-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <p class=\\"margin-bunn-0rem\\"><strong>En samtale for å forebygge eller følge opp sykefravær handler om arbeidssituasjonen.</strong></p>
+                            <p class=\\"margin-topp-0rem\\">En samtale bør gjennomføres når</p>
+                            <ul>
+                              <li>Du eller din medarbeider opplever utfordringer med arbeidet og det skyldes sykdom eller andre forhold.</li>
+                              <li>Medarbeideren står i fare for å bli sykmeldt.</li>
+                              <li>Medarbeideren er sykmeldt.</li>
+                              <li>Medarbeideren har vært sykmeldt.</li>
                             </ul>
-                            </p>
-                            <p class=\\"typo-normal ekspanderbart-infopanel__innhold-ny-avsnitt\\">Det finnes ingen oppskrift på en god samtale som gjelder alle situasjoner. Men det finnes noen grep som ofte bidrar til gode samtaler.</p>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class=\\"ekspanderbart-infopanel__root\\">
-                      <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__detteKanDuSpørreMedarbeiderenOm-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
-                          <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-uten-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-tittel\\">Dette kan du spørre medarbeideren om</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
-                        </button>
-                        <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__detteKanDuSpørreMedarbeiderenOm-base\\"></div>
-                      </div>
-                      <div class=\\"ekspanderbart-infopanel__print-innhold\\">
-                        <div>
-                          <div class=\\"ekspanderbart-infopanel__innhold\\">
-                            <p class=\\"typo-normal\\">Du kan stille spørsmål til medarbeideren som handler om forhold på arbeidsplassen.</p>
-                            <p class=\\"typo-normal\\">
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__detteKanDuSpoerreMedarbeiderenOm-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"><svg width=\\"44px\\" height=\\"44px\\" viewBox=\\"0 0 31 31\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M25.8333 0C28.6003 0 30.8593 2.17513 30.9937 4.9088L31 5.16667V19.375C31 22.142 28.8249 24.401 26.0912 24.5353L25.8333 24.5417H9.04167L0 31V5.16667C0 2.39966 2.17513 0.14069 4.9088 0.0063231L5.16667 0H25.8333ZM25.8333 2.58333L4.97387 2.59042C3.70401 2.68411 2.68942 3.69575 2.59114 4.96433L2.58333 5.16667V25.8333L7.75 21.9583H25.8333C27.1064 21.8644 28.2977 20.8415 28.4083 19.5678L28.4167 19.375L28.4096 4.97387C28.3159 3.70401 27.3043 2.68942 26.0357 2.59114L25.8333 2.58333ZM22.0184 6.45833L23.8256 8.30438L12.552 19.1529L7.75 14.6566L9.55208 12.8056L12.5467 15.5417L22.0184 6.45833Z\\" fill=\\"#0067C5\\"></path></svg></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Dette kan du spørre medarbeideren om</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__detteKanDuSpoerreMedarbeiderenOm-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div><strong>Du kan stille spørsmål som handler om fravær og forhold på arbeidsplassen.</strong>
                             <ul>
                               <li>Mulighetene til å utføre egne eller alternative arbeidsoppgaver.</li>
                               <li>Behov for tilrettelegging.</li>
@@ -158,247 +160,410 @@ test('Snapshot test', async () => {
                               <li>Hvor lenge medarbeideren tror fraværet vil vare.</li>
                               <li>Om det er forhold på arbeidsplassen som påvirker sykefraværet eller helsesituasjonen.</li>
                               <li>Om medarbeideren ønsker kontakt med NAV, bedriftshelsetjenesten eller andre samarbeidspartnere for å få hjelp med tilrettelegging og oppfølging.</li>
-                            </ul>
-                            </p>
-                            <p class=\\"typo-undertekst-bold ekspanderbart-infopanel__innhold-ny-avsnitt\\">Husk at sykefravær ikke er en privatsak, det påvirker arbeidsplassen.<br> Diagnose, behandling og forhold hjemme er privat.</p>
+                            </ul><strong>Husk at du ikke kan kreve opplysninger om diagnose, behandling og forhold hjemme.</strong>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class=\\"ekspanderbart-infopanel__root\\">
-                      <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__suksesskriterier-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
-                          <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon-wrapper\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-ikon\\"><svg width=\\"40\\" height=\\"40\\" viewBox=\\"0 0 40 40\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M16.6666 35H23.3333V39.04C23.3333 39.5702 22.9035 40 22.3733 40H17.6266C17.0964 40 16.6666 39.5702 16.6666 39.04V35Z\\" fill=\\"#B7B1A9\\"></path><path fill-rule=\\"evenodd\\" d=\\"M20 8.33337C12.6482 8.33337 6.66663 14.2348 6.66663 21.4881C6.66663 27.2155 10.4225 32.2508 15.8974 33.9912V35.6548C15.8974 36.2134 16.3569 36.6667 16.923 36.6667H23.0769C23.643 36.6667 24.1025 36.2134 24.1025 35.6548V33.9912C29.5774 32.2487 33.3333 27.2155 33.3333 21.4881C33.3333 14.2348 27.3518 8.33337 20 8.33337\\" fill=\\"#FFA733\\"></path><path fill-rule=\\"evenodd\\" d=\\"M21.6666 38.3334H18.3333C17.4133 38.3334 16.6666 38.7067 16.6666 39.1667C16.6666 39.6267 17.4133 40 18.3333 40H21.6666C22.5866 40 23.3333 39.6267 23.3333 39.1667C23.3333 38.7067 22.5866 38.3334 21.6666 38.3334\\" fill=\\"#59514B\\"></path><path fill-rule=\\"evenodd\\" d=\\"M23.75 35H16.25C15.56 35 15 35.3733 15 35.8333C15 36.2933 15.56 36.6667 16.25 36.6667H23.75C24.44 36.6667 25 36.2933 25 35.8333C25 35.3733 24.44 35 23.75 35\\" fill=\\"#59514B\\"></path><path fill-rule=\\"evenodd\\" d=\\"M20.0001 6.66667C20.4801 6.66667 20.8696 6.16889 20.8696 5.55556V1.11111C20.8696 0.497778 20.4801 0 20.0001 0C19.5201 0 19.1305 0.497778 19.1305 1.11111V5.55556C19.1305 6.16889 19.5201 6.66667 20.0001 6.66667\\" fill=\\"#FFA733\\"></path><path fill-rule=\\"evenodd\\" d=\\"M39.1304 19.0972H35.6522C35.1722 19.0972 34.7826 19.4705 34.7826 19.9305C34.7826 20.3905 35.1722 20.7638 35.6522 20.7638H39.1304C39.6104 20.7638 40 20.3905 40 19.9305C40 19.4705 39.6104 19.0972 39.1304 19.0972\\" fill=\\"#FFA733\\"></path><path fill-rule=\\"evenodd\\" d=\\"M4.34783 19.0972H0.869565C0.389565 19.0972 0 19.4705 0 19.9305C0 20.3905 0.389565 20.7638 0.869565 20.7638H4.34783C4.82783 20.7638 5.21739 20.3905 5.21739 19.9305C5.21739 19.4705 4.82783 19.0972 4.34783 19.0972\\" fill=\\"#FFA733\\"></path><path fill-rule=\\"evenodd\\" d=\\"M9.00864 9.76612C9.17245 9.92311 9.38639 10 9.60033 10C9.81261 10 10.0265 9.92311 10.1904 9.76612C10.5163 9.45374 10.5163 8.94594 10.1904 8.63356L6.64356 5.23428C6.31763 4.92191 5.78779 4.92191 5.46185 5.23428C5.13592 5.54666 5.13592 6.05447 5.46185 6.36684L9.00864 9.76612Z\\" fill=\\"#FFA733\\"></path><path fill-rule=\\"evenodd\\" d=\\"M30.4011 10C30.6149 10 30.8288 9.92153 30.9926 9.76619L34.5382 6.3664C34.864 6.05413 34.864 5.54808 34.5382 5.23421C34.2107 4.92193 33.6827 4.92193 33.3569 5.23421L29.8096 8.6324C29.4837 8.94627 29.4837 9.45232 29.8096 9.76619C29.9733 9.92153 30.1872 10 30.4011 10\\" fill=\\"#FFA733\\"></path></svg></div>Suksesskriterier</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
-                        </button>
-                        <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__suksesskriterier-base\\"></div>
-                      </div>
-                      <div class=\\"ekspanderbart-infopanel__print-innhold\\">
-                        <div>
-                          <p class=\\"typo-normal ekspanderbart-infopanel__innhold\\">
-                          <ul>
-                            <li>Lytt til hva medarbeideren har å si.</li>
-                            <li>Snakk om arbeidsevne, ikke diagnose.</li>
-                            <li>Bygg på medarbeiderens motivasjon.</li>
-                            <li>La medarbeideren komme med de gode løsningene.</li>
-                            <li>Ikke hopp rett til konklusjoner og løsninger.</li>
-                            <li>Gjennomfør samtaler regelmessig.</li>
-                          </ul>
-                          </p>
+                      </div><a href=\\"https://arbeidsgiver.nav.no/sykefravarsstatistikk/kalkulator\\" class=\\"lenkepanel lenkepanel-sykefravaer-kalkulator\\">
+                        <div class=\\"lenkepanel-sykefravaer-child-wrapper\\"><svg class=\\"lenkepanel-sykefravaer-ikon\\" width=\\"44px\\" height=\\"44px\\" viewBox=\\"0 0 21 32\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+                            <rect width=\\"20.0245\\" height=\\"32\\" rx=\\"2\\" fill=\\"#262626\\"></rect>
+                            <rect x=\\"2.00244\\" y=\\"3\\" width=\\"16.0196\\" height=\\"7\\" fill=\\"#F1F1F1\\"></rect>
+                            <rect x=\\"12.0146\\" y=\\"7\\" width=\\"2.00244\\" height=\\"1\\" fill=\\"#262626\\"></rect>
+                            <rect x=\\"15.0183\\" y=\\"7\\" width=\\"2.00245\\" height=\\"1\\" fill=\\"#262626\\"></rect>
+                            <path d=\\"M4.00489 17C5.11081 17 6.00733 16.1046 6.00733 15C6.00733 13.8954 5.11081 13 4.00489 13C2.89897 13 2.00244 13.8954 2.00244 15C2.00244 16.1046 2.89897 17 4.00489 17Z\\" fill=\\"#F1F1F1\\"></path>
+                            <path d=\\"M4.00489 23C5.11081 23 6.00733 22.1046 6.00733 21C6.00733 19.8954 5.11081 19 4.00489 19C2.89897 19 2.00244 19.8954 2.00244 21C2.00244 22.1046 2.89897 23 4.00489 23Z\\" fill=\\"#F1F1F1\\"></path>
+                            <path d=\\"M4.00489 29C5.11081 29 6.00733 28.1046 6.00733 27C6.00733 25.8954 5.11081 25 4.00489 25C2.89897 25 2.00244 25.8954 2.00244 27C2.00244 28.1046 2.89897 29 4.00489 29Z\\" fill=\\"#F1F1F1\\"></path>
+                            <path d=\\"M10.0122 17C11.1181 17 12.0147 16.1046 12.0147 15C12.0147 13.8954 11.1181 13 10.0122 13C8.90629 13 8.00977 13.8954 8.00977 15C8.00977 16.1046 8.90629 17 10.0122 17Z\\" fill=\\"#F1F1F1\\"></path>
+                            <path d=\\"M10.0122 23C11.1181 23 12.0147 22.1046 12.0147 21C12.0147 19.8954 11.1181 19 10.0122 19C8.90629 19 8.00977 19.8954 8.00977 21C8.00977 22.1046 8.90629 23 10.0122 23Z\\" fill=\\"#F1F1F1\\"></path>
+                            <path d=\\"M16.0195 17C17.1255 17 18.022 16.1046 18.022 15C18.022 13.8954 17.1255 13 16.0195 13C14.9136 13 14.0171 13.8954 14.0171 15C14.0171 16.1046 14.9136 17 16.0195 17Z\\" fill=\\"#FF9100\\"></path>
+                            <path d=\\"M16.0195 23C17.1255 23 18.022 22.1046 18.022 21C18.022 19.8954 17.1255 19 16.0195 19C14.9136 19 14.0171 19.8954 14.0171 21C14.0171 22.1046 14.9136 23 16.0195 23Z\\" fill=\\"#F1F1F1\\"></path>
+                            <rect x=\\"8.00977\\" y=\\"25\\" width=\\"10.0122\\" height=\\"4\\" rx=\\"2\\" fill=\\"#F1F1F1\\"></rect>
+                          </svg>
+                          <p>Se hvor mye sykefraværet ditt koster</p>
+                          <div><span class=\\"lenkepanel-sykefravaer-link-text\\">Gå til kalkulatoren</span><span class=\\"lenkepanel-sykefravaer-require-login\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 0a5 5 0 015 5v3h1a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V10a2 2 0 012-2h1V5a5 5 0 015-5zm6 10H6v12h12V10zm-6 3a2 2 0 011.001 3.732L13 20h-2v-3.268A2 2 0 0112 13zm0-11a3 3 0 00-2.995 2.824L9 5v3h6V5a3 3 0 00-2.824-2.995L12 2z\\" fill=\\"currentColor\\"></path></svg> Krever innlogging</span></div>
+                        </div><span class=\\"lenkepanel__indikator\\"></span>
+                      </a>
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__suksesskriterier-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"><svg width=\\"44px\\" height=\\"44px\\" viewBox=\\"0 0 44 44\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M18.3334 38.5H25.6667V43.04C25.6667 43.5702 25.2369 44 24.7067 44H19.2934C18.7632 44 18.3334 43.5702 18.3334 43.04V38.5Z\\" fill=\\"#A0A0A0\\"></path><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M22 9.16663C13.9131 9.16663 7.33337 15.6582 7.33337 23.6369C7.33337 29.937 11.4649 35.4757 17.4872 37.3903V39.2202C17.4872 39.8346 17.9927 40.3333 18.6154 40.3333H25.3847C26.0074 40.3333 26.5129 39.8346 26.5129 39.2202V37.3903C32.5352 35.4735 36.6667 29.937 36.6667 23.6369C36.6667 15.6582 30.087 9.16663 22 9.16663Z\\" fill=\\"#FFA733\\"></path><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M23.8334 42.1666H20.1667C19.1547 42.1666 18.3334 42.5773 18.3334 43.0833C18.3334 43.5893 19.1547 44 20.1667 44H23.8334C24.8454 44 25.6667 43.5893 25.6667 43.0833C25.6667 42.5773 24.8454 42.1666 23.8334 42.1666Z\\" fill=\\"#4F4F4F\\"></path><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M26.125 38.5H17.875C17.116 38.5 16.5 38.9107 16.5 39.4167C16.5 39.9227 17.116 40.3333 17.875 40.3333H26.125C26.884 40.3333 27.5 39.9227 27.5 39.4167C27.5 38.9107 26.884 38.5 26.125 38.5Z\\" fill=\\"#4F4F4F\\"></path><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M22 7.33333C22.528 7.33333 22.9565 6.78578 22.9565 6.11111V1.22222C22.9565 0.547556 22.528 0 22 0C21.472 0 21.0435 0.547556 21.0435 1.22222V6.11111C21.0435 6.78578 21.472 7.33333 22 7.33333Z\\" fill=\\"#FFA733\\"></path><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M43.0435 21.007H39.2174C38.6894 21.007 38.2609 21.4176 38.2609 21.9236C38.2609 22.4296 38.6894 22.8403 39.2174 22.8403H43.0435C43.5715 22.8403 44 22.4296 44 21.9236C44 21.4176 43.5715 21.007 43.0435 21.007Z\\" fill=\\"#FFA733\\"></path><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M4.78261 21.007H0.956522C0.428522 21.007 0 21.4176 0 21.9236C0 22.4296 0.428522 22.8403 0.956522 22.8403H4.78261C5.31061 22.8403 5.73913 22.4296 5.73913 21.9236C5.73913 21.4176 5.31061 21.007 4.78261 21.007Z\\" fill=\\"#FFA733\\"></path><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M9.9095 10.7427C10.0897 10.9154 10.325 11 10.5604 11C10.7939 11 11.0292 10.9154 11.2094 10.7427C11.5679 10.3991 11.5679 9.84053 11.2094 9.49692L7.3079 5.75771C6.94938 5.4141 6.36655 5.4141 6.00803 5.75771C5.6495 6.10132 5.6495 6.65991 6.00803 7.00352L9.9095 10.7427Z\\" fill=\\"#FFA733\\"></path><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M33.4412 11C33.6764 11 33.9117 10.9137 34.0918 10.7428L37.9921 7.00304C38.3505 6.65954 38.3505 6.10289 37.9921 5.75763C37.6318 5.41412 37.051 5.41412 36.6926 5.75763L32.7905 9.49564C32.4321 9.8409 32.4321 10.3976 32.7905 10.7428C32.9707 10.9137 33.2059 11 33.4412 11Z\\" fill=\\"#FFA733\\"></path></svg></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Suksesskriterier</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__suksesskriterier-base\\"></div>
                         </div>
-                      </div>
-                    </div>
-                    <div class=\\"samtaleverktøy__page-break\\"></div>
-                    <h2 class=\\"typo-systemtittel oppfølgingssamtaleGjennomføring__tittel\\">Slik gjennomfører du en nyttig samtale om arbeidssituasjonen</h2>
-                    <p class=\\"typo-ingress oppfølgingssamtaleGjennomføring__ingress\\">Samtalen kan deles inn i faser. Vi har gjort det enkelt for deg å forstå innholdet og bruke det aktivt i din hverdag.</p>
-                    <div class=\\"ekspanderbart-infopanel__root\\">
-                      <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__steg1Forberedelse-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
-                          <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon-wrapper\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-ikon\\"><svg width=\\"40\\" height=\\"40\\" viewBox=\\"0 0 40 40\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" aria-label=\\"Fase 1\\"><circle cx=\\"20\\" cy=\\"20\\" r=\\"19.5\\" fill=\\"white\\" stroke=\\"black\\"></circle><path d=\\"M14.22 28V25.18H18.48V12.64H14.97V10.48C15.93 10.3 16.75 10.09 17.43 9.85C18.13 9.59 18.78 9.28 19.38 8.92H21.96V25.18H25.71V28H14.22Z\\" fill=\\"#3E3832\\"></path></svg></div>Slik forbereder du samtalen</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
-                        </button>
-                        <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__steg1Forberedelse-base\\"></div>
-                      </div>
-                      <div class=\\"ekspanderbart-infopanel__print-innhold\\">
-                        <div>
-                          <div class=\\"ekspanderbart-infopanel__innhold\\">
-                            <p class=\\"typo-element\\">Lederens rolle i en samtale om arbeidssituasjonen</p>
-                            <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
-                              <li>Du er ansvarlig for å gjennomføre og dokumentere samtaler om arbeidssituasjonen.</li>
-                              <li>Ditt ansvar begrenser seg til å snakke om forhold på arbeidsplassen.</li>
-                              <li>Din viktigste oppgave er å få medarbeideren til å snakke.</li>
-                            </ul>
-                            <p class=\\"typo-element ekspanderbart-infopanel__innhold-ny-avsnitt\\">Kjente fallgruver</p>
-                            <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <ul>
+                              <li>Gjennomfør samtalen tidlig.</li>
+                              <li>Snakk om arbeidsoppgaver og muligheter på arbeidsplassen, ikke diagnose.</li>
+                              <li>Lytt til medarbeideren, gi muligheter til å fortelle og bidra med løsninger.</li>
+                              <li>Gjennomfør samtaler regelmessig.</li>
+                              <li>Jobb kontinuerlig med relasjoner til alle medarbeidere og forutsigbarhet gjennom rutiner.</li>
+                            </ul><strong>Kjente fallgruver</strong>
+                            <ul>
                               <li>Du påtar deg for stort ansvar for helsa til medarbeideren.</li>
-                              <li>Fokuset handler om behandling eller forhold i privatlivet.</li>
+                              <li>Fokuset handler om behandling eller forhold i privatlivet i stedet for forhold på arbeidsplassen.</li>
                             </ul>
-                            <p class=\\"typo-element ekspanderbart-infopanel__innhold-ny-avsnitt\\">Tema for samtalen</p><span>En samtale om arbeidssituasjon handler om</span>
-                            <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
-                              <li>gjennomgang av arbeidsoppgaver</li>
-                              <li>vurdering av hvilke oppgaver som kan gjennomføres med eller uten tilrettelegging eventuelt alternative arbeidsoppgaver</li>
-                              <li>plan for videre oppfølging</li>
-                            </ul>
-                          </div>
-                          <div class=\\"ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn\\">
-                            <p class=\\"typo-element\\">Noen tips til egen forberedelse før samtalen</p>
-                            <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
-                              <li>Hva er dine mål med samtalen?</li>
-                              <li>Hvordan er din relasjon og holdninger til medarbeideren, og hvordan kan dette påvirke dialogen?</li>
-                              <li>Hva har du observert? Du kan være tydelig på dine observasjoner og hvordan du tolker disse, men gi medarbeideren anledning til å korrigere hvis du har tatt feil.</li>
-                              <li>Hvilke tilretteleggingsmuligheter finnes på egen arbeidsplass og eventuelt ellers i organisasjonen og hvor er grensene for ditt handlingsrom?</li>
-                              <li><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap\\" class=\\"lenke\\">Les mer om tilrettelegging.</a></li>
-                              <li><a href=\\"https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge\\" class=\\"lenke\\">Les mer om NAVs virkemidler.</a></li>
-                            </ul>
-                            <div class=\\"ekspanderbart-infopanel__innhold-ny-avsnitt\\">
-                              <p class=\\"typo-element\\">Praktiske råd</p>
-                              <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
-                                <li>Avtal tid og sted som passer deg og medarbeideren.</li>
-                                <li>Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis det passer best.</li>
-                                <li>Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt, blir det enklere å finne løsninger sammen.</li>
-                                <li>Du kan sende spørsmål til medarbeideren på forhånd. Velg noen av de viktigste for deg fra eksemplene i fase tre og fire.</li>
-                              </ul>
-                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class=\\"oppfølgingssamtaleGjennomføring__page-break\\"></div>
-                    <div class=\\"ekspanderbart-infopanel__root\\">
-                      <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__steg2Innledning-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
-                          <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon-wrapper\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-ikon\\"><svg width=\\"40\\" height=\\"40\\" viewBox=\\"0 0 40 40\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" aria-label=\\"Fase 2\\"><circle cx=\\"20\\" cy=\\"20\\" r=\\"19.5\\" fill=\\"white\\" stroke=\\"black\\"></circle><path d=\\"M13.14 28V25.99C14.46 24.71 15.65 23.53 16.71 22.45C17.79 21.37 18.7 20.37 19.44 19.45C20.2 18.53 20.78 17.67 21.18 16.87C21.58 16.07 21.78 15.31 21.78 14.59C21.78 13.57 21.51 12.77 20.97 12.19C20.43 11.59 19.65 11.29 18.63 11.29C17.89 11.29 17.21 11.5 16.59 11.92C15.99 12.34 15.43 12.84 14.91 13.42L12.99 11.5C13.87 10.56 14.77 9.84 15.69 9.34C16.63 8.82 17.76 8.56 19.08 8.56C20 8.56 20.83 8.7 21.57 8.98C22.31 9.26 22.94 9.66 23.46 10.18C23.98 10.68 24.38 11.29 24.66 12.01C24.96 12.73 25.11 13.53 25.11 14.41C25.11 15.25 24.92 16.11 24.54 16.99C24.18 17.85 23.68 18.73 23.04 19.63C22.42 20.51 21.69 21.42 20.85 22.36C20.01 23.3 19.12 24.27 18.18 25.27C18.68 25.23 19.22 25.19 19.8 25.15C20.38 25.09 20.9 25.06 21.36 25.06H26.04V28H13.14Z\\" fill=\\"#3E3832\\"></path></svg></div>Slik innleder du samtalen</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
-                        </button>
-                        <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__steg2Innledning-base\\"></div>
+                    </section>
+                    <section class=\\"SlikSkaperDuGodeSamtaler\\">
+                      <h2 class=\\"section-header margin-topp-4rem\\">Slik skaper du gode samtaler</h2>
+                      <p class=\\"bold-text\\">Som arbeidsgiver er du ansvalig for:</p>
+                      <ul>
+                        <li>å forebygge og følge opp sykefravær</li>
+                        <li>å gjennomføre og dokumentere samtaler med medarbeidere</li>
+                        <li>å sikre at medarbeideren får bidra til å finne løsninger</li>
+                      </ul>
+                      <h3 class=\\"sub-section-header margin-topp-4rem\\">Forbered deg ved å:</h3>
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__skapeGodeRammer-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Skape gode rammer</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__skapeGodeRammer-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <h3 class=\\"sub-section-header\\">Gode samtaler forutsetter trygghet</h3>
+                            <p>Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene rundt samtalen er forutsigbare for alle.</p>
+                            <ul class=\\"margin-bunn-3rem\\">
+                              <li>Hvordan ville du selv likt å bli møtt?</li>
+                              <li>Hvordan er din relasjon og holdning til medarbeideren, og hvordan kan dette påvirke dialogen?</li>
+                              <li>Hvor trygg føler du deg på å gjennomføre samtaler?</li>
+                            </ul><strong>Dette kan du gjøre:</strong>
+                            <div class=\\"infoPanel-kolonner margin-bunn-1rem\\">
+                              <div class=\\"gra-avrundet-boks\\">
+                                <h4>på kort sikt:</h4>
+                                <ul class=\\"spaced-list\\">
+                                  <li>Planlegg bruk av samtaleteknikker for å sikre medvirkning i samtalen. <a href=\\"https://mag.idebanken.org/denviktigesamtalen/\\" class=\\"lenke\\">Les mer i heftet “Den viktige samtalen” hos idebanken.</a></li>
+                                  <li>Be om veiledning før samtalen. Veiledning kan du få fra kollegaer, bedriftshelsetjenesten, NAV eller andre med kompetanse på samtaler.</li>
+                                </ul>
+                              </div>
+                              <div class=\\"gra-avrundet-boks\\">
+                                <h4>over tid og som kontinuerlig arbeid:</h4>
+                                <ul class=\\"spaced-list\\">
+                                  <li>Lær mer om samtaler og samtaleteknikker. <a href=\\"https://mag.idebanken.org/denviktigesamtalen/\\" class=\\"lenke\\">Les mer i heftet “Den viktige samtalen” hos idebanken.</a></li>
+                                  <li>Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere. <a href=\\"#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base\\" class=\\"lenke\\">Se “Gode grep for å bygge relasjoner” lengre ned på siden</a></li>
+                                  <li>Tren på å gjennomføre samtaler, og be om tilbakemeldinger.</li>
+                                  <li>Del erfaringer og få veiledning av andre lederkollegaer.</li>
+                                  <li>Delta på kurs.</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class=\\"horizontal-line\\"></div>
+                            <h3 class=\\"sub-section-header\\">Gode rutiner effektiviserer arbeidet og skaper forutsigbarhet for deg og din medarbeider.</h3>
+                            <p>Rutiner bør evalueres og justeres hvis de ikke bidrar til forutsigbarhet.</p>
+                            <ul class=\\"margin-bunn-3rem\\">
+                              <li>Hvordan bidrar sykefraværsrutinene i din virksomhet til forutsigbarhet rundt oppgaver og ansvar?</li>
+                            </ul><strong>Dette kan du gjøre:</strong>
+                            <div class=\\"infoPanel-kolonner margin-bunn-1rem\\">
+                              <div class=\\"gra-avrundet-boks\\">
+                                <h4>på kort sikt:</h4>
+                                <ul class=\\"spaced-list\\">
+                                  <li>Bruk sykefraværsrutinene i din virksomhet, for å skape forutsigbarhet for deg og medarbeideren.</li>
+                                  <li>Finn ut om du kan få hjelp av noen i din virksomhet eller i interne systemer.</li>
+                                </ul>
+                              </div>
+                              <div class=\\"gra-avrundet-boks\\">
+                                <h4>over tid og som kontinuerlig arbeid:</h4>
+                                <ul class=\\"spaced-list\\">
+                                  <li>Evaluer rutinene dine. <a href=\\"https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene\\" class=\\"lenke\\">Gå til sjekkliste hos idébanken.</a></li>
+                                  <li>Utarbeid sykefraværsrutiner. <a href=\\"https://www.idebanken.org/kloke-grep/artikler/rutiner-og-retningslinjer-for-sykefravaersoppfolging\\" class=\\"lenke\\">Les mer om hvordan dere kan lage rutiner hos Idébanken.</a></li>
+                                  <li>Informer alle ansatte om rutinene og hvor de finner dem.</li>
+                                </ul>
+                              </div>
+                            </div><strong>Tips:</strong>
+                            <p>Arbeidet med rutiner bør settes inn i arbeidsplassens plan for å forebygge sykefravær slik at du kan dokumentere arbeidet.</p>
+                          </div>
+                        </div>
                       </div>
-                      <div class=\\"ekspanderbart-infopanel__print-innhold\\">
-                        <div>
-                          <div class=\\"ekspanderbart-infopanel__innhold\\">
-                            <p class=\\"typo-normal\\">Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.<br>Rammene hjelper dere med å holde fokus og tid.</p>
-                            <p class=\\"typo-element ekspanderbart-infopanel__innhold-ny-avsnitt\\">Vanlige tema i innledning:</p>
-                            <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__planleggeInnholdISamtalen-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Planlegge innhold i samtalen</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__planleggeInnholdISamtalen-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <p>Legg en plan for hva du ønsker å oppnå og hvordan du kan gjennomføre samtalen. Husk å lytte til medarbeiderens behov.</p>
+                            <ul class=\\"alternatingDiscList\\">
+                              <li><strong>Hva er dine mål med samtalen?</strong></li>
+                              <li>Noter ned målet, og ha det framme når du er i samtalen.</li>
+                              <li><strong>Hvor trygg er du når du skal strukturere samtalen?</strong></li>
+                              <li><a href=\\"#GjennomforSamtalen\\" class=\\"lenke\\">Velg tema og hjelpespørsmål under “gjennomføring av samtalen” lengre ned på siden.</a></li>
+                            </ul>
+                            <p>Hvis du skal ta opp et tema du synes er vanskelig, bør du bør være konkret og tydelig på dine observasjoner. Du kan fortelle hvordan du tolker observasjonene, og gi medarbeideren anledning til å korrigere.</p>
+                            <ul class=\\"alternatingDiscList\\">
+                              <li><strong>Hva har du observert?</strong></li>
+                              <li>Eksempler kan være endring i fravær, i atferd eller i hvordan arbeidsoppgavene blir utført. Husk å gi konkrete eksempler på det medarbeideren er god på også. Noter gjerne ned og ta med i samtalen.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__forberedeMedarbeiderenDin-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Forberede medarbeideren din</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__forberedeMedarbeiderenDin-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <ul>
+                              <li>Avtal tid og sted som passer deg og medarbeideren.</li>
+                              <li>Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis det passer best.</li>
+                              <li><a href=\\"#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\" class=\\"lenke\\">Les mer om “Enkle tips for digitale samtaler” lengre ned på siden.</a></li>
+                              <li>Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt, blir det enklere å finne løsninger sammen.</li>
+                              <li>Du kan sende tema eller spørsmål til medarbeideren på forhånd.</li>
+                              <li><a href=\\"#GjennomforSamtalen\\" class=\\"lenke\\">Velg noen av de viktigste fra eksemplene under “gjennomføring av samtalen” lengre ned på siden.</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <h3 class=\\"sub-section-header margin-topp-4rem\\" id=\\"GjennomforSamtalen\\">Gjennomfør samtalen ved å:</h3>
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__innledeSamtalen-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Innlede samtalen</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__innledeSamtalen-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <h3 class=\\"sub-section-header innled-samtalen-header\\">Innlede samtalen</h3>
+                            <p class=\\"innled-samtalen-paragraf\\">Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt. Rammene hjelper dere med å holde fokus og tid.</p><strong class=\\"innled-samtalen-strong\\">Vanlige tema i innledning:</strong>
+                            <ul class=\\"innled-samtalen-liste\\">
                               <li>ønske velkommen</li>
                               <li>informere om tidsrammene for møtet</li>
                               <li>informere om målet med møtet</li>
                               <li>gå igjennom agenda</li>
-                              <li>spørre hva medarbeideren tenker om mål og agenda</li>
+                              <li>spørre om medarbeideren har innspill til mål og agenda</li>
                             </ul>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class=\\"oppfølgingssamtaleGjennomføring__page-break\\"></div>
-                    <div class=\\"ekspanderbart-infopanel__root\\">
-                      <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__steg3Snakk-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
-                          <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon-wrapper\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-ikon\\"><svg width=\\"40\\" height=\\"40\\" viewBox=\\"0 0 40 40\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" aria-label=\\"Fase 3\\"><circle cx=\\"20\\" cy=\\"20\\" r=\\"19.5\\" fill=\\"white\\" stroke=\\"black\\"></circle><path d=\\"M19.2 28.36C17.64 28.36 16.34 28.1 15.3 27.58C14.26 27.06 13.4 26.42 12.72 25.66L14.37 23.44C14.95 24.02 15.61 24.52 16.35 24.94C17.09 25.34 17.94 25.54 18.9 25.54C19.94 25.54 20.78 25.29 21.42 24.79C22.08 24.27 22.41 23.56 22.41 22.66C22.41 22.16 22.32 21.71 22.14 21.31C21.96 20.91 21.65 20.57 21.21 20.29C20.79 20.01 20.22 19.8 19.5 19.66C18.78 19.5 17.88 19.42 16.8 19.42V16.9C17.74 16.9 18.52 16.83 19.14 16.69C19.78 16.53 20.29 16.32 20.67 16.06C21.07 15.78 21.35 15.45 21.51 15.07C21.69 14.69 21.78 14.28 21.78 13.84C21.78 13.04 21.53 12.42 21.03 11.98C20.53 11.52 19.84 11.29 18.96 11.29C18.2 11.29 17.51 11.46 16.89 11.8C16.29 12.12 15.7 12.55 15.12 13.09L13.35 10.96C14.17 10.24 15.04 9.66 15.96 9.22C16.9 8.78 17.94 8.56 19.08 8.56C20 8.56 20.84 8.67 21.6 8.89C22.36 9.11 23.01 9.44 23.55 9.88C24.09 10.3 24.51 10.83 24.81 11.47C25.11 12.09 25.26 12.8 25.26 13.6C25.26 14.68 24.96 15.58 24.36 16.3C23.78 17.02 22.97 17.58 21.93 17.98V18.1C23.07 18.4 24.01 18.95 24.75 19.75C25.51 20.55 25.89 21.58 25.89 22.84C25.89 23.72 25.71 24.5 25.35 25.18C25.01 25.86 24.53 26.44 23.91 26.92C23.31 27.38 22.6 27.74 21.78 28C20.98 28.24 20.12 28.36 19.2 28.36Z\\" fill=\\"#3E3832\\"></path></svg></div>Slik snakker dere om arbeidssituasjonen</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
-                        </button>
-                        <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__steg3Snakk-base\\"></div>
-                      </div>
-                      <div class=\\"ekspanderbart-infopanel__print-innhold\\">
-                        <div>
-                          <div class=\\"ekspanderbart-infopanel__innhold\\">
-                            <p class=\\"typo-normal\\">En samtale om arbeidssituasjonen handler om medarbeideren. Din oppgave er å legge til rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene og arbeidsdagen oppleves. Unngå å stille for mange spørsmål etter hverandre uten å la medarbeideren få tid til å svare.</p>
-                            <p class=\\"typo-element ekspanderbart-infopanel__innhold-ny-avsnitt\\">Vanlige tema i samtalen om arbeidssituasjonen:</p>
-                            <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__snakkeOmArbeid-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Snakke om arbeid</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__snakkeOmArbeid-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <h3 class=\\"sub-section-header snakk-om-arbeid-header\\">En samtale for å forebygge eller følge opp sykefravær handler om medarbeideren.</h3>
+                            <p class=\\"snakk-om-arbeid-paragraf\\">Din oppgave er å legge til rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene og arbeidsdagen oppleves.</p><strong>Tips:</strong>
+                            <ul class=\\"snakk-om-arbeid-liste\\">
+                              <li>Bruk åpne spørsmål med spørreord som hva, hvor, hvordan, hvem eller når.</li>
+                              <li>Unngå ordet “hvorfor”. Hvorfor kan ofte oppleves som en anklage eller for å fordele skyld.</li>
+                              <li>Tål stillhet slik at medarbeideren får tid til å tenke før svarene kommer.</li>
+                            </ul><strong>Vanlige tema i samtalen om arbeidssituasjonen:</strong>
+                            <ul class=\\"snakk-om-arbeid-liste\\">
                               <li>arbeidsoppgaver</li>
                               <li>arbeidstid</li>
                               <li>samarbeid</li>
                               <li>arbeidsmiljø</li>
                               <li>tidligere tiltak</li>
-                            </ul>
-                            <p class=\\"typo-element ekspanderbart-infopanel__innhold-ny-avsnitt\\">Eksempler på spørsmål:</p>
-                            <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
-                              <li>Hvordan vil du beskrive arbeidsdagen din?</li>
-                              <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
-                              <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
-                              <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
-                              <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
-                              <li>Hvordan vil du beskrive stressnivået?</li>
-                              <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
-                              <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
-                              <li>Hva motiverer deg mest akkurat nå?</li>
-                              <li>Hva oppfatter du som dine styrker nå?</li>
-                            </ul>
-                            <p>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class=\\"oppfølgingssamtaleGjennomføring__page-break\\"></div>
-                    <div class=\\"ekspanderbart-infopanel__root\\">
-                      <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__steg4FinnLøsning-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
-                          <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon-wrapper\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-ikon\\"><svg width=\\"40\\" height=\\"40\\" viewBox=\\"0 0 40 40\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" aria-label=\\"Fase 4\\"><circle cx=\\"20\\" cy=\\"20\\" r=\\"19.5\\" fill=\\"white\\" stroke=\\"black\\"></circle><path d=\\"M20.97 28V23.08H12.54V20.74L20.1 8.92H24.21V20.41H26.61V23.08H24.21V28H20.97ZM15.96 20.41H20.97V16.09C20.97 15.53 20.98 14.87 21 14.11C21.04 13.35 21.08 12.69 21.12 12.13H21C20.76 12.63 20.51 13.12 20.25 13.6C19.99 14.08 19.72 14.58 19.44 15.1L15.96 20.41Z\\" fill=\\"#3E3832\\"></path></svg></div>Slik finner dere løsninger sammen</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
-                        </button>
-                        <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__steg4FinnLøsning-base\\"></div>
-                      </div>
-                      <div class=\\"ekspanderbart-infopanel__print-innhold\\">
-                        <div>
-                          <div class=\\"ekspanderbart-infopanel__innhold\\">
-                            <p class=\\"typo-normal ekspanderbart-infopanel__innhold-ny-avsnitt\\">Det er nyttig å sikre en felles forståelse av arbeidssituasjonen før dere går videre til å snakke om løsninger og tiltak. Medarbeidere som uttrykker løsningsforslag selv, vil ofte få økt motivasjon ved gjennomføring.</p>
-                            <p class=\\"typo-element ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn ekspanderbart-infopanel__innhold-display-flex\\">
-                            <p class=\\"typo-normal\\"><span class=\\"ekspanderbart-infopanel__innhold-bold\\">Husk</span> at dersom medarbeideren har negative erfaringer, for eksempel at tiltak ikke har fungert, bør du anerkjenne dette. Fokuset bør ligge framover i tid og på hvilke muligheter som finnes.</p>
-                            </p>
-                            <div class=\\"ekspanderbart-infopanel__innhold-ny-avsnitt\\">
-                              <p class=\\"typo-element\\">Vanlige tema når dere finner løsninger sammen:</p>
-                              <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
-                                <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
-                                <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
-                                <li>tilpasse organisering av arbeidet</li>
-                                <li>tilpasse samarbeid og samhandling med andre</li>
-                                <li>alternative arbeidsoppgaver</li>
-                                <li>behov for informasjon og tilbakemeldinger</li>
-                                <li>arbeidsmiljø</li>
-                                <li>kompetanse</li>
-                                <li>fysisk utforming av arbeidsplassen</li>
-                                <li><a href=\\"https://www.nav.no/no/bedrift/hjelpemidler/funksjonsassistanse\\" class=\\"lenke\\">hjelpemidler</a></li>
-                                <li>andre forhold</li>
+                            </ul><strong>Eksempler på spørsmål:</strong>
+                            <p class=\\"snakk-om-arbeid-paragraf\\">Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
+                            <div class=\\"gra-avrundet-boks margin-bunn-2rem \\"><strong>Arbeidsoppgaver</strong>
+                              <ul>
+                                <li>Hvordan vil du beskrive arbeidsdagen din?</li>
+                                <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
+                                <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
                               </ul>
                             </div>
-                            <p class=\\"typo-element ekspanderbart-infopanel__innhold-ny-avsnitt\\">Eksempler på spørsmål:</p>
-                            <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
-                              <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
-                              <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
-                              <li>Hvordan bør tiden disponeres?</li>
-                              <li>Hvordan kan endringer i tempo, arbeidstid eller arbeidssted øke mulighetene for arbeid?</li>
-                              <li>Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt eller delvis?</li>
-                              <li>Hvilke løsninger ser du for deg?</li>
-                              <li>Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?</li>
-                              <li>Hvordan ser du for deg veien videre?</li>
-                              <li>Hvordan ser du for deg det videre sykmeldingsforløpet?</li>
-                              <li>Hvilke tiltak bør vi prøve først?</li>
-                            </ul><span>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</span>
+                            <div class=\\"gra-avrundet-boks margin-bunn-2rem \\"><strong>Arbeidsmiljø</strong>
+                              <ul>
+                                <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
+                                <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
+                                <li>Hvordan vil du beskrive stressnivået?</li>
+                                <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
+                              </ul>
+                            </div>
+                            <div class=\\"gra-avrundet-boks margin-bunn-2rem \\"><strong>Samarbeid og motivasjon</strong>
+                              <ul>
+                                <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
+                                <li>Hva motiverer deg mest akkurat nå?</li>
+                                <li>Hva oppfatter du som dine styrker nå?</li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class=\\"oppfølgingssamtaleGjennomføring__page-break\\"></div>
-                    <div class=\\"ekspanderbart-infopanel__root\\">
-                      <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__steg5Avslutning-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
-                          <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon-wrapper\\"><div class=\\"ekspanderbart-infopanel__tittel-med-ikon\\"><div class=\\"ekspanderbart-infopanel__kun-ikon\\"><svg width=\\"40\\" height=\\"40\\" viewBox=\\"0 0 40 40\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" aria-label=\\"Fase 5\\"><circle cx=\\"20\\" cy=\\"20\\" r=\\"19.5\\" fill=\\"white\\" stroke=\\"black\\"></circle><path d=\\"M19.23 28.36C17.69 28.36 16.39 28.1 15.33 27.58C14.29 27.04 13.42 26.42 12.72 25.72L14.31 23.5C14.89 24.04 15.54 24.52 16.26 24.94C16.98 25.34 17.82 25.54 18.78 25.54C19.86 25.54 20.74 25.22 21.42 24.58C22.12 23.94 22.47 23.04 22.47 21.88C22.47 20.74 22.15 19.86 21.51 19.24C20.87 18.62 20.02 18.31 18.96 18.31C18.34 18.31 17.82 18.4 17.4 18.58C16.98 18.74 16.48 19.01 15.9 19.39L14.25 18.34L14.82 8.92H25.02V11.83H17.82L17.43 16.45C17.83 16.25 18.22 16.1 18.6 16C19 15.88 19.45 15.82 19.95 15.82C20.77 15.82 21.54 15.94 22.26 16.18C23 16.42 23.64 16.79 24.18 17.29C24.72 17.77 25.15 18.39 25.47 19.15C25.79 19.89 25.95 20.77 25.95 21.79C25.95 22.83 25.76 23.76 25.38 24.58C25.02 25.4 24.53 26.09 23.91 26.65C23.29 27.21 22.57 27.64 21.75 27.94C20.95 28.22 20.11 28.36 19.23 28.36Z\\" fill=\\"#3E3832\\"></path></svg></div>Slik avslutter du samtalen</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
-                        </button>
-                        <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__steg5Avslutning-base\\"></div>
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__finneLøsningerSammen-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Finne løsninger sammen</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__finneLøsningerSammen-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <h3 class=\\"sub-section-header finn-losninger-sammen-header\\">Hjelp medarbeideren med å finne løsninger.</h3>
+                            <p class=\\"finn-losninger-sammen-paragraf\\">Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først, kan det bli enklere å se løsningsforslag selv. Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.</p><strong>Tips:</strong>
+                            <p class=\\"finn-losninger-sammen-paragraf\\">Snakk om det som skal skje framover i tid og på hvilke muligheter som finnes.</p><strong>Vanlige tema når dere finner løsninger sammen:</strong>
+                            <ul class=\\"finn-losninger-sammen-liste\\">
+                              <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
+                              <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
+                              <li>tilpasse organisering av arbeidet</li>
+                              <li>tilpasse samarbeid og samhandling med andre</li>
+                              <li class=\\"margin-bunn-2rem\\">alternative arbeidsoppgaver</li>
+                              <li>behov for informasjon og tilbakemeldinger</li>
+                              <li>arbeidsmiljø</li>
+                              <li class=\\"margin-bunn-2rem\\">kompetanse</li>
+                              <li>fysisk utforming av arbeidsplassen</li>
+                              <li>hjelpemidler</li>
+                              <li>andre forhold</li>
+                            </ul><strong>Eksempler på spørsmål:</strong>
+                            <p class=\\"finn-losninger-sammen-paragraf\\">Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
+                            <div class=\\"gra-avrundet-boks margin-bunn-2rem\\"><strong>Hvordan kan jeg som leder hjelpe deg?</strong>
+                              <ul>
+                                <li>Hva ville være god og støttende hjelp for deg i en travel arbeidsdag?</li>
+                                <li class=\\"margin-bunn-2rem\\">Hva vil du oppleve som god støtte?</li>
+                                <li>Hva kan jeg som leder hjelpe deg med, når det gjelder arbeidsoppgaver?</li>
+                                <li>Hvordan kan jeg som leder hjelpe deg med å få en mindre stressende arbeidsdag?</li>
+                              </ul>
+                            </div>
+                            <div class=\\"gra-avrundet-boks\\"><strong>Løsninger</strong>
+                              <ul>
+                                <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
+                                <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
+                                <li>Hvordan bør tiden disponeres?</li>
+                                <li>Hvordan kan endringer i tempo, arbeidstid eller arbeidssted øke mulighetene for arbeid?</li>
+                                <li>Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt eller delvis?</li>
+                                <li>Hvilke løsninger ser du for deg?</li>
+                                <li>Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?</li>
+                                <li>Hvilke tiltak bør vi prøve først?</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class=\\"ekspanderbart-infopanel__print-innhold\\">
-                        <div>
-                          <div class=\\"ekspanderbart-infopanel__innhold\\">
-                            <p class=\\"typo-normal ekspanderbart-infopanel__innhold-ny-avsnitt\\">En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer.<br>Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.</p>
-                            <p class=\\"typo-normal\\"><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap\\" class=\\"lenke\\">Les mer om oppfølgingsplan</a></p>
-                            <p class=\\"typo-element ekspanderbart-infopanel__innhold-ny-avsnitt\\">Vanlige tema i avslutningen:</p>
-                            <p class=\\"typo-normal\\">
-                            <ul class=\\"ekspanderbart-infopanel__ul-tett\\">
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__planleggeVeienVidereSammen-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Planlegge veien videre sammen</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__planleggeVeienVidereSammen-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <h3 class=\\"sub-section-header planlegg-veien-videre-sammen-no-margin-bottom\\">Oppsummer i felleskap</h3>
+                            <p class=\\"planlegg-veien-videre-sammen-no-margin-top\\">En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer det dere er blitt enige om og at dere lager en plan for videre oppfølging.</p><strong>Tips:</strong>
+                            <p class=\\"planlegg-veien-videre-sammen-no-margin-top\\">Det er lurt med flere korte oppsummeringer til hvert punkt dere har avtalt. Bruk spørsmål som kan besvares med ja eller nei for å sjekke at dere har felles forståelse.</p>
+                            <p class=\\"planlegg-veien-videre-sammen-no-margin-bottom\\">Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.</p>
+                            <p class=\\"planlegg-veien-videre-sammen-no-margin-top\\"><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap\\" class=\\"lenke\\">Les mer om oppfølgingsplan på nav.no.</a></p><strong>Vanlige tema i avslutningen:</strong>
+                            <ul class=\\"planlegg-veien-videre-sammen-no-margin-top\\">
+                              <li class=\\"margin-bunn-2rem\\">dato for neste samtale og hvor ofte samtaler skal gjennomføres</li>
                               <li>avtaler, tilrettelegginger og tiltak</li>
-                              <li>om tilrettelegging er midlertidig eller permanent</li>
+                              <li>om tilretteleggingen er midlertidig eller permanent</li>
                               <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
-                              <li>dato for neste samtale og hvor ofte samtaler skal gjennomføres</li>
+                              <li class=\\"margin-bunn-2rem\\">avklare om det er behov for å informere andre kollegaer om tilrettelegging som er avtalt</li>
                               <li>hvem som er ansvarlig for å følge opp</li>
                               <li>om det er behov for videre avklaring eller hjelp fra andre</li>
                             </ul>
-                            </p>
-                            <div class=\\"ekspanderbart-infopanel__innhold-avsnitt-med-bakgrunn\\">
-                              <p class=\\"typo-normal\\">Av og til blir du og medarbeideren ikke enige om løsningene og det er greit. </p>
-                              <p class=\\"typo-normal\\">Da dokumenterer du begges synspunkter i oppsummeringen eller oppfølgingsplanen.</p>
-                              <p class=\\"typo-element\\">Tips: gjennomfør flere samtaler regelmessig. </p>
-                            </div>
+                            <p>Av og til blir du og medarbeideren ikke enige om løsningene og det er greit. Da dokumenterer du begges synspunkter i oppsummeringen eller oppfølgingsplanen.</p>
+                            <p><strong>Tips:</strong> gjennomfør flere samtaler regelmessig.</p>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class=\\"situasjonqa situasjonqa__innhold-no-print\\">
-                      <h2 class=\\"typo-systemtittel situasjonqa__tittel\\">Hvordan er situasjonen hos dere?</h2>
-                      <div class=\\"les-mer-panel\\">
-                        <div class=\\"les-mer-panel__toggler slik-kan-disse-spørsmålene-hjelpe-deg\\"><button class=\\"infoToggler\\" type=\\"button\\" aria-expanded=\\"false\\"><span class=\\"infoToggler__label\\"><span class=\\"typo-normal\\">Slik kan disse spørsmålene hjelpe deg</span></span><span class=\\"nav-frontend-chevron chevronboks chevron--ned\\"></span></button></div>
-                        <div class=\\"les-mer-panel__innhold\\"></div>
-                        <div class=\\"les-mer-panel__print-innhold slik-kan-disse-spørsmålene-hjelpe-deg\\">
-                          <div class=\\"slik-kan-disse-spørsmålene-hjelpe-deg__innhold\\">
+                    </section>
+                    <section class=\\"MerInspirasjonOgGodeGrep\\">
+                      <h2 class=\\"section-header margin-topp-4rem\\">Mer inspirasjon og gode grep</h2>
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Enkle tips for digitale samtaler</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
                             <ul>
-                              <li>Lavt sykefravær og god dialog fører til motiverte medarbeidere og god lønnsomhet.</li>
-                              <li>Systematisk arbeid med arbeidsmiljøet er en lovpålagt oppgave. Evaluering av samtaler om arbeidssituasjonen gir en verdifull kartlegging. Denne bør du bruke når du jobber med forebyggende arbeidsmiljøarbeid.</li>
-                              <li>Vi hjelper deg videre med relevante tips ut fra dine svar.</li>
+                              <li>Husk forberedelse og struktur også i digitale samtaler.</li>
+                              <li>Bli enige om tittel på avtalen når du bruker digital innkalling og digitale møterom.</li>
+                              <li>La kamera være på.</li>
+                              <li>Det er bedre med flere korte, enn en lang digital samtale.</li>
+                              <li>Digitale samtaler trenger trygghet og gode relasjoner.</li>
+                              <li>Gi medarbeideren rom til å fortelle, tål pauser og stillhet.</li>
+                              <li>Bruk sikre digitale verktøy for å ivareta personvern og taushetsplikt</li>
+                              <li>Hvis dere har mulighet, kan dere skrive referat eller oppfølgingsplan sammen og underveis i samtalen.</li>
                             </ul>
                           </div>
                         </div>
                       </div>
-                      <h2 class=\\"typo-undertittel situasjonqa__undertittel\\">Bidro sykefraværsrutinene på arbeidsplassen til forutsigbarhet rundt oppgaver og ansvar?</h2>
-                      <hr aria-label=\\"\\" class=\\"skillelinje\\">
-                      <h2 class=\\"typo-undertittel situasjonqa__undertittel\\">Var rutinene kjent for både deg og medarbeideren i forkant av samtalen?</h2>
-                      <hr aria-label=\\"\\" class=\\"skillelinje\\">
-                      <h2 class=\\"typo-undertittel situasjonqa__undertittel\\">Kjente du og medarbeideren til tilretteleggingsmuligheter på egen arbeidsplass?</h2>
-                      <hr aria-label=\\"\\" class=\\"skillelinje\\">
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Gode grep for å bygge relasjoner</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <ul>
+                              <li>Bruk tid på å bli kjent med alle dine medarbeidere.</li>
+                              <li>Er det sider ved deg selv du bør styrke eller dempe i møte med medarbeideren?</li>
+                              <li>Vær forutsigbar.</li>
+                              <li>Vis at du har tillit til medarbeideren.</li>
+                              <li>Vær en støttende leder.</li>
+                              <li>Be om tilbakemelding slik at du kan lære og utvikle deg som leder.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=\\"ekspanderbart-infopanel__root\\">
+                        <div class=\\"ekspanderbartPanel ekspanderbart-infopanel__panel ekspanderbartPanel--lukket ekspanderbartPanel--border\\"><button id=\\"ekspanderbart-infopanel__tipsOmTilrettelegging-base\\" class=\\"ekspanderbartPanel__hode\\" aria-expanded=\\"false\\" aria-controls=\\"83048304-8304-8304-8304-830483048304\\" type=\\"button\\">
+                            <div class=\\"ekspanderbartPanel__flex-wrapper\\"><span class=\\"ekspanderbartPanel__tittel\\"><div class=\\"ekspanderbart-infopanel__tittel-flex-container\\"><div class=\\"ekspanderbart-infopanel__tittel-grid\\"><div class=\\"ekspanderbart-infopanel__ikon-container\\"></div><div class=\\"ekspanderbart-infopanel__tittel-text\\">Tips om tilrettelegging</div></div><div class=\\"ekspanderbart-infopanel__tittel-apne\\">Åpne</div></div></span><span class=\\"ekspanderbartPanel__indikator\\"></span></div>
+                          </button>
+                          <div role=\\"region\\" id=\\"83048304-8304-8304-8304-830483048304\\" aria-labelledby=\\"ekspanderbart-infopanel__tipsOmTilrettelegging-base\\"></div>
+                        </div>
+                        <div class=\\"ekspanderbart-infopanel__print-innhold\\">
+                          <div>
+                            <h3 class=\\"sub-section-header\\">Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.</h3>
+                            <p>Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i samtalen med gjensidige forventninger til hva som er mulig.</p>
+                            <p class=\\"tips-om-tilrettelegging-no-margin-bottom\\">Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter som finnes.</p>
+                            <p class=\\"tips-om-tilrettelegging-no-margin-top\\">Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med verneombud og tillitsvalgte. Hensikten er en felles vurdering av hvilken tilrettelegging er mulig hos dere.</p>
+                            <ul>
+                              <li><strong>Hvilke tilretteleggingsmuligheter finnes på deres arbeidsplass og ellers i organisasjonen?</strong></li>
+                              <li><strong>Hvor går grensene for ditt handlingsrom til å lage avtaler? Er det behov for å gjøre avklaringer?</strong></li>
+                            </ul><strong>Dette kan du gjøre:</strong>
+                            <div class=\\"infoPanel-kolonner\\">
+                              <div class=\\"gra-avrundet-boks\\"><strong>på kort sikt:</strong>
+                                <ul class=\\"tips-om-tilrettelegging-no-margin-top\\">
+                                  <li class=\\"margin-bunn-2rem\\">Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for din arbeidsplass, hvis dere har en personalavdeling kan disse ofte hjelpe deg</li>
+                                  <li>Vurder om du bør dele oversikt over tilretteleggingsmuligheter med medarbeideren før samtalen</li>
+                                </ul>
+                              </div>
+                              <div class=\\"gra-avrundet-boks\\"><strong>over tid og som kontinuerlig arbeid:</strong>
+                                <ul class=\\"tips-om-tilrettelegging-no-margin-top\\">
+                                  <li class=\\"margin-bunn-2rem\\">Lag en liste med tilretteleggingsmuligheter <a href=\\"https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen\\" class=\\"lenke\\">Se beskrivelse av prosess og maler på idebanken</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class=\\"horizontal-line margin-topp-4rem margin-bunn-4rem\\"></div>
+                            <h3 class=\\"sub-section-header\\">Lær mer om tilrettelegging</h3><strong>Dette kan du gjøre:</strong>
+                            <div class=\\"infoPanel-kolonner margin-bunn-2rem\\">
+                              <div class=\\"gra-avrundet-boks\\"><strong>på kort sikt:</strong>
+                                <ul>
+                                  <li class=\\"margin-bunn-2rem\\"><a href=\\"https://www.arbeidstilsynet.no/arbeidsforhold/tilrettelegging/\\" class=\\"lenke\\">Les mer om arbeidsgivers plikter til å tilrettelegge på arbeidsplassen hos arbeidstilsynet.</a></li>
+                                  <li class=\\"margin-bunn-2rem\\">NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt og medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging. <a href=\\"https://vimeo.com/showcase/6728595\\" class=\\"lenke\\">Gå til nettkurs.</a></li>
+                                  <li class=\\"margin-bunn-2rem\\"><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap\\" class=\\"lenke\\">Les mer om tilrettelegging i sykefraværsoppfølging</a></li>
+                                  <li><a href=\\"https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge\\" class=\\"lenke\\">Les mer om NAVs økonomiske virkemidler</a></li>
+                                </ul>
+                              </div>
+                              <div class=\\"gra-avrundet-boks\\"><strong>over tid og som kontinuerlig arbeid:</strong>
+                                <ul>
+                                  <li class=\\"margin-bunn-2rem\\">Lag en plan for å lære mer.</li>
+                                  <li class=\\"margin-bunn-2rem\\">Hva du trenger å vite mer om?</li>
+                                  <li class=\\"margin-bunn-2rem\\">Hvordan kan du lære mer?</li>
+                                  <li class=\\"margin-bunn-2rem\\">Når du skal gjennomføre?</li>
+                                  <li>Husk å ta med tillitsvalgte og verneombud slik at dere sammen lærer mer om tilrettelegging.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <div class=\\"viste-du-container margin-topp-4rem\\">
+                      <h3 class=\\"viste-du-header\\">Visste du at NAV hjelper virksomheter med å forebygge sykefravær?</h3><svg class=\\"viste-du-icon\\" width=\\"4rem\\" height=\\"4rem\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+                        <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 0C5.38226 0 0 5.38226 0 12C0 18.6177 5.38226 24 12 24C18.6167 24 24 18.6177 24 12C24 5.38226 18.6167 0 12 0Z\\" fill=\\"#5690A2\\"></path>
+                        <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M13.5653 6.56522C13.5653 5.70122 12.8625 5 12.0001 5C11.1345 5 10.4348 5.70122 10.4348 6.56522C10.4348 7.43078 11.1345 8.13043 12.0001 8.13043C12.8625 8.13043 13.5653 7.43078 13.5653 6.56522ZM16.0192 18.0005C16.0192 17.4403 15.5395 17.0092 14.9757 17.0092H13.0777V11.003C13.0777 10.4428 12.598 10.0117 12.0342 10.0117H10.0049C9.44027 10.0117 8.9614 10.4427 8.9614 11.003C8.9614 11.5633 9.44027 11.9943 10.0049 11.9943H10.9907V17.0092H9.39138C8.82677 17.0092 8.3479 17.4402 8.3479 18.0005C8.3479 18.5608 8.82677 18.9918 9.39138 18.9918H14.9757C15.5395 18.9918 16.0192 18.5607 16.0192 18.0005Z\\" fill=\\"white\\"></path>
+                      </svg>
+                      <p class=\\"viste-du-paragraf\\">NAV hjelper virksomheter med å forebygge sykefravær. Du får digitale tjenester og veiledning for å gjennomføre enkeltsamtaler. NAV kan også gi mer omfattende rådgivning hos dere på arbeidsplassen.</p><a href=\\"https://arbeidsgiver.nav.no/kontakt-oss/\\" class=\\"lenke viste-du-link\\">Kontakt NAV</a><a href=\\"https://arbeidsgiver.nav.no/forebygge-sykefravaer/\\" class=\\"lenke viste-du-link\\">Les mer om NAVs tjenester for å forebygge sykefravær.</a>
                     </div>
                   </div>
                 </div>
