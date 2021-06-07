@@ -1,5 +1,10 @@
 @import '../../node_modules/nav-frontend-core/less/_variabler';
 
+.MerInspirasjonOgGodeGrep,
+.SlikSkaperDuGodeSamtaler {
+    break-before: page;
+}
+
 .index {
     max-width: @screen-md-min;
     padding: 1.25rem 1.25rem 3rem;
@@ -7,5 +12,105 @@
 
     @media (min-width: 700px) {
         margin: 0 auto;
+    }
+}
+
+.layout__content {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+
+.infoPanel-kolonner {
+    display: grid;
+    @media (min-width: @screen-sm-min) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+    }
+    row-gap: 1rem;
+    min-height: 375px;
+}
+
+.section-header {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0;
+}
+
+.sub-section-header {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+.bold-text {
+    font-weight: 700;
+}
+
+.margin-topp-0rem {
+    margin-top: 0;
+}
+
+.margin-topp-4rem {
+    margin-top: 4rem;
+}
+
+.margin-bunn-0rem {
+    margin-bottom: 0;
+}
+
+.margin-bunn-1rem {
+    margin-bottom: 1rem;
+}
+
+.margin-bunn-2rem {
+    margin-bottom: 2rem;
+}
+
+.margin-bunn-3rem {
+    margin-bottom: 3rem;
+}
+
+.margin-bunn-4rem {
+    margin-bottom: 4rem;
+}
+
+.horizontal-line {
+    border-top: 1px solid #C9C9C9;
+    width: 100%;
+}
+
+.gra-avrundet-boks {
+    padding: 1rem 2rem 1rem 1rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: rgba(241, 241, 241, 1);
+}
+
+.infoPanel-kolonner div {
+    width: 100%;
+    height: 100%;
+}
+
+.alternatingDiscList {
+    li:nth-child(odd) {
+        list-style-type: disc;
+    }
+    li:nth-child(even) {
+        list-style-type: none;
+    }
+}
+
+ul.spaced-list {
+    li:not(:first-child) {
+        margin-top: 2rem;
     }
 }
