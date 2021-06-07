@@ -4,7 +4,7 @@ import { EkspanderbartpanelBase } from 'nav-frontend-ekspanderbartpanel';
 import { OppChevron } from 'nav-frontend-chevron';
 import classNames from 'classnames';
 import logEvent from '../../amplitude/amplitude';
-import { LestSVG } from './LestSVG';
+import Lest from '../Ikoner/Lest';
 import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
@@ -70,46 +70,21 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
         <div className={"ekspanderbart-infopanel__root"}>
             <EkspanderbartpanelBase
                 tittel={
-                    props.ikon ? (
-                        <div className="ekspanderbart-infopanel__tittel-med-ikon-wrapper">
-                            <div className="ekspanderbart-infopanel__tittel-med-ikon">
-                                <div className="ekspanderbart-infopanel__kun-ikon">
-                                    {erLest ? props.lestIkon : props.ikon}
-                                </div>
-                                {props.tittel}
-                            </div>
-                            {erLest && (
-                                <div className="ekspanderbart-infopanel__kun-lest-ikon">
-                                    <LestSVG />
-                                </div>
-                            )}
+                    <div className={"ekspanderbart-infopanel__tittel-flex-container"}>
+                        <div className={"ekspanderbart-infopanel__tittel-grid"}>
+                            <div className={'ekspanderbart-infopanel__ikon-container'}>{props.ikon}</div>
+                            <div className={"ekspanderbart-infopanel__tittel-text"}>{props.tittel}</div>
+                            {erLest && <Lest width={"62px"} height={"24px"} />}
                         </div>
-                    ) : (
-                        <div className="ekspanderbart-infopanel__tittel-uten-ikon">
-                            <div className="ekspanderbart-infopanel__kun-tittel">
-                                {props.tittel}
-                            </div>
-                            {erLest && (
-                                <div className="ekspanderbart-infopanel__kun-lest-ikon">
-                                    <LestSVG />
-                                </div>
-                            )}
-                        </div>
-                    )
+                        <div className={"ekspanderbart-infopanel__tittel-apne"}>Åpne</div>
+                    </div>
                 }
                 id={panelknappID}
                 apen={erÅpen}
                 onClick={() => {
                     setErÅpen(!erÅpen);
                 }}
-                className={
-                    !erLest
-                        ? 'ekspanderbart-infopanel__panel'
-                        : classNames(
-                              'ekspanderbart-infopanel__panel',
-                              'ekspanderbart-infopanel__gronnbakgrunn'
-                          )
-                }
+                className={'ekspanderbart-infopanel__panel'}
             >
                 <div
                     className={classNames(
