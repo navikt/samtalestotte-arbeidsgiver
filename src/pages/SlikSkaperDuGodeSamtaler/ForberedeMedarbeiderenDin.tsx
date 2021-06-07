@@ -1,5 +1,5 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
-import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { ENKLE_TIPS_FOR_DIGITALE_SAMTALER, GJENNOMFOR_SAMTALEN } from '../../resources/urls';
 

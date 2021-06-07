@@ -1,5 +1,5 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
-import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanelV2';
+import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import "./InnledeSamtalen.less";
 
 const InnledeSamtalen = ({callback}: InfoPanelProps) => {
