@@ -15,9 +15,9 @@ const InnledeSamtalen = ({callback}: InfoPanelProps) => {
             Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.
             Rammene hjelper dere med å holde fokus og tid.
         </p>
-        <strong className={"innled-samtalen-strong"}>
+        <h4 className={"innled-samtalen-h4"}>
             Vanlige tema i innledning:
-        </strong>
+        </h4>
         <ul className={"innled-samtalen-liste"}>
             <li>
                 ønske velkommen

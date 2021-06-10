@@ -16,11 +16,11 @@ const FinneLosningerSammen = ({callback}: InfoPanelProps) => {
             kan det bli enklere å se løsningsforslag selv.
             Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.
         </p>
-        <strong>Tips:</strong>
+        <h4 className={'margin-bunn-0rem'}>Tips:</h4>
         <p className={"finn-losninger-sammen-paragraf"}>
             Snakk om det som skal skje framover i tid og på hvilke muligheter som finnes.
         </p>
-        <strong>Vanlige tema når dere finner løsninger sammen:</strong>
+        <h4 className={'margin-bunn-0rem'}>Vanlige tema når dere finner løsninger sammen:</h4>
         <ul className={"finn-losninger-sammen-liste"}>
             <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
             <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
@@ -35,22 +35,22 @@ const FinneLosningerSammen = ({callback}: InfoPanelProps) => {
             <li>andre forhold</li>
         </ul>
 
-        <strong>Eksempler på spørsmål:</strong>
+        <h4 className={'margin-bunn-0rem'}>Eksempler på spørsmål:</h4>
         <p className={"finn-losninger-sammen-paragraf"}>
             Velg noen av eksemplene som er relevante for akkurat denne samtalen.
         </p>
         <div className={"gra-avrundet-boks margin-bunn-2rem"}>
-            <strong>Hvordan kan jeg som leder hjelpe deg?</strong>
+            <h4>Hvordan kan jeg som leder hjelpe deg?</h4>
             <ul>
                 <li>Hva ville være god og støttende hjelp for deg i en travel arbeidsdag?</li>
-                <li className={"margin-bunn-2rem"}>Hva vil du oppleve som god støtte?</li>
+                <li>Hva vil du oppleve som god støtte?</li>
 
                 <li>Hva kan jeg som leder hjelpe deg med, når det gjelder arbeidsoppgaver?</li>
                 <li>Hvordan kan jeg som leder hjelpe deg med å få en mindre stressende arbeidsdag?</li>
             </ul>
         </div>
         <div className={"gra-avrundet-boks"}>
-            <strong>Løsninger</strong>
+            <h4>Løsninger</h4>
             <ul>
                 <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
                 <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
