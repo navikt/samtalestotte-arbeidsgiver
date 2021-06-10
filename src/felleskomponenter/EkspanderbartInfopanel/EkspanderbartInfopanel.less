@@ -188,8 +188,11 @@ div.ekspanderbart-infopanel__tittel-grid {
     width: 100%;
     display: grid;
     @media (min-width: @screen-sm-min) {
-        // Denne må rejusteres hvis vi endrer tittler
-        grid-template-columns: auto 340px auto;
+        // Disse må rejusteres hvis vi endrer tittler
+        &.ekspanderbart-infopanel__tittel-grid-with-icon {
+            grid-template-columns: auto 340px auto;
+        }
+        grid-template-columns: 400px auto;
         grid-template-rows: auto;
     }
     grid-template-columns: auto;
@@ -205,6 +208,7 @@ div.ekspanderbart-infopanel__tittel-grid {
 div.ekspanderbart-infopanel__tittel-flex-container {
     display: flex;
     justify-content: space-between;
+    margin-left: 1rem;
     > div.ekspanderbart-infopanel__tittel-apne {
         @media (min-width: @screen-sm-min) {
             display: block;

@@ -35,6 +35,8 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
     const callback = props.callBack? props.callBack : noOperation;
 
+    const hasIcon = props.ikon !== null && props.ikon !== undefined;
+
     const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
         if (props.panelLestSituasjon !== panelLestSituasjon) {
             setErLest(true);
@@ -71,10 +73,12 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
             <EkspanderbartpanelBase
                 tittel={
                     <div className={"ekspanderbart-infopanel__tittel-flex-container"}>
-                        <div className={"ekspanderbart-infopanel__tittel-grid"}>
-                            <div className={'ekspanderbart-infopanel__ikon-container'}>{props.ikon}</div>
+                        <div className={
+                            classNames("ekspanderbart-infopanel__tittel-grid", {"ekspanderbart-infopanel__tittel-grid-with-icon": hasIcon})
+                        }>
+                            { hasIcon? <div className={'ekspanderbart-infopanel__ikon-container'}>{props.ikon}</div> : null }
                             <div className={"ekspanderbart-infopanel__tittel-text"}>{props.tittel}</div>
-                            {erLest && <Lest width={"62px"} height={"24px"} />}
+                            { erLest && <Lest width={"62px"} height={"24px"} /> }
                         </div>
                         <div className={"ekspanderbart-infopanel__tittel-apne"}>Åpne</div>
                     </div>
