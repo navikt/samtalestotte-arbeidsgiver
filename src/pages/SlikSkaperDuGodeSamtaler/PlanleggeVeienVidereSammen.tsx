@@ -13,7 +13,7 @@ const PlanleggeVeienVidereSammen = ({ callback }: InfoPanelProps) => {
             callBack={callback}
         >
             <h3 className={'sub-section-header planlegg-veien-videre-sammen-no-margin-bottom'}>
-                Oppsummer i felleskap
+                Oppsummer i felleskap.
             </h3>
             <p className={'planlegg-veien-videre-sammen-no-margin-top'}>
                 En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer
