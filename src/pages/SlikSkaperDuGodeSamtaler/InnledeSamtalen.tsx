@@ -9,7 +9,7 @@ const InnledeSamtalen = ({callback}: InfoPanelProps) => {
         panelLestSituasjon={"ulest"}
         callBack={callback}>
         <h3 className={"sub-section-header innled-samtalen-header"}>
-            Innlede samtalen
+            Innlede samtalen.
         </h3>
         <p className={"innled-samtalen-paragraf"}>
             Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.
