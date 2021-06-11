@@ -29,10 +29,10 @@ const Suksesskriterier = ({ callback }: InfoPanelProps) => {
                 rutiner.
             </li>
         </ul>
-        <strong>
+        <h4 className={'margin-bunn-0rem'}>
             Kjente fallgruver
-        </strong>
-        <ul>
+        </h4>
+        <ul className={'margin-topp-0rem'}>
             <li>
                 Du påtar deg for stort ansvar for helsa til medarbeideren.
             </li>

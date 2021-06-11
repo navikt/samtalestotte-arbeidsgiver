@@ -19,7 +19,7 @@ const PlanleggeInnholdISamtalen = ({callback}: InfoPanelProps) => {
                     Hva er dine mål med samtalen?
                 </strong>
             </li>
-            <li>
+            <li className={'margin-bunn-1rem'}>
                 Noter ned målet, og ha det framme når du er i samtalen.
             </li>
             <li>

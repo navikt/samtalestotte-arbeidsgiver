@@ -29,7 +29,7 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                 </li>
                 <li>Hvor trygg føler du deg på å gjennomføre samtaler?</li>
             </ul>
-            <strong>Dette kan du gjøre:</strong>
+            <h4 className={'margin-bunn-025rem'}>Dette kan du gjøre:</h4>
             <div className={'infoPanel-kolonner margin-bunn-1rem'}>
                 <div className={'gra-avrundet-boks'}>
                     <h4>på kort sikt:</h4>
@@ -79,7 +79,7 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                     oppgaver og ansvar?
                 </li>
             </ul>
-            <strong>Dette kan du gjøre:</strong>
+            <h4 className={'margin-bunn-025rem'}>Dette kan du gjøre:</h4>
             <div className={'infoPanel-kolonner margin-bunn-1rem'}>
                 <div className={'gra-avrundet-boks'}>
                     <h4>på kort sikt:</h4>
@@ -113,8 +113,8 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                     </ul>
                 </div>
             </div>
-            <strong>Tips:</strong>
-            <p>
+            <h4 className={'margin-bunn-0rem'}>Tips:</h4>
+            <p className={'margin-topp-0rem'}>
                 Arbeidet med rutiner bør settes inn i arbeidsplassens plan for å forebygge
                 sykefravær slik at du kan dokumentere arbeidet.
             </p>

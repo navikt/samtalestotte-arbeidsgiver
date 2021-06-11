@@ -5,6 +5,9 @@
   * {
     color: @navBla;
   }
+  &:hover {
+    border: 1px solid #0067c5;
+  }
   &:hover * {
     text-decoration-line: underline;
   }
@@ -16,6 +19,7 @@
 .lenkepanel-sykefravaer-child-wrapper {
   width: 100%;
   display: grid;
+  margin-left: 1rem;
   @media (min-width: @screen-sm-min) {
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto;

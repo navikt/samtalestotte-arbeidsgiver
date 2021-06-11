@@ -29,13 +29,13 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
                 Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter som
                 finnes.
             </p>
-            <p className={'tips-om-tilrettelegging-no-margin-top'}>
+            <p className={'tips-om-tilrettelegging-no-margin-top margin-bunn-3rem'}>
                 Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med verneombud
                 og tillitsvalgte. Hensikten er en felles vurdering av hvilken tilrettelegging er
                 mulig hos dere.
             </p>
-            <ul>
-                <li>
+            <ul className={'margin-bunn-2rem'}>
+                <li className={'margin-bunn-1rem'}>
                     <strong>
                         Hvilke tilretteleggingsmuligheter finnes på deres arbeidsplass og ellers i
                         organisasjonen?
@@ -48,10 +48,10 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
                     </strong>
                 </li>
             </ul>
-            <strong>Dette kan du gjøre:</strong>
+            <h4 className={'margin-bunn-025rem'}>Dette kan du gjøre:</h4>
             <div className={'infoPanel-kolonner'}>
                 <div className={'gra-avrundet-boks'}>
-                    <strong>på kort sikt:</strong>
+                    <h4>på kort sikt:</h4>
                     <ul className={'tips-om-tilrettelegging-no-margin-top'}>
                         <li className={'margin-bunn-2rem'}>
                             Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for
@@ -65,7 +65,7 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
                     </ul>
                 </div>
                 <div className={'gra-avrundet-boks'}>
-                    <strong>over tid og som kontinuerlig arbeid:</strong>
+                    <h4>over tid og som kontinuerlig arbeid:</h4>
                     <ul className={'tips-om-tilrettelegging-no-margin-top'}>
                         <li className={'margin-bunn-2rem'}>
                             Lag en liste med tilretteleggingsmuligheter{' '}
@@ -77,14 +77,14 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
                 </div>
             </div>
 
-            <div className={'horizontal-line margin-topp-4rem margin-bunn-4rem'} />
+            <div className={'horizontal-line margin-topp-3rem margin-bunn-3rem'} />
 
             <h3 className={'sub-section-header'}>Lær mer om tilrettelegging</h3>
 
-            <strong>Dette kan du gjøre:</strong>
+            <h4 className={'margin-bunn-025rem'}>Dette kan du gjøre:</h4>
             <div className={'infoPanel-kolonner margin-bunn-2rem'}>
                 <div className={'gra-avrundet-boks'}>
-                    <strong>på kort sikt:</strong>
+                    <h4>på kort sikt:</h4>
                     <ul>
                         <li className={'margin-bunn-2rem'}>
                             <LoggbarLenke href={TILRETTELEGGING}>
@@ -110,7 +110,7 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
                     </ul>
                 </div>
                 <div className={'gra-avrundet-boks'}>
-                    <strong>over tid og som kontinuerlig arbeid:</strong>
+                    <h4>over tid og som kontinuerlig arbeid:</h4>
                     <ul>
                         <li className={'margin-bunn-2rem'}>
                             Lag en plan for å lære mer.

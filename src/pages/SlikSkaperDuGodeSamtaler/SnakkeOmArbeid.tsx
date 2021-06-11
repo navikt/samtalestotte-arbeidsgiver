@@ -16,7 +16,7 @@ const SnakkeOmArbeid = ({callback}: InfoPanelProps) => {
             og arbeidsdagen oppleves.
         </p>
 
-        <strong>Tips:</strong>
+        <h4 className={'margin-bunn-0rem'}>Tips:</h4>
         <ul className={"snakk-om-arbeid-liste"}>
             <li>Bruk åpne spørsmål med spørreord som hva, hvor, hvordan, hvem eller når.</li>
             <li>Unngå ordet “hvorfor”. Hvorfor kan ofte oppleves som en anklage eller for å fordele
@@ -25,7 +25,7 @@ const SnakkeOmArbeid = ({callback}: InfoPanelProps) => {
             <li>Tål stillhet slik at medarbeideren får tid til å tenke før svarene kommer.</li>
         </ul>
 
-        <strong>Vanlige tema i samtalen om arbeidssituasjonen:</strong>
+        <h4 className={'margin-bunn-0rem'}>Vanlige tema i samtalen om arbeidssituasjonen:</h4>
         <ul className={"snakk-om-arbeid-liste"}>
             <li>arbeidsoppgaver</li>
             <li>arbeidstid</li>
@@ -34,11 +34,11 @@ const SnakkeOmArbeid = ({callback}: InfoPanelProps) => {
             <li>tidligere tiltak</li>
         </ul>
 
-        <strong>Eksempler på spørsmål:</strong>
+        <h4 className={'margin-bunn-0rem'}>Eksempler på spørsmål:</h4>
         <p className={"snakk-om-arbeid-paragraf"}>Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
 
         <div className={"gra-avrundet-boks margin-bunn-2rem "}>
-            <strong>Arbeidsoppgaver</strong>
+            <h4>Arbeidsoppgaver</h4>
             <ul>
                 <li>Hvordan vil du beskrive arbeidsdagen din?</li>
                 <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
@@ -47,7 +47,7 @@ const SnakkeOmArbeid = ({callback}: InfoPanelProps) => {
         </div>
 
         <div className={"gra-avrundet-boks margin-bunn-2rem "}>
-            <strong>Arbeidsmiljø</strong>
+            <h4>Arbeidsmiljø</h4>
             <ul>
                 <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
                 <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
@@ -57,7 +57,7 @@ const SnakkeOmArbeid = ({callback}: InfoPanelProps) => {
         </div>
 
         <div className={"gra-avrundet-boks margin-bunn-2rem "}>
-            <strong>Samarbeid og motivasjon</strong>
+            <h4>Samarbeid og motivasjon</h4>
             <ul>
                 <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
                 <li>Hva motiverer deg mest akkurat nå?</li>
