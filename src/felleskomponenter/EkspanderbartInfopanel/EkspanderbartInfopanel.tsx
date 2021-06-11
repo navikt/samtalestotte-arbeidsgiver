@@ -76,7 +76,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                         <div className={
                             classNames("ekspanderbart-infopanel__tittel-grid", {"ekspanderbart-infopanel__tittel-grid-with-icon": hasIcon})
                         }>
-                            { hasIcon? <div className={'ekspanderbart-infopanel__ikon-container'}>{props.ikon}</div> : null }
+                            { hasIcon && <div className={'ekspanderbart-infopanel__ikon-container'}>{props.ikon}</div> }
                             <div className={"ekspanderbart-infopanel__tittel-text"}>{props.tittel}</div>
                             { erLest && <Lest width={"62px"} height={"24px"} /> }
                         </div>
