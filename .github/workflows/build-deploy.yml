@@ -29,7 +29,7 @@ jobs:
 
     deploy-to-dev-gcp:
         name: Deploy to dev-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/finjusteringer_på_det_visuelle'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/Fjern_åpne'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
@@ -43,7 +43,7 @@ jobs:
                   PRINT_PAYLOAD: true
     deploy-to-labs-gcp:
         name: Deploy to labs-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/finjusteringer_på_det_visuelle'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/Fjern_åpne'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
