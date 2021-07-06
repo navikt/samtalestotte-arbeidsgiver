@@ -80,7 +80,6 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                             <div className={"ekspanderbart-infopanel__tittel-text"}>{props.tittel}</div>
                             { erLest && <Lest width={"62px"} height={"24px"} /> }
                         </div>
-                        <div className={"ekspanderbart-infopanel__tittel-apne"}>Åpne</div>
                     </div>
                 }
                 id={panelknappID}
