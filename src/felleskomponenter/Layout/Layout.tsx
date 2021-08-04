@@ -13,7 +13,7 @@ import { PROD_URL } from '../../utils/konstanter';
 import 'nav-frontend-knapper-style';
 import Lenke from 'nav-frontend-lenker';
 import { VenstreChevron } from 'nav-frontend-chevron';
-import { TILBAKE } from '../../resources/urls';
+import { listeAvTillatteRefererUrler, TILBAKE } from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 
 export const Layout = (props: {
@@ -32,9 +32,15 @@ export const Layout = (props: {
             console.log('window.location.href', window.location.href);
             const refUrl = new URLSearchParams(window.location.search).get('ref');
             console.log('refUrl', refUrl);
-            const getTilbakeURL = refUrl !== null && refUrl !== '' ? refUrl : TILBAKE;
-            console.log('getTilbakeURL', getTilbakeURL);
-            setTilbakeURL(refUrl !== null && refUrl !== '' ? refUrl : TILBAKE);
+            const erTilbakeURLTillat =
+                refUrl !== null &&
+                listeAvTillatteRefererUrler.filter((regexp) => regexp.test(refUrl)).length > 0;
+            console.log('erTilbakeURLTillat', erTilbakeURLTillat);
+            const erTilbakeURLTillat2 = refUrl !== null && new RegExp('https://arbeidsgiver.nav.no/sykefravarsstatistikk?bedrift='+'*').test(refUrl);
+            console.log('erTilbakeURLTillat2', erTilbakeURLTillat2);
+            setTilbakeURL(
+                refUrl !== null && refUrl !== '' && erTilbakeURLTillat ? refUrl : TILBAKE
+            );
         }
     }, []);
     return (

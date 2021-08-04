@@ -1,5 +1,6 @@
 export const TILBAKE = 'https://www.nav.no/no/bedrift';
-export const OKONOMISKE_VIRKEMIDLER = 'https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge';
+export const OKONOMISKE_VIRKEMIDLER =
+    'https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge';
 export const OPPFOLGNINGSPLAN =
     'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap';
 export const FOLGE_OPP_TILRETTELEGGING =
@@ -18,7 +19,13 @@ export const FOREBYGGE_SYKEFRAVAER = 'https://arbeidsgiver.nav.no/forebygge-syke
 export const SYKEFRAVÆRSSTATISTIKK_KALKULATOR =
     'https://arbeidsgiver.nav.no/sykefravarsstatistikk/kalkulator';
 
-
-export const GODE_GREP_FOR_AA_BYGGE_RELASJONER = '#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base';
-export const ENKLE_TIPS_FOR_DIGITALE_SAMTALER = "#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base";
+export const GODE_GREP_FOR_AA_BYGGE_RELASJONER =
+    '#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base';
+export const ENKLE_TIPS_FOR_DIGITALE_SAMTALER =
+    '#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base';
 export const GJENNOMFOR_SAMTALEN = '#GjennomforSamtalen';
+
+export const listeAvTillatteRefererUrler = [
+    new RegExp('^' + TILBAKE),
+    new RegExp('https://arbeidsgiver.nav.no/sykefravarsstatistikk?bedrift=999999999'),
+];
