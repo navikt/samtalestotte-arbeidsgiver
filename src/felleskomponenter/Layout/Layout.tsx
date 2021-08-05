@@ -30,7 +30,7 @@ export const Layout = (props: {
     useEffect(() => {
         if (window !== undefined) {
             console.log('window.location.href', window.location.href);
-            const refUrl = new URLSearchParams(window.location.search).get('ref');
+            const refUrl = new URLSearchParams(window.location.search).get('referer');
             console.log('refUrl', refUrl);
             const erTilbakeURLTillat =
                 refUrl !== null &&
