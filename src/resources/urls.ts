@@ -27,5 +27,5 @@ export const GJENNOMFOR_SAMTALEN = '#GjennomforSamtalen';
 
 export const listeAvTillatteRefererUrler = [
     new RegExp('^' + TILBAKE),
-    new RegExp('https://arbeidsgiver.nav.no/sykefravarsstatistikk?bedrift=999999999'),
+    new RegExp('^((https):\/)?\/?(arbeidsgiver)([\.]+(nav)+)([\.]+(no))(.*)?(#[\w\-]+)?$'),
 ];
