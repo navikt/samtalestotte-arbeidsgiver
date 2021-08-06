@@ -5,17 +5,15 @@ import Head from 'next/head';
 import { DecoratorParts } from '../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
 import './Layout.less';
-import { CookiesProvider } from 'react-cookie';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ReactToPrint from 'react-to-print';
 import classNames from 'classnames';
 import { Normaltekst } from 'nav-frontend-typografi';
 import { PROD_URL } from '../../utils/konstanter';
-import logEvent from '../../amplitude/amplitude';
 import 'nav-frontend-knapper-style';
 import Lenke from 'nav-frontend-lenker';
 import { VenstreChevron } from 'nav-frontend-chevron';
-import { TILBAKE } from '../../resources/urls';
+import {erTilbakeURLTillat, listeAvTillatteRefererUrler, TILBAKE} from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 
 export const Layout = (props: {
@@ -28,7 +26,15 @@ export const Layout = (props: {
 }) => {
     const panelRef = useRef<HTMLDivElement>(null);
     const lastNedKnappRef = useRef<HTMLButtonElement>(null);
-
+    const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
+    useEffect(() => {
+        if (window !== undefined) {
+            const refUrl = new URLSearchParams(window.location.search).get('referer');
+            setTilbakeURL(
+                refUrl !== null && refUrl !== '' && erTilbakeURLTillat(refUrl) ? refUrl : TILBAKE
+            );
+        }
+    }, []);
     return (
         <div className="layout">
             <Head>
@@ -55,8 +61,13 @@ export const Layout = (props: {
                 />
                 <div className="layout__wrapper">
                     <div className="layout__content" ref={panelRef}>
-                        <Lenke href={TILBAKE} className={"layout__link-no-print"}><VenstreChevron/>Tilbake</Lenke>
-                        <div className={'layout__small-screen-illustration'}><PageBannerSVG/></div>
+                        <Lenke href={tilbakeURL} className={'layout__link-no-print'}>
+                            <VenstreChevron />
+                            Tilbake
+                        </Lenke>
+                        <div className={'layout__small-screen-illustration'}>
+                            <PageBannerSVG />
+                        </div>
                         <div className="layout__print-header">
                             <Normaltekst>{PROD_URL}</Normaltekst>
                         </div>
