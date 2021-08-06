@@ -31,7 +31,7 @@ test('Tester en gylldig RefURl skal returnere true', async () => {
     expect(result).toBe(true);
 });
 
-test('Should return false when status is not created', async () => {
+test('Tester URL hvor domain ikke er nav.no skal ikke bli tillatt', async () => {
     const result = erTilbakeURLTillat('https://farlig.url.hack/sykefravarsstatistikk');
 
     expect(result).toBe(false);
