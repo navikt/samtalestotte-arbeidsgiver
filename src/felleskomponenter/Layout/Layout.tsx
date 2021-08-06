@@ -29,30 +29,13 @@ export const Layout = (props: {
     const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
     useEffect(() => {
         if (window !== undefined) {
-            console.log('window.location.href', window.location.href);
             const refUrl = new URLSearchParams(window.location.search).get('referer');
-            console.log('refUrl', refUrl);
             const erTilbakeURLTillat =
                 refUrl !== null &&
                 listeAvTillatteRefererUrler.filter((regexp) => regexp.test(refUrl)).length > 0;
-            console.log('erTilbakeURLTillat', erTilbakeURLTillat);
-            const erTilbakeURLTillat2 = refUrl !== null && new RegExp('^https://arbeidsgiver.nav.no/sykefravarsstatistikk?bedrift=999999999').test(refUrl);
-            console.log('erTilbakeURLTillat2', erTilbakeURLTillat2);
             setTilbakeURL(
                 refUrl !== null && refUrl !== '' && erTilbakeURLTillat ? refUrl : TILBAKE
             );
-            const str = 'table football';
-
-            const regexstr = new RegExp('foo*');
-            const regexwithoutSlach = new RegExp('^((https):\/)?\/?(arbeidsgiver)([\.]+(nav)+)([\.]+(no))(.*)?(#[\w\-]+)?$');
-            const regexwithSlach = new RegExp('/^((https):\\/)?\\/?(arbeidsgiver)([\\.]+(nav)+)([\\.]+(no))(.*)?(#[\\w\\-]+)?$/');
-//new RegExp('^((https):\/)?\/?(arbeidsgiver)([\.]+(nav)+)([\.]+(no))(.*)?(#[\w\-]+)?$').test('https://arbeidsgiver.nav.no/sykefravarsstatistikk?bedrift=999999999');
-console.log("direkte regexp",new RegExp('^((https):\/)?\/?(arbeidsgiver)([\.]+(nav)+)([\.]+(no))(.*)?(#[\w\-]+)?$').test('https://arbeidsgiver.nav.no/sykefravarsstatistikk?bedrift=999999999'));
-console.log("direkte regexp med tilbakeUrl",new RegExp('^((https):\/)?\/?(arbeidsgiver)([\.]+(nav)+)([\.]+(no))(.*)?(#[\w\-]+)?$').test(tilbakeURL));
-console.log("direkte regexp med refUrl",new RegExp('^((https):\/)?\/?(arbeidsgiver)([\.]+(nav)+)([\.]+(no))(.*)?(#[\w\-]+)?$').test(refUrl));
-            console.log(regexstr.test(str));
-            console.log(regexwithoutSlach.test(refUrl));
-            console.log(regexwithSlach.test(tilbakeURL));
         }
     }, []);
     return (
