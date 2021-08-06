@@ -27,9 +27,23 @@ export const GJENNOMFOR_SAMTALEN = '#GjennomforSamtalen';
 
 export const listeAvTillatteRefererUrler = [
     new RegExp('^' + TILBAKE),
-    new RegExp('^((https):\/)?\/?(arbeidsgiver)([\.]+(nav)+)([\.]+(no))([\/]+(sykefravarsstatistikk))(.*)?(#[\w\-]+)?$'),
+    new RegExp(
+        '^((https):/)?/?(arbeidsgiver)([.]+(nav)+)([.]+(no))([/]+(sykefravarsstatistikk))(.*)?(#[w-]+)?$'
+    ),
+    new RegExp(
+        '^((https):/)?/?(arbeidsgiver-q)([.]+(nav)+)([.]+(no))([/]+(sykefravarsstatistikk))(.*)?(#[w-]+)?$'
+    ),
+    new RegExp(
+        '^((https):/)?/?(arbeidsgiver)([.]+(labs)+)([.]+(nais))([.]+(io))([/]+(sykefravarsstatistikk))(.*)?(#[w-]+)?$'
+    ),
+    new RegExp(
+        '^((https):/)?/?(arbeidsgiver)([.]+(nav)+)([.]+(no))([/]+(forebygge-sykefravaer))(.*)?(#[w-]+)?$'
+    ),
+    new RegExp(
+        '^((https):/)?/?(arbeidsgiver-gcp)([.]+(dev)+)([.]+(nav))([.]+(no))([/]+(forebygge-sykefravaer))(.*)?(#[w-]+)?$'
+    ),
 ];
 
-export const erTilbakeURLTillat = (refUrl: string):boolean=>{
+export const erTilbakeURLTillat = (refUrl: string): boolean => {
     return listeAvTillatteRefererUrler.filter((regexp) => regexp.test(refUrl)).length > 0;
-}
+};
