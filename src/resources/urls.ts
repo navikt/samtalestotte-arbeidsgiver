@@ -27,5 +27,9 @@ export const GJENNOMFOR_SAMTALEN = '#GjennomforSamtalen';
 
 export const listeAvTillatteRefererUrler = [
     new RegExp('^' + TILBAKE),
-    new RegExp('^((https):\/)?\/?(arbeidsgiver)([\.]+(nav)+)([\.]+(no))(.*)?(#[\w\-]+)?$'),
+    new RegExp('^((https):\/)?\/?(arbeidsgiver)([\.]+(nav)+)([\.]+(no))([\/]+(sykefravarsstatistikk))(.*)?(#[\w\-]+)?$'),
 ];
+
+export const erTilbakeURLTillat = (refUrl: string):boolean=>{
+    return listeAvTillatteRefererUrler.filter((regexp) => regexp.test(refUrl)).length > 0;
+}

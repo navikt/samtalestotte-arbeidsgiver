@@ -13,7 +13,7 @@ import { PROD_URL } from '../../utils/konstanter';
 import 'nav-frontend-knapper-style';
 import Lenke from 'nav-frontend-lenker';
 import { VenstreChevron } from 'nav-frontend-chevron';
-import { listeAvTillatteRefererUrler, TILBAKE } from '../../resources/urls';
+import {erTilbakeURLTillat, listeAvTillatteRefererUrler, TILBAKE} from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 
 export const Layout = (props: {
@@ -30,11 +30,8 @@ export const Layout = (props: {
     useEffect(() => {
         if (window !== undefined) {
             const refUrl = new URLSearchParams(window.location.search).get('referer');
-            const erTilbakeURLTillat =
-                refUrl !== null &&
-                listeAvTillatteRefererUrler.filter((regexp) => regexp.test(refUrl)).length > 0;
             setTilbakeURL(
-                refUrl !== null && refUrl !== '' && erTilbakeURLTillat ? refUrl : TILBAKE
+                refUrl !== null && refUrl !== '' && erTilbakeURLTillat(refUrl) ? refUrl : TILBAKE
             );
         }
     }, []);
