@@ -4,12 +4,12 @@ import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
 import { DecoratorParts } from '../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
-import { useRef } from 'react';
+import {useEffect, useRef, useState} from 'react';
 import ReactToPrint from 'react-to-print';
 import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
 import { Link, BodyShort, Button } from '@navikt/ds-react';
 import { Back } from '@navikt/ds-icons'
-import { TILBAKE } from '../../resources/urls';
+import {erTilbakeURLTillat, listeAvTillatteRefererUrler, TILBAKE } from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import { css } from 'linaria';
 import classNames from 'classnames';
@@ -24,7 +24,15 @@ export const Layout = (props: {
 }) => {
     const panelRef = useRef<HTMLDivElement>(null);
     const lastNedKnappRef = useRef<HTMLButtonElement>(null);
-
+    const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
+    useEffect(() => {
+        if (window !== undefined) {
+            const refUrl = new URLSearchParams(window.location.search).get('referer');
+            setTilbakeURL(
+                refUrl !== null && refUrl !== '' && erTilbakeURLTillat(refUrl) ? refUrl : TILBAKE
+            );
+        }
+    }, []);
     return (
         <div className={layout}>
             <Head>
@@ -51,7 +59,7 @@ export const Layout = (props: {
                 />
                 <div className={layoutWrapper}>
                     <div className={layoutContent} ref={panelRef}>
-                        <Link href={TILBAKE} className={layoutNoPrint}><Back />Tilbake</Link>
+                        <Link href={tilbakeURL} className={layoutNoPrint}><Back />Tilbake</Link>
                         <div className={layoutSmallScreenIllustration}><PageBannerSVG/></div>
                         <div className={layoutPrintHeader}>
                             <BodyShort size='s'>{PROD_URL}</BodyShort>
