@@ -2,6 +2,7 @@ import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { GJENNOMFOR_SAMTALEN } from '../../resources/urls';
+import { alternatingDiscList, marginBottom1Rem } from '../../utils/styleTemplates';
 
 const PlanleggeInnholdISamtalen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -13,13 +14,13 @@ const PlanleggeInnholdISamtalen = ({callback}: InfoPanelProps) => {
             Legg en plan for hva du ønsker å oppnå og hvordan du kan gjennomføre samtalen. Husk å lytte
             til medarbeiderens behov.
         </p>
-        <ul className={"alternatingDiscList"}>
+        <ul className={alternatingDiscList}>
             <li>
                 <strong>
                     Hva er dine mål med samtalen?
                 </strong>
             </li>
-            <li className={'margin-bunn-1rem'}>
+            <li className={marginBottom1Rem}>
                 Noter ned målet, og ha det framme når du er i samtalen.
             </li>
             <li>
@@ -39,7 +40,7 @@ const PlanleggeInnholdISamtalen = ({callback}: InfoPanelProps) => {
             Du kan fortelle hvordan du tolker observasjonene, og gi medarbeideren anledning til å
             korrigere.
         </p>
-        <ul className={"alternatingDiscList"}>
+        <ul className={alternatingDiscList}>
             <li>
                 <strong>
                     Hva har du observert?

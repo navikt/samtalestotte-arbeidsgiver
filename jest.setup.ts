@@ -21,4 +21,11 @@ jest.mock("next/router", () => {
     };
 });
 
+jest.mock("uuid", () => {
+    return {
+        v4: () => 'aaaaaaaaaaaaaa'
+    }
+})
+
+
 //jest.mock("react-use/lib/useKeyboardJs", () => () => [false]);

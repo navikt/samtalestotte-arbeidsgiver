@@ -5,13 +5,16 @@ import InnledeSamtalen from './InnledeSamtalen';
 import SnakkeOmArbeid from './SnakkeOmArbeid';
 import FinneLosningerSammen from './FinneLosningerSammen';
 import PlanleggeVeienVidereSammen from './PlanleggeVeienVidereSammen';
+import { boldText, breakBeforePage, marginBottom1Rem, marginTop4Rem } from '../../utils/styleTemplates';
+import { Title } from '@navikt/ds-react';
+import classNames from 'classnames';
 
 const SlikSkaperDuGodeSamtaler = () => {
-    return <section className={"SlikSkaperDuGodeSamtaler"}>
-        <h2 className={"section-header margin-topp-4rem"}>
+    return <section className={breakBeforePage}>
+        <Title className={marginTop4Rem} size={'l'} level={2}>
             Slik skaper du gode samtaler
-        </h2>
-        <p className={"bold-text"}>
+        </Title>
+        <p className={boldText}>
             Som arbeidsgiver er du ansvalig for:
         </p>
         <ul>
@@ -25,15 +28,15 @@ const SlikSkaperDuGodeSamtaler = () => {
                 å sikre at medarbeideren får bidra til å finne løsninger
             </li>
         </ul>
-        <h3 className={"sub-section-header margin-topp-4rem"}>
+        <Title className={classNames(marginTop4Rem, marginBottom1Rem)} size={'m'} level={3}>
             Forbered deg ved å:
-        </h3>
+        </Title>
         <SkapeGodeRammer/>
         <PlanleggeInnholdISamtalen/>
         <ForberedeMedarbeiderenDin/>
-        <h3 className={"sub-section-header margin-topp-4rem"} id={"GjennomforSamtalen"}>
+        <Title className={classNames(marginTop4Rem, marginBottom1Rem)} id={"GjennomforSamtalen"} size={'m'} level={3}>
             Gjennomfør samtalen ved å:
-        </h3>
+        </Title>
         <InnledeSamtalen/>
         <SnakkeOmArbeid/>
         <FinneLosningerSammen/>

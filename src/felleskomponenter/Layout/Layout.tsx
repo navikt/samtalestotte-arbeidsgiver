@@ -4,19 +4,15 @@ import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
 import { DecoratorParts } from '../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
-import './Layout.less';
-import { CookiesProvider } from 'react-cookie';
 import { useRef } from 'react';
 import ReactToPrint from 'react-to-print';
-import classNames from 'classnames';
-import { Normaltekst } from 'nav-frontend-typografi';
-import { PROD_URL } from '../../utils/konstanter';
-import logEvent from '../../amplitude/amplitude';
-import 'nav-frontend-knapper-style';
-import Lenke from 'nav-frontend-lenker';
-import { VenstreChevron } from 'nav-frontend-chevron';
+import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
+import { Link, BodyShort, Button } from '@navikt/ds-react';
+import { Back } from '@navikt/ds-icons'
 import { TILBAKE } from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
+import { css } from 'linaria';
+import classNames from 'classnames';
 
 export const Layout = (props: {
     title: string;
@@ -30,7 +26,7 @@ export const Layout = (props: {
     const lastNedKnappRef = useRef<HTMLButtonElement>(null);
 
     return (
-        <div className="layout">
+        <div className={layout}>
             <Head>
                 {props.decoratorParts?.linkTags.map((attrs, index) => {
                     attrs.key = 'props.linkTags' + index;
@@ -53,14 +49,14 @@ export const Layout = (props: {
                         'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid'
                     }
                 />
-                <div className="layout__wrapper">
-                    <div className="layout__content" ref={panelRef}>
-                        <Lenke href={TILBAKE} className={"layout__link-no-print"}><VenstreChevron/>Tilbake</Lenke>
-                        <div className={'layout__small-screen-illustration'}><PageBannerSVG/></div>
-                        <div className="layout__print-header">
-                            <Normaltekst>{PROD_URL}</Normaltekst>
+                <div className={layoutWrapper}>
+                    <div className={layoutContent} ref={panelRef}>
+                        <Link href={TILBAKE} className={layoutNoPrint}><Back />Tilbake</Link>
+                        <div className={layoutSmallScreenIllustration}><PageBannerSVG/></div>
+                        <div className={layoutPrintHeader}>
+                            <BodyShort size='s'>{PROD_URL}</BodyShort>
                         </div>
-                        <div className="layout__react-to-print-wrapper">
+                        <div className={layoutReactToPrintWrapper}>
                             <ReactToPrint
                                 onBeforePrint={() => {
                                     props.logEvent('knapp', {
@@ -75,12 +71,14 @@ export const Layout = (props: {
                                 }}
                                 content={() => panelRef.current}
                                 trigger={() => (
-                                    <button
+                                    <Button
+                                        id={'skriv-ut-knapp'}
                                         ref={lastNedKnappRef}
-                                        className={classNames('layout__knapp', 'knapp')}
+                                        className={classNames(layoutNoPrint, layoutKnapp)}
+                                        size={"m"}
                                     >
                                         Skriv ut
-                                    </button>
+                                    </Button>
                                 )}
                             />
                         </div>
@@ -99,3 +97,68 @@ export const Layout = (props: {
         </div>
     );
 };
+
+/** STYLES **/
+
+const layout = css`
+  @media print {
+    @page {
+      size: A4;
+      margin: 2.54cm 0 0;
+    }
+  }
+`
+const layoutWrapper = css`
+  min-height: 50rem;
+  padding: 1.5rem 0 5rem;
+`
+
+const layoutContent = css`
+  max-width: 60rem;
+  background-color: white;
+  padding: 1rem;
+  margin: auto;
+  border-radius: 0.25rem;
+`
+
+const layoutNoPrint = css`
+  @media print {
+      display: none;
+  }
+`
+
+const layoutSmallScreenIllustration = css`
+  display: flex;
+  justify-content: center;
+  background: var(--navds-color-blue-10);
+  margin: 1rem -1rem 3rem;
+  svg {
+    flex-shrink: 0;
+  }
+  @media (min-width: ${SCREEN_SM_MIN}) {
+      display: none;
+  }
+`
+
+const layoutPrintHeader = css`
+  display: none;
+  @media print {
+    display: block;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+  }
+`
+
+const layoutReactToPrintWrapper = css`
+  display: none;
+  @media (min-width: ${SCREEN_SM_MIN}) {  
+    display: flex;
+    justify-content: flex-end;
+  }
+`
+
+const layoutKnapp = css`
+  :hover{
+      padding: 0.65625rem var(--navds-spacing-3);
+  }
+`

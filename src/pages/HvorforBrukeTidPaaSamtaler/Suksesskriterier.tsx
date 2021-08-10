@@ -1,6 +1,8 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import Lightbulb from '../../felleskomponenter/Ikoner/Lightbulb';
+import { marginBottom0Rem, marginTop0Rem } from '../../utils/styleTemplates';
+import { Title } from '@navikt/ds-react';
 
 const Suksesskriterier = ({ callback }: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -29,10 +31,10 @@ const Suksesskriterier = ({ callback }: InfoPanelProps) => {
                 rutiner.
             </li>
         </ul>
-        <h4 className={'margin-bunn-0rem'}>
+        <Title className={marginBottom0Rem} size={'s'} level={4}>
             Kjente fallgruver
-        </h4>
-        <ul className={'margin-topp-0rem'}>
+        </Title>
+        <ul className={marginTop0Rem}>
             <li>
                 Du påtar deg for stort ansvar for helsa til medarbeideren.
             </li>

@@ -1,7 +1,6 @@
 import React, {FunctionComponent, ReactNode} from 'react';
-import Lenke from 'nav-frontend-lenker';
+import { LinkPanel } from '@navikt/ds-react'
 import logEvent from '../../amplitude/amplitude';
-import {LenkepanelBase} from "nav-frontend-lenkepanel";
 
 type LoggbarLenkeProps = {
     href: string;
@@ -26,9 +25,9 @@ const LoggbarLenkepanelBase: FunctionComponent<LoggbarLenkeProps> = ({
         }
     };
     return (
-        <LenkepanelBase onClick={() => logLenke(href, lenketekst)} href={href} className={className}>
+        <LinkPanel onClick={() => logLenke(href, lenketekst)} href={href} className={className}>
             {children}
-        </LenkepanelBase>
+        </LinkPanel>
     );
 };
 

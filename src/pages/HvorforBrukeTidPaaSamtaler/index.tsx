@@ -2,20 +2,22 @@ import NaarKanEnSamtaleVaereAktuelt from './NaarKanEnSamtaleVaereAktuelt';
 import DetteKanDuSpoerreMedarbeiderenOm from './DetteKanDuSpoerreMedarbeiderenOm';
 import Suksesskriterier from './Suksesskriterier';
 import SeHvorMyeSykefravaeretDittKoster from './SeHvorMyeSykefravaeretDittKoster';
+import { Title } from '@navikt/ds-react';
+import { boldText, marginBottom2Rem, marginBottom4Rem } from '../../utils/styleTemplates';
 
 const HvorforBrukeTidPaaSamtaler = () => {
-    return <section className={"HvorforBrukeTidPaaSamtaler"}>
-        <h2 className={"section-header"}>
+    return <section>
+        <Title size={"l"} level={2}>
             Hvorfor bruke tid på samtaler?
-        </h2>
-        <p className={"margin-bunn-2rem"}>
+        </Title>
+        <p className={marginBottom2Rem}>
             Lovverk og rutiner forteller deg hva du skal gjøre for å forebygge og følge opp sykefravær.
             Gode samtaler er en metode for hvordan du fyller lovkravene, slik at de gir størst verdi for deg og medarbeiderne dine.
         </p>
-        <p className={"bold-text"}>
+        <p className={boldText}>
             Gode samtaler bidrar til:
         </p>
-        <ul className={'margin-bunn-4rem'}>
+        <ul className={marginBottom4Rem}>
             <li>
                 lavt sykefravær og god lønnsomhet
             </li>
