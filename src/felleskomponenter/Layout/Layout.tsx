@@ -33,13 +33,24 @@ export const Layout = (props: {
             );
         }
     }, []);
+
+    const headerLinks = (props.decoratorParts
+        ? props.decoratorParts.linkTags
+        : []).map((attrs, index) => {
+        return <link
+            key={attrs.key}
+            href={attrs.href ? attrs.href : undefined}
+            type={attrs.type ? attrs.type : undefined}
+            rel={attrs.rel ? attrs.rel : undefined}
+            sizes={attrs.sizes ? attrs.sizes : undefined}
+        />;
+    });
+
+
     return (
         <div className={layout}>
             <Head>
-                {props.decoratorParts?.linkTags.map((attrs, index) => {
-                    attrs.key = 'props.linkTags' + index;
-                    return <link {...attrs} />;
-                })}
+                {headerLinks}
             </Head>
             <DecoratorHeader
                 html={

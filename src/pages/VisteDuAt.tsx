@@ -2,7 +2,7 @@ import Information from '../felleskomponenter/Ikoner/Information';
 import { FOREBYGGE_SYKEFRAVAER, KONTAKT_OSS } from '../resources/urls';
 import LoggbarLenke from "../felleskomponenter/LoggbarLenke/LoggbarLenke";
 import { css } from "linaria"
-import { marginTop4Rem, marginBottom1Rem, marginTop0Rem } from '../utils/styleTemplates';
+import { marginTop4Rem, marginBottom1Rem, marginTop0Rem, breakBeforePage } from '../utils/styleTemplates';
 import { Title } from '@navikt/ds-react';
 import classNames from 'classnames';
 
@@ -10,7 +10,7 @@ const VisteDuAt = () => {
 
     return (
         <div
-            className={classNames(visteDuContainer, marginTop4Rem)}
+            className={classNames(visteDuContainer, marginTop4Rem, breakBeforePage)}
         >
             <Title className={visteDuHeader} size={'m'} level={3}>
                 Visste du at NAV hjelper virksomheter med å forebygge sykefravær?

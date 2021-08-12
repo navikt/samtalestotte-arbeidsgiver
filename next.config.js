@@ -2,15 +2,9 @@
 /**
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
-const isNavFrontend = packageName => packageName.startsWith("@navikt");
-
-const packageJson = require('./package.json');
-const navFrontendModuler = Object
-    .keys(packageJson.dependencies)
-    .filter(isNavFrontend)
 
 const nextTranspileModules = require('next-transpile-modules');
-const withTranspileModules = nextTranspileModules(navFrontendModuler);
+const withTranspileModules = nextTranspileModules(["@navikt/ds-react", "@navikt/ds-icons"]);
 const withLinaria = require('next-linaria');
 
 module.exports = withTranspileModules(
