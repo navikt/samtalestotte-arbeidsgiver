@@ -239,7 +239,7 @@ test('Snapshot test', async () => {
                     <h4 class=\\"navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
                     <ul class=\\"sqji48z\\">
                       <li>Lær mer om samtaler og samtaleteknikker. <a href=\\"https://mag.idebanken.org/denviktigesamtalen/\\" class=\\"navds-link\\">Les mer i heftet “Den viktige samtalen” hos idebanken.</a></li>
-                      <li>Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere. <a href=\\"#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base\\" class=\\"navds-link\\">Se “Gode grep for å bygge relasjoner” lengre ned på siden</a></li>
+                      <li>Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere. <a href=\\"#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base\\" class=\\"navds-link\\">Se “Gode grep for å bygge relasjoner” lengre ned på siden.</a></li>
                       <li>Tren på å gjennomføre samtaler, og be om tilbakemeldinger.</li>
                       <li>Del erfaringer og få veiledning av andre lederkollegaer.</li>
                       <li>Delta på kurs.</li>
@@ -290,7 +290,7 @@ test('Snapshot test', async () => {
                   <li><strong>Hva er dine mål med samtalen?</strong></li>
                   <li class=\\"mevzat8\\">Noter ned målet, og ha det framme når du er i samtalen.</li>
                   <li><strong>Hvor trygg er du når du skal strukturere samtalen?</strong></li>
-                  <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg tema og hjelpespørsmål under “gjennomføring av samtalen” lengre ned på siden.</a></li>
+                  <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg tema og hjelpespørsmål under “Gjennomfør samtalen ved å” lengre ned på siden.</a></li>
                 </ul>
                 <p>Hvis du skal ta opp et tema du synes er vanskelig, bør du bør være konkret og tydelig på dine observasjoner. Du kan fortelle hvordan du tolker observasjonene, og gi medarbeideren anledning til å korrigere.</p>
                 <ul class=\\"axeo5ji\\">
@@ -316,7 +316,7 @@ test('Snapshot test', async () => {
                   <li><a href=\\"#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\" class=\\"navds-link\\">Les mer om “Enkle tips for digitale samtaler” lengre ned på siden.</a></li>
                   <li>Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt, blir det enklere å finne løsninger sammen.</li>
                   <li>Du kan sende tema eller spørsmål til medarbeideren på forhånd.</li>
-                  <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg noen av de viktigste fra eksemplene under “gjennomføring av samtalen” lengre ned på siden.</a></li>
+                  <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg noen av de viktigste fra eksemplene under “Gjennomfør samtalen ved å” lengre ned på siden.</a></li>
                 </ul>
               </div>
             </div>
@@ -332,8 +332,7 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <h3 class=\\"myw167a navds-title navds-title--m\\">Innlede samtalen.</h3>
-                <p class=\\"m1hwulcr\\">Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt. Rammene hjelper dere med å holde fokus og tid.</p>
+                <p class=\\"m1ahr51h navds-body-long\\">Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt. Rammene hjelper dere med å holde fokus og tid.</p>
                 <h4 class=\\"myw167a navds-title navds-title--s\\"></h4>
                 <ul class=\\"m1hwulcr\\">
                   <li>ønske velkommen</li>
