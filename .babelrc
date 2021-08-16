@@ -1,5 +1,8 @@
 {
-  "presets": ["next/babel", "linaria/babel"],
+  "presets": [
+    "next/babel",
+    "linaria/babel"
+  ],
   "env": {
     "test": {
       "plugins": ["transform-dynamic-import"]
