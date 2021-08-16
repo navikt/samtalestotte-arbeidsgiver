@@ -71,7 +71,7 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                         <li>
                             Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere.{' '}
                             <LoggbarLenke href={GODE_GREP_FOR_AA_BYGGE_RELASJONER}>
-                                Se “Gode grep for å bygge relasjoner” lengre ned på siden
+                                Se “Gode grep for å bygge relasjoner” lengre ned på siden.
                             </LoggbarLenke>
                         </li>
                         <li>Tren på å gjennomføre samtaler, og be om tilbakemeldinger.</li>

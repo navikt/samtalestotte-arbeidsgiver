@@ -30,7 +30,7 @@ const PlanleggeInnholdISamtalen = ({callback}: InfoPanelProps) => {
             </li>
             <li>
                 <LoggbarLenke href={GJENNOMFOR_SAMTALEN}>
-                    Velg tema og hjelpespørsmål under “gjennomføring av samtalen” lengre ned på siden.
+                    Velg tema og hjelpespørsmål under “Gjennomfør samtalen ved å” lengre ned på siden.
                 </LoggbarLenke>
             </li>
         </ul>

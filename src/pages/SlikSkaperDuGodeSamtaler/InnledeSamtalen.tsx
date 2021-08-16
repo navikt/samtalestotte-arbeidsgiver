@@ -1,7 +1,7 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import { Title } from '@navikt/ds-react';
-import { marginBottom0Rem, marginTop0Rem } from '../../utils/styleTemplates';
+import { Title, BodyLong } from '@navikt/ds-react';
+import { marginBottom0Rem, marginTop0Rem, marginTop1Rem } from '../../utils/styleTemplates';
 
 const InnledeSamtalen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -9,13 +9,10 @@ const InnledeSamtalen = ({callback}: InfoPanelProps) => {
         tittel={"Innlede samtalen"}
         panelLestSituasjon={"ulest"}
         callBack={callback}>
-        <Title className={marginBottom0Rem} size={'m'} level={3}>
-            Innlede samtalen.
-        </Title>
-        <p className={marginTop0Rem}>
+        <BodyLong className={marginTop1Rem}>
             Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.
             Rammene hjelper dere med å holde fokus og tid.
-        </p>
+        </BodyLong>
         <Title className={marginBottom0Rem} size={'s'} level={4}>
 
         </Title>
