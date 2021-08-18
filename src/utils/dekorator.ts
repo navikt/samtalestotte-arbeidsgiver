@@ -2,12 +2,13 @@ import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
 import { createHash } from 'crypto';
 import { cache } from './cache';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface DecoratorParts {
     decoratorHeader: string;
     decoratorFooter: string;
     decoratorEnv: { dataSrc: string; scriptUrl: string };
-    linkTags: any[];
+    linkTags: LinkAttributes[];
     scriptTags: any[];
 }
 
@@ -26,6 +27,14 @@ interface QueryParam {
     feedback: boolean;
     chatbot: boolean;
     breadcrumbs: Breadcrumb[];
+}
+
+interface LinkAttributes {
+    rel: string|null;
+    href: string|null;
+    sizes: string|null;
+    type: string|null;
+    key: string;
 }
 
 const getDecoratorCached = async (decoratorParams: DecoratorParams) => {
@@ -82,25 +91,35 @@ export const fetchDecoratorParts = async (
     const scriptTags: { [attr: string]: string }[] = [];
     $('#scripts script').each((index, element) => {
         const tagElement: cheerio.TagElement = element as cheerio.TagElement;
-        tagElement.attribs.key = objHash(tagElement.attribs);
+        tagElement.attribs.key = uuidv4();
         scriptTags.push({ ...tagElement.attribs });
     });
     $('#megamenu-resources script').each((index, element) => {
         const tagElement: cheerio.TagElement = element as cheerio.TagElement;
-        tagElement.attribs.key = objHash(tagElement.attribs);
+        tagElement.attribs.key = uuidv4();
         scriptTags.push({ ...tagElement.attribs });
     });
 
-    const linkTags: { [attr: string]: string }[] = [];
+    const linkTags: LinkAttributes[] = [];
     $('#styles link').each((index, element) => {
         const tagElement: cheerio.TagElement = element as cheerio.TagElement;
-        tagElement.attribs.key = objHash(tagElement.attribs);
-        linkTags.push({ ...tagElement.attribs });
+        linkTags.push({
+            key: uuidv4(),
+            rel: tagElement.attribs.rel? tagElement.attribs.rel: null,
+            href: tagElement.attribs.href? tagElement.attribs.href: null,
+            sizes: tagElement.attribs.sizes? tagElement.attribs.sizes: null,
+            type: tagElement.attribs.type? tagElement.attribs.type: null,
+        })
     });
     $('#megamenu-resources link').each((index, element) => {
         const tagElement: cheerio.TagElement = element as cheerio.TagElement;
-        tagElement.attribs.key = objHash(tagElement.attribs);
-        linkTags.push({ ...tagElement.attribs });
+        linkTags.push({
+            key: uuidv4(),
+            rel: tagElement.attribs.rel? tagElement.attribs.rel: null,
+            href: tagElement.attribs.href? tagElement.attribs.href: null,
+            sizes: tagElement.attribs.sizes? tagElement.attribs.sizes: null,
+            type: tagElement.attribs.type? tagElement.attribs.type: null,
+        })
     });
 
     scriptTags.map((attrib) => {

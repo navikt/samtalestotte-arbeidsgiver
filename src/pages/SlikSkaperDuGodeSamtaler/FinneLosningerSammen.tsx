@@ -1,6 +1,8 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import "./FinneLosningerSammen.less"
+import { Title } from '@navikt/ds-react';
+import { graAvrundetBoks, marginBottom0Rem, marginBottom2Rem, marginTop0Rem } from '../../utils/styleTemplates';
+import classNames from 'classnames';
 
 const FinneLosningerSammen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -8,39 +10,47 @@ const FinneLosningerSammen = ({callback}: InfoPanelProps) => {
         tittel={"Finne løsninger sammen"}
         panelLestSituasjon={"ulest"}
         callBack={callback}>
-        <h3 className={"sub-section-header finn-losninger-sammen-header"}>
+        <Title className={marginBottom0Rem} size={'m'} level={3}>
             Hjelp medarbeideren med å finne løsninger.
-        </h3>
-        <p className={"finn-losninger-sammen-paragraf"}>
+        </Title>
+        <p className={marginTop0Rem}>
             Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først,
             kan det bli enklere å se løsningsforslag selv.
             Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.
         </p>
-        <h4 className={'margin-bunn-0rem'}>Tips:</h4>
-        <p className={"finn-losninger-sammen-paragraf"}>
+        <Title className={marginBottom0Rem} size={'s'} level={4}>
+            Tips:
+        </Title>
+        <p className={marginTop0Rem}>
             Snakk om det som skal skje framover i tid og på hvilke muligheter som finnes.
         </p>
-        <h4 className={'margin-bunn-0rem'}>Vanlige tema når dere finner løsninger sammen:</h4>
-        <ul className={"finn-losninger-sammen-liste"}>
+        <Title className={marginBottom0Rem} size={'s'} level={4}>
+            Vanlige tema når dere finner løsninger sammen:
+        </Title>
+        <ul className={marginTop0Rem}>
             <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
             <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
             <li>tilpasse organisering av arbeidet</li>
             <li>tilpasse samarbeid og samhandling med andre</li>
-            <li className={"margin-bunn-2rem"}>alternative arbeidsoppgaver</li>
+            <li className={marginBottom2Rem}>alternative arbeidsoppgaver</li>
             <li>behov for informasjon og tilbakemeldinger</li>
             <li>arbeidsmiljø</li>
-            <li className={"margin-bunn-2rem"}>kompetanse</li>
+            <li className={marginBottom2Rem}>kompetanse</li>
             <li>fysisk utforming av arbeidsplassen</li>
             <li>hjelpemidler</li>
             <li>andre forhold</li>
         </ul>
 
-        <h4 className={'margin-bunn-0rem'}>Eksempler på spørsmål:</h4>
-        <p className={"finn-losninger-sammen-paragraf"}>
+        <Title className={marginBottom0Rem} size={'s'} level={4}>
+            Eksempler på spørsmål:
+        </Title>
+        <p className={marginTop0Rem}>
             Velg noen av eksemplene som er relevante for akkurat denne samtalen.
         </p>
-        <div className={"gra-avrundet-boks margin-bunn-2rem"}>
-            <h4>Hvordan kan jeg som leder hjelpe deg?</h4>
+        <div className={classNames(graAvrundetBoks, marginBottom2Rem)}>
+            <Title size={'s'} level={4}>
+                Hvordan kan jeg som leder hjelpe deg?
+            </Title>
             <ul>
                 <li>Hva ville være god og støttende hjelp for deg i en travel arbeidsdag?</li>
                 <li>Hva vil du oppleve som god støtte?</li>
@@ -49,8 +59,10 @@ const FinneLosningerSammen = ({callback}: InfoPanelProps) => {
                 <li>Hvordan kan jeg som leder hjelpe deg med å få en mindre stressende arbeidsdag?</li>
             </ul>
         </div>
-        <div className={"gra-avrundet-boks"}>
-            <h4>Løsninger</h4>
+        <div className={graAvrundetBoks}>
+            <Title size={'s'} level={4}>
+                Løsninger
+            </Title>
             <ul>
                 <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
                 <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>

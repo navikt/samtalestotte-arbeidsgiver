@@ -4,13 +4,13 @@ WORKDIR /var/server
 
 USER apprunner
 
-ENV NODE_ENV=production
-
 COPY src/ src/
 COPY package.json package.json
 COPY yarn.lock yarn.lock
 COPY next.config.js next.config.js
 COPY .env .env
+COPY .babelrc .babelrc
+COPY tsconfig.json tsconfig.json
 
 RUN yarn install --frozen-lockfile
 RUN yarn build

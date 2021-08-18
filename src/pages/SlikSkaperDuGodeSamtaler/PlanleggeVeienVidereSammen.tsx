@@ -1,8 +1,10 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import './PlanleggeVeienVidereSammen.less';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { OPPFOLGNINGSPLAN } from '../../resources/urls';
+import { Title } from '@navikt/ds-react';
+import { marginBottom0Rem, marginBottom3Rem, marginTop0Rem } from '../../utils/styleTemplates';
+import classNames from 'classnames';
 
 const PlanleggeVeienVidereSammen = ({ callback }: InfoPanelProps) => {
     return (
@@ -12,30 +14,33 @@ const PlanleggeVeienVidereSammen = ({ callback }: InfoPanelProps) => {
             panelLestSituasjon={'ulest'}
             callBack={callback}
         >
-            <h3 className={'sub-section-header planlegg-veien-videre-sammen-no-margin-bottom'}>
+            <Title className={marginBottom0Rem} size={'m'} level={3}>
                 Oppsummer i felleskap.
-            </h3>
-            <p className={'planlegg-veien-videre-sammen-no-margin-top'}>
+            </Title>
+            <p className={marginTop0Rem}>
                 En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer
                 det dere er blitt enige om og at dere lager en plan for videre oppfølging.
             </p>
-
-            <h4 className={'margin-bunn-0rem'}>Tips:</h4>
-            <p className={'planlegg-veien-videre-sammen-no-margin-top'}>
+            <Title className={marginBottom0Rem} size={'s'} level={4}>
+                Tips:
+            </Title>
+            <p className={marginTop0Rem}>
                 Det er lurt med flere korte oppsummeringer til hvert punkt dere har avtalt. Bruk
                 spørsmål som kan besvares med ja eller nei for å sjekke at dere har felles
                 forståelse.
             </p>
-            <p className={'planlegg-veien-videre-sammen-no-margin-bottom'}>
+            <p className={marginBottom0Rem}>
                 Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.
             </p>
-            <p className={'planlegg-veien-videre-sammen-no-margin-top'}>
+            <p className={marginTop0Rem}>
                 <LoggbarLenke href={OPPFOLGNINGSPLAN}>
                     Les mer om oppfølgingsplan på nav.no.
                 </LoggbarLenke>
             </p>
-            <h4 className={'margin-bunn-0rem'}>Vanlige tema i avslutningen:</h4>
-            <ul className={'planlegg-veien-videre-sammen-no-margin-top margin-bunn-3rem'}>
+            <Title className={marginBottom0Rem} size={'s'} level={4}>
+                Vanlige tema i avslutningen:
+            </Title>
+            <ul className={classNames(marginTop0Rem, marginBottom3Rem)}>
                 <li>dato for neste samtale og hvor ofte samtaler skal gjennomføres</li>
                 <li>avtaler, tilrettelegginger og tiltak</li>
                 <li>om tilretteleggingen er midlertidig eller permanent</li>

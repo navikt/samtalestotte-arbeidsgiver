@@ -1,6 +1,5 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import './TipsOmTilrettelegging.less';
 import {
     FOLGE_OPP_TILRETTELEGGING,
     NETTKURS,
@@ -9,6 +8,18 @@ import {
     TILRETTELEGGING,
 } from '../../resources/urls';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
+import { Title } from '@navikt/ds-react';
+import {
+    graAvrundetBoks, horizontalLine,
+    infoPanelKolonner,
+    marginBottom025rem,
+    marginBottom0Rem,
+    marginBottom1Rem,
+    marginBottom2Rem,
+    marginBottom3Rem,
+    marginTop0Rem, marginTop3Rem,
+} from '../../utils/styleTemplates';
+import classNames from 'classnames';
 
 const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
     return (
@@ -18,24 +29,24 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
             panelLestSituasjon={'ulest'}
             callBack={callback}
         >
-            <h3 className={'sub-section-header'}>
+            <Title size={'m'} level={3}>
                 Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.
-            </h3>
+            </Title>
             <p>
                 Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i
                 samtalen med gjensidige forventninger til hva som er mulig.
             </p>
-            <p className={'tips-om-tilrettelegging-no-margin-bottom'}>
+            <p className={marginBottom0Rem}>
                 Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter som
                 finnes.
             </p>
-            <p className={'tips-om-tilrettelegging-no-margin-top margin-bunn-3rem'}>
+            <p className={classNames(marginTop0Rem, marginBottom3Rem)}>
                 Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med verneombud
                 og tillitsvalgte. Hensikten er en felles vurdering av hvilken tilrettelegging er
                 mulig hos dere.
             </p>
-            <ul className={'margin-bunn-2rem'}>
-                <li className={'margin-bunn-1rem'}>
+            <ul className={marginBottom2Rem}>
+                <li className={marginBottom1Rem}>
                     <strong>
                         Hvilke tilretteleggingsmuligheter finnes på deres arbeidsplass og ellers i
                         organisasjonen?
@@ -48,12 +59,14 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
                     </strong>
                 </li>
             </ul>
-            <h4 className={'margin-bunn-025rem'}>Dette kan du gjøre:</h4>
-            <div className={'infoPanel-kolonner'}>
-                <div className={'gra-avrundet-boks'}>
-                    <h4>på kort sikt:</h4>
-                    <ul className={'tips-om-tilrettelegging-no-margin-top'}>
-                        <li className={'margin-bunn-2rem'}>
+            <Title className={marginBottom025rem} size={'s'} level={4}>Dette kan du gjøre:</Title>
+            <div className={infoPanelKolonner}>
+                <div className={graAvrundetBoks}>
+                    <Title size={'s'} level={4}>
+                        på kort sikt:
+                    </Title>
+                    <ul className={marginTop0Rem}>
+                        <li className={marginBottom2Rem}>
                             Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for
                             din arbeidsplass, hvis dere har en personalavdeling kan disse ofte
                             hjelpe deg
@@ -64,10 +77,12 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
                         </li>
                     </ul>
                 </div>
-                <div className={'gra-avrundet-boks'}>
-                    <h4>over tid og som kontinuerlig arbeid:</h4>
-                    <ul className={'tips-om-tilrettelegging-no-margin-top'}>
-                        <li className={'margin-bunn-2rem'}>
+                <div className={graAvrundetBoks}>
+                    <Title size={'s'} level={4}>
+                        over tid og som kontinuerlig arbeid:
+                    </Title>
+                    <ul className={marginTop0Rem}>
+                        <li className={marginBottom2Rem}>
                             Lag en liste med tilretteleggingsmuligheter{' '}
                             <LoggbarLenke href={SLIK_LYKKES_DERE}>
                                 Se beskrivelse av prosess og maler på idebanken
@@ -77,27 +92,30 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
                 </div>
             </div>
 
-            <div className={'horizontal-line margin-topp-3rem margin-bunn-3rem'} />
+            <div className={classNames(horizontalLine, marginTop3Rem, marginBottom3Rem)} />
 
-            <h3 className={'sub-section-header'}>Lær mer om tilrettelegging</h3>
-
-            <h4 className={'margin-bunn-025rem'}>Dette kan du gjøre:</h4>
-            <div className={'infoPanel-kolonner margin-bunn-2rem'}>
-                <div className={'gra-avrundet-boks'}>
-                    <h4>på kort sikt:</h4>
+            <Title size={'m'} level={3}>Lær mer om tilrettelegging</Title>
+            <Title className={marginBottom025rem} size={'s'} level={4}>
+                Dette kan du gjøre:
+            </Title>
+            <div className={classNames(infoPanelKolonner, marginBottom2Rem)}>
+                <div className={graAvrundetBoks}>
+                    <Title size={'s'} level={4}>
+                        på kort sikt:
+                    </Title>
                     <ul>
-                        <li className={'margin-bunn-2rem'}>
+                        <li className={marginBottom2Rem}>
                             <LoggbarLenke href={TILRETTELEGGING}>
                                 Les mer om arbeidsgivers plikter til å tilrettelegge på
                                 arbeidsplassen hos arbeidstilsynet.
                             </LoggbarLenke>
                         </li>
-                        <li className={'margin-bunn-2rem'}>
+                        <li className={marginBottom2Rem}>
                             NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt og
                             medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging.{' '}
                             <LoggbarLenke href={NETTKURS}>Gå til nettkurs.</LoggbarLenke>
                         </li>
-                        <li className={'margin-bunn-2rem'}>
+                        <li className={marginBottom2Rem}>
                             <LoggbarLenke href={FOLGE_OPP_TILRETTELEGGING}>
                                 Les mer om tilrettelegging i sykefraværsoppfølging
                             </LoggbarLenke>
@@ -109,19 +127,21 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
                         </li>
                     </ul>
                 </div>
-                <div className={'gra-avrundet-boks'}>
-                    <h4>over tid og som kontinuerlig arbeid:</h4>
+                <div className={graAvrundetBoks}>
+                    <Title className={marginBottom0Rem} size={'s'} level={4}>
+                        over tid og som kontinuerlig arbeid:
+                    </Title>
                     <ul>
-                        <li className={'margin-bunn-2rem'}>
+                        <li className={marginBottom2Rem}>
                             Lag en plan for å lære mer.
                         </li>
-                        <li className={'margin-bunn-2rem'}>
+                        <li className={marginBottom2Rem}>
                             Hva du trenger å vite mer om?
                         </li>
-                        <li className={'margin-bunn-2rem'}>
+                        <li className={marginBottom2Rem}>
                             Hvordan kan du lære mer?
                         </li>
-                        <li className={'margin-bunn-2rem'}>
+                        <li className={marginBottom2Rem}>
                             Når du skal gjennomføre?
                         </li>
                         <li>

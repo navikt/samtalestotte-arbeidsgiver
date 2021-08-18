@@ -28,7 +28,7 @@ const ForberedeMedarbeiderenDin = ({callback}: InfoPanelProps) => {
             </li>
             <li>
                 <LoggbarLenke href={GJENNOMFOR_SAMTALEN}>
-                    Velg noen av de viktigste fra eksemplene under “gjennomføring av samtalen” lengre ned på siden.
+                    Velg noen av de viktigste fra eksemplene under “Gjennomfør samtalen ved å” lengre ned på siden.
                 </LoggbarLenke>
             </li>
         </ul>

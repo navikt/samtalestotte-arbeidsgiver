@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import Lenke from 'nav-frontend-lenker';
+import { Link } from '@navikt/ds-react'
 import logEvent from '../../amplitude/amplitude';
 
 type LoggbarLenkeProps = {
@@ -23,9 +23,9 @@ const LoggbarLenke: FunctionComponent<LoggbarLenkeProps> = ({
         }
     };
     return (
-        <Lenke onClick={() => logLenke(href, children)} href={href} className={className}>
+        <Link onClick={() => logLenke(href, children)} href={href} className={className}>
             {children}
-        </Lenke>
+        </Link>
     );
 };
 

@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { Layout } from '../felleskomponenter/Layout/Layout';
 import { getPageProps, PageProps } from '../pageProps';
-import './index.less';
 import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
 import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
@@ -52,7 +51,6 @@ const Home = (props: { page: PageProps }) => {
             antallForsøkSendTilIaTjenesterMetrikker++;
         }
     }, []);
-
 
 
     return (

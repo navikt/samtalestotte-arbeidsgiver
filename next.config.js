@@ -1,18 +1,15 @@
-const withLess = require('@zeit/next-less');
-const packageJson = require('./package.json');
-const navFrontendModuler = [];
-
-Object.keys(packageJson.dependencies).forEach((key) => {
-    if (key.startsWith('nav-frontend-')) {
-        navFrontendModuler.push(key);
-    }
-});
+// @ts-check
+/**
+ * @type {import('next/dist/next-server/server/config').NextConfig}
+ **/
 
 const nextTranspileModules = require('next-transpile-modules');
-const withTranspileModules = nextTranspileModules(navFrontendModuler);
+const withTranspileModules = nextTranspileModules(["@navikt/ds-react", "@navikt/ds-icons"]);
+const withLinaria = require('next-linaria');
 
 module.exports = withTranspileModules(
-    withLess({
+    withLinaria(
+    {
         basePath: '/samtalestotte',
         i18n: {
             locales: ['no'],
@@ -21,5 +18,7 @@ module.exports = withTranspileModules(
         target: 'server',
         trailingSlash: false,
         reactStrictMode: true,
-    })
-);
+        webpack5: true,
+        cssModules: true
+    }
+));
