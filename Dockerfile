@@ -5,6 +5,7 @@ WORKDIR /var/server
 USER apprunner
 
 COPY src/ src/
+COPY public/ public/
 COPY package.json package.json
 COPY yarn.lock yarn.lock
 COPY next.config.js next.config.js
