@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
+import {marginSides3rem} from "../utils/fellesStiler";
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
@@ -67,10 +68,10 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                     logEvent={logEvent}
                 >
-                    <HvorforBrukeTidPaaSamtaler />
+                    <HvorforBrukeTidPaaSamtaler className={marginSides3rem}/>
                     <SlikSkaperDuGodeSamtaler />
-                    <MerInspirasjonOgGodeGrep />
-                    <VisteDuAt />
+                    <MerInspirasjonOgGodeGrep className={marginSides3rem}/>
+                    <VisteDuAt className={marginSides3rem}/>
                 </Layout>
             </main>
             <footer></footer>

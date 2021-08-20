@@ -3,7 +3,7 @@ import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInf
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { OPPFOLGNINGSPLAN } from '../../resources/urls';
 import { Title } from '@navikt/ds-react';
-import { marginBottom0Rem, marginBottom3Rem, marginTop0Rem } from '../../utils/styleTemplates';
+import { marginBottom0Rem, marginBottom3Rem, marginTop0Rem } from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
 const PlanleggeVeienVidereSammen = ({ callback }: InfoPanelProps) => {

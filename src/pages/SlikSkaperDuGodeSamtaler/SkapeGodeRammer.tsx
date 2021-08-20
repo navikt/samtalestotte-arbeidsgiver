@@ -14,7 +14,7 @@ import {
     marginBottom1Rem,
     marginBottom3Rem, marginTop0Rem,
     spacedList,
-} from '../../utils/styleTemplates';
+} from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
 const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {

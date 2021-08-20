@@ -1,11 +1,11 @@
 import Locked from '../../felleskomponenter/Ikoner/Locked';
 import Calculator from '../../felleskomponenter/Ikoner/Calculator';
 import { SYKEFRAVÆRSSTATISTIKK_KALKULATOR } from '../../resources/urls';
-import LoggbarLenkepanelBase from '../../felleskomponenter/LoggbarLenkepanelBase/LoggbarLenkepanelBase';
+import LoggbarLenkepanelBase from '../../felleskomponenter/LoggbarLenke/LoggbarLenkepanelBase';
 import { css } from 'linaria';
 import { SCREEN_SM_MIN } from '../../utils/konstanter';
 import classNames from 'classnames';
-import { marginBottom1Rem } from '../../utils/styleTemplates';
+import { marginBottom1Rem } from '../../utils/fellesStiler';
 
 const SeHvorMyeSykefravaeretDittKoster = () => {
     const lenkeTekstConst = 'Gå til kalkulatoren';

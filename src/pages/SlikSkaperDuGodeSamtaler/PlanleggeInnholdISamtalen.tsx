@@ -2,7 +2,7 @@ import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { GJENNOMFOR_SAMTALEN } from '../../resources/urls';
-import { alternatingDiscList, marginBottom1Rem } from '../../utils/styleTemplates';
+import { alternatingDiscList, marginBottom1Rem } from '../../utils/fellesStiler';
 
 const PlanleggeInnholdISamtalen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel

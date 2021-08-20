@@ -1,7 +1,7 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import { Title } from '@navikt/ds-react';
-import { graAvrundetBoks, marginBottom0Rem, marginBottom2Rem, marginTop0Rem } from '../../utils/styleTemplates';
+import { graAvrundetBoks, marginBottom0Rem, marginBottom2Rem, marginTop0Rem } from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
 const SnakkeOmArbeid = ({callback}: InfoPanelProps) => {

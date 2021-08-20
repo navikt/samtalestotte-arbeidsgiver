@@ -1,7 +1,7 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import { Title, BodyLong } from '@navikt/ds-react';
-import { marginBottom0Rem, marginTop0Rem, marginTop1Rem } from '../../utils/styleTemplates';
+import { marginBottom0Rem, marginTop0Rem, marginTop1Rem } from '../../utils/fellesStiler';
 
 const InnledeSamtalen = ({callback}: InfoPanelProps) => {
     return <EkspanderbartInfopanel
