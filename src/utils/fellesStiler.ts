@@ -67,3 +67,16 @@ export const spacedList = css`
 export const breakBeforePage = css`
   break-before: page;
 `
+
+export const marginSides3rem = css`
+  @media (min-width: ${SCREEN_SM_MIN}) {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+`
+
+export const noPrint = css`
+  @media print {
+      display: none;
+  }
+`

@@ -1,7 +1,7 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import Lightbulb from '../../felleskomponenter/Ikoner/Lightbulb';
-import { marginBottom0Rem, marginTop0Rem } from '../../utils/styleTemplates';
+import { marginBottom0Rem, marginTop0Rem } from '../../utils/fellesStiler';
 import { Title } from '@navikt/ds-react';
 
 const Suksesskriterier = ({ callback }: InfoPanelProps) => {

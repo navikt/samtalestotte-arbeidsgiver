@@ -13,7 +13,7 @@ const LoggbarLenkepanelBase: FunctionComponent<LoggbarLenkeProps> = ({
     children,
     href,
     className,
-    lenketekst
+    lenketekst,
 }: LoggbarLenkeProps) => {
     const logLenke = (url: string, lenketekst: string) => {
         if (window !== undefined) {

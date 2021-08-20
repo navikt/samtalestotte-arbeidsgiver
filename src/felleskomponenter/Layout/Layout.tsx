@@ -13,6 +13,7 @@ import {erTilbakeURLTillat, listeAvTillatteRefererUrler, TILBAKE } from '../../r
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import { css } from 'linaria';
 import classNames from 'classnames';
+import {marginSides3rem, noPrint} from "../../utils/fellesStiler";
 
 export const Layout = (props: {
     title: string;
@@ -70,9 +71,9 @@ export const Layout = (props: {
                 />
                 <div className={layoutWrapper}>
                     <div className={layoutContent} ref={panelRef}>
-                        <Link href={tilbakeURL} className={layoutNoPrint}><Back />Tilbake</Link>
-                        <div className={layoutSmallScreenIllustration}><PageBannerSVG/></div>
-                        <div className={layoutPrintHeader}>
+                        <Link href={tilbakeURL} className={classNames(noPrint, marginSides3rem)}><Back />Tilbake</Link>
+                        <div className={classNames(layoutSmallScreenIllustration, marginSides3rem)}><PageBannerSVG/></div>
+                        <div className={classNames(layoutPrintHeader, marginSides3rem)}>
                             <BodyShort size='s'>{PROD_URL}</BodyShort>
                         </div>
                         <div className={layoutReactToPrintWrapper}>
@@ -93,7 +94,7 @@ export const Layout = (props: {
                                     <Button
                                         id={'skriv-ut-knapp'}
                                         ref={lastNedKnappRef}
-                                        className={classNames(layoutNoPrint, layoutKnapp)}
+                                        className={classNames(noPrint, layoutKnapp, marginSides3rem)}
                                         size={"m"}
                                     >
                                         Skriv ut
@@ -133,17 +134,11 @@ const layoutWrapper = css`
 `
 
 const layoutContent = css`
-  max-width: 60rem;
+  max-width: 66rem;
   background-color: white;
   padding: 1rem;
   margin: auto;
   border-radius: 0.25rem;
-`
-
-const layoutNoPrint = css`
-  @media print {
-      display: none;
-  }
 `
 
 const layoutSmallScreenIllustration = css`

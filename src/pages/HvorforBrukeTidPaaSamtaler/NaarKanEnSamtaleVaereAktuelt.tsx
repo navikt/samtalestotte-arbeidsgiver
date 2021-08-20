@@ -1,7 +1,7 @@
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import ChatDoubleBubble from '../../felleskomponenter/Ikoner/ChatDoubleBubble';
-import { marginBottom0Rem, marginTop0Rem } from '../../utils/styleTemplates';
+import { marginBottom0Rem, marginTop0Rem } from '../../utils/fellesStiler';
 
 
 const NaarKanEnSamtaleVaereAktuelt = ({callback}: InfoPanelProps) => {

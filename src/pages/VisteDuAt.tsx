@@ -2,20 +2,20 @@ import Information from '../felleskomponenter/Ikoner/Information';
 import { FOREBYGGE_SYKEFRAVAER, KONTAKT_OSS } from '../resources/urls';
 import LoggbarLenke from "../felleskomponenter/LoggbarLenke/LoggbarLenke";
 import { css } from "linaria"
-import { marginTop4Rem, marginBottom1Rem, marginTop0Rem, breakBeforePage } from '../utils/styleTemplates';
+import { marginTop4Rem, marginBottom1Rem, marginTop0Rem, breakBeforePage } from '../utils/fellesStiler';
 import { Title } from '@navikt/ds-react';
 import classNames from 'classnames';
 
-const VisteDuAt = () => {
+const VisteDuAt = ({className}: {className?: string}) => {
 
     return (
         <div
-            className={classNames(visteDuContainer, marginTop4Rem, breakBeforePage)}
+            className={classNames(visteDuContainer, marginTop4Rem, breakBeforePage, className)}
         >
             <Title className={visteDuHeader} size={'m'} level={3}>
                 Visste du at NAV hjelper virksomheter med å forebygge sykefravær?
             </Title>
-            <Information className={visteDuIcon} width={"39px"} height={"39px"} />
+            <Information className={visteDuIcon} width={"61px"} height={"61px"} />
             <p className={classNames(visteDuParagraf, marginTop0Rem)}>
                 NAV hjelper virksomheter med å forebygge sykefravær.
                 Du får digitale tjenester og veiledning for å gjennomføre enkeltsamtaler.
@@ -39,7 +39,7 @@ const visteDuContainer = css`
     padding: 2em;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: auto;
     grid-template-areas:
     "header header"
     "ikon paragraf"

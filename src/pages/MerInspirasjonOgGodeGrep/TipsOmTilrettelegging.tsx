@@ -18,7 +18,7 @@ import {
     marginBottom2Rem,
     marginBottom3Rem,
     marginTop0Rem, marginTop3Rem,
-} from '../../utils/styleTemplates';
+} from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
 const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {

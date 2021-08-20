@@ -3,10 +3,10 @@ import DetteKanDuSpoerreMedarbeiderenOm from './DetteKanDuSpoerreMedarbeiderenOm
 import Suksesskriterier from './Suksesskriterier';
 import SeHvorMyeSykefravaeretDittKoster from './SeHvorMyeSykefravaeretDittKoster';
 import { Title } from '@navikt/ds-react';
-import { boldText, marginBottom2Rem, marginBottom4Rem } from '../../utils/styleTemplates';
+import { boldText, marginBottom2Rem, marginBottom4Rem } from '../../utils/fellesStiler';
 
-const HvorforBrukeTidPaaSamtaler = () => {
-    return <section>
+const HvorforBrukeTidPaaSamtaler = ({className}: {className?: string}) => {
+    return <section className={className}>
         <Title size={"l"} level={2}>
             Hvorfor bruke tid på samtaler?
         </Title>
