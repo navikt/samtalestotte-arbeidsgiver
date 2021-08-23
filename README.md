@@ -6,30 +6,32 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 # Komme i gang
 
 - Installere avhengigheter: `yarn`
-- Starte appen lokalt: Her har man flere muligheter, avhengig av hva man vil.
-    1. Kjøre opp utviklingserver `yarn start`
-    2. Kjøre dev med `yarn run dev` 
-- Eventuelt starte appen med Node-serveren: `yarn run build && yarn server`
-- Kjøre applikasjonen med Docker:
-    1. `yarn install && yarn build`
-    2. `docker build -t samtalestotte-arbeidsgiver .`
-    3. `docker run -d -p 3000:3000 samtalestotte-arbeidsgiver`
-    4. For å stoppe, kjør `docker stop <id>` med id-en fra forrige kommando
+- Starte appen lokalt - her har man flere muligheter, avhengig av hva man vil:
+  - Alt. 1: Lokal utviklingsserver:
+    1. Kjøre opp utviklingserver `yarn build && yarn start`, eventuelt `yarn run dev`
+    2. Gå til http://localhost:3000/samtalestotte
+  - Alt. 2: Node-serveren: `yarn run build && yarn server`
+  - Alt. 3: Kjøre applikasjonen med Docker:
+     1. `yarn install && yarn build`
+     2. `docker build -t samtalestotte-arbeidsgiver .`
+     3. `docker run -d -p 3000:3000 samtalestotte-arbeidsgiver`
+     4. For å stoppe, kjør `docker stop <id>` med id-en fra forrige kommando
 
 ## Deploy
 
-Master branch deployes automatisk til Prod(under arbeid).
+Master branch deployes automatisk til Prod.
 
-### Hvordan deployer man en vis branch?
+### Hvordan deployer man en viss branch til dev-miljø?
 
 Oppdater filen `.github/workflows/build-deploy.yml` ved `deploy-to-dev` steg med navn til den branch-en som skal deployes
 
 
 ### Lenker til applikasjon
 
-- i prod(under arbeid): https://arbeidsgiver.nav.no/samtalestotte-arbeidsgiver
-- i dev miljø: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte-arbeidsgiver --trenger #naisdevice kjørende se https://doc.nais.io/device/install/ for info om det
-
+- i prod: https://arbeidsgiver.nav.no/samtalestotte
+- Dev-miljøer:
+  - i labs-miljø: https://arbeidsgiver.labs.nais.io/samtalestotte
+  - i dev-miljø: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte-arbeidsgiver -- trenger #naisdevice kjørende se https://doc.nais.io/device/install/ for info om det
 ---
 
 # Henvendelser
