@@ -6,6 +6,7 @@ export const marginTop1Rem = css`margin-top: 1rem;`
 export const marginTop2Rem = css`margin-top: 2rem;`
 export const marginTop3Rem = css`margin-top: 3rem;`
 export const marginTop4Rem = css`margin-top: 4rem;`
+export const marginTop6Rem = css`margin-top: 6rem;`
 
 export const marginBottom0Rem = css`margin-bottom: 0;`
 export const marginBottom025rem = css`margin-bottom: 0.25rem;`

@@ -4,16 +4,16 @@ import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
 import { DecoratorParts } from '../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
-import {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import ReactToPrint from 'react-to-print';
 import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
 import { Link, BodyShort, Button } from '@navikt/ds-react';
 import { Back } from '@navikt/ds-icons'
-import {erTilbakeURLTillat, listeAvTillatteRefererUrler, TILBAKE } from '../../resources/urls';
+import {erTilbakeURLTillat, TILBAKE } from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import { css } from 'linaria';
 import classNames from 'classnames';
-import {marginSides3rem, noPrint} from "../../utils/fellesStiler";
+import {marginSides3rem, marginTop6Rem, noPrint} from "../../utils/fellesStiler";
 
 export const Layout = (props: {
     title: string;
@@ -76,33 +76,33 @@ export const Layout = (props: {
                         <div className={classNames(layoutPrintHeader, marginSides3rem)}>
                             <BodyShort size='s'>{PROD_URL}</BodyShort>
                         </div>
-                        <div className={layoutReactToPrintWrapper}>
-                            <ReactToPrint
-                                onBeforePrint={() => {
-                                    props.logEvent('knapp', {
-                                        label: 'skriv-ut',
-                                        funksjon: 'skriv-ut',
-                                    });
-                                }}
-                                onAfterPrint={() => {
-                                    if (lastNedKnappRef.current) {
-                                        lastNedKnappRef.current.focus();
-                                    }
-                                }}
-                                content={() => panelRef.current}
-                                trigger={() => (
-                                    <Button
-                                        id={'skriv-ut-knapp'}
-                                        ref={lastNedKnappRef}
-                                        className={classNames(noPrint, layoutKnapp, marginSides3rem)}
-                                        size={"m"}
-                                    >
-                                        Skriv ut
-                                    </Button>
-                                )}
-                            />
-                        </div>
                         {props.children}
+                    </div>
+                    <div className={classNames(layoutReactToPrintWrapper, marginTop6Rem)}>
+                        <ReactToPrint
+                            onBeforePrint={() => {
+                                props.logEvent('knapp', {
+                                    label: 'skriv-ut',
+                                    funksjon: 'skriv-ut',
+                                });
+                            }}
+                            onAfterPrint={() => {
+                                if (lastNedKnappRef.current) {
+                                    lastNedKnappRef.current.focus();
+                                }
+                            }}
+                            content={() => panelRef.current}
+                            trigger={() => (
+                                <Button
+                                    id={'skriv-ut-knapp'}
+                                    ref={lastNedKnappRef}
+                                    className={classNames(noPrint, layoutKnapp, marginSides3rem)}
+                                    size={"m"}
+                                >
+                                    Skriv ut
+                                </Button>
+                            )}
+                        />
                     </div>
                 </div>
             </div>
@@ -167,7 +167,6 @@ const layoutReactToPrintWrapper = css`
   display: none;
   @media (min-width: ${SCREEN_SM_MIN}) {  
     display: flex;
-    justify-content: flex-end;
   }
 `
 
