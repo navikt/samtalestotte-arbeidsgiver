@@ -24,7 +24,7 @@ export const Layout = (props: {
     children: React.ReactChild[];
 }) => {
     const panelRef = useRef<HTMLDivElement>(null);
-    const lastNedKnappRef = useRef<HTMLButtonElement>(null);
+    const skrivUtKnappRef = useRef<HTMLButtonElement>(null);
     const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
     useEffect(() => {
         if (window !== undefined) {
@@ -87,15 +87,15 @@ export const Layout = (props: {
                                 });
                             }}
                             onAfterPrint={() => {
-                                if (lastNedKnappRef.current) {
-                                    lastNedKnappRef.current.focus();
+                                if (skrivUtKnappRef.current) {
+                                    skrivUtKnappRef.current.focus();
                                 }
                             }}
                             content={() => panelRef.current}
                             trigger={() => (
                                 <Button
                                     id={'skriv-ut-knapp'}
-                                    ref={lastNedKnappRef}
+                                    ref={skrivUtKnappRef}
                                     className={classNames(noPrint, layoutKnapp, marginSides3rem)}
                                     size={"m"}
                                 >
