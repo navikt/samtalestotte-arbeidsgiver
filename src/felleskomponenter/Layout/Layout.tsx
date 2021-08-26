@@ -175,9 +175,3 @@ const layoutReactToPrintWrapper = css`
     display: flex;
   }
 `
-
-const layoutKnapp = css`
-  :hover{
-      padding: 0.65625rem var(--navds-spacing-3);
-  }
-`
