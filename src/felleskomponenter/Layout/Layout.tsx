@@ -1,17 +1,17 @@
-import { PageBanner } from '../PageBanner/PageBanner';
-import { DecoratorHeader } from '../decorator/DecoratorHeader';
-import { DecoratorFooter } from '../decorator/DecoratorFooter';
+import {PageBanner} from '../PageBanner/PageBanner';
+import {DecoratorHeader} from '../decorator/DecoratorHeader';
+import {DecoratorFooter} from '../decorator/DecoratorFooter';
 import Head from 'next/head';
-import { DecoratorParts } from '../../utils/dekorator';
-import { DecoratorEnv } from '../decorator/DecoratorEnv';
+import {DecoratorParts} from '../../utils/dekorator';
+import {DecoratorEnv} from '../decorator/DecoratorEnv';
 import React, {useEffect, useRef, useState} from 'react';
 import ReactToPrint from 'react-to-print';
-import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
+import {PROD_URL, SCREEN_SM_MIN} from '../../utils/konstanter';
 import {Link, BodyShort, Button} from '@navikt/ds-react';
-import { Back, Print } from '@navikt/ds-icons'
-import {erTilbakeURLTillat, TILBAKE } from '../../resources/urls';
-import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
-import { css } from 'linaria';
+import {Back, Print} from '@navikt/ds-icons'
+import {erTilbakeURLTillat, TILBAKE} from '../../resources/urls';
+import {PageBannerSVG} from '../PageBanner/PageBannerSVG';
+import {css} from 'linaria';
 import classNames from 'classnames';
 import {
     knappSomLenke,
@@ -20,6 +20,7 @@ import {
     marginTop6Rem,
     noPrint
 } from "../../utils/fellesStiler";
+import {SkrivUtKnapp} from "../SkrivUtKnapp/SkrivUtKnapp";
 
 export const Layout = (props: {
     title: string;
@@ -30,7 +31,6 @@ export const Layout = (props: {
     children: React.ReactChild[];
 }) => {
     const panelRef = useRef<HTMLDivElement>(null);
-    const skrivUtKnappRef = useRef<HTMLButtonElement>(null);
     const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
     useEffect(() => {
         if (window !== undefined) {
@@ -53,6 +53,12 @@ export const Layout = (props: {
         />;
     });
 
+    function loggUtskrift() {
+            props.logEvent('knapp', {
+                label: 'skriv-ut',
+                funksjon: 'skriv-ut',
+            });
+    }
 
     return (
         <div className={layout}>
@@ -77,38 +83,14 @@ export const Layout = (props: {
                 />
                 <div className={layoutWrapper}>
                     <div className={layoutContent} ref={panelRef}>
-                        <Link href={tilbakeURL} className={classNames(noPrint, marginSides3rem)}><Back />Tilbake</Link>
-                        <div className={classNames(layoutSmallScreenIllustration, marginSides3rem)}><PageBannerSVG/></div>
+                        <Link href={tilbakeURL} className={classNames(noPrint, marginSides3rem)}><Back/>Tilbake</Link>
+                        <div className={classNames(layoutSmallScreenIllustration, marginSides3rem)}><PageBannerSVG/>
+                        </div>
                         <div className={classNames(layoutPrintHeader, marginSides3rem)}>
                             <BodyShort size='s'>{PROD_URL}</BodyShort>
                         </div>
                         {props.children}
-                        <div className={classNames(layoutReactToPrintWrapper, marginTop6Rem)}>
-                            <ReactToPrint
-                                onBeforePrint={() => {
-                                    props.logEvent('knapp', {
-                                        label: 'skriv-ut',
-                                        funksjon: 'skriv-ut',
-                                    });
-                                }}
-                                onAfterPrint={() => {
-                                    if (skrivUtKnappRef.current) {
-                                        skrivUtKnappRef.current.focus();
-                                    }
-                                }}
-                                content={() => panelRef.current}
-                                trigger={() => (
-                                    <Button
-                                        id={'skriv-ut-knapp'}
-                                        ref={skrivUtKnappRef}
-                                        className={classNames(noPrint, knappSomLenke)}
-                                        size={"m"}
-                                    >
-                                        <Print className={marginRight1Rem}/> Skriv ut nettside
-                                    </Button>
-                                )}
-                            />
-                        </div>
+                        <SkrivUtKnapp knappetekst="Skriv ut nettside" kjørFørUtskrift={loggUtskrift} innholdRef={panelRef}/>
                     </div>
                 </div>
             </div>
@@ -119,7 +101,7 @@ export const Layout = (props: {
                         : props.decoratorParts?.decoratorFooter
                 }
             />
-            <DecoratorEnv env={props.decoratorParts?.decoratorEnv} />
+            <DecoratorEnv env={props.decoratorParts?.decoratorEnv}/>
         </div>
     );
 };
@@ -166,12 +148,5 @@ const layoutPrintHeader = css`
     display: block;
     margin-bottom: 1rem;
     margin-left: 1rem;
-  }
-`
-
-const layoutReactToPrintWrapper = css`
-  display: none;
-  @media (min-width: ${SCREEN_SM_MIN}) {  
-    display: flex;
   }
 `
