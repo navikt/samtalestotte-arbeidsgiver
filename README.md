@@ -31,7 +31,7 @@ Oppdater filen `.github/workflows/build-deploy.yml` ved `deploy-to-dev` steg med
 - i prod: https://arbeidsgiver.nav.no/samtalestotte
 - Dev-miljøer:
   - i labs-miljø: https://arbeidsgiver.labs.nais.io/samtalestotte
-  - i dev-miljø: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte-arbeidsgiver -- trenger #naisdevice kjørende se https://doc.nais.io/device/install/ for info om det
+  - i dev-miljø: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte -- trenger #naisdevice kjørende se https://doc.nais.io/device/install/ for info om det
 ---
 
 # Henvendelser
