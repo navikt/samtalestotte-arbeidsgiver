@@ -7,13 +7,19 @@ import { DecoratorEnv } from '../decorator/DecoratorEnv';
 import React, {useEffect, useRef, useState} from 'react';
 import ReactToPrint from 'react-to-print';
 import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
-import { Link, BodyShort, Button } from '@navikt/ds-react';
-import { Back } from '@navikt/ds-icons'
+import {Link, BodyShort, Button} from '@navikt/ds-react';
+import { Back, Print } from '@navikt/ds-icons'
 import {erTilbakeURLTillat, TILBAKE } from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import { css } from 'linaria';
 import classNames from 'classnames';
-import {marginSides3rem, marginTop6Rem, noPrint} from "../../utils/fellesStiler";
+import {
+    knappSomLenke,
+    marginRight1Rem,
+    marginSides3rem,
+    marginTop6Rem,
+    noPrint
+} from "../../utils/fellesStiler";
 
 export const Layout = (props: {
     title: string;
@@ -77,32 +83,32 @@ export const Layout = (props: {
                             <BodyShort size='s'>{PROD_URL}</BodyShort>
                         </div>
                         {props.children}
-                    </div>
-                    <div className={classNames(layoutReactToPrintWrapper, marginTop6Rem)}>
-                        <ReactToPrint
-                            onBeforePrint={() => {
-                                props.logEvent('knapp', {
-                                    label: 'skriv-ut',
-                                    funksjon: 'skriv-ut',
-                                });
-                            }}
-                            onAfterPrint={() => {
-                                if (skrivUtKnappRef.current) {
-                                    skrivUtKnappRef.current.focus();
-                                }
-                            }}
-                            content={() => panelRef.current}
-                            trigger={() => (
-                                <Button
-                                    id={'skriv-ut-knapp'}
-                                    ref={skrivUtKnappRef}
-                                    className={classNames(noPrint, layoutKnapp, marginSides3rem)}
-                                    size={"m"}
-                                >
-                                    Skriv ut
-                                </Button>
-                            )}
-                        />
+                        <div className={classNames(layoutReactToPrintWrapper, marginTop6Rem)}>
+                            <ReactToPrint
+                                onBeforePrint={() => {
+                                    props.logEvent('knapp', {
+                                        label: 'skriv-ut',
+                                        funksjon: 'skriv-ut',
+                                    });
+                                }}
+                                onAfterPrint={() => {
+                                    if (skrivUtKnappRef.current) {
+                                        skrivUtKnappRef.current.focus();
+                                    }
+                                }}
+                                content={() => panelRef.current}
+                                trigger={() => (
+                                    <Button
+                                        id={'skriv-ut-knapp'}
+                                        ref={skrivUtKnappRef}
+                                        className={classNames(noPrint, knappSomLenke)}
+                                        size={"m"}
+                                    >
+                                        <Print className={marginRight1Rem}/> Skriv ut nettside
+                                    </Button>
+                                )}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,14 @@ export const marginBottom2Rem = css`margin-bottom: 2rem;`
 export const marginBottom3Rem = css`margin-bottom: 3rem;`
 export const marginBottom4Rem = css`margin-bottom: 4rem;`
 
+export const marginRight1Rem = css`margin-right: 1rem;`
+
 export const boldText = css`font-weight: var(--navds-font-weight-bold);`
+
+export const knappSomLenke = css`
+    border-style: none;
+    text-decoration: underline;
+`
 
 export const horizontalLine = css`
     border-top: 1px solid var(--navds-color-gray-20);
