@@ -104,10 +104,10 @@ test('snapshot test', () => {
       </div>
     </div>
     <div class=\\"lr3bbio\\">
-      <div class=\\"l1e3mpex\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"navds-link n1h2jzek mmrfjif\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+      <div class=\\"l1e3mpex\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"navds-link n1lu1ur0 m1em9y5r\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
             <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M7 12l8.571-9L17 4.5 9.857 12 17 19.5 15.571 21 7 12z\\" fill=\\"currentColor\\"></path>
           </svg>Tilbake</a>
-        <div class=\\"lu2a2qa mmrfjif\\"><svg width=\\"200\\" height=\\"160\\" viewBox=\\"0 0 200 160\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+        <div class=\\"lu2a2qa m1em9y5r\\"><svg width=\\"200\\" height=\\"160\\" viewBox=\\"0 0 200 160\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
             <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M107.429 158H60.5709C58.5988 158 57 156.381 57 154.383V88.6171C57 86.6205 58.5988 85 60.5709 85H107.429C109.401 85 111 86.6205 111 88.6171V154.383C111 156.381 109.401 158 107.429 158\\" fill=\\"#A0A0A0\\"></path>
             <rect width=\\"46\\" height=\\"55\\" transform=\\"translate(61 89)\\" fill=\\"white\\"></rect>
             <rect x=\\"64\\" y=\\"92\\" width=\\"40\\" height=\\"12\\" fill=\\"#C2EAF7\\"></rect>
@@ -140,12 +140,14 @@ test('snapshot test', () => {
             <path d=\\"M53.5995 38.1123C49.3468 34.0371 47.1865 28.9119 47.3335 23.2067C47.6574 10.6287 60.0928 0.313338 74.4849 0.684015C88.877 1.05469 100.765 11.9965 100.441 24.5745C100.111 37.3631 88.224 47.8677 74.4833 47.5138C71.0207 47.4246 67.6429 46.6552 64.4346 45.2222L50.8069 49.9764C50.5996 50.0461 50.3897 50.08 50.1808 50.0746C49.6887 50.062 49.2125 49.8425 48.8789 49.4516C48.4044 48.8928 48.3221 48.0975 48.6612 47.4489L53.5995 38.1123Z\\" fill=\\"#6AB889\\"></path>
             <path d=\\"M115.383 66.2181C119.315 62.8495 121.45 58.4686 121.579 53.4765C121.862 42.4708 111.371 32.8944 98.6719 32.5673C85.973 32.2402 75.0027 41.2639 74.7192 52.2696C74.431 63.4597 84.431 73.1766 96.5551 73.4889C99.6103 73.5676 102.622 73.048 105.514 71.9409L117.307 76.7117C117.487 76.782 117.67 76.8211 117.854 76.8259C118.289 76.8371 118.718 76.6668 119.03 76.3404C119.473 75.8735 119.582 75.1823 119.312 74.6002L115.383 66.2181Z\\" fill=\\"#337C9B\\"></path>
           </svg></div>
-        <div class=\\"l167q415 mmrfjif\\">
+        <div class=\\"l167q415 m1em9y5r\\">
           <p class=\\"navds-body-short navds-body--s\\">https://arbeidsgiver.nav.no/samtalestotte</p>
         </div>
-        <div class=\\"lmjkf5m\\"><button class=\\"n1h2jzek lquds6o mmrfjif navds-button navds-button--primary navds-button--m navds-body-short\\" id=\\"skriv-ut-knapp\\">Skriv ut</button></div>
         <p>Children</p>
         <p>Children</p>
+        <div class=\\"lmjkf5m m1evb9uy\\"><button class=\\"n1lu1ur0 k1tdlrfy navds-button navds-button--primary navds-button--m navds-body-short\\" id=\\"skriv-ut-knapp\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"mr6t0bd\\">
+              <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M20 0v5a4 4 0 014 4v10h-4v5H4v-5H0V9a4 4 0 014-4V0h16zm-2 12H6v10h12V12zm-2 2v2H8v-2h8zm-2 4v2H8v-2h6zm6-11H4a2 2 0 00-1.995 1.85L2 9v8h2v-7h16v7h2V9a2 2 0 00-1.85-1.995L20 7zm-2-5H6v3h12V2z\\" fill=\\"currentColor\\"></path>
+            </svg> Skriv ut nettside</button></div>
       </div>
     </div>
   </div>
