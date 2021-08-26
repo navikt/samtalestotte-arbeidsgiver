@@ -1,26 +1,19 @@
-import {PageBanner} from '../PageBanner/PageBanner';
-import {DecoratorHeader} from '../decorator/DecoratorHeader';
-import {DecoratorFooter} from '../decorator/DecoratorFooter';
+import { PageBanner } from '../PageBanner/PageBanner';
+import { DecoratorHeader } from '../decorator/DecoratorHeader';
+import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
-import {DecoratorParts} from '../../utils/dekorator';
-import {DecoratorEnv} from '../decorator/DecoratorEnv';
-import React, {useEffect, useRef, useState} from 'react';
-import ReactToPrint from 'react-to-print';
-import {PROD_URL, SCREEN_SM_MIN} from '../../utils/konstanter';
-import {Link, BodyShort, Button} from '@navikt/ds-react';
-import {Back, Print} from '@navikt/ds-icons'
-import {erTilbakeURLTillat, TILBAKE} from '../../resources/urls';
-import {PageBannerSVG} from '../PageBanner/PageBannerSVG';
-import {css} from 'linaria';
+import { DecoratorParts } from '../../utils/dekorator';
+import { DecoratorEnv } from '../decorator/DecoratorEnv';
+import React, { useEffect, useRef, useState } from 'react';
+import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
+import { BodyShort, Link } from '@navikt/ds-react';
+import { Back } from '@navikt/ds-icons';
+import { erTilbakeURLTillat, TILBAKE } from '../../resources/urls';
+import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
+import { css } from 'linaria';
 import classNames from 'classnames';
-import {
-    knappSomLenke,
-    marginRight1Rem,
-    marginSides3rem,
-    marginTop6Rem,
-    noPrint
-} from "../../utils/fellesStiler";
-import {SkrivUtKnapp} from "../SkrivUtKnapp/SkrivUtKnapp";
+import { marginSides3rem, noPrint } from '../../utils/fellesStiler';
+import { SkrivUtKnapp } from '../SkrivUtKnapp/SkrivUtKnapp';
 
 export const Layout = (props: {
     title: string;
@@ -41,30 +34,30 @@ export const Layout = (props: {
         }
     }, []);
 
-    const headerLinks = (props.decoratorParts
-        ? props.decoratorParts.linkTags
-        : []).map((attrs, index) => {
-        return <link
-            key={attrs.key}
-            href={attrs.href ? attrs.href : undefined}
-            type={attrs.type ? attrs.type : undefined}
-            rel={attrs.rel ? attrs.rel : undefined}
-            sizes={attrs.sizes ? attrs.sizes : undefined}
-        />;
-    });
+    const headerLinks = (props.decoratorParts ? props.decoratorParts.linkTags : []).map(
+        (attrs, index) => {
+            return (
+                <link
+                    key={attrs.key}
+                    href={attrs.href ? attrs.href : undefined}
+                    type={attrs.type ? attrs.type : undefined}
+                    rel={attrs.rel ? attrs.rel : undefined}
+                    sizes={attrs.sizes ? attrs.sizes : undefined}
+                />
+            );
+        }
+    );
 
     function loggUtskrift() {
-            props.logEvent('knapp', {
-                label: 'skriv-ut',
-                funksjon: 'skriv-ut',
-            });
+        props.logEvent('knapp', {
+            label: 'skriv-ut',
+            funksjon: 'skriv-ut',
+        });
     }
 
     return (
         <div className={layout}>
-            <Head>
-                {headerLinks}
-            </Head>
+            <Head>{headerLinks}</Head>
             <DecoratorHeader
                 html={
                     props.decoratorParts?.decoratorHeader === undefined
@@ -83,14 +76,22 @@ export const Layout = (props: {
                 />
                 <div className={layoutWrapper}>
                     <div className={layoutContent} ref={panelRef}>
-                        <Link href={tilbakeURL} className={classNames(noPrint, marginSides3rem)}><Back/>Tilbake</Link>
-                        <div className={classNames(layoutSmallScreenIllustration, marginSides3rem)}><PageBannerSVG/>
+                        <Link href={tilbakeURL} className={classNames(noPrint, marginSides3rem)}>
+                            <Back />
+                            Tilbake
+                        </Link>
+                        <div className={classNames(layoutSmallScreenIllustration, marginSides3rem)}>
+                            <PageBannerSVG />
                         </div>
                         <div className={classNames(layoutPrintHeader, marginSides3rem)}>
-                            <BodyShort size='s'>{PROD_URL}</BodyShort>
+                            <BodyShort size="s">{PROD_URL}</BodyShort>
                         </div>
                         {props.children}
-                        <SkrivUtKnapp knappetekst="Skriv ut nettside" kjørFørUtskrift={loggUtskrift} innholdRef={panelRef}/>
+                        <SkrivUtKnapp
+                            knappetekst="Skriv ut nettside"
+                            kjørFørUtskrift={loggUtskrift}
+                            innholdRef={panelRef}
+                        />
                     </div>
                 </div>
             </div>
@@ -101,7 +102,7 @@ export const Layout = (props: {
                         : props.decoratorParts?.decoratorFooter
                 }
             />
-            <DecoratorEnv env={props.decoratorParts?.decoratorEnv}/>
+            <DecoratorEnv env={props.decoratorParts?.decoratorEnv} />
         </div>
     );
 };
@@ -109,44 +110,45 @@ export const Layout = (props: {
 /** STYLES **/
 
 const layout = css`
-  @media print {
-    @page {
-      size: A4;
-      margin: 2.54cm 0 0;
+    @media print {
+        @page {
+            size: A4;
+            margin: 2.54cm 0 0;
+        }
     }
-  }
-`
+`;
+
 const layoutWrapper = css`
-  min-height: 50rem;
-  padding: 1.5rem 0 5rem;
-`
+    min-height: 50rem;
+    padding: 1.5rem 0 5rem;
+`;
 
 const layoutContent = css`
-  max-width: 66rem;
-  background-color: white;
-  padding: 1rem;
-  margin: auto;
-  border-radius: 0.25rem;
-`
+    max-width: 66rem;
+    background-color: white;
+    padding: 1rem;
+    margin: auto;
+    border-radius: 0.25rem;
+`;
 
 const layoutSmallScreenIllustration = css`
-  display: flex;
-  justify-content: center;
-  background: var(--navds-color-blue-10);
-  margin: 1rem -1rem 3rem;
-  svg {
-    flex-shrink: 0;
-  }
-  @media (min-width: ${SCREEN_SM_MIN}) {
-      display: none;
-  }
-`
+    display: flex;
+    justify-content: center;
+    background: var(--navds-color-blue-10);
+    margin: 1rem -1rem 3rem;
+    svg {
+        flex-shrink: 0;
+    }
+    @media (min-width: ${SCREEN_SM_MIN}) {
+        display: none;
+    }
+`;
 
 const layoutPrintHeader = css`
-  display: none;
-  @media print {
-    display: block;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-  }
-`
+    display: none;
+    @media print {
+        display: block;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+`;

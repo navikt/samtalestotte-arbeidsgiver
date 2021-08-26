@@ -1,11 +1,11 @@
-import React, {useRef} from 'react';
-import classNames from "classnames";
-import {knappSomLenke, marginRight1Rem, marginTop6Rem, noPrint} from "../../utils/fellesStiler";
-import ReactToPrint from "react-to-print";
-import {Button} from "@navikt/ds-react";
-import {Print} from "@navikt/ds-icons";
-import {css} from "linaria";
-import {SCREEN_SM_MIN} from "../../utils/konstanter";
+import React, { useRef } from 'react';
+import classNames from 'classnames';
+import { knappSomLenke, marginRight1Rem, marginTop6Rem, noPrint } from '../../utils/fellesStiler';
+import ReactToPrint from 'react-to-print';
+import { Button } from '@navikt/ds-react';
+import { Print } from '@navikt/ds-icons';
+import { css } from 'linaria';
+import { SCREEN_SM_MIN } from '../../utils/konstanter';
 
 export const SkrivUtKnapp = (props: {
     knappetekst: string;
@@ -28,9 +28,9 @@ export const SkrivUtKnapp = (props: {
                         id={'skriv-ut-knapp'}
                         ref={knapperef}
                         className={classNames(noPrint, knappSomLenke)}
-                        size={"m"}
+                        size={'m'}
                     >
-                        <Print className={marginRight1Rem}/> {props.knappetekst}
+                        <Print className={marginRight1Rem} /> {props.knappetekst}
                     </Button>
                 )}
             />
@@ -39,8 +39,8 @@ export const SkrivUtKnapp = (props: {
 };
 
 const layoutReactToPrintWrapper = css`
-  display: none;
-  @media (min-width: ${SCREEN_SM_MIN}) {  
-    display: flex;
-  }
-`
+    display: none;
+    @media (min-width: ${SCREEN_SM_MIN}) {
+        display: flex;
+    }
+`;
