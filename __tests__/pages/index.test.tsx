@@ -200,7 +200,7 @@ test('Snapshot test', async () => {
         </div>
         </section>
         <section class=\\"bt836h5 b1gt98yk mgddtsn\\">
-          <h2 class=\\"mgddtsn navds-title navds-title--l\\">Slik skaper du gode samtaler</h2>
+          <h2 class=\\"navds-title navds-title--l\\">Slik skaper du gode samtaler</h2>
           <div class=\\"n1lu1ur0\\">
             <h4 class=\\"m1d2gkmn mnt9094 navds-title navds-title--s\\">Last ned verktøyet og rediger selv:</h4>
             <div class=\\"d1m33xra\\"><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.docx\\" class=\\"navds-link d6n56mv k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"docx\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">

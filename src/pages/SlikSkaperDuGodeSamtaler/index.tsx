@@ -21,7 +21,7 @@ import { LoggbarLenkeKnapp } from '../../felleskomponenter/LoggbarLenke/LoggbarL
 
 const SlikSkaperDuGodeSamtaler = ({className}: {className?: string}) => {
     return <section className={classNames(breakBeforePage, backgroundStyle, marginTop3Rem, className)}>
-        <Title size={'l'} level={2} className={marginTop3Rem}>
+        <Title size={'l'} level={2}>
             Slik skaper du gode samtaler
         </Title>
         <div className={noPrint}>
