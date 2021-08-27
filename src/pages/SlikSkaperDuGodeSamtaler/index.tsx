@@ -15,25 +15,10 @@ import {
     noPrint,
 } from '../../utils/fellesStiler';
 import { Title } from '@navikt/ds-react';
-import { Download } from '@navikt/ds-icons';
 import classNames from 'classnames';
 import { css } from 'linaria';
 import { SCREEN_SM_MIN } from '../../utils/konstanter';
-import { LoggbarLenkeKnapp } from '../../felleskomponenter/LoggbarLenke/LoggbarLenkeKnapp';
-
-function LastNedKnapp(props: { lenketekst: string; href: string; filtype: string }) {
-    return (
-        <LoggbarLenkeKnapp
-            className={downloadButtonStyle}
-            lenketekst={props.lenketekst}
-            href={props.href}
-            download={props.filtype}
-        >
-            <Download />
-            {props.lenketekst}
-        </LoggbarLenkeKnapp>
-    );
-}
+import LastNedKnapp from '../../felleskomponenter/LastNedKnapp/LastNedKnapp';
 
 const SlikSkaperDuGodeSamtaler = ({ className }: { className?: string }) => {
     return (
@@ -108,17 +93,4 @@ const downloadButtonContainerStyle = css`
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-`;
-
-const downloadButtonStyle = css`
-    width: 200px;
-    padding: 10px;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    :hover {
-        svg {
-            color: white;
-        }
-    }
 `;

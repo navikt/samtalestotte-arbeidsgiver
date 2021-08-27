@@ -204,9 +204,9 @@ test('Snapshot test', async () => {
           <h2 class=\\"navds-title navds-title--l\\">Slik skaper du gode samtaler</h2>
           <div class=\\"n1h2jzek\\">
             <h4 class=\\"m1d2gkmn m113wumk navds-title navds-title--s\\">Last ned verktøyet og rediger selv:</h4>
-            <div class=\\"d1m33xra\\"><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.docx\\" class=\\"navds-link d6n56mv k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"docx\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+            <div class=\\"d1m33xra\\"><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.docx\\" class=\\"navds-link dmbsq4t k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"docx\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M3 18v2a2 2 0 001.85 1.994L5 22h14a2 2 0 001.994-1.85L21 20v-2h2v2a4 4 0 01-4 4H5a4 4 0 01-4-4v-2h2zM13 0v13.295L17.546 9 19 10.375 12 17l-7-6.625L6.455 9 11 13.295V0h2z\\" fill=\\"currentColor\\"></path>
-                </svg>Last ned i Word</a><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.txt\\" class=\\"navds-link d6n56mv k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"txt\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+                </svg>Last ned i Word</a><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.txt\\" class=\\"navds-link dmbsq4t k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"txt\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M3 18v2a2 2 0 001.85 1.994L5 22h14a2 2 0 001.994-1.85L21 20v-2h2v2a4 4 0 01-4 4H5a4 4 0 01-4-4v-2h2zM13 0v13.295L17.546 9 19 10.375 12 17l-7-6.625L6.455 9 11 13.295V0h2z\\" fill=\\"currentColor\\"></path>
                 </svg>Last ned i .txt</a></div>
           </div>
