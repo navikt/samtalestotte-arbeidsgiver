@@ -206,7 +206,7 @@ test('Snapshot test', async () => {
             <h4 class=\\"m1d2gkmn m113wumk navds-title navds-title--s\\">Last ned verktøyet og rediger selv:</h4>
             <div class=\\"d1m33xra\\"><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.docx\\" class=\\"navds-link d6n56mv k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"docx\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M3 18v2a2 2 0 001.85 1.994L5 22h14a2 2 0 001.994-1.85L21 20v-2h2v2a4 4 0 01-4 4H5a4 4 0 01-4-4v-2h2zM13 0v13.295L17.546 9 19 10.375 12 17l-7-6.625L6.455 9 11 13.295V0h2z\\" fill=\\"currentColor\\"></path>
-                </svg>Last ned i word</a><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.txt\\" class=\\"navds-link d6n56mv k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"txt\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+                </svg>Last ned i Word</a><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.txt\\" class=\\"navds-link d6n56mv k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"txt\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M3 18v2a2 2 0 001.85 1.994L5 22h14a2 2 0 001.994-1.85L21 20v-2h2v2a4 4 0 01-4 4H5a4 4 0 01-4-4v-2h2zM13 0v13.295L17.546 9 19 10.375 12 17l-7-6.625L6.455 9 11 13.295V0h2z\\" fill=\\"currentColor\\"></path>
                 </svg>Last ned i .txt</a></div>
           </div>
@@ -603,12 +603,12 @@ test('Snapshot test', async () => {
             </div>
           </div>
         </section>
-        <div class=\\"vb4yujy mo0p6q b1baxhy5 mmrfjif\\">
-          <h3 class=\\"v1fcag8d navds-title navds-title--m\\">Visste du at NAV hjelper virksomheter med å forebygge sykefravær?</h3><svg class=\\"vdtp2g8\\" width=\\"61px\\" height=\\"61px\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+        <div class=\\"v3afszd mo0p6q b1baxhy5 mmrfjif\\">
+          <h3 class=\\"vyau1ws navds-title navds-title--m\\">Visste du at NAV hjelper virksomheter med å forebygge sykefravær?</h3><svg class=\\"v15003zs\\" width=\\"61px\\" height=\\"61px\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
             <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 0C5.38226 0 0 5.38226 0 12C0 18.6177 5.38226 24 12 24C18.6167 24 24 18.6177 24 12C24 5.38226 18.6167 0 12 0Z\\" fill=\\"#5690A2\\"></path>
             <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M13.5653 6.56522C13.5653 5.70122 12.8625 5 12.0001 5C11.1345 5 10.4348 5.70122 10.4348 6.56522C10.4348 7.43078 11.1345 8.13043 12.0001 8.13043C12.8625 8.13043 13.5653 7.43078 13.5653 6.56522ZM16.0192 18.0005C16.0192 17.4403 15.5395 17.0092 14.9757 17.0092H13.0777V11.003C13.0777 10.4428 12.598 10.0117 12.0342 10.0117H10.0049C9.44027 10.0117 8.9614 10.4427 8.9614 11.003C8.9614 11.5633 9.44027 11.9943 10.0049 11.9943H10.9907V17.0092H9.39138C8.82677 17.0092 8.3479 17.4402 8.3479 18.0005C8.3479 18.5608 8.82677 18.9918 9.39138 18.9918H14.9757C15.5395 18.9918 16.0192 18.5607 16.0192 18.0005Z\\" fill=\\"white\\"></path>
           </svg>
-          <p class=\\"v15ho6qo mkmrd90\\">NAV hjelper virksomheter med å forebygge sykefravær. Du får digitale tjenester og veiledning for å gjennomføre enkeltsamtaler. NAV kan også gi mer omfattende rådgivning hos dere på arbeidsplassen.</p><a href=\\"https://arbeidsgiver.nav.no/kontakt-oss/\\" class=\\"navds-link vb2cnvt m113wumk mkmrd90\\">Kontakt NAV</a><a href=\\"https://arbeidsgiver.nav.no/forebygge-sykefravaer/\\" class=\\"navds-link vb2cnvt mkmrd90\\">Les mer om NAVs tjenester for å forebygge sykefravær.</a>
+          <p class=\\"v1y3hzu8 mkmrd90\\">NAV hjelper virksomheter med å forebygge sykefravær. Du får digitale tjenester og veiledning for å gjennomføre enkeltsamtaler. NAV kan også gi mer omfattende rådgivning hos dere på arbeidsplassen.</p><a href=\\"https://arbeidsgiver.nav.no/kontakt-oss/\\" class=\\"navds-link v1frf94o m113wumk mkmrd90\\">Kontakt NAV</a><a href=\\"https://arbeidsgiver.nav.no/forebygge-sykefravaer/\\" class=\\"navds-link v1frf94o mkmrd90\\">Les mer om NAVs tjenester for å forebygge sykefravær.</a>
         </div>
       </div>
     </div>
