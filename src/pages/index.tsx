@@ -5,13 +5,13 @@ import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
 import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
 import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
-import VisteDuAt from './VisteDuAt';
+import VissteDuAt from './VissteDuAt';
 import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
-import {marginSides3rem} from "../utils/fellesStiler";
+import { marginSides3rem } from '../utils/fellesStiler';
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
@@ -68,10 +68,10 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                     logEvent={logEvent}
                 >
-                    <HvorforBrukeTidPaaSamtaler className={marginSides3rem}/>
+                    <HvorforBrukeTidPaaSamtaler className={marginSides3rem} />
                     <SlikSkaperDuGodeSamtaler />
-                    <MerInspirasjonOgGodeGrep className={marginSides3rem}/>
-                    <VisteDuAt className={marginSides3rem}/>
+                    <MerInspirasjonOgGodeGrep className={marginSides3rem} />
+                    <VissteDuAt className={marginSides3rem} />
                 </Layout>
             </main>
             <footer></footer>
