@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import classNames from 'classnames';
-import { knappSomLenke, marginRight1Rem, marginTop6Rem, noPrint } from '../../utils/fellesStiler';
+import { knappSomLenke, marginRight05Rem, noPrint } from '../../utils/fellesStiler';
 import ReactToPrint from 'react-to-print';
 import { Button } from '@navikt/ds-react';
 import { Print } from '@navikt/ds-icons';
@@ -9,12 +9,13 @@ import { SCREEN_SM_MIN } from '../../utils/konstanter';
 
 export const SkrivUtKnapp = (props: {
     knappetekst: string;
+    utskriftsinnholdRef: any;
     kjørFørUtskrift: () => any;
-    innholdRef: any;
+    wrapperClassnames: string[];
 }) => {
     const knapperef = useRef<HTMLButtonElement>(null);
     return (
-        <div className={classNames(layoutReactToPrintWrapper, marginTop6Rem)}>
+        <div className={classNames(hideOnSmallScreen, props.wrapperClassnames)}>
             <ReactToPrint
                 onBeforePrint={props.kjørFørUtskrift}
                 onAfterPrint={() => {
@@ -22,7 +23,7 @@ export const SkrivUtKnapp = (props: {
                         knapperef.current.focus();
                     }
                 }}
-                content={() => props.innholdRef.current}
+                content={() => props.utskriftsinnholdRef.current}
                 trigger={() => (
                     <Button
                         id={'skriv-ut-knapp'}
@@ -30,7 +31,7 @@ export const SkrivUtKnapp = (props: {
                         className={classNames(noPrint, knappSomLenke)}
                         size={'m'}
                     >
-                        <Print className={marginRight1Rem} /> {props.knappetekst}
+                        <Print className={marginRight05Rem} /> {props.knappetekst}
                     </Button>
                 )}
             />
@@ -38,7 +39,7 @@ export const SkrivUtKnapp = (props: {
     );
 };
 
-const layoutReactToPrintWrapper = css`
+const hideOnSmallScreen = css`
     display: none;
     @media (min-width: ${SCREEN_SM_MIN}) {
         display: flex;

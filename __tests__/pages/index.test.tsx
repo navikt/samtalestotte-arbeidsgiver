@@ -79,7 +79,7 @@ test('Snapshot test', async () => {
           </div>
         </div>
         <div class=\\"lr3bbio\\">
-          <div class=\\"l1e3mpex\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"navds-link n1lu1ur0 m1em9y5r\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+          <div class=\\"l1e3mpex\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"navds-link n1tt81ky m1em9y5r\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                 <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M7 12l8.571-9L17 4.5 9.857 12 17 19.5 15.571 21 7 12z\\" fill=\\"currentColor\\"></path>
               </svg>Tilbake</a>
             <div class=\\"lu2a2qa m1em9y5r\\"><svg width=\\"200\\" height=\\"160\\" viewBox=\\"0 0 200 160\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
@@ -115,7 +115,7 @@ test('Snapshot test', async () => {
                 <path d=\\"M53.5995 38.1123C49.3468 34.0371 47.1865 28.9119 47.3335 23.2067C47.6574 10.6287 60.0928 0.313338 74.4849 0.684015C88.877 1.05469 100.765 11.9965 100.441 24.5745C100.111 37.3631 88.224 47.8677 74.4833 47.5138C71.0207 47.4246 67.6429 46.6552 64.4346 45.2222L50.8069 49.9764C50.5996 50.0461 50.3897 50.08 50.1808 50.0746C49.6887 50.062 49.2125 49.8425 48.8789 49.4516C48.4044 48.8928 48.3221 48.0975 48.6612 47.4489L53.5995 38.1123Z\\" fill=\\"#6AB889\\"></path>
                 <path d=\\"M115.383 66.2181C119.315 62.8495 121.45 58.4686 121.579 53.4765C121.862 42.4708 111.371 32.8944 98.6719 32.5673C85.973 32.2402 75.0027 41.2639 74.7192 52.2696C74.431 63.4597 84.431 73.1766 96.5551 73.4889C99.6103 73.5676 102.622 73.048 105.514 71.9409L117.307 76.7117C117.487 76.782 117.67 76.8211 117.854 76.8259C118.289 76.8371 118.718 76.6668 119.03 76.3404C119.473 75.8735 119.582 75.1823 119.312 74.6002L115.383 66.2181Z\\" fill=\\"#337C9B\\"></path>
               </svg></div>
-            <div class=\\"l167q415 m1em9y5r\\">
+            <div class=\\"l167q415\\">
               <p class=\\"navds-body-short navds-body--s\\">https://arbeidsgiver.nav.no/samtalestotte</p>
             </div>
             <section class=\\"m1em9y5r\\">
@@ -201,7 +201,7 @@ test('Snapshot test', async () => {
         </section>
         <section class=\\"bt836h5 b1gt98yk mgddtsn\\">
           <h2 class=\\"navds-title navds-title--l\\">Slik skaper du gode samtaler</h2>
-          <div class=\\"n1lu1ur0\\">
+          <div class=\\"n1tt81ky\\">
             <h4 class=\\"m1d2gkmn mnt9094 navds-title navds-title--s\\">Last ned verktøyet og rediger selv:</h4>
             <div class=\\"d1m33xra\\"><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.docx\\" class=\\"navds-link d6n56mv k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"docx\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M3 18v2a2 2 0 001.85 1.994L5 22h14a2 2 0 001.994-1.85L21 20v-2h2v2a4 4 0 01-4 4H5a4 4 0 01-4-4v-2h2zM13 0v13.295L17.546 9 19 10.375 12 17l-7-6.625L6.455 9 11 13.295V0h2z\\" fill=\\"currentColor\\"></path>
@@ -609,7 +609,7 @@ test('Snapshot test', async () => {
           </svg>
           <p class=\\"v15ho6qo mkmrd90\\">NAV hjelper virksomheter med å forebygge sykefravær. Du får digitale tjenester og veiledning for å gjennomføre enkeltsamtaler. NAV kan også gi mer omfattende rådgivning hos dere på arbeidsplassen.</p><a href=\\"https://arbeidsgiver.nav.no/kontakt-oss/\\" class=\\"navds-link vb2cnvt mnt9094 mkmrd90\\">Kontakt NAV</a><a href=\\"https://arbeidsgiver.nav.no/forebygge-sykefravaer/\\" class=\\"navds-link vb2cnvt mkmrd90\\">Les mer om NAVs tjenester for å forebygge sykefravær.</a>
         </div>
-        <div class=\\"l1gbqnqr m1evb9uy\\"><button class=\\"n1lu1ur0 k1tdlrfy navds-button navds-button--primary navds-button--m navds-body-short\\" id=\\"skriv-ut-knapp\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"mr6t0bd\\">
+        <div class=\\"h1gbqnqr m1evb9uy m1lu1ur0\\"><button class=\\"n1tt81ky k1tdlrfy navds-button navds-button--primary navds-button--m navds-body-short\\" id=\\"skriv-ut-knapp\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"mr6t0bd\\">
               <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M20 0v5a4 4 0 014 4v10h-4v5H4v-5H0V9a4 4 0 014-4V0h16zm-2 12H6v10h12V12zm-2 2v2H8v-2h8zm-2 4v2H8v-2h6zm6-11H4a2 2 0 00-1.995 1.85L2 9v8h2v-7h16v7h2V9a2 2 0 00-1.85-1.995L20 7zm-2-5H6v3h12V2z\\" fill=\\"currentColor\\"></path>
             </svg> Skriv ut nettside</button></div>
       </div>

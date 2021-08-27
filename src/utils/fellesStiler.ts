@@ -1,8 +1,12 @@
-import { css } from "linaria"
+import { css } from 'linaria';
 import { SCREEN_SM_MIN } from './konstanter';
 
-export const marginTop0Rem = css`margin-top: 0;`
-export const marginTop1Rem = css`margin-top: 1rem;`
+export const marginTop0Rem = css`
+    margin-top: 0;
+`;
+export const marginTop1Rem = css`
+    margin-top: 1rem;
+`;
 export const marginTop2Rem = css`margin-top: 2rem;`
 export const marginTop3Rem = css`margin-top: 3rem;`
 export const marginTop4Rem = css`margin-top: 4rem;`
@@ -13,9 +17,13 @@ export const marginBottom025rem = css`margin-bottom: 0.25rem;`
 export const marginBottom1Rem = css`margin-bottom: 1rem;`
 export const marginBottom2Rem = css`margin-bottom: 2rem;`
 export const marginBottom3Rem = css`margin-bottom: 3rem;`
-export const marginBottom4Rem = css`margin-bottom: 4rem;`
+export const marginBottom4Rem = css`
+    margin-bottom: 4rem;
+`;
 
-export const marginRight1Rem = css`margin-right: 1rem;`
+export const marginRight05Rem = css`
+    margin-right: 0.5rem;
+`;
 
 export const boldText = css`font-weight: var(--navds-font-weight-bold);`
 
@@ -67,24 +75,31 @@ export const alternatingDiscList = css`
 `
 
 export const spacedList = css`
-  li:not(:first-child) {
-    margin-top: 2rem;
-  }
-`
+    li:not(:first-child) {
+        margin-top: 2rem;
+    }
+`;
 
 export const breakBeforePage = css`
-  break-before: page;
-`
+    break-before: page;
+`;
 
 export const marginSides3rem = css`
-  @media (min-width: ${SCREEN_SM_MIN}) {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-`
+    @media (min-width: ${SCREEN_SM_MIN}) {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+`;
+
+export const marginSides2_25rem = css`
+    @media (min-width: ${SCREEN_SM_MIN}) {
+        margin-left: 2.25rem;
+        margin-right: 2.25rem;
+    }
+`;
 
 export const noPrint = css`
-  @media print {
-      display: none;
-  }
-`
+    @media print {
+        display: none;
+    }
+`;
