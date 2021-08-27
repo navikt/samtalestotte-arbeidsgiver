@@ -79,10 +79,10 @@ test('Snapshot test', async () => {
           </div>
         </div>
         <div class=\\"lr3bbio\\">
-          <div class=\\"l1e3mpex\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"navds-link n1h2jzek mmrfjif\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+          <div class=\\"l1e3mpex\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"navds-link n1tt81ky m1em9y5r\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                 <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M7 12l8.571-9L17 4.5 9.857 12 17 19.5 15.571 21 7 12z\\" fill=\\"currentColor\\"></path>
               </svg>Tilbake</a>
-            <div class=\\"lu2a2qa mmrfjif\\"><svg width=\\"200\\" height=\\"160\\" viewBox=\\"0 0 200 160\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+            <div class=\\"lu2a2qa m1em9y5r\\"><svg width=\\"200\\" height=\\"160\\" viewBox=\\"0 0 200 160\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                 <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M107.429 158H60.5709C58.5988 158 57 156.381 57 154.383V88.6171C57 86.6205 58.5988 85 60.5709 85H107.429C109.401 85 111 86.6205 111 88.6171V154.383C111 156.381 109.401 158 107.429 158\\" fill=\\"#A0A0A0\\"></path>
                 <rect width=\\"46\\" height=\\"55\\" transform=\\"translate(61 89)\\" fill=\\"white\\"></rect>
                 <rect x=\\"64\\" y=\\"92\\" width=\\"40\\" height=\\"12\\" fill=\\"#C2EAF7\\"></rect>
@@ -115,15 +115,14 @@ test('Snapshot test', async () => {
                 <path d=\\"M53.5995 38.1123C49.3468 34.0371 47.1865 28.9119 47.3335 23.2067C47.6574 10.6287 60.0928 0.313338 74.4849 0.684015C88.877 1.05469 100.765 11.9965 100.441 24.5745C100.111 37.3631 88.224 47.8677 74.4833 47.5138C71.0207 47.4246 67.6429 46.6552 64.4346 45.2222L50.8069 49.9764C50.5996 50.0461 50.3897 50.08 50.1808 50.0746C49.6887 50.062 49.2125 49.8425 48.8789 49.4516C48.4044 48.8928 48.3221 48.0975 48.6612 47.4489L53.5995 38.1123Z\\" fill=\\"#6AB889\\"></path>
                 <path d=\\"M115.383 66.2181C119.315 62.8495 121.45 58.4686 121.579 53.4765C121.862 42.4708 111.371 32.8944 98.6719 32.5673C85.973 32.2402 75.0027 41.2639 74.7192 52.2696C74.431 63.4597 84.431 73.1766 96.5551 73.4889C99.6103 73.5676 102.622 73.048 105.514 71.9409L117.307 76.7117C117.487 76.782 117.67 76.8211 117.854 76.8259C118.289 76.8371 118.718 76.6668 119.03 76.3404C119.473 75.8735 119.582 75.1823 119.312 74.6002L115.383 66.2181Z\\" fill=\\"#337C9B\\"></path>
               </svg></div>
-            <div class=\\"l167q415 mmrfjif\\">
+            <div class=\\"l167q415\\">
               <p class=\\"navds-body-short navds-body--s\\">https://arbeidsgiver.nav.no/samtalestotte</p>
             </div>
-            <div class=\\"lmjkf5m\\"><button class=\\"n1h2jzek lquds6o mmrfjif navds-button navds-button--primary navds-button--m navds-body-short\\" id=\\"skriv-ut-knapp\\">Skriv ut</button></div>
-            <section class=\\"mmrfjif\\">
-              <h2 class=\\"navds-title navds-title--l\\">Hvorfor bruke tid på samtaler?</h2>
-              <p class=\\"mnt9094\\">Lovverk og rutiner forteller deg hva du skal gjøre for å forebygge og følge opp sykefravær. Gode samtaler er en metode for hvordan du fyller lovkravene, slik at de gir størst verdi for deg og medarbeiderne dine.</p>
-              <p class=\\"b1y5sznd\\">Gode samtaler bidrar til:</p>
-              <ul class=\\"m1cazjdg\\">
+            <section class=\\"m1em9y5r\\">
+              <h2 class=\\"mgddtsn navds-title navds-title--l\\">Hvorfor bruke tid på samtaler?</h2>
+              <p class=\\"m1yvwkgj\\">Lovverk og rutiner forteller deg hva du skal gjøre for å forebygge og følge opp sykefravær. Gode samtaler er en metode for hvordan du fyller lovkravene, slik at de gir størst verdi for deg og medarbeiderne dine.</p>
+              <p class=\\"b2scysm\\">Gode samtaler bidrar til:</p>
+              <ul class=\\"m1y5sznd\\">
                 <li>lavt sykefravær og god lønnsomhet</li>
                 <li>motiverte medarbeidere og godt arbeidsmiljø</li>
                 <li>at du fyller dine lovpålagte plikter som arbeidsgiver</li>
@@ -138,7 +137,7 @@ test('Snapshot test', async () => {
                 </div>
                 <div class=\\"pnkhjy5\\">
                   <div>
-                    <p class=\\"m1evb9uy\\"><strong>En samtale for å forebygge eller følge opp sykefravær handler om arbeidssituasjonen.</strong></p>
+                    <p class=\\"mgnunja\\"><strong>En samtale for å forebygge eller følge opp sykefravær handler om arbeidssituasjonen.</strong></p>
                     <p class=\\"mkmrd90\\">En samtale bør gjennomføres når</p>
                     <ul>
                       <li>Du eller din medarbeider opplever utfordringer med arbeidet og det skyldes sykdom eller andre forhold.</li>
@@ -169,7 +168,7 @@ test('Snapshot test', async () => {
                     </ul><strong>Husk at du ikke kan kreve opplysninger om diagnose, behandling og forhold hjemme.</strong>
                   </div>
                 </div>
-              </div><a class=\\"navds-panel navds-link-panel k6rqry9 m113wumk navds-panel--border\\" href=\\"https://arbeidsgiver.nav.no/sykefravarsstatistikk/kalkulator\\"><span class=\\"navds-link-panel__content\\"><div class=\\"k1i2ji9k\\"><svg class=\\"kf5ia9x\\" width=\\"44px\\" height=\\"44px\\" viewBox=\\"0 0 21 32\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><rect width=\\"20.0245\\" height=\\"32\\" rx=\\"2\\" fill=\\"#262626\\"></rect><rect x=\\"2.00244\\" y=\\"3\\" width=\\"16.0196\\" height=\\"7\\" fill=\\"#F1F1F1\\"></rect><rect x=\\"12.0146\\" y=\\"7\\" width=\\"2.00244\\" height=\\"1\\" fill=\\"#262626\\"></rect><rect x=\\"15.0183\\" y=\\"7\\" width=\\"2.00245\\" height=\\"1\\" fill=\\"#262626\\"></rect><path d=\\"M4.00489 17C5.11081 17 6.00733 16.1046 6.00733 15C6.00733 13.8954 5.11081 13 4.00489 13C2.89897 13 2.00244 13.8954 2.00244 15C2.00244 16.1046 2.89897 17 4.00489 17Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M4.00489 23C5.11081 23 6.00733 22.1046 6.00733 21C6.00733 19.8954 5.11081 19 4.00489 19C2.89897 19 2.00244 19.8954 2.00244 21C2.00244 22.1046 2.89897 23 4.00489 23Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M4.00489 29C5.11081 29 6.00733 28.1046 6.00733 27C6.00733 25.8954 5.11081 25 4.00489 25C2.89897 25 2.00244 25.8954 2.00244 27C2.00244 28.1046 2.89897 29 4.00489 29Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M10.0122 17C11.1181 17 12.0147 16.1046 12.0147 15C12.0147 13.8954 11.1181 13 10.0122 13C8.90629 13 8.00977 13.8954 8.00977 15C8.00977 16.1046 8.90629 17 10.0122 17Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M10.0122 23C11.1181 23 12.0147 22.1046 12.0147 21C12.0147 19.8954 11.1181 19 10.0122 19C8.90629 19 8.00977 19.8954 8.00977 21C8.00977 22.1046 8.90629 23 10.0122 23Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M16.0195 17C17.1255 17 18.022 16.1046 18.022 15C18.022 13.8954 17.1255 13 16.0195 13C14.9136 13 14.0171 13.8954 14.0171 15C14.0171 16.1046 14.9136 17 16.0195 17Z\\" fill=\\"#FF9100\\"></path><path d=\\"M16.0195 23C17.1255 23 18.022 22.1046 18.022 21C18.022 19.8954 17.1255 19 16.0195 19C14.9136 19 14.0171 19.8954 14.0171 21C14.0171 22.1046 14.9136 23 16.0195 23Z\\" fill=\\"#F1F1F1\\"></path><rect x=\\"8.00977\\" y=\\"25\\" width=\\"10.0122\\" height=\\"4\\" rx=\\"2\\" fill=\\"#F1F1F1\\"></rect></svg><p>Se hvor mye sykefraværet ditt koster</p><div><span class=\\"kk8rpum\\">Gå til kalkulatoren</span><span class=\\"ko00laq\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 0a5 5 0 015 5v3h1a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V10a2 2 0 012-2h1V5a5 5 0 015-5zm6 10H6v12h12V10zm-6 3a2 2 0 011.001 3.732L13 20h-2v-3.268A2 2 0 0112 13zm0-11a3 3 0 00-2.995 2.824L9 5v3h6V5a3 3 0 00-2.824-2.995L12 2z\\" fill=\\"currentColor\\"></path></svg> Krever innlogging</span>
+              </div><a class=\\"navds-panel navds-link-panel k6rqry9 mnt9094 navds-panel--border\\" href=\\"https://arbeidsgiver.nav.no/sykefravarsstatistikk/kalkulator\\"><span class=\\"navds-link-panel__content\\"><div class=\\"k1i2ji9k\\"><svg class=\\"kf5ia9x\\" width=\\"44px\\" height=\\"44px\\" viewBox=\\"0 0 21 32\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><rect width=\\"20.0245\\" height=\\"32\\" rx=\\"2\\" fill=\\"#262626\\"></rect><rect x=\\"2.00244\\" y=\\"3\\" width=\\"16.0196\\" height=\\"7\\" fill=\\"#F1F1F1\\"></rect><rect x=\\"12.0146\\" y=\\"7\\" width=\\"2.00244\\" height=\\"1\\" fill=\\"#262626\\"></rect><rect x=\\"15.0183\\" y=\\"7\\" width=\\"2.00245\\" height=\\"1\\" fill=\\"#262626\\"></rect><path d=\\"M4.00489 17C5.11081 17 6.00733 16.1046 6.00733 15C6.00733 13.8954 5.11081 13 4.00489 13C2.89897 13 2.00244 13.8954 2.00244 15C2.00244 16.1046 2.89897 17 4.00489 17Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M4.00489 23C5.11081 23 6.00733 22.1046 6.00733 21C6.00733 19.8954 5.11081 19 4.00489 19C2.89897 19 2.00244 19.8954 2.00244 21C2.00244 22.1046 2.89897 23 4.00489 23Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M4.00489 29C5.11081 29 6.00733 28.1046 6.00733 27C6.00733 25.8954 5.11081 25 4.00489 25C2.89897 25 2.00244 25.8954 2.00244 27C2.00244 28.1046 2.89897 29 4.00489 29Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M10.0122 17C11.1181 17 12.0147 16.1046 12.0147 15C12.0147 13.8954 11.1181 13 10.0122 13C8.90629 13 8.00977 13.8954 8.00977 15C8.00977 16.1046 8.90629 17 10.0122 17Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M10.0122 23C11.1181 23 12.0147 22.1046 12.0147 21C12.0147 19.8954 11.1181 19 10.0122 19C8.90629 19 8.00977 19.8954 8.00977 21C8.00977 22.1046 8.90629 23 10.0122 23Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M16.0195 17C17.1255 17 18.022 16.1046 18.022 15C18.022 13.8954 17.1255 13 16.0195 13C14.9136 13 14.0171 13.8954 14.0171 15C14.0171 16.1046 14.9136 17 16.0195 17Z\\" fill=\\"#FF9100\\"></path><path d=\\"M16.0195 23C17.1255 23 18.022 22.1046 18.022 21C18.022 19.8954 17.1255 19 16.0195 19C14.9136 19 14.0171 19.8954 14.0171 21C14.0171 22.1046 14.9136 23 16.0195 23Z\\" fill=\\"#F1F1F1\\"></path><rect x=\\"8.00977\\" y=\\"25\\" width=\\"10.0122\\" height=\\"4\\" rx=\\"2\\" fill=\\"#F1F1F1\\"></rect></svg><p>Se hvor mye sykefraværet ditt koster</p><div><span class=\\"kk8rpum\\">Gå til kalkulatoren</span><span class=\\"ko00laq\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 0a5 5 0 015 5v3h1a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V10a2 2 0 012-2h1V5a5 5 0 015-5zm6 10H6v12h12V10zm-6 3a2 2 0 011.001 3.732L13 20h-2v-3.268A2 2 0 0112 13zm0-11a3 3 0 00-2.995 2.824L9 5v3h6V5a3 3 0 00-2.824-2.995L12 2z\\" fill=\\"currentColor\\"></path></svg> Krever innlogging</span>
           </div>
         </div></span><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"navds-link-panel__chevron\\" aria-label=\\"arrow-icon pointing right\\">
           <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M17 12L8.429 3 7 4.5l7.143 7.5L7 19.5 8.429 21 17 12z\\" fill=\\"currentColor\\"></path>
@@ -191,7 +190,7 @@ test('Snapshot test', async () => {
                 <li>Gjennomfør samtaler regelmessig.</li>
                 <li>Jobb kontinuerlig med relasjoner til alle medarbeidere og forutsigbarhet gjennom rutiner.</li>
               </ul>
-              <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Kjente fallgruver</h4>
+              <h4 class=\\"mgnunja navds-title navds-title--s\\">Kjente fallgruver</h4>
               <ul class=\\"mkmrd90\\">
                 <li>Du påtar deg for stort ansvar for helsa til medarbeideren.</li>
                 <li>Fokuset handler om behandling eller forhold i privatlivet i stedet for forhold på arbeidsplassen.</li>
@@ -200,23 +199,23 @@ test('Snapshot test', async () => {
           </div>
         </div>
         </section>
-        <section class=\\"b1baxhy5 b1gt98yk mgddtsn\\">
+        <section class=\\"bt836h5 b1gt98yk mgddtsn\\">
           <h2 class=\\"navds-title navds-title--l\\">Slik skaper du gode samtaler</h2>
-          <div class=\\"n1h2jzek\\">
-            <h4 class=\\"m1d2gkmn m113wumk navds-title navds-title--s\\">Last ned verktøyet og rediger selv:</h4>
+          <div class=\\"n1tt81ky\\">
+            <h4 class=\\"m1d2gkmn mnt9094 navds-title navds-title--s\\">Last ned verktøyet og rediger selv:</h4>
             <div class=\\"d1m33xra\\"><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.docx\\" class=\\"navds-link d6n56mv k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"docx\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M3 18v2a2 2 0 001.85 1.994L5 22h14a2 2 0 001.994-1.85L21 20v-2h2v2a4 4 0 01-4 4H5a4 4 0 01-4-4v-2h2zM13 0v13.295L17.546 9 19 10.375 12 17l-7-6.625L6.455 9 11 13.295V0h2z\\" fill=\\"currentColor\\"></path>
                 </svg>Last ned i word</a><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.txt\\" class=\\"navds-link d6n56mv k13zqnf navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"txt\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M3 18v2a2 2 0 001.85 1.994L5 22h14a2 2 0 001.994-1.85L21 20v-2h2v2a4 4 0 01-4 4H5a4 4 0 01-4-4v-2h2zM13 0v13.295L17.546 9 19 10.375 12 17l-7-6.625L6.455 9 11 13.295V0h2z\\" fill=\\"currentColor\\"></path>
                 </svg>Last ned i .txt</a></div>
           </div>
-          <p class=\\"b1y5sznd\\">Som arbeidsgiver er du ansvalig for:</p>
+          <p class=\\"b2scysm\\">Som arbeidsgiver er du ansvalig for:</p>
           <ul>
             <li>å forebygge og følge opp sykefravær</li>
             <li>å gjennomføre og dokumentere samtaler med medarbeidere</li>
             <li>å sikre at medarbeideren får bidra til å finne løsninger</li>
           </ul>
-          <h3 class=\\"mo0p6q m113wumk navds-title navds-title--m\\">Forbered deg ved å:</h3>
+          <h3 class=\\"mo0p6q mnt9094 navds-title navds-title--m\\">Forbered deg ved å:</h3>
           <div class=\\"rvep9j3\\">
             <div class=\\"navds-accordion p1pgduac navds-accordion--closed\\"><button id=\\"ekspanderbart-infopanel__skapeGodeRammer-base\\" class=\\"navds-accordion__button\\" aria-expanded=\\"false\\" aria-controls=\\"aaaaaaaaaaaaaa\\"><span class=\\"navds-accordion__heading navds-title navds-title--s\\"><div class=\\"f3eheo1\\"><div class=\\"g1kg98jt\\"><div class=\\"t1emcwa8\\">Skape gode rammer</div></div></div></span><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--down\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 17L3 8.429 4.5 7l7.5 7.143L19.5 7 21 8.429 12 17z\\" fill=\\"currentColor\\"></path>
@@ -229,23 +228,23 @@ test('Snapshot test', async () => {
               <div>
                 <h3 class=\\"navds-title navds-title--m\\">Gode samtaler forutsetter trygghet</h3>
                 <p>Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene rundt samtalen er forutsigbare for alle.</p>
-                <ul class=\\"m1yvwkgj\\">
+                <ul class=\\"m1cazjdg\\">
                   <li>Hvordan ville du selv likt å bli møtt?</li>
                   <li>Hvordan er din relasjon og holdning til medarbeideren, og hvordan kan dette påvirke dialogen?</li>
                   <li>Hvor trygg føler du deg på å gjennomføre samtaler?</li>
                 </ul>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Dette kan du gjøre:</h4>
-                <div class=\\"i1tdlrfy m113wumk\\">
-                  <div class=\\"g2scysm\\">
-                    <h4 class=\\"m1evb9uy navds-title navds-title--s\\">på kort sikt:</h4>
-                    <ul class=\\"s18vgnob\\">
+                <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
+                <div class=\\"i1baxhy5 mnt9094\\">
+                  <div class=\\"g18vgnob\\">
+                    <h4 class=\\"mgnunja navds-title navds-title--s\\">på kort sikt:</h4>
+                    <ul class=\\"s1h2jzek\\">
                       <li>Planlegg bruk av samtaleteknikker for å sikre medvirkning i samtalen. <a href=\\"https://mag.idebanken.org/denviktigesamtalen/\\" class=\\"navds-link\\">Les mer i heftet “Den viktige samtalen” hos idebanken.</a></li>
                       <li>Be om veiledning før samtalen. Veiledning kan du få fra kollegaer, bedriftshelsetjenesten, NAV eller andre med kompetanse på samtaler.</li>
                     </ul>
                   </div>
-                  <div class=\\"g2scysm\\">
+                  <div class=\\"g18vgnob\\">
                     <h4 class=\\"navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
-                    <ul class=\\"s18vgnob\\">
+                    <ul class=\\"s1h2jzek\\">
                       <li>Lær mer om samtaler og samtaleteknikker. <a href=\\"https://mag.idebanken.org/denviktigesamtalen/\\" class=\\"navds-link\\">Les mer i heftet “Den viktige samtalen” hos idebanken.</a></li>
                       <li>Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere. <a href=\\"#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base\\" class=\\"navds-link\\">Se “Gode grep for å bygge relasjoner” lengre ned på siden.</a></li>
                       <li>Tren på å gjennomføre samtaler, og be om tilbakemeldinger.</li>
@@ -254,31 +253,31 @@ test('Snapshot test', async () => {
                     </ul>
                   </div>
                 </div>
-                <div class=\\"hr6t0bd\\"></div>
+                <div class=\\"h44d78l\\"></div>
                 <h3 class=\\"navds-title navds-title--m\\">Gode rutiner effektiviserer arbeidet og skaper forutsigbarhet for deg og din medarbeider.</h3>
                 <p>Rutiner bør evalueres og justeres hvis de ikke bidrar til forutsigbarhet.</p>
-                <ul class=\\"m1yvwkgj\\">
+                <ul class=\\"m1cazjdg\\">
                   <li>Hvordan bidrar sykefraværsrutinene i din virksomhet til forutsigbarhet rundt oppgaver og ansvar?</li>
                 </ul>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Dette kan du gjøre:</h4>
-                <div class=\\"i1tdlrfy m113wumk\\">
-                  <div class=\\"g2scysm\\">
+                <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
+                <div class=\\"i1baxhy5 mnt9094\\">
+                  <div class=\\"g18vgnob\\">
                     <h4 class=\\"navds-title navds-title--s\\">på kort sikt:</h4>
-                    <ul class=\\"s18vgnob\\">
+                    <ul class=\\"s1h2jzek\\">
                       <li>Bruk sykefraværsrutinene i din virksomhet, for å skape forutsigbarhet for deg og medarbeideren.</li>
                       <li>Finn ut om du kan få hjelp av noen i din virksomhet eller i interne systemer.</li>
                     </ul>
                   </div>
-                  <div class=\\"g2scysm\\">
-                    <h4 class=\\"m1evb9uy navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
-                    <ul class=\\"s18vgnob\\">
+                  <div class=\\"g18vgnob\\">
+                    <h4 class=\\"mgnunja navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
+                    <ul class=\\"s1h2jzek\\">
                       <li>Evaluer rutinene dine. <a href=\\"https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene\\" class=\\"navds-link\\">Gå til sjekkliste hos idébanken.</a></li>
                       <li>Utarbeid sykefraværsrutiner. <a href=\\"https://www.idebanken.org/kloke-grep/artikler/rutiner-og-retningslinjer-for-sykefravaersoppfolging\\" class=\\"navds-link\\">Les mer om hvordan dere kan lage rutiner hos Idébanken.</a></li>
                       <li>Informer alle ansatte om rutinene og hvor de finner dem.</li>
                     </ul>
                   </div>
                 </div>
-                <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Tips:</h4>
+                <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
                 <p class=\\"mkmrd90\\">Arbeidet med rutiner bør settes inn i arbeidsplassens plan for å forebygge sykefravær slik at du kan dokumentere arbeidet.</p>
               </div>
             </div>
@@ -294,14 +293,14 @@ test('Snapshot test', async () => {
             <div class=\\"pnkhjy5\\">
               <div>
                 <p>Legg en plan for hva du ønsker å oppnå og hvordan du kan gjennomføre samtalen. Husk å lytte til medarbeiderens behov.</p>
-                <ul class=\\"a44d78l\\">
+                <ul class=\\"amrfjif\\">
                   <li><strong>Hva er dine mål med samtalen?</strong></li>
-                  <li class=\\"m113wumk\\">Noter ned målet, og ha det framme når du er i samtalen.</li>
+                  <li class=\\"mnt9094\\">Noter ned målet, og ha det framme når du er i samtalen.</li>
                   <li><strong>Hvor trygg er du når du skal strukturere samtalen?</strong></li>
                   <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg tema og hjelpespørsmål under “Gjennomfør samtalen ved å” lengre ned på siden.</a></li>
                 </ul>
                 <p>Hvis du skal ta opp et tema du synes er vanskelig, bør du bør være konkret og tydelig på dine observasjoner. Du kan fortelle hvordan du tolker observasjonene, og gi medarbeideren anledning til å korrigere.</p>
-                <ul class=\\"a44d78l\\">
+                <ul class=\\"amrfjif\\">
                   <li><strong>Hva har du observert?</strong></li>
                   <li>Eksempler kan være endring i fravær, i atferd eller i hvordan arbeidsoppgavene blir utført. Husk å gi konkrete eksempler på det medarbeideren er god på også. Noter gjerne ned og ta med i samtalen.</li>
                 </ul>
@@ -329,7 +328,7 @@ test('Snapshot test', async () => {
               </div>
             </div>
           </div>
-          <h3 id=\\"GjennomforSamtalen\\" class=\\"mo0p6q m113wumk navds-title navds-title--m\\">Gjennomfør samtalen ved å:</h3>
+          <h3 id=\\"GjennomforSamtalen\\" class=\\"mo0p6q mnt9094 navds-title navds-title--m\\">Gjennomfør samtalen ved å:</h3>
           <div class=\\"rvep9j3\\">
             <div class=\\"navds-accordion p1pgduac navds-accordion--closed\\"><button id=\\"ekspanderbart-infopanel__innledeSamtalen-base\\" class=\\"navds-accordion__button\\" aria-expanded=\\"false\\" aria-controls=\\"aaaaaaaaaaaaaa\\"><span class=\\"navds-accordion__heading navds-title navds-title--s\\"><div class=\\"f3eheo1\\"><div class=\\"g1kg98jt\\"><div class=\\"t1emcwa8\\">Innlede samtalen</div></div></div></span><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--down\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 17L3 8.429 4.5 7l7.5 7.143L19.5 7 21 8.429 12 17z\\" fill=\\"currentColor\\"></path>
@@ -341,7 +340,7 @@ test('Snapshot test', async () => {
             <div class=\\"pnkhjy5\\">
               <div>
                 <p class=\\"m9geqa5 navds-body-long\\">Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt. Rammene hjelper dere med å holde fokus og tid.</p>
-                <h4 class=\\"m1evb9uy navds-title navds-title--s\\"></h4>
+                <h4 class=\\"mgnunja navds-title navds-title--s\\"></h4>
                 <ul class=\\"mkmrd90\\">
                   <li>ønske velkommen</li>
                   <li>informere om tidsrammene for møtet</li>
@@ -362,15 +361,15 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <h3 class=\\"m1evb9uy navds-title navds-title--m\\">En samtale for å forebygge eller følge opp sykefravær handler om medarbeideren.</h3>
+                <h3 class=\\"mgnunja navds-title navds-title--m\\">En samtale for å forebygge eller følge opp sykefravær handler om medarbeideren.</h3>
                 <p class=\\"mkmrd90\\">Din oppgave er å legge til rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene og arbeidsdagen oppleves.</p>
-                <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Tips:</h4>
+                <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
                 <ul class=\\"mkmrd90\\">
                   <li>Bruk åpne spørsmål med spørreord som hva, hvor, hvordan, hvem eller når.</li>
                   <li>Unngå ordet “hvorfor”. Hvorfor kan ofte oppleves som en anklage eller for å fordele skyld.</li>
                   <li>Tål stillhet slik at medarbeideren får tid til å tenke før svarene kommer.</li>
                 </ul>
-                <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Vanlige tema i samtalen om arbeidssituasjonen:</h4>
+                <h4 class=\\"mgnunja navds-title navds-title--s\\">Vanlige tema i samtalen om arbeidssituasjonen:</h4>
                 <ul class=\\"mkmrd90\\">
                   <li>arbeidsoppgaver</li>
                   <li>arbeidstid</li>
@@ -378,17 +377,17 @@ test('Snapshot test', async () => {
                   <li>arbeidsmiljø</li>
                   <li>tidligere tiltak</li>
                 </ul>
-                <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Eksempler på spørsmål:</h4>
+                <h4 class=\\"mgnunja navds-title navds-title--s\\">Eksempler på spørsmål:</h4>
                 <p class=\\"mkmrd90\\">Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
-                <div class=\\"g2scysm mnt9094\\">
-                  <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Arbeidsoppgaver</h4>
+                <div class=\\"g18vgnob m1yvwkgj\\">
+                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Arbeidsoppgaver</h4>
                   <ul>
                     <li>Hvordan vil du beskrive arbeidsdagen din?</li>
                     <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
                     <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
                   </ul>
                 </div>
-                <div class=\\"g2scysm mnt9094\\">
+                <div class=\\"g18vgnob m1yvwkgj\\">
                   <h4 class=\\"navds-title navds-title--s\\">Arbeidsmiljø</h4>
                   <ul>
                     <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
@@ -397,7 +396,7 @@ test('Snapshot test', async () => {
                     <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
                   </ul>
                 </div>
-                <div class=\\"g2scysm mnt9094\\">
+                <div class=\\"g18vgnob m1yvwkgj\\">
                   <h4 class=\\"navds-title navds-title--s\\">Samarbeid og motivasjon</h4>
                   <ul>
                     <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
@@ -418,27 +417,27 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <h3 class=\\"m1evb9uy navds-title navds-title--m\\">Hjelp medarbeideren med å finne løsninger.</h3>
+                <h3 class=\\"mgnunja navds-title navds-title--m\\">Hjelp medarbeideren med å finne løsninger.</h3>
                 <p class=\\"mkmrd90\\">Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først, kan det bli enklere å se løsningsforslag selv. Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.</p>
-                <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Tips:</h4>
+                <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
                 <p class=\\"mkmrd90\\">Snakk om det som skal skje framover i tid og på hvilke muligheter som finnes.</p>
-                <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Vanlige tema når dere finner løsninger sammen:</h4>
+                <h4 class=\\"mgnunja navds-title navds-title--s\\">Vanlige tema når dere finner løsninger sammen:</h4>
                 <ul class=\\"mkmrd90\\">
                   <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
                   <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
                   <li>tilpasse organisering av arbeidet</li>
                   <li>tilpasse samarbeid og samhandling med andre</li>
-                  <li class=\\"mnt9094\\">alternative arbeidsoppgaver</li>
+                  <li class=\\"m1yvwkgj\\">alternative arbeidsoppgaver</li>
                   <li>behov for informasjon og tilbakemeldinger</li>
                   <li>arbeidsmiljø</li>
-                  <li class=\\"mnt9094\\">kompetanse</li>
+                  <li class=\\"m1yvwkgj\\">kompetanse</li>
                   <li>fysisk utforming av arbeidsplassen</li>
                   <li>hjelpemidler</li>
                   <li>andre forhold</li>
                 </ul>
-                <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Eksempler på spørsmål:</h4>
+                <h4 class=\\"mgnunja navds-title navds-title--s\\">Eksempler på spørsmål:</h4>
                 <p class=\\"mkmrd90\\">Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
-                <div class=\\"g2scysm mnt9094\\">
+                <div class=\\"g18vgnob m1yvwkgj\\">
                   <h4 class=\\"navds-title navds-title--s\\">Hvordan kan jeg som leder hjelpe deg?</h4>
                   <ul>
                     <li>Hva ville være god og støttende hjelp for deg i en travel arbeidsdag?</li>
@@ -447,7 +446,7 @@ test('Snapshot test', async () => {
                     <li>Hvordan kan jeg som leder hjelpe deg med å få en mindre stressende arbeidsdag?</li>
                   </ul>
                 </div>
-                <div class=\\"g2scysm\\">
+                <div class=\\"g18vgnob\\">
                   <h4 class=\\"navds-title navds-title--s\\">Løsninger</h4>
                   <ul>
                     <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
@@ -473,14 +472,14 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <h3 class=\\"m1evb9uy navds-title navds-title--m\\">Oppsummer i felleskap.</h3>
+                <h3 class=\\"mgnunja navds-title navds-title--m\\">Oppsummer i felleskap.</h3>
                 <p class=\\"mkmrd90\\">En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer det dere er blitt enige om og at dere lager en plan for videre oppfølging.</p>
-                <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Tips:</h4>
+                <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
                 <p class=\\"mkmrd90\\">Det er lurt med flere korte oppsummeringer til hvert punkt dere har avtalt. Bruk spørsmål som kan besvares med ja eller nei for å sjekke at dere har felles forståelse.</p>
-                <p class=\\"m1evb9uy\\">Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.</p>
+                <p class=\\"mgnunja\\">Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.</p>
                 <p class=\\"mkmrd90\\"><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap\\" class=\\"navds-link\\">Les mer om oppfølgingsplan på nav.no.</a></p>
-                <h4 class=\\"m1evb9uy navds-title navds-title--s\\">Vanlige tema i avslutningen:</h4>
-                <ul class=\\"mkmrd90 m1yvwkgj\\">
+                <h4 class=\\"mgnunja navds-title navds-title--s\\">Vanlige tema i avslutningen:</h4>
+                <ul class=\\"mkmrd90 m1cazjdg\\">
                   <li>dato for neste samtale og hvor ofte samtaler skal gjennomføres</li>
                   <li>avtaler, tilrettelegginger og tiltak</li>
                   <li>om tilretteleggingen er midlertidig eller permanent</li>
@@ -495,8 +494,8 @@ test('Snapshot test', async () => {
             </div>
           </div>
         </section>
-        <section class=\\"b1baxhy5 mmrfjif\\">
-          <h2 class=\\"m1d2gkmn m113wumk navds-title navds-title--l\\">Mer inspirasjon og gode grep</h2>
+        <section class=\\"bt836h5 m1em9y5r\\">
+          <h2 class=\\"m1d2gkmn mnt9094 navds-title navds-title--l\\">Mer inspirasjon og gode grep</h2>
           <div class=\\"rvep9j3\\">
             <div class=\\"navds-accordion p1pgduac navds-accordion--closed\\"><button id=\\"ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\" class=\\"navds-accordion__button\\" aria-expanded=\\"false\\" aria-controls=\\"aaaaaaaaaaaaaa\\"><span class=\\"navds-accordion__heading navds-title navds-title--s\\"><div class=\\"f3eheo1\\"><div class=\\"g1kg98jt\\"><div class=\\"t1emcwa8\\">Enkle tips for digitale samtaler</div></div></div></span><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--down\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 17L3 8.429 4.5 7l7.5 7.143L19.5 7 21 8.429 12 17z\\" fill=\\"currentColor\\"></path>
@@ -553,48 +552,48 @@ test('Snapshot test', async () => {
               <div>
                 <h3 class=\\"navds-title navds-title--m\\">Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.</h3>
                 <p>Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i samtalen med gjensidige forventninger til hva som er mulig.</p>
-                <p class=\\"m1evb9uy\\">Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter som finnes.</p>
-                <p class=\\"mkmrd90 m1yvwkgj\\">Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med verneombud og tillitsvalgte. Hensikten er en felles vurdering av hvilken tilrettelegging er mulig hos dere.</p>
-                <ul class=\\"mnt9094\\">
-                  <li class=\\"m113wumk\\"><strong>Hvilke tilretteleggingsmuligheter finnes på deres arbeidsplass og ellers i organisasjonen?</strong></li>
+                <p class=\\"mgnunja\\">Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter som finnes.</p>
+                <p class=\\"mkmrd90 m1cazjdg\\">Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med verneombud og tillitsvalgte. Hensikten er en felles vurdering av hvilken tilrettelegging er mulig hos dere.</p>
+                <ul class=\\"m1yvwkgj\\">
+                  <li class=\\"mnt9094\\"><strong>Hvilke tilretteleggingsmuligheter finnes på deres arbeidsplass og ellers i organisasjonen?</strong></li>
                   <li><strong>Hvor går grensene for ditt handlingsrom til å lage avtaler? Er det behov for å gjøre avklaringer?</strong></li>
                 </ul>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Dette kan du gjøre:</h4>
-                <div class=\\"i1tdlrfy\\">
-                  <div class=\\"g2scysm\\">
+                <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
+                <div class=\\"i1baxhy5\\">
+                  <div class=\\"g18vgnob\\">
                     <h4 class=\\"navds-title navds-title--s\\">på kort sikt:</h4>
                     <ul class=\\"mkmrd90\\">
-                      <li class=\\"mnt9094\\">Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for din arbeidsplass, hvis dere har en personalavdeling kan disse ofte hjelpe deg</li>
+                      <li class=\\"m1yvwkgj\\">Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for din arbeidsplass, hvis dere har en personalavdeling kan disse ofte hjelpe deg</li>
                       <li>Vurder om du bør dele oversikt over tilretteleggingsmuligheter med medarbeideren før samtalen</li>
                     </ul>
                   </div>
-                  <div class=\\"g2scysm\\">
+                  <div class=\\"g18vgnob\\">
                     <h4 class=\\"navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
                     <ul class=\\"mkmrd90\\">
-                      <li class=\\"mnt9094\\">Lag en liste med tilretteleggingsmuligheter <a href=\\"https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen\\" class=\\"navds-link\\">Se beskrivelse av prosess og maler på idebanken</a></li>
+                      <li class=\\"m1yvwkgj\\">Lag en liste med tilretteleggingsmuligheter <a href=\\"https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen\\" class=\\"navds-link\\">Se beskrivelse av prosess og maler på idebanken</a></li>
                     </ul>
                   </div>
                 </div>
-                <div class=\\"hr6t0bd mgddtsn m1yvwkgj\\"></div>
+                <div class=\\"h44d78l mgddtsn m1cazjdg\\"></div>
                 <h3 class=\\"navds-title navds-title--m\\">Lær mer om tilrettelegging</h3>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Dette kan du gjøre:</h4>
-                <div class=\\"i1tdlrfy mnt9094\\">
-                  <div class=\\"g2scysm\\">
+                <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
+                <div class=\\"i1baxhy5 m1yvwkgj\\">
+                  <div class=\\"g18vgnob\\">
                     <h4 class=\\"navds-title navds-title--s\\">på kort sikt:</h4>
                     <ul>
-                      <li class=\\"mnt9094\\"><a href=\\"https://www.arbeidstilsynet.no/arbeidsforhold/tilrettelegging/\\" class=\\"navds-link\\">Les mer om arbeidsgivers plikter til å tilrettelegge på arbeidsplassen hos arbeidstilsynet.</a></li>
-                      <li class=\\"mnt9094\\">NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt og medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging. <a href=\\"https://vimeo.com/showcase/6728595\\" class=\\"navds-link\\">Gå til nettkurs.</a></li>
-                      <li class=\\"mnt9094\\"><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap\\" class=\\"navds-link\\">Les mer om tilrettelegging i sykefraværsoppfølging</a></li>
+                      <li class=\\"m1yvwkgj\\"><a href=\\"https://www.arbeidstilsynet.no/arbeidsforhold/tilrettelegging/\\" class=\\"navds-link\\">Les mer om arbeidsgivers plikter til å tilrettelegge på arbeidsplassen hos arbeidstilsynet.</a></li>
+                      <li class=\\"m1yvwkgj\\">NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt og medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging. <a href=\\"https://vimeo.com/showcase/6728595\\" class=\\"navds-link\\">Gå til nettkurs.</a></li>
+                      <li class=\\"m1yvwkgj\\"><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap\\" class=\\"navds-link\\">Les mer om tilrettelegging i sykefraværsoppfølging</a></li>
                       <li><a href=\\"https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge\\" class=\\"navds-link\\">Les mer om NAVs økonomiske virkemidler</a></li>
                     </ul>
                   </div>
-                  <div class=\\"g2scysm\\">
-                    <h4 class=\\"m1evb9uy navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
+                  <div class=\\"g18vgnob\\">
+                    <h4 class=\\"mgnunja navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
                     <ul>
-                      <li class=\\"mnt9094\\">Lag en plan for å lære mer.</li>
-                      <li class=\\"mnt9094\\">Hva du trenger å vite mer om?</li>
-                      <li class=\\"mnt9094\\">Hvordan kan du lære mer?</li>
-                      <li class=\\"mnt9094\\">Når du skal gjennomføre?</li>
+                      <li class=\\"m1yvwkgj\\">Lag en plan for å lære mer.</li>
+                      <li class=\\"m1yvwkgj\\">Hva du trenger å vite mer om?</li>
+                      <li class=\\"m1yvwkgj\\">Hvordan kan du lære mer?</li>
+                      <li class=\\"m1yvwkgj\\">Når du skal gjennomføre?</li>
                       <li>Husk å ta med tillitsvalgte og verneombud slik at dere sammen lærer mer om tilrettelegging.</li>
                     </ul>
                   </div>
@@ -603,13 +602,16 @@ test('Snapshot test', async () => {
             </div>
           </div>
         </section>
-        <div class=\\"vb4yujy mo0p6q b1baxhy5 mmrfjif\\">
+        <div class=\\"vb4yujy mo0p6q bt836h5 m1em9y5r\\">
           <h3 class=\\"v1fcag8d navds-title navds-title--m\\">Visste du at NAV hjelper virksomheter med å forebygge sykefravær?</h3><svg class=\\"vdtp2g8\\" width=\\"61px\\" height=\\"61px\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
             <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 0C5.38226 0 0 5.38226 0 12C0 18.6177 5.38226 24 12 24C18.6167 24 24 18.6177 24 12C24 5.38226 18.6167 0 12 0Z\\" fill=\\"#5690A2\\"></path>
             <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M13.5653 6.56522C13.5653 5.70122 12.8625 5 12.0001 5C11.1345 5 10.4348 5.70122 10.4348 6.56522C10.4348 7.43078 11.1345 8.13043 12.0001 8.13043C12.8625 8.13043 13.5653 7.43078 13.5653 6.56522ZM16.0192 18.0005C16.0192 17.4403 15.5395 17.0092 14.9757 17.0092H13.0777V11.003C13.0777 10.4428 12.598 10.0117 12.0342 10.0117H10.0049C9.44027 10.0117 8.9614 10.4427 8.9614 11.003C8.9614 11.5633 9.44027 11.9943 10.0049 11.9943H10.9907V17.0092H9.39138C8.82677 17.0092 8.3479 17.4402 8.3479 18.0005C8.3479 18.5608 8.82677 18.9918 9.39138 18.9918H14.9757C15.5395 18.9918 16.0192 18.5607 16.0192 18.0005Z\\" fill=\\"white\\"></path>
           </svg>
-          <p class=\\"v15ho6qo mkmrd90\\">NAV hjelper virksomheter med å forebygge sykefravær. Du får digitale tjenester og veiledning for å gjennomføre enkeltsamtaler. NAV kan også gi mer omfattende rådgivning hos dere på arbeidsplassen.</p><a href=\\"https://arbeidsgiver.nav.no/kontakt-oss/\\" class=\\"navds-link vb2cnvt m113wumk mkmrd90\\">Kontakt NAV</a><a href=\\"https://arbeidsgiver.nav.no/forebygge-sykefravaer/\\" class=\\"navds-link vb2cnvt mkmrd90\\">Les mer om NAVs tjenester for å forebygge sykefravær.</a>
+          <p class=\\"v15ho6qo mkmrd90\\">NAV hjelper virksomheter med å forebygge sykefravær. Du får digitale tjenester og veiledning for å gjennomføre enkeltsamtaler. NAV kan også gi mer omfattende rådgivning hos dere på arbeidsplassen.</p><a href=\\"https://arbeidsgiver.nav.no/kontakt-oss/\\" class=\\"navds-link vb2cnvt mnt9094 mkmrd90\\">Kontakt NAV</a><a href=\\"https://arbeidsgiver.nav.no/forebygge-sykefravaer/\\" class=\\"navds-link vb2cnvt mkmrd90\\">Les mer om NAVs tjenester for å forebygge sykefravær.</a>
         </div>
+        <div class=\\"h1gbqnqr m1evb9uy m1lu1ur0\\"><button class=\\"n1tt81ky k1tdlrfy navds-button navds-button--primary navds-button--m navds-body-short\\" id=\\"skriv-ut-knapp\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"mr6t0bd\\">
+              <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M20 0v5a4 4 0 014 4v10h-4v5H4v-5H0V9a4 4 0 014-4V0h16zm-2 12H6v10h12V12zm-2 2v2H8v-2h8zm-2 4v2H8v-2h6zm6-11H4a2 2 0 00-1.995 1.85L2 9v8h2v-7h16v7h2V9a2 2 0 00-1.85-1.995L20 7zm-2-5H6v3h12V2z\\" fill=\\"currentColor\\"></path>
+            </svg> Skriv ut nettside</button></div>
       </div>
     </div>
 </div>
