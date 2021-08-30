@@ -18,7 +18,7 @@ import { Title } from '@navikt/ds-react';
 import classNames from 'classnames';
 import { css } from 'linaria';
 import { SCREEN_SM_MIN } from '../../utils/konstanter';
-import LastNedKnapp from '../../felleskomponenter/LastNedKnapp/LastNedKnapp';
+import LastNedKnapp from '../../felleskomponenter/Knapper/LastNedKnapp';
 
 const SlikSkaperDuGodeSamtaler = ({ className }: { className?: string }) => {
     return (
