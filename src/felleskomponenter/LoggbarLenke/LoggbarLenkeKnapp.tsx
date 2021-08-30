@@ -1,15 +1,15 @@
-import React, {FunctionComponent, ReactNode} from 'react';
-import {Link} from '@navikt/ds-react'
+import React, { FunctionComponent, ReactNode } from 'react';
+import { Link } from '@navikt/ds-react';
 import logEvent from '../../amplitude/amplitude';
-import classNames from "classnames";
-import {css} from "linaria";
+import classNames from 'classnames';
+import { css } from 'linaria';
 
 type LoggbarLenkeProps = {
     href: string;
     className?: string;
     children: ReactNode;
     lenketekst: string;
-    download?: any
+    download?: any;
 };
 
 
@@ -22,10 +22,9 @@ export const LoggbarLenkeKnapp: FunctionComponent<LoggbarLenkeProps> = ({
 }: LoggbarLenkeProps) => {
     const logLenke = (url: string, lenketekst: string) => {
         if (window !== undefined) {
-            logEvent('lenke', {
-                'URL-fra': window.location.href,
-                'URL-til': url,
-                lenketekst: lenketekst,
+            logEvent('knapp', {
+                label: lenketekst,
+                funksjon: 'last-ned-fil',
             });
         }
     };
