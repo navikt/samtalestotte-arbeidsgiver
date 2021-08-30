@@ -5,13 +5,22 @@ import classNames from 'classnames';
 import { Link } from '@navikt/ds-react';
 import React from 'react';
 
-export default function LastNedKnapp(props: { lenketekst: string; href: string; filtype: string }) {
+export default function LastNedKnapp(props: {
+    knappetekst: string;
+    href: string;
+    filnavn?: string;
+    label: string;
+}) {
     const loggKlikkPåSkrivUtKnapp = (lenketekst: string) => {
         logEvent('knapp', {
-            label: lenketekst,
+            label: props.label,
             funksjon: 'last-ned-fil',
         });
     };
+
+    // Bestemmer navnet på fila som lastes ned. Hvis "true" beholdes opprinnelig filnavn.
+    let download = props.filnavn ?? true;
+
     return (
         <Link
             className={classNames(
@@ -23,11 +32,11 @@ export default function LastNedKnapp(props: { lenketekst: string; href: string; 
                 'navds-body--s'
             )}
             href={props.href}
-            download={props.filtype}
-            onClick={() => loggKlikkPåSkrivUtKnapp(props.lenketekst)}
+            download={download}
+            onClick={() => loggKlikkPåSkrivUtKnapp(props.knappetekst)}
         >
             <Download />
-            {props.lenketekst}
+            {props.knappetekst}
         </Link>
     );
 }

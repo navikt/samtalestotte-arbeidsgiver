@@ -32,14 +32,14 @@ const SlikSkaperDuGodeSamtaler = ({ className }: { className?: string }) => {
                 </Title>
                 <div className={downloadButtonContainerStyle}>
                     <LastNedKnapp
-                        lenketekst="Last ned i Word"
+                        knappetekst="Last ned i Word"
                         href="/samtalestotte/Samtalestøtte-Arbeidsgiver.docx"
-                        filtype="docx"
+                        label="last-ned-docx"
                     />
                     <LastNedKnapp
-                        lenketekst="Last ned i .txt"
+                        knappetekst="Last ned i .txt"
                         href="/samtalestotte/Samtalestøtte-Arbeidsgiver.txt"
-                        filtype="txt"
+                        label="last-ned-txt"
                     />
                 </div>
             </div>
