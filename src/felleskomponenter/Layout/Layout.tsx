@@ -4,16 +4,21 @@ import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
 import { DecoratorParts } from '../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
-import {useEffect, useRef, useState} from 'react';
-import ReactToPrint from 'react-to-print';
+import React, { useEffect, useRef, useState } from 'react';
 import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
-import { Link, BodyShort, Button } from '@navikt/ds-react';
-import { Back } from '@navikt/ds-icons'
-import {erTilbakeURLTillat, listeAvTillatteRefererUrler, TILBAKE } from '../../resources/urls';
+import { BodyShort, Link } from '@navikt/ds-react';
+import { Back } from '@navikt/ds-icons';
+import { erTilbakeURLTillat, TILBAKE } from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import { css } from 'linaria';
 import classNames from 'classnames';
-import {marginSides3rem, noPrint} from "../../utils/fellesStiler";
+import {
+    marginSides2_25rem,
+    marginSides3rem,
+    marginTop6Rem,
+    noPrint,
+} from '../../utils/fellesStiler';
+import { SkrivUtKnapp } from '../SkrivUtKnapp/SkrivUtKnapp';
 
 export const Layout = (props: {
     title: string;
@@ -23,9 +28,9 @@ export const Layout = (props: {
     decoratorParts?: DecoratorParts;
     children: React.ReactChild[];
 }) => {
-    const panelRef = useRef<HTMLDivElement>(null);
-    const lastNedKnappRef = useRef<HTMLButtonElement>(null);
+    const layoutContentRef = useRef<HTMLDivElement>(null);
     const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
+
     useEffect(() => {
         if (window !== undefined) {
             const refUrl = new URLSearchParams(window.location.search).get('referer');
@@ -35,24 +40,30 @@ export const Layout = (props: {
         }
     }, []);
 
-    const headerLinks = (props.decoratorParts
-        ? props.decoratorParts.linkTags
-        : []).map((attrs, index) => {
-        return <link
-            key={attrs.key}
-            href={attrs.href ? attrs.href : undefined}
-            type={attrs.type ? attrs.type : undefined}
-            rel={attrs.rel ? attrs.rel : undefined}
-            sizes={attrs.sizes ? attrs.sizes : undefined}
-        />;
-    });
+    const headerLinks = (props.decoratorParts ? props.decoratorParts.linkTags : []).map(
+        (attrs, index) => {
+            return (
+                <link
+                    key={attrs.key}
+                    href={attrs.href ? attrs.href : undefined}
+                    type={attrs.type ? attrs.type : undefined}
+                    rel={attrs.rel ? attrs.rel : undefined}
+                    sizes={attrs.sizes ? attrs.sizes : undefined}
+                />
+            );
+        }
+    );
 
+    function loggUtskriftsklikk() {
+        props.logEvent('knapp', {
+            label: 'skriv-ut',
+            funksjon: 'skriv-ut',
+        });
+    }
 
     return (
         <div className={layout}>
-            <Head>
-                {headerLinks}
-            </Head>
+            <Head>{headerLinks}</Head>
             <DecoratorHeader
                 html={
                     props.decoratorParts?.decoratorHeader === undefined
@@ -70,39 +81,24 @@ export const Layout = (props: {
                     }
                 />
                 <div className={layoutWrapper}>
-                    <div className={layoutContent} ref={panelRef}>
-                        <Link href={tilbakeURL} className={classNames(noPrint, marginSides3rem)}><Back />Tilbake</Link>
-                        <div className={classNames(layoutSmallScreenIllustration, marginSides3rem)}><PageBannerSVG/></div>
-                        <div className={classNames(layoutPrintHeader, marginSides3rem)}>
-                            <BodyShort size='s'>{PROD_URL}</BodyShort>
+                    <div className={layoutContent} ref={layoutContentRef}>
+                        <Link href={tilbakeURL} className={classNames(noPrint, marginSides3rem)}>
+                            <Back />
+                            Tilbake
+                        </Link>
+                        <div className={classNames(layoutSmallScreenIllustration, marginSides3rem)}>
+                            <PageBannerSVG />
                         </div>
-                        <div className={layoutReactToPrintWrapper}>
-                            <ReactToPrint
-                                onBeforePrint={() => {
-                                    props.logEvent('knapp', {
-                                        label: 'skriv-ut',
-                                        funksjon: 'skriv-ut',
-                                    });
-                                }}
-                                onAfterPrint={() => {
-                                    if (lastNedKnappRef.current) {
-                                        lastNedKnappRef.current.focus();
-                                    }
-                                }}
-                                content={() => panelRef.current}
-                                trigger={() => (
-                                    <Button
-                                        id={'skriv-ut-knapp'}
-                                        ref={lastNedKnappRef}
-                                        className={classNames(noPrint, layoutKnapp, marginSides3rem)}
-                                        size={"m"}
-                                    >
-                                        Skriv ut
-                                    </Button>
-                                )}
-                            />
+                        <div className={classNames(layoutPrintHeader)}>
+                            <BodyShort size="s">{PROD_URL}</BodyShort>
                         </div>
                         {props.children}
+                        <SkrivUtKnapp
+                            knappetekst="Skriv ut nettside"
+                            utskriftsinnholdRef={layoutContentRef}
+                            kjørFørUtskrift={loggUtskriftsklikk}
+                            wrapperClassnames={[marginTop6Rem, marginSides2_25rem]}
+                        />
                     </div>
                 </div>
             </div>
@@ -121,58 +117,45 @@ export const Layout = (props: {
 /** STYLES **/
 
 const layout = css`
-  @media print {
-    @page {
-      size: A4;
-      margin: 2.54cm 0 0;
+    @media print {
+        @page {
+            size: A4;
+            margin: 2.54cm 0 0;
+        }
     }
-  }
-`
+`;
+
 const layoutWrapper = css`
-  min-height: 50rem;
-  padding: 1.5rem 0 5rem;
-`
+    min-height: 50rem;
+    padding: 1.5rem 0 5rem;
+`;
 
 const layoutContent = css`
-  max-width: 66rem;
-  background-color: white;
-  padding: 1rem;
-  margin: auto;
-  border-radius: 0.25rem;
-`
+    max-width: 66rem;
+    background-color: white;
+    padding: 1rem;
+    margin: auto;
+    border-radius: 0.25rem;
+`;
 
 const layoutSmallScreenIllustration = css`
-  display: flex;
-  justify-content: center;
-  background: var(--navds-color-blue-10);
-  margin: 1rem -1rem 3rem;
-  svg {
-    flex-shrink: 0;
-  }
-  @media (min-width: ${SCREEN_SM_MIN}) {
-      display: none;
-  }
-`
+    display: flex;
+    justify-content: center;
+    background: var(--navds-color-blue-10);
+    margin: 1rem -1rem 3rem;
+    svg {
+        flex-shrink: 0;
+    }
+    @media (min-width: ${SCREEN_SM_MIN}) {
+        display: none;
+    }
+`;
 
 const layoutPrintHeader = css`
-  display: none;
-  @media print {
-    display: block;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-  }
-`
-
-const layoutReactToPrintWrapper = css`
-  display: none;
-  @media (min-width: ${SCREEN_SM_MIN}) {  
-    display: flex;
-    justify-content: flex-end;
-  }
-`
-
-const layoutKnapp = css`
-  :hover{
-      padding: 0.65625rem var(--navds-spacing-3);
-  }
-`
+    display: none;
+    @media print {
+        display: block;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+`;
