@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
-import {marginSides3rem} from "../utils/fellesStiler";
+import { marginSides3rem } from '../utils/fellesStiler';
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
@@ -24,9 +24,18 @@ const Home = (props: { page: PageProps }) => {
         enabled: getMiljø() !== 'local',
     });
 
+    //let referrerPattern = window.location.href.match("(referer=https:\\/\\/.*\\.nav.no\\/)(.+)\\/");
+
     useEffect(() => {
+        const referrerFromUrl = /referer=https:\/\/.*\.nav.no\/(.+)\//;
+        const referrerMatch = window.location.href.match(referrerFromUrl);
+        const referrer = referrerMatch?.[1];
+
         const timer = setTimeout(async () => {
-            await logEvent('sidevisning', { url: 'samtalestotte-arbeidsgiver' });
+            await logEvent('sidevisning', {
+                url: 'samtalestotte-arbeidsgiver',
+                referrer: referrer,
+            });
         }, 500);
         return () => clearTimeout(timer);
     }, []);
@@ -37,10 +46,10 @@ const Home = (props: { page: PageProps }) => {
             antallForsøkSendTilIaTjenesterMetrikker < 5
         ) {
             sendIATjenesteMetrikk().then((erMetrikkSendt) => {
-                if(erMetrikkSendt) {
+                if (erMetrikkSendt) {
                     setCookie(
-                        "samtalestotte",
-                        {sendtStatistikk: "ja" },
+                        'samtalestotte',
+                        { sendtStatistikk: 'ja' },
                         {
                             path: '/',
                             maxAge: ETT_ÅR_I_SEKUNDER,
@@ -52,7 +61,6 @@ const Home = (props: { page: PageProps }) => {
             antallForsøkSendTilIaTjenesterMetrikker++;
         }
     }, []);
-
 
     return (
         <div>
@@ -68,10 +76,10 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                     logEvent={logEvent}
                 >
-                    <HvorforBrukeTidPaaSamtaler className={marginSides3rem}/>
+                    <HvorforBrukeTidPaaSamtaler className={marginSides3rem} />
                     <SlikSkaperDuGodeSamtaler />
-                    <MerInspirasjonOgGodeGrep className={marginSides3rem}/>
-                    <VisteDuAt className={marginSides3rem}/>
+                    <MerInspirasjonOgGodeGrep className={marginSides3rem} />
+                    <VisteDuAt className={marginSides3rem} />
                 </Layout>
             </main>
             <footer></footer>
