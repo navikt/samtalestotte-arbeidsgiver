@@ -11,9 +11,9 @@ export default function LastNedKnapp(props: {
     filnavn?: string;
     label: string;
 }) {
-    const loggKlikkPåSkrivUtKnapp = (lenketekst: string) => {
+    const loggKlikkPåLastNedKnapp = (label: string) => {
         logEvent('knapp', {
-            label: props.label,
+            label: label,
             funksjon: 'last-ned-fil',
         });
     };
@@ -33,7 +33,7 @@ export default function LastNedKnapp(props: {
             )}
             href={props.href}
             download={download}
-            onClick={() => loggKlikkPåSkrivUtKnapp(props.knappetekst)}
+            onClick={() => loggKlikkPåLastNedKnapp(props.label)}
         >
             <Download />
             {props.knappetekst}
