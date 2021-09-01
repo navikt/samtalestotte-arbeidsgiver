@@ -18,7 +18,7 @@ import {
     marginTop6Rem,
     noPrint,
 } from '../../utils/fellesStiler';
-import { SkrivUtKnapp } from '../SkrivUtKnapp/SkrivUtKnapp';
+import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
 
 export const Layout = (props: {
     title: string;
