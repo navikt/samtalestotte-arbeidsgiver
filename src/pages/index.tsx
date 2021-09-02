@@ -29,10 +29,9 @@ const Home = (props: { page: PageProps }) => {
         const referrer = hentReferrerFraUrl(window.location.href);
 
         const timer = setTimeout(async () => {
-            console.log('Referrer er: ', referrer);
             await logEvent('sidevisning', {
                 url: 'samtalestotte-arbeidsgiver',
-                referrer: referrer,
+                internal_referrer: referrer,
             });
         }, 500);
         return () => clearTimeout(timer);
@@ -76,11 +75,11 @@ const Home = (props: { page: PageProps }) => {
                 >
                     <HvorforBrukeTidPaaSamtaler className={marginSides3rem} />
                     <SlikSkaperDuGodeSamtaler />
-                    <MerInspirasjonOgGodeGrep className={marginSides3rem}/>
-                    <VisteDuAt className={marginSides3rem}/>
+                    <MerInspirasjonOgGodeGrep className={marginSides3rem} />
+                    <VissteDuAt className={marginSides3rem} />
                 </Layout>
             </main>
-            <footer></footer>
+            <footer />
         </div>
     );
 };
