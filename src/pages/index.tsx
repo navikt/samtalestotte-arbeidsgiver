@@ -5,7 +5,7 @@ import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
 import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
 import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
-import VisteDuAt from './VisteDuAt';
+import VissteDuAt from './VissteDuAt';
 import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
@@ -76,8 +76,8 @@ const Home = (props: { page: PageProps }) => {
                 >
                     <HvorforBrukeTidPaaSamtaler className={marginSides3rem} />
                     <SlikSkaperDuGodeSamtaler />
-                    <MerInspirasjonOgGodeGrep className={marginSides3rem} />
-                    <VisteDuAt className={marginSides3rem} />
+                    <MerInspirasjonOgGodeGrep className={marginSides3rem}/>
+                    <VisteDuAt className={marginSides3rem}/>
                 </Layout>
             </main>
             <footer></footer>
