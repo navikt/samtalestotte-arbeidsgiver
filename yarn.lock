@@ -1241,10 +1241,10 @@
   resolved "https://registry.yarnpkg.com/@napi-rs/triples/-/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"
   integrity sha512-jDJTpta+P4p1NZTFVLHJ/TLFVYVcOqv6l8xwOeBKNPMgY/zDYH/YH7SJbvrr/h1RcS9GzbPcLKGzpuK9cV56UA==
 
-"@navikt/ds-css@^0.6.4":
-  version "0.6.15"
-  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.6.15.tgz#f0c9be7045231f2e6ad285d6d9ad4d4901244ec5"
-  integrity sha512-iz71OcMecwgmGKho+z04/uy2JmLnOhIGAW+Pqae5NEUaj8g8mT0GI+jVr/aI9Jsxq1UgZIXEyoARGpouioy2hQ==
+"@navikt/ds-css@^0.6.18":
+  version "0.6.20"
+  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.6.20.tgz#bf4e1d897d0964651c46fd1066c6e41a768973b1"
+  integrity sha512-4pu+HkSD63ea4yYntJE4lPjniF/PEwrOEJwNoC66BA8MjCGXuIoGRkoLXPGrC/Eu/eqsRUVmQB+cJkKPN67NBQ==
 
 "@navikt/ds-icons@^0.3.3":
   version "0.3.3"
