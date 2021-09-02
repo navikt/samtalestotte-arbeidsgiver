@@ -12,6 +12,7 @@ import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
 import { marginSides3rem } from '../utils/fellesStiler';
+import { hentReferrerFraUrl } from '../resources/urls';
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
@@ -24,14 +25,11 @@ const Home = (props: { page: PageProps }) => {
         enabled: getMiljø() !== 'local',
     });
 
-    //let referrerPattern = window.location.href.match("(referer=https:\\/\\/.*\\.nav.no\\/)(.+)\\/");
-
     useEffect(() => {
-        const referrerFromUrl = /referer=https:\/\/.*\.nav.no\/(.+)\//;
-        const referrerMatch = window.location.href.match(referrerFromUrl);
-        const referrer = referrerMatch?.[1];
+        const referrer = hentReferrerFraUrl(window.location.href);
 
         const timer = setTimeout(async () => {
+            console.log('Referrer er: ', referrer);
             await logEvent('sidevisning', {
                 url: 'samtalestotte-arbeidsgiver',
                 referrer: referrer,

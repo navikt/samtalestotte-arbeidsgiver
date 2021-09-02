@@ -47,3 +47,13 @@ export const listeAvTillatteRefererUrler = [
 export const erTilbakeURLTillat = (refUrl: string): boolean => {
     return listeAvTillatteRefererUrler.filter((regexp) => regexp.test(refUrl)).length > 0;
 };
+
+/**
+ * Leser ut "referer" fra URL-er som eksplisitt inneholder dette (på formatet "referer=http(s)://<domene>/<referer>...")
+ * Eksempel: Input "https://nav.no?referer=http://hei.com/X/Y" returnerer "X"
+ *
+ * @param url hvor referer leses ut fra. Undefined reurneres hvis ingen referer (eller referrer) kan finnes.
+ */
+export const hentReferrerFraUrl = (url: string): string | undefined => {
+    return url.split(/(?:referer|referrer)=(?:http|https):\/\//)?.[1]?.split(/[\/?]/)?.[1];
+};
