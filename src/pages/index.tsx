@@ -12,6 +12,7 @@ import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
 import { marginSides3rem } from '../utils/fellesStiler';
+import { hentReferrerFraUrl } from '../resources/urls';
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
@@ -25,8 +26,13 @@ const Home = (props: { page: PageProps }) => {
     });
 
     useEffect(() => {
+        const referrer = hentReferrerFraUrl(window.location.href);
+
         const timer = setTimeout(async () => {
-            await logEvent('sidevisning', { url: 'samtalestotte-arbeidsgiver' });
+            await logEvent('sidevisning', {
+                url: 'samtalestotte-arbeidsgiver',
+                internal_referrer: referrer,
+            });
         }, 500);
         return () => clearTimeout(timer);
     }, []);
@@ -37,10 +43,10 @@ const Home = (props: { page: PageProps }) => {
             antallForsøkSendTilIaTjenesterMetrikker < 5
         ) {
             sendIATjenesteMetrikk().then((erMetrikkSendt) => {
-                if(erMetrikkSendt) {
+                if (erMetrikkSendt) {
                     setCookie(
-                        "samtalestotte",
-                        {sendtStatistikk: "ja" },
+                        'samtalestotte',
+                        { sendtStatistikk: 'ja' },
                         {
                             path: '/',
                             maxAge: ETT_ÅR_I_SEKUNDER,
@@ -52,7 +58,6 @@ const Home = (props: { page: PageProps }) => {
             antallForsøkSendTilIaTjenesterMetrikker++;
         }
     }, []);
-
 
     return (
         <div>
@@ -74,7 +79,7 @@ const Home = (props: { page: PageProps }) => {
                     <VissteDuAt className={marginSides3rem} />
                 </Layout>
             </main>
-            <footer></footer>
+            <footer />
         </div>
     );
 };
