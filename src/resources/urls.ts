@@ -42,6 +42,18 @@ export const listeAvTillatteRefererUrler = [
     new RegExp(
         '^((https):/)?/?(arbeidsgiver-gcp)([.]+(dev)+)([.]+(nav))([.]+(no))([/]+(forebygge-sykefravaer))(.*)?(#[w-]+)?$'
     ),
+    new RegExp(
+        '^((https):/)?/?(tjenester-q1)([.]+(nav))([.]+(no))([/]+(oppfolgingsplanarbeidsgiver))(.*)?(#[w-]+)?$'
+    ),
+    new RegExp(
+        '^((https):/)?/?(oppfolgingsplanarbeidsgiver)([.]+(nais)+)([.]+(oera-q))([.]+(local))(.*)?(#[w-]+)?$'
+    ),
+    new RegExp(
+        '^((https):/)?/?(tjenester)([.]+(nav))([.]+(no))([/]+(oppfolgingsplanarbeidsgiver))(.*)?(#[w-]+)?$'
+    ),
+    new RegExp(
+        '^((https):/)?/?(oppfolgingsplanarbeidsgiver)([.]+(nais)+)([.]+(oera))([.]+(no))(.*)?(#[w-]+)?$'
+    ),
 ];
 
 export const erTilbakeURLTillat = (refUrl: string): boolean => {
