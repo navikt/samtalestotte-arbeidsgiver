@@ -1318,22 +1318,22 @@
   resolved "https://registry.yarnpkg.com/@napi-rs/triples/-/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"
   integrity sha512-jDJTpta+P4p1NZTFVLHJ/TLFVYVcOqv6l8xwOeBKNPMgY/zDYH/YH7SJbvrr/h1RcS9GzbPcLKGzpuK9cV56UA==
 
-"@navikt/ds-css@^0.6.4":
+"@navikt/ds-css@^0.6.19":
   version "0.6.20"
   resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.6.20.tgz#bf4e1d897d0964651c46fd1066c6e41a768973b1"
   integrity sha512-4pu+HkSD63ea4yYntJE4lPjniF/PEwrOEJwNoC66BA8MjCGXuIoGRkoLXPGrC/Eu/eqsRUVmQB+cJkKPN67NBQ==
-
-"@navikt/ds-icons@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@navikt/ds-icons/-/ds-icons-0.3.3.tgz#19432cc0b711f4643cba611c5b593ff2b7b67626"
-  integrity sha512-851CJ6GJu4u1iLLhqhGW+jeEB4NpOsoN8Guhy6KZUPSGI1mbN1fGkUcu7p2BC7VF3Rcad/EdHGwTmPPAYZ4vDg==
 
 "@navikt/ds-icons@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@navikt/ds-icons/-/ds-icons-0.4.1.tgz#e367a0980ce76aea53b6f76c2d67aa80ce5d460a"
   integrity sha512-yx9b4q9UmEysxEZ7TPp0YVZdGGSORZIfCLyjHW+39c0yctyp3JLMm+n/Xq7jenx2Mxr024HhgxfWvpoApeONEg==
 
-"@navikt/ds-react@^0.6.4":
+"@navikt/ds-icons@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@navikt/ds-icons/-/ds-icons-0.5.2.tgz#3f1525def3c51a247a1f59c4d8fddd112521be9f"
+  integrity sha512-e4bqKbUaWNQ8UewrmJPM1Z43ylMD+uYZJwo3+DOWQKUW1Y5U7ucvVSO0lNtYO1gADXgGiTF2LjCPZbw7BhmdSQ==
+
+"@navikt/ds-react@^0.6.19":
   version "0.6.19"
   resolved "https://registry.yarnpkg.com/@navikt/ds-react/-/ds-react-0.6.19.tgz#627199a57ac7b2c5918ccb7a9b3cbbf92f0ec0cb"
   integrity sha512-MTrnyAJ86vYiwkaJB6ASkTafiqqBPdvnETuIlkwRgoo3FKC4bcz1OomYSlzOyJ1DLT6+L50/gGvjcWdvSinW5g==
@@ -1597,10 +1597,15 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*", "@types/node@^16.4.13":
+"@types/node@*":
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.9.0.tgz#d9512fe037472dcb58931ce19f837348db828a62"
   integrity sha512-nmP+VR4oT0pJUPFbKE4SXj3Yb4Q/kz3M9dSAO1GGMebRKWHQxLfDNmU/yh3xxCJha3N60nQ/JwXWwOE/ZSEVag==
+
+"@types/node@^16.9.1":
+  version "16.9.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.9.1.tgz#0611b37db4246c937feef529ddcc018cf8e35708"
+  integrity sha512-QpLcX9ZSsq3YYUUnD3nFDY8H7wctAhQj/TFKL8Ya8v5fMm3CFXxo8zStsLAl780ltoYoo1WvKUVGBQK+1ifr7g==
 
 "@types/prettier@^2.1.5":
   version "2.3.2"
@@ -1645,7 +1650,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.5":
+"@types/react@*", "@types/react@^17.0.20":
   version "17.0.20"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.20.tgz#a4284b184d47975c71658cd69e759b6bd37c3b8c"
   integrity sha512-wWZrPlihslrPpcKyCSlmIlruakxr57/buQN1RjlIeaaTWDLtJkTtRW429MoQJergvVKc4IWBpRhWw7YNh/7GVA==
@@ -1736,7 +1741,7 @@ agent-base@6:
   dependencies:
     debug "4"
 
-amplitude-js@^8.2.1:
+amplitude-js@^8.5.0:
   version "8.6.0"
   resolved "https://registry.yarnpkg.com/amplitude-js/-/amplitude-js-8.6.0.tgz#521bec51fe0f3dfcac929f335e249a40556cb654"
   integrity sha512-5y9po4Dyf+92KFWzK/nyLNq/haQsA6uLDF88/i5Lp9IxdYryUtdHlA1H+0g35qHnbQLalM87qcA0SBoT5jujrQ==
@@ -5175,7 +5180,7 @@ next-transpile-modules@^8.0.0:
     enhanced-resolve "^5.7.0"
     escalade "^3.1.1"
 
-next@^11.1.0:
+next@^11.1.2:
   version "11.1.2"
   resolved "https://registry.yarnpkg.com/next/-/next-11.1.2.tgz#527475787a9a362f1bc916962b0c0655cc05bc91"
   integrity sha512-azEYL0L+wFjv8lstLru3bgvrzPvK0P7/bz6B/4EJ9sYkXeW8r5Bjh78D/Ol7VOg0EIPz0CXoe72hzAlSAXo9hw==
@@ -5840,7 +5845,7 @@ react-collapse@^5.1.0:
   resolved "https://registry.yarnpkg.com/react-collapse/-/react-collapse-5.1.0.tgz#36f69ecb0fe797f976aaf5e4f2b2c248d2760140"
   integrity sha512-5v0ywsn9HjiR/odNzbRDs0RZfrnbdSippJebWOBCFFDA12Vx8DddrbI4qWVf1P2wTiVagrpcSy07AU0b6+gM9Q==
 
-react-cookie@^4.0.3:
+react-cookie@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/react-cookie/-/react-cookie-4.1.1.tgz#832e134ad720e0de3e03deaceaab179c4061a19d"
   integrity sha512-ffn7Y7G4bXiFbnE+dKhHhbP+b8I34mH9jqnm8Llhj89zF4nPxPutxHT1suUqMeCEhLDBI7InYwf1tpaSoK5w8A==
