@@ -54,6 +54,9 @@ export const listeAvTillatteRefererUrler = [
     new RegExp(
         '^((https):/)?/?(oppfolgingsplanarbeidsgiver)([.]+(nais)+)([.]+(oera))([.]+(no))(.*)?(#[w-]+)?$'
     ),
+    new RegExp(
+        '^((https):/)?/?(oppfolgingsplanarbeidsgiver)([.]+(herokuapp)+)([.]+(com))([/]+(oppfolgingsplanarbeidsgiver))(.*)?(#[w-]+)?$'
+    ),
 ];
 
 export const erTilbakeURLTillat = (refUrl: string): boolean => {
