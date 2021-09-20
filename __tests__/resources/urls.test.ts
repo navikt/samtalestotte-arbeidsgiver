@@ -1,5 +1,10 @@
 import { erTilbakeURLTillat, hentReferrerFraUrl } from '../../src/resources/urls';
 
+test('Tester at erTilbakeURLTillat til nav.no-produksjon returnerer true', async () => {
+    const result = erTilbakeURLTillat('https://www.nav.no/no/bedrift');
+    expect(result).toBe(true);
+});
+
 test('Tester en gylldig RefURl skal returnere true', async () => {
     const result = erTilbakeURLTillat(
         'https://arbeidsgiver.nav.no/sykefravarsstatistikk?bedrift=999999999'
