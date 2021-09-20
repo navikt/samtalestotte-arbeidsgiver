@@ -35,7 +35,7 @@ export const listeAvTillatteDomener = [
     'https://tjenester-q1.nav.no/oppfolgingsplanarbeidsgiver',
     'https://oppfolgingsplanarbeidsgiver.nais.oera-q.local/',
     'https://oppfolgingsplanarbeidsgiver.nais.oera.no/',
-    'https://tjenester.nav.no/oppfolgingsplanarbeidsgiver/',
+    'https://tjenester.nav.no/oppfolgingsplanarbeidsgiver',
     'https://oppfolgingsplanarbeidsgiver.herokuapp.com/',
 ];
 
