@@ -33,8 +33,6 @@ export const listeAvTillatteDomener = [
     'https://arbeidsgiver.nav.no/forebygge-sykefravaer',
     'https://arbeidsgiver-gcp.dev.nav.no/forebygge-sykefravaer',
     'https://tjenester-q1.nav.no/oppfolgingsplanarbeidsgiver',
-    'https://oppfolgingsplanarbeidsgiver.nais.oera-q.local/',
-    'https://oppfolgingsplanarbeidsgiver.nais.oera.no/',
     'https://tjenester.nav.no/oppfolgingsplanarbeidsgiver',
     'https://oppfolgingsplanarbeidsgiver.herokuapp.com/',
 ];

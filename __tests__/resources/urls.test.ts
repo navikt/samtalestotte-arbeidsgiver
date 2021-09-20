@@ -41,18 +41,18 @@ test('Tester at erTilbakeURLTillat returnerer true for tjenster-q1', async () =>
     expect(result).toBe(true);
 });
 
-test('Tester at erTilbakeURLTillat returnerer true for oera prodmiljø', async () => {
+test('Tester at erTilbakeURLTillat returnerer false for oera prodmiljø, den brukes ikke for frontend', async () => {
     const result = erTilbakeURLTillat('https://oppfolgingsplanarbeidsgiver.nais.oera.no/');
-    expect(result).toBe(true);
+    expect(result).toBe(false);
 });
 
-test('Tester at erTilbakeURLTillat returnerer true for oera-q testmiljø', async () => {
+test('Tester at erTilbakeURLTillat returnerer false for oera-q testmiljø, den brukes ikke til frontend', async () => {
     const result = erTilbakeURLTillat('https://oppfolgingsplanarbeidsgiver.nais.oera-q.local/');
-    expect(result).toBe(true);
+    expect(result).toBe(false);
 });
 
 test('Tester at erTilbakeURLTillat returnerer true for oppfolgingsplanarbeidsgiver prodmiljø', async () => {
-    const result = erTilbakeURLTillat('https://tjenester.nav.no/oppfolgingsplanarbeidsgiver/');
+    const result = erTilbakeURLTillat('https://tjenester.nav.no/oppfolgingsplanarbeidsgiver');
     expect(result).toBe(true);
 });
 
