@@ -31,6 +31,33 @@ test('Tester en gylldig RefURl skal returnere true', async () => {
     expect(result).toBe(true);
 });
 
+test('Tester at erTilbakeURLTillat returnerer true for tjenster-q1', async () => {
+    const result = erTilbakeURLTillat('https://tjenester-q1.nav.no/oppfolgingsplanarbeidsgiver');
+    expect(result).toBe(true);
+});
+
+test('Tester at erTilbakeURLTillat returnerer true for oera prodmiljø', async () => {
+    const result = erTilbakeURLTillat('https://oppfolgingsplanarbeidsgiver.nais.oera.no/');
+    expect(result).toBe(true);
+});
+
+test('Tester at erTilbakeURLTillat returnerer true for oera-q testmiljø', async () => {
+    const result = erTilbakeURLTillat('https://oppfolgingsplanarbeidsgiver.nais.oera-q.local/');
+    expect(result).toBe(true);
+});
+
+test('Tester at erTilbakeURLTillat returnerer true for oppfolgingsplanarbeidsgiver prodmiljø', async () => {
+    const result = erTilbakeURLTillat('https://tjenester.nav.no/oppfolgingsplanarbeidsgiver/');
+    expect(result).toBe(true);
+});
+
+test('Tester at erTilbakeURLTillat returnerer true for oppfolgingsplanarbeidsgiver testmiljø', async () => {
+    const result = erTilbakeURLTillat(
+        'https://oppfolgingsplanarbeidsgiver.herokuapp.com/oppfolgingsplanarbeidsgiver/28790/oppfolgingsplaner'
+    );
+    expect(result).toBe(true);
+});
+
 test('Tester URL hvor domain ikke er nav.no skal ikke bli tillatt', async () => {
     const result = erTilbakeURLTillat('https://farlig.url.hack/sykefravarsstatistikk');
 
@@ -46,6 +73,11 @@ test('Tester URL hvor domain ikke er nav.no skal ikke bli tillatt', async () => 
 
 test('Tester URL hvor domain ikke er nav.no skal ikke bli tillatt', async () => {
     const result = erTilbakeURLTillat('https://arbeidsgiver.nav.no.hack.me/forebygge-sykefravaer');
+    expect(result).toBe(false);
+});
+
+test('Tester URL hvor domain ikke er nav.no skal ikke bli tillatt', async () => {
+    const result = erTilbakeURLTillat('https://oppfolgingsplanarbeidsgiver.herokuapp.hacked.com');
     expect(result).toBe(false);
 });
 
@@ -83,6 +115,6 @@ test('Tester at hentReferrerFraUrl returnerer korrekt referer', async () => {
 });
 
 test('Tester at hentReferrerFraUrl returnerer korrekt referer', async () => {
-    const result = hentReferrerFraUrl('"https://nav.no?referer=http://hei.com/X/Y"');
+    const result = hentReferrerFraUrl('https://nav.no?referer=http://hei.com/X/Y');
     expect(result).toBe('X');
 });
