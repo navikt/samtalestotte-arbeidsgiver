@@ -29,7 +29,7 @@ jobs:
 
     deploy-to-dev-gcp:
         name: Deploy to dev-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/snyk-upgrade-1aa36dbd529116ae12516fb8f0c441ac'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/snyk-upgrade-c9e9773cb90f5e3ec19872cb79dcd199'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
@@ -43,7 +43,7 @@ jobs:
                   PRINT_PAYLOAD: true
     deploy-to-labs-gcp:
         name: Deploy to labs-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/snyk-upgrade-1aa36dbd529116ae12516fb8f0c441ac'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/snyk-upgrade-c9e9773cb90f5e3ec19872cb79dcd199'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
