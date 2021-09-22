@@ -36,6 +36,7 @@ const SnakkeOmArbeid = ({callback}: InfoPanelProps) => {
             <li>samarbeid</li>
             <li>arbeidsmiljø</li>
             <li>tidligere tiltak</li>
+            <li>stillingsprosent</li>
         </ul>
 
         <Title className={marginBottom0Rem} size={'s'} level={4}>
@@ -49,8 +50,9 @@ const SnakkeOmArbeid = ({callback}: InfoPanelProps) => {
             </Title>
             <ul>
                 <li>Hvordan vil du beskrive arbeidsdagen din?</li>
-                <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
+                <li>Hvilke av arbeidsoppgavene dine er du frisk nok til å utføre?</li>
                 <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
+                <li>Hvilke oppgaver trives du best med?</li>
             </ul>
         </div>
 

@@ -28,7 +28,8 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
             <Title size={'m'} level={3}>Gode samtaler forutsetter trygghet</Title>
             <p>
                 Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene
-                rundt samtalen er forutsigbare for alle.
+                rundt samtalen er forutsigbare for alle. Å vise forståelse i møte med medarbeider setter
+                gode forutsetninger for samarbeidet videre.
             </p>
             <ul className={marginBottom3Rem}>
                 <li>Hvordan ville du selv likt å bli møtt?</li>
@@ -71,8 +72,9 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                         <li>
                             Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere.{' '}
                             <LoggbarLenke href={GODE_GREP_FOR_AA_BYGGE_RELASJONER}>
-                                Se “Gode grep for å bygge relasjoner” lengre ned på siden.
+                                Se “Gode grep for å bygge relasjoner”
                             </LoggbarLenke>
+                            {" "}lengre ned på siden.
                         </li>
                         <li>Tren på å gjennomføre samtaler, og be om tilbakemeldinger.</li>
                         <li>Del erfaringer og få veiledning av andre lederkollegaer.</li>

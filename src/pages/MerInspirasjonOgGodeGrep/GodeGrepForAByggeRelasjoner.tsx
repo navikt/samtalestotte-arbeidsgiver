@@ -13,8 +13,8 @@ const GodeGrepForAByggeRelasjoner = ({callback}: InfoPanelProps) => {
             <li>Er det sider ved deg selv du bør styrke eller dempe i møte med medarbeideren?</li>
             <li>Vær forutsigbar.</li>
             <li>Vis at du har tillit til medarbeideren.</li>
-            <li>Vær en støttende leder.</li>
-            <li>Be om tilbakemelding slik at du kan lære og utvikle deg som leder.</li>
+            <li>Vær en støttende og tydelig leder.</li>
+            <li>Hvordan opplevdes samtalen for medarbeider? Be om ærlig tilbakemeldinger.</li>
         </ul>
     </EkspanderbartInfopanel>;
 };

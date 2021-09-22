@@ -30,6 +30,9 @@ const Suksesskriterier = ({ callback }: InfoPanelProps) => {
                 Jobb kontinuerlig med relasjoner til alle medarbeidere og forutsigbarhet gjennom
                 rutiner.
             </li>
+            <li>
+                Du tør å ta de vanskelige samtalene.
+            </li>
         </ul>
         <Title className={marginBottom0Rem} size={'s'} level={4}>
             Kjente fallgruver

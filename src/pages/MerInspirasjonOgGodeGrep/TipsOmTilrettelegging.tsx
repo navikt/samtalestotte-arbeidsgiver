@@ -17,7 +17,7 @@ import {
     marginBottom1Rem,
     marginBottom2Rem,
     marginBottom3Rem,
-    marginTop0Rem, marginTop3Rem,
+    marginTop0Rem, marginTop2Rem, marginTop3Rem,
 } from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
@@ -29,7 +29,7 @@ const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
             panelLestSituasjon={'ulest'}
             callBack={callback}
         >
-            <Title size={'m'} level={3}>
+            <Title className={marginTop2Rem} size={'m'} level={3}>
                 Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.
             </Title>
             <p>
