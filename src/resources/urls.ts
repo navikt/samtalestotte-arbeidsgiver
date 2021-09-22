@@ -25,39 +25,23 @@ export const ENKLE_TIPS_FOR_DIGITALE_SAMTALER =
     '#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base';
 export const GJENNOMFOR_SAMTALEN = '#GjennomforSamtalen';
 
-export const listeAvTillatteRefererUrler = [
-    new RegExp('^' + TILBAKE),
-    new RegExp(
-        '^((https):/)?/?(arbeidsgiver)([.]+(nav)+)([.]+(no))([/]+(sykefravarsstatistikk))(.*)?(#[w-]+)?$'
-    ),
-    new RegExp(
-        '^((https):/)?/?(arbeidsgiver-q)([.]+(nav)+)([.]+(no))([/]+(sykefravarsstatistikk))(.*)?(#[w-]+)?$'
-    ),
-    new RegExp(
-        '^((https):/)?/?(arbeidsgiver)([.]+(labs)+)([.]+(nais))([.]+(io))([/]+(sykefravarsstatistikk))(.*)?(#[w-]+)?$'
-    ),
-    new RegExp(
-        '^((https):/)?/?(arbeidsgiver)([.]+(nav)+)([.]+(no))([/]+(forebygge-sykefravaer))(.*)?(#[w-]+)?$'
-    ),
-    new RegExp(
-        '^((https):/)?/?(arbeidsgiver-gcp)([.]+(dev)+)([.]+(nav))([.]+(no))([/]+(forebygge-sykefravaer))(.*)?(#[w-]+)?$'
-    ),
-    new RegExp(
-        '^((https):/)?/?(tjenester-q1)([.]+(nav))([.]+(no))([/]+(oppfolgingsplanarbeidsgiver))(.*)?(#[w-]+)?$'
-    ),
-    new RegExp(
-        '^((https):/)?/?(oppfolgingsplanarbeidsgiver)([.]+(nais)+)([.]+(oera-q))([.]+(local))(.*)?(#[w-]+)?$'
-    ),
-    new RegExp(
-        '^((https):/)?/?(tjenester)([.]+(nav))([.]+(no))([/]+(oppfolgingsplanarbeidsgiver))(.*)?(#[w-]+)?$'
-    ),
-    new RegExp(
-        '^((https):/)?/?(oppfolgingsplanarbeidsgiver)([.]+(nais)+)([.]+(oera))([.]+(no))(.*)?(#[w-]+)?$'
-    ),
+export const listeAvTillatteDomener = [
+    TILBAKE,
+    'https://arbeidsgiver.nav.no/sykefravarsstatistikk',
+    'https://arbeidsgiver-q.nav.no/sykefravarsstatistikk',
+    'https://arbeidsgiver.labs.nais.io/sykefravarsstatistikk',
+    'https://arbeidsgiver.nav.no/forebygge-sykefravaer',
+    'https://arbeidsgiver-gcp.dev.nav.no/forebygge-sykefravaer',
+    'https://tjenester-q1.nav.no/oppfolgingsplanarbeidsgiver',
+    'https://tjenester.nav.no/oppfolgingsplanarbeidsgiver',
+    'https://oppfolgingsplanarbeidsgiver.herokuapp.com/',
 ];
 
 export const erTilbakeURLTillat = (refUrl: string): boolean => {
-    return listeAvTillatteRefererUrler.filter((regexp) => regexp.test(refUrl)).length > 0;
+    return (
+        listeAvTillatteDomener.filter((tillattDomene) => refUrl.startsWith(tillattDomene)).length >
+        0
+    );
 };
 
 /**
