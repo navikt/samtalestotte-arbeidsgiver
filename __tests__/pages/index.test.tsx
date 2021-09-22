@@ -137,14 +137,16 @@ test('Snapshot test', async () => {
                 </div>
                 <div class=\\"pnkhjy5\\">
                   <div>
-                    <p class=\\"mgnunja\\"><strong>En samtale for å forebygge eller følge opp sykefravær handler om arbeidssituasjonen.</strong></p>
-                    <p class=\\"mkmrd90\\">En samtale bør gjennomføres når</p>
-                    <ul>
-                      <li>Du eller din medarbeider opplever utfordringer med arbeidet og det skyldes sykdom eller andre forhold.</li>
-                      <li>Medarbeideren står i fare for å bli sykmeldt.</li>
-                      <li>Medarbeideren er sykmeldt.</li>
-                      <li>Medarbeideren har vært sykmeldt.</li>
-                    </ul>
+                    <div class=\\"m9geqa5\\">
+                      <p class=\\"mkmrd90 mgnunja\\"><strong>En samtale for å forebygge eller følge opp sykefravær handler om arbeidssituasjonen.</strong></p>
+                      <p class=\\"mkmrd90\\">En samtale bør gjennomføres når</p>
+                      <ul>
+                        <li>Du eller din medarbeider opplever utfordringer med arbeidet og det skyldes sykdom eller andre forhold.</li>
+                        <li>Medarbeideren står i fare for å bli sykmeldt.</li>
+                        <li>Medarbeideren er sykmeldt.</li>
+                        <li>Medarbeideren har vært sykmeldt.</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -157,15 +159,17 @@ test('Snapshot test', async () => {
                   <div id=\\"1111111111117t7FcSZJR1\\" role=\\"region\\" aria-labelledby=\\"ekspanderbart-infopanel__detteKanDuSpoerreMedarbeiderenOm-base\\"></div>
                 </div>
                 <div class=\\"pnkhjy5\\">
-                  <div><strong>Du kan stille spørsmål som handler om fravær og forhold på arbeidsplassen.</strong>
-                    <ul>
-                      <li>Mulighetene til å utføre egne eller alternative arbeidsoppgaver.</li>
-                      <li>Behov for tilrettelegging.</li>
-                      <li>Om medarbeideren kjenner til rutiner og tilretteleggingsmuligheter i deres virksomhet.</li>
-                      <li>Hvor lenge medarbeideren tror fraværet vil vare.</li>
-                      <li>Om det er forhold på arbeidsplassen som påvirker sykefraværet eller helsesituasjonen.</li>
-                      <li>Om medarbeideren ønsker kontakt med NAV, bedriftshelsetjenesten eller andre samarbeidspartnere for å få hjelp med tilrettelegging og oppfølging.</li>
-                    </ul><strong>Husk at du ikke kan kreve opplysninger om diagnose, behandling og forhold hjemme.</strong>
+                  <div>
+                    <div class=\\"m9geqa5\\"><strong>Du kan stille spørsmål som handler om fravær og forhold på arbeidsplassen.</strong>
+                      <ul>
+                        <li>Mulighetene til å utføre egne eller alternative arbeidsoppgaver.</li>
+                        <li>Behov for tilrettelegging.</li>
+                        <li>Om medarbeideren kjenner til rutiner og tilretteleggingsmuligheter i deres virksomhet.</li>
+                        <li>Hvor lenge medarbeideren tror fraværet vil vare.</li>
+                        <li>Om det er forhold på arbeidsplassen som påvirker sykefraværet eller helsesituasjonen.</li>
+                        <li>Om medarbeideren ønsker kontakt med NAV, bedriftshelsetjenesten eller andre samarbeidspartnere for å få hjelp med tilrettelegging og oppfølging.</li>
+                      </ul><strong>Husk at du ikke kan kreve opplysninger om diagnose, behandling og forhold hjemme.</strong>
+                    </div>
                   </div>
                 </div>
               </div><a class=\\"navds-panel navds-link-panel k6rqry9 mnt9094 navds-panel--border\\" href=\\"https://arbeidsgiver.nav.no/sykefravarsstatistikk/kalkulator\\"><span class=\\"navds-link-panel__content\\"><div class=\\"k1i2ji9k\\"><svg class=\\"kf5ia9x\\" width=\\"44px\\" height=\\"44px\\" viewBox=\\"0 0 21 32\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><rect width=\\"20.0245\\" height=\\"32\\" rx=\\"2\\" fill=\\"#262626\\"></rect><rect x=\\"2.00244\\" y=\\"3\\" width=\\"16.0196\\" height=\\"7\\" fill=\\"#F1F1F1\\"></rect><rect x=\\"12.0146\\" y=\\"7\\" width=\\"2.00244\\" height=\\"1\\" fill=\\"#262626\\"></rect><rect x=\\"15.0183\\" y=\\"7\\" width=\\"2.00245\\" height=\\"1\\" fill=\\"#262626\\"></rect><path d=\\"M4.00489 17C5.11081 17 6.00733 16.1046 6.00733 15C6.00733 13.8954 5.11081 13 4.00489 13C2.89897 13 2.00244 13.8954 2.00244 15C2.00244 16.1046 2.89897 17 4.00489 17Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M4.00489 23C5.11081 23 6.00733 22.1046 6.00733 21C6.00733 19.8954 5.11081 19 4.00489 19C2.89897 19 2.00244 19.8954 2.00244 21C2.00244 22.1046 2.89897 23 4.00489 23Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M4.00489 29C5.11081 29 6.00733 28.1046 6.00733 27C6.00733 25.8954 5.11081 25 4.00489 25C2.89897 25 2.00244 25.8954 2.00244 27C2.00244 28.1046 2.89897 29 4.00489 29Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M10.0122 17C11.1181 17 12.0147 16.1046 12.0147 15C12.0147 13.8954 11.1181 13 10.0122 13C8.90629 13 8.00977 13.8954 8.00977 15C8.00977 16.1046 8.90629 17 10.0122 17Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M10.0122 23C11.1181 23 12.0147 22.1046 12.0147 21C12.0147 19.8954 11.1181 19 10.0122 19C8.90629 19 8.00977 19.8954 8.00977 21C8.00977 22.1046 8.90629 23 10.0122 23Z\\" fill=\\"#F1F1F1\\"></path><path d=\\"M16.0195 17C17.1255 17 18.022 16.1046 18.022 15C18.022 13.8954 17.1255 13 16.0195 13C14.9136 13 14.0171 13.8954 14.0171 15C14.0171 16.1046 14.9136 17 16.0195 17Z\\" fill=\\"#FF9100\\"></path><path d=\\"M16.0195 23C17.1255 23 18.022 22.1046 18.022 21C18.022 19.8954 17.1255 19 16.0195 19C14.9136 19 14.0171 19.8954 14.0171 21C14.0171 22.1046 14.9136 23 16.0195 23Z\\" fill=\\"#F1F1F1\\"></path><rect x=\\"8.00977\\" y=\\"25\\" width=\\"10.0122\\" height=\\"4\\" rx=\\"2\\" fill=\\"#F1F1F1\\"></rect></svg><p>Se hvor mye sykefraværet ditt koster</p><div><span class=\\"kk8rpum\\">Gå til kalkulatoren</span><span class=\\"ko00laq\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 0a5 5 0 015 5v3h1a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V10a2 2 0 012-2h1V5a5 5 0 015-5zm6 10H6v12h12V10zm-6 3a2 2 0 011.001 3.732L13 20h-2v-3.268A2 2 0 0112 13zm0-11a3 3 0 00-2.995 2.824L9 5v3h6V5a3 3 0 00-2.824-2.995L12 2z\\" fill=\\"currentColor\\"></path></svg> Krever innlogging</span>
@@ -183,18 +187,21 @@ test('Snapshot test', async () => {
           </div>
           <div class=\\"pnkhjy5\\">
             <div>
-              <ul>
-                <li>Gjennomfør samtalen tidlig.</li>
-                <li>Snakk om arbeidsoppgaver og muligheter på arbeidsplassen, ikke diagnose.</li>
-                <li>Lytt til medarbeideren, gi muligheter til å fortelle og bidra med løsninger.</li>
-                <li>Gjennomfør samtaler regelmessig.</li>
-                <li>Jobb kontinuerlig med relasjoner til alle medarbeidere og forutsigbarhet gjennom rutiner.</li>
-              </ul>
-              <h4 class=\\"mgnunja navds-title navds-title--s\\">Kjente fallgruver</h4>
-              <ul class=\\"mkmrd90\\">
-                <li>Du påtar deg for stort ansvar for helsa til medarbeideren.</li>
-                <li>Fokuset handler om behandling eller forhold i privatlivet i stedet for forhold på arbeidsplassen.</li>
-              </ul>
+              <div class=\\"m9geqa5\\">
+                <ul class=\\"mkmrd90\\">
+                  <li>Gjennomfør samtalen tidlig.</li>
+                  <li>Snakk om arbeidsoppgaver og muligheter på arbeidsplassen, ikke diagnose.</li>
+                  <li>Lytt til medarbeideren, gi muligheter til å fortelle og bidra med løsninger.</li>
+                  <li>Gjennomfør samtaler regelmessig.</li>
+                  <li>Jobb kontinuerlig med relasjoner til alle medarbeidere og forutsigbarhet gjennom rutiner.</li>
+                  <li>Du tør å ta de vanskelige samtalene.</li>
+                </ul>
+                <h4 class=\\"mgnunja navds-title navds-title--s\\">Kjente fallgruver</h4>
+                <ul class=\\"mkmrd90\\">
+                  <li>Du påtar deg for stort ansvar for helsa til medarbeideren.</li>
+                  <li>Fokuset handler om behandling eller forhold i privatlivet i stedet for forhold på arbeidsplassen.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -226,59 +233,61 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <h3 class=\\"navds-title navds-title--m\\">Gode samtaler forutsetter trygghet</h3>
-                <p>Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene rundt samtalen er forutsigbare for alle.</p>
-                <ul class=\\"m1cazjdg\\">
-                  <li>Hvordan ville du selv likt å bli møtt?</li>
-                  <li>Hvordan er din relasjon og holdning til medarbeideren, og hvordan kan dette påvirke dialogen?</li>
-                  <li>Hvor trygg føler du deg på å gjennomføre samtaler?</li>
-                </ul>
-                <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
-                <div class=\\"i1baxhy5 mnt9094\\">
-                  <div class=\\"g18vgnob\\">
-                    <h4 class=\\"mgnunja navds-title navds-title--s\\">på kort sikt:</h4>
-                    <ul class=\\"s1h2jzek\\">
-                      <li>Planlegg bruk av samtaleteknikker for å sikre medvirkning i samtalen. <a href=\\"https://mag.idebanken.org/denviktigesamtalen/\\" class=\\"navds-link\\">Les mer i heftet “Den viktige samtalen” hos idebanken.</a></li>
-                      <li>Be om veiledning før samtalen. Veiledning kan du få fra kollegaer, bedriftshelsetjenesten, NAV eller andre med kompetanse på samtaler.</li>
-                    </ul>
+                <div class=\\"m9geqa5\\">
+                  <h3 class=\\"navds-title navds-title--m\\">Gode samtaler forutsetter trygghet</h3>
+                  <p>Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene rundt samtalen er forutsigbare for alle. Å vise forståelse i møte med medarbeider setter gode forutsetninger for samarbeidet videre.</p>
+                  <ul class=\\"m1cazjdg\\">
+                    <li>Hvordan ville du selv likt å bli møtt?</li>
+                    <li>Hvordan er din relasjon og holdning til medarbeideren, og hvordan kan dette påvirke dialogen?</li>
+                    <li>Hvor trygg føler du deg på å gjennomføre samtaler?</li>
+                  </ul>
+                  <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
+                  <div class=\\"i1baxhy5 mnt9094\\">
+                    <div class=\\"g18vgnob\\">
+                      <h4 class=\\"mgnunja navds-title navds-title--s\\">på kort sikt:</h4>
+                      <ul class=\\"s1h2jzek\\">
+                        <li>Planlegg bruk av samtaleteknikker for å sikre medvirkning i samtalen. <a href=\\"https://mag.idebanken.org/denviktigesamtalen/\\" class=\\"navds-link\\">Les mer i heftet “Den viktige samtalen” hos idebanken.</a></li>
+                        <li>Be om veiledning før samtalen. Veiledning kan du få fra kollegaer, bedriftshelsetjenesten, NAV eller andre med kompetanse på samtaler.</li>
+                      </ul>
+                    </div>
+                    <div class=\\"g18vgnob\\">
+                      <h4 class=\\"navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
+                      <ul class=\\"s1h2jzek\\">
+                        <li>Lær mer om samtaler og samtaleteknikker. <a href=\\"https://mag.idebanken.org/denviktigesamtalen/\\" class=\\"navds-link\\">Les mer i heftet “Den viktige samtalen” hos idebanken.</a></li>
+                        <li>Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere. <a href=\\"#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base\\" class=\\"navds-link\\">Se “Gode grep for å bygge relasjoner”</a> lengre ned på siden.</li>
+                        <li>Tren på å gjennomføre samtaler, og be om tilbakemeldinger.</li>
+                        <li>Del erfaringer og få veiledning av andre lederkollegaer.</li>
+                        <li>Delta på kurs.</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class=\\"g18vgnob\\">
-                    <h4 class=\\"navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
-                    <ul class=\\"s1h2jzek\\">
-                      <li>Lær mer om samtaler og samtaleteknikker. <a href=\\"https://mag.idebanken.org/denviktigesamtalen/\\" class=\\"navds-link\\">Les mer i heftet “Den viktige samtalen” hos idebanken.</a></li>
-                      <li>Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere. <a href=\\"#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base\\" class=\\"navds-link\\">Se “Gode grep for å bygge relasjoner” lengre ned på siden.</a></li>
-                      <li>Tren på å gjennomføre samtaler, og be om tilbakemeldinger.</li>
-                      <li>Del erfaringer og få veiledning av andre lederkollegaer.</li>
-                      <li>Delta på kurs.</li>
-                    </ul>
+                  <div class=\\"h44d78l\\"></div>
+                  <h3 class=\\"navds-title navds-title--m\\">Gode rutiner effektiviserer arbeidet og skaper forutsigbarhet for deg og din medarbeider.</h3>
+                  <p>Rutiner bør evalueres og justeres hvis de ikke bidrar til forutsigbarhet.</p>
+                  <ul class=\\"m1cazjdg\\">
+                    <li>Hvordan bidrar sykefraværsrutinene i din virksomhet til forutsigbarhet rundt oppgaver og ansvar?</li>
+                  </ul>
+                  <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
+                  <div class=\\"i1baxhy5 mnt9094\\">
+                    <div class=\\"g18vgnob\\">
+                      <h4 class=\\"navds-title navds-title--s\\">på kort sikt:</h4>
+                      <ul class=\\"s1h2jzek\\">
+                        <li>Bruk sykefraværsrutinene i din virksomhet, for å skape forutsigbarhet for deg og medarbeideren.</li>
+                        <li>Finn ut om du kan få hjelp av noen i din virksomhet eller i interne systemer.</li>
+                      </ul>
+                    </div>
+                    <div class=\\"g18vgnob\\">
+                      <h4 class=\\"mgnunja navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
+                      <ul class=\\"s1h2jzek\\">
+                        <li>Evaluer rutinene dine. <a href=\\"https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene\\" class=\\"navds-link\\">Gå til sjekkliste hos idébanken.</a></li>
+                        <li>Utarbeid sykefraværsrutiner. <a href=\\"https://www.idebanken.org/kloke-grep/artikler/rutiner-og-retningslinjer-for-sykefravaersoppfolging\\" class=\\"navds-link\\">Les mer om hvordan dere kan lage rutiner hos Idébanken.</a></li>
+                        <li>Informer alle ansatte om rutinene og hvor de finner dem.</li>
+                      </ul>
+                    </div>
                   </div>
+                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
+                  <p class=\\"mkmrd90\\">Arbeidet med rutiner bør settes inn i arbeidsplassens plan for å forebygge sykefravær slik at du kan dokumentere arbeidet.</p>
                 </div>
-                <div class=\\"h44d78l\\"></div>
-                <h3 class=\\"navds-title navds-title--m\\">Gode rutiner effektiviserer arbeidet og skaper forutsigbarhet for deg og din medarbeider.</h3>
-                <p>Rutiner bør evalueres og justeres hvis de ikke bidrar til forutsigbarhet.</p>
-                <ul class=\\"m1cazjdg\\">
-                  <li>Hvordan bidrar sykefraværsrutinene i din virksomhet til forutsigbarhet rundt oppgaver og ansvar?</li>
-                </ul>
-                <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
-                <div class=\\"i1baxhy5 mnt9094\\">
-                  <div class=\\"g18vgnob\\">
-                    <h4 class=\\"navds-title navds-title--s\\">på kort sikt:</h4>
-                    <ul class=\\"s1h2jzek\\">
-                      <li>Bruk sykefraværsrutinene i din virksomhet, for å skape forutsigbarhet for deg og medarbeideren.</li>
-                      <li>Finn ut om du kan få hjelp av noen i din virksomhet eller i interne systemer.</li>
-                    </ul>
-                  </div>
-                  <div class=\\"g18vgnob\\">
-                    <h4 class=\\"mgnunja navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
-                    <ul class=\\"s1h2jzek\\">
-                      <li>Evaluer rutinene dine. <a href=\\"https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene\\" class=\\"navds-link\\">Gå til sjekkliste hos idébanken.</a></li>
-                      <li>Utarbeid sykefraværsrutiner. <a href=\\"https://www.idebanken.org/kloke-grep/artikler/rutiner-og-retningslinjer-for-sykefravaersoppfolging\\" class=\\"navds-link\\">Les mer om hvordan dere kan lage rutiner hos Idébanken.</a></li>
-                      <li>Informer alle ansatte om rutinene og hvor de finner dem.</li>
-                    </ul>
-                  </div>
-                </div>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
-                <p class=\\"mkmrd90\\">Arbeidet med rutiner bør settes inn i arbeidsplassens plan for å forebygge sykefravær slik at du kan dokumentere arbeidet.</p>
               </div>
             </div>
           </div>
@@ -292,18 +301,43 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <p>Legg en plan for hva du ønsker å oppnå og hvordan du kan gjennomføre samtalen. Husk å lytte til medarbeiderens behov.</p>
-                <ul class=\\"amrfjif\\">
-                  <li><strong>Hva er dine mål med samtalen?</strong></li>
-                  <li class=\\"mnt9094\\">Noter ned målet, og ha det framme når du er i samtalen.</li>
-                  <li><strong>Hvor trygg er du når du skal strukturere samtalen?</strong></li>
-                  <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg tema og hjelpespørsmål under “Gjennomfør samtalen ved å” lengre ned på siden.</a></li>
-                </ul>
-                <p>Hvis du skal ta opp et tema du synes er vanskelig, bør du bør være konkret og tydelig på dine observasjoner. Du kan fortelle hvordan du tolker observasjonene, og gi medarbeideren anledning til å korrigere.</p>
-                <ul class=\\"amrfjif\\">
-                  <li><strong>Hva har du observert?</strong></li>
-                  <li>Eksempler kan være endring i fravær, i atferd eller i hvordan arbeidsoppgavene blir utført. Husk å gi konkrete eksempler på det medarbeideren er god på også. Noter gjerne ned og ta med i samtalen.</li>
-                </ul>
+                <div class=\\"m9geqa5\\">
+                  <p class=\\"mkmrd90\\">Legg en plan for hva du ønsker å oppnå og hvordan du kan gjennomføre samtalen. Husk å lytte til medarbeiderens behov.</p>
+                  <ul class=\\"o1bz4u29 ijm43zi m1yvwkgj\\">
+                    <li><strong>Hva er dine mål med samtalen?</strong></li>
+                    <li>Noter ned målet, og ha det framme når du er i samtalen.</li>
+                    <li>Noen eksempler på mål kan være:</li>
+                    <li>
+                      <ul>
+                        <li>Skape trygghet og tillit</li>
+                        <li>Beholde kontakt</li>
+                        <li>Planlegge drift</li>
+                        <li>Avklare om målet er å komme tilbake helt eller delvis til egen stilling</li>
+                        <li>Starte en dialog om tilrettelegging</li>
+                        <li>Avklare om det er behov for ny, endret eller mer kompetanse hos medarbeieren</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class=\\"o1bz4u29 ijm43zi m1yvwkgj\\">
+                    <li><strong>Hvor trygg er du når du skal strukturere samtalen?</strong></li>
+                    <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg tema og hjelpespørsmål under “Gjennomfør samtalen ved å”</a> lenger ned på siden.</li>
+                  </ul>
+                  <ul class=\\"o1bz4u29 ijm43zi\\">
+                    <li><strong>Hva har du observert?</strong></li>
+                    <li>Hvis du skal ta opp et tema du synes er vanskelig, bør du bør være konkret og tydelig på dine observasjoner.</li>
+                    <li>Eksempler på observasjoner <strong>kan</strong> være:</li>
+                    <li>
+                      <ul class=\\"m1yvwkgj\\">
+                        <li>Endringer i utførelsen av arbeidsoppgaver</li>
+                        <li>Endring i atferd</li>
+                        <li>Økning, endring eller mønster i fravær</li>
+                      </ul>
+                    </li>
+                    <li>Husk å gi konkrete eksempler på det medarbeideren er god på også.</li>
+                    <li>Noter gjerne ned og ta med i samtalen.</li>
+                    <li>Du kan fortelle hvordan du tolker observasjonene, og gi medarbeideren anledning til å korrigere.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -317,14 +351,16 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <ul>
-                  <li>Avtal tid og sted som passer deg og medarbeideren.</li>
-                  <li>Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis det passer best.</li>
-                  <li><a href=\\"#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\" class=\\"navds-link\\">Les mer om “Enkle tips for digitale samtaler” lengre ned på siden.</a></li>
-                  <li>Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt, blir det enklere å finne løsninger sammen.</li>
-                  <li>Du kan sende tema eller spørsmål til medarbeideren på forhånd.</li>
-                  <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg noen av de viktigste fra eksemplene under “Gjennomfør samtalen ved å” lengre ned på siden.</a></li>
-                </ul>
+                <div class=\\"m9geqa5\\">
+                  <ul class=\\"mkmrd90\\">
+                    <li>Avtal tid og sted som passer deg og medarbeideren.</li>
+                    <li>Samtalen kan gjennomføres digitalt eller utenfor arbeidsplassen hvis det passer best.</li>
+                    <li><a href=\\"#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\" class=\\"navds-link\\">Les mer om “Enkle tips for digitale samtaler”</a> lenger ned på siden.</li>
+                    <li>Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt, blir det enklere å finne løsninger sammen.</li>
+                    <li>Du kan sende tema eller spørsmål til medarbeideren på forhånd.</li>
+                    <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg noen av de viktigste fra eksemplene under “Gjennomfør samtalen ved å”</a> lenger ned på siden.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -339,15 +375,17 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <p class=\\"m9geqa5 navds-body-long\\">Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt. Rammene hjelper dere med å holde fokus og tid.</p>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\"></h4>
-                <ul class=\\"mkmrd90\\">
-                  <li>ønske velkommen</li>
-                  <li>informere om tidsrammene for møtet</li>
-                  <li>informere om målet med møtet</li>
-                  <li>gå igjennom agenda</li>
-                  <li>spørre om medarbeideren har innspill til mål og agenda</li>
-                </ul>
+                <div class=\\"m9geqa5\\">
+                  <p class=\\"mkmrd90 navds-body-long\\">Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt. Rammene hjelper dere med å holde fokus og tid.</p>
+                  <p class=\\"m1d2gkmn m113wumk navds-label\\">Vanlige tema i innledning:</p>
+                  <ul class=\\"mkmrd90\\">
+                    <li>ønske velkommen</li>
+                    <li>informere om tidsrammene for møtet</li>
+                    <li>informere om målet med møtet</li>
+                    <li>gå igjennom agenda</li>
+                    <li>spørre om medarbeideren har innspill til mål og agenda</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -361,48 +399,52 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <h3 class=\\"mgnunja navds-title navds-title--m\\">En samtale for å forebygge eller følge opp sykefravær handler om medarbeideren.</h3>
-                <p class=\\"mkmrd90\\">Din oppgave er å legge til rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene og arbeidsdagen oppleves.</p>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
-                <ul class=\\"mkmrd90\\">
-                  <li>Bruk åpne spørsmål med spørreord som hva, hvor, hvordan, hvem eller når.</li>
-                  <li>Unngå ordet “hvorfor”. Hvorfor kan ofte oppleves som en anklage eller for å fordele skyld.</li>
-                  <li>Tål stillhet slik at medarbeideren får tid til å tenke før svarene kommer.</li>
-                </ul>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Vanlige tema i samtalen om arbeidssituasjonen:</h4>
-                <ul class=\\"mkmrd90\\">
-                  <li>arbeidsoppgaver</li>
-                  <li>arbeidstid</li>
-                  <li>samarbeid</li>
-                  <li>arbeidsmiljø</li>
-                  <li>tidligere tiltak</li>
-                </ul>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Eksempler på spørsmål:</h4>
-                <p class=\\"mkmrd90\\">Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
-                <div class=\\"g18vgnob m1yvwkgj\\">
-                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Arbeidsoppgaver</h4>
-                  <ul>
-                    <li>Hvordan vil du beskrive arbeidsdagen din?</li>
-                    <li>Hvilke av arbeidsoppgavene dine kan du fortsatt utføre?</li>
-                    <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
+                <div class=\\"m9geqa5\\">
+                  <h3 class=\\"mgnunja mkmrd90 navds-title navds-title--m\\">En samtale for å forebygge eller følge opp sykefravær handler om medarbeideren.</h3>
+                  <p class=\\"mkmrd90\\">Din oppgave er å legge til rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene og arbeidsdagen oppleves.</p>
+                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
+                  <ul class=\\"mkmrd90\\">
+                    <li>Bruk åpne spørsmål med spørreord som hva, hvor, hvordan, hvem eller når.</li>
+                    <li>Unngå ordet “hvorfor”. Hvorfor kan ofte oppleves som en anklage eller for å fordele skyld.</li>
+                    <li>Tål stillhet slik at medarbeideren får tid til å tenke før svarene kommer.</li>
                   </ul>
-                </div>
-                <div class=\\"g18vgnob m1yvwkgj\\">
-                  <h4 class=\\"navds-title navds-title--s\\">Arbeidsmiljø</h4>
-                  <ul>
-                    <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
-                    <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
-                    <li>Hvordan vil du beskrive stressnivået?</li>
-                    <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
+                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Vanlige tema i samtalen om arbeidssituasjonen:</h4>
+                  <ul class=\\"mkmrd90\\">
+                    <li>arbeidsoppgaver</li>
+                    <li>arbeidstid</li>
+                    <li>samarbeid</li>
+                    <li>arbeidsmiljø</li>
+                    <li>tidligere tiltak</li>
+                    <li>stillingsprosent</li>
                   </ul>
-                </div>
-                <div class=\\"g18vgnob m1yvwkgj\\">
-                  <h4 class=\\"navds-title navds-title--s\\">Samarbeid og motivasjon</h4>
-                  <ul>
-                    <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
-                    <li>Hva motiverer deg mest akkurat nå?</li>
-                    <li>Hva oppfatter du som dine styrker nå?</li>
-                  </ul>
+                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Eksempler på spørsmål:</h4>
+                  <p class=\\"mkmrd90\\">Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
+                  <div class=\\"g18vgnob m1yvwkgj\\">
+                    <h4 class=\\"mgnunja navds-title navds-title--s\\">Arbeidsoppgaver</h4>
+                    <ul>
+                      <li>Hvordan vil du beskrive arbeidsdagen din?</li>
+                      <li>Hvilke av arbeidsoppgavene dine er du frisk nok til å utføre?</li>
+                      <li>Hvilke av arbeidsoppgavene dine er vanskelige å utføre?</li>
+                      <li>Hvilke oppgaver trives du best med?</li>
+                    </ul>
+                  </div>
+                  <div class=\\"g18vgnob m1yvwkgj\\">
+                    <h4 class=\\"navds-title navds-title--s\\">Arbeidsmiljø</h4>
+                    <ul>
+                      <li>Hvordan vil du beskrive arbeidsmiljøet?</li>
+                      <li>Hva synes du er positivt, og hva tenker du kan forbedres?</li>
+                      <li>Hvordan vil du beskrive stressnivået?</li>
+                      <li>Hvordan påvirker arbeidsmiljøet sykefraværet ditt?</li>
+                    </ul>
+                  </div>
+                  <div class=\\"g18vgnob m1yvwkgj\\">
+                    <h4 class=\\"navds-title navds-title--s\\">Samarbeid og motivasjon</h4>
+                    <ul>
+                      <li>Hvordan opplever du samarbeidet med kolleger/ledere?</li>
+                      <li>Hva motiverer deg mest akkurat nå?</li>
+                      <li>Hva oppfatter du som dine styrker nå?</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -417,47 +459,49 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <h3 class=\\"mgnunja navds-title navds-title--m\\">Hjelp medarbeideren med å finne løsninger.</h3>
-                <p class=\\"mkmrd90\\">Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først, kan det bli enklere å se løsningsforslag selv. Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.</p>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
-                <p class=\\"mkmrd90\\">Snakk om det som skal skje framover i tid og på hvilke muligheter som finnes.</p>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Vanlige tema når dere finner løsninger sammen:</h4>
-                <ul class=\\"mkmrd90\\">
-                  <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
-                  <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
-                  <li>tilpasse organisering av arbeidet</li>
-                  <li>tilpasse samarbeid og samhandling med andre</li>
-                  <li class=\\"m1yvwkgj\\">alternative arbeidsoppgaver</li>
-                  <li>behov for informasjon og tilbakemeldinger</li>
-                  <li>arbeidsmiljø</li>
-                  <li class=\\"m1yvwkgj\\">kompetanse</li>
-                  <li>fysisk utforming av arbeidsplassen</li>
-                  <li>hjelpemidler</li>
-                  <li>andre forhold</li>
-                </ul>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Eksempler på spørsmål:</h4>
-                <p class=\\"mkmrd90\\">Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
-                <div class=\\"g18vgnob m1yvwkgj\\">
-                  <h4 class=\\"navds-title navds-title--s\\">Hvordan kan jeg som leder hjelpe deg?</h4>
-                  <ul>
-                    <li>Hva ville være god og støttende hjelp for deg i en travel arbeidsdag?</li>
-                    <li>Hva vil du oppleve som god støtte?</li>
-                    <li>Hva kan jeg som leder hjelpe deg med, når det gjelder arbeidsoppgaver?</li>
-                    <li>Hvordan kan jeg som leder hjelpe deg med å få en mindre stressende arbeidsdag?</li>
+                <div class=\\"m9geqa5\\">
+                  <h3 class=\\"mgnunja navds-title navds-title--m\\">Hjelp medarbeideren med å finne løsninger.</h3>
+                  <p class=\\"mkmrd90\\">Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først, kan det bli enklere å se løsningsforslag selv. Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.</p>
+                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
+                  <p class=\\"mkmrd90\\">Snakk om det som skal skje framover i tid og på hvilke muligheter som finnes.</p>
+                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Vanlige tema når dere finner løsninger sammen:</h4>
+                  <ul class=\\"mkmrd90\\">
+                    <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
+                    <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
+                    <li>tilpasse organisering av arbeidet</li>
+                    <li>tilpasse samarbeid og samhandling med andre</li>
+                    <li class=\\"m1yvwkgj\\">alternative arbeidsoppgaver</li>
+                    <li>behov for informasjon og tilbakemeldinger</li>
+                    <li>arbeidsmiljø</li>
+                    <li class=\\"m1yvwkgj\\">kompetanse</li>
+                    <li>fysisk utforming av arbeidsplassen</li>
+                    <li>hjelpemidler</li>
+                    <li>andre forhold</li>
                   </ul>
-                </div>
-                <div class=\\"g18vgnob\\">
-                  <h4 class=\\"navds-title navds-title--s\\">Løsninger</h4>
-                  <ul>
-                    <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
-                    <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
-                    <li>Hvordan bør tiden disponeres?</li>
-                    <li>Hvordan kan endringer i tempo, arbeidstid eller arbeidssted øke mulighetene for arbeid?</li>
-                    <li>Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt eller delvis?</li>
-                    <li>Hvilke løsninger ser du for deg?</li>
-                    <li>Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?</li>
-                    <li>Hvilke tiltak bør vi prøve først?</li>
-                  </ul>
+                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Eksempler på spørsmål:</h4>
+                  <p class=\\"mkmrd90\\">Velg noen av eksemplene som er relevante for akkurat denne samtalen.</p>
+                  <div class=\\"g18vgnob m1yvwkgj\\">
+                    <h4 class=\\"navds-title navds-title--s\\">Hvordan kan jeg som leder hjelpe deg?</h4>
+                    <ul>
+                      <li>Hva ville være god og støttende hjelp for deg i en travel arbeidsdag?</li>
+                      <li>Hva vil du oppleve som god støtte?</li>
+                      <li>Hva kan jeg som leder hjelpe deg med, når det gjelder arbeidsoppgaver?</li>
+                      <li>Hvordan kan jeg som leder hjelpe deg med å få en mindre stressende arbeidsdag?</li>
+                    </ul>
+                  </div>
+                  <div class=\\"g18vgnob\\">
+                    <h4 class=\\"navds-title navds-title--s\\">Løsninger</h4>
+                    <ul>
+                      <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
+                      <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>
+                      <li>Hvordan bør tiden disponeres?</li>
+                      <li>Hvordan kan endringer i tempo, arbeidstid eller arbeidssted øke mulighetene for arbeid?</li>
+                      <li>Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt eller delvis?</li>
+                      <li>Hvilke løsninger ser du for deg?</li>
+                      <li>Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?</li>
+                      <li>Hvilke tiltak bør vi prøve først?</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -472,24 +516,26 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <h3 class=\\"mgnunja navds-title navds-title--m\\">Oppsummer i felleskap.</h3>
-                <p class=\\"mkmrd90\\">En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer det dere er blitt enige om og at dere lager en plan for videre oppfølging.</p>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
-                <p class=\\"mkmrd90\\">Det er lurt med flere korte oppsummeringer til hvert punkt dere har avtalt. Bruk spørsmål som kan besvares med ja eller nei for å sjekke at dere har felles forståelse.</p>
-                <p class=\\"mgnunja\\">Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.</p>
-                <p class=\\"mkmrd90\\"><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap\\" class=\\"navds-link\\">Les mer om oppfølgingsplan på nav.no.</a></p>
-                <h4 class=\\"mgnunja navds-title navds-title--s\\">Vanlige tema i avslutningen:</h4>
-                <ul class=\\"mkmrd90 m1cazjdg\\">
-                  <li>dato for neste samtale og hvor ofte samtaler skal gjennomføres</li>
-                  <li>avtaler, tilrettelegginger og tiltak</li>
-                  <li>om tilretteleggingen er midlertidig eller permanent</li>
-                  <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
-                  <li>avklare om det er behov for å informere andre kollegaer om tilrettelegging som er avtalt</li>
-                  <li>hvem som er ansvarlig for å følge opp</li>
-                  <li>om det er behov for videre avklaring eller hjelp fra andre</li>
-                </ul>
-                <p>Av og til blir du og medarbeideren ikke enige om løsningene og det er greit. Da dokumenterer du begges synspunkter i oppsummeringen eller oppfølgingsplanen.</p>
-                <p><strong>Tips:</strong> gjennomfør flere samtaler regelmessig.</p>
+                <div class=\\"m9geqa5\\">
+                  <h3 class=\\"mgnunja navds-title navds-title--m\\">Oppsummer i felleskap.</h3>
+                  <p class=\\"mkmrd90\\">En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer det dere er blitt enige om og at dere lager en plan for videre oppfølging.</p>
+                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Tips:</h4>
+                  <p class=\\"mkmrd90\\">Det er lurt med flere korte oppsummeringer til hvert punkt dere har avtalt. Bruk spørsmål som kan besvares med ja eller nei for å sjekke at dere har felles forståelse.</p>
+                  <p class=\\"mgnunja\\">Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan.</p>
+                  <p class=\\"mkmrd90\\"><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap\\" class=\\"navds-link\\">Les mer om oppfølgingsplan på nav.no.</a></p>
+                  <h4 class=\\"mgnunja navds-title navds-title--s\\">Vanlige tema i avslutningen:</h4>
+                  <ul class=\\"mkmrd90 m1cazjdg\\">
+                    <li>dato for neste samtale og hvor ofte samtaler skal gjennomføres</li>
+                    <li>avtaler, tilrettelegginger og tiltak</li>
+                    <li>om tilretteleggingen er midlertidig eller permanent</li>
+                    <li>hvor lenge de midlertidige tiltakene varer og tidsfrister</li>
+                    <li>avklare om det er behov for å informere andre kollegaer om tilrettelegging som er avtalt</li>
+                    <li>hvem som er ansvarlig for å følge opp</li>
+                    <li>om det er behov for videre avklaring eller hjelp fra andre</li>
+                  </ul>
+                  <p>Av og til blir du og medarbeideren ikke enige om løsningene og det er greit. Da dokumenterer du begges synspunkter i oppsummeringen eller oppfølgingsplanen.</p>
+                  <p><strong>Tips:</strong> gjennomfør flere samtaler regelmessig.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -506,16 +552,18 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <ul>
-                  <li>Husk forberedelse og struktur også i digitale samtaler.</li>
-                  <li>Bli enige om tittel på avtalen når du bruker digital innkalling og digitale møterom.</li>
-                  <li>La kamera være på.</li>
-                  <li>Det er bedre med flere korte, enn en lang digital samtale.</li>
-                  <li>Digitale samtaler trenger trygghet og gode relasjoner.</li>
-                  <li>Gi medarbeideren rom til å fortelle, tål pauser og stillhet.</li>
-                  <li>Bruk sikre digitale verktøy for å ivareta personvern og taushetsplikt</li>
-                  <li>Hvis dere har mulighet, kan dere skrive referat eller oppfølgingsplan sammen og underveis i samtalen.</li>
-                </ul>
+                <div class=\\"m9geqa5\\">
+                  <ul class=\\"mkmrd90\\">
+                    <li>Husk forberedelse og struktur også i digitale samtaler.</li>
+                    <li>Bli enige om tittel på avtalen når du bruker digital innkalling og digitale møterom. Husk personvernet til medarbeideren du skal snakke med.</li>
+                    <li>La kamera være på.</li>
+                    <li>Det er bedre med flere korte, enn en lang digital samtale.</li>
+                    <li>Digitale samtaler trenger trygghet og gode relasjoner.</li>
+                    <li>Gi medarbeideren rom til å fortelle, tål pauser og stillhet.</li>
+                    <li>Bruk sikre digitale verktøy for å ivareta personvern og taushetsplikt</li>
+                    <li>Hvis dere har mulighet, kan dere skrive referat eller oppfølgingsplan sammen og underveis i samtalen.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -529,14 +577,16 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <ul>
-                  <li>Bruk tid på å bli kjent med alle dine medarbeidere.</li>
-                  <li>Er det sider ved deg selv du bør styrke eller dempe i møte med medarbeideren?</li>
-                  <li>Vær forutsigbar.</li>
-                  <li>Vis at du har tillit til medarbeideren.</li>
-                  <li>Vær en støttende leder.</li>
-                  <li>Be om tilbakemelding slik at du kan lære og utvikle deg som leder.</li>
-                </ul>
+                <div class=\\"m9geqa5\\">
+                  <ul class=\\"mkmrd90\\">
+                    <li>Bruk tid på å bli kjent med alle dine medarbeidere.</li>
+                    <li>Er det sider ved deg selv du bør styrke eller dempe i møte med medarbeideren?</li>
+                    <li>Vær forutsigbar.</li>
+                    <li>Vis at du har tillit til medarbeideren.</li>
+                    <li>Vær en støttende og tydelig leder.</li>
+                    <li>Hvordan opplevdes samtalen for medarbeider? Be om ærlig tilbakemeldinger.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -550,52 +600,54 @@ test('Snapshot test', async () => {
             </div>
             <div class=\\"pnkhjy5\\">
               <div>
-                <h3 class=\\"navds-title navds-title--m\\">Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.</h3>
-                <p>Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i samtalen med gjensidige forventninger til hva som er mulig.</p>
-                <p class=\\"mgnunja\\">Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter som finnes.</p>
-                <p class=\\"mkmrd90 m1cazjdg\\">Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med verneombud og tillitsvalgte. Hensikten er en felles vurdering av hvilken tilrettelegging er mulig hos dere.</p>
-                <ul class=\\"m1yvwkgj\\">
-                  <li class=\\"mnt9094\\"><strong>Hvilke tilretteleggingsmuligheter finnes på deres arbeidsplass og ellers i organisasjonen?</strong></li>
-                  <li><strong>Hvor går grensene for ditt handlingsrom til å lage avtaler? Er det behov for å gjøre avklaringer?</strong></li>
-                </ul>
-                <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
-                <div class=\\"i1baxhy5\\">
-                  <div class=\\"g18vgnob\\">
-                    <h4 class=\\"navds-title navds-title--s\\">på kort sikt:</h4>
-                    <ul class=\\"mkmrd90\\">
-                      <li class=\\"m1yvwkgj\\">Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for din arbeidsplass, hvis dere har en personalavdeling kan disse ofte hjelpe deg</li>
-                      <li>Vurder om du bør dele oversikt over tilretteleggingsmuligheter med medarbeideren før samtalen</li>
-                    </ul>
+                <div class=\\"m9geqa5\\">
+                  <h3 class=\\"navds-title navds-title--m\\">Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.</h3>
+                  <p>Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i samtalen med gjensidige forventninger til hva som er mulig.</p>
+                  <p class=\\"mgnunja\\">Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter som finnes.</p>
+                  <p class=\\"mkmrd90 m1cazjdg\\">Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med verneombud og tillitsvalgte. Hensikten er en felles vurdering av hvilken tilrettelegging er mulig hos dere.</p>
+                  <ul class=\\"m1yvwkgj\\">
+                    <li class=\\"mnt9094\\"><strong>Hvilke tilretteleggingsmuligheter finnes på deres arbeidsplass og ellers i organisasjonen?</strong></li>
+                    <li><strong>Hvor går grensene for ditt handlingsrom til å lage avtaler? Er det behov for å gjøre avklaringer?</strong></li>
+                  </ul>
+                  <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
+                  <div class=\\"i1baxhy5\\">
+                    <div class=\\"g18vgnob\\">
+                      <h4 class=\\"navds-title navds-title--s\\">på kort sikt:</h4>
+                      <ul class=\\"mkmrd90\\">
+                        <li class=\\"m1yvwkgj\\">Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for din arbeidsplass, hvis dere har en personalavdeling kan disse ofte hjelpe deg</li>
+                        <li>Vurder om du bør dele oversikt over tilretteleggingsmuligheter med medarbeideren før samtalen</li>
+                      </ul>
+                    </div>
+                    <div class=\\"g18vgnob\\">
+                      <h4 class=\\"navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
+                      <ul class=\\"mkmrd90\\">
+                        <li class=\\"m1yvwkgj\\">Lag en liste med tilretteleggingsmuligheter <a href=\\"https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen\\" class=\\"navds-link\\">Se beskrivelse av prosess og maler på idebanken</a></li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class=\\"g18vgnob\\">
-                    <h4 class=\\"navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
-                    <ul class=\\"mkmrd90\\">
-                      <li class=\\"m1yvwkgj\\">Lag en liste med tilretteleggingsmuligheter <a href=\\"https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen\\" class=\\"navds-link\\">Se beskrivelse av prosess og maler på idebanken</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class=\\"h44d78l mgddtsn m1cazjdg\\"></div>
-                <h3 class=\\"navds-title navds-title--m\\">Lær mer om tilrettelegging</h3>
-                <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
-                <div class=\\"i1baxhy5 m1yvwkgj\\">
-                  <div class=\\"g18vgnob\\">
-                    <h4 class=\\"navds-title navds-title--s\\">på kort sikt:</h4>
-                    <ul>
-                      <li class=\\"m1yvwkgj\\"><a href=\\"https://www.arbeidstilsynet.no/arbeidsforhold/tilrettelegging/\\" class=\\"navds-link\\">Les mer om arbeidsgivers plikter til å tilrettelegge på arbeidsplassen hos arbeidstilsynet.</a></li>
-                      <li class=\\"m1yvwkgj\\">NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt og medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging. <a href=\\"https://vimeo.com/showcase/6728595\\" class=\\"navds-link\\">Gå til nettkurs.</a></li>
-                      <li class=\\"m1yvwkgj\\"><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap\\" class=\\"navds-link\\">Les mer om tilrettelegging i sykefraværsoppfølging</a></li>
-                      <li><a href=\\"https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge\\" class=\\"navds-link\\">Les mer om NAVs økonomiske virkemidler</a></li>
-                    </ul>
-                  </div>
-                  <div class=\\"g18vgnob\\">
-                    <h4 class=\\"mgnunja navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
-                    <ul>
-                      <li class=\\"m1yvwkgj\\">Lag en plan for å lære mer.</li>
-                      <li class=\\"m1yvwkgj\\">Hva du trenger å vite mer om?</li>
-                      <li class=\\"m1yvwkgj\\">Hvordan kan du lære mer?</li>
-                      <li class=\\"m1yvwkgj\\">Når du skal gjennomføre?</li>
-                      <li>Husk å ta med tillitsvalgte og verneombud slik at dere sammen lærer mer om tilrettelegging.</li>
-                    </ul>
+                  <div class=\\"h44d78l mgddtsn m1cazjdg\\"></div>
+                  <h3 class=\\"navds-title navds-title--m\\">Lær mer om tilrettelegging</h3>
+                  <h4 class=\\"m113wumk navds-title navds-title--s\\">Dette kan du gjøre:</h4>
+                  <div class=\\"i1baxhy5 m1yvwkgj\\">
+                    <div class=\\"g18vgnob\\">
+                      <h4 class=\\"navds-title navds-title--s\\">på kort sikt:</h4>
+                      <ul>
+                        <li class=\\"m1yvwkgj\\"><a href=\\"https://www.arbeidstilsynet.no/arbeidsforhold/tilrettelegging/\\" class=\\"navds-link\\">Les mer om arbeidsgivers plikter til å tilrettelegge på arbeidsplassen hos arbeidstilsynet.</a></li>
+                        <li class=\\"m1yvwkgj\\">NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt og medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging. <a href=\\"https://vimeo.com/showcase/6728595\\" class=\\"navds-link\\">Gå til nettkurs.</a></li>
+                        <li class=\\"m1yvwkgj\\"><a href=\\"https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap\\" class=\\"navds-link\\">Les mer om tilrettelegging i sykefraværsoppfølging</a></li>
+                        <li><a href=\\"https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegge/du-onsker-a-tilrettelegge\\" class=\\"navds-link\\">Les mer om NAVs økonomiske virkemidler</a></li>
+                      </ul>
+                    </div>
+                    <div class=\\"g18vgnob\\">
+                      <h4 class=\\"mgnunja navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
+                      <ul>
+                        <li class=\\"m1yvwkgj\\">Lag en plan for å lære mer.</li>
+                        <li class=\\"m1yvwkgj\\">Hva du trenger å vite mer om?</li>
+                        <li class=\\"m1yvwkgj\\">Hvordan kan du lære mer?</li>
+                        <li class=\\"m1yvwkgj\\">Når du skal gjennomføre?</li>
+                        <li>Husk å ta med tillitsvalgte og verneombud slik at dere sammen lærer mer om tilrettelegging.</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
