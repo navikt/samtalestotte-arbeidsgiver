@@ -32,8 +32,9 @@ const ForberedeMedarbeiderenDin = ({callback}: InfoPanelProps) => {
                     Du kan sende tema eller spørsmål til medarbeideren på forhånd.
                 </li>
                 <li>
+                    Velg noen av de viktigste fra eksemplene under{" "}
                     <LoggbarLenke href={GJENNOMFOR_SAMTALEN}>
-                        Velg noen av de viktigste fra eksemplene under “Gjennomfør samtalen ved å”
+                        “Gjennomfør samtalen ved å”
                     </LoggbarLenke>
                     {" "}lenger ned på siden.
                 </li>
