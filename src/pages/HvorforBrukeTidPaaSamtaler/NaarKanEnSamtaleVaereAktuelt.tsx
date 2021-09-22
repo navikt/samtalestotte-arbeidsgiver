@@ -1,7 +1,8 @@
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import ChatDoubleBubble from '../../felleskomponenter/Ikoner/ChatDoubleBubble';
-import { marginBottom0Rem, marginTop0Rem } from '../../utils/fellesStiler';
+import {marginBottom0Rem, marginTop0Rem, marginTop1Rem} from '../../utils/fellesStiler';
+import classNames from "classnames";
 
 
 const NaarKanEnSamtaleVaereAktuelt = ({callback}: InfoPanelProps) => {
@@ -13,7 +14,8 @@ const NaarKanEnSamtaleVaereAktuelt = ({callback}: InfoPanelProps) => {
         ikon={<ChatDoubleBubble width={"44px"} height={"44px"}/>}
         lestIkon={<ChatDoubleBubble width={"44px"} height={"44px"}/>}
     >
-        <p className={marginBottom0Rem}>
+        <div className={marginTop1Rem}>
+        <p className={classNames(marginTop0Rem, marginBottom0Rem)}>
             <strong>En samtale for å forebygge eller følge opp sykefravær handler om arbeidssituasjonen.</strong>
         </p>
         <p className={marginTop0Rem}>
@@ -32,7 +34,9 @@ const NaarKanEnSamtaleVaereAktuelt = ({callback}: InfoPanelProps) => {
             <li>
                 Medarbeideren har vært sykmeldt.
             </li>
+
         </ul>
+        </div>
     </EkspanderbartInfopanel>;
 };
 
