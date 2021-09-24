@@ -18,7 +18,7 @@ const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
 const Home = (props: { page: PageProps }) => {
-    const [cookies, setCookie] = useCookies(['samtalestotte']);
+    const [cookies, setCookie] = useCookies(['samtalestotte','samtalestotte-podlet']);
     Sentry.init({
         dsn: 'https://97af8a51172e4f9bb74ac9c05920b1d2@sentry.gc.nav.no/77',
         environment: getMiljø(),

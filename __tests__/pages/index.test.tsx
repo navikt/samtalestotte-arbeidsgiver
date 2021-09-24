@@ -358,7 +358,7 @@ test('Snapshot test', async () => {
                     <li><a href=\\"#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\" class=\\"navds-link\\">Les mer om “Enkle tips for digitale samtaler”</a> lenger ned på siden.</li>
                     <li>Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt, blir det enklere å finne løsninger sammen.</li>
                     <li>Du kan sende tema eller spørsmål til medarbeideren på forhånd.</li>
-                    <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg noen av de viktigste fra eksemplene under “Gjennomfør samtalen ved å”</a> lenger ned på siden.</li>
+                    <li>Velg noen av de viktigste fra eksemplene under <a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">“Gjennomfør samtalen ved å”</a> lenger ned på siden.</li>
                   </ul>
                 </div>
               </div>
