@@ -206,7 +206,7 @@ test('Snapshot test', async () => {
           </div>
         </div>
         </section>
-        <section class=\\"bt836h5 b1gt98yk mgddtsn p1tt81ky l1em9y5r\\">
+        <section class=\\"bt836h5 b1gt98yk mgddtsn p1tt81ky\\">
           <h2 class=\\"navds-title navds-title--l\\">Slik skaper du gode samtaler</h2>
           <div class=\\"no299ba\\">
             <h4 class=\\"m1d2gkmn mnt9094 navds-title navds-title--s\\">Last ned verktøyet og rediger selv:</h4>
