@@ -79,10 +79,10 @@ test('Snapshot test', async () => {
           </div>
         </div>
         <div class=\\"lr3bbio\\">
-          <div class=\\"l1e3mpex\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"navds-link n1tt81ky m1em9y5r\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+          <div class=\\"l1e3mpex\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"navds-link no299ba l1em9y5r\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                 <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M7 12l8.571-9L17 4.5 9.857 12 17 19.5 15.571 21 7 12z\\" fill=\\"currentColor\\"></path>
               </svg>Tilbake</a>
-            <div class=\\"lu2a2qa m1em9y5r\\"><svg width=\\"200\\" height=\\"160\\" viewBox=\\"0 0 200 160\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+            <div class=\\"lu2a2qa l1em9y5r\\"><svg width=\\"200\\" height=\\"160\\" viewBox=\\"0 0 200 160\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                 <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M107.429 158H60.5709C58.5988 158 57 156.381 57 154.383V88.6171C57 86.6205 58.5988 85 60.5709 85H107.429C109.401 85 111 86.6205 111 88.6171V154.383C111 156.381 109.401 158 107.429 158\\" fill=\\"#A0A0A0\\"></path>
                 <rect width=\\"46\\" height=\\"55\\" transform=\\"translate(61 89)\\" fill=\\"white\\"></rect>
                 <rect x=\\"64\\" y=\\"92\\" width=\\"40\\" height=\\"12\\" fill=\\"#C2EAF7\\"></rect>
@@ -118,7 +118,7 @@ test('Snapshot test', async () => {
             <div class=\\"l167q415\\">
               <p class=\\"navds-body-short navds-body--s\\">https://arbeidsgiver.nav.no/samtalestotte</p>
             </div>
-            <section class=\\"m1em9y5r\\">
+            <section class=\\"p1tt81ky l1em9y5r\\">
               <h2 class=\\"mgddtsn navds-title navds-title--l\\">Hvorfor bruke tid på samtaler?</h2>
               <p class=\\"m1yvwkgj\\">Lovverk og rutiner forteller deg hva du skal gjøre for å forebygge og følge opp sykefravær. Gode samtaler er en metode for hvordan du fyller lovkravene, slik at de gir størst verdi for deg og medarbeiderne dine.</p>
               <p class=\\"b2scysm\\">Gode samtaler bidrar til:</p>
@@ -206,9 +206,9 @@ test('Snapshot test', async () => {
           </div>
         </div>
         </section>
-        <section class=\\"bt836h5 b1gt98yk mgddtsn\\">
+        <section class=\\"bt836h5 b1gt98yk mgddtsn p1tt81ky\\">
           <h2 class=\\"navds-title navds-title--l\\">Slik skaper du gode samtaler</h2>
-          <div class=\\"n1tt81ky\\">
+          <div class=\\"no299ba\\">
             <h4 class=\\"m1d2gkmn mnt9094 navds-title navds-title--s\\">Last ned verktøyet og rediger selv:</h4>
             <div class=\\"d1m33xra\\"><a href=\\"/samtalestotte/Samtalestøtte-Arbeidsgiver.docx\\" class=\\"navds-link d1esibbz navds-button navds-button--primary navds-button--s navds-body-short navds-body--s\\" download=\\"\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M3 18v2a2 2 0 001.85 1.994L5 22h14a2 2 0 001.994-1.85L21 20v-2h2v2a4 4 0 01-4 4H5a4 4 0 01-4-4v-2h2zM13 0v13.295L17.546 9 19 10.375 12 17l-7-6.625L6.455 9 11 13.295V0h2z\\" fill=\\"currentColor\\"></path>
@@ -358,7 +358,7 @@ test('Snapshot test', async () => {
                     <li><a href=\\"#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\" class=\\"navds-link\\">Les mer om “Enkle tips for digitale samtaler”</a> lenger ned på siden.</li>
                     <li>Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt, blir det enklere å finne løsninger sammen.</li>
                     <li>Du kan sende tema eller spørsmål til medarbeideren på forhånd.</li>
-                    <li><a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">Velg noen av de viktigste fra eksemplene under “Gjennomfør samtalen ved å”</a> lenger ned på siden.</li>
+                    <li>Velg noen av de viktigste fra eksemplene under <a href=\\"#GjennomforSamtalen\\" class=\\"navds-link\\">“Gjennomfør samtalen ved å”</a> lenger ned på siden.</li>
                   </ul>
                 </div>
               </div>
@@ -540,7 +540,7 @@ test('Snapshot test', async () => {
             </div>
           </div>
         </section>
-        <section class=\\"bt836h5 m1em9y5r\\">
+        <section class=\\"bt836h5 p1tt81ky l1em9y5r\\">
           <h2 class=\\"m1d2gkmn mnt9094 navds-title navds-title--l\\">Mer inspirasjon og gode grep</h2>
           <div class=\\"rvep9j3\\">
             <div class=\\"navds-accordion p1pgduac navds-accordion--closed\\"><button id=\\"ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\" class=\\"navds-accordion__button\\" aria-expanded=\\"false\\" aria-controls=\\"1111111111117t7FcSZJR1\\"><span class=\\"navds-accordion__heading navds-title navds-title--s\\"><div class=\\"f3eheo1\\"><div class=\\"g1kg98jt\\"><div class=\\"t1emcwa8\\">Enkle tips for digitale samtaler</div></div></div></span><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--down\\">
@@ -654,14 +654,14 @@ test('Snapshot test', async () => {
             </div>
           </div>
         </section>
-        <div class=\\"v3afszd mo0p6q bt836h5 m1em9y5r\\">
+        <div class=\\"v3afszd mo0p6q bt836h5 p1tt81ky l1em9y5r\\">
           <h3 class=\\"vyau1ws navds-title navds-title--m\\">Visste du at NAV hjelper virksomheter med å forebygge sykefravær?</h3><svg class=\\"v15003zs\\" width=\\"61px\\" height=\\"61px\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
             <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 0C5.38226 0 0 5.38226 0 12C0 18.6177 5.38226 24 12 24C18.6167 24 24 18.6177 24 12C24 5.38226 18.6167 0 12 0Z\\" fill=\\"#5690A2\\"></path>
             <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M13.5653 6.56522C13.5653 5.70122 12.8625 5 12.0001 5C11.1345 5 10.4348 5.70122 10.4348 6.56522C10.4348 7.43078 11.1345 8.13043 12.0001 8.13043C12.8625 8.13043 13.5653 7.43078 13.5653 6.56522ZM16.0192 18.0005C16.0192 17.4403 15.5395 17.0092 14.9757 17.0092H13.0777V11.003C13.0777 10.4428 12.598 10.0117 12.0342 10.0117H10.0049C9.44027 10.0117 8.9614 10.4427 8.9614 11.003C8.9614 11.5633 9.44027 11.9943 10.0049 11.9943H10.9907V17.0092H9.39138C8.82677 17.0092 8.3479 17.4402 8.3479 18.0005C8.3479 18.5608 8.82677 18.9918 9.39138 18.9918H14.9757C15.5395 18.9918 16.0192 18.5607 16.0192 18.0005Z\\" fill=\\"white\\"></path>
           </svg>
           <p class=\\"v1y3hzu8 mkmrd90\\">NAV hjelper virksomheter med å forebygge sykefravær. Du får digitale tjenester og veiledning for å gjennomføre enkeltsamtaler. NAV kan også gi mer omfattende rådgivning hos dere på arbeidsplassen.</p><a href=\\"https://arbeidsgiver.nav.no/kontakt-oss/\\" class=\\"navds-link v1frf94o mnt9094 mkmrd90\\">Kontakt NAV</a><a href=\\"https://arbeidsgiver.nav.no/forebygge-sykefravaer/\\" class=\\"navds-link v1frf94o mkmrd90\\">Les mer om NAVs tjenester for å forebygge sykefravær.</a>
         </div>
-        <div class=\\"h3lja2h m1evb9uy m1lu1ur0\\"><button class=\\"n1tt81ky k1tdlrfy navds-button navds-button--primary navds-button--m navds-body-short\\" id=\\"skriv-ut-knapp\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"mr6t0bd\\">
+        <div class=\\"h3lja2h m1evb9uy m1lu1ur0\\"><button class=\\"no299ba k1tdlrfy navds-button navds-button--primary navds-button--m navds-body-short\\" id=\\"skriv-ut-knapp\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"mr6t0bd\\">
               <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M20 0v5a4 4 0 014 4v10h-4v5H4v-5H0V9a4 4 0 014-4V0h16zm-2 12H6v10h12V12zm-2 2v2H8v-2h8zm-2 4v2H8v-2h6zm6-11H4a2 2 0 00-1.995 1.85L2 9v8h2v-7h16v7h2V9a2 2 0 00-1.85-1.995L20 7zm-2-5H6v3h12V2z\\" fill=\\"currentColor\\"></path>
             </svg> Skriv ut nettside</button></div>
       </div>

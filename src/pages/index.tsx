@@ -11,8 +11,10 @@ import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
-import { marginSides3rem } from '../utils/fellesStiler';
+import {largeScreenMarginSides3rem, paddingSides1rem} from '../utils/fellesStiler';
 import { hentReferrerFraUrl } from '../resources/urls';
+import {css} from "linaria";
+import classNames from "classnames";
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
@@ -73,10 +75,10 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                     logEvent={logEvent}
                 >
-                    <HvorforBrukeTidPaaSamtaler className={marginSides3rem} />
-                    <SlikSkaperDuGodeSamtaler />
-                    <MerInspirasjonOgGodeGrep className={marginSides3rem} />
-                    <VissteDuAt className={marginSides3rem} />
+                    <HvorforBrukeTidPaaSamtaler className={classNames(paddingSides1rem, largeScreenMarginSides3rem)} />
+                    <SlikSkaperDuGodeSamtaler className={classNames(paddingSides1rem)}/>
+                    <MerInspirasjonOgGodeGrep className={classNames(paddingSides1rem, largeScreenMarginSides3rem)} />
+                    <VissteDuAt className={classNames(paddingSides1rem, largeScreenMarginSides3rem)} />
                 </Layout>
             </main>
             <footer />

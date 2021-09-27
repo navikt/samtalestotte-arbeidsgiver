@@ -4,6 +4,7 @@ import logEvent from '../../amplitude/amplitude';
 import classNames from 'classnames';
 import { Link } from '@navikt/ds-react';
 import React from 'react';
+import {SCREEN_SM_MIN} from "../../utils/konstanter";
 
 export default function LastNedKnapp(props: {
     knappetekst: string;
@@ -42,16 +43,21 @@ export default function LastNedKnapp(props: {
 }
 
 const downloadButtonStyle = css`
-    width: 200px;
-    padding: 10px;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    text-decoration: none;
+  @media(min-width: ${SCREEN_SM_MIN}){
+    width: 250px;
+  }
+  height: 60px;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  text-decoration: none;
+  justify-content: center;
+  padding: 10px 20px 10px 10px;
 
-    :hover {
-        svg {
-            color: white;
-        }
+  :hover {
+    svg {
+      color: white;
     }
+  }
 `;

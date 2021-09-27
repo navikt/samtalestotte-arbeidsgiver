@@ -104,10 +104,10 @@ test('snapshot test', () => {
       </div>
     </div>
     <div class=\\"lr3bbio\\">
-      <div class=\\"l1e3mpex\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"navds-link n1tt81ky m1em9y5r\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+      <div class=\\"l1e3mpex\\"><a href=\\"https://www.nav.no/no/bedrift\\" class=\\"navds-link no299ba l1em9y5r\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
             <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M7 12l8.571-9L17 4.5 9.857 12 17 19.5 15.571 21 7 12z\\" fill=\\"currentColor\\"></path>
           </svg>Tilbake</a>
-        <div class=\\"lu2a2qa m1em9y5r\\"><svg width=\\"200\\" height=\\"160\\" viewBox=\\"0 0 200 160\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+        <div class=\\"lu2a2qa l1em9y5r\\"><svg width=\\"200\\" height=\\"160\\" viewBox=\\"0 0 200 160\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
             <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M107.429 158H60.5709C58.5988 158 57 156.381 57 154.383V88.6171C57 86.6205 58.5988 85 60.5709 85H107.429C109.401 85 111 86.6205 111 88.6171V154.383C111 156.381 109.401 158 107.429 158\\" fill=\\"#A0A0A0\\"></path>
             <rect width=\\"46\\" height=\\"55\\" transform=\\"translate(61 89)\\" fill=\\"white\\"></rect>
             <rect x=\\"64\\" y=\\"92\\" width=\\"40\\" height=\\"12\\" fill=\\"#C2EAF7\\"></rect>
@@ -145,7 +145,7 @@ test('snapshot test', () => {
         </div>
         <p>Children</p>
         <p>Children</p>
-        <div class=\\"h3lja2h m1evb9uy m1lu1ur0\\"><button class=\\"n1tt81ky k1tdlrfy navds-button navds-button--primary navds-button--m navds-body-short\\" id=\\"skriv-ut-knapp\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"mr6t0bd\\">
+        <div class=\\"h3lja2h m1evb9uy m1lu1ur0\\"><button class=\\"no299ba k1tdlrfy navds-button navds-button--primary navds-button--m navds-body-short\\" id=\\"skriv-ut-knapp\\"><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"mr6t0bd\\">
               <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M20 0v5a4 4 0 014 4v10h-4v5H4v-5H0V9a4 4 0 014-4V0h16zm-2 12H6v10h12V12zm-2 2v2H8v-2h8zm-2 4v2H8v-2h6zm6-11H4a2 2 0 00-1.995 1.85L2 9v8h2v-7h16v7h2V9a2 2 0 00-1.85-1.995L20 7zm-2-5H6v3h12V2z\\" fill=\\"currentColor\\"></path>
             </svg> Skriv ut nettside</button></div>
       </div>

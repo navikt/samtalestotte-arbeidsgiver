@@ -114,7 +114,7 @@ export const breakBeforePage = css`
     break-before: page;
 `;
 
-export const marginSides3rem = css`
+export const largeScreenMarginSides3rem = css`
     @media (min-width: ${SCREEN_SM_MIN}) {
         margin-left: 3rem;
         margin-right: 3rem;
@@ -127,6 +127,11 @@ export const marginSides2_25rem = css`
         margin-right: 2.25rem;
     }
 `;
+
+export const paddingSides1rem = css`
+  padding-left: 1rem;
+  padding-right: 1rem;
+`
 
 export const noPrint = css`
     @media print {

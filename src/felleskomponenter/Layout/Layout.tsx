@@ -14,7 +14,7 @@ import { css } from 'linaria';
 import classNames from 'classnames';
 import {
     marginSides2_25rem,
-    marginSides3rem,
+    largeScreenMarginSides3rem,
     marginTop6Rem,
     noPrint,
 } from '../../utils/fellesStiler';
@@ -82,11 +82,11 @@ export const Layout = (props: {
                 />
                 <div className={layoutWrapper}>
                     <div className={layoutContent} ref={layoutContentRef}>
-                        <Link href={tilbakeURL} className={classNames(noPrint, marginSides3rem)}>
+                        <Link href={tilbakeURL} className={classNames(noPrint, largeScreenMarginSides3rem)}>
                             <Back />
                             Tilbake
                         </Link>
-                        <div className={classNames(layoutSmallScreenIllustration, marginSides3rem)}>
+                        <div className={classNames(layoutSmallScreenIllustration, largeScreenMarginSides3rem)}>
                             <PageBannerSVG />
                         </div>
                         <div className={classNames(layoutPrintHeader)}>
@@ -133,7 +133,7 @@ const layoutWrapper = css`
 const layoutContent = css`
     max-width: 66rem;
     background-color: white;
-    padding: 1rem;
+    padding: 0;
     margin: auto;
     border-radius: 0.25rem;
 `;
@@ -142,7 +142,7 @@ const layoutSmallScreenIllustration = css`
     display: flex;
     justify-content: center;
     background: var(--navds-color-blue-10);
-    margin: 1rem -1rem 3rem;
+    margin: 1rem 0 3rem;
     svg {
         flex-shrink: 0;
     }
