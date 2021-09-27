@@ -44,7 +44,7 @@ export default function LastNedKnapp(props: {
 
 const downloadButtonStyle = css`
   @media(min-width: ${SCREEN_SM_MIN}){
-    width: 200px;
+    width: 250px;
   }
   height: 60px;
   width: 100%;

@@ -76,7 +76,7 @@ const Home = (props: { page: PageProps }) => {
                     logEvent={logEvent}
                 >
                     <HvorforBrukeTidPaaSamtaler className={classNames(paddingSides1rem, largeScreenMarginSides3rem)} />
-                    <SlikSkaperDuGodeSamtaler className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}/>
+                    <SlikSkaperDuGodeSamtaler className={classNames(paddingSides1rem)}/>
                     <MerInspirasjonOgGodeGrep className={classNames(paddingSides1rem, largeScreenMarginSides3rem)} />
                     <VissteDuAt className={classNames(paddingSides1rem, largeScreenMarginSides3rem)} />
                 </Layout>
