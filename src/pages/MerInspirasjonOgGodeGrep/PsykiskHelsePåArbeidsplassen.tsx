@@ -1,7 +1,15 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import { marginTop0Rem, marginTop1Rem, marginTop3Rem } from '../../utils/fellesStiler';
+import {
+    graAvrundetBoks,
+    infoPanelKolonner,
+    marginTop0Rem,
+    marginTop1Rem,
+    marginTop3Rem,
+} from '../../utils/fellesStiler';
 import { Title } from '@navikt/ds-react';
+import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
+import { OPPFØLGING_PSYKISK_SYKE_ANSATTE } from '../../resources/urls';
 
 const EnkleTipsForDigitaleSamtaler = ({ callback }: InfoPanelProps) => {
     return (
@@ -47,17 +55,56 @@ const EnkleTipsForDigitaleSamtaler = ({ callback }: InfoPanelProps) => {
                         utfordringer?
                     </li>
                 </ul>
+                <p className={marginTop3Rem}>
+                    <Title size="s" level={4}>
+                        Dette kan du gjøre:
+                    </Title>
+                </p>
+                <div className={infoPanelKolonner}>
+                    <div className={graAvrundetBoks}>
+                        <Title size={'s'} level={4}>
+                            på kort sikt:
+                        </Title>
+                        <ul className={marginTop0Rem}>
+                            <li className={marginTop1Rem}>
+                                Vis omsorg, spør hvordan noen har det, lytt og still krav.
+                            </li>
+                            <li>
+                                Gjennomfør flere korte samtaler. Husk: positive tilbakemeldinger og
+                                skriftlighet.
+                            </li>
+                            <li>
+                                Bruk veiledningen i «Slik skaper du gode samtaler» (lenke til egen
+                                side) til å forberede og gjennomføre en samtale om arbeid.
+                            </li>
+                            <li>
+                                Du kan be om veiledning i forkant av samtalen hvis du har behov.
+                                HR-/personalavdeling, bedriftshelsetjenesten eller NAV har erfaring
+                                og kan hjelpe deg.
+                            </li>
+                            <li>
+                                <LoggbarLenke href={OPPFØLGING_PSYKISK_SYKE_ANSATTE}>
+                                    Les mer om NAVs tilbud til arbeidsgivere som har ansatte som
+                                    sliter psykisk
+                                </LoggbarLenke>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className={graAvrundetBoks}>
+                        <Title size={'s'} level={4}>
+                            over tid og som kontinuerlig arbeid:
+                        </Title>
+                        <ul className={marginTop0Rem}>
+                            <li className={marginTop1Rem}>
+                                Se etter tegn fra lista over og ta initiativ til en samtale før et
+                                sykefravær oppstår.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </EkspanderbartInfopanel>
     );
 };
 
-/*
-
-
-Alle kan ha en dårlig dag, og det er lov.
-
-Hvor mange dårlige dager skal en medarbeider ha før du tar initiativ til en samtale?
-Hvordan møter du som leder og de øvrige kollegaene en medarbeider med utfordringer?
- */
 export default EnkleTipsForDigitaleSamtaler;
