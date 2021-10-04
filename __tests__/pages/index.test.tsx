@@ -543,6 +543,59 @@ test('Snapshot test', async () => {
         <section class=\\"bt836h5 p1tt81ky l1em9y5r\\">
           <h2 class=\\"m1d2gkmn mnt9094 navds-title navds-title--l\\">Mer inspirasjon og gode grep</h2>
           <div class=\\"rvep9j3\\">
+            <div class=\\"navds-accordion p1pgduac navds-accordion--closed\\"><button id=\\"ekspanderbart-infopanel__psykiskHelsePåArbeidsplassen-base\\" class=\\"navds-accordion__button\\" aria-expanded=\\"false\\" aria-controls=\\"1111111111117t7FcSZJR1\\"><span class=\\"navds-accordion__heading navds-title navds-title--s\\"><div class=\\"f3eheo1\\"><div class=\\"g1kg98jt\\"><div class=\\"t1emcwa8\\">Psykisk helse på arbeidsplassen</div></div></div></span><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--down\\">
+                  <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 17L3 8.429 4.5 7l7.5 7.143L19.5 7 21 8.429 12 17z\\" fill=\\"currentColor\\"></path>
+                </svg><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--filled navds-accordion__chevron--down\\">
+                  <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 17L3 8.429 5.5 6l6.5 6.5L18.5 6 21 8.429 12 17z\\" fill=\\"currentColor\\"></path>
+                </svg></button>
+              <div id=\\"1111111111117t7FcSZJR1\\" role=\\"region\\" aria-labelledby=\\"ekspanderbart-infopanel__psykiskHelsePåArbeidsplassen-base\\"></div>
+            </div>
+            <div class=\\"pnkhjy5\\">
+              <div>
+                <div class=\\"m9geqa5\\">
+                  <h3 class=\\"navds-title navds-title--m\\">Arbeid påvirker medarbeiderens psykiske helse</h3>
+                  <p>Når en medarbeider sliter psykisk så vil du ofte kunne se endringer i måten arbeidsoppgavene blir utført eller måten samhandlingen med andre foregår. Endringene kan komme til uttrykk på forskjellige måter.</p>
+                  <p class=\\"m9geqa5\\">Mulige konsekvenser på jobb kan være:</p>
+                  <ul class=\\"mkmrd90\\">
+                    <li>Problemer med å forstå og huske informasjon</li>
+                    <li>Utfordringer med å gjøre flere oppgaver samtidig</li>
+                    <li>Vanskeligheter med å prioritere og ferdigstille oppgaver</li>
+                    <li>Problemer med å beregne tid</li>
+                    <li>Virker sliten, og slutter å ta initiativ</li>
+                    <li>Virker motløs og irritabel, og kan oppleves vanskelig</li>
+                    <li>Konsentrasjonsproblemer eller kan virker fraværende</li>
+                    <li>Utfordringer med å samarbeide og forholde seg til andre mennesker</li>
+                    <li>Trekker seg unna sosiale aktiviteter, orker ikke å være sammen med kollegaer</li>
+                  </ul>
+                  <p class=\\"mgddtsn\\">Alle kan ha en dårlig dag, og det er lov.</p>
+                  <ul class=\\"mkmrd90\\">
+                    <li>Hvor mange dårlige dager skal en medarbeider ha før du tar initiativ til en samtale?</li>
+                    <li>Hvordan møter du som leder og de øvrige kollegaene en medarbeider med utfordringer?</li>
+                  </ul>
+                  <h4 class=\\"mgddtsn navds-title navds-title--s\\">Dette kan du gjøre:</h4>
+                  <div class=\\"i1baxhy5 m9geqa5\\">
+                    <div class=\\"g18vgnob\\">
+                      <h4 class=\\"navds-title navds-title--s\\">på kort sikt:</h4>
+                      <ul class=\\"mkmrd90\\">
+                        <li class=\\"m9geqa5\\">Vis omsorg, spør hvordan noen har det, lytt og still krav.</li>
+                        <li>Gjennomfør flere korte samtaler. Husk: positive tilbakemeldinger og skriftlighet.</li>
+                        <li>Bruk veiledningen i «Slik skaper du gode samtaler» (lenke til egen side) til å forberede og gjennomføre en samtale om arbeid.</li>
+                        <li>Du kan be om veiledning i forkant av samtalen hvis du har behov. HR-/personalavdeling, bedriftshelsetjenesten eller NAV har erfaring og kan hjelpe deg.</li>
+                        <li><a href=\\"https://www.nav.no/no/bedrift/oppfolging/har-du-ansatte-som-sliter-psykisk\\" class=\\"navds-link\\">Les mer om NAVs tilbud til arbeidsgivere som har ansatte som sliter psykisk</a></li>
+                      </ul>
+                    </div>
+                    <div class=\\"g18vgnob\\">
+                      <h4 class=\\"navds-title navds-title--s\\">over tid og som kontinuerlig arbeid:</h4>
+                      <ul class=\\"mkmrd90\\">
+                        <li class=\\"m9geqa5\\">Se etter tegn fra lista over og ta initiativ til en samtale før et sykefravær oppstår.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class=\\"rvep9j3\\">
             <div class=\\"navds-accordion p1pgduac navds-accordion--closed\\"><button id=\\"ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base\\" class=\\"navds-accordion__button\\" aria-expanded=\\"false\\" aria-controls=\\"1111111111117t7FcSZJR1\\"><span class=\\"navds-accordion__heading navds-title navds-title--s\\"><div class=\\"f3eheo1\\"><div class=\\"g1kg98jt\\"><div class=\\"t1emcwa8\\">Enkle tips for digitale samtaler</div></div></div></span><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--down\\">
                   <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 17L3 8.429 4.5 7l7.5 7.143L19.5 7 21 8.429 12 17z\\" fill=\\"currentColor\\"></path>
                 </svg><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--filled navds-accordion__chevron--down\\">

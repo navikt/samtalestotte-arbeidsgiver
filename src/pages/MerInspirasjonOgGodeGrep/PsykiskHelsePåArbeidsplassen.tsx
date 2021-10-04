@@ -10,6 +10,7 @@ import {
 import { Title } from '@navikt/ds-react';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { OPPFØLGING_PSYKISK_SYKE_ANSATTE } from '../../resources/urls';
+import classNames from "classnames";
 
 const EnkleTipsForDigitaleSamtaler = ({ callback }: InfoPanelProps) => {
     return (
@@ -55,12 +56,12 @@ const EnkleTipsForDigitaleSamtaler = ({ callback }: InfoPanelProps) => {
                         utfordringer?
                     </li>
                 </ul>
-                <p className={marginTop3Rem}>
-                    <Title size="s" level={4}>
-                        Dette kan du gjøre:
-                    </Title>
-                </p>
-                <div className={infoPanelKolonner}>
+
+                <Title size="s" level={4} className={marginTop3Rem}>
+                    Dette kan du gjøre:
+                </Title>
+
+                <div className={classNames(infoPanelKolonner, marginTop1Rem)}>
                     <div className={graAvrundetBoks}>
                         <Title size={'s'} level={4}>
                             på kort sikt:
