@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import pretty from 'pretty';
 import { EkspanderbartInfopanel } from '../../../src/felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 
 let container: HTMLDivElement | null;
@@ -103,59 +102,4 @@ test('should use callback after 500ms delay on  click', async () => {
     });
 
     expect(callback).toHaveBeenCalled();
-});
-
-test('Snapshot test', () => {
-    if (container === null) {
-        fail();
-    }
-
-    act(() => {
-        ReactDOM.render(
-            <EkspanderbartInfopanel
-                unikId={'RenderTest'}
-                tittel={'Test title'}
-                panelLestSituasjon={undefined}
-                callBack={() => {}}
-            >
-                Test Child
-            </EkspanderbartInfopanel>,
-            container
-        );
-    });
-    console.log(container.innerHTML);
-    expect(pretty(container.innerHTML)).toMatchInlineSnapshot(`
-"<div class=\\"rvep9j3\\">
-  <div class=\\"navds-accordion p1pgduac navds-accordion--closed\\"><button id=\\"ekspanderbart-infopanel__RenderTest-base\\" class=\\"navds-accordion__button\\" aria-expanded=\\"false\\" aria-controls=\\"aaaaaaaaaaaaaa\\"><span class=\\"navds-accordion__heading navds-title navds-title--s\\"><div class=\\"f3eheo1\\"><div class=\\"g1kg98jt\\"><div class=\\"t1emcwa8\\">Test title</div></div></div></span><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--down\\">
-        <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 17L3 8.429 4.5 7l7.5 7.143L19.5 7 21 8.429 12 17z\\" fill=\\"currentColor\\"></path>
-      </svg><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--filled navds-accordion__chevron--down\\">
-        <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 17L3 8.429 5.5 6l6.5 6.5L18.5 6 21 8.429 12 17z\\" fill=\\"currentColor\\"></path>
-      </svg></button>
-    <div id=\\"aaaaaaaaaaaaaa\\" role=\\"region\\" aria-labelledby=\\"aaaaaaaaaaaaaa\\"></div>
-  </div>
-  <div class=\\"pnkhjy5\\">
-    <div>Test Child</div>
-  </div>
-</div>"
-`);
-
-    container
-        .getElementsByClassName('navds-accordion__button')
-        .item(0)!!
-        .dispatchEvent(new MouseEvent('click', { bubbles: true }));
-
-    expect(pretty(container.innerHTML)).toMatchInlineSnapshot(`
-"<div class=\\"rvep9j3\\">
-  <div class=\\"navds-accordion p1pgduac brczcel navds-accordion--closed\\"><button id=\\"ekspanderbart-infopanel__RenderTest-base\\" class=\\"navds-accordion__button\\" aria-expanded=\\"true\\" aria-controls=\\"aaaaaaaaaaaaaa\\"><span class=\\"navds-accordion__heading navds-title navds-title--s\\"><div class=\\"f3eheo1\\"><div class=\\"g1kg98jt\\"><div class=\\"t1emcwa8\\">Test title</div></div></div></span><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--down\\">
-        <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 17L3 8.429 4.5 7l7.5 7.143L19.5 7 21 8.429 12 17z\\" fill=\\"currentColor\\"></path>
-      </svg><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--filled navds-accordion__chevron--down\\">
-        <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 17L3 8.429 5.5 6l6.5 6.5L18.5 6 21 8.429 12 17z\\" fill=\\"currentColor\\"></path>
-      </svg></button>
-    <div id=\\"aaaaaaaaaaaaaa\\" role=\\"region\\" aria-labelledby=\\"aaaaaaaaaaaaaa\\"></div>
-  </div>
-  <div class=\\"pnkhjy5\\">
-    <div>Test Child</div>
-  </div>
-</div>"
-`);
 });
