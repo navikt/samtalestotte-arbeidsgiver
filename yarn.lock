@@ -1318,10 +1318,10 @@
   resolved "https://registry.yarnpkg.com/@napi-rs/triples/-/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"
   integrity sha512-jDJTpta+P4p1NZTFVLHJ/TLFVYVcOqv6l8xwOeBKNPMgY/zDYH/YH7SJbvrr/h1RcS9GzbPcLKGzpuK9cV56UA==
 
-"@navikt/ds-css@^0.7.1":
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.7.4.tgz#b7264756b67c01538a8c6d0aa2f418390641d9c0"
-  integrity sha512-OIPuE6LM6dD0+mLCGK/MPLBwXAT6FBbr2exNIdra6f0HKeNwMYppJAFWZbvmSzeZLLKy+coascN58l9h/wWHyg==
+"@navikt/ds-css@^0.8.1":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.8.4.tgz#a03fc80ded4d4f0753e5f89642a3e153c2fe15d6"
+  integrity sha512-f6GKJx0UL9j/QHRMAEI/1xM85bGeZtKiIIqcoY4D4SXBRIqsnP/iYBIokc9idWOIsGy5kz/uuTRcsQVdBenUMA==
 
 "@navikt/ds-icons@^0.5.2":
   version "0.5.3"
