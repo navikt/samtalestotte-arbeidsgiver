@@ -1,1 +1,9 @@
 @import '../../node_modules/@navikt/ds-css/dist/index.css';
+
+html {
+    scroll-behavior: smooth;
+}
+
+#alertboksPsykiskHelse > div {
+    max-width: none;
+}
