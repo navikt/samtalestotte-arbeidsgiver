@@ -11,8 +11,11 @@ import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
-import { marginSides3rem } from '../utils/fellesStiler';
+import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
 import { hentReferrerFraUrl } from '../resources/urls';
+import classNames from 'classnames';
+import { Alert } from '@navikt/ds-react';
+import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
@@ -73,10 +76,27 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                     logEvent={logEvent}
                 >
-                    <HvorforBrukeTidPaaSamtaler className={marginSides3rem} />
-                    <SlikSkaperDuGodeSamtaler />
-                    <MerInspirasjonOgGodeGrep className={marginSides3rem} />
-                    <VissteDuAt className={marginSides3rem} />
+                    {/* TODO: Alert for psykisk helse kan fjernes etter 10.11.2021 */}
+                    <Alert variant={'info'} id={'alertboksPsykiskHelse'} className={marginTop1Rem}>
+                        Vi har laget noen råd for å snakke om psykisk helse på arbeidsplassen.&nbsp;
+                        <LoggbarLenke
+                            href={
+                                '/samtalestotte#ekspanderbart-infopanel__psykiskHelsePåArbeidsplassen-base'
+                            }
+                        >
+                            Klikk her for å lese mer.
+                        </LoggbarLenke>
+                    </Alert>
+                    <HvorforBrukeTidPaaSamtaler
+                        className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
+                    />
+                    <SlikSkaperDuGodeSamtaler className={classNames(paddingSides1rem)} />
+                    <MerInspirasjonOgGodeGrep
+                        className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
+                    />
+                    <VissteDuAt
+                        className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
+                    />
                 </Layout>
             </main>
             <footer />

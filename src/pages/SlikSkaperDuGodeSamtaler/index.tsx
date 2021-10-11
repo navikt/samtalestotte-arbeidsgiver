@@ -89,6 +89,10 @@ const backgroundStyle = css`
 `;
 
 const downloadButtonContainerStyle = css`
+    @media (min-width: ${SCREEN_SM_MIN}) {  
+      justify-content: flex-start;
+    }
+    justify-content: center;
     margin-bottom: 2rem;
     display: flex;
     gap: 1rem;
