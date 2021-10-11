@@ -1,5 +1,5 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
-import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
+import {EkspanderbartInfopanel} from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import {
     graAvrundetBoks,
     infoPanelKolonner,
@@ -7,12 +7,15 @@ import {
     marginTop1Rem,
     marginTop3Rem,
 } from '../../utils/fellesStiler';
-import { Title } from '@navikt/ds-react';
+import {Title} from '@navikt/ds-react';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
-import { OPPFØLGING_PSYKISK_SYKE_ANSATTE } from '../../resources/urls';
-import classNames from "classnames";
+import {
+    FILM_OM_PSYKISK_HELSE, IDEBANKEN_PSYKISK_HELSE,
+    OPPFØLGING_ANSATTE_SOM_SLITTER_PSYKISK,
+} from '../../resources/urls';
+import classNames from 'classnames';
 
-const EnkleTipsForDigitaleSamtaler = ({ callback }: InfoPanelProps) => {
+const EnkleTipsForDigitaleSamtaler = ({callback}: InfoPanelProps) => {
     return (
         <EkspanderbartInfopanel
             unikId={'psykiskHelsePåArbeidsplassen'}
@@ -68,6 +71,12 @@ const EnkleTipsForDigitaleSamtaler = ({ callback }: InfoPanelProps) => {
                         </Title>
                         <ul className={marginTop0Rem}>
                             <li className={marginTop1Rem}>
+                                <LoggbarLenke href={FILM_OM_PSYKISK_HELSE}>
+                                    Se filmen “Vi må tørre å snakke om psykisk helse på
+                                    arbeidsplassen”, 5 minutter og 13 sekunder.
+                                </LoggbarLenke>
+                            </li>
+                            <li>
                                 Vis omsorg, spør hvordan noen har det, lytt og still krav.
                             </li>
                             <li>
@@ -84,7 +93,7 @@ const EnkleTipsForDigitaleSamtaler = ({ callback }: InfoPanelProps) => {
                                 og kan hjelpe deg.
                             </li>
                             <li>
-                                <LoggbarLenke href={OPPFØLGING_PSYKISK_SYKE_ANSATTE}>
+                                <LoggbarLenke href={OPPFØLGING_ANSATTE_SOM_SLITTER_PSYKISK}>
                                     Les mer om NAVs tilbud til arbeidsgivere som har ansatte som
                                     sliter psykisk
                                 </LoggbarLenke>
@@ -99,6 +108,12 @@ const EnkleTipsForDigitaleSamtaler = ({ callback }: InfoPanelProps) => {
                             <li className={marginTop1Rem}>
                                 Se etter tegn fra lista over og ta initiativ til en samtale før et
                                 sykefravær oppstår.
+                            </li>
+                            <li>
+                                <LoggbarLenke href={IDEBANKEN_PSYKISK_HELSE}>
+                                    Les mer om "Slik kan du bidra til bedre psykisk helse på
+                                    arbeidsplassen" hos idebanken.
+                                </LoggbarLenke>
                             </li>
                         </ul>
                     </div>
