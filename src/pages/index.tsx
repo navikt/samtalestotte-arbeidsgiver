@@ -10,7 +10,10 @@ import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
-import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
+import {
+    sendIATjenesteMetrikk,
+    sendInnloggetIATjenesteMetrikk,
+} from '../utils/ia-tjeneste-metrikker';
 import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
 import { hentReferrerFraUrl } from '../resources/urls';
 import classNames from 'classnames';
@@ -21,7 +24,7 @@ const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
 const Home = (props: { page: PageProps }) => {
-    const [cookies, setCookie] = useCookies(['samtalestotte','samtalestotte-podlet']);
+    const [cookies, setCookie] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
     Sentry.init({
         dsn: 'https://97af8a51172e4f9bb74ac9c05920b1d2@sentry.gc.nav.no/77',
         environment: getMiljø(),
@@ -42,11 +45,23 @@ const Home = (props: { page: PageProps }) => {
 
     useEffect(() => {
         if (
+            cookies['samtalestotte-podlet']?.orgnr !== null &&
+            cookies['samtalestotte-podlet']?.altinnRettighet !== null
+        ) {
+            sendInnloggetIATjenesteMetrikk(
+                cookies['samtalestotte-podlet']?.orgnr,
+                cookies['samtalestotte-podlet']?.altinnRettighet
+            ).then((erMetrikkSendt) => {
+                console.log('erMetrikkSendt:', erMetrikkSendt);
+            });
+        }
+        if (
             cookies.samtalestotte?.sendtStatistikk === undefined &&
             antallForsøkSendTilIaTjenesterMetrikker < 5
         ) {
             sendIATjenesteMetrikk().then((erMetrikkSendt) => {
                 if (erMetrikkSendt) {
+                    // TODO bytte ut mot at det lever kun i en dag,
                     setCookie(
                         'samtalestotte',
                         { sendtStatistikk: 'ja' },

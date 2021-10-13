@@ -7,6 +7,7 @@ import Lest from '../Ikoner/Lest';
 import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
 import { css } from 'linaria';
 import { SCREEN_SM_MIN } from '../../utils/konstanter';
+import {sendInnloggetIATjenesteMetrikk} from "../../utils/ia-tjeneste-metrikker";
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
