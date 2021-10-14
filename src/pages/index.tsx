@@ -56,8 +56,8 @@ const Home = (props: { page: PageProps }) => {
 
     useEffect(() => {
         if (
-            cookies['samtalestotte-podlet']?.orgnr !== null &&
-            cookies['samtalestotte-podlet']?.altinnRettighet !== null
+            cookies['samtalestotte-podlet']?.orgnr !== undefined &&
+            cookies['samtalestotte-podlet']?.altinnRettighet !== undefined
         ) {
             sendInnloggetIATjenesteMetrikk(
                 cookies['samtalestotte-podlet']?.orgnr,
