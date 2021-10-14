@@ -20,7 +20,7 @@ import classNames from 'classnames';
 import { Alert } from '@navikt/ds-react';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
 
-const ETT_ÅR_I_SEKUNDER = 31536000;
+const ETT_DØGN_I_SEKUNDER = 86400;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
 const Home = (props: { page: PageProps }) => {
@@ -61,13 +61,12 @@ const Home = (props: { page: PageProps }) => {
         ) {
             sendIATjenesteMetrikk().then((erMetrikkSendt) => {
                 if (erMetrikkSendt) {
-                    // TODO bytte ut mot at det lever kun i en dag,
                     setCookie(
                         'samtalestotte',
                         { sendtStatistikk: 'ja' },
                         {
                             path: '/',
-                            maxAge: ETT_ÅR_I_SEKUNDER,
+                            maxAge: ETT_DØGN_I_SEKUNDER,
                             sameSite: true,
                         }
                     );

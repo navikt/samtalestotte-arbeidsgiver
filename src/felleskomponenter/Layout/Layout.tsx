@@ -37,7 +37,7 @@ export const Layout = (props: {
         let refUrl: string | null;
         if (window !== undefined) {
             if (new URLSearchParams(window.location.search).get('referer') !== null) {
-                refUrl = '';
+                refUrl = new URLSearchParams(window.location.search).get('referer');
             } else {
                 refUrl = cookie['samtalestotte-podlet']?.referer
                     ? cookie['samtalestotte-podlet']?.referer
@@ -91,11 +91,19 @@ export const Layout = (props: {
                 />
                 <div className={layoutWrapper}>
                     <div className={layoutContent} ref={layoutContentRef}>
-                        <Link href={tilbakeURL} className={classNames(noPrint, largeScreenMarginSides3rem)}>
+                        <Link
+                            href={tilbakeURL}
+                            className={classNames(noPrint, largeScreenMarginSides3rem)}
+                        >
                             <Back />
                             Tilbake
                         </Link>
-                        <div className={classNames(layoutSmallScreenIllustration, largeScreenMarginSides3rem)}>
+                        <div
+                            className={classNames(
+                                layoutSmallScreenIllustration,
+                                largeScreenMarginSides3rem
+                            )}
+                        >
                             <PageBannerSVG />
                         </div>
                         <div className={classNames(layoutPrintHeader)}>
