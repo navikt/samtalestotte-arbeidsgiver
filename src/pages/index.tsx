@@ -32,15 +32,15 @@ const Home = (props: { page: PageProps }) => {
     });
 
     const hentReferrerFraCookies = () => {
-        return cookies['samtalestotte-podlet']?.referrer !== null
-            ? cookies['samtalestotte-podlet']?.referrer
+        return cookies['samtalestotte-podlet']?.referer !== null
+            ? cookies['samtalestotte-podlet']?.referer
             : '';
     };
 
     const hentReferrer = () => {
-        return hentReferrerFraUrl(window.location.href)
-            ? hentReferrerFraUrl(window.location.href)
-            : hentReferrerFraCookies();
+        return hentReferrerFraCookies()
+            ? hentReferrerFraCookies()
+            : hentReferrerFraUrl(window.location.href);
     };
 
     useEffect(() => {
