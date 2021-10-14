@@ -32,8 +32,8 @@ const Home = (props: { page: PageProps }) => {
     });
 
     const hentReferrerFraCookies = () => {
-        return cookies['samtalestotte-podlet']?.referer !== null
-            ? cookies['samtalestotte-podlet']?.referer
+        return cookies['samtalestotte-podlet']?.referrer !== null
+            ? cookies['samtalestotte-podlet']?.referrer
             : '';
     };
 

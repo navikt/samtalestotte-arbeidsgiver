@@ -39,8 +39,8 @@ export const Layout = (props: {
             if (new URLSearchParams(window.location.search).get('referer') !== null) {
                 refUrl = new URLSearchParams(window.location.search).get('referer');
             } else {
-                refUrl = cookie['samtalestotte-podlet']?.referer
-                    ? cookie['samtalestotte-podlet']?.referer
+                refUrl = cookie['samtalestotte-podlet']?.referrer
+                    ? cookie['samtalestotte-podlet']?.referrer
                     : '';
             }
             setTilbakeURL(
