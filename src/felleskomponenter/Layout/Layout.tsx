@@ -19,6 +19,7 @@ import {
     noPrint,
 } from '../../utils/fellesStiler';
 import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
+import { useCookies } from 'react-cookie';
 
 export const Layout = (props: {
     title: string;
@@ -30,10 +31,18 @@ export const Layout = (props: {
 }) => {
     const layoutContentRef = useRef<HTMLDivElement>(null);
     const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
-
+    /* eslint-disable @typescript-eslint/no-used-vars */
+    const [cookie, setCookie] = useCookies(['samtalestotte-podlet']);
     useEffect(() => {
+        let refUrl: string | null;
         if (window !== undefined) {
-            const refUrl = new URLSearchParams(window.location.search).get('referer');
+            if (new URLSearchParams(window.location.search).get('referer') !== null) {
+                refUrl = new URLSearchParams(window.location.search).get('referer');
+            } else {
+                refUrl = cookie['samtalestotte-podlet']?.referrer
+                    ? cookie['samtalestotte-podlet']?.referrer
+                    : '';
+            }
             setTilbakeURL(
                 refUrl !== null && refUrl !== '' && erTilbakeURLTillat(refUrl) ? refUrl : TILBAKE
             );
@@ -82,11 +91,19 @@ export const Layout = (props: {
                 />
                 <div className={layoutWrapper}>
                     <div className={layoutContent} ref={layoutContentRef}>
-                        <Link href={tilbakeURL} className={classNames(noPrint, largeScreenMarginSides3rem)}>
+                        <Link
+                            href={tilbakeURL}
+                            className={classNames(noPrint, largeScreenMarginSides3rem)}
+                        >
                             <Back />
                             Tilbake
                         </Link>
-                        <div className={classNames(layoutSmallScreenIllustration, largeScreenMarginSides3rem)}>
+                        <div
+                            className={classNames(
+                                layoutSmallScreenIllustration,
+                                largeScreenMarginSides3rem
+                            )}
+                        >
                             <PageBannerSVG />
                         </div>
                         <div className={classNames(layoutPrintHeader)}>

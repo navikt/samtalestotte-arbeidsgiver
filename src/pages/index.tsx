@@ -10,27 +10,41 @@ import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
-import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
+import {
+    sendIATjenesteMetrikk,
+    sendInnloggetIATjenesteMetrikk,
+} from '../utils/ia-tjeneste-metrikker';
 import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
 import { hentReferrerFraUrl } from '../resources/urls';
 import classNames from 'classnames';
 import { Alert } from '@navikt/ds-react';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
 
-const ETT_ÅR_I_SEKUNDER = 31536000;
+const ETT_DØGN_I_SEKUNDER = 86400;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
 const Home = (props: { page: PageProps }) => {
-    const [cookies, setCookie] = useCookies(['samtalestotte']);
+    const [cookies, setCookie] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
     Sentry.init({
         dsn: 'https://97af8a51172e4f9bb74ac9c05920b1d2@sentry.gc.nav.no/77',
         environment: getMiljø(),
         enabled: getMiljø() !== 'local',
     });
 
-    useEffect(() => {
-        const referrer = hentReferrerFraUrl(window.location.href);
+    const hentReferrerFraCookies = () => {
+        return cookies['samtalestotte-podlet']?.referrer !== null
+            ? cookies['samtalestotte-podlet']?.referrer
+            : '';
+    };
 
+    const hentReferrer = () => {
+        return hentReferrerFraCookies()
+            ? hentReferrerFraCookies()
+            : hentReferrerFraUrl(window.location.href);
+    };
+
+    useEffect(() => {
+        const referrer = hentReferrer();
         const timer = setTimeout(async () => {
             await logEvent('sidevisning', {
                 url: 'samtalestotte-arbeidsgiver',
@@ -42,6 +56,17 @@ const Home = (props: { page: PageProps }) => {
 
     useEffect(() => {
         if (
+            cookies['samtalestotte-podlet']?.orgnr !== null &&
+            cookies['samtalestotte-podlet']?.altinnRettighet !== null
+        ) {
+            sendInnloggetIATjenesteMetrikk(
+                cookies['samtalestotte-podlet']?.orgnr,
+                cookies['samtalestotte-podlet']?.altinnRettighet
+            ).then((erMetrikkSendt) => {
+                console.log('erMetrikkSendt:', erMetrikkSendt);
+            });
+        }
+        if (
             cookies.samtalestotte?.sendtStatistikk === undefined &&
             antallForsøkSendTilIaTjenesterMetrikker < 5
         ) {
@@ -52,7 +77,7 @@ const Home = (props: { page: PageProps }) => {
                         { sendtStatistikk: 'ja' },
                         {
                             path: '/',
-                            maxAge: ETT_ÅR_I_SEKUNDER,
+                            maxAge: ETT_DØGN_I_SEKUNDER,
                             sameSite: true,
                         }
                     );

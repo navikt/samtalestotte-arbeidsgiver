@@ -1,12 +1,12 @@
-import { FunctionComponent, ReactNode, useEffect, useState } from 'react';
-import { Accordion } from '@navikt/ds-react';
-import { Expand } from '@navikt/ds-icons'
+import {FunctionComponent, ReactNode, useEffect, useState} from 'react';
+import {Accordion} from '@navikt/ds-react';
+import {Expand} from '@navikt/ds-icons'
 import classNames from 'classnames';
 import logEvent from '../../amplitude/amplitude';
 import Lest from '../Ikoner/Lest';
-import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
-import { css } from 'linaria';
-import { SCREEN_SM_MIN } from '../../utils/konstanter';
+import {getStickyHeaderOffset, onLukkScroll} from '../../utils/scrollUtils';
+import {css} from 'linaria';
+import {SCREEN_SM_MIN} from '../../utils/konstanter';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 

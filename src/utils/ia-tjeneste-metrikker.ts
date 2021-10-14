@@ -3,6 +3,10 @@ export interface IatjenesteMetrikk {
     kilde: String;
     tjenesteMottakkelsesdato: String;
 }
+export interface InnloggetIatjenesteMetrikk extends IatjenesteMetrikk{
+    orgnr: String;
+    altinnRettighet: String;
+}
 
 
 const getIaTjenesterMetrikkerUrl = () => {
@@ -21,6 +25,7 @@ const getIaTjenesterMetrikkerUrl = () => {
 };
 
 const iaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/uinnlogget/mottatt-iatjeneste`;
+const innloggetIaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/innlogget/forenklet/mottatt-iatjeneste`;
 
 export const tilIsoDatoMedUtcTimezoneUtenMillis = (dato: Date): String => {
     return dato.toISOString().split('.')[0] + "Z";
@@ -46,6 +51,34 @@ export const sendIATjenesteMetrikk = async () => {
         // @ts-ignore
         const fetchResponse = await fetch(`${iaTjenesterMetrikkerAPI}`, settings);
         const data = await fetchResponse.json();
+        return data.status === 'created';
+    } catch (e) {
+        return false;
+    }
+};
+export const sendInnloggetIATjenesteMetrikk = async (orgnr:String, altinnRettighet: String) => {
+    const innloggetIaTjenesteMetrikk: InnloggetIatjenesteMetrikk = {
+        kilde: 'SAMTALESTØTTE',
+        type: 'DIGITAL_IA_TJENESTE',
+        tjenesteMottakkelsesdato: tilIsoDatoMedUtcTimezoneUtenMillis(new Date()),
+        orgnr: orgnr,
+        altinnRettighet: altinnRettighet,
+    };
+
+    const settings = {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(innloggetIaTjenesteMetrikk),
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+    };
+    try {
+        // @ts-ignore
+        const fetchResponse = await fetch(`${innloggetIaTjenesterMetrikkerAPI}`, settings);
+        const data = await fetchResponse.json();
+        console.log("logging data: ", data);
         return data.status === 'created';
     } catch (e) {
         return false;
