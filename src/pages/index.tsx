@@ -31,9 +31,20 @@ const Home = (props: { page: PageProps }) => {
         enabled: getMiljø() !== 'local',
     });
 
-    useEffect(() => {
-        const referrer = hentReferrerFraUrl(window.location.href);
+    const hentReferrerFraCookies = () => {
+        return cookies['samtalestotte-podlet']?.referrer !== null
+            ? cookies['samtalestotte-podlet']?.referrer
+            : '';
+    };
 
+    const hentReferrer = () => {
+        return hentReferrerFraUrl(window.location.href)
+            ? hentReferrerFraUrl(window.location.href)
+            : hentReferrerFraCookies();
+    };
+
+    useEffect(() => {
+        const referrer = hentReferrer();
         const timer = setTimeout(async () => {
             await logEvent('sidevisning', {
                 url: 'samtalestotte-arbeidsgiver',
