@@ -27,7 +27,7 @@ export default function LastNedKnapp(props: {
             className={classNames(
                 downloadButtonStyle,
                 'navds-button',
-                `navds-button--primary`,
+                `navds-button--secondary`,
                 `navds-button--s`,
                 'navds-body-short',
                 'navds-body--s'
