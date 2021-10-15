@@ -170,6 +170,7 @@ const tittelTekst = css`
 `;
 
 const panel = css`
+    min-height: 80px;
     margin-top: 0;
     margin-bottom: 1rem;
     border: 1px solid;
@@ -177,9 +178,6 @@ const panel = css`
     :hover {
         box-shadow: #a0a0a0 0 2px 1px 0;
         border-bottom: 1px solid;
-    }
-    > button {
-        min-height: 80px;
     }
 `;
 

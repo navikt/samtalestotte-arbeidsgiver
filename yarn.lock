@@ -1318,28 +1318,23 @@
   resolved "https://registry.yarnpkg.com/@napi-rs/triples/-/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"
   integrity sha512-jDJTpta+P4p1NZTFVLHJ/TLFVYVcOqv6l8xwOeBKNPMgY/zDYH/YH7SJbvrr/h1RcS9GzbPcLKGzpuK9cV56UA==
 
-"@navikt/ds-css@^0.8.0":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.8.4.tgz#a03fc80ded4d4f0753e5f89642a3e153c2fe15d6"
-  integrity sha512-f6GKJx0UL9j/QHRMAEI/1xM85bGeZtKiIIqcoY4D4SXBRIqsnP/iYBIokc9idWOIsGy5kz/uuTRcsQVdBenUMA==
+"@navikt/ds-css@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.9.1.tgz#fdd23a83d4a9ed67e81fae70942da5a55bb8b434"
+  integrity sha512-B5umsQu07scqoWzy+huAZ7Kamj20qBHKFTVg8rhBRG6DAo8P7BfuVb9S2zJD9YMtALRd0gAxSwm2UL2RLJaWLA==
 
-"@navikt/ds-icons@^0.5.2":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@navikt/ds-icons/-/ds-icons-0.5.3.tgz#a81dfbfd90603410949c64a873ac9e239323d1a4"
-  integrity sha512-CwIFjiNosEtZtBC20sM2kfXvj5QCPbk4VqpJf7qlv1XlXKJv+88DA0Bo4rT1A1xPjdhSo4ofAXHCJ7BqAqFsuA==
-
-"@navikt/ds-icons@^0.5.3":
+"@navikt/ds-icons@^0.5.4":
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/@navikt/ds-icons/-/ds-icons-0.5.4.tgz#5b00f98f84da5cdb01f7b0dac9e4004d7d4bed0a"
   integrity sha512-4lk4CTKZtNkqGJ2wAtJPheaCcwD6hILh6zWICO7071Lu/O+O+qSmxJSGFJmPh4pTAUuPONp6p8jOUqQwTi4yhw==
 
-"@navikt/ds-react@^0.8.0":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@navikt/ds-react/-/ds-react-0.8.3.tgz#3543ff03159f5aa2509feb5264a78fbedebb8834"
-  integrity sha512-M9ryqqKAdzihJap5KGzyLAr44KzKd5hsxk2cWPUXZgfSqkpbbvoR3r1P9bfgrJL0TqnKjsOX8VT7JceQyrOR3A==
+"@navikt/ds-react@^0.10.2":
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/@navikt/ds-react/-/ds-react-0.10.2.tgz#0b190184ab32130fe11101fb333ce91acf3ee3b3"
+  integrity sha512-GXYcKy4vfejj2uR42UO513M0m5XajaVtG0qfS8/vlMrGnT3uDYf5pj0dmuOsuMkuilHkKksN6p+nMsuT9HUiLQ==
   dependencies:
     "@material-ui/core" "^4.12.3"
-    "@navikt/ds-icons" "^0.5.3"
+    "@navikt/ds-icons" "^0.5.4"
     "@popperjs/core" "^2.10.1"
     classnames "^2.2.6"
     copy-to-clipboard "^3.3.1"
