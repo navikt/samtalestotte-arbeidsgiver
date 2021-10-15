@@ -1,6 +1,6 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import { Title } from '@navikt/ds-react';
+import { Heading } from '@navikt/ds-react';
 import {
     graAvrundetBoks,
     marginBottom0Rem,
@@ -17,23 +17,23 @@ const FinneLosningerSammen = ({callback}: InfoPanelProps) => {
         panelLestSituasjon={"ulest"}
         callBack={callback}>
         <div className={marginTop1Rem}>
-            <Title className={marginBottom0Rem} size={'m'} level={3}>
+            <Heading className={marginBottom0Rem} size={'medium'} level={'3'}>
                 Hjelp medarbeideren med å finne løsninger.
-            </Title>
+            </Heading>
             <p className={marginTop0Rem}>
                 Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først,
                 kan det bli enklere å se løsningsforslag selv.
                 Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.
             </p>
-            <Title className={marginBottom0Rem} size={'s'} level={4}>
+            <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
                 Tips:
-            </Title>
+            </Heading>
             <p className={marginTop0Rem}>
                 Snakk om det som skal skje framover i tid og på hvilke muligheter som finnes.
             </p>
-            <Title className={marginBottom0Rem} size={'s'} level={4}>
+            <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
                 Vanlige tema når dere finner løsninger sammen:
-            </Title>
+            </Heading>
             <ul className={marginTop0Rem}>
                 <li>tilpasse arbeidsoppgaver eller arbeidsinnhold</li>
                 <li>tilpasse arbeidstid, arbeidstempo eller tidskrav</li>
@@ -48,16 +48,16 @@ const FinneLosningerSammen = ({callback}: InfoPanelProps) => {
                 <li>andre forhold</li>
             </ul>
 
-            <Title className={marginBottom0Rem} size={'s'} level={4}>
+            <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
                 Eksempler på spørsmål:
-            </Title>
+            </Heading>
             <p className={marginTop0Rem}>
                 Velg noen av eksemplene som er relevante for akkurat denne samtalen.
             </p>
             <div className={classNames(graAvrundetBoks, marginBottom2Rem)}>
-                <Title size={'s'} level={4}>
+                <Heading size={'small'} level={'4'}>
                     Hvordan kan jeg som leder hjelpe deg?
-                </Title>
+                </Heading>
                 <ul>
                     <li>Hva ville være god og støttende hjelp for deg i en travel arbeidsdag?</li>
                     <li>Hva vil du oppleve som god støtte?</li>
@@ -67,9 +67,9 @@ const FinneLosningerSammen = ({callback}: InfoPanelProps) => {
                 </ul>
             </div>
             <div className={graAvrundetBoks}>
-                <Title size={'s'} level={4}>
+                <Heading size={'small'} level={'4'}>
                     Løsninger
-                </Title>
+                </Heading>
                 <ul>
                     <li>Hvilke av arbeidsoppgavene dine kan du utføre med tilrettelegging?</li>
                     <li>Hvilke alternative arbeidsoppgaver kan du utføre?</li>

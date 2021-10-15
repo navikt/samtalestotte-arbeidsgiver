@@ -29,7 +29,7 @@ export const SkrivUtKnapp = (props: {
                         id={'skriv-ut-knapp'}
                         ref={knapperef}
                         className={classNames(noPrint, knappSomLenke)}
-                        size={'m'}
+                        size={'medium'}
                     >
                         <Print className={marginRight05Rem} /> {props.knappetekst}
                     </Button>

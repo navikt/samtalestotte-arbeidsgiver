@@ -2,7 +2,7 @@ import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { OPPFOLGNINGSPLAN } from '../../resources/urls';
-import { Title } from '@navikt/ds-react';
+import { Heading } from '@navikt/ds-react';
 import {marginBottom0Rem, marginBottom3Rem, marginTop0Rem, marginTop1Rem} from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
@@ -15,16 +15,16 @@ const PlanleggeVeienVidereSammen = ({ callback }: InfoPanelProps) => {
             callBack={callback}
         >
             <div className={marginTop1Rem}>
-                <Title className={marginBottom0Rem} size={'m'} level={3}>
+                <Heading className={marginBottom0Rem} size={'medium'} level={'3'}>
                     Oppsummer i felleskap.
-                </Title>
+                </Heading>
                 <p className={marginTop0Rem}>
                     En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer
                     det dere er blitt enige om og at dere lager en plan for videre oppfølging.
                 </p>
-                <Title className={marginBottom0Rem} size={'s'} level={4}>
+                <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
                     Tips:
-                </Title>
+                </Heading>
                 <p className={marginTop0Rem}>
                     Det er lurt med flere korte oppsummeringer til hvert punkt dere har avtalt. Bruk
                     spørsmål som kan besvares med ja eller nei for å sjekke at dere har felles
@@ -38,9 +38,9 @@ const PlanleggeVeienVidereSammen = ({ callback }: InfoPanelProps) => {
                         Les mer om oppfølgingsplan på nav.no.
                     </LoggbarLenke>
                 </p>
-                <Title className={marginBottom0Rem} size={'s'} level={4}>
+                <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
                     Vanlige tema i avslutningen:
-                </Title>
+                </Heading>
                 <ul className={classNames(marginTop0Rem, marginBottom3Rem)}>
                     <li>dato for neste samtale og hvor ofte samtaler skal gjennomføres</li>
                     <li>avtaler, tilrettelegginger og tiltak</li>
