@@ -43,7 +43,7 @@ jobs:
                   PRINT_PAYLOAD: true
     deploy-to-labs-gcp:
         name: Deploy to labs-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/ta-i-bruk-cookies-fra-samtalestotte-podlet'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/upgrade-avhengigheter-15-okt-2021'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
