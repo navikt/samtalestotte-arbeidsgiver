@@ -6,13 +6,12 @@ import { Title } from '@navikt/ds-react';
 import {marginBottom0Rem, marginBottom3Rem, marginTop0Rem, marginTop1Rem} from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
-const PlanleggeVeienVidereSammen = ({ callback }: InfoPanelProps) => {
+const PlanleggeVeienVidereSammen = (props: InfoPanelProps) => {
     return (
         <EkspanderbartInfopanel
             unikId={'planleggeVeienVidereSammen'}
             tittel={'Planlegge veien videre sammen'}
             panelLestSituasjon={'ulest'}
-            callBack={callback}
         >
             <div className={marginTop1Rem}>
                 <Title className={marginBottom0Rem} size={'m'} level={3}>

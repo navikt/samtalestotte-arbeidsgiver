@@ -15,6 +15,9 @@ import {largeScreenMarginSides3rem, paddingSides1rem} from '../utils/fellesStile
 import { hentReferrerFraUrl } from '../resources/urls';
 import {css} from "linaria";
 import classNames from "classnames";
+import {doc} from "../generateDocument";
+import {Packer} from "docx";
+import * as fs from "fs";
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
@@ -95,6 +98,14 @@ interface StaticProps {
 
 // NextJS kaller denne
 export const getStaticProps = async (): Promise<StaticProps> => {
+    //TODO generer riktig docx
+    const buffer = await Packer.toBuffer(doc)
+    fs.writeFileSync("public/hello.docx", buffer)
+
+    //TODO generer riktig txt
+    fs.writeFileSync("public/hello.txt", "SOME DATA")
+
+
     const page = await getPageProps(
         'Samtalestøtte for arbeidsgiver',
         'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.'

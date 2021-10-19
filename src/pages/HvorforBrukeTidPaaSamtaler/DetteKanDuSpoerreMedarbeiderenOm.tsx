@@ -4,12 +4,11 @@ import ChatBubbleCheckmark from '../../felleskomponenter/Ikoner/ChatBubbleCheckm
 import {marginTop1Rem} from "../../utils/fellesStiler";
 
 
-const DetteKanDuSpoerreMedarbeiderenOm = ({callback}: InfoPanelProps) => {
+const DetteKanDuSpoerreMedarbeiderenOm = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         unikId={"detteKanDuSpoerreMedarbeiderenOm"}
         tittel={"Dette kan du spørre medarbeideren om"}
         panelLestSituasjon={"ulest"}
-        callBack={() => callback}
         ikon={<ChatBubbleCheckmark width={"44px"} height={"44px"}/>}
         lestIkon={<ChatBubbleCheckmark width={"44px"} height={"44px"}/>}
     >

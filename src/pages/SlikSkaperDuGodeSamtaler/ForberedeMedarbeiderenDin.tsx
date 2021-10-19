@@ -4,12 +4,12 @@ import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { ENKLE_TIPS_FOR_DIGITALE_SAMTALER, GJENNOMFOR_SAMTALEN } from '../../resources/urls';
 import {marginTop0Rem, marginTop1Rem} from "../../utils/fellesStiler";
 
-const ForberedeMedarbeiderenDin = ({callback}: InfoPanelProps) => {
+const ForberedeMedarbeiderenDin = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         unikId={"forberedeMedarbeiderenDin"}
         tittel={"Forberede medarbeideren din"}
         panelLestSituasjon={"ulest"}
-        callBack={callback}>
+    >
         <div className={marginTop1Rem}>
             <ul className={marginTop0Rem}>
                 <li>

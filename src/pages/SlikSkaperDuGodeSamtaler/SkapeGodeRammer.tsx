@@ -17,13 +17,12 @@ import {
 } from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
-const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
+const SkapeGodeRammer = (props: InfoPanelProps) => {
     return (
         <EkspanderbartInfopanel
             unikId={'skapeGodeRammer'}
             tittel={'Skape gode rammer'}
             panelLestSituasjon={'ulest'}
-            callBack={callback}
         >
             <div className={marginTop1Rem}>
                 <Title size={'m'} level={3}>Gode samtaler forutsetter trygghet</Title>

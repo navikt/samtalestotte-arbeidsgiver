@@ -10,12 +10,12 @@ import {
 } from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
-const FinneLosningerSammen = ({callback}: InfoPanelProps) => {
+const FinneLosningerSammen = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         unikId={"finneLøsningerSammen"}
         tittel={"Finne løsninger sammen"}
         panelLestSituasjon={"ulest"}
-        callBack={callback}>
+    >
         <div className={marginTop1Rem}>
             <Title className={marginBottom0Rem} size={'m'} level={3}>
                 Hjelp medarbeideren med å finne løsninger.

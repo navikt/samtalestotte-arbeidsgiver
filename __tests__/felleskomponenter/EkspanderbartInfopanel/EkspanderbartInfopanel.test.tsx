@@ -123,7 +123,6 @@ test('Snapshot test', () => {
             container
         );
     });
-    console.log(container.innerHTML);
     expect(pretty(container.innerHTML)).toMatchInlineSnapshot(`
 "<div class=\\"rvep9j3\\">
   <div class=\\"navds-accordion p1pgduac navds-accordion--closed\\"><button id=\\"ekspanderbart-infopanel__RenderTest-base\\" class=\\"navds-accordion__button\\" aria-expanded=\\"false\\" aria-controls=\\"1111111111117t7FcSZJR1\\"><span class=\\"navds-accordion__heading navds-title navds-title--s\\"><div class=\\"f3eheo1\\"><div class=\\"g1kg98jt\\"><div class=\\"t1emcwa8\\">Test title</div></div></div></span><svg width=\\"1em\\" height=\\"1em\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\" focusable=\\"false\\" role=\\"img\\" class=\\"navds-accordion__chevron navds-accordion__chevron--down\\">

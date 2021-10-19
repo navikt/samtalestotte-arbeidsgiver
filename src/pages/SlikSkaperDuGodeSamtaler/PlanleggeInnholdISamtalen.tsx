@@ -12,12 +12,12 @@ import {
 import {css} from "linaria";
 import classNames from "classnames";
 
-const PlanleggeInnholdISamtalen = ({callback}: InfoPanelProps) => {
+const PlanleggeInnholdISamtalen = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         unikId={"planleggeInnholdISamtalen"}
         tittel={"Planlegge innhold i samtalen"}
         panelLestSituasjon={"ulest"}
-        callBack={callback}>
+    >
         <div className={marginTop1Rem}>
             <p className={marginTop0Rem}>
                 Legg en plan for hva du ønsker å oppnå og hvordan du kan gjennomføre samtalen. Husk å lytte

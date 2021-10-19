@@ -9,12 +9,12 @@ import {
 } from '../../utils/fellesStiler';
 import classNames from "classnames";
 
-const InnledeSamtalen = ({callback}: InfoPanelProps) => {
+const InnledeSamtalen = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         unikId={"innledeSamtalen"}
         tittel={"Innlede samtalen"}
         panelLestSituasjon={"ulest"}
-        callBack={callback}>
+    >
         <div className={marginTop1Rem}>
             <BodyLong className={marginTop0Rem}>
                 Å innlede en samtale handler om å skape trygghet, sette rammer og klargjøre mål og hensikt.

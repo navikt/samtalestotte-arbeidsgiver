@@ -10,12 +10,12 @@ import {
 } from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
-const SnakkeOmArbeid = ({callback}: InfoPanelProps) => {
+const SnakkeOmArbeid = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         unikId={"snakkeOmArbeid"}
         tittel={"Snakke om arbeid"}
         panelLestSituasjon={"ulest"}
-        callBack={callback}>
+    >
         <div className={marginTop1Rem}>
             <Title className={classNames(marginBottom0Rem, marginTop0Rem)} size={'m'} level={3}>
                 En samtale for å forebygge eller følge opp sykefravær handler om medarbeideren.
