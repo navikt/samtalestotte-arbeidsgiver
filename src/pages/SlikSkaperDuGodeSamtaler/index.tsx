@@ -14,7 +14,7 @@ import {
     marginTop4Rem,
     noPrint,
 } from '../../utils/fellesStiler';
-import { Title } from '@navikt/ds-react';
+import { Heading } from '@navikt/ds-react';
 import classNames from 'classnames';
 import { css } from 'linaria';
 import { SCREEN_SM_MIN } from '../../utils/konstanter';
@@ -23,13 +23,13 @@ import LastNedKnapp from '../../felleskomponenter/Knapper/LastNedKnapp';
 const SlikSkaperDuGodeSamtaler = ({ className }: { className?: string }) => {
     return (
         <section className={classNames(breakBeforePage, backgroundStyle, marginTop3Rem, className)}>
-            <Title size={'l'} level={2}>
+            <Heading size={'large'} level={'2'}>
                 Slik skaper du gode samtaler
-            </Title>
+            </Heading>
             <div className={noPrint}>
-                <Title className={classNames(marginTop2Rem, marginBottom1Rem)} size={'s'} level={4}>
+                <Heading className={classNames(marginTop2Rem, marginBottom1Rem)} size={'small'} level={'4'}>
                     Last ned verktøyet og rediger selv:
-                </Title>
+                </Heading>
                 <div className={downloadButtonContainerStyle}>
                     <LastNedKnapp
                         knappetekst="Last ned i Word"
@@ -49,20 +49,20 @@ const SlikSkaperDuGodeSamtaler = ({ className }: { className?: string }) => {
                 <li>å gjennomføre og dokumentere samtaler med medarbeidere</li>
                 <li>å sikre at medarbeideren får bidra til å finne løsninger</li>
             </ul>
-            <Title className={classNames(marginTop4Rem, marginBottom1Rem)} size={'m'} level={3}>
+            <Heading className={classNames(marginTop4Rem, marginBottom1Rem)} size={'medium'} level={'3'}>
                 Forbered deg ved å:
-            </Title>
+            </Heading>
             <SkapeGodeRammer />
             <PlanleggeInnholdISamtalen />
             <ForberedeMedarbeiderenDin />
-            <Title
+            <Heading
                 className={classNames(marginTop4Rem, marginBottom1Rem)}
                 id={'GjennomforSamtalen'}
-                size={'m'}
-                level={3}
+                size={'medium'}
+                level={'3'}
             >
                 Gjennomfør samtalen ved å:
-            </Title>
+            </Heading>
             <InnledeSamtalen />
             <SnakkeOmArbeid />
             <FinneLosningerSammen />

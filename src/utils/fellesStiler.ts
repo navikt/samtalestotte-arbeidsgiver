@@ -53,6 +53,10 @@ export const marginRight05Rem = css`
     margin-right: 0.5rem;
 `;
 
+export const marginLeft1Rem = css`
+    margin-left: 1rem;
+`;
+
 export const boldText = css`
     font-weight: var(--navds-font-weight-bold);
 `;

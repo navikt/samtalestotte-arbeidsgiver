@@ -107,7 +107,7 @@ export const Layout = (props: {
                             <PageBannerSVG />
                         </div>
                         <div className={classNames(layoutPrintHeader)}>
-                            <BodyShort size="s">{PROD_URL}</BodyShort>
+                            <BodyShort size="small">{PROD_URL}</BodyShort>
                         </div>
                         {props.children}
                         <SkrivUtKnapp

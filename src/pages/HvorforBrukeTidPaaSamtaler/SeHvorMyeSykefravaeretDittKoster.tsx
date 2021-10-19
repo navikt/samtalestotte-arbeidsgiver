@@ -38,13 +38,21 @@ export default SeHvorMyeSykefravaeretDittKoster;
 /** STYLES **/
 
 const kalkulatorRootStyle = css`
-    border: 1px solid var(--navds-color-gray-60);
+  min-height: 85px;
+    border: 1px solid;
     * {
       color: var(--navds-color-blue-50);
     }
     span {
       width: 100%;
+      font-size: 18px;
+      font-weight: normal;
     }
+  
+    > div {
+      width: 100%;
+    }
+
     &:hover {
       border: 1px solid var(--navds-color-gray-60);
     }

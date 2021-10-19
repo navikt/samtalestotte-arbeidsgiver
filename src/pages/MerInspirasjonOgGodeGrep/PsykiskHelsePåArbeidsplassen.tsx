@@ -7,7 +7,7 @@ import {
     marginTop1Rem,
     marginTop3Rem,
 } from '../../utils/fellesStiler';
-import {Title} from '@navikt/ds-react';
+import { Heading } from '@navikt/ds-react';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import {
     FILM_OM_PSYKISK_HELSE, IDEBANKEN_PSYKISK_HELSE,
@@ -24,9 +24,9 @@ const EnkleTipsForDigitaleSamtaler = ({callback}: InfoPanelProps) => {
             callBack={callback}
         >
             <div className={marginTop1Rem}>
-                <Title size={'m'} level={3}>
+                <Heading size={'medium'} level={'3'}>
                     Arbeid påvirker medarbeiderens psykiske helse
-                </Title>
+                </Heading>
                 <p>
                     Når en medarbeider sliter psykisk så vil du ofte kunne se endringer i måten
                     arbeidsoppgavene blir utført eller måten samhandlingen med andre foregår.
@@ -60,15 +60,15 @@ const EnkleTipsForDigitaleSamtaler = ({callback}: InfoPanelProps) => {
                     </li>
                 </ul>
 
-                <Title size="s" level={4} className={marginTop3Rem}>
+                <Heading size="small" level={'4'} className={marginTop3Rem}>
                     Dette kan du gjøre:
-                </Title>
+                </Heading>
 
                 <div className={classNames(infoPanelKolonner, marginTop1Rem)}>
                     <div className={graAvrundetBoks}>
-                        <Title size={'s'} level={4}>
+                        <Heading size={'small'} level={'4'}>
                             på kort sikt:
-                        </Title>
+                        </Heading>
                         <ul className={marginTop0Rem}>
                             <li className={marginTop1Rem}>
                                 <LoggbarLenke href={FILM_OM_PSYKISK_HELSE}>
@@ -101,9 +101,9 @@ const EnkleTipsForDigitaleSamtaler = ({callback}: InfoPanelProps) => {
                         </ul>
                     </div>
                     <div className={graAvrundetBoks}>
-                        <Title size={'s'} level={4}>
+                        <Heading size={'small'} level={'4'}>
                             over tid og som kontinuerlig arbeid:
-                        </Title>
+                        </Heading>
                         <ul className={marginTop0Rem}>
                             <li className={marginTop1Rem}>
                                 Se etter tegn fra lista over og ta initiativ til en samtale før et

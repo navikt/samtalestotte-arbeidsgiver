@@ -7,7 +7,7 @@ import {
     RETTNINGSLINJER_FOR_SYKEFRAVAERSOPPFOLGNING,
 } from '../../resources/urls';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
-import { Title } from '@navikt/ds-react';
+import { Heading } from '@navikt/ds-react';
 import {
     graAvrundetBoks, horizontalLine,
     infoPanelKolonner, marginBottom025rem, marginBottom0Rem,
@@ -26,7 +26,7 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
             callBack={callback}
         >
             <div className={marginTop1Rem}>
-                <Title size={'m'} level={3}>Gode samtaler forutsetter trygghet</Title>
+                <Heading size={'medium'} level={'3'}>Gode samtaler forutsetter trygghet</Heading>
                 <p>
                     Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene
                     rundt samtalen er forutsigbare for alle. Å vise forståelse i møte med medarbeider setter
@@ -40,14 +40,14 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                     </li>
                     <li>Hvor trygg føler du deg på å gjennomføre samtaler?</li>
                 </ul>
-                <Title className={marginBottom025rem} size={'s'} level={4}>
+                <Heading className={marginBottom025rem} size={'small'} level={'4'}>
                     Dette kan du gjøre:
-                </Title>
+                </Heading>
                 <div className={classNames(infoPanelKolonner, marginBottom1Rem)}>
                     <div className={graAvrundetBoks}>
-                        <Title className={marginBottom0Rem} size={'s'} level={4}>
+                        <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
                             på kort sikt:
-                        </Title>
+                        </Heading>
                         <ul className={spacedList}>
                             <li>
                                 Planlegg bruk av samtaleteknikker for å sikre medvirkning i samtalen.{' '}
@@ -62,7 +62,7 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                         </ul>
                     </div>
                     <div className={graAvrundetBoks}>
-                        <Title size={'s'} level={4}>over tid og som kontinuerlig arbeid:</Title>
+                        <Heading size={'small'} level={'4'}>over tid og som kontinuerlig arbeid:</Heading>
                         <ul className={spacedList}>
                             <li>
                                 Lær mer om samtaler og samtaleteknikker.{' '}
@@ -84,10 +84,10 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                     </div>
                 </div>
                 <div className={horizontalLine} />
-                <Title size={'m'} level={3}>
+                <Heading size={'medium'} level={'3'}>
                     Gode rutiner effektiviserer arbeidet og skaper forutsigbarhet for deg og din
                     medarbeider.
-                </Title>
+                </Heading>
                 <p>Rutiner bør evalueres og justeres hvis de ikke bidrar til forutsigbarhet.</p>
                 <ul className={marginBottom3Rem}>
                     <li>
@@ -95,14 +95,14 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                         oppgaver og ansvar?
                     </li>
                 </ul>
-                <Title className={marginBottom025rem} size={'s'} level={4}>
+                <Heading className={marginBottom025rem} size={'small'} level={'4'}>
                     Dette kan du gjøre:
-                </Title>
+                </Heading>
                 <div className={classNames(infoPanelKolonner, marginBottom1Rem)}>
                     <div className={graAvrundetBoks}>
-                        <Title size={'s'} level={4}>
+                        <Heading size={'small'} level={'4'}>
                             på kort sikt:
-                        </Title>
+                        </Heading>
                         <ul className={spacedList}>
                             <li>
                                 Bruk sykefraværsrutinene i din virksomhet, for å skape forutsigbarhet
@@ -115,9 +115,9 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                         </ul>
                     </div>
                     <div className={graAvrundetBoks}>
-                        <Title className={marginBottom0Rem} size={'s'} level={4}>
+                        <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
                             over tid og som kontinuerlig arbeid:
-                        </Title>
+                        </Heading>
                         <ul className={spacedList}>
                             <li>
                                 Evaluer rutinene dine.{' '}
@@ -135,9 +135,9 @@ const SkapeGodeRammer = ({ callback }: InfoPanelProps) => {
                         </ul>
                     </div>
                 </div>
-                <Title className={marginBottom0Rem} size={'s'} level={4}>
+                <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
                     Tips:
-                </Title>
+                </Heading>
                 <p className={marginTop0Rem}>
                     Arbeidet med rutiner bør settes inn i arbeidsplassens plan for å forebygge
                     sykefravær slik at du kan dokumentere arbeidet.

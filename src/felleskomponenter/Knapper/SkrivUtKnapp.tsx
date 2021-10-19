@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import classNames from 'classnames';
-import { knappSomLenke, marginRight05Rem, noPrint } from '../../utils/fellesStiler';
+import {knappSomLenke, marginLeft1Rem, marginRight05Rem, noPrint} from '../../utils/fellesStiler';
 import ReactToPrint from 'react-to-print';
 import { Button } from '@navikt/ds-react';
 import { Print } from '@navikt/ds-icons';
@@ -28,8 +28,9 @@ export const SkrivUtKnapp = (props: {
                     <Button
                         id={'skriv-ut-knapp'}
                         ref={knapperef}
-                        className={classNames(noPrint, knappSomLenke)}
-                        size={'m'}
+                        className={classNames(noPrint, knappSomLenke, marginLeft1Rem)}
+                        size={'medium'}
+                        variant={'secondary'}
                     >
                         <Print className={marginRight05Rem} /> {props.knappetekst}
                     </Button>
