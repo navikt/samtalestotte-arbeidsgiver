@@ -38,7 +38,7 @@ export default SeHvorMyeSykefravaeretDittKoster;
 /** STYLES **/
 
 const kalkulatorRootStyle = css`
-  height: 85px;
+  min-height: 85px;
     border: 1px solid;
     * {
       color: var(--navds-color-blue-50);
