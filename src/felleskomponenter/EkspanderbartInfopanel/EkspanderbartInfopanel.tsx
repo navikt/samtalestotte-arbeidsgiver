@@ -179,7 +179,7 @@ const panel = css`
     margin: 0;
     border: 1px solid;
     border-radius: 4px;
-    :hover {
+    :hover:not(:focus) {
         box-shadow: #a0a0a0 0 2px 1px 0;
         border-bottom: 1px solid;
     }
