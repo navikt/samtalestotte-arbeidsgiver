@@ -7,6 +7,8 @@ import Lest from '../Ikoner/Lest';
 import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
 import { css } from 'linaria';
 import { SCREEN_SM_MIN } from '../../utils/konstanter';
+import {sendInnloggetIATjenesteMetrikk, sendUinnloggetIATjenesteMetrikk} from "../../utils/ia-tjeneste-metrikker";
+import {useCookies} from "react-cookie";
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
@@ -32,11 +34,15 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const [erLest, setErLest] = useState<boolean>(false);
     const [panelKnapp, setPanelKnapp] = useState<HTMLElement | null>(null);
     const [hovedMeny, setHovedMeny] = useState<HTMLElement | null>(null);
+    const [cookies, setCookie] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
 
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
     const callback = props.callBack ? props.callBack : noOperation;
 
     const hasIcon = props.ikon !== null && props.ikon !== undefined;
+
+    const ETT_DØGN_I_SEKUNDER = 86400;
+    let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
     const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
         if (props.panelLestSituasjon !== panelLestSituasjon) {
@@ -47,10 +53,44 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
         }
     };
 
+const sendIaTjenesterMetrikker=()=>{
+    if (
+        cookies['samtalestotte-podlet']?.orgnr !== undefined &&
+        cookies['samtalestotte-podlet']?.altinnRettighet !== undefined
+    ) {
+        sendInnloggetIATjenesteMetrikk(
+            cookies['samtalestotte-podlet']?.orgnr,
+            cookies['samtalestotte-podlet']?.altinnRettighet
+        ).then((erMetrikkSendt) => {
+            console.log('erMetrikkSendt:', erMetrikkSendt);
+        });
+    }
+    if (
+        cookies.samtalestotte?.sendtStatistikk === undefined &&
+        antallForsøkSendTilIaTjenesterMetrikker < 5
+    ) {
+        sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
+            if (erMetrikkSendt) {
+                setCookie(
+                    'samtalestotte',
+                    { sendtStatistikk: 'ja' },
+                    {
+                        path: '/',
+                        maxAge: ETT_DØGN_I_SEKUNDER,
+                        sameSite: true,
+                    }
+                );
+            }
+        });
+        antallForsøkSendTilIaTjenesterMetrikker++;
+    }
+}
+
     useEffect(() => {
         const timer = setTimeout(async () => {
             erÅpen && props.panelLestSituasjon !== 'lest' && toggleCallback('lest');
-            erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
+            erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }))
+            erÅpen && sendIaTjenesterMetrikker();
         }, 500);
         return () => clearTimeout(timer);
     }, [erÅpen]);

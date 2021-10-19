@@ -1,4 +1,4 @@
-import { sendIATjenesteMetrikk } from '../../src/utils/ia-tjeneste-metrikker';
+import { sendUinnloggetIATjenesteMetrikk } from '../../src/utils/ia-tjeneste-metrikker';
 
 
 beforeAll(() => {
@@ -15,7 +15,7 @@ test('Happy path should call fetch and return true', async () => {
 
     global.fetch = jest.fn((...args) => new Promise<Response>( resolve => resolve(dummyResponse)))
 
-    const result = await sendIATjenesteMetrikk();
+    const result = await sendUinnloggetIATjenesteMetrikk();
 
     expect(result).toBe(true)
     expect(global.fetch).toBeCalledTimes(1);
@@ -52,7 +52,7 @@ test('Should return false when status is not created', async () => {
         }))
     )
 
-    const result = await sendIATjenesteMetrikk();
+    const result = await sendUinnloggetIATjenesteMetrikk();
 
     expect(result).toBe(false)
     expect(global.fetch).toBeCalledTimes(1);
@@ -89,7 +89,7 @@ test('Should return false when json throws an exception', async () => {
         }))
     )
 
-    const result = await sendIATjenesteMetrikk();
+    const result = await sendUinnloggetIATjenesteMetrikk();
 
     expect(result).toBe(false)
     expect(global.fetch).toBeCalledTimes(1);

@@ -31,7 +31,7 @@ export const tilIsoDatoMedUtcTimezoneUtenMillis = (dato: Date): String => {
     return dato.toISOString().split('.')[0] + "Z";
 }
 
-export const sendIATjenesteMetrikk = async () => {
+export const sendUinnloggetIATjenesteMetrikk = async () => {
     const iaTjenesteMetrikk: IatjenesteMetrikk = {
         kilde: 'SAMTALESTØTTE',
         type: 'DIGITAL_IA_TJENESTE',
