@@ -72,7 +72,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     return (
         <div className={root}>
             <Accordion>
-                <Accordion.Item open={erÅpen}>
+                <Accordion.Item open={erÅpen} className={accordionItem}>
                     <Accordion.Header
                         id={panelknappID}
                         onClick={() => {
@@ -89,7 +89,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                         </div>
                     </Accordion.Header>
 
-                    <Accordion.Content>
+                    <Accordion.Content className={panelInnhold}>
                         <div className={classNames(innholdStyle)}>{innhold}</div>
                         <button
                             className={classNames(lukkKnapp, 'navds-link')}
@@ -164,21 +164,33 @@ const tittelTekst = css`
     font-size: 20px;
     line-height: 25px;
     color: var(--navds-color-blue-50);
+
     & :hover {
         text-decoration-line: underline;
     }
 `;
 
+const accordionItem = css`
+    margin-bottom: 1rem;
+`;
+
 const panel = css`
     min-height: 80px;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin: 0;
     border: 1px solid;
     border-radius: 4px;
     :hover {
         box-shadow: #a0a0a0 0 2px 1px 0;
         border-bottom: 1px solid;
     }
+`;
+
+const panelInnhold = css`
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid;
+    border-top: none;
+    border-radius: 4px;
 `;
 
 const borderBottom = css`
