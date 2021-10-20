@@ -4,7 +4,12 @@ import logEvent from '../../amplitude/amplitude';
 import classNames from 'classnames';
 import { Link } from '@navikt/ds-react';
 import React from 'react';
-import {SCREEN_SM_MIN} from "../../utils/konstanter";
+import { ETT_DØGN_I_SEKUNDER, SCREEN_SM_MIN } from '../../utils/konstanter';
+import {
+    sendInnloggetIATjenesteMetrikk,
+    sendUinnloggetIATjenesteMetrikk,
+} from '../../utils/ia-tjeneste-metrikker';
+import { useCookies } from 'react-cookie';
 
 export default function LastNedKnapp(props: {
     knappetekst: string;
@@ -12,7 +17,45 @@ export default function LastNedKnapp(props: {
     filnavn?: string;
     label: string;
 }) {
+    const [cookies, setCookie] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
+
+    let antallForsøkSendTilIaTjenesterMetrikker = 0;
+    // TODO finne ut om vi bør bruke async, await eller promise for at vi ikke bremser farten for knappen.
+    const sendIaTjenesterMetrikker =  () => {
+        if (
+            cookies['samtalestotte-podlet']?.orgnr !== undefined &&
+            cookies['samtalestotte-podlet']?.altinnRettighet !== undefined &&
+            cookies.samtalestotte?.sendtStatistikk === undefined
+        ) {
+            sendInnloggetIATjenesteMetrikk(
+                cookies['samtalestotte-podlet']?.orgnr,
+                cookies['samtalestotte-podlet']?.altinnRettighet
+            ).then((erMetrikkSendt) => {
+                console.log('erMetrikkSendt:', erMetrikkSendt);
+            });
+        }
+        if (
+            cookies.samtalestotte?.sendtStatistikk === undefined &&
+            antallForsøkSendTilIaTjenesterMetrikker < 5
+        ) {
+            sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
+                if (erMetrikkSendt) {
+                    setCookie(
+                        'samtalestotte',
+                        { sendtStatistikk: 'ja' },
+                        {
+                            path: '/',
+                            maxAge: ETT_DØGN_I_SEKUNDER,
+                            sameSite: true,
+                        }
+                    );
+                }
+            });
+            antallForsøkSendTilIaTjenesterMetrikker++;
+        }
+    };
     const loggKlikkPåLastNedKnapp = (label: string) => {
+        sendIaTjenesterMetrikker();
         logEvent('knapp', {
             label: label,
             funksjon: 'last-ned-fil',

@@ -4,9 +4,9 @@ import { Expand } from '@navikt/ds-icons';
 import classNames from 'classnames';
 import logEvent from '../../amplitude/amplitude';
 import Lest from '../Ikoner/Lest';
-import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
-import { css } from 'linaria';
-import { SCREEN_SM_MIN } from '../../utils/konstanter';
+import {getStickyHeaderOffset, onLukkScroll} from '../../utils/scrollUtils';
+import {css} from 'linaria';
+import {ETT_DØGN_I_SEKUNDER, SCREEN_SM_MIN} from '../../utils/konstanter';
 import {sendInnloggetIATjenesteMetrikk, sendUinnloggetIATjenesteMetrikk} from "../../utils/ia-tjeneste-metrikker";
 import {useCookies} from "react-cookie";
 
@@ -41,7 +41,6 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
 
     const hasIcon = props.ikon !== null && props.ikon !== undefined;
 
-    const ETT_DØGN_I_SEKUNDER = 86400;
     let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
     const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
@@ -56,7 +55,9 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
 const sendIaTjenesterMetrikker=()=>{
     if (
         cookies['samtalestotte-podlet']?.orgnr !== undefined &&
-        cookies['samtalestotte-podlet']?.altinnRettighet !== undefined
+        cookies['samtalestotte-podlet']?.altinnRettighet !== undefined &&
+        ( cookies.samtalestotte?.sendtStatistikk === undefined ||
+        cookies.samtalestotte?.sendtStatistikk === false )
     ) {
         sendInnloggetIATjenesteMetrikk(
             cookies['samtalestotte-podlet']?.orgnr,
