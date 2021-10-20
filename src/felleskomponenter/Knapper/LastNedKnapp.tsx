@@ -6,6 +6,7 @@ import { Link } from '@navikt/ds-react';
 import React from 'react';
 import { ETT_DØGN_I_SEKUNDER, SCREEN_SM_MIN } from '../../utils/konstanter';
 import {
+    kanSendeInnloggetIaTjenesteMetrikker, kanSendeUinnloggetIaTjenesteMetrikker,
     sendInnloggetIATjenesteMetrikk,
     sendUinnloggetIATjenesteMetrikk,
 } from '../../utils/ia-tjeneste-metrikker';
@@ -22,22 +23,20 @@ export default function LastNedKnapp(props: {
     let antallForsøkSendTilIaTjenesterMetrikker = 0;
     // TODO finne ut om vi bør bruke async, await eller promise for at vi ikke bremser farten for knappen.
     const sendIaTjenesterMetrikker =  () => {
-        if (
-            cookies['samtalestotte-podlet']?.orgnr !== undefined &&
-            cookies['samtalestotte-podlet']?.altinnRettighet !== undefined &&
-            cookies.samtalestotte?.sendtStatistikk === undefined
-        ) {
+       kanSendeInnloggetIaTjenesteMetrikker(
+            cookies['samtalestotte-podlet']?.orgnr ,
+            cookies['samtalestotte-podlet']?.altinnRettighet ,
+            cookies.samtalestotte?.sendtStatistikk
+        ) &&
             sendInnloggetIATjenesteMetrikk(
                 cookies['samtalestotte-podlet']?.orgnr,
                 cookies['samtalestotte-podlet']?.altinnRettighet
             ).then((erMetrikkSendt) => {
                 console.log('erMetrikkSendt:', erMetrikkSendt);
             });
-        }
-        if (
-            cookies.samtalestotte?.sendtStatistikk === undefined &&
-            antallForsøkSendTilIaTjenesterMetrikker < 5
-        ) {
+        kanSendeUinnloggetIaTjenesteMetrikker(
+            cookies.samtalestotte?.sendtStatistikk
+        ) &&
             sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
                 if (erMetrikkSendt) {
                     setCookie(
@@ -52,7 +51,7 @@ export default function LastNedKnapp(props: {
                 }
             });
             antallForsøkSendTilIaTjenesterMetrikker++;
-        }
+
     };
     const loggKlikkPåLastNedKnapp = (label: string) => {
         sendIaTjenesterMetrikker();
