@@ -29,6 +29,8 @@ const innloggetIaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/innlog
 export const tilIsoDatoMedUtcTimezoneUtenMillis = (dato: Date): String => {
     return dato.toISOString().split('.')[0] + 'Z';
 };
+
+/*
 export const kanSendeInnloggetIaTjenesteMetrikker = (
     orgnr: string,
     altinnRettighet: string,
@@ -36,13 +38,22 @@ export const kanSendeInnloggetIaTjenesteMetrikker = (
 ): Boolean => {
     return (
         orgnr !== undefined &&
-        altinnRettighet !== undefined &&
-        (sendtStatistikk === undefined || !Boolean(sendtStatistikk)) &&
-        antallForsøkSendTilIaTjenesterMetrikker < 5
+        altinnRettighet !== undefined && kanSendeIaTjenesteMetrikker(sendtStatistikk)
+    );
+};
+*/
+
+export const kanSendeInnloggetIaTjenesteMetrikker = (
+    orgnr: string,
+    altinnRettighet: string
+): Boolean => {
+    return (
+        orgnr !== undefined &&
+        altinnRettighet !== undefined
     );
 };
 
-export const kanSendeUinnloggetIaTjenesteMetrikker = (sendtStatistikk: string): Boolean =>
+export const kanSendeIaTjenesteMetrikker = (sendtStatistikk: string): Boolean =>
     (sendtStatistikk === undefined || !Boolean(sendtStatistikk)) &&
     antallForsøkSendTilIaTjenesterMetrikker < 5;
 

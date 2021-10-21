@@ -8,11 +8,13 @@ import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
 import { css } from 'linaria';
 import { ETT_DØGN_I_SEKUNDER, SCREEN_SM_MIN } from '../../utils/konstanter';
 import {
-    kanSendeInnloggetIaTjenesteMetrikker, kanSendeUinnloggetIaTjenesteMetrikker,
+    kanSendeInnloggetIaTjenesteMetrikker,
+    kanSendeIaTjenesteMetrikker,
     sendInnloggetIATjenesteMetrikk,
     sendUinnloggetIATjenesteMetrikk,
 } from '../../utils/ia-tjeneste-metrikker';
 import { useCookies } from 'react-cookie';
+import { Cookie, CookieSetOptions } from 'universal-cookie';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
@@ -40,6 +42,27 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const [hovedMeny, setHovedMeny] = useState<HTMLElement | null>(null);
     const [cookies, setCookie] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
 
+    function setIaTjenesterMetrikkErSendt(
+        erMetrikkSendt: boolean,
+        lagreCookie: (
+            name: 'samtalestotte' | 'samtalestotte-podlet',
+            value: Cookie,
+            options?: CookieSetOptions
+        ) => void
+    ) {
+        if (erMetrikkSendt) {
+            lagreCookie(
+                'samtalestotte',
+                { sendtStatistikk: 'ja' },
+                {
+                    path: '/',
+                    maxAge: ETT_DØGN_I_SEKUNDER,
+                    sameSite: true,
+                }
+            );
+        }
+    }
+
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
     const callback = props.callBack ? props.callBack : noOperation;
 
@@ -57,34 +80,28 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     };
 
     const sendIaTjenesterMetrikker = () => {
-        kanSendeInnloggetIaTjenesteMetrikker(
-            cookies['samtalestotte-podlet']?.orgnr,
-            cookies['samtalestotte-podlet']?.altinnRettighet,
-            cookies.samtalestotte?.sendtStatistikk
-        ) &&
+        if (!kanSendeIaTjenesteMetrikker(cookies.samtalestotte?.sendtStatistikk)) {
+            return;
+        }
+
+        if (
+            kanSendeInnloggetIaTjenesteMetrikker(
+                cookies['samtalestotte-podlet']?.orgnr,
+                cookies['samtalestotte-podlet']?.altinnRettighet
+            )
+        ) {
             sendInnloggetIATjenesteMetrikk(
                 cookies['samtalestotte-podlet']?.orgnr,
                 cookies['samtalestotte-podlet']?.altinnRettighet
             ).then((erMetrikkSendt) => {
-                console.log('erMetrikkSendt:', erMetrikkSendt);
+                return setIaTjenesterMetrikkErSendt(erMetrikkSendt, setCookie);
             });
-        kanSendeUinnloggetIaTjenesteMetrikker(
-            cookies.samtalestotte?.sendtStatistikk
-        ) &&
+        } else {
             sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
-                if (erMetrikkSendt) {
-                    setCookie(
-                        'samtalestotte',
-                        { sendtStatistikk: 'ja' },
-                        {
-                            path: '/',
-                            maxAge: ETT_DØGN_I_SEKUNDER,
-                            sameSite: true,
-                        }
-                    );
-                }
+                return setIaTjenesterMetrikkErSendt(erMetrikkSendt, setCookie);
             });
-            antallForsøkSendTilIaTjenesterMetrikker++;
+        }
+        antallForsøkSendTilIaTjenesterMetrikker++;
     };
 
     useEffect(() => {
