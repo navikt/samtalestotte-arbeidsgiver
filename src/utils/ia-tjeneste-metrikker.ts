@@ -83,19 +83,6 @@ export const tilIsoDatoMedUtcTimezoneUtenMillis = (dato: Date): String => {
     return dato.toISOString().split('.')[0] + 'Z';
 };
 
-/*
-export const kanSendeInnloggetIaTjenesteMetrikker = (
-    orgnr: string,
-    altinnRettighet: string,
-    sendtStatistikk: string
-): Boolean => {
-    return (
-        orgnr !== undefined &&
-        altinnRettighet !== undefined && kanSendeIaTjenesteMetrikker(sendtStatistikk)
-    );
-};
-*/
-
 export const kanSendeInnloggetIaTjenesteMetrikker = (
     orgnr: string,
     altinnRettighet: string
