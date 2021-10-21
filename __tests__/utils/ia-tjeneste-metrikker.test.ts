@@ -127,6 +127,7 @@ const dummyResponse: Response = {
     status: 200,
     statusText: 'OK',
     text(): Promise<string> { return Promise.resolve(''); },
+    // @ts-ignore
     trailer: Promise.resolve(new Headers()),
     type: 'basic',
     url: ''
