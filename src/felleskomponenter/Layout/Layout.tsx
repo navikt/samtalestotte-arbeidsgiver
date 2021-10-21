@@ -20,6 +20,7 @@ import {
 } from '../../utils/fellesStiler';
 import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
 import { useCookies } from 'react-cookie';
+import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
 
 export const Layout = (props: {
     title: string;
@@ -31,16 +32,16 @@ export const Layout = (props: {
 }) => {
     const layoutContentRef = useRef<HTMLDivElement>(null);
     const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
-    /* eslint-disable @typescript-eslint/no-used-vars */
-    const [cookie, setCookie] = useCookies(['samtalestotte-podlet']);
+    const [cookies, setCookies] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
+
     useEffect(() => {
         let refUrl: string | null;
         if (window !== undefined) {
             if (new URLSearchParams(window.location.search).get('referer') !== null) {
                 refUrl = new URLSearchParams(window.location.search).get('referer');
             } else {
-                refUrl = cookie['samtalestotte-podlet']?.referrer
-                    ? cookie['samtalestotte-podlet']?.referrer
+                refUrl = cookies['samtalestotte-podlet']?.referrer
+                    ? cookies['samtalestotte-podlet']?.referrer
                     : '';
             }
             setTilbakeURL(
@@ -68,6 +69,12 @@ export const Layout = (props: {
             label: 'skriv-ut',
             funksjon: 'skriv-ut',
         });
+        sendIaTjenesterMetrikker(
+            cookies['samtalestotte-podlet']?.orgnr,
+            cookies['samtalestotte-podlet']?.altinnRettighet,
+            cookies.samtalestotte?.sendtStatistikk,
+            setCookies
+        );
     }
 
     return (

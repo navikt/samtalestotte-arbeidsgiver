@@ -11,7 +11,7 @@ import {
     kanSendeInnloggetIaTjenesteMetrikker,
     kanSendeIaTjenesteMetrikker,
     sendInnloggetIATjenesteMetrikk,
-    sendUinnloggetIATjenesteMetrikk,
+    sendUinnloggetIATjenesteMetrikk, sendIaTjenesterMetrikker,
 } from '../../utils/ia-tjeneste-metrikker';
 import { useCookies } from 'react-cookie';
 import { Cookie, CookieSetOptions } from 'universal-cookie';
@@ -40,35 +40,12 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const [erLest, setErLest] = useState<boolean>(false);
     const [panelKnapp, setPanelKnapp] = useState<HTMLElement | null>(null);
     const [hovedMeny, setHovedMeny] = useState<HTMLElement | null>(null);
-    const [cookies, setCookie] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
-
-    function setIaTjenesterMetrikkErSendt(
-        erMetrikkSendt: boolean,
-        lagreCookie: (
-            name: 'samtalestotte' | 'samtalestotte-podlet',
-            value: Cookie,
-            options?: CookieSetOptions
-        ) => void
-    ) {
-        if (erMetrikkSendt) {
-            lagreCookie(
-                'samtalestotte',
-                { sendtStatistikk: 'ja' },
-                {
-                    path: '/',
-                    maxAge: ETT_DØGN_I_SEKUNDER,
-                    sameSite: true,
-                }
-            );
-        }
-    }
+    const [cookies, setCookies] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
 
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
     const callback = props.callBack ? props.callBack : noOperation;
 
     const hasIcon = props.ikon !== null && props.ikon !== undefined;
-
-    let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
     const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
         if (props.panelLestSituasjon !== panelLestSituasjon) {
@@ -79,36 +56,17 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
         }
     };
 
-    const sendIaTjenesterMetrikker = () => {
-        if (!kanSendeIaTjenesteMetrikker(cookies.samtalestotte?.sendtStatistikk)) {
-            return;
-        }
-
-        if (
-            kanSendeInnloggetIaTjenesteMetrikker(
-                cookies['samtalestotte-podlet']?.orgnr,
-                cookies['samtalestotte-podlet']?.altinnRettighet
-            )
-        ) {
-            sendInnloggetIATjenesteMetrikk(
-                cookies['samtalestotte-podlet']?.orgnr,
-                cookies['samtalestotte-podlet']?.altinnRettighet
-            ).then((erMetrikkSendt) => {
-                return setIaTjenesterMetrikkErSendt(erMetrikkSendt, setCookie);
-            });
-        } else {
-            sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
-                return setIaTjenesterMetrikkErSendt(erMetrikkSendt, setCookie);
-            });
-        }
-        antallForsøkSendTilIaTjenesterMetrikker++;
-    };
-
     useEffect(() => {
         const timer = setTimeout(async () => {
             erÅpen && props.panelLestSituasjon !== 'lest' && toggleCallback('lest');
             erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
-            erÅpen && sendIaTjenesterMetrikker();
+            erÅpen &&
+                sendIaTjenesterMetrikker(
+                    cookies['samtalestotte-podlet']?.orgnr,
+                    cookies['samtalestotte-podlet']?.altinnRettighet,
+                    cookies.samtalestotte?.sendtStatistikk,
+                    setCookies
+                );
         }, 500);
         return () => clearTimeout(timer);
     }, [erÅpen]);
@@ -237,6 +195,7 @@ const panel = css`
     margin: 0;
     border: 1px solid;
     border-radius: 4px;
+
     :hover:not(:focus) {
         box-shadow: #a0a0a0 0 2px 1px 0;
         border-bottom: 1px solid;

@@ -1,3 +1,6 @@
+import {Cookie, CookieSetOptions} from "universal-cookie";
+import {ETT_DØGN_I_SEKUNDER} from "./konstanter";
+
 export interface IatjenesteMetrikk {
     type: String;
     kilde: String;
@@ -7,7 +10,57 @@ export interface InnloggetIatjenesteMetrikk extends IatjenesteMetrikk {
     orgnr: String;
     altinnRettighet: String;
 }
+
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
+
+const setIaTjenesterMetrikkErSendt = (
+    erMetrikkSendt: boolean,
+    lagreCookie: (
+        name: 'samtalestotte' | 'samtalestotte-podlet',
+        value: Cookie,
+        options?: CookieSetOptions
+    ) => void
+) => {
+    if (erMetrikkSendt) {
+        lagreCookie(
+            'samtalestotte',
+            { sendtStatistikk: 'ja' },
+            {
+                path: '/',
+                maxAge: ETT_DØGN_I_SEKUNDER,
+                sameSite: true,
+            }
+        );
+    }
+}
+
+export const sendIaTjenesterMetrikker = (
+    orgnr: string,
+    altinnRettighet: string,
+    sendtStatistikk: string,
+    lagreCookieFunksjon: (
+        name: 'samtalestotte' | 'samtalestotte-podlet',
+        value: Cookie,
+        options?: CookieSetOptions
+    ) => void
+) => {
+    if (!kanSendeIaTjenesteMetrikker(sendtStatistikk)) {
+        return;
+    }
+
+    if (kanSendeInnloggetIaTjenesteMetrikker(orgnr, altinnRettighet)) {
+        sendInnloggetIATjenesteMetrikk(orgnr, altinnRettighet).then((erMetrikkSendt) => {
+            return setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
+        });
+    } else {
+        sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
+            return setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
+        });
+    }
+    antallForsøkSendTilIaTjenesterMetrikker++;
+};
+
+
 const getIaTjenesterMetrikkerUrl = () => {
     if (typeof window === 'undefined') {
         return 'http://localhost:8080/ia-tjenester-metrikker';

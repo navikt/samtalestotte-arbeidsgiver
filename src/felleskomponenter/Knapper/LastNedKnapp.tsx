@@ -8,7 +8,7 @@ import { ETT_DØGN_I_SEKUNDER, SCREEN_SM_MIN } from '../../utils/konstanter';
 import {
     kanSendeInnloggetIaTjenesteMetrikker, kanSendeIaTjenesteMetrikker,
     sendInnloggetIATjenesteMetrikk,
-    sendUinnloggetIATjenesteMetrikk,
+    sendUinnloggetIATjenesteMetrikk, sendIaTjenesterMetrikker,
 } from '../../utils/ia-tjeneste-metrikker';
 import { useCookies } from 'react-cookie';
 import {Cookie, CookieSetOptions} from "universal-cookie";
@@ -19,58 +19,15 @@ export default function LastNedKnapp(props: {
     filnavn?: string;
     label: string;
 }) {
-    const [cookies, setCookie] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
-
-    let antallForsøkSendTilIaTjenesterMetrikker = 0;
-
-    function setIaTjenesterMetrikkErSendt(
-        erMetrikkSendt: boolean,
-        lagreCookie: (
-            name: 'samtalestotte' | 'samtalestotte-podlet',
-            value: Cookie,
-            options?: CookieSetOptions
-        ) => void
-    ) {
-        if (erMetrikkSendt) {
-            lagreCookie(
-                'samtalestotte',
-                { sendtStatistikk: 'ja' },
-                {
-                    path: '/',
-                    maxAge: ETT_DØGN_I_SEKUNDER,
-                    sameSite: true,
-                }
-            );
-        }
-    }
-
-    const sendIaTjenesterMetrikker = () => {
-        if (!kanSendeIaTjenesteMetrikker(cookies.samtalestotte?.sendtStatistikk)) {
-            return;
-        }
-
-        if (
-            kanSendeInnloggetIaTjenesteMetrikker(
-                cookies['samtalestotte-podlet']?.orgnr,
-                cookies['samtalestotte-podlet']?.altinnRettighet
-            )
-        ) {
-            sendInnloggetIATjenesteMetrikk(
-                cookies['samtalestotte-podlet']?.orgnr,
-                cookies['samtalestotte-podlet']?.altinnRettighet
-            ).then((erMetrikkSendt) => {
-                return setIaTjenesterMetrikkErSendt(erMetrikkSendt, setCookie);
-            });
-        } else {
-            sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
-                return setIaTjenesterMetrikkErSendt(erMetrikkSendt, setCookie);
-            });
-        }
-        antallForsøkSendTilIaTjenesterMetrikker++;
-    };
+    const [cookies, setCookies] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
 
     const loggKlikkPåLastNedKnapp = (label: string) => {
-        sendIaTjenesterMetrikker();
+        sendIaTjenesterMetrikker(
+            cookies['samtalestotte-podlet']?.orgnr,
+            cookies['samtalestotte-podlet']?.altinnRettighet,
+            cookies.samtalestotte?.sendtStatistikk,
+            setCookies
+        );
         logEvent('knapp', {
             label: label,
             funksjon: 'last-ned-fil',
