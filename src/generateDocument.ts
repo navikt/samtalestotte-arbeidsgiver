@@ -28,3 +28,5 @@ export const doc = new Document({
     ],
 });
 
+doc
+

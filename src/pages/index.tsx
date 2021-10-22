@@ -13,14 +13,18 @@ import { getMiljø } from '../utils/miljøUtils';
 import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
 import {largeScreenMarginSides3rem, paddingSides1rem} from '../utils/fellesStiler';
 import { hentReferrerFraUrl } from '../resources/urls';
-import {css} from "linaria";
 import classNames from "classnames";
-import {doc} from "../generateDocument";
 import {Packer} from "docx";
 import * as fs from "fs";
+import {generateDocX} from "../dokumentgenerator/docxGenerator";
+import {SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT} from "../resources/textContent";
+import {generateTxt} from "../dokumentgenerator/txtGenerator";
 
 const ETT_ÅR_I_SEKUNDER = 31536000;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
+
+const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
+const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
 
 const Home = (props: { page: PageProps }) => {
     const [cookies, setCookie] = useCookies(['samtalestotte']);
@@ -98,13 +102,9 @@ interface StaticProps {
 
 // NextJS kaller denne
 export const getStaticProps = async (): Promise<StaticProps> => {
-    //TODO generer riktig docx
-    const buffer = await Packer.toBuffer(doc)
-    fs.writeFileSync("public/hello.docx", buffer)
-
-    //TODO generer riktig txt
-    fs.writeFileSync("public/hello.txt", "SOME DATA")
-
+    const documentBuffer = await Packer.toBuffer(doc)
+    fs.writeFileSync("public/Samtalestøtte-Arbeidsgiver.docx", documentBuffer)
+    fs.writeFileSync("public/Samtalestøtte-Arbeidsgiver.txt", txt)
 
     const page = await getPageProps(
         'Samtalestøtte for arbeidsgiver',
