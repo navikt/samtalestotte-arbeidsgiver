@@ -10,8 +10,11 @@ import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
-import { sendIATjenesteMetrikk } from '../utils/ia-tjeneste-metrikker';
-import {largeScreenMarginSides3rem, paddingSides1rem} from '../utils/fellesStiler';
+import {
+    sendIATjenesteMetrikk,
+    sendInnloggetIATjenesteMetrikk,
+} from '../utils/ia-tjeneste-metrikker';
+import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
 import { hentReferrerFraUrl } from '../resources/urls';
 import classNames from "classnames";
 import {Packer} from "docx";
@@ -19,24 +22,38 @@ import * as fs from "fs";
 import {generateDocX} from "../dokumentgenerator/docxGenerator";
 import {SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT} from "../resources/textContent";
 import {generateTxt} from "../dokumentgenerator/txtGenerator";
+import classNames from 'classnames';
+import { Alert } from '@navikt/ds-react';
+import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
 
-const ETT_ÅR_I_SEKUNDER = 31536000;
+const ETT_DØGN_I_SEKUNDER = 86400;
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
 const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
 const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
 
 const Home = (props: { page: PageProps }) => {
-    const [cookies, setCookie] = useCookies(['samtalestotte']);
+    const [cookies, setCookie] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
     Sentry.init({
         dsn: 'https://97af8a51172e4f9bb74ac9c05920b1d2@sentry.gc.nav.no/77',
         environment: getMiljø(),
         enabled: getMiljø() !== 'local',
     });
 
-    useEffect(() => {
-        const referrer = hentReferrerFraUrl(window.location.href);
+    const hentReferrerFraCookies = () => {
+        return cookies['samtalestotte-podlet']?.referrer !== null
+            ? cookies['samtalestotte-podlet']?.referrer
+            : '';
+    };
 
+    const hentReferrer = () => {
+        return hentReferrerFraCookies()
+            ? hentReferrerFraCookies()
+            : hentReferrerFraUrl(window.location.href);
+    };
+
+    useEffect(() => {
+        const referrer = hentReferrer();
         const timer = setTimeout(async () => {
             await logEvent('sidevisning', {
                 url: 'samtalestotte-arbeidsgiver',
@@ -48,6 +65,17 @@ const Home = (props: { page: PageProps }) => {
 
     useEffect(() => {
         if (
+            cookies['samtalestotte-podlet']?.orgnr !== undefined &&
+            cookies['samtalestotte-podlet']?.altinnRettighet !== undefined
+        ) {
+            sendInnloggetIATjenesteMetrikk(
+                cookies['samtalestotte-podlet']?.orgnr,
+                cookies['samtalestotte-podlet']?.altinnRettighet
+            ).then((erMetrikkSendt) => {
+                console.log('erMetrikkSendt:', erMetrikkSendt);
+            });
+        }
+        if (
             cookies.samtalestotte?.sendtStatistikk === undefined &&
             antallForsøkSendTilIaTjenesterMetrikker < 5
         ) {
@@ -58,7 +86,7 @@ const Home = (props: { page: PageProps }) => {
                         { sendtStatistikk: 'ja' },
                         {
                             path: '/',
-                            maxAge: ETT_ÅR_I_SEKUNDER,
+                            maxAge: ETT_DØGN_I_SEKUNDER,
                             sameSite: true,
                         }
                     );
@@ -82,10 +110,27 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                     logEvent={logEvent}
                 >
-                    <HvorforBrukeTidPaaSamtaler className={classNames(paddingSides1rem, largeScreenMarginSides3rem)} />
-                    <SlikSkaperDuGodeSamtaler className={classNames(paddingSides1rem)}/>
-                    <MerInspirasjonOgGodeGrep className={classNames(paddingSides1rem, largeScreenMarginSides3rem)} />
-                    <VissteDuAt className={classNames(paddingSides1rem, largeScreenMarginSides3rem)} />
+                    {/* TODO: Alert for psykisk helse kan fjernes etter 10.11.2021 */}
+                    <Alert variant={'info'} id={'alertboksPsykiskHelse'} className={marginTop1Rem}>
+                        Vi har laget noen råd for å snakke om psykisk helse på arbeidsplassen.&nbsp;
+                        <LoggbarLenke
+                            href={
+                                '/samtalestotte#ekspanderbart-infopanel__psykiskHelsePåArbeidsplassen-base'
+                            }
+                        >
+                            Klikk her for å lese mer.
+                        </LoggbarLenke>
+                    </Alert>
+                    <HvorforBrukeTidPaaSamtaler
+                        className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
+                    />
+                    <SlikSkaperDuGodeSamtaler className={classNames(paddingSides1rem)} />
+                    <MerInspirasjonOgGodeGrep
+                        className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
+                    />
+                    <VissteDuAt
+                        className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
+                    />
                 </Layout>
             </main>
             <footer />

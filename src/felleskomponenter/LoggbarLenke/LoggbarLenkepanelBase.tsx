@@ -1,5 +1,5 @@
-import React, {FunctionComponent, ReactNode} from 'react';
-import { LinkPanel } from '@navikt/ds-react'
+import React, { FunctionComponent, ReactNode } from 'react';
+import { LinkPanel } from '@navikt/ds-react';
 import logEvent from '../../amplitude/amplitude';
 
 type LoggbarLenkeProps = {
@@ -26,7 +26,7 @@ const LoggbarLenkepanelBase: FunctionComponent<LoggbarLenkeProps> = ({
     };
     return (
         <LinkPanel onClick={() => logLenke(href, lenketekst)} href={href} className={className}>
-            {children}
+            <LinkPanel.Title>{children}</LinkPanel.Title>
         </LinkPanel>
     );
 };

@@ -8,15 +8,15 @@ import {
     marginTop0Rem,
     marginTop4Rem,
 } from '../utils/fellesStiler';
-import { Title } from '@navikt/ds-react';
+import { Heading } from '@navikt/ds-react';
 import classNames from 'classnames';
 
 const VissteDuAt = ({ className }: { className?: string }) => {
     return (
         <div className={classNames(visteDuContainer, marginTop4Rem, breakBeforePage, className)}>
-            <Title className={visteDuHeader} size={'m'} level={3}>
+            <Heading className={visteDuHeader} size={'medium'} level={'3'}>
                 Visste du at NAV hjelper virksomheter med å forebygge sykefravær?
-            </Title>
+            </Heading>
             <Information className={visteDuIcon} width={'61px'} height={'61px'} />
             <p className={classNames(visteDuParagraf, marginTop0Rem)}>
                 NAV hjelper virksomheter med å forebygge sykefravær. Du får digitale tjenester og

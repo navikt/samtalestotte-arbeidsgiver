@@ -1,4 +1,4 @@
-import { Title } from '@navikt/ds-react'
+import { Heading } from '@navikt/ds-react'
 import { PageBannerSVG } from './PageBannerSVG';
 import { css } from 'linaria';
 import { SCREEN_MD_MIN, SCREEN_SM_MIN } from '../../utils/konstanter';
@@ -13,9 +13,9 @@ export const PageBanner = (props: {
         <div className={pageBanner}>
             <div className={pageBannerInnhold}>
                 <div className={pageBannerTekstOgKontekst}>
-                    <Title level={1} size={'2xl'} className={pageBannerTekst}>
+                    <Heading level={"1"} size={'2xlarge'} className={pageBannerTekst}>
                         {props.title}
-                    </Title>
+                    </Heading>
                 </div>
                 <PageBannerSVG className={pageBannerSvg}/>
             </div>

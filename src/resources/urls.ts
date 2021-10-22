@@ -24,6 +24,10 @@ export const GODE_GREP_FOR_AA_BYGGE_RELASJONER =
 export const ENKLE_TIPS_FOR_DIGITALE_SAMTALER =
     '#ekspanderbart-infopanel__enkleTipsForDigitaleSamtaler-base';
 export const GJENNOMFOR_SAMTALEN = '#GjennomforSamtalen';
+export const OPPFØLGING_ANSATTE_SOM_SLITTER_PSYKISK =
+    'https://www.nav.no/no/bedrift/oppfolging/har-du-ansatte-som-sliter-psykisk';
+export const FILM_OM_PSYKISK_HELSE = 'https://vimeo.com/626190972';
+export const IDEBANKEN_PSYKISK_HELSE = 'https://mag.idebanken.org/psykisk-helse/';
 
 export const listeAvTillatteDomener = [
     TILBAKE,

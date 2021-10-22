@@ -8,7 +8,7 @@ import {
     TILRETTELEGGING,
 } from '../../resources/urls';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
-import { Title } from '@navikt/ds-react';
+import { Heading } from '@navikt/ds-react';
 import {
     graAvrundetBoks, horizontalLine,
     infoPanelKolonner,
@@ -29,9 +29,9 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
             panelLestSituasjon={'ulest'}
         >
             <div className={marginTop1Rem}>
-                <Title size={'m'} level={3}>
+                <Heading size={'medium'} level={'3'}>
                     Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.
-                </Title>
+                </Heading>
                 <p>
                     Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i
                     samtalen med gjensidige forventninger til hva som er mulig.
@@ -59,12 +59,12 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                         </strong>
                     </li>
                 </ul>
-                <Title className={marginBottom025rem} size={'s'} level={4}>Dette kan du gjøre:</Title>
+                <Heading className={marginBottom025rem} size={'small'} level={'4'}>Dette kan du gjøre:</Heading>
                 <div className={infoPanelKolonner}>
                     <div className={graAvrundetBoks}>
-                        <Title size={'s'} level={4}>
+                        <Heading size={'small'} level={'4'}>
                             på kort sikt:
-                        </Title>
+                        </Heading>
                         <ul className={marginTop0Rem}>
                             <li className={marginBottom2Rem}>
                                 Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for
@@ -78,9 +78,9 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                         </ul>
                     </div>
                     <div className={graAvrundetBoks}>
-                        <Title size={'s'} level={4}>
+                        <Heading size={'small'} level={'4'}>
                             over tid og som kontinuerlig arbeid:
-                        </Title>
+                        </Heading>
                         <ul className={marginTop0Rem}>
                             <li className={marginBottom2Rem}>
                                 Lag en liste med tilretteleggingsmuligheter{' '}
@@ -94,15 +94,15 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
 
                 <div className={classNames(horizontalLine, marginTop3Rem, marginBottom3Rem)} />
 
-                <Title size={'m'} level={3}>Lær mer om tilrettelegging</Title>
-                <Title className={marginBottom025rem} size={'s'} level={4}>
+                <Heading size={'medium'} level={'3'}>Lær mer om tilrettelegging</Heading>
+                <Heading className={marginBottom025rem} size={'small'} level={'4'}>
                     Dette kan du gjøre:
-                </Title>
+                </Heading>
                 <div className={classNames(infoPanelKolonner, marginBottom2Rem)}>
                     <div className={graAvrundetBoks}>
-                        <Title size={'s'} level={4}>
+                        <Heading size={'small'} level={'4'}>
                             på kort sikt:
-                        </Title>
+                        </Heading>
                         <ul>
                             <li className={marginBottom2Rem}>
                                 <LoggbarLenke href={TILRETTELEGGING}>
@@ -128,9 +128,9 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                         </ul>
                     </div>
                     <div className={graAvrundetBoks}>
-                        <Title className={marginBottom0Rem} size={'s'} level={4}>
+                        <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
                             over tid og som kontinuerlig arbeid:
-                        </Title>
+                        </Heading>
                         <ul>
                             <li className={marginBottom2Rem}>
                                 Lag en plan for å lære mer.

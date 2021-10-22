@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import pretty from 'pretty';
 import { EkspanderbartInfopanel } from '../../../src/felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 
 let container: HTMLDivElement | null;
@@ -37,7 +36,7 @@ test('Should expand and display innhold when clicked', () => {
         );
     });
 
-    let head = container?.getElementsByClassName('navds-accordion__button').item(0);
+    let head = container?.getElementsByClassName('navds-accordion__header').item(0);
     let body = container?.getElementsByClassName('navds-accordion__content').item(0);
 
     expect(body).toBeNull();
