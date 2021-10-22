@@ -6,7 +6,15 @@ import logEvent from '../../amplitude/amplitude';
 import Lest from '../Ikoner/Lest';
 import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
 import { css } from 'linaria';
-import { SCREEN_SM_MIN } from '../../utils/konstanter';
+import { ETT_DØGN_I_SEKUNDER, SCREEN_SM_MIN } from '../../utils/konstanter';
+import {
+    kanSendeInnloggetIaTjenesteMetrikker,
+    kanSendeIaTjenesteMetrikker,
+    sendInnloggetIATjenesteMetrikk,
+    sendUinnloggetIATjenesteMetrikk, sendIaTjenesterMetrikker,
+} from '../../utils/ia-tjeneste-metrikker';
+import { useCookies } from 'react-cookie';
+import { Cookie, CookieSetOptions } from 'universal-cookie';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
@@ -32,6 +40,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const [erLest, setErLest] = useState<boolean>(false);
     const [panelKnapp, setPanelKnapp] = useState<HTMLElement | null>(null);
     const [hovedMeny, setHovedMeny] = useState<HTMLElement | null>(null);
+    const [cookies, setCookies] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
 
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
     const callback = props.callBack ? props.callBack : noOperation;
@@ -51,6 +60,13 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
         const timer = setTimeout(async () => {
             erÅpen && props.panelLestSituasjon !== 'lest' && toggleCallback('lest');
             erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
+            erÅpen &&
+                sendIaTjenesterMetrikker(
+                    cookies['samtalestotte-podlet']?.orgnr,
+                    cookies['samtalestotte-podlet']?.altinnRettighet,
+                    cookies.samtalestotte?.sendtStatistikk,
+                    setCookies
+                );
         }, 500);
         return () => clearTimeout(timer);
     }, [erÅpen]);
@@ -179,6 +195,7 @@ const panel = css`
     margin: 0;
     border: 1px solid;
     border-radius: 4px;
+
     :hover:not(:focus) {
         box-shadow: #a0a0a0 0 2px 1px 0;
         border-bottom: 1px solid;

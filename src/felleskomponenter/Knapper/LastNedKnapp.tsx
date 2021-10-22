@@ -4,7 +4,14 @@ import logEvent from '../../amplitude/amplitude';
 import classNames from 'classnames';
 import { Link } from '@navikt/ds-react';
 import React from 'react';
-import {SCREEN_SM_MIN} from "../../utils/konstanter";
+import { ETT_DØGN_I_SEKUNDER, SCREEN_SM_MIN } from '../../utils/konstanter';
+import {
+    kanSendeInnloggetIaTjenesteMetrikker, kanSendeIaTjenesteMetrikker,
+    sendInnloggetIATjenesteMetrikk,
+    sendUinnloggetIATjenesteMetrikk, sendIaTjenesterMetrikker,
+} from '../../utils/ia-tjeneste-metrikker';
+import { useCookies } from 'react-cookie';
+import {Cookie, CookieSetOptions} from "universal-cookie";
 
 export default function LastNedKnapp(props: {
     knappetekst: string;
@@ -12,7 +19,15 @@ export default function LastNedKnapp(props: {
     filnavn?: string;
     label: string;
 }) {
+    const [cookies, setCookies] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
+
     const loggKlikkPåLastNedKnapp = (label: string) => {
+        sendIaTjenesterMetrikker(
+            cookies['samtalestotte-podlet']?.orgnr,
+            cookies['samtalestotte-podlet']?.altinnRettighet,
+            cookies.samtalestotte?.sendtStatistikk,
+            setCookies
+        );
         logEvent('knapp', {
             label: label,
             funksjon: 'last-ned-fil',
