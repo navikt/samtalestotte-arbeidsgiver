@@ -50,11 +50,11 @@ export const sendIaTjenesterMetrikker = (
 
     if (kanSendeInnloggetIaTjenesteMetrikker(orgnr, altinnRettighet)) {
         sendInnloggetIATjenesteMetrikk(orgnr, altinnRettighet).then((erMetrikkSendt) => {
-            return setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
+            setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
         });
     } else {
         sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
-            return setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
+            setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
         });
     }
     antallForsøkSendTilIaTjenesterMetrikker++;
