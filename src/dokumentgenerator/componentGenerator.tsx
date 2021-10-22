@@ -1,4 +1,4 @@
-import {Title} from "@navikt/ds-react";
+import {Heading} from "@navikt/ds-react";
 import {v4 as uuidv4} from "uuid";
 import {ReactNode} from "react";
 import classNames from "classnames";
@@ -84,17 +84,17 @@ const mapComponents = (elements: (string | object)[]): ReactNode[] => {
 
 const mapBigHeader = (content: string, id?: string) => {
     const unikId = id? id : camelCase(content)
-    return <Title id={unikId} size={'l'} level={2} key={uuidv4()}>{content}</Title>
+    return <Heading id={unikId} size={'large'} level={"2"} key={uuidv4()}>{content}</Heading>
 }
 
 const mapMediumHeader = (content: string, id?: string) => {
     const unikId = id? id : camelCase(content)
-    return <Title id={unikId} size={'m'} level={3} key={uuidv4()}>{content}</Title>
+    return <Heading id={unikId} size={'medium'} level={"3"} key={uuidv4()}>{content}</Heading>
 }
 
 const mapSmallHeader = (content: string, id?: string) => {
     const unikId = id? id : camelCase(content)
-    return <Title id={unikId} size={'s'} level={4} key={uuidv4()}>{content}</Title>
+    return <Heading id={unikId} size={'small'} level={"4"} key={uuidv4()}>{content}</Heading>
 }
 
 const mapParagraph = (content: ReactNode) => {

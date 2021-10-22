@@ -22,7 +22,6 @@ import * as fs from "fs";
 import {generateDocX} from "../dokumentgenerator/docxGenerator";
 import {SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT} from "../resources/textContent";
 import {generateTxt} from "../dokumentgenerator/txtGenerator";
-import classNames from 'classnames';
 import { Alert } from '@navikt/ds-react';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
 
