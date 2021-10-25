@@ -9,6 +9,8 @@ import {
     infoPanelKolonner,
     marginBottom1Rem,
     marginTop1Rem,
+    marginTop2Rem,
+    marginTop4Rem,
 } from '../utils/fellesStiler';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { css } from 'linaria';
@@ -96,7 +98,13 @@ const mapBigHeader = (content: string, id?: string) => {
 const mapMediumHeader = (content: string, id?: string) => {
     const unikId = id ? id : camelCase(content);
     return (
-        <Heading id={unikId} size={'medium'} level={'3'} key={uuidv4()}>
+        <Heading
+            id={unikId}
+            size={'medium'}
+            level={'3'}
+            key={uuidv4()}
+            className={classNames(marginTop4Rem, marginBottom1Rem)}
+        >
             {content}
         </Heading>
     );
@@ -105,7 +113,13 @@ const mapMediumHeader = (content: string, id?: string) => {
 const mapSmallHeader = (content: string, id?: string) => {
     const unikId = id ? id : camelCase(content);
     return (
-        <Heading id={unikId} size={'small'} level={'4'} key={uuidv4()}>
+        <Heading
+            id={unikId}
+            size={'small'}
+            level={'4'}
+            key={uuidv4()}
+            className={classNames(marginTop2Rem, marginBottom1Rem)}
+        >
             {content}
         </Heading>
     );
