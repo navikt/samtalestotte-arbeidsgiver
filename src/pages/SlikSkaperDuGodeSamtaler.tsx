@@ -1,15 +1,11 @@
-import {
-    breakBeforePage,
-    marginTop3Rem,
-} from '../utils/fellesStiler';
+import { breakBeforePage, marginTop3Rem } from '../utils/fellesStiler';
 import classNames from 'classnames';
 import { css } from 'linaria';
 import { SCREEN_SM_MIN } from '../utils/konstanter';
-import {generateComponents} from "../dokumentgenerator/componentGenerator";
-import {SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT} from "../resources/textContent";
+import { generateComponents } from '../dokumentgenerator/componentGenerator';
+import { SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT } from '../resources/textContent';
 
-
-const elements = generateComponents(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
+const elements = generateComponents(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
 
 const SlikSkaperDuGodeSamtaler = ({ className }: { className?: string }) => {
     return (
