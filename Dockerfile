@@ -13,6 +13,10 @@ COPY .env .env
 COPY .babelrc .babelrc
 COPY tsconfig.json tsconfig.json
 
+USER root
+RUN chown -R apprunner /var/server/public
+USER apprunner
+
 RUN yarn install --frozen-lockfile
 RUN yarn build
 
