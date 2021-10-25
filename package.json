@@ -27,7 +27,7 @@
     "cheerio": "^1.0.0-rc.5",
     "classnames": "^2.3.1",
     "express": "^4.17.1",
-    "less": "^4.1.1",
+    "less": "^4.1.2",
     "linaria": "^2.1.0",
     "lodash.throttle": "^4.1.1",
     "next": "^11.1.2",
