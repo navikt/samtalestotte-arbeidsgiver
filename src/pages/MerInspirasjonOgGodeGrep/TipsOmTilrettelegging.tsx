@@ -21,13 +21,12 @@ import {
 } from '../../utils/fellesStiler';
 import classNames from 'classnames';
 
-const TipsOmTilrettelegging = ({ callback }: InfoPanelProps) => {
+const TipsOmTilrettelegging = (props: InfoPanelProps) => {
     return (
         <EkspanderbartInfopanel
             unikId={'tipsOmTilrettelegging'}
             tittel={'Tips om tilrettelegging'}
             panelLestSituasjon={'ulest'}
-            callBack={callback}
         >
             <div className={marginTop1Rem}>
                 <Heading size={'medium'} level={'3'}>

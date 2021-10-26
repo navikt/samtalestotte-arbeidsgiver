@@ -1,4 +1,3 @@
-import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import {EkspanderbartInfopanel} from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import {
     graAvrundetBoks,
@@ -15,13 +14,12 @@ import {
 } from '../../resources/urls';
 import classNames from 'classnames';
 
-const EnkleTipsForDigitaleSamtaler = ({callback}: InfoPanelProps) => {
+const PsykiskHelsePåArbeidsplassen = () => {
     return (
         <EkspanderbartInfopanel
             unikId={'psykiskHelsePåArbeidsplassen'}
             tittel={'Psykisk helse på arbeidsplassen'}
             panelLestSituasjon={'ulest'}
-            callBack={callback}
         >
             <div className={marginTop1Rem}>
                 <Heading size={'medium'} level={'3'}>
@@ -123,4 +121,4 @@ const EnkleTipsForDigitaleSamtaler = ({callback}: InfoPanelProps) => {
     );
 };
 
-export default EnkleTipsForDigitaleSamtaler;
+export default PsykiskHelsePåArbeidsplassen;

@@ -5,12 +5,11 @@ import {marginBottom0Rem, marginTop0Rem, marginTop1Rem} from '../../utils/felles
 import classNames from "classnames";
 
 
-const NaarKanEnSamtaleVaereAktuelt = ({callback}: InfoPanelProps) => {
+const NaarKanEnSamtaleVaereAktuelt = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         unikId={'naarKanEnsamtaleVaereAktuelt'}
         tittel={'Når kan en samtale være aktuelt?'}
         panelLestSituasjon={'ulest'}
-        callBack={callback}
         ikon={<ChatDoubleBubble width={"44px"} height={"44px"}/>}
         lestIkon={<ChatDoubleBubble width={"44px"} height={"44px"}/>}
     >

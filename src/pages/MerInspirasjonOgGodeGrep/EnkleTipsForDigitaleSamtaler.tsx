@@ -2,12 +2,11 @@ import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import {marginTop0Rem, marginTop1Rem} from "../../utils/fellesStiler";
 
-const EnkleTipsForDigitaleSamtaler = ({callback}: InfoPanelProps) => {
+const EnkleTipsForDigitaleSamtaler = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         unikId={"enkleTipsForDigitaleSamtaler"}
         tittel={"Enkle tips for digitale samtaler"}
         panelLestSituasjon={"ulest"}
-        callBack={callback}
     >
         <div className={marginTop1Rem}>
             <ul className={marginTop0Rem}>

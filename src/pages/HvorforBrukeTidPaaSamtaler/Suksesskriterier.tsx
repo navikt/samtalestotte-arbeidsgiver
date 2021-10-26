@@ -4,11 +4,10 @@ import Lightbulb from '../../felleskomponenter/Ikoner/Lightbulb';
 import {marginBottom0Rem, marginTop0Rem, marginTop1Rem} from '../../utils/fellesStiler';
 import { Heading } from '@navikt/ds-react';
 
-const Suksesskriterier = ({ callback }: InfoPanelProps) => {
+const Suksesskriterier = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
         tittel={'Suksesskriterier'}
         unikId={'suksesskriterier'}
-        callBack={callback}
         ikon={<Lightbulb width={"44px"} height={"44px"}/>}
         lestIkon={<Lightbulb width={"44px"} height={"44px"}/>}
         panelLestSituasjon={"ulest"}

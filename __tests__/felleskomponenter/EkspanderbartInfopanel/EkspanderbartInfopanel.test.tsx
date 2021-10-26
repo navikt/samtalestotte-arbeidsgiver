@@ -29,7 +29,6 @@ test('Should expand and display innhold when clicked', () => {
                 unikId={'RenderTest'}
                 tittel={'Test title'}
                 panelLestSituasjon={undefined}
-                callBack={() => {}}
             >
                 Test Child
             </EkspanderbartInfopanel>,
@@ -65,41 +64,4 @@ test('Should expand and display innhold when clicked', () => {
     body = container?.getElementsByClassName('navds-accordion__content').item(0);
 
     expect(body).toBeNull();
-});
-
-test('should use callback after 500ms delay on  click', async () => {
-    const callback = jest.fn();
-
-    act(() => {
-        ReactDOM.render(
-            <EkspanderbartInfopanel
-                unikId={'RenderTest'}
-                tittel={'Test title'}
-                panelLestSituasjon={'ulest'}
-                callBack={callback}
-            >
-                Test Child
-            </EkspanderbartInfopanel>,
-            container
-        );
-    });
-    expect(callback).not.toHaveBeenCalled();
-
-    let head = container?.getElementsByClassName('navds-accordion__header').item(0);
-
-    act(() => {
-        if (head !== null) {
-            head?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-        } else {
-            fail();
-        }
-    });
-
-    expect(callback).not.toHaveBeenCalled();
-
-    act(() => {
-        jest.advanceTimersByTime(500);
-    });
-
-    expect(callback).toHaveBeenCalled();
 });

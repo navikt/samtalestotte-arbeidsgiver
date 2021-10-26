@@ -12,9 +12,17 @@ import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
 import { hentReferrerFraUrl } from '../resources/urls';
-import classNames from 'classnames';
+import classNames from "classnames";
+import {Packer} from "docx";
+import * as fs from "fs";
+import {generateDocX} from "../dokumentgenerator/docxGenerator";
+import {SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT} from "../resources/textContent";
+import {generateTxt} from "../dokumentgenerator/txtGenerator";
 import { Alert } from '@navikt/ds-react';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
+
+const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
+const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
 
 const Home = (props: { page: PageProps }) => {
     const [cookies] = useCookies(['samtalestotte-podlet']);
@@ -98,6 +106,10 @@ interface StaticProps {
 
 // NextJS kaller denne
 export const getStaticProps = async (): Promise<StaticProps> => {
+    const documentBuffer = await Packer.toBuffer(doc)
+    fs.writeFileSync("public/Samtalestøtte-Arbeidsgiver.docx", documentBuffer)
+    fs.writeFileSync("public/Samtalestøtte-Arbeidsgiver.txt", txt)
+
     const page = await getPageProps(
         'Samtalestøtte for arbeidsgiver',
         'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.'

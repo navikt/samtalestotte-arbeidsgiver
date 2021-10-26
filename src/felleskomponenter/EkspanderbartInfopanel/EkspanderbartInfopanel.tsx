@@ -28,10 +28,7 @@ export interface EkspanderbartInfopanelProps {
     panelLestSituasjon: PanelLestSituasjon;
     ikon?: ReactNode;
     lestIkon?: ReactNode;
-    callBack?: EkspanderbartCallback;
 }
-
-const noOperation = () => {};
 
 export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelProps> = (
     props: EkspanderbartInfopanelProps
@@ -43,22 +40,12 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const [cookies, setCookies] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
 
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
-    const callback = props.callBack ? props.callBack : noOperation;
 
     const hasIcon = props.ikon !== null && props.ikon !== undefined;
 
-    const toggleCallback = (panelLestSituasjon: PanelLestSituasjon) => {
-        if (props.panelLestSituasjon !== panelLestSituasjon) {
-            setErLest(true);
-            callback(panelLestSituasjon);
-        } else {
-            callback(undefined);
-        }
-    };
-
     useEffect(() => {
         const timer = setTimeout(async () => {
-            erÅpen && props.panelLestSituasjon !== 'lest' && toggleCallback('lest');
+            erÅpen && props.panelLestSituasjon !== 'lest' && setErLest(true);
             erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
             erÅpen &&
                 sendIaTjenesterMetrikker(
