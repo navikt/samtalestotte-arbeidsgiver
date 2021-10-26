@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
-import { hentReferrerFraUrl } from '../resources/urls';
+import { hentReferrerApplikasjonFraUrl } from '../resources/urls';
 import classNames from "classnames";
 import {Packer} from "docx";
 import * as fs from "fs";
@@ -32,24 +32,26 @@ const Home = (props: { page: PageProps }) => {
         enabled: getMiljø() !== 'local',
     });
 
-    const hentReferrerFraCookies = () => {
+    const hentReferrerUrlFraCookies = () => {
         return cookies['samtalestotte-podlet']?.referrer !== null
             ? cookies['samtalestotte-podlet']?.referrer
             : '';
     };
 
-    const hentReferrer = () => {
-        return hentReferrerFraCookies()
-            ? hentReferrerFraCookies()
-            : hentReferrerFraUrl(window.location.href);
+    const hentReferrerApplikasjon = () => {
+        const referrerUrlFraCookies = hentReferrerUrlFraCookies();
+
+        return referrerUrlFraCookies
+            ? hentReferrerApplikasjonFraUrl(referrerUrlFraCookies)
+            : hentReferrerApplikasjonFraUrl(window.location.href);
     };
 
     useEffect(() => {
-        const referrer = hentReferrer();
+        const referrerApplikasjon = hentReferrerApplikasjon();
         const timer = setTimeout(async () => {
             await logEvent('sidevisning', {
                 url: 'samtalestotte-arbeidsgiver',
-                internal_referrer: referrer,
+                internal_referrer: referrerApplikasjon,
             });
         }, 500);
         return () => clearTimeout(timer);

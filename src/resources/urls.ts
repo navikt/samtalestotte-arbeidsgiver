@@ -48,12 +48,25 @@ export const erTilbakeURLTillat = (refUrl: string): boolean => {
     );
 };
 
-/**
- * Leser ut "referer" fra URL-er som eksplisitt inneholder dette (på formatet "referer=http(s)://<domene>/<referer>...")
- * Eksempel: Input "https://nav.no?referer=http://hei.com/X/Y" returnerer "X"
- *
- * @param url hvor referer leses ut fra. Undefined reurneres hvis ingen referer (eller referrer) kan finnes.
- */
-export const hentReferrerFraUrl = (url: string): string | undefined => {
-    return url.split(/(?:referer|referrer)=(?:http|https):\/\//)?.[1]?.split(/[\/?]/)?.[1];
+export const hentReferrerApplikasjonFraUrl = (url: string): string | undefined => {
+    const referrerUtenDomene = url.split(/(?:referer|referrer)=(?:http|https):\/\//)?.[1]?.split(/[\/?]/)?.[1];
+
+    if (referrerUtenDomene === undefined) {
+        return undefined
+    }
+    const kjenteApplikasjoner = [
+        "oppfolgingsplanarbeidsgiver",
+        "forebygge-sykefravaer",
+        "sykefravarsstatistikk",
+    ]
+
+    let resultat = "UKJENT_REFERRER";
+    for (let app of kjenteApplikasjoner) {
+        if (referrerUtenDomene.startsWith(app)) {
+            resultat = app;
+            break;
+        }
+    }
+
+    return resultat;
 };
