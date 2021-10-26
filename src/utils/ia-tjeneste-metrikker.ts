@@ -1,16 +1,68 @@
+import {Cookie, CookieSetOptions} from "universal-cookie";
+import {ETT_DØGN_I_SEKUNDER} from "./konstanter";
+
 export interface IatjenesteMetrikk {
     type: String;
     kilde: String;
     tjenesteMottakkelsesdato: String;
 }
-export interface InnloggetIatjenesteMetrikk extends IatjenesteMetrikk{
+export interface InnloggetIatjenesteMetrikk extends IatjenesteMetrikk {
     orgnr: String;
     altinnRettighet: String;
 }
 
+let antallForsøkSendTilIaTjenesterMetrikker = 0;
+
+const setIaTjenesterMetrikkErSendt = (
+    erMetrikkSendt: boolean,
+    lagreCookie: (
+        name: 'samtalestotte' | 'samtalestotte-podlet',
+        value: Cookie,
+        options?: CookieSetOptions
+    ) => void
+) => {
+    if (erMetrikkSendt) {
+        lagreCookie(
+            'samtalestotte',
+            { sendtStatistikk: 'ja' },
+            {
+                path: '/',
+                maxAge: ETT_DØGN_I_SEKUNDER,
+                sameSite: true,
+            }
+        );
+    }
+}
+
+export const sendIaTjenesterMetrikker = (
+    orgnr: string,
+    altinnRettighet: string,
+    sendtStatistikk: string,
+    lagreCookieFunksjon: (
+        name: 'samtalestotte' | 'samtalestotte-podlet',
+        value: Cookie,
+        options?: CookieSetOptions
+    ) => void
+) => {
+    if (!kanSendeIaTjenesteMetrikker(sendtStatistikk)) {
+        return;
+    }
+
+    if (kanSendeInnloggetIaTjenesteMetrikker(orgnr, altinnRettighet)) {
+        sendInnloggetIATjenesteMetrikk(orgnr, altinnRettighet).then((erMetrikkSendt) => {
+            setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
+        });
+    } else {
+        sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
+            setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
+        });
+    }
+    antallForsøkSendTilIaTjenesterMetrikker++;
+};
+
 
 const getIaTjenesterMetrikkerUrl = () => {
-    if (typeof window === "undefined") {
+    if (typeof window === 'undefined') {
         return 'http://localhost:8080/ia-tjenester-metrikker';
     }
 
@@ -28,10 +80,24 @@ const iaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/uinnlogget/mott
 const innloggetIaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/innlogget/forenklet/mottatt-iatjeneste`;
 
 export const tilIsoDatoMedUtcTimezoneUtenMillis = (dato: Date): String => {
-    return dato.toISOString().split('.')[0] + "Z";
-}
+    return dato.toISOString().split('.')[0] + 'Z';
+};
 
-export const sendIATjenesteMetrikk = async () => {
+export const kanSendeInnloggetIaTjenesteMetrikker = (
+    orgnr: string,
+    altinnRettighet: string
+): Boolean => {
+    return (
+        orgnr !== undefined &&
+        altinnRettighet !== undefined
+    );
+};
+
+export const kanSendeIaTjenesteMetrikker = (sendtStatistikk: string): Boolean =>
+    (sendtStatistikk === undefined || !Boolean(sendtStatistikk)) &&
+    antallForsøkSendTilIaTjenesterMetrikker < 5;
+
+export const sendUinnloggetIATjenesteMetrikk = async () => {
     const iaTjenesteMetrikk: IatjenesteMetrikk = {
         kilde: 'SAMTALESTØTTE',
         type: 'DIGITAL_IA_TJENESTE',
@@ -56,7 +122,7 @@ export const sendIATjenesteMetrikk = async () => {
         return false;
     }
 };
-export const sendInnloggetIATjenesteMetrikk = async (orgnr:String, altinnRettighet: String) => {
+export const sendInnloggetIATjenesteMetrikk = async (orgnr: String, altinnRettighet: String) => {
     const innloggetIaTjenesteMetrikk: InnloggetIatjenesteMetrikk = {
         kilde: 'SAMTALESTØTTE',
         type: 'DIGITAL_IA_TJENESTE',
@@ -78,7 +144,7 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr:String, altinnRettigh
         // @ts-ignore
         const fetchResponse = await fetch(`${innloggetIaTjenesterMetrikkerAPI}`, settings);
         const data = await fetchResponse.json();
-        console.log("logging data: ", data);
+        console.log('logging data: ', data);
         return data.status === 'created';
     } catch (e) {
         return false;

@@ -10,10 +10,6 @@ import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
-import {
-    sendIATjenesteMetrikk,
-    sendInnloggetIATjenesteMetrikk,
-} from '../utils/ia-tjeneste-metrikker';
 import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
 import { hentReferrerFraUrl } from '../resources/urls';
 import classNames from "classnames";
@@ -25,14 +21,11 @@ import {generateTxt} from "../dokumentgenerator/txtGenerator";
 import { Alert } from '@navikt/ds-react';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
 
-const ETT_DØGN_I_SEKUNDER = 86400;
-let antallForsøkSendTilIaTjenesterMetrikker = 0;
-
 const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
 const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
 
 const Home = (props: { page: PageProps }) => {
-    const [cookies, setCookie] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
+    const [cookies] = useCookies(['samtalestotte-podlet']);
     Sentry.init({
         dsn: 'https://97af8a51172e4f9bb74ac9c05920b1d2@sentry.gc.nav.no/77',
         environment: getMiljø(),
@@ -60,39 +53,6 @@ const Home = (props: { page: PageProps }) => {
             });
         }, 500);
         return () => clearTimeout(timer);
-    }, []);
-
-    useEffect(() => {
-        if (
-            cookies['samtalestotte-podlet']?.orgnr !== undefined &&
-            cookies['samtalestotte-podlet']?.altinnRettighet !== undefined
-        ) {
-            sendInnloggetIATjenesteMetrikk(
-                cookies['samtalestotte-podlet']?.orgnr,
-                cookies['samtalestotte-podlet']?.altinnRettighet
-            ).then((erMetrikkSendt) => {
-                console.log('erMetrikkSendt:', erMetrikkSendt);
-            });
-        }
-        if (
-            cookies.samtalestotte?.sendtStatistikk === undefined &&
-            antallForsøkSendTilIaTjenesterMetrikker < 5
-        ) {
-            sendIATjenesteMetrikk().then((erMetrikkSendt) => {
-                if (erMetrikkSendt) {
-                    setCookie(
-                        'samtalestotte',
-                        { sendtStatistikk: 'ja' },
-                        {
-                            path: '/',
-                            maxAge: ETT_DØGN_I_SEKUNDER,
-                            sameSite: true,
-                        }
-                    );
-                }
-            });
-            antallForsøkSendTilIaTjenesterMetrikker++;
-        }
     }, []);
 
     return (
