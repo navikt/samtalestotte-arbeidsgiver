@@ -144,8 +144,12 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr: String, altinnRettig
         // @ts-ignore
         const fetchResponse = await fetch(`${innloggetIaTjenesterMetrikkerAPI}`, settings);
         const data = await fetchResponse.json();
-        console.log('logging data: ', data);
-        return data.status === 'created';
+
+        if (data.status === 'created') {
+            return true
+        } else {
+            return sendUinnloggetIATjenesteMetrikk();
+        }
     } catch (e) {
         return false;
     }
