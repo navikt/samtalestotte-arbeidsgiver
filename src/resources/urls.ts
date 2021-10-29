@@ -49,18 +49,20 @@ export const erTilbakeURLTillat = (refUrl: string): boolean => {
 };
 
 export const hentReferrerApplikasjonFraUrl = (url: string): string | undefined => {
-    const referrerUtenDomene = url.split(/(?:referer|referrer)=(?:http|https):\/\//)?.[1]?.split(/[\/?]/)?.[1];
+    const referrerUtenDomene = url
+        .split(/(?:referer|referrer)=(?:http|https):\/\//)?.[1]
+        ?.split(/[\/?]/)?.[1];
 
     if (referrerUtenDomene === undefined) {
-        return undefined
+        return undefined;
     }
     const kjenteApplikasjoner = [
-        "oppfolgingsplanarbeidsgiver",
-        "forebygge-sykefravaer",
-        "sykefravarsstatistikk",
-    ]
+        'oppfolgingsplanarbeidsgiver',
+        'forebygge-sykefravaer',
+        'sykefravarsstatistikk',
+    ];
 
-    let resultat = "UKJENT_REFERRER";
+    let resultat = 'UKJENT_REFERRER';
     for (let app of kjenteApplikasjoner) {
         if (referrerUtenDomene.startsWith(app)) {
             resultat = app;

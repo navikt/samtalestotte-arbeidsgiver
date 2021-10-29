@@ -21,6 +21,11 @@ import {
 import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
 import { useCookies } from 'react-cookie';
 import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
+import {
+    cookiesIApplikasjon,
+    hentReferrerUrlFraCookies,
+    SamtalestøtteCookies,
+} from '../../utils/cookiesUtils';
 
 export const Layout = (props: {
     title: string;
@@ -32,20 +37,23 @@ export const Layout = (props: {
 }) => {
     const layoutContentRef = useRef<HTMLDivElement>(null);
     const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
-    const [cookies, setCookies] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
+    const [cookies, setCookies] = useCookies(cookiesIApplikasjon);
 
     useEffect(() => {
-        let refUrl: string | null;
+        let refUrl: string | null | undefined;
         if (window !== undefined) {
             if (new URLSearchParams(window.location.search).get('referer') !== null) {
                 refUrl = new URLSearchParams(window.location.search).get('referer');
             } else {
-                refUrl = cookies['samtalestotte-podlet']?.referrer
-                    ? cookies['samtalestotte-podlet']?.referrer
-                    : '';
+                refUrl = hentReferrerUrlFraCookies(cookies);
             }
             setTilbakeURL(
-                refUrl !== null && refUrl !== '' && erTilbakeURLTillat(refUrl) ? refUrl : TILBAKE
+                refUrl !== undefined &&
+                    refUrl !== null &&
+                    refUrl !== '' &&
+                    erTilbakeURLTillat(refUrl)
+                    ? refUrl
+                    : TILBAKE
             );
         }
     }, []);
@@ -70,9 +78,9 @@ export const Layout = (props: {
             funksjon: 'skriv-ut',
         });
         sendIaTjenesterMetrikker(
-            cookies['samtalestotte-podlet']?.orgnr,
-            cookies['samtalestotte-podlet']?.altinnRettighet,
-            cookies.samtalestotte?.sendtStatistikk,
+            cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.orgnr,
+            cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.altinnRettighet,
+            cookies[SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER]?.sendtStatistikk,
             setCookies
         );
     }

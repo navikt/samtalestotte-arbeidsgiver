@@ -1,5 +1,6 @@
-import {Cookie, CookieSetOptions} from "universal-cookie";
-import {ETT_DØGN_I_SEKUNDER} from "./konstanter";
+import { Cookie, CookieSetOptions } from 'universal-cookie';
+import { ETT_DØGN_I_SEKUNDER } from './konstanter';
+import {SamtalestøtteCookies, SamtalestøtteCookiesType} from './cookiesUtils';
 
 export interface IatjenesteMetrikk {
     type: String;
@@ -15,15 +16,11 @@ let antallForsøkSendTilIaTjenesterMetrikker = 0;
 
 const setIaTjenesterMetrikkErSendt = (
     erMetrikkSendt: boolean,
-    lagreCookie: (
-        name: 'samtalestotte' | 'samtalestotte-podlet',
-        value: Cookie,
-        options?: CookieSetOptions
-    ) => void
+    lagreCookie: (name: SamtalestøtteCookiesType, value: Cookie, options?: CookieSetOptions) => void
 ) => {
     if (erMetrikkSendt) {
         lagreCookie(
-            'samtalestotte',
+            SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER,
             { sendtStatistikk: 'ja' },
             {
                 path: '/',
@@ -32,14 +29,14 @@ const setIaTjenesterMetrikkErSendt = (
             }
         );
     }
-}
+};
 
 export const sendIaTjenesterMetrikker = (
     orgnr: string,
     altinnRettighet: string,
     sendtStatistikk: string,
     lagreCookieFunksjon: (
-        name: 'samtalestotte' | 'samtalestotte-podlet',
+        name: SamtalestøtteCookiesType,
         value: Cookie,
         options?: CookieSetOptions
     ) => void
@@ -59,7 +56,6 @@ export const sendIaTjenesterMetrikker = (
     }
     antallForsøkSendTilIaTjenesterMetrikker++;
 };
-
 
 const getIaTjenesterMetrikkerUrl = () => {
     if (typeof window === 'undefined') {
@@ -87,10 +83,7 @@ export const kanSendeInnloggetIaTjenesteMetrikker = (
     orgnr: string,
     altinnRettighet: string
 ): Boolean => {
-    return (
-        orgnr !== undefined &&
-        altinnRettighet !== undefined
-    );
+    return orgnr !== undefined && altinnRettighet !== undefined;
 };
 
 export const kanSendeIaTjenesteMetrikker = (sendtStatistikk: string): Boolean =>
@@ -146,7 +139,7 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr: String, altinnRettig
         const data = await fetchResponse.json();
 
         if (data.status === 'created') {
-            return true
+            return true;
         } else {
             return sendUinnloggetIATjenesteMetrikk();
         }

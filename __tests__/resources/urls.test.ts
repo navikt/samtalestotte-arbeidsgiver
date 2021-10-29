@@ -119,10 +119,12 @@ test('Tester at hentReferrerFraUrl returnerer korrekt referer', async () => {
     expect(result).toBe('UKJENT_REFERRER');
 });
 
-test("hentReferrerFraUrl ", async () => {
-   const result = hentReferrerApplikasjonFraUrl("https://arbeidsgiver.nav.no?referrer=https://arbeidsgiver.nav.no/forebygge-sykefravaer#GjennomforSamtalen")
-    expect(result).toBe("forebygge-sykefravaer")
-})
+test('hentReferrerFraUrl ', async () => {
+    const result = hentReferrerApplikasjonFraUrl(
+        'https://arbeidsgiver.nav.no?referrer=https://arbeidsgiver.nav.no/forebygge-sykefravaer#GjennomforSamtalen'
+    );
+    expect(result).toBe('forebygge-sykefravaer');
+});
 
 test('Tester at hentReferrerFraUrl returnerer korrekt referer', async () => {
     const result = hentReferrerApplikasjonFraUrl('https://nav.no?referer=http://hei.com/X/Y');
