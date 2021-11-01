@@ -8,7 +8,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
 import { BodyShort, Link } from '@navikt/ds-react';
 import { Back } from '@navikt/ds-icons';
-import { getTilbakeURL, TILBAKE } from '../../resources/urls';
+import { getVerifisertTilbakeURL, TILBAKE } from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import { css } from 'linaria';
 import classNames from 'classnames';
@@ -40,14 +40,14 @@ export const Layout = (props: {
     const [cookies, setCookies] = useCookies(cookiesIApplikasjon);
 
     useEffect(() => {
-        let refUrl: string | null | undefined;
+        let usikkerRefUrl: string | null | undefined;
         if (window !== undefined) {
             if (new URLSearchParams(window.location.search).get('referer') !== null) {
-                refUrl = new URLSearchParams(window.location.search).get('referer');
+                usikkerRefUrl = new URLSearchParams(window.location.search).get('referer');
             } else {
-                refUrl = hentReferrerUrlFraCookies(cookies);
+                usikkerRefUrl = hentReferrerUrlFraCookies(cookies);
             }
-            setTilbakeURL(getTilbakeURL(refUrl));
+            setTilbakeURL(getVerifisertTilbakeURL(usikkerRefUrl));
         }
     }, []);
 

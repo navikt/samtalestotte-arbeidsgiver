@@ -48,13 +48,13 @@ export const erTilbakeURLTillat = (refUrl: string): boolean => {
     );
 };
 
-export const getTilbakeURL = (url: string | null | undefined): string => {
+export const getVerifisertTilbakeURL = (url: string | null | undefined): string => {
     return url !== undefined && url !== null && url !== '' && erTilbakeURLTillat(url)
         ? url
         : TILBAKE;
 };
 
-export const hentReferrerApplikasjonFraUrl = (url: string): string | undefined => {
+export const utleddReferrerApplikasjonFraUrl = (url: string): string | undefined => {
     const referrerUtenDomene = url
         .split(/(?:referer|referrer)=(?:http|https):\/\//)?.[1]
         ?.split(/[\/?]/)?.[1];

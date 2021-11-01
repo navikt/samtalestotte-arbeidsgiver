@@ -12,7 +12,5 @@ export const cookiesIApplikasjon = [
 ];
 
 export const hentReferrerUrlFraCookies = (cookies: Cookie) => {
-    return cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET.toString()]?.referrer !== null
-        ? cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET.toString()]?.referrer
-        : '';
+    return cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET.toString()]?.referrer ?? '';
 };
