@@ -8,7 +8,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
 import { BodyShort, Link } from '@navikt/ds-react';
 import { Back } from '@navikt/ds-icons';
-import { erTilbakeURLTillat, TILBAKE } from '../../resources/urls';
+import { getTilbakeURL, TILBAKE } from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import { css } from 'linaria';
 import classNames from 'classnames';
@@ -47,14 +47,7 @@ export const Layout = (props: {
             } else {
                 refUrl = hentReferrerUrlFraCookies(cookies);
             }
-            setTilbakeURL(
-                refUrl !== undefined &&
-                    refUrl !== null &&
-                    refUrl !== '' &&
-                    erTilbakeURLTillat(refUrl)
-                    ? refUrl
-                    : TILBAKE
-            );
+            setTilbakeURL(getTilbakeURL(refUrl));
         }
     }, []);
 
