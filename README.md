@@ -9,12 +9,12 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 - Starte appen lokalt - her har man flere muligheter, avhengig av hva man vil:
   - Alt. 1: Lokal utviklingsserver:
     1. Kjøre opp utviklingserver `yarn build && yarn start`, eventuelt `yarn run dev`
-    2. Gå til http://localhost:3000/samtalestotte
+    2. Gå til http://localhost:3005/samtalestotte
   - Alt. 2: Node-serveren: `yarn run build && yarn server`
   - Alt. 3: Kjøre applikasjonen med Docker:
      1. `yarn install && yarn build`
      2. `docker build -t samtalestotte-arbeidsgiver .`
-     3. `docker run -d -p 3000:3000 samtalestotte-arbeidsgiver`
+     3. `docker run -d -p 3005:3005 samtalestotte-arbeidsgiver`
      4. For å stoppe, kjør `docker stop <id>` med id-en fra forrige kommando
 
 ## Deploy
