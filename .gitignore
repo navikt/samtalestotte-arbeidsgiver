@@ -32,3 +32,7 @@ yarn-error.log*
 
 # idea
 /.idea
+
+# auto-genererte dokumenter
+/public/*.docx
+/public/*.txt
