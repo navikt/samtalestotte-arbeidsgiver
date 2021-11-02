@@ -6,15 +6,10 @@ import logEvent from '../../amplitude/amplitude';
 import Lest from '../Ikoner/Lest';
 import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
 import { css } from 'linaria';
-import { ETT_DØGN_I_SEKUNDER, SCREEN_SM_MIN } from '../../utils/konstanter';
-import {
-    kanSendeInnloggetIaTjenesteMetrikker,
-    kanSendeIaTjenesteMetrikker,
-    sendInnloggetIATjenesteMetrikk,
-    sendUinnloggetIATjenesteMetrikk, sendIaTjenesterMetrikker,
-} from '../../utils/ia-tjeneste-metrikker';
+import { SCREEN_SM_MIN } from '../../utils/konstanter';
+import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
 import { useCookies } from 'react-cookie';
-import { Cookie, CookieSetOptions } from 'universal-cookie';
+import {cookiesIApplikasjon, SamtalestøtteCookies} from '../../utils/cookiesUtils';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
@@ -37,7 +32,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const [erLest, setErLest] = useState<boolean>(false);
     const [panelKnapp, setPanelKnapp] = useState<HTMLElement | null>(null);
     const [hovedMeny, setHovedMeny] = useState<HTMLElement | null>(null);
-    const [cookies, setCookies] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
+    const [cookies, setCookies] = useCookies(cookiesIApplikasjon);
 
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
 
@@ -49,9 +44,9 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
             erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
             erÅpen &&
                 sendIaTjenesterMetrikker(
-                    cookies['samtalestotte-podlet']?.orgnr,
-                    cookies['samtalestotte-podlet']?.altinnRettighet,
-                    cookies.samtalestotte?.sendtStatistikk,
+                    cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.orgnr,
+                    cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.altinnRettighet,
+                    cookies[SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER]?.sendtStatistikk,
                     setCookies
                 );
         }, 500);

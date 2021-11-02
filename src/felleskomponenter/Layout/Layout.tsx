@@ -8,7 +8,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
 import { BodyShort, Link } from '@navikt/ds-react';
 import { Back } from '@navikt/ds-icons';
-import { erTilbakeURLTillat, TILBAKE } from '../../resources/urls';
+import { getVerifisertTilbakeURL, TILBAKE } from '../../resources/urls';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import { css } from 'linaria';
 import classNames from 'classnames';
@@ -21,6 +21,11 @@ import {
 import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
 import { useCookies } from 'react-cookie';
 import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
+import {
+    cookiesIApplikasjon,
+    hentReferrerUrlFraCookies,
+    SamtalestøtteCookies,
+} from '../../utils/cookiesUtils';
 
 export const Layout = (props: {
     title: string;
@@ -32,21 +37,17 @@ export const Layout = (props: {
 }) => {
     const layoutContentRef = useRef<HTMLDivElement>(null);
     const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
-    const [cookies, setCookies] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
+    const [cookies, setCookies] = useCookies(cookiesIApplikasjon);
 
     useEffect(() => {
-        let refUrl: string | null;
+        let usikkerRefUrl: string | null | undefined;
         if (window !== undefined) {
             if (new URLSearchParams(window.location.search).get('referer') !== null) {
-                refUrl = new URLSearchParams(window.location.search).get('referer');
+                usikkerRefUrl = new URLSearchParams(window.location.search).get('referer');
             } else {
-                refUrl = cookies['samtalestotte-podlet']?.referrer
-                    ? cookies['samtalestotte-podlet']?.referrer
-                    : '';
+                usikkerRefUrl = hentReferrerUrlFraCookies(cookies);
             }
-            setTilbakeURL(
-                refUrl !== null && refUrl !== '' && erTilbakeURLTillat(refUrl) ? refUrl : TILBAKE
-            );
+            setTilbakeURL(getVerifisertTilbakeURL(usikkerRefUrl));
         }
     }, []);
 
@@ -70,9 +71,9 @@ export const Layout = (props: {
             funksjon: 'skriv-ut',
         });
         sendIaTjenesterMetrikker(
-            cookies['samtalestotte-podlet']?.orgnr,
-            cookies['samtalestotte-podlet']?.altinnRettighet,
-            cookies.samtalestotte?.sendtStatistikk,
+            cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.orgnr,
+            cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.altinnRettighet,
+            cookies[SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER]?.sendtStatistikk,
             setCookies
         );
     }

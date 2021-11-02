@@ -11,39 +11,35 @@ import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
-import { hentReferrerApplikasjonFraUrl } from '../resources/urls';
-import classNames from "classnames";
-import {Packer} from "docx";
-import * as fs from "fs";
-import {generateDocX} from "../dokumentgenerator/docxGenerator";
-import {SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT} from "../resources/textContent";
-import {generateTxt} from "../dokumentgenerator/txtGenerator";
+import { utleddReferrerApplikasjonFraUrl } from '../resources/urls';
+import classNames from 'classnames';
+import { Packer } from 'docx';
+import * as fs from 'fs';
+import { generateDocX } from '../dokumentgenerator/docxGenerator';
+import { SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT } from '../resources/textContent';
+import { generateTxt } from '../dokumentgenerator/txtGenerator';
 import { Alert } from '@navikt/ds-react';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
+import { cookiesIApplikasjon, hentReferrerUrlFraCookies } from '../utils/cookiesUtils';
 
-const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
-const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT)
+const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
+const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
 
 const Home = (props: { page: PageProps }) => {
-    const [cookies] = useCookies(['samtalestotte-podlet']);
+    const [cookies] = useCookies(cookiesIApplikasjon);
+
     Sentry.init({
         dsn: 'https://97af8a51172e4f9bb74ac9c05920b1d2@sentry.gc.nav.no/77',
         environment: getMiljø(),
         enabled: getMiljø() !== 'local',
     });
 
-    const hentReferrerUrlFraCookies = () => {
-        return cookies['samtalestotte-podlet']?.referrer !== null
-            ? cookies['samtalestotte-podlet']?.referrer
-            : '';
-    };
-
     const hentReferrerApplikasjon = () => {
-        const referrerUrlFraCookies = hentReferrerUrlFraCookies();
+        const referrerUrlFraCookies = hentReferrerUrlFraCookies(cookies);
 
         return referrerUrlFraCookies
-            ? hentReferrerApplikasjonFraUrl(referrerUrlFraCookies)
-            : hentReferrerApplikasjonFraUrl(window.location.href);
+            ? utleddReferrerApplikasjonFraUrl(referrerUrlFraCookies)
+            : utleddReferrerApplikasjonFraUrl(window.location.href);
     };
 
     useEffect(() => {
@@ -108,9 +104,9 @@ interface StaticProps {
 
 // NextJS kaller denne
 export const getStaticProps = async (): Promise<StaticProps> => {
-    const documentBuffer = await Packer.toBuffer(doc)
-    fs.writeFileSync("public/Samtalestøtte-Arbeidsgiver.docx", documentBuffer)
-    fs.writeFileSync("public/Samtalestøtte-Arbeidsgiver.txt", txt)
+    const documentBuffer = await Packer.toBuffer(doc);
+    fs.writeFileSync('public/Samtalestøtte-Arbeidsgiver.docx', documentBuffer);
+    fs.writeFileSync('public/Samtalestøtte-Arbeidsgiver.txt', txt);
 
     const page = await getPageProps(
         'Samtalestøtte for arbeidsgiver',

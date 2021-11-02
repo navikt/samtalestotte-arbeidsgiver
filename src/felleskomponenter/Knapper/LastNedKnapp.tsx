@@ -4,14 +4,10 @@ import logEvent from '../../amplitude/amplitude';
 import classNames from 'classnames';
 import { Link } from '@navikt/ds-react';
 import React from 'react';
-import { ETT_DØGN_I_SEKUNDER, SCREEN_SM_MIN } from '../../utils/konstanter';
-import {
-    kanSendeInnloggetIaTjenesteMetrikker, kanSendeIaTjenesteMetrikker,
-    sendInnloggetIATjenesteMetrikk,
-    sendUinnloggetIATjenesteMetrikk, sendIaTjenesterMetrikker,
-} from '../../utils/ia-tjeneste-metrikker';
+import { SCREEN_SM_MIN } from '../../utils/konstanter';
+import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
 import { useCookies } from 'react-cookie';
-import {Cookie, CookieSetOptions} from "universal-cookie";
+import { cookiesIApplikasjon, SamtalestøtteCookies } from '../../utils/cookiesUtils';
 
 export default function LastNedKnapp(props: {
     knappetekst: string;
@@ -19,13 +15,13 @@ export default function LastNedKnapp(props: {
     filnavn?: string;
     label: string;
 }) {
-    const [cookies, setCookies] = useCookies(['samtalestotte', 'samtalestotte-podlet']);
+    const [cookies, setCookies] = useCookies(cookiesIApplikasjon);
 
     const loggKlikkPåLastNedKnapp = (label: string) => {
         sendIaTjenesterMetrikker(
-            cookies['samtalestotte-podlet']?.orgnr,
-            cookies['samtalestotte-podlet']?.altinnRettighet,
-            cookies.samtalestotte?.sendtStatistikk,
+            cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.orgnr,
+            cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.altinnRettighet,
+            cookies[SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER]?.sendtStatistikk,
             setCookies
         );
         logEvent('knapp', {
@@ -58,21 +54,21 @@ export default function LastNedKnapp(props: {
 }
 
 const downloadButtonStyle = css`
-  @media(min-width: ${SCREEN_SM_MIN}){
-    width: 250px;
-  }
-  height: 60px;
-  width: 100%;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  text-decoration: none;
-  justify-content: center;
-  padding: 10px 20px 10px 10px;
-
-  :hover {
-    svg {
-      color: white;
+    @media (min-width: ${SCREEN_SM_MIN}) {
+        width: 250px;
     }
-  }
+    height: 60px;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-decoration: none;
+    justify-content: center;
+    padding: 10px 20px 10px 10px;
+
+    :hover {
+        svg {
+            color: white;
+        }
+    }
 `;
