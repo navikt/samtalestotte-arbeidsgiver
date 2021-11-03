@@ -13,8 +13,9 @@ import { getMiljø } from '../utils/miljøUtils';
 import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
 import {
     getReferrerUrlFraUrlMedQueryParameter,
-    ReferrerApplikasjon, ReferrerUrl,
-    utleddApplikasjonsnavnFraUrl
+    ReferrerApplikasjon,
+    ReferrerUrl,
+    utleddApplikasjonsnavnFraUrl,
 } from '../resources/urls';
 import classNames from 'classnames';
 import { Packer } from 'docx';
@@ -25,6 +26,7 @@ import { generateTxt } from '../dokumentgenerator/txtGenerator';
 import { Alert } from '@navikt/ds-react';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { cookiesIApplikasjon, hentReferrerUrlFraCookies } from '../utils/cookiesUtils';
+import { Cookie } from 'universal-cookie';
 
 const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
 const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
@@ -38,19 +40,19 @@ const Home = (props: { page: PageProps }) => {
         enabled: getMiljø() !== 'local',
     });
 
-    const hentReferrerApplikasjon = () : ReferrerApplikasjon => {
-        console.log("[DEBUG] Hva er Cookies? ", cookies)
-        const referrerUrlFraCookies : ReferrerUrl = hentReferrerUrlFraCookies(cookies);
-        console.log("[DEBUG] Hva er referrerUrlFraCookies? ", referrerUrlFraCookies)
+    const hentReferrerApplikasjon = (applikasjonsCookies: Cookie): ReferrerApplikasjon => {
+        const referrerUrlFraCookies: ReferrerUrl = hentReferrerUrlFraCookies(applikasjonsCookies);
+        console.log('[DEBUG] Hva er referrerUrlFraCookies? ', referrerUrlFraCookies);
         return referrerUrlFraCookies
             ? utleddApplikasjonsnavnFraUrl(referrerUrlFraCookies)
-            : utleddApplikasjonsnavnFraUrl(getReferrerUrlFraUrlMedQueryParameter(window.location.href));
+            : utleddApplikasjonsnavnFraUrl(
+                  getReferrerUrlFraUrlMedQueryParameter(window.location.href)
+              );
     };
 
     useEffect(() => {
-        const referrerApplikasjon = hentReferrerApplikasjon();
-        console.log("[DEBUG] Hva er referrerApplikasjon? ", referrerApplikasjon)
-        
+        const referrerApplikasjon = hentReferrerApplikasjon(cookies);
+
         const timer = setTimeout(async () => {
             await logEvent('sidevisning', {
                 url: 'samtalestotte-arbeidsgiver',
@@ -58,7 +60,7 @@ const Home = (props: { page: PageProps }) => {
             });
         }, 500);
         return () => clearTimeout(timer);
-    }, []);
+    }, [cookies]);
 
     return (
         <div>
