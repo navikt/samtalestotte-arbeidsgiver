@@ -42,7 +42,6 @@ const Home = (props: { page: PageProps }) => {
 
     const hentReferrerApplikasjon = (applikasjonsCookies: Cookie): ReferrerApplikasjon => {
         const referrerUrlFraCookies: ReferrerUrl = hentReferrerUrlFraCookies(applikasjonsCookies);
-        console.log('[DEBUG] Hva er referrerUrlFraCookies? ', referrerUrlFraCookies);
         return referrerUrlFraCookies
             ? utleddApplikasjonsnavnFraUrl(referrerUrlFraCookies)
             : utleddApplikasjonsnavnFraUrl(
