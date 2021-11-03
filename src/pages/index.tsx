@@ -39,8 +39,9 @@ const Home = (props: { page: PageProps }) => {
     });
 
     const hentReferrerApplikasjon = () : ReferrerApplikasjon => {
+        console.log("[DEBUG] Hva er Cookies? ", cookies)
         const referrerUrlFraCookies : ReferrerUrl = hentReferrerUrlFraCookies(cookies);
-
+        console.log("[DEBUG] Hva er referrerUrlFraCookies? ", referrerUrlFraCookies)
         return referrerUrlFraCookies
             ? utleddApplikasjonsnavnFraUrl(referrerUrlFraCookies)
             : utleddApplikasjonsnavnFraUrl(getReferrerUrlFraUrlMedQueryParameter(window.location.href));
@@ -48,6 +49,8 @@ const Home = (props: { page: PageProps }) => {
 
     useEffect(() => {
         const referrerApplikasjon = hentReferrerApplikasjon();
+        console.log("[DEBUG] Hva er referrerApplikasjon? ", referrerApplikasjon)
+        
         const timer = setTimeout(async () => {
             await logEvent('sidevisning', {
                 url: 'samtalestotte-arbeidsgiver',
