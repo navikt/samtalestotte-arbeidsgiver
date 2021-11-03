@@ -243,7 +243,7 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                                 ],
                                 ['Starte en dialog om tilrettelegging'],
                                 [
-                                    'Avklare om det er behov for ny, endret eller mer kompetanse hos medarbeieren',
+                                    'Avklare om det er behov for ny, endret eller mer kompetanse hos medarbeideren',
                                 ],
                             ],
                         },
