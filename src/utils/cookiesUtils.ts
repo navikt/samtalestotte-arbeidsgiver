@@ -1,4 +1,5 @@
 import { Cookie } from 'universal-cookie';
+import { ReferrerUrl } from '../resources/urls';
 
 export type SamtalestøtteCookiesType = 'samtalestotte-arbeidsgiver' | 'samtalestotte-podlet';
 
@@ -11,6 +12,6 @@ export const cookiesIApplikasjon = [
     SamtalestøtteCookies.SAMTALESTØTTE_PODLET.toString(),
 ];
 
-export const hentReferrerUrlFraCookies = (cookies: Cookie) => {
+export const hentReferrerUrlFraCookies = (cookies: Cookie): ReferrerUrl => {
     return cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET.toString()]?.referrer ?? '';
 };
