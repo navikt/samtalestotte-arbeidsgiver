@@ -11,7 +11,11 @@ import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
 import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
-import { utleddReferrerApplikasjonFraUrl } from '../resources/urls';
+import {
+    getReferrerUrlFraUrlMedQueryParameter,
+    ReferrerApplikasjon, ReferrerUrl,
+    utleddApplikasjonsnavnFraUrl
+} from '../resources/urls';
 import classNames from 'classnames';
 import { Packer } from 'docx';
 import * as fs from 'fs';
@@ -34,12 +38,12 @@ const Home = (props: { page: PageProps }) => {
         enabled: getMiljø() !== 'local',
     });
 
-    const hentReferrerApplikasjon = () => {
-        const referrerUrlFraCookies = hentReferrerUrlFraCookies(cookies);
+    const hentReferrerApplikasjon = () : ReferrerApplikasjon => {
+        const referrerUrlFraCookies : ReferrerUrl = hentReferrerUrlFraCookies(cookies);
 
         return referrerUrlFraCookies
-            ? utleddReferrerApplikasjonFraUrl(referrerUrlFraCookies)
-            : utleddReferrerApplikasjonFraUrl(window.location.href);
+            ? utleddApplikasjonsnavnFraUrl(referrerUrlFraCookies)
+            : utleddApplikasjonsnavnFraUrl(getReferrerUrlFraUrlMedQueryParameter(window.location.href));
     };
 
     useEffect(() => {
