@@ -264,7 +264,7 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                                 },
                                 {
                                     type: 'Text',
-                                    content: 'Velg tema og hjelpespørsmål under',
+                                    content: 'Velg tema og hjelpespørsmål under ',
                                 },
                                 { type: 'Text', content: '', lineBreak: 1 },
                                 {
