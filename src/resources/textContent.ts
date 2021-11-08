@@ -49,7 +49,7 @@ const skapeGodeRammer: (Panel | object)[] = [
             {
                 type: 'Paragraph',
                 content:
-                    'Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene' +
+                    'Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene ' +
                     'rundt samtalen er forutsigbare for alle. Å vise forståelse i møte med medarbeider setter ' +
                     'gode forutsetninger for samarbeidet videre.',
             },
@@ -214,7 +214,7 @@ const skapeGodeRammer: (Panel | object)[] = [
 const planleggeInnholdISamtalen: (Panel | object)[] = [
     {
         type: 'Panel',
-        title: 'Skape gode rammer',
+        title: 'Planlegge innhold i samtalen',
         content: [
             {
                 type: 'Paragraph',
@@ -262,12 +262,15 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                                     content: 'Hvor trygg er du når du skal strukturere samtalen?',
                                     bold: true,
                                 },
+                                {
+                                    type: 'Text',
+                                    content: 'Velg tema og hjelpespørsmål under',
+                                },
                                 { type: 'Text', content: '', lineBreak: 1 },
                                 {
                                     type: 'Link',
                                     url: GJENNOMFOR_SAMTALEN,
-                                    content:
-                                        'Velg tema og hjelpespørsmål under “Gjennomfør samtalen ved å”',
+                                    content: '“Gjennomfør samtalen ved å”',
                                 },
                                 { type: 'Text', content: ' lenger ned på siden.' },
                             ],
