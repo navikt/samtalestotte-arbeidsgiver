@@ -54,24 +54,38 @@ export const getVerifisertTilbakeURL = (url: string | null | undefined): string 
         : TILBAKE;
 };
 
-export const utleddReferrerApplikasjonFraUrl = (url: string): string | undefined => {
-    const referrerUtenDomene = url
-        .split(/(?:referer|referrer)=(?:http|https):\/\//)?.[1]
-        ?.split(/[\/?]/)?.[1];
+export type ReferrerUrl = string | undefined;
+export type ReferrerApplikasjon =
+    | 'oppfolgingsplanarbeidsgiver'
+    | 'forebygge-sykefravaer'
+    | 'sykefravarsstatistikk'
+    | 'UKJENT_REFERRER'
+    | undefined;
 
-    if (referrerUtenDomene === undefined) {
+export const getReferrerUrlFraUrlMedQueryParameter = (
+    urlMedReferrerSomQueryParameter: string
+): ReferrerUrl => {
+    return urlMedReferrerSomQueryParameter.split(/(?:referer|referrer)=/)?.[1];
+};
+
+const kjenteApplikasjoner: string[] = [
+    'oppfolgingsplanarbeidsgiver',
+    'forebygge-sykefravaer',
+    'sykefravarsstatistikk',
+];
+
+export const utleddApplikasjonsnavnFraUrl = (referrerUrl: ReferrerUrl): ReferrerApplikasjon => {
+    if (referrerUrl === undefined) {
         return undefined;
     }
-    const kjenteApplikasjoner = [
-        'oppfolgingsplanarbeidsgiver',
-        'forebygge-sykefravaer',
-        'sykefravarsstatistikk',
-    ];
+    let resultat: ReferrerApplikasjon = 'UKJENT_REFERRER';
+    let maybeApplikasjon: string | undefined = referrerUrl
+        .split(/(?:http|https):\/\//)?.[1]
+        ?.split(/[\/?]/)?.[1];
 
-    let resultat = 'UKJENT_REFERRER';
     for (let app of kjenteApplikasjoner) {
-        if (referrerUtenDomene.startsWith(app)) {
-            resultat = app;
+        if (maybeApplikasjon.startsWith(app)) {
+            resultat = app as ReferrerApplikasjon;
             break;
         }
     }
