@@ -214,7 +214,7 @@ const skapeGodeRammer: (Panel | object)[] = [
 const planleggeInnholdISamtalen: (Panel | object)[] = [
     {
         type: 'Panel',
-        title: 'Skape gode rammer',
+        title: 'Planlegge innhold i samtalen',
         content: [
             {
                 type: 'Paragraph',
