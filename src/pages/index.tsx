@@ -10,7 +10,7 @@ import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
-import { largeScreenMarginSides3rem, marginTop1Rem, paddingSides1rem } from '../utils/fellesStiler';
+import { largeScreenMarginSides3rem, paddingSides1rem } from '../utils/fellesStiler';
 import {
     getReferrerUrlFraUrlMedQueryParameter,
     ReferrerApplikasjon,
@@ -23,8 +23,6 @@ import * as fs from 'fs';
 import { generateDocX } from '../dokumentgenerator/docxGenerator';
 import { SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT } from '../resources/textContent';
 import { generateTxt } from '../dokumentgenerator/txtGenerator';
-import { Alert } from '@navikt/ds-react';
-import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { cookiesIApplikasjon, hentReferrerUrlFraCookies } from '../utils/cookiesUtils';
 import { Cookie } from 'universal-cookie';
 
@@ -75,17 +73,6 @@ const Home = (props: { page: PageProps }) => {
                     decoratorParts={props.page.decorator}
                     logEvent={logEvent}
                 >
-                    {/* TODO: Alert for psykisk helse kan fjernes etter 10.11.2021 */}
-                    <Alert variant={'info'} id={'alertboksPsykiskHelse'} className={marginTop1Rem}>
-                        Vi har laget noen råd for å snakke om psykisk helse på arbeidsplassen.&nbsp;
-                        <LoggbarLenke
-                            href={
-                                '/samtalestotte#ekspanderbart-infopanel__psykiskHelsePåArbeidsplassen-base'
-                            }
-                        >
-                            Klikk her for å lese mer.
-                        </LoggbarLenke>
-                    </Alert>
                     <HvorforBrukeTidPaaSamtaler
                         className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
                     />

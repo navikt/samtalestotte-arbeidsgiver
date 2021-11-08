@@ -3,7 +3,3 @@
 html {
     scroll-behavior: smooth;
 }
-
-#alertboksPsykiskHelse > div {
-    max-width: none;
-}
