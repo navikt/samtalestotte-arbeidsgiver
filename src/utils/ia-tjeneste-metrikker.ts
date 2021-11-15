@@ -1,6 +1,6 @@
 import { Cookie, CookieSetOptions } from 'universal-cookie';
 import { ETT_DØGN_I_SEKUNDER } from './konstanter';
-import {SamtalestøtteCookies, SamtalestøtteCookiesType} from './cookiesUtils';
+import { SamtalestøtteCookies, SamtalestøtteCookiesType } from './cookiesUtils';
 
 export interface IatjenesteMetrikk {
     type: String;
@@ -73,7 +73,7 @@ const getIaTjenesterMetrikkerUrl = () => {
 };
 
 const iaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/uinnlogget/mottatt-iatjeneste`;
-const innloggetIaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/innlogget/forenklet/mottatt-iatjeneste`;
+const innloggetIaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/innlogget/mottatt-iatjeneste`;
 
 export const tilIsoDatoMedUtcTimezoneUtenMillis = (dato: Date): String => {
     return dato.toISOString().split('.')[0] + 'Z';
