@@ -32,6 +32,7 @@ export interface MediumHeader extends DocumentElement {
     type: "MediumHeader"
     content: string
     id?: string
+    isLessSpace?: boolean
 }
 export const isMediumHeader = (element: DocumentElement | string | object): element is MediumHeader => {
     if(typeof element === "object" && element.hasOwnProperty("type")) {
