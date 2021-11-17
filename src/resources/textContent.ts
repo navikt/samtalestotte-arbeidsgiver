@@ -23,7 +23,7 @@ import {
 
 const slikSkaperDuGodeSamtaler: (DocumentElement | object)[] = [
     { type: 'BigHeader', content: 'Slik skaper du gode samtaler' },
-    { type: 'MediumHeader', content: 'Last ned verktøyet og rediger selv:' , isLessSpace: true},
+    { type: 'MediumHeader', content: 'Last ned verktøyet og rediger selv:', isLessSpace: true },
     { type: 'DownloadButtons' },
     {
         type: 'Paragraph',
@@ -63,11 +63,19 @@ const skapeGodeRammer: (Panel | object)[] = [
                     ['Hvor trygg føler du deg på å gjennomføre samtaler?'],
                 ],
             },
-            { type: 'SmallHeader', content: 'Dette kan du gjøre:' },
+            {
+                type: 'SmallHeader',
+                content: 'Dette kan du gjøre:',
+                id: 'Dette kan du gjørde i Gode samtaler forutsetter trygghet',
+            },
             {
                 type: 'Columns',
                 leftContent: [
-                    { type: 'SmallHeader', content: 'på kort sikt:' },
+                    {
+                        type: 'SmallHeader',
+                        content: 'på kort sikt:',
+                        id: 'på kort sikt i Gode samtaler forutsetter trygghet',
+                    },
                     {
                         type: 'List',
                         content: [
@@ -92,7 +100,11 @@ const skapeGodeRammer: (Panel | object)[] = [
                     },
                 ],
                 rightContent: [
-                    { type: 'SmallHeader', content: 'over tid og som kontinuerlig arbeid:' },
+                    {
+                        type: 'SmallHeader',
+                        content: 'over tid og som kontinuerlig arbeid:',
+                        id: 'over tid og som kontinuerlig arbeid i Gode samtaler forutsetter trygghet',
+                    },
                     {
                         type: 'List',
                         content: [
@@ -147,11 +159,19 @@ const skapeGodeRammer: (Panel | object)[] = [
                     ],
                 ],
             },
-            { type: 'SmallHeader', content: 'Dette kan du gjøre:' },
+            {
+                type: 'SmallHeader',
+                content: 'Dette kan du gjøre:',
+                id: 'Dette kan du gjørde i Gode Rutiner',
+            },
             {
                 type: 'Columns',
                 leftContent: [
-                    { type: 'SmallHeader', content: 'på kort sikt:' },
+                    {
+                        type: 'SmallHeader',
+                        content: 'på kort sikt:',
+                        id: 'på kort sikt i Gode rutiner',
+                    },
                     {
                         type: 'List',
                         content: [
@@ -165,7 +185,11 @@ const skapeGodeRammer: (Panel | object)[] = [
                     },
                 ],
                 rightContent: [
-                    { type: 'SmallHeader', content: 'over tid og som kontinuerlig arbeid:' },
+                    {
+                        type: 'SmallHeader',
+                        content: 'over tid og som kontinuerlig arbeid:',
+                        id: 'over tid og som kontinuerlig arbeid i gode rutiner',
+                    },
                     {
                         type: 'List',
                         content: [
@@ -201,7 +225,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                     },
                 ],
             },
-            { type: 'SmallHeader', content: 'Tips:' },
+            { type: 'SmallHeader', content: 'Tips:', id: 'Tips i gode rutiner' },
             {
                 type: 'Paragraph',
                 content:
@@ -405,7 +429,7 @@ const snakkeOmArbeid = [
                 content:
                     'Din oppgave er å legge til rette for at medarbeideren kan beskrive hvordan arbeidsoppgavene og arbeidsdagen oppleves.',
             },
-            { type: 'SmallHeader', content: 'Tips:' },
+            { type: 'SmallHeader', content: 'Tips:', id: 'Tips i snakke om arbeid' },
             {
                 type: 'List',
                 content: [
@@ -437,7 +461,11 @@ const snakkeOmArbeid = [
                     ['stillingsprosent'],
                 ],
             },
-            { type: 'SmallHeader', content: 'Eksempler på spørsmål:' },
+            {
+                type: 'SmallHeader',
+                content: 'Eksempler på spørsmål:',
+                id: 'Eksempler på spørsmål i snakke om arbeid',
+            },
             {
                 type: 'Paragraph',
                 content: 'Velg noen av eksemplene som er relevante for akkurat denne samtalen.',
@@ -503,7 +531,7 @@ const finneLøsningerSammen = [
                 content:
                     'Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først, kan det bli enklere å se løsningsforslag selv. Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.',
             },
-            { type: 'SmallHeader', content: 'Tips:' },
+            { type: 'SmallHeader', content: 'Tips:' , id:'Tips i finne løsninger sammen'},
             {
                 type: 'Paragraph',
                 content:
@@ -536,7 +564,11 @@ const finneLøsningerSammen = [
                     ['andre forhold'],
                 ],
             },
-            { type: 'SmallHeader', content: 'Eksempler på spørsmål:' },
+            {
+                type: 'SmallHeader',
+                content: 'Eksempler på spørsmål:',
+                id: 'Eksempler på spørsmål i finne løsninger sammen',
+            },
             {
                 type: 'Paragraph',
                 content: 'Velg noen av eksemplene som er relevante for akkurat denne samtalen.',
@@ -602,7 +634,7 @@ const planleggeVeienVidereSammen = [
                 content:
                     'En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer det dere er blitt enige om og at dere lager en plan for videre oppfølging.',
             },
-            { type: 'SmallHeader', content: 'Tips:' },
+            { type: 'SmallHeader', content: 'Tips:', id: 'Tips i planelegge veien videre sammen.' },
             {
                 type: 'Paragraph',
                 content:
