@@ -3,6 +3,7 @@ import {
     DocumentElement,
     isBigHeader,
     isColumns,
+    isExternalLink,
     isInfoBox,
     isLink,
     isList,
@@ -23,13 +24,14 @@ import {
     Table,
     TableBorders,
     TableCell,
+    TableOfContents,
     TableRow,
     TextRun,
     WidthType,
 } from 'docx';
 import { isString, notUndefinedOrNull } from '../utils/typeGuardUtils';
 
-type DocxTypes = TextRun | Table | Paragraph | InternalHyperlink | ExternalHyperlink;
+type DocxTypes = Table | Paragraph | TableOfContents;
 
 export const generateDocX = (elements: (string | object)[]) => {
     return new Document({
@@ -59,7 +61,10 @@ const mapJson = (elements: (string | object)[]): DocxTypes[] => {
                 return mapInfoBox(e.content);
             }
             if (isLink(e)) {
-                return mapLink(e.url, e.content);
+                return mapInternalHyperLink(e.url, e.content);
+            }
+            if (isExternalLink(e)) {
+                return mapExternalHyperLink(e.url, e.content);
             }
             if (isList(e)) {
                 return mapList(e.content);
@@ -141,9 +146,12 @@ const mapTableCell = (content: DocumentElement[], shade: string = '#ffffff') => 
         children: children,
     });
 };
+/*
 const mapLink = (text: string, url: string) => {
-    return url.startsWith('#') ? mapInternalHyperLink(text, url) : mapExternalHyperLink(text, url);
+    return mapInternalHyperLink()
+    //return url.startsWith('#') ? mapInternalHyperLink(text, url) : mapExternalHyperLink(text, url);
 };
+*/
 
 const mapInternalHyperLink = (text: string, url: string) => {
     return new InternalHyperlink({
@@ -158,14 +166,18 @@ const mapInternalHyperLink = (text: string, url: string) => {
 };
 
 const mapExternalHyperLink = (text: string, url: string) => {
-    return new ExternalHyperlink({
+    return new Paragraph({
         children: [
-            new TextRun({
-                text: text,
-                style: 'Hyperlink',
+            new ExternalHyperlink({
+                children: [
+                    new TextRun({
+                        text: text,
+                        style: 'Hyperlink',
+                    }),
+                ],
+                link: url,
             }),
         ],
-        link: url,
     });
 };
 
@@ -201,11 +213,14 @@ const mapList = (content: (DocumentElement | string)[][], level: number = 0): Pa
                 if (isLink(e)) {
                     return i == 0
                         ? new Paragraph({
-                              children: [mapLink(e.content, e.url)],
+                              children: [mapInternalHyperLink(e.content, e.url)],
                               bullet: { level: level },
                           })
                         : new Paragraph({
-                              children: [new TextRun(indent('', level)), mapLink(e.content, e.url)],
+                              children: [
+                                  new TextRun(indent('', level)),
+                                  mapInternalHyperLink(e.content, e.url),
+                              ],
                               indent: { start: 360 * (level + 2), left: 360 * (level + 2) },
                           });
                 }
@@ -306,7 +321,7 @@ const mapParagraph = (content: (DocumentElement | string)[] | string, level?: nu
                           return mapText(e.content, e.bold, e.lineBreak);
                       }
                       if (isLink(e)) {
-                          return mapLink(e.content, e.url);
+                          return mapInternalHyperLink(e.content, e.url);
                       }
                       return undefined;
                   })

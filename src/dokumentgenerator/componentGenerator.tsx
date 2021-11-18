@@ -22,6 +22,7 @@ import {
     isBigHeader,
     isColumns,
     isDownloadButtons,
+    isExternalLink,
     isHorizontalLine,
     isInfoBox,
     isLink,
@@ -58,7 +59,7 @@ const mapComponents = (elements: (string | object)[]): ReactNode[] => {
             if (isHorizontalLine(e)) {
                 return mapHorizontalLine();
             }
-            if (isLink(e)) {
+            if (isLink(e) || isExternalLink(e)) {
                 return mapLink(e.url, e.content);
             }
             if (isList(e)) {

@@ -531,7 +531,7 @@ const finneLøsningerSammen = [
                 content:
                     'Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først, kan det bli enklere å se løsningsforslag selv. Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.',
             },
-            { type: 'SmallHeader', content: 'Tips:' , id:'Tips i finne løsninger sammen'},
+            { type: 'SmallHeader', content: 'Tips:', id: 'Tips i finne løsninger sammen' },
             {
                 type: 'Paragraph',
                 content:
@@ -646,14 +646,9 @@ const planleggeVeienVidereSammen = [
                     'Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan. ',
             },
             {
-                type: 'Paragraph',
-                content: [
-                    {
-                        type: 'Link',
-                        url: OPPFOLGNINGSPLAN,
-                        content: 'Les mer om oppfølgingsplan på nav.no.',
-                    },
-                ],
+                type: 'ExternalLink',
+                url: OPPFOLGNINGSPLAN,
+                content: 'Les mer om oppfølgingsplan på nav.no.',
             },
             { type: 'SmallHeader', content: 'Vanlige tema i avslutningen:' },
             {
