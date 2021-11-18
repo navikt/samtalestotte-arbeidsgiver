@@ -36,8 +36,8 @@ export const listeAvTillatteDomener = [
     'https://arbeidsgiver.labs.nais.io/sykefravarsstatistikk',
     'https://arbeidsgiver.nav.no/forebygge-sykefravaer',
     'https://arbeidsgiver-gcp.dev.nav.no/forebygge-sykefravaer',
-    'https://tjenester-q1.nav.no/oppfolgingsplanarbeidsgiver',
-    'https://tjenester.nav.no/oppfolgingsplanarbeidsgiver',
+    'https://www-gcp.dev.nav.no/syk/oppfolgingsplanarbeidsgiver',
+    'https://www.nav.no/syk/oppfolgingsplanarbeidsgiver',
     'https://oppfolgingsplanarbeidsgiver.herokuapp.com/',
 ];
 
@@ -79,12 +79,9 @@ export const utleddApplikasjonsnavnFraUrl = (referrerUrl: ReferrerUrl): Referrer
         return undefined;
     }
     let resultat: ReferrerApplikasjon = 'UKJENT_REFERRER';
-    let maybeApplikasjon: string | undefined = referrerUrl
-        .split(/(?:http|https):\/\//)?.[1]
-        ?.split(/[\/?]/)?.[1];
 
     for (let app of kjenteApplikasjoner) {
-        if (maybeApplikasjon.startsWith(app)) {
+        if (referrerUrl.includes(app)) {
             resultat = app as ReferrerApplikasjon;
             break;
         }
