@@ -158,23 +158,13 @@ describe('Tester om en URL er tillat for navigasjon (Tilbake knapp) med funksjon
         expect(result).toBe(true);
     });
 
-    test('Tester at erTilbakeURLTillat returnerer true for tjenster-q1', async () => {
-        const result = erTilbakeURLTillat('https://tjenester-q1.nav.no/oppfolgingsplanarbeidsgiver');
+    test('Tester at erTilbakeURLTillat returnerer true for www-gcp.dev.nav.no', async () => {
+        const result = erTilbakeURLTillat('https://www-gcp.dev.nav.no/syk/oppfolgingsplanarbeidsgiver/8b4a7c88-46a6-4487-bf0e-7b5e4532c035/oppfolgingsplaner');
         expect(result).toBe(true);
     });
 
-    test('Tester at erTilbakeURLTillat returnerer false for oera prodmiljø, den brukes ikke for frontend', async () => {
-        const result = erTilbakeURLTillat('https://oppfolgingsplanarbeidsgiver.nais.oera.no/');
-        expect(result).toBe(false);
-    });
-
-    test('Tester at erTilbakeURLTillat returnerer false for oera-q testmiljø, den brukes ikke til frontend', async () => {
-        const result = erTilbakeURLTillat('https://oppfolgingsplanarbeidsgiver.nais.oera-q.local/');
-        expect(result).toBe(false);
-    });
-
     test('Tester at erTilbakeURLTillat returnerer true for oppfolgingsplanarbeidsgiver prodmiljø', async () => {
-        const result = erTilbakeURLTillat('https://tjenester.nav.no/oppfolgingsplanarbeidsgiver');
+        const result = erTilbakeURLTillat('https://www.nav.no/syk/oppfolgingsplanarbeidsgiver/8b4a7c88-46a6-4487-bf0e-7b5e4532c035/oppfolgingsplaner');
         expect(result).toBe(true);
     });
 

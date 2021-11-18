@@ -36,8 +36,8 @@ export const listeAvTillatteDomener = [
     'https://arbeidsgiver.labs.nais.io/sykefravarsstatistikk',
     'https://arbeidsgiver.nav.no/forebygge-sykefravaer',
     'https://arbeidsgiver-gcp.dev.nav.no/forebygge-sykefravaer',
-    'https://tjenester-q1.nav.no/oppfolgingsplanarbeidsgiver',
-    'https://tjenester.nav.no/oppfolgingsplanarbeidsgiver',
+    'https://www-gcp.dev.nav.no/syk/oppfolgingsplanarbeidsgiver',
+    'https://www.nav.no/syk/oppfolgingsplanarbeidsgiver',
     'https://oppfolgingsplanarbeidsgiver.herokuapp.com/',
 ];
 
