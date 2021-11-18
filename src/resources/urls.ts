@@ -79,12 +79,9 @@ export const utleddApplikasjonsnavnFraUrl = (referrerUrl: ReferrerUrl): Referrer
         return undefined;
     }
     let resultat: ReferrerApplikasjon = 'UKJENT_REFERRER';
-    let maybeApplikasjon: string | undefined = referrerUrl
-        .split(/(?:http|https):\/\//)?.[1]
-        ?.split(/[\/?]/)?.[1];
 
     for (let app of kjenteApplikasjoner) {
-        if (maybeApplikasjon.startsWith(app)) {
+        if (referrerUrl.includes(app)) {
             resultat = app as ReferrerApplikasjon;
             break;
         }

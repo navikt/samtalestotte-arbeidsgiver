@@ -106,17 +106,17 @@ describe('Tester for funksjonen utleddApplikasjonsnavnFraUrl() ', () => {
     });
 
     test('Fungerer for noen applikasjoner som ikke er i vårt PO', async () => {
-        const result = utleddApplikasjonsnavnFraUrl('https://tjenester.nav.no/oppfolgingsplanarbeidsgiver');
+        const result = utleddApplikasjonsnavnFraUrl('https://www.nav.no/syk/oppfolgingsplanarbeidsgiver');
         expect(result).toBe('oppfolgingsplanarbeidsgiver');
     });
 
     test('Fungerer for noen applikasjoner som ikke er i vårt PO', async () => {
-        const result = utleddApplikasjonsnavnFraUrl('https://tjenester.nav.no/oppfolgingsplanarbeidsgiver/283405/oppfolgingsplaner');
+        const result = utleddApplikasjonsnavnFraUrl('https://www.nav.no/syk/oppfolgingsplanarbeidsgiver/8b4a7c88-46a6-4487-bf0e-7b5e4532c035/oppfolgingsplaner');
         expect(result).toBe('oppfolgingsplanarbeidsgiver');
     });
 
     test('Fungerer for noen applikasjoner som ikke er i vårt PO', async () => {
-        const result = utleddApplikasjonsnavnFraUrl('https://tjenester.nav.no/oppfolgingsplanarbeidsgiver/283405/oppfolgingsplaner/985793#arbeidsoppgaver');
+        const result = utleddApplikasjonsnavnFraUrl('https://www.nav.no/syk/oppfolgingsplanarbeidsgiver/8b4a7c88-46a6-4487-bf0e-7b5e4532c035/oppfolgingsplaner/985793#arbeidsoppgaver');
         expect(result).toBe('oppfolgingsplanarbeidsgiver');
     });
 });
