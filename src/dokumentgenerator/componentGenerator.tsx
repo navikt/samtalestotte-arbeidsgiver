@@ -68,7 +68,7 @@ const mapComponents = (elements: (string | object)[]): ReactNode[] => {
                 return mapPanel(e.title, mapComponents(e.content), e.id);
             }
             if (isMediumHeader(e)) {
-                return mapMediumHeader(e.content, e.id, e.isLessSpace);
+                return mapMediumHeader(e.content, e.id);
             }
             if (isParagraph(e)) {
                 return isString(e.content)
@@ -95,7 +95,7 @@ const mapBigHeader = (content: string, id?: string) => {
     );
 };
 
-const mapMediumHeader = (content: string, id?: string, isLessSpace: boolean = false) => {
+const mapMediumHeader = (content: string, id?: string) => {
     const unikId = id ? id : camelCase(content);
     return (
         <Heading
@@ -103,7 +103,7 @@ const mapMediumHeader = (content: string, id?: string, isLessSpace: boolean = fa
             size={'medium'}
             level={'3'}
             key={uuidv4()}
-            className={classNames(isLessSpace ? marginTop2Rem : marginTop4Rem, marginBottom1Rem)}
+            className={classNames(marginTop4Rem, marginBottom1Rem)}
         >
             {content}
         </Heading>
