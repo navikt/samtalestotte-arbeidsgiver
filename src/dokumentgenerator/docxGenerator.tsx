@@ -3,7 +3,6 @@ import {
     DocumentElement,
     isBigHeader,
     isColumns,
-    isExternalLink,
     isInfoBox,
     isLink,
     isList,
@@ -48,23 +47,11 @@ export const generateDocX = (elements: (string | object)[]) => {
 const mapJson = (elements: (string | object)[]): DocxTypes[] => {
     return elements
         .map((e) => {
-            if (isString(e)) {
-                return mapString(e);
-            }
-            if (isText(e)) {
-                return mapText(e.content, e.bold, e.lineBreak);
-            }
             if (isColumns(e)) {
                 return mapColumns(e.leftContent, e.rightContent);
             }
             if (isInfoBox(e)) {
                 return mapInfoBox(e.content);
-            }
-            if (isLink(e)) {
-                return mapInternalHyperLink(e.url, e.content);
-            }
-            if (isExternalLink(e)) {
-                return mapExternalHyperLink(e.url, e.content);
             }
             if (isList(e)) {
                 return mapList(e.content);
@@ -146,12 +133,10 @@ const mapTableCell = (content: DocumentElement[], shade: string = '#ffffff') => 
         children: children,
     });
 };
-/*
+
 const mapLink = (text: string, url: string) => {
-    return mapInternalHyperLink()
-    //return url.startsWith('#') ? mapInternalHyperLink(text, url) : mapExternalHyperLink(text, url);
+    return url.startsWith('#') ? mapInternalHyperLink(text, url) : mapExternalHyperLink(text, url);
 };
-*/
 
 const mapInternalHyperLink = (text: string, url: string) => {
     return new InternalHyperlink({
@@ -166,18 +151,14 @@ const mapInternalHyperLink = (text: string, url: string) => {
 };
 
 const mapExternalHyperLink = (text: string, url: string) => {
-    return new Paragraph({
+    return new ExternalHyperlink({
         children: [
-            new ExternalHyperlink({
-                children: [
-                    new TextRun({
-                        text: text,
-                        style: 'Hyperlink',
-                    }),
-                ],
-                link: url,
+            new TextRun({
+                text: text,
+                style: 'Hyperlink',
             }),
         ],
+        link: url,
     });
 };
 
@@ -213,13 +194,13 @@ const mapList = (content: (DocumentElement | string)[][], level: number = 0): Pa
                 if (isLink(e)) {
                     return i == 0
                         ? new Paragraph({
-                              children: [mapInternalHyperLink(e.content, e.url)],
+                              children: [mapLink(e.content, e.url)],
                               bullet: { level: level },
                           })
                         : new Paragraph({
                               children: [
                                   new TextRun(indent('', level)),
-                                  mapInternalHyperLink(e.content, e.url),
+                                  mapLink(e.content, e.url),
                               ],
                               indent: { start: 360 * (level + 2), left: 360 * (level + 2) },
                           });
@@ -321,7 +302,7 @@ const mapParagraph = (content: (DocumentElement | string)[] | string, level?: nu
                           return mapText(e.content, e.bold, e.lineBreak);
                       }
                       if (isLink(e)) {
-                          return mapInternalHyperLink(e.content, e.url);
+                          return mapLink(e.content, e.url);
                       }
                       return undefined;
                   })
@@ -336,29 +317,4 @@ const mapParagraph = (content: (DocumentElement | string)[] | string, level?: nu
 
 const indent = (content: string, level: number) => {
     return `${'\t'.repeat(level + 1)}${content}`;
-};
-
-const indentAll = (content: (DocumentElement | string)[] | string, level: number) => {
-    if (isString(content)) {
-        return `${'\t'.repeat(level + 1)}${content}`;
-    }
-    return content
-        .map((element) => {
-            if (isString(element)) {
-                return `${'\t'.repeat(level + 1)}${element}`;
-            }
-            if (isText(element)) {
-                return {
-                    ...element,
-                    content: `${'\t'.repeat(level + 1)}${element.content}`,
-                } as DocumentElement;
-            }
-            if (isLink(element)) {
-                return {
-                    ...element,
-                    content: `${'\t'.repeat(level + 1)}${element.content}`,
-                } as DocumentElement;
-            }
-        })
-        .filter(notUndefinedOrNull);
 };

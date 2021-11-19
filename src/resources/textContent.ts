@@ -646,10 +646,14 @@ const planleggeVeienVidereSammen = [
                     'Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan. ',
             },
             {
-                type: 'ExternalLink',
-                url: OPPFOLGNINGSPLAN,
-                content: 'Les mer om oppfølgingsplan på nav.no.',
+                type: 'Paragraph',
+                content: [{
+                    type: 'Link',
+                    url: OPPFOLGNINGSPLAN,
+                    content: 'Les mer om oppfølgingsplan på nav.no.',
+                }]
             },
+
             { type: 'SmallHeader', content: 'Vanlige tema i avslutningen:' },
             {
                 type: 'List',

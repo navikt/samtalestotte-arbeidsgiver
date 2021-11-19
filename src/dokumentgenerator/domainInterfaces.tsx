@@ -6,7 +6,6 @@ type ElementType =
     "SmallHeader" |
     "List" |
     "Link" |
-    "ExternalLink" |
     "Panel" |
     "Columns" |
     "HorizontalLine" |
@@ -86,18 +85,6 @@ export interface Link extends DocumentElement {
 export const isLink = (element: DocumentElement | string | object): element is Link => {
     if(typeof element === "object" && element.hasOwnProperty("type")) {
         return (element as DocumentElement).type === "Link"
-    }
-    return false
-}
-
-export interface ExternalLink extends DocumentElement {
-    type: "ExternalLink"
-    url: string
-    content: string
-}
-export const isExternalLink = (element: DocumentElement | string | object): element is ExternalLink => {
-    if(typeof element === "object" && element.hasOwnProperty("type")) {
-        return (element as DocumentElement).type === "ExternalLink"
     }
     return false
 }
