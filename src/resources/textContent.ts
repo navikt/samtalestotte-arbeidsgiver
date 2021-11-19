@@ -23,7 +23,7 @@ import {
 
 const slikSkaperDuGodeSamtaler: (DocumentElement | object)[] = [
     { type: 'BigHeader', content: 'Slik skaper du gode samtaler' },
-    { type: 'MediumHeader', content: 'Last ned verktøyet og rediger selv:', isLessSpace: true },
+    { type: 'SmallHeader', content: 'Last ned verktøyet og rediger selv:', isLessSpace: true },
     { type: 'DownloadButtons' },
     {
         type: 'Paragraph',
