@@ -198,10 +198,7 @@ const mapList = (content: (DocumentElement | string)[][], level: number = 0): Pa
                               bullet: { level: level },
                           })
                         : new Paragraph({
-                              children: [
-                                  new TextRun(indent('', level)),
-                                  mapLink(e.content, e.url),
-                              ],
+                              children: [new TextRun(indent('', level)), mapLink(e.content, e.url)],
                               indent: { start: 360 * (level + 2), left: 360 * (level + 2) },
                           });
                 }
@@ -252,21 +249,19 @@ const mapSmallHeader = (text: string, id?: string) => {
 
 const mapMediumHeader = (text: string, id?: string) => {
     const unikId = id ? id : camelCase(text);
-    return [
-        new Paragraph({
-            heading: HeadingLevel.HEADING_2,
-            spacing: {
-                after: 200,
-                before: 200,
-            },
-            children: [
-                new Bookmark({
-                    id: unikId,
-                    children: [new TextRun(text)],
-                }),
-            ],
-        }),
-    ];
+    return new Paragraph({
+        heading: HeadingLevel.HEADING_2,
+        spacing: {
+            after: 200,
+            before: 200,
+        },
+        children: [
+            new Bookmark({
+                id: unikId,
+                children: [new TextRun(text)],
+            }),
+        ],
+    });
 };
 
 const mapBigHeader = (text: string, id?: string) => {
