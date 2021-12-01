@@ -3223,10 +3223,10 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
-docx@^7.1.2:
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/docx/-/docx-7.1.2.tgz#629f24222e82fb624f7221cfcc520dd3ab819cfe"
-  integrity sha512-uzdkDh0u1KNRmIprxuZ9x2ti2/3xn+TfBGfjIPplR6WFdhK13hL1NcgdJsu9+QsASAqjuogiJiiEap5fv8ubow==
+docx@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/docx/-/docx-7.2.0.tgz#590b77f876e39b1a45570115e865ae8894e7602e"
+  integrity sha512-NtkbNpBALNxjvmlF635Ruqz+q6508aC5g2ydw54ndLOcgd/G5Jp8Bs9mZy4eWULDSoHQRuP8CVUzqU8ZBRnHIg==
   dependencies:
     "@types/node" "^16.0.0"
     jszip "^3.1.5"
