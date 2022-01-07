@@ -161,7 +161,7 @@ const tittelTekst = css`
     font-weight: 600;
     font-size: 20px;
     line-height: 25px;
-    color: var(--navds-color-blue-50);
+    color: var(--navds-global-color-blue-500);
 
     & :hover {
         text-decoration-line: underline;
@@ -194,7 +194,7 @@ const panelInnhold = css`
 
 const borderBottom = css`
     > button {
-        border-bottom: 1px solid var(--navds-color-darkgray);
+        border-bottom: 1px solid var(--navds-global-color-gray-900);
     }
 `;
 

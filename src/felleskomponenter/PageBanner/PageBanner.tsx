@@ -26,8 +26,8 @@ export const PageBanner = (props: {
 /** STYLES */
 
 const pageBanner = css`
-  background-color: var(--navds-color-blue-10);
-  border-bottom: 0.2rem solid var(--navds-color-blue-20);
+  background-color: var(--navds-global-color-blue-100);
+  border-bottom: 0.2rem solid var(--navds-global-color-blue-200);
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 

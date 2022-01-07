@@ -41,7 +41,7 @@ const kalkulatorRootStyle = css`
   min-height: 85px;
     border: 1px solid;
     * {
-      color: var(--navds-color-blue-50);
+      color: var(--navds-global-color-blue-500);
     }
     span {
       width: 100%;
@@ -54,7 +54,7 @@ const kalkulatorRootStyle = css`
     }
 
     &:hover {
-      border: 1px solid var(--navds-color-gray-60);
+      border: 1px solid var(--navds-global-color-gray-600);
     }
     &:hover * {
       text-decoration-line: underline;
