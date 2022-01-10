@@ -69,7 +69,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     );
     return (
         <div className={root}>
-            <Accordion>
+            <Accordion className={accordion}>
                 <Accordion.Item open={erÅpen} className={accordionItem}>
                     <Accordion.Header
                         id={panelknappID}
@@ -168,6 +168,9 @@ const tittelTekst = css`
     }
 `;
 
+const accordion = css`
+  background-color: var(--navds-global-color-white);
+`
 const accordionItem = css`
     margin-bottom: 1rem;
 `;
