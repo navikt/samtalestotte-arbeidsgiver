@@ -1,3 +1,4 @@
+import amplitude from 'amplitude-js';
 let initiated = false;
 
 const getApiKey = () => {
@@ -7,7 +8,6 @@ const getApiKey = () => {
 };
 
 export default function logEvent(eventName: string, data?: any): Promise<any> {
-    const amplitude = require('amplitude-js');
 
     if (!initiated) {
         amplitude.getInstance().init(getApiKey(), '', {

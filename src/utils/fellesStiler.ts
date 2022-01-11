@@ -67,7 +67,7 @@ export const knappSomLenke = css`
 `;
 
 export const horizontalLine = css`
-    border-top: 1px solid var(--navds-color-gray-20);
+    border-top: 1px solid var(--navds-global-color-gray-200);
     width: 100%;
 `;
 
@@ -76,7 +76,7 @@ export const graAvrundetBoks = css`
     padding: 1rem 2rem 1rem 1rem;
     border: 1px solid black;
     border-radius: 4px;
-    background: var(--navds-color-gray-10);
+    background: var(--navds-global-color-gray-100);
     h4 {
         margin-top: 4px;
         margin-bottom: 0;
