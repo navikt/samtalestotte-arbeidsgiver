@@ -28,6 +28,6 @@ const backgroundStyle = css`
     }
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background: var(--navds-color-blue-10);
+    background: var(--navds-global-color-blue-100);
     border-radius: 10px;
 `;

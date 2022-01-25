@@ -166,7 +166,7 @@ const layoutContent = css`
 const layoutSmallScreenIllustration = css`
     display: flex;
     justify-content: center;
-    background: var(--navds-color-blue-10);
+    background: var(--navds-global-color-blue-100);
     margin: 1rem 0 3rem;
     svg {
         flex-shrink: 0;

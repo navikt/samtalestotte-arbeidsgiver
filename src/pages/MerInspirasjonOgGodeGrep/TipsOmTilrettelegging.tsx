@@ -122,7 +122,7 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                             </li>
                             <li>
                                 <LoggbarLenke href={OKONOMISKE_VIRKEMIDLER}>
-                                    Les mer om NAVs økonomiske virkemidler
+                                    Les mer om NAVs støtteordninger ved tilrettelegging for ansatte
                                 </LoggbarLenke>
                             </li>
                         </ul>
