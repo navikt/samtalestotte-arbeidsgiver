@@ -1529,7 +1529,7 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@types/amplitude-js@^8.0.0":
+"@types/amplitude-js@^8.9.5":
   version "8.9.5"
   resolved "https://registry.yarnpkg.com/@types/amplitude-js/-/amplitude-js-8.9.5.tgz#225eb770f421b9b2ac0e709d9effba6eb5142c92"
   integrity sha512-kMloEy/aI+QrVdqQ+bOmmpJ94NLDrsYgw2rybbpzFr80U5m2S0bheAA41dtO32CvU1hnJDfPoFaSCNJYrq1NWw==
@@ -1777,7 +1777,7 @@ agent-base@6:
   dependencies:
     debug "4"
 
-amplitude-js@^8.6.0:
+amplitude-js@^8.16.0:
   version "8.16.0"
   resolved "https://registry.yarnpkg.com/amplitude-js/-/amplitude-js-8.16.0.tgz#7c4faf4dc16342c6f377d775d0a02c0db3f47cba"
   integrity sha512-PtHuYphktZsCf2BRSbb0EMuClQjHP2kSTDz2QBy6cv18yRvqVs3I2MB386BfeOxgxR16J/OlfFVBWhv9CX2rYw==
