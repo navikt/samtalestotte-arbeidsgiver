@@ -1,4 +1,5 @@
 import amplitude from 'amplitude-js';
+
 let initiated = false;
 
 const getApiKey = () => {
@@ -11,7 +12,7 @@ export default function logEvent(eventName: string, data?: any): Promise<any> {
 
     if (!initiated) {
         amplitude.getInstance().init(getApiKey(), '', {
-            apiEndpoint: 'amplitude.nav.no/collect',
+            apiEndpoint: 'amplitude.nav.no/collect-auto',
             saveEvents: false,
             includeUtm: true,
             batchEvents: false,
