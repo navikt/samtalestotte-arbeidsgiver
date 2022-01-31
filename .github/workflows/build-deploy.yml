@@ -47,7 +47,7 @@ jobs:
                   PRINT_PAYLOAD: true
     deploy-to-labs-gcp:
         name: Deploy to labs-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/oppdateringer-jan-22'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/fiks-lukkpanel-accordion'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
