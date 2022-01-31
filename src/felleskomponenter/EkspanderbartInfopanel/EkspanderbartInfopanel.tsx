@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode, useEffect, useState } from 'react';
+import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
 import { Accordion } from '@navikt/ds-react';
 import { Expand } from '@navikt/ds-icons';
 import classNames from 'classnames';
@@ -9,7 +9,8 @@ import { css } from 'linaria';
 import { SCREEN_SM_MIN } from '../../utils/konstanter';
 import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
 import { useCookies } from 'react-cookie';
-import {cookiesIApplikasjon, SamtalestøtteCookies} from '../../utils/cookiesUtils';
+import { cookiesIApplikasjon, SamtalestøtteCookies } from '../../utils/cookiesUtils';
+import { AccordionHeaderType } from '@navikt/ds-react/esm/accordion/AccordionHeader';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
@@ -37,6 +38,14 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
 
     const hasIcon = props.ikon !== null && props.ikon !== undefined;
+
+    const accordionRef = useRef<HTMLButtonElement>(null);
+
+    const settFokusTilSisteAktivePanel = () => {
+
+            accordionRef?.current?.focus();
+
+    };
 
     useEffect(() => {
         const timer = setTimeout(async () => {
@@ -73,6 +82,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                 <Accordion.Item open={erÅpen} className={accordionItem}>
                     <Accordion.Header
                         id={panelknappID}
+                        ref={accordionRef}
                         onClick={() => {
                             setErÅpen(!erÅpen);
                         }}
@@ -98,6 +108,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                                         onLukkScroll(panelKnapp, getStickyHeaderOffset(hovedMeny)),
                                     0
                                 );
+                                settFokusTilSisteAktivePanel();
                             }}
                         >
                             <span className="navds-body-short">Lukk dette panelet</span>
@@ -169,8 +180,8 @@ const tittelTekst = css`
 `;
 
 const accordion = css`
-  background-color: var(--navds-global-color-white);
-`
+    background-color: var(--navds-global-color-white);
+`;
 const accordionItem = css`
     margin-bottom: 1rem;
 `;
