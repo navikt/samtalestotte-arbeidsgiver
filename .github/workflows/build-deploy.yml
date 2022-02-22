@@ -32,8 +32,8 @@ jobs:
                   docker push ${IMAGE}
 
     deploy-to-dev-gcp:
-        name: Deploy to dev-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/oppdateringer-jan-22'
+      name: Deploy to dev-gcp
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/deps_feb22'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
