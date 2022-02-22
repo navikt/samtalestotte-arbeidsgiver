@@ -1,75 +1,75 @@
 name: Build and deploy master
 
-on: [push]
+on: [ push ]
 
 env:
-    IMAGE: docker.pkg.github.com/${{ github.repository }}/samtalestotte-arbeidsgiver:${{ github.sha }}
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/samtalestotte-arbeidsgiver:${{ github.sha }}
 
 concurrency:
   group: build-deploy-on-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-    compile-test-and-build:
-        name: Build and run tests
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: '14.x'
-            - name: Install dependencies
-              run: yarn install --frozen-lockfile
-            - name: Run tests
-              run: yarn test
-            - name: Build tag and push Docker container
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              run: |
-                  docker build . -t ${IMAGE}
-                  echo ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
-                  echo ${IMAGE}
-                  docker push ${IMAGE}
+  compile-test-and-build:
+    name: Build and run tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Run tests
+        run: yarn test
+      - name: Build tag and push Docker container
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          docker build . -t ${IMAGE}
+          echo ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
+          echo ${IMAGE}
+          docker push ${IMAGE}
 
-    deploy-to-dev-gcp:
-        name: Deploy to dev-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/oppdateringer-jan-22'
-        needs: compile-test-and-build
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - uses: nais/deploy/actions/deploy@v1
-              env:
-                  APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: dev-gcp
-                  VAR: version=${{ env.IMAGE }}
-                  RESOURCE: nais/dev-gcp.yaml
-                  PRINT_PAYLOAD: true
-    deploy-to-labs-gcp:
-        name: Deploy to labs-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/fiks-lukkpanel-accordion'
-        needs: compile-test-and-build
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - uses: nais/deploy/actions/deploy@v1
-              env:
-                  APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: labs-gcp
-                  VAR: version=${{ env.IMAGE }}
-                  RESOURCE: nais/labs-gcp.yaml
-                  PRINT_PAYLOAD: true
-    deploy-to-prod-gcp:
-        name: Deploy to prod-gcp
-        if: github.ref == 'refs/heads/master'
-        needs: compile-test-and-build
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - uses: nais/deploy/actions/deploy@v1
-              env:
-                  APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: prod-gcp
-                  VAR: version=${{ env.IMAGE }}
-                  RESOURCE: nais/prod-gcp.yaml
-                  PRINT_PAYLOAD: true
+  deploy-to-dev-gcp:
+    name: Deploy to dev-gcp
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/deps_feb22'
+    needs: compile-test-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp
+          VAR: version=${{ env.IMAGE }}
+          RESOURCE: nais/dev-gcp.yaml
+          PRINT_PAYLOAD: true
+  deploy-to-labs-gcp:
+    name: Deploy to labs-gcp
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/deps_feb22'
+    needs: compile-test-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: labs-gcp
+          VAR: version=${{ env.IMAGE }}
+          RESOURCE: nais/labs-gcp.yaml
+          PRINT_PAYLOAD: true
+  deploy-to-prod-gcp:
+    name: Deploy to prod-gcp
+    if: github.ref == 'refs/heads/master'
+    needs: compile-test-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-gcp
+          VAR: version=${{ env.IMAGE }}
+          RESOURCE: nais/prod-gcp.yaml
+          PRINT_PAYLOAD: true
