@@ -12,7 +12,7 @@
   "dependencies": {
     "@navikt/ds-css": "^0.13.0",
     "@navikt/ds-icons": "^0.8.0",
-    "@navikt/ds-react": "^0.14.3",
+    "@navikt/ds-react": "^0.15.3",
     "@navikt/fnrvalidator": "^1.2.0",
     "@sentry/browser": "^6.15.0",
     "@types/amplitude-js": "^8.9.5",
