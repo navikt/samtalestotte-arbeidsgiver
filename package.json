@@ -10,7 +10,7 @@
     "prettier": "prettier -w ./src"
   },
   "dependencies": {
-    "@navikt/ds-css": "^0.13.0",
+    "@navikt/ds-css": "^0.14.1",
     "@navikt/ds-icons": "^0.8.0",
     "@navikt/ds-react": "^0.15.3",
     "@navikt/fnrvalidator": "^1.2.0",
