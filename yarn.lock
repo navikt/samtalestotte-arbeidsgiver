@@ -1312,10 +1312,10 @@
     prop-types "^15.7.2"
     react-is "^16.8.0 || ^17.0.0"
 
-"@navikt/ds-css@^0.14.1":
-  version "0.14.2"
-  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.14.2.tgz#43a90ba179de177f3ee183b7a15fd5dfaa2ab49f"
-  integrity sha512-4Q3PnI0ce9ND1IyIvRitqROZP4DAlUIs4I1d/66NzA7m3tiup+nj2Uh8VV6wWHUTJThvUqy9tN7qxPK8jYEuwQ==
+"@navikt/ds-css@^0.15.2":
+  version "0.15.12"
+  resolved "https://registry.yarnpkg.com/@navikt/ds-css/-/ds-css-0.15.12.tgz#dae50463663c72e40dd84a5d24dc6c71dfecabe2"
+  integrity sha512-WbYAWsy/rFhCzp+zbZwy1+JqxxgKPx7mEqdI/qtr6dbYoDtHwF0eDBFYOHxUuihgGd5Dm+gANhnY5PdIMpymHw==
 
 "@navikt/ds-icons@^0.8.0", "@navikt/ds-icons@^0.8.1":
   version "0.8.4"
