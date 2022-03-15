@@ -1480,10 +1480,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@types/amplitude-js@^8.9.5":
-  version "8.9.6"
-  resolved "https://registry.yarnpkg.com/@types/amplitude-js/-/amplitude-js-8.9.6.tgz#c447f5d20f6cb6380cfd33d6728bb509212e19b0"
-  integrity sha512-x5Z2pdlb2o8x9RW541UWO+hzoQHhX1NZxoCUO8ApRwBto8RpoIO4LZBIsgLUWNxAzxXaL3A3vErbNzHDawcnqQ==
+"@types/amplitude-js@^8.16.0":
+  version "8.16.0"
+  resolved "https://registry.yarnpkg.com/@types/amplitude-js/-/amplitude-js-8.16.0.tgz#2e201473148ece37667fe52cfce5db2ea2508c84"
+  integrity sha512-ElfQLlWQvtlXw2dwk3qslgs9PIUlX6+6Cf/NEezlNnexJ5B9ykUrNOQk6xbNFKR01MhCld07nWEf5iTYERKS9A==
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14":
   version "7.1.18"

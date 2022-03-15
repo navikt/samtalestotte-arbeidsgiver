@@ -15,7 +15,7 @@
     "@navikt/ds-react": "^0.15.3",
     "@navikt/fnrvalidator": "^1.2.0",
     "@sentry/browser": "^6.15.0",
-    "@types/amplitude-js": "^8.9.5",
+    "@types/amplitude-js": "^8.16.0",
     "@types/cheerio": "^0.22.27",
     "@types/classnames": "^2.2.11",
     "@types/node": "^17.0.13",
