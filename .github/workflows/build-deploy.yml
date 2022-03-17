@@ -33,7 +33,7 @@ jobs:
 
   deploy-to-dev-gcp:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/innføre-csp'
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/deploy-med-dekoratør-i-dev'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
