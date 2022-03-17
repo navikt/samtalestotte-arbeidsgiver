@@ -38,6 +38,10 @@ interface LinkAttributes {
 }
 
 const getDecoratorCached = async (decoratorParams: DecoratorParams) => {
+    console.log(
+        "//////////////////////// getDecoratorCached() ////////////////////////////////"
+    );
+
     return new Promise((resolve, reject) => {
         const decorator = cache.get(`decorator-cache-${decoratorParams.cacheKey}`);
         if (decorator) {
