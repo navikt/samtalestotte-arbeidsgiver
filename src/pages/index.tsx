@@ -3,7 +3,6 @@ import { Layout } from '../felleskomponenter/Layout/Layout';
 import { getPageProps, PageProps } from '../pageProps';
 import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
-import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
 import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
 import VissteDuAt from './VissteDuAt';
 import { useCookies } from 'react-cookie';
@@ -76,7 +75,6 @@ const Home = (props: { page: PageProps }) => {
                     <HvorforBrukeTidPaaSamtaler
                         className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
                     />
-                    <SlikSkaperDuGodeSamtaler className={classNames(paddingSides1rem)} />
                     <MerInspirasjonOgGodeGrep
                         className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
                     />

@@ -13,8 +13,8 @@ import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import { css } from 'linaria';
 import classNames from 'classnames';
 import {
-    marginSides2_25rem,
     largeScreenMarginSides3rem,
+    marginSides2_25rem,
     marginTop6Rem,
     noPrint,
 } from '../../utils/fellesStiler';
@@ -33,7 +33,7 @@ export const Layout = (props: {
     logEvent: (eventName: string, data?: any) => Promise<any>;
     bannerIconUrl?: string;
     decoratorParts?: DecoratorParts;
-    children: React.ReactChild[];
+    children: React.ReactChild[] | React.ReactChild;
 }) => {
     const layoutContentRef = useRef<HTMLDivElement>(null);
     const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
