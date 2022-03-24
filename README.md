@@ -1,7 +1,6 @@
-# Side om samtalestotte for  sykefravær
+# Samtalestøtte arbeidsgiver
 
-Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbindelse med samtaler med sykmeldte arbeidstakere.
-
+Verktøy for arbeidsgivere om hvordan de kan holde en samtale med mål om å forebygge eller følge opp sykefravær.
 
 # Komme i gang
 
