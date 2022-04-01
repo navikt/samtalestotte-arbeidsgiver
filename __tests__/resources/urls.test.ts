@@ -1,5 +1,4 @@
 import {
-    erTilbakeURLTillat,
     getReferrerUrlFraUrlMedQueryParameter,
     utleddApplikasjonsnavnFraUrl
 } from '../../src/resources/urls';
@@ -121,81 +120,4 @@ describe('Tester for funksjonen utleddApplikasjonsnavnFraUrl() ', () => {
     });
 });
 
-describe('Tester om en URL er tillat for navigasjon (Tilbake knapp) med funksjonen erTilbakeUrlTillat() ', () => {
-    test('Tester at erTilbakeURLTillat til nav.no-produksjon returnerer true', async () => {
-        const result = erTilbakeURLTillat('https://www.nav.no/no/bedrift');
-        expect(result).toBe(true);
-    });
-
-    test('Tester en gylldig RefURl skal returnere true', async () => {
-        const result = erTilbakeURLTillat(
-            'https://arbeidsgiver.nav.no/sykefravarsstatistikk?bedrift=999999999'
-        );
-        expect(result).toBe(true);
-    });
-
-    test('Tester en gylldig RefURl skal returnere true', async () => {
-        const result = erTilbakeURLTillat(
-            'https://arbeidsgiver-q.nav.no/sykefravarsstatistikk?bedrift=999999999'
-        );
-        expect(result).toBe(true);
-    });
-
-    test('Tester en gylldig RefURl skal returnere true', async () => {
-        const result = erTilbakeURLTillat(
-            'https://arbeidsgiver.labs.nais.io/sykefravarsstatistikk?bedrift=999999999'
-        );
-        expect(result).toBe(true);
-    });
-
-    test('Tester en gylldig RefURl skal returnere true', async () => {
-        const result = erTilbakeURLTillat('https://arbeidsgiver.nav.no/forebygge-sykefravaer/');
-        expect(result).toBe(true);
-    });
-
-    test('Tester en gylldig RefURl skal returnere true', async () => {
-        const result = erTilbakeURLTillat('https://arbeidsgiver-gcp.dev.nav.no/forebygge-sykefravaer/');
-        expect(result).toBe(true);
-    });
-
-    test('Tester at erTilbakeURLTillat returnerer true for www-gcp.dev.nav.no', async () => {
-        const result = erTilbakeURLTillat('https://www-gcp.dev.nav.no/syk/oppfolgingsplanarbeidsgiver/8b4a7c88-46a6-4487-bf0e-7b5e4532c035/oppfolgingsplaner');
-        expect(result).toBe(true);
-    });
-
-    test('Tester at erTilbakeURLTillat returnerer true for oppfolgingsplanarbeidsgiver prodmiljø', async () => {
-        const result = erTilbakeURLTillat('https://www.nav.no/syk/oppfolgingsplanarbeidsgiver/8b4a7c88-46a6-4487-bf0e-7b5e4532c035/oppfolgingsplaner');
-        expect(result).toBe(true);
-    });
-
-    test('Tester at erTilbakeURLTillat returnerer true for oppfolgingsplanarbeidsgiver testmiljø', async () => {
-        const result = erTilbakeURLTillat(
-            'https://oppfolgingsplanarbeidsgiver.herokuapp.com/oppfolgingsplanarbeidsgiver/28790/oppfolgingsplaner'
-        );
-        expect(result).toBe(true);
-    });
-
-    test('Tester URL hvor domain ikke er nav.no skal ikke bli tillatt', async () => {
-        const result = erTilbakeURLTillat('https://farlig.url.hack/sykefravarsstatistikk');
-
-        expect(result).toBe(false);
-    });
-
-    test('Tester URL hvor domain ikke er nav.no skal ikke bli tillatt', async () => {
-        const result = erTilbakeURLTillat(
-            'https://arbeidsgiver.nav.no.hack.me/sykefravarsstatistikk/?bedrift=999999999'
-        );
-        expect(result).toBe(false);
-    });
-
-    test('Tester URL hvor domain ikke er nav.no skal ikke bli tillatt', async () => {
-        const result = erTilbakeURLTillat('https://arbeidsgiver.nav.no.hack.me/forebygge-sykefravaer');
-        expect(result).toBe(false);
-    });
-
-    test('Tester URL hvor domain ikke er nav.no skal ikke bli tillatt', async () => {
-        const result = erTilbakeURLTillat('https://oppfolgingsplanarbeidsgiver.herokuapp.hacked.com');
-        expect(result).toBe(false);
-    });
-})
 
