@@ -6,17 +6,14 @@ import { DecoratorParts } from '../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
 import React, { useEffect, useRef, useState } from 'react';
 import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
-import { BodyShort, Link } from '@navikt/ds-react';
-import { Back } from '@navikt/ds-icons';
-import { getVerifisertTilbakeURL, TILBAKE } from '../../resources/urls';
+import { BodyShort } from '@navikt/ds-react';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import { css } from 'linaria';
 import classNames from 'classnames';
 import {
-    marginSides2_25rem,
     largeScreenMarginSides3rem,
+    marginSides2_25rem,
     marginTop6Rem,
-    noPrint,
 } from '../../utils/fellesStiler';
 import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
 import { useCookies } from 'react-cookie';
@@ -36,7 +33,6 @@ export const Layout = (props: {
     children: React.ReactChild[];
 }) => {
     const layoutContentRef = useRef<HTMLDivElement>(null);
-    const [tilbakeURL, setTilbakeURL] = useState<string>(TILBAKE);
     const [cookies, setCookies] = useCookies(cookiesIApplikasjon);
 
     useEffect(() => {
@@ -47,7 +43,6 @@ export const Layout = (props: {
             } else {
                 usikkerRefUrl = hentReferrerUrlFraCookies(cookies);
             }
-            setTilbakeURL(getVerifisertTilbakeURL(usikkerRefUrl));
         }
     }, []);
 
@@ -99,13 +94,6 @@ export const Layout = (props: {
                 />
                 <div className={layoutWrapper}>
                     <div className={layoutContent} ref={layoutContentRef}>
-                        <Link
-                            href={tilbakeURL}
-                            className={classNames(noPrint, largeScreenMarginSides3rem)}
-                        >
-                            <Back />
-                            Tilbake
-                        </Link>
                         <div
                             className={classNames(
                                 layoutSmallScreenIllustration,

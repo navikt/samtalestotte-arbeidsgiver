@@ -1,4 +1,3 @@
-export const TILBAKE = 'https://www.nav.no/no/bedrift';
 export const OKONOMISKE_VIRKEMIDLER =
     'https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegging';
 export const OPPFOLGNINGSPLAN =
@@ -29,30 +28,6 @@ export const OPPFØLGING_ANSATTE_SOM_SLITTER_PSYKISK =
 export const FILM_OM_PSYKISK_HELSE = 'https://vimeo.com/626190972';
 export const IDEBANKEN_PSYKISK_HELSE = 'https://mag.idebanken.org/psykisk-helse/';
 
-export const listeAvTillatteDomener = [
-    TILBAKE,
-    'https://arbeidsgiver.nav.no/sykefravarsstatistikk',
-    'https://arbeidsgiver-q.nav.no/sykefravarsstatistikk',
-    'https://arbeidsgiver.labs.nais.io/sykefravarsstatistikk',
-    'https://arbeidsgiver.nav.no/forebygge-sykefravaer',
-    'https://arbeidsgiver-gcp.dev.nav.no/forebygge-sykefravaer',
-    'https://www-gcp.dev.nav.no/syk/oppfolgingsplanarbeidsgiver',
-    'https://www.nav.no/syk/oppfolgingsplanarbeidsgiver',
-    'https://oppfolgingsplanarbeidsgiver.herokuapp.com/',
-];
-
-export const erTilbakeURLTillat = (refUrl: string): boolean => {
-    return (
-        listeAvTillatteDomener.filter((tillattDomene) => refUrl.startsWith(tillattDomene)).length >
-        0
-    );
-};
-
-export const getVerifisertTilbakeURL = (url: string | null | undefined): string => {
-    return url !== undefined && url !== null && url !== '' && erTilbakeURLTillat(url)
-        ? url
-        : TILBAKE;
-};
 
 export type ReferrerUrl = string | undefined;
 export type ReferrerApplikasjon =
