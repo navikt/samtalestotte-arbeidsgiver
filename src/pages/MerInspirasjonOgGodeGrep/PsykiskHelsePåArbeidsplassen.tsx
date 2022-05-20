@@ -10,7 +10,7 @@ import { Heading } from '@navikt/ds-react';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import {
     FILM_OM_PSYKISK_HELSE, IDEBANKEN_PSYKISK_HELSE,
-    OPPFØLGING_ANSATTE_SOM_SLITTER_PSYKISK,
+    ARBEIDSGIVERLOS_ANSATTE_SOM_SLITTER_PSYKISK,
 } from '../../resources/urls';
 import classNames from 'classnames';
 
@@ -91,9 +91,8 @@ const PsykiskHelsePåArbeidsplassen = () => {
                                 og kan hjelpe deg.
                             </li>
                             <li>
-                                <LoggbarLenke href={OPPFØLGING_ANSATTE_SOM_SLITTER_PSYKISK}>
-                                    Les mer om NAVs tilbud til arbeidsgivere som har ansatte som
-                                    sliter psykisk
+                                <LoggbarLenke href={ARBEIDSGIVERLOS_ANSATTE_SOM_SLITTER_PSYKISK}>
+                                    Les mer om hjelp du kan få fra NAVs arbeidsgiverlos hvis en ansatt sliter psykisk
                                 </LoggbarLenke>
                             </li>
                         </ul>
