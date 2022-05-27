@@ -5,7 +5,8 @@ export const PROD_URL = ARBEIDSGIVER_URL + BASE_PATH;
 export const METRIKKER_API_PATH = BASE_PATH + '/metrikker';
 
 export const SCREEN_SM_MIN = '768px';
-export const SCREEN_MD_MIN = '992px';
-export const SCREEN_LG_MIN = '1200px';
+export const SCREEN_MD_MIN = '1024px';
+export const SCREEN_LG_MIN = '1344px';
+export const SCREEN_XL_MIN = '1440px';
 
 export const ETT_DØGN_I_SEKUNDER = 86400;
