@@ -33,7 +33,7 @@ jobs:
 
   deploy-to-dev-gcp:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/fjerne-tilbake-url'
+    if: github.ref == 'refs/heads/Aligne/venstrestille_titteler_på_sidene'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
