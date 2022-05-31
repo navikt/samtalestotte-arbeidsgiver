@@ -1,16 +1,22 @@
 import amplitude from 'amplitude-js';
+
 let initiated = false;
 
-const getApiKey = () => {
-    return window.location.hostname === 'arbeidsgiver.nav.no'
-        ? '3a6fe32c3457e77ce81c356bb14ca886'
-        : '55477baea93c5227d8c0f6b813653615';
+const AmplitudeBucket = {
+    ARBEIDSGIVER_PROD: 'a8243d37808422b4c768d31c88a22ef4',
+    ARBEIDSGIVER_DEV: '6ed1f00aabc6ced4fd6fcb7fcdc01b30',
 };
 
-export default function logEvent(eventName: string, data?: any): Promise<any> {
+const bucketId = () => {};
 
+export default function logEvent(eventName: string, data?: any): Promise<any> {
     if (!initiated) {
-        amplitude.getInstance().init(getApiKey(), '', {
+        const bucketId =
+            window.location.hostname === 'arbeidsgiver.nav.no'
+                ? AmplitudeBucket.ARBEIDSGIVER_PROD
+                : AmplitudeBucket.ARBEIDSGIVER_DEV;
+
+        amplitude.getInstance().init(bucketId, '', {
             apiEndpoint: 'amplitude.nav.no/collect',
             saveEvents: false,
             includeUtm: true,
