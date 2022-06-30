@@ -4,7 +4,7 @@ export const OPPFOLGNINGSPLAN =
     'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap';
 export const FOLGE_OPP_TILRETTELEGGING =
     'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap';
-export const NETTKURS = 'https://vimeo.com/showcase/6728595';
+export const NETTKURS = 'https://vimeo.com/showcase/8652435/video/573965951';
 export const TILRETTELEGGING = 'https://www.arbeidstilsynet.no/arbeidsforhold/tilrettelegging/';
 export const SLIK_LYKKES_DERE =
     'https://www.idebanken.org/kloke-grep/artikler/slik-lykkes-dere-med-tilrettelegging-pa-arbeidsplassen';
