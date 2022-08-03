@@ -32,7 +32,7 @@ export const SkrivUtKnapp = (props: {
                         size={'medium'}
                         variant={'secondary'}
                     >
-                        <Print className={marginRight05Rem} title={"Print icon"}/> {props.knappetekst}
+                        <Print className={marginRight05Rem} title={"Utskriftsikon"}/> {props.knappetekst}
                     </Button>
                 )}
             />

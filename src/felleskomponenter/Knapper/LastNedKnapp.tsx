@@ -47,7 +47,7 @@ export default function LastNedKnapp(props: {
             download={download}
             onClick={() => loggKlikkPåLastNedKnapp(props.label)}
         >
-            <Download title={"Download icon"}/>
+            <Download title={"Nedlastingsikon"}/>
             {props.knappetekst}
         </Link>
     );
