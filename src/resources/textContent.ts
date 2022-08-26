@@ -27,7 +27,7 @@ const slikSkaperDuGodeSamtaler: (DocumentElement | object)[] = [
     { type: 'DownloadButtons' },
     {
         type: 'Paragraph',
-        content: [{ type: 'Text', content: 'Som arbeidsgiver er du ansvalig for:', bold: true }],
+        content: [{ type: 'Text', content: 'Som arbeidsgiver er du ansvarlig for:', bold: true }],
     },
     {
         type: 'List',
