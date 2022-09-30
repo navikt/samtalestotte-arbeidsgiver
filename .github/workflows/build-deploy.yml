@@ -3,7 +3,7 @@ name: Build and deploy master
 on: [ push ]
 
 env:
-  IMAGE: docker.pkg.github.com/${{ github.repository }}/samtalestotte-arbeidsgiver:${{ github.sha }}
+  IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
 concurrency:
   group: build-deploy-on-${{ github.ref }}
@@ -22,18 +22,19 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Run tests
         run: yarn test
-      - name: Build tag and push Docker container
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Login to GitHub Docker Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push the Docker image
         run: |
-          docker build . -t ${IMAGE}
-          echo ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} --password-stdin
-          echo ${IMAGE}
-          docker push ${IMAGE}
+          docker build . -t ${IMAGE} && docker push ${IMAGE}
 
   deploy-to-dev-gcp:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/uu-icon-title-fix'
+    if: github.ref == 'refs/heads/Migrering_til_ghcr'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
