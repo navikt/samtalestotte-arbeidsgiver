@@ -15,8 +15,6 @@ export const KVALITETEN_PAA_SYKEFRAVAERSRUTINENE =
 export const DEN_VIKTIGE_SAMTALEN = 'https://mag.idebanken.org/denviktigesamtalen/';
 export const KONTAKT_OSS = 'https://arbeidsgiver.nav.no/kontakt-oss/';
 export const FOREBYGGE_SYKEFRAVAER = 'https://arbeidsgiver.nav.no/forebygge-sykefravaer/';
-export const SYKEFRAVÆRSSTATISTIKK_KALKULATOR =
-    'https://arbeidsgiver.nav.no/sykefravarsstatistikk/kalkulator';
 
 export const GODE_GREP_FOR_AA_BYGGE_RELASJONER =
     '#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base';

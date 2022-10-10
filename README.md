@@ -24,19 +24,18 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 
 ## Deploy
 
-Master branch deployes automatisk til Prod.
-
-### Hvordan deployer man en viss branch til dev-miljø?
-
-Oppdater filen `.github/workflows/build-deploy.yml` ved `deploy-to-dev` steg med navn til den branch-en som skal deployes
-
+- Master-branch deployes automatisk til `prod`.
+- Deploy av en gitt branch til `dev`-miljøet gjøres ved å fylle inn navnet på branchen
+  i `deploy-to-dev` i filen `.github/workflows/build-deploy.yml`
 
 ### Lenker til applikasjon
 
 - i prod: https://arbeidsgiver.nav.no/samtalestotte
 - Dev-miljøer:
   - i labs-miljø: https://arbeidsgiver.labs.nais.io/samtalestotte
-  - i dev-miljø: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte -- trenger #naisdevice kjørende se https://doc.nais.io/device/install/ for info om det
+  - i dev-miljø: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte -- trenger #naisdevice kjørende
+    se https://doc.nais.io/device/install/ for info om det
+
 ---
 
 # Henvendelser
