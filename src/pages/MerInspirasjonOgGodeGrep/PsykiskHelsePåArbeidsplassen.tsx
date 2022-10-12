@@ -68,12 +68,6 @@ const PsykiskHelsePåArbeidsplassen = () => {
                             på kort sikt:
                         </Heading>
                         <ul className={marginTop0Rem}>
-                            <li className={marginTop1Rem}>
-                                <LoggbarLenke href={FILM_OM_PSYKISK_HELSE}>
-                                    Se filmen “Vi må tørre å snakke om psykisk helse på
-                                    arbeidsplassen”, 5 minutter og 13 sekunder.
-                                </LoggbarLenke>
-                            </li>
                             <li>
                                 Vis omsorg, spør hvordan noen har det, lytt og still krav.
                             </li>
