@@ -219,20 +219,19 @@ const mapDownloadButtons = (title: ReactNode) => {
     */
 
     return (
-        <>
-          {title}
-          <div className={styles.downloadButtonContainer} key={uuidv4()}>
-              <LastNedKnapp
-                  knappetekst="Last ned i Word"
-                  href="/samtalestotte/Samtalestøtte-Arbeidsgiver.docx"
-                  label="last-ned-docx"
-              />
-              <LastNedKnapp
-                  knappetekst="Last ned i .txt"
-                  href="/samtalestotte/Samtalestøtte-Arbeidsgiver.txt"
-                  label="last-ned-txt"
-              />
-          </div>
-        </>
+        <div className={styles.downloadButtonContainer} key={uuidv4()}>
+            {title}
+            <LastNedKnapp
+                knappetekst="Last ned i Word"
+                href="/samtalestotte/Samtalestøtte-Arbeidsgiver.docx"
+                label="last-ned-docx"
+            />
+            <LastNedKnapp
+                knappetekst="Last ned i .txt"
+                href="/samtalestotte/Samtalestøtte-Arbeidsgiver.txt"
+                label="last-ned-txt"
+            />
+        </div>
+
     );
 };

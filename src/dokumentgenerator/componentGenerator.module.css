@@ -11,6 +11,11 @@
   flex-wrap: wrap;
 }
 
+.downloadButtonContainer :is(h2, h3, h4, p) {
+  width: 100%;
+  margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
   .downloadButtonContainer {
     justify-content: flex-start;
