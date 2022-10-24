@@ -22,7 +22,7 @@
     flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
+@media (--screen-sm-min) {
   .layoutSmallScreenIllustration {
     display: none;
   }

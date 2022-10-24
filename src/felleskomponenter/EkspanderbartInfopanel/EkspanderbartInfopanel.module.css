@@ -22,14 +22,14 @@
   row-gap: 12px;
 }
 
-@media (min-width: 768px) {
+@media (--screen-sm-min) {
   .grid {
     grid-template-columns: auto auto;
     grid-template-rows: auto;
   }
 }
 
-@media (min-width: 768px) {
+@media (--screen-sm-min) {
   .gridWithIcon {
     grid-template-columns: auto auto auto;
   }
@@ -39,7 +39,7 @@
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (--screen-sm-min) {
   .ikonContainer {
     display: block;
   }
@@ -99,7 +99,7 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-@media (min-width: 768px) {
+@media (--screen-sm-min) {
   .innholdStyle {
     padding-right: 1rem;
     padding-left: 1rem;

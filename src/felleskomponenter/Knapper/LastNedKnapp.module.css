@@ -13,7 +13,7 @@
     color: white;
 }
 
-@media (min-width: 768px) {
+@media (--screen-sm-min) {
   .downloadButtonStyle {
     width: 250px;
   }

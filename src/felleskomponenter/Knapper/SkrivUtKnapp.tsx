@@ -1,13 +1,10 @@
 import React, { useRef } from 'react';
 import classNames from 'classnames';
 import fellesStiler from '../../utils/fellesStiler.module.css';
-//{knappSomLenke, marginLeft1Rem, marginRight05Rem, noPrint}
 import ReactToPrint from 'react-to-print';
 import { Button } from '@navikt/ds-react';
 import { Print } from '@navikt/ds-icons';
-//import { css } from 'linaria';
 import styles from './SkrivUtKnapp.module.css'
-import { SCREEN_SM_MIN } from '../../utils/konstanter';
 
 export const SkrivUtKnapp = (props: {
     knappetekst: string;
@@ -41,12 +38,3 @@ export const SkrivUtKnapp = (props: {
         </div>
     );
 };
-
-/* TODO
-const hideOnSmallScreen = css`
-    display: none;
-    @media (min-width: ${SCREEN_SM_MIN}) {
-        display: flex;
-    }
-`;
- */

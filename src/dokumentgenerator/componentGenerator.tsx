@@ -2,24 +2,11 @@ import { Heading } from '@navikt/ds-react';
 import { v4 as uuidv4 } from 'uuid';
 import { ReactNode } from 'react';
 import classNames from 'classnames';
-/*import {
-    boldText,
-    graAvrundetBoks,
-    horizontalLine,
-    infoPanelKolonner,
-    marginBottom1Rem,
-    marginTop1Rem,
-    marginTop2Rem,
-    marginTop4Rem,
-}
- */
 import fellesStiler from '../utils/fellesStiler.module.css';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
-//import { css } from 'linaria';
 import styles from './componentGenerator.module.css'
 import { EkspanderbartInfopanel } from '../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import { camelCase } from '../utils/stringUtils';
-import { SCREEN_SM_MIN } from '../utils/konstanter';
 import LastNedKnapp from '../felleskomponenter/Knapper/LastNedKnapp';
 import {
     isBigHeader,
@@ -165,13 +152,7 @@ const mapList = (content: ReactNode[]) => {
 
 const mapPanel = (title: string, content: ReactNode[], id?: string) => {
     const unikId = id ? id : `ekspanderbart-infopanel__${camelCase(title)}-base`;
-    /* TODO
-    const firstChildNoMarginTop = css`
-        *:first-child {
-            margin-top: 0;
-        }
-    `;
-     */
+
     return (
         <EkspanderbartInfopanel
             key={uuidv4()}
@@ -204,19 +185,6 @@ const mapInfoBox = (content: ReactNode[]) => {
 const mapHorizontalLine = () => <div key={uuidv4()} className={fellesStiler.horizontalLine} />;
 
 const mapDownloadButtons = (title: ReactNode) => {
-    /* TODO
-    const downloadButtonContainerStyle = css`
-
-        @media (min-width: ${SCREEN_SM_MIN}) {
-            justify-content: flex-start;
-        }
-        justify-content: center;
-        margin-bottom: 2rem;
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    `;
-    */
 
     return (
         <div className={styles.downloadButtonContainer} key={uuidv4()}>

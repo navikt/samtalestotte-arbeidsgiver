@@ -4,19 +4,13 @@ import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
 import { DecoratorParts } from '../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
-import React, { useEffect, useRef, useState } from 'react';
-import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
+import React, { useEffect, useRef } from 'react';
+import { PROD_URL } from '../../utils/konstanter';
 import { BodyShort } from '@navikt/ds-react';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import styles from './Layout.module.css';
-//import { css } from 'linaria';
 import classNames from 'classnames';
 import fellesStiler from '../../utils/fellesStiler.module.css';
-  /*
-    largeScreenMarginSides3rem,
-    marginSides2_25rem,
-    marginTop6Rem,
-   */
 import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
 import { useCookies } from 'react-cookie';
 import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
@@ -128,50 +122,3 @@ export const Layout = (props: {
         </div>
     );
 };
-
-/** STYLES **/
-/* TODO
-const layout = css`
-    @media print {
-        @page {
-            size: A4;
-            margin: 2.54cm 0 0;
-        }
-    }
-`;
-
-const layoutWrapper = css`
-    min-height: 50rem;
-    padding: 1.5rem 0 5rem;
-`;
-
-const layoutContent = css`
-    max-width: 66rem;
-    background-color: white;
-    padding: 0;
-    margin: auto;
-    border-radius: 0.25rem;
-`;
-
-const layoutSmallScreenIllustration = css`
-    display: flex;
-    justify-content: center;
-    background: var(--navds-global-color-blue-100);
-    margin: 1rem 0 3rem;
-    svg {
-        flex-shrink: 0;
-    }
-    @media (min-width: ${SCREEN_SM_MIN}) {
-        display: none;
-    }
-`;
-
-const layoutPrintHeader = css`
-    display: none;
-    @media print {
-        display: block;
-        margin-bottom: 1rem;
-        margin-left: 1rem;
-    }
-`;
-*/
