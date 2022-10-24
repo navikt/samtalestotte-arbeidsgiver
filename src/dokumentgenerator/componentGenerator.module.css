@@ -1,0 +1,24 @@
+
+.firstChildNoMarginTop:first-child {
+  margin-top: 0;
+}
+
+.downloadButtonContainer {
+  justify-content: center;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .downloadButtonContainer {
+    justify-content: flex-start;
+  }
+}
+
+@media print {
+  .downloadButtonContainer {
+    display: none;
+  }
+}

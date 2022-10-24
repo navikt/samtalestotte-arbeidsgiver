@@ -1,4 +1,7 @@
+/*
+TODO
 import { css } from 'linaria';
+
 import { SCREEN_SM_MIN } from './konstanter';
 
 export const marginTop0Rem = css`
@@ -142,3 +145,4 @@ export const noPrint = css`
         display: none;
     }
 `;
+*/

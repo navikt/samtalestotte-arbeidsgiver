@@ -1,5 +1,6 @@
 import { Download } from '@navikt/ds-icons';
-import { css } from 'linaria';
+//import { css } from 'linaria';
+import styles from './LastNedKnapp.module.css';
 import logEvent from '../../amplitude/amplitude';
 import classNames from 'classnames';
 import { Link } from '@navikt/ds-react';
@@ -36,7 +37,7 @@ export default function LastNedKnapp(props: {
     return (
         <Link
             className={classNames(
-                downloadButtonStyle,
+                styles.downloadButtonStyle,
                 'navds-button',
                 `navds-button--secondary`,
                 `navds-button--s`,
@@ -52,7 +53,7 @@ export default function LastNedKnapp(props: {
         </Link>
     );
 }
-
+/* TODO
 const downloadButtonStyle = css`
     @media (min-width: ${SCREEN_SM_MIN}) {
         width: 250px;
@@ -72,3 +73,4 @@ const downloadButtonStyle = css`
         }
     }
 `;
+*/

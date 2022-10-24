@@ -5,12 +5,12 @@ import classNames from 'classnames';
 import logEvent from '../../amplitude/amplitude';
 import Lest from '../Ikoner/Lest';
 import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
-import { css } from 'linaria';
+//import { css } from 'linaria';
+import styles from './EkspanderbartInfopanel.module.css';
 import { SCREEN_SM_MIN } from '../../utils/konstanter';
 import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
 import { useCookies } from 'react-cookie';
 import { cookiesIApplikasjon, SamtalestøtteCookies } from '../../utils/cookiesUtils';
-import { AccordionHeaderType } from '@navikt/ds-react/esm/accordion/AccordionHeader';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
@@ -77,30 +77,30 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
         </>
     );
     return (
-        <div className={root}>
-            <Accordion className={accordion}>
-                <Accordion.Item open={erÅpen} className={accordionItem}>
+        <div className={styles.ekspanderbartRoot}>
+            <Accordion className={styles.accordion}>
+                <Accordion.Item open={erÅpen} className={styles.accordionItem}>
                     <Accordion.Header
                         id={panelknappID}
                         ref={accordionRef}
                         onClick={() => {
                             setErÅpen(!erÅpen);
                         }}
-                        className={classNames(panel, { [borderBottom]: erÅpen })}
+                        className={classNames(styles.panel, { [styles.borderBottom]: erÅpen })}
                     >
-                        <div className={classNames(flexContainer)}>
-                            <div className={classNames(grid, { [gridWithIcon]: hasIcon })}>
-                                {hasIcon && <div className={ikonContainer}>{props.ikon}</div>}
-                                <div className={tittelTekst}>{props.tittel}</div>
+                        <div className={classNames(styles.flexContainer)}>
+                            <div className={classNames(styles.grid, { [styles.gridWithIcon]: hasIcon })}>
+                                {hasIcon && <div className={styles.ikonContainer}>{props.ikon}</div>}
+                                <div className={styles.tittelTekst}>{props.tittel}</div>
                                 {erLest && <Lest width={'62px'} height={'24px'} />}
                             </div>
                         </div>
                     </Accordion.Header>
 
-                    <Accordion.Content className={panelInnhold}>
-                        <div className={classNames(innholdStyle)}>{innhold}</div>
+                    <Accordion.Content className={styles.panelInnhold}>
+                        <div className={classNames(styles.innholdStyle)}>{innhold}</div>
                         <button
-                            className={classNames(lukkKnapp, 'navds-link')}
+                            className={classNames(styles.lukkKnapp, 'navds-link')}
                             onClick={() => {
                                 setErÅpen(false);
                                 setTimeout(
@@ -112,24 +112,27 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                             }}
                         >
                             <span className="navds-body-short">Lukk dette panelet</span>
-                            <Expand className={rotate180} />
+                            <Expand className={styles.rotate180} />
                         </button>
                     </Accordion.Content>
                 </Accordion.Item>
             </Accordion>
-            <div className={printStyle}>{innhold}</div>
+            <div className={styles.printStyle}>{innhold}</div>
         </div>
     );
 };
 
 /** STYLES */
 
+/* TODO
 const root = css`
     @media print {
         display: block;
     }
 `;
+*/
 
+/* TODO
 const flexContainer = css`
     display: flex;
     justify-content: space-between;
@@ -254,3 +257,4 @@ const printStyle = css`
         padding-right: 2rem;
     }
 `;
+*/

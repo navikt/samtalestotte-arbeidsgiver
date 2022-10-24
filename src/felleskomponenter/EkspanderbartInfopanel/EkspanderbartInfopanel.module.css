@@ -1,0 +1,141 @@
+@media print {
+  .ekspanderbartRoot {
+    display: block;
+  }
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-content: start;
+  justify-items: start;
+  column-gap: 1rem;
+  row-gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .gridWithIcon {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+.ikonContainer {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .ikonContainer {
+    display: block;
+  }
+}
+
+.tittelTekst {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  color: var(--navds-global-color-blue-500);
+}
+
+.tittelTekst:hover {
+  text-decoration-line: underline;
+}
+
+.accordion {
+  background-color: var(--navds-global-color-white);
+}
+
+.accordionItem {
+  margin-bottom: 1rem;
+}
+
+.panel {
+  min-height: 80px;
+  margin: 0;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.panel:hover:not(:focus) {
+  box-shadow: #a0a0a0 0 2px 1px 0;
+  border-bottom: 1px solid;
+}
+
+.panelInnhold {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid;
+  border-top: none;
+  border-radius: 4px;
+}
+
+.borderBottom > button {
+  border-bottom: 1px solid var(--navds-global-color-gray-900);
+}
+
+.rotate180 {
+  transform: rotateZ(-180deg);
+}
+
+.innholdStyle {
+  overflow-wrap: break-word;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .innholdStyle {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media print {
+  .innholdStyle {
+    display: none;
+  }
+}
+
+.lukkKnapp {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+@media print {
+  .lukkKnapp {
+    display: none;
+  }
+}
+
+.printStyle {
+  display: none;
+}
+@media print {
+  .printStyle {
+    display: block;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

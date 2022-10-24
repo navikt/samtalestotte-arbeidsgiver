@@ -5,7 +5,7 @@ import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
 import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
 import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
-import VissteDuAt from './VissteDuAt';
+import VisteDuAt from './VissteDuAt';
 import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
@@ -80,7 +80,7 @@ const Home = (props: { page: PageProps }) => {
                     <MerInspirasjonOgGodeGrep
                         className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
                     />
-                    <VissteDuAt
+                    <VisteDuAt
                         className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
                     />
                 </Layout>

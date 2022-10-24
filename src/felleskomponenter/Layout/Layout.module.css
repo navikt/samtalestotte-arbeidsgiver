@@ -1,0 +1,41 @@
+.layoutWrapper {
+  min-height: 50rem;
+  padding: 1.5rem 0 5rem;
+}
+
+.layoutContent {
+  max-width: 66rem;
+  background-color: white;
+  padding: 0;
+  margin: auto;
+  border-radius: 0.25rem;
+}
+
+.layoutSmallScreenIllustration {
+  display: flex;
+  justify-content: center;
+  background: var(--navds-global-color-blue-100);
+  margin: 1rem 0 3rem;
+}
+
+.layoutSmallScreenIllustration svg {
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .layoutSmallScreenIllustration {
+    display: none;
+  }
+}
+
+.layoutPrintHeader {
+  display: none;
+}
+
+@media print {
+  .layoutPrintHeader {
+    display: block;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+  }
+}

@@ -1,6 +1,7 @@
 import { Heading } from '@navikt/ds-react'
 import { PageBannerSVG } from './PageBannerSVG';
-import { css } from 'linaria';
+import styles from './PageBanner.module.css';
+//import { css } from 'linaria';
 import {SCREEN_LG_MIN, SCREEN_MD_MIN, SCREEN_SM_MIN, SCREEN_XL_MIN} from '../../utils/konstanter';
 
 export const PageBanner = (props: {
@@ -10,21 +11,21 @@ export const PageBanner = (props: {
   kontekst: string;
 }) => {
   return (
-    <div className={pageBanner}>
-      <div className={pageBannerInnhold}>
-        <div className={pageBannerTekstOgKontekst}>
-          <Heading level={"1"} size={'2xlarge'} className={pageBannerTekst}>
+    <div className={styles.pageBanner}>
+      <div className={styles.pageBannerInnhold}>
+        <div className={styles.pageBannerTekstOgKontekst}>
+          <Heading level={"1"} size={'2xlarge'} className={styles.pageBannerTekst}>
             {props.title}
           </Heading>
         </div>
-        <PageBannerSVG className={pageBannerSvg}/>
+        <PageBannerSVG className={styles.pageBannerSvg}/>
       </div>
     </div>
   );
 };
 
 /** STYLES */
-
+/* TODO
 const pageBanner = css`
   background-color: var(--navds-global-color-blue-100);
   border-bottom: 0.2rem solid var(--navds-global-color-blue-200);
@@ -77,3 +78,4 @@ const pageBannerSvg = css`
     min-height: 160px;
   }
 `
+ */

@@ -1,0 +1,62 @@
+.pageBanner {
+  background-color: var(--navds-global-color-blue-100);
+  border-bottom: 0.2rem solid var(--navds-global-color-blue-200);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .pageBanner {
+    height: 11rem;
+  }
+}
+
+.pageBannerInnhold {
+  height: 100%;
+  width: 100%;
+  max-width: 1344px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .pageBannerInnhold {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageBannerInnhold {
+    padding: 0.75rem 3rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .pageBannerInnhold {
+    padding: 0.75rem 0;
+  }
+}
+
+.pageBannerTekstOgKontekst {
+  margin: 0;
+}
+
+.pageBannerTekst {
+  margin-top: 0.5rem;
+  font-size: 2.25rem;
+}
+
+.pageBannerSvg {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .pageBannerSvg {
+    display: block;
+    min-width: 200px;
+    min-height: 160px;
+  }
+}
