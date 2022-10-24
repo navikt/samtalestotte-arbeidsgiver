@@ -1,6 +1,6 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import {marginTop0Rem, marginTop1Rem} from "../../utils/fellesStiler";
+import fellesStiler from "../../utils/fellesStiler.module.css";
 
 const GodeGrepForAByggeRelasjoner = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -8,8 +8,8 @@ const GodeGrepForAByggeRelasjoner = (props: InfoPanelProps) => {
         tittel={"Gode grep for å bygge relasjoner"}
         panelLestSituasjon={"ulest"}
     >
-        <div className={marginTop1Rem}>
-            <ul className={marginTop0Rem}>
+        <div className={fellesStiler.marginTop1Rem}>
+            <ul className={fellesStiler.marginTop0Rem}>
                 <li>Bruk tid på å bli kjent med alle dine medarbeidere.</li>
                 <li>Er det sider ved deg selv du bør styrke eller dempe i møte med medarbeideren?</li>
                 <li>Vær forutsigbar.</li>

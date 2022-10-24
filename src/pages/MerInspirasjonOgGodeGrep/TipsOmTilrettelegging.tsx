@@ -9,16 +9,7 @@ import {
 } from '../../resources/urls';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import { Heading } from '@navikt/ds-react';
-import {
-    graAvrundetBoks, horizontalLine,
-    infoPanelKolonner,
-    marginBottom025rem,
-    marginBottom0Rem,
-    marginBottom1Rem,
-    marginBottom2Rem,
-    marginBottom3Rem,
-    marginTop0Rem, marginTop1Rem, marginTop2Rem, marginTop3Rem,
-} from '../../utils/fellesStiler';
+import fellesStiler from '../../utils/fellesStiler.module.css';
 import classNames from 'classnames';
 
 const TipsOmTilrettelegging = (props: InfoPanelProps) => {
@@ -28,7 +19,7 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
             tittel={'Tips om tilrettelegging'}
             panelLestSituasjon={'ulest'}
         >
-            <div className={marginTop1Rem}>
+            <div className={fellesStiler.marginTop1Rem}>
                 <Heading size={'medium'} level={'3'}>
                     Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.
                 </Heading>
@@ -36,17 +27,17 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                     Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i
                     samtalen med gjensidige forventninger til hva som er mulig.
                 </p>
-                <p className={marginBottom0Rem}>
+                <p className={fellesStiler.marginBottom0Rem}>
                     Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter som
                     finnes.
                 </p>
-                <p className={classNames(marginTop0Rem, marginBottom3Rem)}>
+                <p className={classNames(fellesStiler.marginTop0Rem, fellesStiler.marginBottom3Rem)}>
                     Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med verneombud
                     og tillitsvalgte. Hensikten er en felles vurdering av hvilken tilrettelegging er
                     mulig hos dere.
                 </p>
-                <ul className={marginBottom2Rem}>
-                    <li className={marginBottom1Rem}>
+                <ul className={fellesStiler.marginBottom2Rem}>
+                    <li className={fellesStiler.marginBottom1Rem}>
                         <strong>
                             Hvilke tilretteleggingsmuligheter finnes på deres arbeidsplass og ellers i
                             organisasjonen?
@@ -59,14 +50,14 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                         </strong>
                     </li>
                 </ul>
-                <Heading className={marginBottom025rem} size={'small'} level={'4'}>Dette kan du gjøre:</Heading>
-                <div className={infoPanelKolonner}>
-                    <div className={graAvrundetBoks}>
+                <Heading className={fellesStiler.marginBottom025rem} size={'small'} level={'4'}>Dette kan du gjøre:</Heading>
+                <div className={fellesStiler.infoPanelKolonner}>
+                    <div className={fellesStiler.graAvrundetBoks}>
                         <Heading size={'small'} level={'4'}>
                             på kort sikt:
                         </Heading>
-                        <ul className={marginTop0Rem}>
-                            <li className={marginBottom2Rem}>
+                        <ul className={fellesStiler.marginTop0Rem}>
+                            <li className={fellesStiler.marginBottom2Rem}>
                                 Undersøk om det finnes en oversikt over tilretteleggingsmuligheter for
                                 din arbeidsplass, hvis dere har en personalavdeling kan disse ofte
                                 hjelpe deg
@@ -77,12 +68,12 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                             </li>
                         </ul>
                     </div>
-                    <div className={graAvrundetBoks}>
+                    <div className={fellesStiler.graAvrundetBoks}>
                         <Heading size={'small'} level={'4'}>
                             over tid og som kontinuerlig arbeid:
                         </Heading>
-                        <ul className={marginTop0Rem}>
-                            <li className={marginBottom2Rem}>
+                        <ul className={fellesStiler.marginTop0Rem}>
+                            <li className={fellesStiler.marginBottom2Rem}>
                                 Lag en liste med tilretteleggingsmuligheter{' '}
                                 <LoggbarLenke href={SLIK_LYKKES_DERE}>
                                     Se beskrivelse av prosess og maler på idebanken
@@ -92,30 +83,30 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                     </div>
                 </div>
 
-                <div className={classNames(horizontalLine, marginTop3Rem, marginBottom3Rem)} />
+                <div className={classNames(fellesStiler.horizontalLine, fellesStiler.marginTop3Rem, fellesStiler.marginBottom3Rem)} />
 
                 <Heading size={'medium'} level={'3'}>Lær mer om tilrettelegging</Heading>
-                <Heading className={marginBottom025rem} size={'small'} level={'4'}>
+                <Heading className={fellesStiler.marginBottom025rem} size={'small'} level={'4'}>
                     Dette kan du gjøre:
                 </Heading>
-                <div className={classNames(infoPanelKolonner, marginBottom2Rem)}>
-                    <div className={graAvrundetBoks}>
+                <div className={classNames(fellesStiler.infoPanelKolonner, fellesStiler.marginBottom2Rem)}>
+                    <div className={fellesStiler.graAvrundetBoks}>
                         <Heading size={'small'} level={'4'}>
                             på kort sikt:
                         </Heading>
                         <ul>
-                            <li className={marginBottom2Rem}>
+                            <li className={fellesStiler.marginBottom2Rem}>
                                 <LoggbarLenke href={TILRETTELEGGING}>
                                     Les mer om arbeidsgivers plikter til å tilrettelegge på
                                     arbeidsplassen hos arbeidstilsynet.
                                 </LoggbarLenke>
                             </li>
-                            <li className={marginBottom2Rem}>
+                            <li className={fellesStiler.marginBottom2Rem}>
                                 NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt og
                                 medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging.{' '}
                                 <LoggbarLenke href={NETTKURS}>Gå til nettkurs.</LoggbarLenke>
                             </li>
-                            <li className={marginBottom2Rem}>
+                            <li className={fellesStiler.marginBottom2Rem}>
                                 <LoggbarLenke href={FOLGE_OPP_TILRETTELEGGING}>
                                     Les mer om tilrettelegging i sykefraværsoppfølging
                                 </LoggbarLenke>
@@ -127,21 +118,21 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                             </li>
                         </ul>
                     </div>
-                    <div className={graAvrundetBoks}>
-                        <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
+                    <div className={fellesStiler.graAvrundetBoks}>
+                        <Heading className={fellesStiler.marginBottom0Rem} size={'small'} level={'4'}>
                             over tid og som kontinuerlig arbeid:
                         </Heading>
                         <ul>
-                            <li className={marginBottom2Rem}>
+                            <li className={fellesStiler.marginBottom2Rem}>
                                 Lag en plan for å lære mer.
                             </li>
-                            <li className={marginBottom2Rem}>
+                            <li className={fellesStiler.marginBottom2Rem}>
                                 Hva du trenger å vite mer om?
                             </li>
-                            <li className={marginBottom2Rem}>
+                            <li className={fellesStiler.marginBottom2Rem}>
                                 Hvordan kan du lære mer?
                             </li>
-                            <li className={marginBottom2Rem}>
+                            <li className={fellesStiler.marginBottom2Rem}>
                                 Når du skal gjennomføre?
                             </li>
                             <li>
