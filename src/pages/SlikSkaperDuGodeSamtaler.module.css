@@ -1,0 +1,12 @@
+.backgroundStyle {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: var(--navds-global-color-blue-100);
+  border-radius: 10px;
+}
+@media (--screen-sm-min) {
+  .backgroundStyle{
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}

@@ -1,7 +1,7 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import Lightbulb from '../../felleskomponenter/Ikoner/Lightbulb';
-import {marginBottom0Rem, marginTop0Rem, marginTop1Rem} from '../../utils/fellesStiler';
+import fellesStiler from '../../utils/fellesStiler.module.css';
 import { Heading } from '@navikt/ds-react';
 
 const Suksesskriterier = (props: InfoPanelProps) => {
@@ -12,8 +12,8 @@ const Suksesskriterier = (props: InfoPanelProps) => {
         lestIkon={<Lightbulb width={"44px"} height={"44px"}/>}
         panelLestSituasjon={"ulest"}
     >
-        <div className={marginTop1Rem}>
-            <ul className={marginTop0Rem}>
+        <div className={fellesStiler.marginTop1Rem}>
+            <ul className={fellesStiler.marginTop0Rem}>
                 <li>
                     Gjennomfør samtalen tidlig.
                 </li>
@@ -34,10 +34,10 @@ const Suksesskriterier = (props: InfoPanelProps) => {
                     Du tør å ta de vanskelige samtalene.
                 </li>
             </ul>
-            <Heading className={marginBottom0Rem} size={'small'} level={'4'}>
+            <Heading className={fellesStiler.marginBottom0Rem} size={'small'} level={'4'}>
                 Kjente fallgruver
             </Heading>
-            <ul className={marginTop0Rem}>
+            <ul className={fellesStiler.marginTop0Rem}>
                 <li>
                     Du påtar deg for stort ansvar for helsa til medarbeideren.
                 </li>

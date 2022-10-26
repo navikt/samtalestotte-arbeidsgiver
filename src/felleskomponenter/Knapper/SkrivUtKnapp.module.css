@@ -1,0 +1,9 @@
+.hideOnSmallScreen {
+  display: none;
+}
+
+@media (--screen-sm-min) {
+  .hideOnSmallScreen{
+    display: flex;
+  }
+}

@@ -23,8 +23,14 @@ import {
 
 const slikSkaperDuGodeSamtaler: (DocumentElement | object)[] = [
     { type: 'BigHeader', content: 'Slik skaper du gode samtaler' },
-    { type: 'SmallHeader', content: 'Last ned verktøyet og rediger selv:' },
-    { type: 'DownloadButtons' },
+    {
+      type: 'DownloadButtons',
+      title: {
+        type: 'SmallHeader',
+        content: 'Last ned verktøyet og rediger selv:',
+        id: 'Last ned verktøyet og rediger selv'
+      }
+    },
     {
         type: 'Paragraph',
         content: [{ type: 'Text', content: 'Som arbeidsgiver er du ansvarlig for:', bold: true }],

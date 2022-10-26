@@ -136,7 +136,7 @@ export const isHorizontalLine = (element: DocumentElement | string | object): el
 }
 
 export interface DownloadButtons extends DocumentElement {
-    type: "DownloadButtons"
+    type: "DownloadButtons", title: string | SmallHeader | MediumHeader | BigHeader
 }
 export const isDownloadButtons = (element: DocumentElement | string | object): element is DownloadButtons => {
     if(typeof element === "object" && element.hasOwnProperty("type")) {

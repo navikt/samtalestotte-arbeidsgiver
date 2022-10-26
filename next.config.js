@@ -5,11 +5,9 @@
 
 const nextTranspileModules = require('next-transpile-modules');
 const withTranspileModules = nextTranspileModules(['@navikt/ds-react', '@navikt/ds-icons']);
-const withLinaria = require('next-linaria');
 const csp = require('./src/csp');
 
-module.exports = withTranspileModules(
-    withLinaria({
+module.exports = withTranspileModules({
         basePath: '/samtalestotte',
         i18n: {
             locales: ['no'],
@@ -54,5 +52,4 @@ module.exports = withTranspileModules(
                 },
             ];
         },
-    })
-);
+});

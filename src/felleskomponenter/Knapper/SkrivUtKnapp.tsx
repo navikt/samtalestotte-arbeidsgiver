@@ -1,11 +1,10 @@
 import React, { useRef } from 'react';
 import classNames from 'classnames';
-import {knappSomLenke, marginLeft1Rem, marginRight05Rem, noPrint} from '../../utils/fellesStiler';
+import fellesStiler from '../../utils/fellesStiler.module.css';
 import ReactToPrint from 'react-to-print';
 import { Button } from '@navikt/ds-react';
 import { Print } from '@navikt/ds-icons';
-import { css } from 'linaria';
-import { SCREEN_SM_MIN } from '../../utils/konstanter';
+import styles from './SkrivUtKnapp.module.css'
 
 export const SkrivUtKnapp = (props: {
     knappetekst: string;
@@ -15,7 +14,7 @@ export const SkrivUtKnapp = (props: {
 }) => {
     const knapperef = useRef<HTMLButtonElement>(null);
     return (
-        <div className={classNames(hideOnSmallScreen, props.wrapperClassnames)}>
+        <div className={classNames(styles.hideOnSmallScreen, props.wrapperClassnames)}>
             <ReactToPrint
                 onBeforePrint={props.kjørFørUtskrift}
                 onAfterPrint={() => {
@@ -28,21 +27,14 @@ export const SkrivUtKnapp = (props: {
                     <Button
                         id={'skriv-ut-knapp'}
                         ref={knapperef}
-                        className={classNames(noPrint, knappSomLenke, marginLeft1Rem)}
+                        className={classNames(fellesStiler.noPrint, fellesStiler.knappSomLenke, fellesStiler.marginLeft1Rem)}
                         size={'medium'}
                         variant={'secondary'}
                     >
-                        <Print className={marginRight05Rem} title={"Utskriftsikon"}/> {props.knappetekst}
+                        <Print className={fellesStiler.marginRight05Rem} title={"Utskriftsikon"}/> {props.knappetekst}
                     </Button>
                 )}
             />
         </div>
     );
 };
-
-const hideOnSmallScreen = css`
-    display: none;
-    @media (min-width: ${SCREEN_SM_MIN}) {
-        display: flex;
-    }
-`;

@@ -1,6 +1,6 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import {marginTop0Rem, marginTop1Rem} from "../../utils/fellesStiler";
+import fellesStiler from "../../utils/fellesStiler.module.css";
 
 const EnkleTipsForDigitaleSamtaler = (props: InfoPanelProps) => {
     return <EkspanderbartInfopanel
@@ -8,8 +8,8 @@ const EnkleTipsForDigitaleSamtaler = (props: InfoPanelProps) => {
         tittel={"Enkle tips for digitale samtaler"}
         panelLestSituasjon={"ulest"}
     >
-        <div className={marginTop1Rem}>
-            <ul className={marginTop0Rem}>
+        <div className={fellesStiler.marginTop1Rem}>
+            <ul className={fellesStiler.marginTop0Rem}>
                 <li>
                     Husk forberedelse og struktur også i digitale samtaler.
                 </li>

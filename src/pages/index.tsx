@@ -5,12 +5,12 @@ import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
 import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
 import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
-import VissteDuAt from './VissteDuAt';
+import VisteDuAt from './VissteDuAt';
 import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
 import * as Sentry from '@sentry/browser';
 import { getMiljø } from '../utils/miljøUtils';
-import { largeScreenMarginSides3rem, paddingSides1rem } from '../utils/fellesStiler';
+import fellesStiler from '../utils/fellesStiler.module.css';
 import {
     getReferrerUrlFraUrlMedQueryParameter,
     ReferrerApplikasjon,
@@ -74,14 +74,14 @@ const Home = (props: { page: PageProps }) => {
                     logEvent={logEvent}
                 >
                     <HvorforBrukeTidPaaSamtaler
-                        className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
+                        className={classNames(fellesStiler.paddingSides1rem, fellesStiler.largeScreenMarginSides3rem)}
                     />
-                    <SlikSkaperDuGodeSamtaler className={classNames(paddingSides1rem)} />
+                    <SlikSkaperDuGodeSamtaler className={classNames(fellesStiler.paddingSides1rem)} />
                     <MerInspirasjonOgGodeGrep
-                        className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
+                        className={classNames(fellesStiler.paddingSides1rem, fellesStiler.largeScreenMarginSides3rem)}
                     />
-                    <VissteDuAt
-                        className={classNames(paddingSides1rem, largeScreenMarginSides3rem)}
+                    <VisteDuAt
+                        className={classNames(fellesStiler.paddingSides1rem, fellesStiler.largeScreenMarginSides3rem)}
                     />
                 </Layout>
             </main>

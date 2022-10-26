@@ -1,0 +1,29 @@
+
+.firstChildNoMarginTop:first-child {
+  margin-top: 0;
+}
+
+.downloadButtonContainer {
+  justify-content: center;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.downloadButtonContainer :is(h2, h3, h4, p) {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+@media (--screen-sm-min) {
+  .downloadButtonContainer {
+    justify-content: flex-start;
+  }
+}
+
+@media print {
+  .downloadButtonContainer {
+    display: none;
+  }
+}

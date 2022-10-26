@@ -1,11 +1,5 @@
 import {EkspanderbartInfopanel} from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import {
-    graAvrundetBoks,
-    infoPanelKolonner,
-    marginTop0Rem,
-    marginTop1Rem,
-    marginTop3Rem,
-} from '../../utils/fellesStiler';
+import fellesStiler from '../../utils/fellesStiler.module.css';
 import { Heading } from '@navikt/ds-react';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
 import {
@@ -21,7 +15,7 @@ const PsykiskHelsePåArbeidsplassen = () => {
             tittel={'Psykisk helse på arbeidsplassen'}
             panelLestSituasjon={'ulest'}
         >
-            <div className={marginTop1Rem}>
+            <div className={fellesStiler.marginTop1Rem}>
                 <Heading size={'medium'} level={'3'}>
                     Arbeid påvirker medarbeiderens psykiske helse
                 </Heading>
@@ -30,8 +24,8 @@ const PsykiskHelsePåArbeidsplassen = () => {
                     arbeidsoppgavene blir utført eller måten samhandlingen med andre foregår.
                     Endringene kan komme til uttrykk på forskjellige måter.
                 </p>
-                <p className={marginTop1Rem}>Mulige konsekvenser på jobb kan være:</p>
-                <ul className={marginTop0Rem}>
+                <p className={fellesStiler.marginTop1Rem}>Mulige konsekvenser på jobb kan være:</p>
+                <ul className={fellesStiler.marginTop0Rem}>
                     <li>Problemer med å forstå og huske informasjon</li>
                     <li>Utfordringer med å gjøre flere oppgaver samtidig</li>
                     <li>Vanskeligheter med å prioritere og ferdigstille oppgaver</li>
@@ -45,9 +39,9 @@ const PsykiskHelsePåArbeidsplassen = () => {
                     </li>
                 </ul>
 
-                <p className={marginTop3Rem}>Alle kan ha en dårlig dag, og det er lov.</p>
+                <p className={fellesStiler.marginTop3Rem}>Alle kan ha en dårlig dag, og det er lov.</p>
 
-                <ul className={marginTop0Rem}>
+                <ul className={fellesStiler.marginTop0Rem}>
                     <li>
                         Hvor mange dårlige dager skal en medarbeider ha før du tar initiativ til en
                         samtale?
@@ -58,16 +52,16 @@ const PsykiskHelsePåArbeidsplassen = () => {
                     </li>
                 </ul>
 
-                <Heading size="small" level={'4'} className={marginTop3Rem}>
+                <Heading size="small" level={'4'} className={fellesStiler.marginTop3Rem}>
                     Dette kan du gjøre:
                 </Heading>
 
-                <div className={classNames(infoPanelKolonner, marginTop1Rem)}>
-                    <div className={graAvrundetBoks}>
+                <div className={classNames(fellesStiler.infoPanelKolonner, fellesStiler.marginTop1Rem)}>
+                    <div className={fellesStiler.graAvrundetBoks}>
                         <Heading size={'small'} level={'4'}>
                             på kort sikt:
                         </Heading>
-                        <ul className={marginTop0Rem}>
+                        <ul className={fellesStiler.marginTop0Rem}>
                             <li>
                                 Vis omsorg, spør hvordan noen har det, lytt og still krav.
                             </li>
@@ -91,12 +85,12 @@ const PsykiskHelsePåArbeidsplassen = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className={graAvrundetBoks}>
+                    <div className={fellesStiler.graAvrundetBoks}>
                         <Heading size={'small'} level={'4'}>
                             over tid og som kontinuerlig arbeid:
                         </Heading>
-                        <ul className={marginTop0Rem}>
-                            <li className={marginTop1Rem}>
+                        <ul className={fellesStiler.marginTop0Rem}>
+                            <li className={fellesStiler.marginTop1Rem}>
                                 Se etter tegn fra lista over og ta initiativ til en samtale før et
                                 sykefravær oppstår.
                             </li>

@@ -2,21 +2,11 @@ import { Heading } from '@navikt/ds-react';
 import { v4 as uuidv4 } from 'uuid';
 import { ReactNode } from 'react';
 import classNames from 'classnames';
-import {
-    boldText,
-    graAvrundetBoks,
-    horizontalLine,
-    infoPanelKolonner,
-    marginBottom1Rem,
-    marginTop1Rem,
-    marginTop2Rem,
-    marginTop4Rem,
-} from '../utils/fellesStiler';
+import fellesStiler from '../utils/fellesStiler.module.css';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
-import { css } from 'linaria';
+import styles from './componentGenerator.module.css'
 import { EkspanderbartInfopanel } from '../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import { camelCase } from '../utils/stringUtils';
-import { SCREEN_SM_MIN } from '../utils/konstanter';
 import LastNedKnapp from '../felleskomponenter/Knapper/LastNedKnapp';
 import {
     isBigHeader,
@@ -53,7 +43,7 @@ const mapComponents = (elements: (string | object)[]): ReactNode[] => {
                 return mapInfoBox(mapComponents(e.content));
             }
             if (isDownloadButtons(e)) {
-                return mapDownloadButtons();
+                return mapDownloadButtons(mapComponents([e.title]));
             }
             if (isHorizontalLine(e)) {
                 return mapHorizontalLine();
@@ -103,7 +93,7 @@ const mapMediumHeader = (content: string, id?: string) => {
             size={'medium'}
             level={'3'}
             key={uuidv4()}
-            className={classNames(marginTop4Rem, marginBottom1Rem)}
+            className={classNames(fellesStiler.marginTop4Rem, fellesStiler.marginBottom1Rem)}
         >
             {content}
         </Heading>
@@ -118,7 +108,7 @@ const mapSmallHeader = (content: string, id?: string) => {
             size={'small'}
             level={'4'}
             key={uuidv4()}
-            className={classNames(marginTop2Rem, marginBottom1Rem)}
+            className={classNames(fellesStiler.marginTop2Rem, fellesStiler.marginBottom1Rem)}
         >
             {content}
         </Heading>
@@ -137,7 +127,7 @@ const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) 
                 ),
                 lineBreak
             )}
-            <span key={uuidv4()} className={classNames({ [boldText]: bold })}>
+            <span key={uuidv4()} className={classNames({ [fellesStiler.boldText]: bold })}>
                 {content}
             </span>
         </>
@@ -162,11 +152,7 @@ const mapList = (content: ReactNode[]) => {
 
 const mapPanel = (title: string, content: ReactNode[], id?: string) => {
     const unikId = id ? id : `ekspanderbart-infopanel__${camelCase(title)}-base`;
-    const firstChildNoMarginTop = css`
-        *:first-child {
-            margin-top: 0;
-        }
-    `;
+
     return (
         <EkspanderbartInfopanel
             key={uuidv4()}
@@ -174,44 +160,35 @@ const mapPanel = (title: string, content: ReactNode[], id?: string) => {
             unikId={unikId}
             panelLestSituasjon={'ulest'}
         >
-            <div className={classNames(marginTop1Rem, firstChildNoMarginTop)}>{content}</div>
+            <div className={classNames(fellesStiler.marginTop1Rem, styles.firstChildNoMarginTop)}>{content}</div>
         </EkspanderbartInfopanel>
     );
 };
 
 const mapColumns = (leftContent: ReactNode[], rightContent: ReactNode[]) => {
     return (
-        <div key={uuidv4()} className={classNames(infoPanelKolonner, marginBottom1Rem)}>
-            <div className={graAvrundetBoks}>{leftContent}</div>
-            <div className={graAvrundetBoks}>{rightContent}</div>
+        <div key={uuidv4()} className={classNames(fellesStiler.infoPanelKolonner, fellesStiler.marginBottom1Rem)}>
+            <div className={fellesStiler.graAvrundetBoks}>{leftContent}</div>
+            <div className={fellesStiler.graAvrundetBoks}>{rightContent}</div>
         </div>
     );
 };
 
 const mapInfoBox = (content: ReactNode[]) => {
     return (
-        <div key={uuidv4()} className={graAvrundetBoks}>
+        <div key={uuidv4()} className={fellesStiler.graAvrundetBoks}>
             {content}
         </div>
     );
 };
 
-const mapHorizontalLine = () => <div key={uuidv4()} className={horizontalLine} />;
+const mapHorizontalLine = () => <div key={uuidv4()} className={fellesStiler.horizontalLine} />;
 
-const mapDownloadButtons = () => {
-    const downloadButtonContainerStyle = css`
-        @media (min-width: ${SCREEN_SM_MIN}) {
-            justify-content: flex-start;
-        }
-        justify-content: center;
-        margin-bottom: 2rem;
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    `;
+const mapDownloadButtons = (title: ReactNode) => {
 
     return (
-        <div className={downloadButtonContainerStyle} key={uuidv4()}>
+        <div className={styles.downloadButtonContainer} key={uuidv4()}>
+            {title}
             <LastNedKnapp
                 knappetekst="Last ned i Word"
                 href="/samtalestotte/Samtalestøtte-Arbeidsgiver.docx"
@@ -223,5 +200,6 @@ const mapDownloadButtons = () => {
                 label="last-ned-txt"
             />
         </div>
+
     );
 };

@@ -4,17 +4,13 @@ import { DecoratorFooter } from '../decorator/DecoratorFooter';
 import Head from 'next/head';
 import { DecoratorParts } from '../../utils/dekorator';
 import { DecoratorEnv } from '../decorator/DecoratorEnv';
-import React, { useEffect, useRef, useState } from 'react';
-import { PROD_URL, SCREEN_SM_MIN } from '../../utils/konstanter';
+import React, { useEffect, useRef } from 'react';
+import { PROD_URL } from '../../utils/konstanter';
 import { BodyShort } from '@navikt/ds-react';
 import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
-import { css } from 'linaria';
+import styles from './Layout.module.css';
 import classNames from 'classnames';
-import {
-    largeScreenMarginSides3rem,
-    marginSides2_25rem,
-    marginTop6Rem,
-} from '../../utils/fellesStiler';
+import fellesStiler from '../../utils/fellesStiler.module.css';
 import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
 import { useCookies } from 'react-cookie';
 import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
@@ -74,7 +70,7 @@ export const Layout = (props: {
     }
 
     return (
-        <div className={layout}>
+        <div>
             <Head>{headerLinks}</Head>
             <DecoratorHeader
                 html={
@@ -92,17 +88,17 @@ export const Layout = (props: {
                         'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid'
                     }
                 />
-                <div className={layoutWrapper}>
-                    <div className={layoutContent} ref={layoutContentRef}>
+                <div className={styles.layoutWrapper}>
+                    <div className={styles.layoutContent} ref={layoutContentRef}>
                         <div
                             className={classNames(
-                                layoutSmallScreenIllustration,
-                                largeScreenMarginSides3rem
+                                styles.layoutSmallScreenIllustration,
+                                fellesStiler.largeScreenMarginSides3rem
                             )}
                         >
                             <PageBannerSVG />
                         </div>
-                        <div className={classNames(layoutPrintHeader)}>
+                        <div className={classNames(styles.layoutPrintHeader)}>
                             <BodyShort size="small">{PROD_URL}</BodyShort>
                         </div>
                         {props.children}
@@ -110,7 +106,7 @@ export const Layout = (props: {
                             knappetekst="Skriv ut nettside"
                             utskriftsinnholdRef={layoutContentRef}
                             kjørFørUtskrift={loggUtskriftsklikk}
-                            wrapperClassnames={[marginTop6Rem, marginSides2_25rem]}
+                            wrapperClassnames={[fellesStiler.marginTop6Rem, fellesStiler.marginSides2_25rem]}
                         />
                     </div>
                 </div>
@@ -126,49 +122,3 @@ export const Layout = (props: {
         </div>
     );
 };
-
-/** STYLES **/
-
-const layout = css`
-    @media print {
-        @page {
-            size: A4;
-            margin: 2.54cm 0 0;
-        }
-    }
-`;
-
-const layoutWrapper = css`
-    min-height: 50rem;
-    padding: 1.5rem 0 5rem;
-`;
-
-const layoutContent = css`
-    max-width: 66rem;
-    background-color: white;
-    padding: 0;
-    margin: auto;
-    border-radius: 0.25rem;
-`;
-
-const layoutSmallScreenIllustration = css`
-    display: flex;
-    justify-content: center;
-    background: var(--navds-global-color-blue-100);
-    margin: 1rem 0 3rem;
-    svg {
-        flex-shrink: 0;
-    }
-    @media (min-width: ${SCREEN_SM_MIN}) {
-        display: none;
-    }
-`;
-
-const layoutPrintHeader = css`
-    display: none;
-    @media print {
-        display: block;
-        margin-bottom: 1rem;
-        margin-left: 1rem;
-    }
-`;

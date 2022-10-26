@@ -1,5 +1,17 @@
 @import '../../node_modules/@navikt/ds-css/dist/index.css';
 
+@custom-media --screen-sm-min (min-width: 768px);
+@custom-media --screen-md-min (min-width: 1024px);
+@custom-media --screen-lg-min (min-width: 1344px);
+@custom-media --screen-xl-min (min-width: 1440px);
+
 html {
     scroll-behavior: smooth;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 2.54cm 0 0;
+  }
 }

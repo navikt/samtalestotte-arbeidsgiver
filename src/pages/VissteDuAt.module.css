@@ -1,0 +1,33 @@
+.visteDuContainer {
+  border-radius: 10px;
+  background: #FAFAFA;
+  border: 1px solid black;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header"
+    "ikon paragraf"
+    ". link"
+    ". link";
+}
+
+.visteDuHeader {
+  grid-area: header;
+  margin-top: 0;
+  margin-bottom: 0.75em;
+}
+
+.visteDuIcon {
+  grid-area: ikon;
+  margin-right: 1rem;
+}
+
+.visteDuParagraf {
+   grid-area: paragraf;
+}
+
+.visteDuLink {
+  grid-column: 2;
+}

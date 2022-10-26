@@ -3,7 +3,8 @@ module.exports = {
     testPathIgnorePatterns: ["/node_modules/", "/.next/"],
     moduleNameMapper: {
         "@navikt/ds-react(.*)": "@navikt/ds-react/cjs$1",
-        "@navikt/ds-icons(.*)": "@navikt/ds-icons/cjs$1"
+        "@navikt/ds-icons(.*)": "@navikt/ds-icons/cjs$1",
+        "\\.(css|less)$": "identity-obj-proxy"
     },
     testEnvironment: "jsdom"
 };

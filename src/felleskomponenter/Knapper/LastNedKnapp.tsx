@@ -1,10 +1,9 @@
 import { Download } from '@navikt/ds-icons';
-import { css } from 'linaria';
+import styles from './LastNedKnapp.module.css';
 import logEvent from '../../amplitude/amplitude';
 import classNames from 'classnames';
 import { Link } from '@navikt/ds-react';
 import React from 'react';
-import { SCREEN_SM_MIN } from '../../utils/konstanter';
 import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
 import { useCookies } from 'react-cookie';
 import { cookiesIApplikasjon, SamtalestøtteCookies } from '../../utils/cookiesUtils';
@@ -36,7 +35,7 @@ export default function LastNedKnapp(props: {
     return (
         <Link
             className={classNames(
-                downloadButtonStyle,
+                styles.downloadButtonStyle,
                 'navds-button',
                 `navds-button--secondary`,
                 `navds-button--s`,
@@ -52,23 +51,3 @@ export default function LastNedKnapp(props: {
         </Link>
     );
 }
-
-const downloadButtonStyle = css`
-    @media (min-width: ${SCREEN_SM_MIN}) {
-        width: 250px;
-    }
-    height: 60px;
-    width: 100%;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    text-decoration: none;
-    justify-content: center;
-    padding: 10px 20px 10px 10px;
-
-    :hover {
-        svg {
-            color: white;
-        }
-    }
-`;
