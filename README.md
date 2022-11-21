@@ -36,6 +36,14 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
   - i dev-miljø: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte -- trenger #naisdevice kjørende
     se https://doc.nais.io/device/install/ for info om det
 
+## FAQ
+
+### Rød strek under variabler i @media tags
+
+Denne applikasjonen bruker custom-media-queries -- se https://preset-env.cssdb.org/features/#custom-media-queries .
+Intellij vil ikke gjenkjenne dette som gyldig css med mindre du setter css dialekten til postCSS.
+Dette kan gjøres ved å laste ned å laste ned postcss plugin og sette "stylesheet dialect" til postCSS. 
+
 ---
 
 # Henvendelser
