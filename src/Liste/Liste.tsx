@@ -8,7 +8,7 @@ interface Props {
 
 const Element: React.FC<Props> = (props) => (
     <div className={classNames(fellesStiler.marginTop05Rem, props.className)}>
-        <Liste.Element>{props.children}</Liste.Element>
+        <li>{props.children}</li>
     </div>
 );
 
