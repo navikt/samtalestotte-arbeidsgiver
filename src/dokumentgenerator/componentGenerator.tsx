@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import classNames from 'classnames';
 import fellesStiler from '../utils/fellesStiler.module.css';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
-import styles from './componentGenerator.module.css'
+import styles from './componentGenerator.module.css';
 import { EkspanderbartInfopanel } from '../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import { camelCase } from '../utils/stringUtils';
 import LastNedKnapp from '../felleskomponenter/Knapper/LastNedKnapp';
@@ -24,6 +24,7 @@ import {
 } from './domainInterfaces';
 import { isString, notUndefinedOrNull } from '../utils/typeGuardUtils';
 import { repeat } from '../utils/ArrayUtils';
+import { Liste } from '../Liste/Liste';
 
 export { mapComponents as generateComponents };
 
@@ -142,11 +143,11 @@ const mapLink = (url: string, content: string) => (
 
 const mapList = (content: ReactNode[]) => {
     return (
-        <ul key={uuidv4()}>
+        <Liste key={uuidv4()}>
             {content.map((e) => (
-                <li key={uuidv4()}>{e}</li>
+                <Liste.Element>{e}</Liste.Element>
             ))}
-        </ul>
+        </Liste>
     );
 };
 

@@ -1,6 +1,7 @@
 import fellesStiler from '../utils/fellesStiler.module.css';
 import classNames from 'classnames';
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 interface Props {
     className?: string;
@@ -8,13 +9,13 @@ interface Props {
 
 const Element: React.FC<Props> = (props) => (
     <div className={classNames(fellesStiler.marginTop05Rem, props.className)}>
-        <li>{props.children}</li>
+        <li key={uuidv4()}>{props.children}</li>
     </div>
 );
 
 export const Liste: React.FC<Props> & { Element: typeof Element } = (props) => {
     return (
-        <ul className={classNames(fellesStiler.marginBottom15Rem, props.className)}>
+        <ul className={classNames(fellesStiler.marginBottom2Rem, props.className)}>
             {props.children}
         </ul>
     );
