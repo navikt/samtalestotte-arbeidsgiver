@@ -24,12 +24,12 @@ import {
 const slikSkaperDuGodeSamtaler: (DocumentElement | object)[] = [
     { type: 'BigHeader', content: 'Slik skaper du gode samtaler' },
     {
-      type: 'DownloadButtons',
-      title: {
-        type: 'SmallHeader',
-        content: 'Last ned verktøyet og rediger selv:',
-        id: 'Last ned verktøyet og rediger selv'
-      }
+        type: 'DownloadButtons',
+        title: {
+            type: 'SmallHeader',
+            content: 'Last ned verktøyet og rediger selv:',
+            id: 'Last ned verktøyet og rediger selv',
+        },
     },
     {
         type: 'Paragraph',
@@ -289,7 +289,7 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                             content: [
                                 {
                                     type: 'Text',
-                                    content: 'Hvor trygg er du når du skal strukturere samtalen?',
+                                    content: 'Hvor trygg er du når du skal strukturere samtalen? ',
                                     bold: true,
                                 },
                                 {
