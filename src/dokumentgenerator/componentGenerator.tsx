@@ -119,6 +119,7 @@ const mapSmallHeader = (content: string, id?: string) => {
 const mapParagraph = (content: ReactNode) => {
     return <p key={uuidv4()}>{content}</p>;
 };
+
 const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) => {
     return (
         <>
@@ -145,7 +146,7 @@ const mapList = (content: ReactNode[]) => {
     return (
         <Liste key={uuidv4()}>
             {content.map((e) => (
-                <Liste.Element>{e}</Liste.Element>
+                <Liste.Element key={uuidv4()}>{e}</Liste.Element>
             ))}
         </Liste>
     );
