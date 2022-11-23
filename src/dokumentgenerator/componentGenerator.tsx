@@ -1,4 +1,4 @@
-import { Heading } from '@navikt/ds-react';
+import { BodyLong, Heading } from '@navikt/ds-react';
 import { v4 as uuidv4 } from 'uuid';
 import { ReactNode } from 'react';
 import classNames from 'classnames';
@@ -129,9 +129,9 @@ const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) 
                 ),
                 lineBreak
             )}
-            <span key={uuidv4()} className={classNames({ [fellesStiler.boldText]: bold })}>
+            <BodyLong key={uuidv4()} className={classNames({ [fellesStiler.boldText]: bold })}>
                 {content}
-            </span>
+            </BodyLong>
         </>
     );
 };
