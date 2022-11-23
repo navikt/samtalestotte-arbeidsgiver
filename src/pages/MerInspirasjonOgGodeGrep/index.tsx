@@ -9,7 +9,11 @@ import PsykiskHelsePåArbeidsplassen from './PsykiskHelsePåArbeidsplassen';
 const MerInspirasjonOgGodeGrep = ({ className }: { className?: string }) => {
     return (
         <section className={classNames(fellesStiler.breakBeforePage, className)}>
-            <Heading className={classNames(fellesStiler.marginTop2Rem, fellesStiler.marginBottom1Rem)} size={'large'} level={'2'}>
+            <Heading
+                className={classNames(fellesStiler.marginTop4Rem, fellesStiler.marginBottom2Rem)}
+                size={'large'}
+                level={'2'}
+            >
                 Mer inspirasjon og gode grep
             </Heading>
             <PsykiskHelsePåArbeidsplassen />

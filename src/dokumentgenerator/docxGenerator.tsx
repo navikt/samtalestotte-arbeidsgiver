@@ -10,6 +10,7 @@ import {
     isPanel,
     isParagraph,
     isSmallHeader,
+    isSpan,
     isText,
 } from './domainInterfaces';
 import {
@@ -62,7 +63,7 @@ const mapJson = (elements: (string | object)[]): DocxTypes[] => {
             if (isMediumHeader(e)) {
                 return mapMediumHeader(e.content, e.id);
             }
-            if (isParagraph(e)) {
+            if (isParagraph(e) || isSpan(e)) {
                 return mapParagraph(e.content);
             }
             if (isBigHeader(e)) {

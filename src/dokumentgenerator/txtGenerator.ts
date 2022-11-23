@@ -8,6 +8,7 @@ import {
     isPanel,
     isParagraph,
     isSmallHeader,
+    isSpan,
     isText,
 } from './domainInterfaces';
 import { isString, notUndefinedOrNull } from '../utils/typeGuardUtils';
@@ -44,7 +45,7 @@ const mapComponents = (elements: (string | object)[]): string => {
             if (isMediumHeader(e)) {
                 return mapMediumHeader(e.content);
             }
-            if (isParagraph(e)) {
+            if (isParagraph(e) || isSpan(e)) {
                 return isString(e.content)
                     ? mapParagraph(e.content)
                     : mapParagraph(mapComponents(e.content));
