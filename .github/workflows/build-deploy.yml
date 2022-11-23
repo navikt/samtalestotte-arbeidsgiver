@@ -34,7 +34,7 @@ jobs:
 
   deploy-to-dev-gcp:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/fjerne-kalkulator'
+    if: github.ref == 'refs/heads/like_lister'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
@@ -48,7 +48,7 @@ jobs:
           PRINT_PAYLOAD: true
   deploy-to-labs-gcp:
     name: Deploy to labs-gcp
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/Migrate_away_from_linaria'
+    if: github.ref == 'refs/heads/master'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
