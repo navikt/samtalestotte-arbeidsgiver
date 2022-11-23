@@ -3,6 +3,7 @@ import DetteKanDuSpoerreMedarbeiderenOm from './DetteKanDuSpoerreMedarbeiderenOm
 import Suksesskriterier from './Suksesskriterier';
 import { Heading } from '@navikt/ds-react';
 import fellesStiler from '../../utils/fellesStiler.module.css';
+import { Liste } from '../../Liste/Liste';
 
 const HvorforBrukeTidPaaSamtaler = ({ className }: { className?: string }) => {
     return (
@@ -16,11 +17,11 @@ const HvorforBrukeTidPaaSamtaler = ({ className }: { className?: string }) => {
                 gir størst verdi for deg og medarbeiderne dine.
             </p>
             <p className={fellesStiler.boldText}>Gode samtaler bidrar til:</p>
-            <ul className={fellesStiler.marginBottom4Rem}>
-                <li>lavt sykefravær og god lønnsomhet</li>
-                <li>motiverte medarbeidere og godt arbeidsmiljø</li>
-                <li>at du fyller dine lovpålagte plikter som arbeidsgiver</li>
-            </ul>
+            <Liste className={fellesStiler.marginBottom4Rem}>
+                <Liste.Element>lavt sykefravær og god lønnsomhet</Liste.Element>
+                <Liste.Element>motiverte medarbeidere og godt arbeidsmiljø</Liste.Element>
+                <Liste.Element>at du fyller dine lovpålagte plikter som arbeidsgiver</Liste.Element>
+            </Liste>
             <NaarKanEnSamtaleVaereAktuelt />
             <DetteKanDuSpoerreMedarbeiderenOm />
             <Suksesskriterier />
