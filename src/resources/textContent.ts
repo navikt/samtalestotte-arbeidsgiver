@@ -87,7 +87,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                         content: [
                             [
                                 {
-                                    type: 'Paragraph',
+                                    type: 'Span',
                                     content: [
                                         'Planlegg bruk av samtaleteknikker for å sikre medvirkning i samtalen. ',
                                         {
@@ -116,9 +116,9 @@ const skapeGodeRammer: (Panel | object)[] = [
                         content: [
                             [
                                 {
-                                    type: 'Paragraph',
+                                    type: 'Span',
                                     content: [
-                                        'Lær mer om samtaler og samtaleteknikker.',
+                                        'Lær mer om samtaler og samtaleteknikker. ',
                                         {
                                             type: 'Link',
                                             url: DEN_VIKTIGE_SAMTALEN,
@@ -130,7 +130,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                             ],
                             [
                                 {
-                                    type: 'Paragraph',
+                                    type: 'Span',
                                     content: [
                                         'Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere. ',
                                         {
@@ -201,7 +201,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                         content: [
                             [
                                 {
-                                    type: 'Paragraph',
+                                    type: 'Span',
                                     content: [
                                         'Evaluer rutinene dine. ',
                                         {
@@ -214,7 +214,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                             ],
                             [
                                 {
-                                    type: 'Paragraph',
+                                    type: 'Span',
                                     content: [
                                         'Utarbeid sykefraværsrutiner. ',
                                         {
@@ -285,7 +285,7 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                 content: [
                     [
                         {
-                            type: 'Paragraph',
+                            type: 'Span',
                             content: [
                                 {
                                     type: 'Text',
@@ -296,7 +296,7 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                                     type: 'Text',
                                     content: 'Velg tema og hjelpespørsmål under ',
                                 },
-                                { type: 'Text', content: '', lineBreak: 1 },
+                                { type: 'Text', content: '', lineBreak: 0 },
                                 {
                                     type: 'Link',
                                     url: GJENNOMFOR_SAMTALEN,
@@ -353,7 +353,7 @@ const forberedeMedarbeiderenDin = [
                     ],
                     [
                         {
-                            type: 'Paragraph',
+                            type: 'Span',
                             content: [
                                 {
                                     type: 'Link',
@@ -370,7 +370,7 @@ const forberedeMedarbeiderenDin = [
                     ['Du kan sende tema eller spørsmål til medarbeideren på forhånd.'],
                     [
                         {
-                            type: 'Paragraph',
+                            type: 'Span',
                             content: [
                                 'Velg noen av de viktigste fra eksemplene under ',
                                 {

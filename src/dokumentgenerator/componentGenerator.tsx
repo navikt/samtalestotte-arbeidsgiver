@@ -1,4 +1,4 @@
-import { BodyLong, Heading } from '@navikt/ds-react';
+import { Heading } from '@navikt/ds-react';
 import { v4 as uuidv4 } from 'uuid';
 import { ReactNode } from 'react';
 import classNames from 'classnames';
@@ -20,6 +20,7 @@ import {
     isPanel,
     isParagraph,
     isSmallHeader,
+    isSpan,
     isText,
 } from './domainInterfaces';
 import { isString, notUndefinedOrNull } from '../utils/typeGuardUtils';
@@ -66,6 +67,9 @@ const mapComponents = (elements: (string | object)[]): ReactNode[] => {
                     ? mapParagraph(e.content)
                     : mapParagraph(mapComponents(e.content));
             }
+            if (isSpan(e)) {
+                return isString(e.content) ? mapSpan(e.content) : mapSpan(mapComponents(e.content));
+            }
             if (isBigHeader(e)) {
                 return mapBigHeader(e.content, e.id);
             }
@@ -94,7 +98,7 @@ const mapMediumHeader = (content: string, id?: string) => {
             size={'medium'}
             level={'3'}
             key={uuidv4()}
-            className={classNames(fellesStiler.marginTop4Rem, fellesStiler.marginBottom1Rem)}
+            className={classNames(fellesStiler.marginTop2Rem, fellesStiler.marginBottom2Rem)}
         >
             {content}
         </Heading>
@@ -120,6 +124,10 @@ const mapParagraph = (content: ReactNode) => {
     return <p key={uuidv4()}>{content}</p>;
 };
 
+const mapSpan = (content: ReactNode) => {
+    return <div key={uuidv4()}>{content}</div>;
+};
+
 const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) => {
     return (
         <>
@@ -129,9 +137,9 @@ const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) 
                 ),
                 lineBreak
             )}
-            <BodyLong key={uuidv4()} className={classNames({ [fellesStiler.boldText]: bold })}>
+            <span key={uuidv4()} className={classNames({ [fellesStiler.boldText]: bold })}>
                 {content}
-            </BodyLong>
+            </span>
         </>
     );
 };
@@ -162,14 +170,17 @@ const mapPanel = (title: string, content: ReactNode[], id?: string) => {
             unikId={unikId}
             panelLestSituasjon={'ulest'}
         >
-            <div className={classNames(fellesStiler.marginTop1Rem, styles.firstChildNoMarginTop)}>{content}</div>
+            <div className={classNames(styles.firstChildNoMarginTop)}>{content}</div>
         </EkspanderbartInfopanel>
     );
 };
 
 const mapColumns = (leftContent: ReactNode[], rightContent: ReactNode[]) => {
     return (
-        <div key={uuidv4()} className={classNames(fellesStiler.infoPanelKolonner, fellesStiler.marginBottom1Rem)}>
+        <div
+            key={uuidv4()}
+            className={classNames(fellesStiler.infoPanelKolonner, fellesStiler.marginBottom1Rem)}
+        >
             <div className={fellesStiler.graAvrundetBoks}>{leftContent}</div>
             <div className={fellesStiler.graAvrundetBoks}>{rightContent}</div>
         </div>
@@ -187,7 +198,6 @@ const mapInfoBox = (content: ReactNode[]) => {
 const mapHorizontalLine = () => <div key={uuidv4()} className={fellesStiler.horizontalLine} />;
 
 const mapDownloadButtons = (title: ReactNode) => {
-
     return (
         <div className={styles.downloadButtonContainer} key={uuidv4()}>
             {title}
@@ -202,6 +212,5 @@ const mapDownloadButtons = (title: ReactNode) => {
                 label="last-ned-txt"
             />
         </div>
-
     );
 };

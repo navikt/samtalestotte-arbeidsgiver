@@ -8,7 +8,7 @@ import {
     TILRETTELEGGING,
 } from '../../resources/urls';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
-import { Heading } from '@navikt/ds-react';
+import { BodyLong, Heading } from '@navikt/ds-react';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import classNames from 'classnames';
 import { Liste } from '../../Liste/Liste';
@@ -26,22 +26,23 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                     Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.
                 </Heading>
                 <p>
-                    Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i
-                    samtalen med gjensidige forventninger til hva som er mulig.
+                    <BodyLong>
+                        Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i
+                        samtalen med gjensidige forventninger til hva som er mulig.
+                    </BodyLong>
                 </p>
-                <p className={fellesStiler.marginBottom0Rem}>
-                    Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter
-                    som finnes.
+                <p>
+                    <BodyLong>
+                        Vi anbefaler arbeidsplasser å ha oversikt over hvilke
+                        tilretteleggingsmuligheter som finnes.
+                    </BodyLong>
                 </p>
-                <p
-                    className={classNames(
-                        fellesStiler.marginTop0Rem,
-                        fellesStiler.marginBottom3Rem
-                    )}
-                >
-                    Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med
-                    verneombud og tillitsvalgte. Hensikten er en felles vurdering av hvilken
-                    tilrettelegging er mulig hos dere.
+                <p>
+                    <BodyLong>
+                        Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med
+                        verneombud og tillitsvalgte. Hensikten er en felles vurdering av hvilken
+                        tilrettelegging er mulig hos dere.
+                    </BodyLong>
                 </p>
                 <Liste>
                     <Liste.Element>
@@ -94,7 +95,7 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                     )}
                 />
 
-                <Heading size={'medium'} level={'3'}>
+                <Heading size={'medium'} level={'3'} spacing>
                     Lær mer om tilrettelegging
                 </Heading>
                 <Heading className={fellesStiler.marginBottom025rem} size={'small'} level={'4'}>

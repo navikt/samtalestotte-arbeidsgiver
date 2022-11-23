@@ -40,7 +40,7 @@ const DetteKanDuSpoerreMedarbeiderenOm = (props: InfoPanelProps) => {
                     </Liste.Element>
                 </Liste>
                 <strong>
-                    <BodyLong>
+                    <BodyLong spacing>
                         <strong>
                             Husk at du ikke kan kreve opplysninger om diagnose, behandling og
                             forhold hjemme.
