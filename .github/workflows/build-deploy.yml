@@ -34,7 +34,7 @@ jobs:
 
   deploy-to-dev-gcp:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/fix_linjeavstand'
+    if: github.ref == 'refs/heads/fix_linjeavstander'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
