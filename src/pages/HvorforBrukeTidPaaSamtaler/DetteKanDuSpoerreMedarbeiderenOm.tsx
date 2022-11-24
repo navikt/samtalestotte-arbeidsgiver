@@ -37,10 +37,8 @@ const DetteKanDuSpoerreMedarbeiderenOm = (props: InfoPanelProps) => {
                     </Liste.Element>
                 </Liste>
                 <strong>
-                    <strong>
-                        Husk at du ikke kan kreve opplysninger om diagnose, behandling og forhold
-                        hjemme.
-                    </strong>
+                    Husk at du ikke kan kreve opplysninger om diagnose, behandling og forhold
+                    hjemme.
                 </strong>
             </div>
         </EkspanderbartInfopanel>
