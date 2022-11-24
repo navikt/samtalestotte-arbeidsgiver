@@ -55,6 +55,7 @@ export const isSmallHeader = (element: DocumentElement | string | object): eleme
 export interface Paragraph extends DocumentElement {
     type: 'Paragraph';
     content: (Text | Link | string)[] | string;
+    inline?: boolean;
 }
 
 export const isParagraph = (element: DocumentElement | string | object): element is Paragraph => {

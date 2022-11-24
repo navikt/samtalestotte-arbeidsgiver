@@ -63,8 +63,8 @@ const mapComponents = (elements: (string | object)[]): ReactNode[] => {
             }
             if (isParagraph(e)) {
                 return isString(e.content)
-                    ? mapParagraph(e.content)
-                    : mapParagraph(mapComponents(e.content));
+                    ? mapParagraph(e.content, e.inline)
+                    : mapParagraph(mapComponents(e.content), e.inline);
             }
             if (isBigHeader(e)) {
                 return mapBigHeader(e.content, e.id);
@@ -117,6 +117,7 @@ const mapSmallHeader = (content: string, id?: string) => {
 };
 
 const mapParagraph = (content: ReactNode, inline: boolean = false) => {
+    console.log(inline);
     if (inline) {
         return <span key={uuidv4()}>{content}</span>;
     }
