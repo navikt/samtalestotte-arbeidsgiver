@@ -1,6 +1,5 @@
 type ElementType =
     | 'Paragraph'
-    | 'Span'
     | 'Text'
     | 'BigHeader'
     | 'MediumHeader'
@@ -61,18 +60,6 @@ export interface Paragraph extends DocumentElement {
 export const isParagraph = (element: DocumentElement | string | object): element is Paragraph => {
     if (typeof element === 'object' && element.hasOwnProperty('type')) {
         return (element as DocumentElement).type === 'Paragraph';
-    }
-    return false;
-};
-
-export interface Span extends DocumentElement {
-    type: 'Span';
-    content: (Text | Link | string)[] | string;
-}
-
-export const isSpan = (element: DocumentElement | string | object): element is Span => {
-    if (typeof element === 'object' && element.hasOwnProperty('type')) {
-        return (element as DocumentElement).type === 'Span';
     }
     return false;
 };

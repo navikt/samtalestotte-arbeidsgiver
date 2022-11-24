@@ -87,7 +87,8 @@ const skapeGodeRammer: (Panel | object)[] = [
                         content: [
                             [
                                 {
-                                    type: 'Span',
+                                    type: 'Paragraph',
+                                    inline: true,
                                     content: [
                                         'Planlegg bruk av samtaleteknikker for å sikre medvirkning i samtalen. ',
                                         {
@@ -116,7 +117,8 @@ const skapeGodeRammer: (Panel | object)[] = [
                         content: [
                             [
                                 {
-                                    type: 'Span',
+                                    type: 'Paragraph',
+                                    inline: true,
                                     content: [
                                         'Lær mer om samtaler og samtaleteknikker. ',
                                         {
@@ -130,7 +132,8 @@ const skapeGodeRammer: (Panel | object)[] = [
                             ],
                             [
                                 {
-                                    type: 'Span',
+                                    type: 'Paragraph',
+                                    inline: true,
                                     content: [
                                         'Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere. ',
                                         {
@@ -201,7 +204,8 @@ const skapeGodeRammer: (Panel | object)[] = [
                         content: [
                             [
                                 {
-                                    type: 'Span',
+                                    type: 'Paragraph',
+                                    inline: true,
                                     content: [
                                         'Evaluer rutinene dine. ',
                                         {
@@ -214,7 +218,8 @@ const skapeGodeRammer: (Panel | object)[] = [
                             ],
                             [
                                 {
-                                    type: 'Span',
+                                    type: 'Paragraph',
+                                    inline: true,
                                     content: [
                                         'Utarbeid sykefraværsrutiner. ',
                                         {
@@ -285,7 +290,8 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                 content: [
                     [
                         {
-                            type: 'Span',
+                            type: 'Paragraph',
+                            inline: true,
                             content: [
                                 {
                                     type: 'Text',
@@ -353,7 +359,8 @@ const forberedeMedarbeiderenDin = [
                     ],
                     [
                         {
-                            type: 'Span',
+                            type: 'Paragraph',
+                            inline: true,
                             content: [
                                 {
                                     type: 'Link',
@@ -370,7 +377,8 @@ const forberedeMedarbeiderenDin = [
                     ['Du kan sende tema eller spørsmål til medarbeideren på forhånd.'],
                     [
                         {
-                            type: 'Span',
+                            type: 'Paragraph',
+                            inline: true,
                             content: [
                                 'Velg noen av de viktigste fra eksemplene under ',
                                 {

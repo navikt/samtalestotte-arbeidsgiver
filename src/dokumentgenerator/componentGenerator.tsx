@@ -20,7 +20,6 @@ import {
     isPanel,
     isParagraph,
     isSmallHeader,
-    isSpan,
     isText,
 } from './domainInterfaces';
 import { isString, notUndefinedOrNull } from '../utils/typeGuardUtils';
@@ -66,9 +65,6 @@ const mapComponents = (elements: (string | object)[]): ReactNode[] => {
                 return isString(e.content)
                     ? mapParagraph(e.content)
                     : mapParagraph(mapComponents(e.content));
-            }
-            if (isSpan(e)) {
-                return isString(e.content) ? mapSpan(e.content) : mapSpan(mapComponents(e.content));
             }
             if (isBigHeader(e)) {
                 return mapBigHeader(e.content, e.id);
@@ -120,12 +116,11 @@ const mapSmallHeader = (content: string, id?: string) => {
     );
 };
 
-const mapParagraph = (content: ReactNode) => {
+const mapParagraph = (content: ReactNode, inline: boolean = false) => {
+    if (inline) {
+        return <span key={uuidv4()}>{content}</span>;
+    }
     return <p key={uuidv4()}>{content}</p>;
-};
-
-const mapSpan = (content: ReactNode) => {
-    return <div key={uuidv4()}>{content}</div>;
 };
 
 const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) => {
@@ -137,6 +132,7 @@ const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) 
                 ),
                 lineBreak
             )}
+            {/*TODO: Legge på class body-long her? */}
             <span key={uuidv4()} className={classNames({ [fellesStiler.boldText]: bold })}>
                 {content}
             </span>

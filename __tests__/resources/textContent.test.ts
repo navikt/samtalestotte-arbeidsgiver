@@ -15,7 +15,6 @@ import {
     isPanel,
     isParagraph,
     isSmallHeader,
-    isSpan,
     isText,
     Link,
     List,
@@ -23,7 +22,6 @@ import {
     Panel,
     Paragraph,
     SmallHeader,
-    Span,
     Text,
 } from '../../src/dokumentgenerator/domainInterfaces';
 import { isBoolean, isNumber, isString } from '../../src/utils/typeGuardUtils';
@@ -39,9 +37,6 @@ const isValidDomainObjects = (
     return objects.every((e) => {
         if (isParagraph(e)) {
             return isValidParagraph(e);
-        }
-        if (isSpan(e)) {
-            return isValidSpan(e);
         }
         if (isList(e)) {
             return isValidList(e);
@@ -104,21 +99,6 @@ const isValidParagraph = (paragraph: Paragraph): paragraph is Paragraph => {
     throw new Error(`${paragraph} is not a valid Paragraph object`);
 };
 
-const isValidSpan = (span: Span): span is Span => {
-    if (isString(span.content)) return true;
-    if (
-        span.content.every((e) => {
-            if (isString(e)) return true;
-            if (isText(e)) return isValidText(e);
-            if (isLink(e)) return isValidLink(e);
-            return false;
-        })
-    ) {
-        return true;
-    }
-    throw new Error(`${span} is not a valid Span object`);
-};
-
 const isValidList = (list: List): list is List => {
     if (
         isNumber(list.level) ||
@@ -129,7 +109,6 @@ const isValidList = (list: List): list is List => {
                     if (isText(e)) return isValidText(e);
                     if (isLink(e)) return isValidLink(e);
                     if (isParagraph(e)) return isValidParagraph(e);
-                    if (isSpan(e)) return isValidSpan(e);
                     if (isSmallHeader(e)) return isValidSmallHeader(e);
                     if (isMediumHeader(e)) return isValidMediumHeader(e);
                     if (isBigHeader(e)) return isValidBigHeader(e);
@@ -205,7 +184,6 @@ const validatePanelContent = (e: Paragraph | List | HorizontalLine | SmallHeader
     if(isColumns(e)) return isValidColumns(e)
     if (isInfoBox(e)) return isValidInfoBox(e);
     if (isParagraph(e)) return isValidParagraph(e);
-    if (isSpan(e)) return isValidSpan(e);
     if (isList(e)) return isValidList(e)
     if(isHorizontalLine(e)) return true
     if(isSmallHeader(e)) return isValidSmallHeader(e)
@@ -218,7 +196,6 @@ const validateTableContent = (
     e: Paragraph | List | HorizontalLine | SmallHeader | MediumHeader | BigHeader
 ) => {
     if (isParagraph(e)) return isValidParagraph(e);
-    if (isSpan(e)) return isValidSpan(e);
     if (isList(e)) return isValidList(e);
     if (isHorizontalLine(e)) return true;
     if (isSmallHeader(e)) return isValidSmallHeader(e);
