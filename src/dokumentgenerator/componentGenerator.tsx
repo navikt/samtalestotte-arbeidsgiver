@@ -132,7 +132,6 @@ const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) 
                 ),
                 lineBreak
             )}
-            {/*TODO: Legge på class body-long her? */}
             <span key={uuidv4()} className={classNames({ [fellesStiler.boldText]: bold })}>
                 {content}
             </span>
