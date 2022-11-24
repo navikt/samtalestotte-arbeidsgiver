@@ -110,7 +110,7 @@ const mapInfoBox = (content: DocumentElement[]) => {
 const mapTableCell = (content: DocumentElement[], shade: string = '#ffffff') => {
     const children = content
         .map((e) => {
-            if (isParagraph(e)) {
+            if (isParagraph(e) || isSpan(e)) {
                 return mapParagraph(e.content);
             }
             if (isBigHeader(e)) {
@@ -189,7 +189,7 @@ const mapList = (content: (DocumentElement | string)[][], level: number = 0): Pa
                               indent: { start: 360 * (level + 2), left: 360 * (level + 2) },
                           });
                 }
-                if (isParagraph(e)) {
+                if (isParagraph(e) || isSpan(e)) {
                     return mapParagraph(e.content, level);
                 }
                 if (isLink(e)) {
