@@ -34,7 +34,7 @@ jobs:
 
   deploy-to-dev-gcp:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/like_lister'
+    if: github.ref == 'refs/heads/fix_linjeavstand'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
@@ -46,6 +46,7 @@ jobs:
           VAR: version=${{ env.IMAGE }}
           RESOURCE: nais/dev-gcp.yaml
           PRINT_PAYLOAD: true
+
   deploy-to-labs-gcp:
     name: Deploy to labs-gcp
     if: github.ref == 'refs/heads/master'
