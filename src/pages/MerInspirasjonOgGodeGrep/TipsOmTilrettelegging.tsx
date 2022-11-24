@@ -8,7 +8,7 @@ import {
     TILRETTELEGGING,
 } from '../../resources/urls';
 import LoggbarLenke from '../../felleskomponenter/LoggbarLenke/LoggbarLenke';
-import { BodyLong, Heading } from '@navikt/ds-react';
+import { Heading } from '@navikt/ds-react';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import classNames from 'classnames';
 import { Liste } from '../../Liste/Liste';
@@ -26,23 +26,17 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                     Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.
                 </Heading>
                 <p>
-                    <BodyLong>
-                        Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i
-                        samtalen med gjensidige forventninger til hva som er mulig.
-                    </BodyLong>
+                    Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i
+                    samtalen med gjensidige forventninger til hva som er mulig.
                 </p>
                 <p>
-                    <BodyLong>
-                        Vi anbefaler arbeidsplasser å ha oversikt over hvilke
-                        tilretteleggingsmuligheter som finnes.
-                    </BodyLong>
+                    Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter
+                    som finnes.
                 </p>
                 <p>
-                    <BodyLong>
-                        Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med
-                        verneombud og tillitsvalgte. Hensikten er en felles vurdering av hvilken
-                        tilrettelegging er mulig hos dere.
-                    </BodyLong>
+                    Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med
+                    verneombud og tillitsvalgte. Hensikten er en felles vurdering av hvilken
+                    tilrettelegging er mulig hos dere.
                 </p>
                 <Liste>
                     <Liste.Element>

@@ -1,7 +1,6 @@
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import ChatBubbleCheckmark from '../../felleskomponenter/Ikoner/ChatBubbleCheckmark';
-import { BodyLong } from '@navikt/ds-react';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import { Liste } from '../../Liste/Liste';
 
@@ -15,11 +14,9 @@ const DetteKanDuSpoerreMedarbeiderenOm = (props: InfoPanelProps) => {
             lestIkon={<ChatBubbleCheckmark width={'44px'} height={'44px'} />}
         >
             <div className={fellesStiler.marginTop1Rem}>
-                <BodyLong>
-                    <strong>
-                        Du kan stille spørsmål som handler om fravær og forhold på arbeidsplassen.
-                    </strong>
-                </BodyLong>
+                <strong>
+                    Du kan stille spørsmål som handler om fravær og forhold på arbeidsplassen.
+                </strong>
                 <Liste>
                     <Liste.Element>
                         Mulighetene til å utføre egne eller alternative arbeidsoppgaver.
@@ -40,12 +37,10 @@ const DetteKanDuSpoerreMedarbeiderenOm = (props: InfoPanelProps) => {
                     </Liste.Element>
                 </Liste>
                 <strong>
-                    <BodyLong spacing>
-                        <strong>
-                            Husk at du ikke kan kreve opplysninger om diagnose, behandling og
-                            forhold hjemme.
-                        </strong>
-                    </BodyLong>
+                    <strong>
+                        Husk at du ikke kan kreve opplysninger om diagnose, behandling og forhold
+                        hjemme.
+                    </strong>
                 </strong>
             </div>
         </EkspanderbartInfopanel>

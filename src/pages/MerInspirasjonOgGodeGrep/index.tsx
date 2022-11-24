@@ -1,7 +1,7 @@
 import EnkleTipsForDigitaleSamtaler from './EnkleTipsForDigitaleSamtaler';
 import GodeGrepForAByggeRelasjoner from './GodeGrepForAByggeRelasjoner';
 import TipsOmTilrettelegging from './TipsOmTilrettelegging';
-import { Heading } from '@navikt/ds-react';
+import { BodyLong, Heading } from '@navikt/ds-react';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import classNames from 'classnames';
 import PsykiskHelsePåArbeidsplassen from './PsykiskHelsePåArbeidsplassen';
@@ -16,10 +16,12 @@ const MerInspirasjonOgGodeGrep = ({ className }: { className?: string }) => {
             >
                 Mer inspirasjon og gode grep
             </Heading>
-            <PsykiskHelsePåArbeidsplassen />
-            <EnkleTipsForDigitaleSamtaler />
-            <GodeGrepForAByggeRelasjoner />
-            <TipsOmTilrettelegging />
+            <BodyLong>
+                <PsykiskHelsePåArbeidsplassen />
+                <EnkleTipsForDigitaleSamtaler />
+                <GodeGrepForAByggeRelasjoner />
+                <TipsOmTilrettelegging />
+            </BodyLong>
         </section>
     );
 };

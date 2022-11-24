@@ -1,7 +1,6 @@
 import fellesStiler from '../utils/fellesStiler.module.css';
 import classNames from 'classnames';
 import React from 'react';
-import { BodyLong } from '@navikt/ds-react';
 
 interface Props {
     className?: string;
@@ -14,7 +13,7 @@ const Element: React.FC<Props> = (props) => (
 export const Liste: React.FC<Props> & { Element: typeof Element } = (props) => {
     return (
         <ul className={classNames(fellesStiler.marginBottom2Rem, props.className)}>
-            <BodyLong>{props.children}</BodyLong>
+            {props.children}
         </ul>
     );
 };
