@@ -23,15 +23,16 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
         >
             <div className={fellesStiler.marginTop1Rem}>
                 <Heading size={'medium'} level={'3'}>
-                    Bruk eller lag oversikt over tilretteleggingsmuligheter på egen arbeidsplass.
+                    Bruk eller lag en oversikt over muligheter for tilrettelegging på egen
+                    arbeidsplass
                 </Heading>
                 <p>
                     Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i
                     samtalen med gjensidige forventninger til hva som er mulig.
                 </p>
                 <p>
-                    Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter
-                    som finnes.
+                    Vi anbefaler arbeidsplasser å ha oversikt over hvilke muligheter for
+                    tilrettelegging som finnes.
                 </p>
                 <p>
                     Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med
@@ -41,7 +42,7 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                 <Liste>
                     <Liste.Element>
                         <strong>
-                            Hvilke tilretteleggingsmuligheter finnes på deres arbeidsplass og ellers
+                            Hvilke muligheter for tilrettelegging finnes på deres arbeidsplass eller
                             i organisasjonen?
                         </strong>
                     </Liste.Element>
@@ -59,12 +60,11 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                     <InfoBoks overskrift="på kort sikt:">
                         <Liste>
                             <Liste.Element>
-                                Undersøk om det finnes en oversikt over tilretteleggingsmuligheter
-                                for din arbeidsplass, hvis dere har en personalavdeling kan disse
-                                ofte hjelpe deg.
+                                Undersøk om det finnes en oversikt over mulig tilrettelegging. Hvis
+                                dere har en personalavdeling, kan disse ofte hjelpe deg.
                             </Liste.Element>
                             <Liste.Element>
-                                Vurder om du bør dele oversikt over tilretteleggingsmuligheter med
+                                Vurder om du bør dele oversikten over mulig tilrettelegging med
                                 medarbeideren før samtalen.
                             </Liste.Element>
                         </Liste>
@@ -72,7 +72,7 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                     <InfoBoks overskrift="over tid og som kontinuerlig arbeid:">
                         <Liste>
                             <Liste.Element>
-                                Lag en liste med tilretteleggingsmuligheter.{' '}
+                                Lag en liste over mulig tilrettelegging på deres arbeidsplass.{' '}
                                 <LoggbarLenke href={SLIK_LYKKES_DERE}>
                                     Se beskrivelse av prosess og maler på idebanken.
                                 </LoggbarLenke>

@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Element: React.FC<Props> = (props) => (
-    <li className={classNames(fellesStiler.marginTop04Rem, props.className)}>{props.children}</li>
+    <li className={classNames(fellesStiler.marginTop03Rem, props.className)}>{props.children}</li>
 );
 
 export const Liste: React.FC<Props> & { Element: typeof Element } = (props) => {

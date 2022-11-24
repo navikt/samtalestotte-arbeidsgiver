@@ -23,17 +23,16 @@ const DetteKanDuSpoerreMedarbeiderenOm = (props: InfoPanelProps) => {
                     </Liste.Element>
                     <Liste.Element>Behov for tilrettelegging.</Liste.Element>
                     <Liste.Element>
-                        Om medarbeideren kjenner til rutiner og tilretteleggingsmuligheter i deres
-                        virksomhet.
+                        Om medarbeideren kjenner til rutiner og muligheter for tilrettelegging i
+                        deres virksomhet.
                     </Liste.Element>
                     <Liste.Element>Hvor lenge medarbeideren tror fraværet vil vare.</Liste.Element>
                     <Liste.Element>
-                        Om det er forhold på arbeidsplassen som påvirker sykefraværet eller
-                        helsesituasjonen.
+                        Om det er forhold på arbeidsplassen som påvirker helsa eller sykefraværet.
                     </Liste.Element>
                     <Liste.Element>
                         Om medarbeideren ønsker kontakt med NAV, bedriftshelsetjenesten eller andre
-                        samarbeidspartnere for å få hjelp med tilrettelegging og oppfølging.
+                        for å få hjelp.
                     </Liste.Element>
                 </Liste>
                 <strong>
