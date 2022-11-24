@@ -117,7 +117,6 @@ const mapSmallHeader = (content: string, id?: string) => {
 };
 
 const mapParagraph = (content: ReactNode, inline: boolean = false) => {
-    console.log(inline);
     if (inline) {
         return <span key={uuidv4()}>{content}</span>;
     }
