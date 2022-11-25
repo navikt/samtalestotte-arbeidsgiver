@@ -3,6 +3,7 @@ import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import ChatBubbleCheckmark from '../../felleskomponenter/Ikoner/ChatBubbleCheckmark';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import { Liste } from '../../Liste/Liste';
+import classNames from 'classnames';
 
 const DetteKanDuSpoerreMedarbeiderenOm = (props: InfoPanelProps) => {
     return (
@@ -13,7 +14,7 @@ const DetteKanDuSpoerreMedarbeiderenOm = (props: InfoPanelProps) => {
             ikon={<ChatBubbleCheckmark width={'44px'} height={'44px'} />}
             lestIkon={<ChatBubbleCheckmark width={'44px'} height={'44px'} />}
         >
-            <div className={fellesStiler.marginTop1Rem}>
+            <div className={classNames(fellesStiler.marginTop1Rem, fellesStiler.marginBottom2Rem)}>
                 <strong>
                     Du kan stille spørsmål som handler om fravær og forhold på arbeidsplassen.
                 </strong>
