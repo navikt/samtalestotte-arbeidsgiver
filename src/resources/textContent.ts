@@ -55,9 +55,7 @@ const skapeGodeRammer: (Panel | object)[] = [
             {
                 type: 'Paragraph',
                 content:
-                    'Trygghet oppnår du når det er en god relasjon mellom deg og medarbeiderne, og at rammene ' +
-                    'rundt samtalen er forutsigbare for alle. Å vise forståelse i møte med medarbeider setter ' +
-                    'gode forutsetninger for samarbeidet videre.',
+                    'Gode relasjoner til medarbeiderne og forutsigbare rammer skaper trygghet. Å vise forståelse i møte med medarbeideren setter gode forutsetninger for samarbeidet videre.',
             },
             {
                 type: 'List',
@@ -164,7 +162,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                 type: 'List',
                 content: [
                     [
-                        'Hvordan bidrar sykefraværsrutinene i din virksomhet til forutsigbarhet rundt oppgaver og ansvar?',
+                        'Hvordan bidrar rutiner for sykefravær til forutsigbarhet rundt oppgaver og ansvar i din virksomhet?',
                     ],
                 ],
             },
@@ -185,7 +183,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                         type: 'List',
                         content: [
                             [
-                                'Bruk sykefraværsrutinene i din virksomhet, for å skape forutsigbarhet for deg og medarbeideren.',
+                                'Bruk rutinene i din virksomhet for å skape forutsigbarhet for deg og medarbeideren.',
                             ],
                             [
                                 'Finn ut om du kan få hjelp av noen i din virksomhet eller i interne systemer.',
@@ -221,7 +219,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                                     type: 'Paragraph',
                                     inline: true,
                                     content: [
-                                        'Utarbeid sykefraværsrutiner. ',
+                                        'Utarbeid rutiner for sykefravær. ',
                                         {
                                             type: 'Link',
                                             url: RETTNINGSLINJER_FOR_SYKEFRAVAERSOPPFOLGNING,
@@ -322,7 +320,7 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                         {
                             type: 'Text',
                             content:
-                                'Hvis du skal ta opp et tema du synes er vanskelig, bør du bør være konkret og tydelig på dine observasjoner.',
+                                'Vær konkret og tydelig på dine observasjoner. Dette gjør det enklere å ta opp temaer som er vanskelige.',
                             lineBreak: 1,
                         },
                         {
@@ -543,7 +541,7 @@ const finneLøsningerSammen = [
             {
                 type: 'Paragraph',
                 content:
-                    'Hvis medarbeideren beskriver arbeidsoppgaver og arbeidssituasjon først, kan det bli enklere å se løsningsforslag selv. Egne løsningsforslag gir ofte økt motivasjon ved gjennomføring.',
+                    'La medarbeideren beskrive situasjonen og arbeidsoppgavene. Da kan det være enklere å se egne løsninger. Egne løsningsforslag gir økt motivasjon.',
             },
             { type: 'SmallHeader', content: 'Tips:', id: 'Tips i finne løsninger sammen' },
             {
@@ -627,7 +625,6 @@ const finneLøsningerSammen = [
                                 'Hvordan bør arbeidsdagen se ut dersom du skal kunne klare den, helt eller delvis?',
                             ],
                             ['Hvilke løsninger ser du for deg?'],
-                            ['Hvordan vil den ideelle arbeidssituasjonen være for deg akkurat nå?'],
                             ['Hvilke tiltak bør vi prøve først?'],
                         ],
                     },
@@ -646,7 +643,7 @@ const planleggeVeienVidereSammen = [
             {
                 type: 'Paragraph',
                 content:
-                    'En samtale om arbeidssituasjonen avsluttes med at du og medarbeideren oppsummerer det dere er blitt enige om og at dere lager en plan for videre oppfølging.',
+                    'En samtale avsluttes med at du og medarbeideren oppsummerer det dere er blitt enige om. Så lager dere en plan for videre oppfølging.',
             },
             { type: 'SmallHeader', content: 'Tips:', id: 'Tips i planelegge veien videre sammen.' },
             {

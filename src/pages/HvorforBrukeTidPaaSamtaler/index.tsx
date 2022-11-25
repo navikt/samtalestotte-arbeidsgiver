@@ -14,9 +14,8 @@ const HvorforBrukeTidPaaSamtaler = ({ className }: { className?: string }) => {
             </Heading>
             <BodyLong>
                 <p className={classNames(fellesStiler.marginBottom2Rem)}>
-                    Lovverk og rutiner forteller deg hva du skal gjøre for å forebygge og følge opp
-                    sykefravær. Gode samtaler er en metode for hvordan du fyller lovkravene, slik at
-                    de gir størst verdi for deg og medarbeiderne dine.
+                    Å forebygge og følge opp sykefravær er et krav i loven. Å ha gode samtaler med
+                    medarbeiderne dine er den beste måten å fylle lovkravene på.
                 </p>
                 <p className={fellesStiler.boldText}>Gode samtaler bidrar til:</p>
                 <Liste className={fellesStiler.marginBottom4Rem}>
