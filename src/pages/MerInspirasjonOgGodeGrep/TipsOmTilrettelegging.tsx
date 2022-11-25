@@ -29,16 +29,11 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                     Du og medarbeideren din vil raskere finne løsninger sammen hvis dere møtes i
                     samtalen med gjensidige forventninger til hva som er mulig.
                 </p>
-                <p className={fellesStiler.marginBottom0Rem}>
+                <p>
                     Vi anbefaler arbeidsplasser å ha oversikt over hvilke tilretteleggingsmuligheter
                     som finnes.
                 </p>
-                <p
-                    className={classNames(
-                        fellesStiler.marginTop0Rem,
-                        fellesStiler.marginBottom3Rem
-                    )}
-                >
+                <p>
                     Oversikten bør utarbeides sammen med medarbeiderne dine eller sammen med
                     verneombud og tillitsvalgte. Hensikten er en felles vurdering av hvilken
                     tilrettelegging er mulig hos dere.
@@ -94,7 +89,7 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                     )}
                 />
 
-                <Heading size={'medium'} level={'3'}>
+                <Heading size={'medium'} level={'3'} spacing>
                     Lær mer om tilrettelegging
                 </Heading>
                 <Heading className={fellesStiler.marginBottom025rem} size={'small'} level={'4'}>

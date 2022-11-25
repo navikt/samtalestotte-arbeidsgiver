@@ -88,6 +88,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                             [
                                 {
                                     type: 'Paragraph',
+                                    inline: true,
                                     content: [
                                         'Planlegg bruk av samtaleteknikker for å sikre medvirkning i samtalen. ',
                                         {
@@ -117,8 +118,9 @@ const skapeGodeRammer: (Panel | object)[] = [
                             [
                                 {
                                     type: 'Paragraph',
+                                    inline: true,
                                     content: [
-                                        'Lær mer om samtaler og samtaleteknikker.',
+                                        'Lær mer om samtaler og samtaleteknikker. ',
                                         {
                                             type: 'Link',
                                             url: DEN_VIKTIGE_SAMTALEN,
@@ -131,6 +133,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                             [
                                 {
                                     type: 'Paragraph',
+                                    inline: true,
                                     content: [
                                         'Jobb aktivt med å bygge trygge relasjoner til alle dine medarbeidere. ',
                                         {
@@ -202,6 +205,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                             [
                                 {
                                     type: 'Paragraph',
+                                    inline: true,
                                     content: [
                                         'Evaluer rutinene dine. ',
                                         {
@@ -215,6 +219,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                             [
                                 {
                                     type: 'Paragraph',
+                                    inline: true,
                                     content: [
                                         'Utarbeid sykefraværsrutiner. ',
                                         {
@@ -286,6 +291,7 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                     [
                         {
                             type: 'Paragraph',
+                            inline: true,
                             content: [
                                 {
                                     type: 'Text',
@@ -296,7 +302,7 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                                     type: 'Text',
                                     content: 'Velg tema og hjelpespørsmål under ',
                                 },
-                                { type: 'Text', content: '', lineBreak: 1 },
+                                { type: 'Text', content: '', lineBreak: 0 },
                                 {
                                     type: 'Link',
                                     url: GJENNOMFOR_SAMTALEN,
@@ -354,6 +360,7 @@ const forberedeMedarbeiderenDin = [
                     [
                         {
                             type: 'Paragraph',
+                            inline: true,
                             content: [
                                 {
                                     type: 'Link',
@@ -371,6 +378,7 @@ const forberedeMedarbeiderenDin = [
                     [
                         {
                             type: 'Paragraph',
+                            inline: true,
                             content: [
                                 'Velg noen av de viktigste fra eksemplene under ',
                                 {
@@ -648,16 +656,14 @@ const planleggeVeienVidereSammen = [
             },
             {
                 type: 'Paragraph',
-                content:
+                content: [
                     'Dersom medarbeideren er sykmeldt er det pålagt å utarbeide en oppfølgingsplan. ',
-            },
-            {
-                type: 'Paragraph',
-                content: [{
-                    type: 'Link',
-                    url: OPPFOLGNINGSPLAN,
-                    content: 'Les mer om oppfølgingsplan på nav.no.',
-                }]
+                    {
+                        type: 'Link',
+                        url: OPPFOLGNINGSPLAN,
+                        content: 'Les mer om oppfølgingsplan på nav.no.',
+                    },
+                ],
             },
 
             { type: 'SmallHeader', content: 'Vanlige tema i avslutningen:' },
