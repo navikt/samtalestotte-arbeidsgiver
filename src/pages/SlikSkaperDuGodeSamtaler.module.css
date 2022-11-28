@@ -4,7 +4,8 @@
   background: var(--navds-global-color-blue-100);
   border-radius: 10px;
 }
-@media (--screen-sm-min) {
+/*--screen-sm-min*/
+@media (min-width: 768px) {
   .backgroundStyle{
     padding-right: 3rem;
     padding-left: 3rem;
