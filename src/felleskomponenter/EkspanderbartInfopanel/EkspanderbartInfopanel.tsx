@@ -40,9 +40,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const accordionRef = useRef<HTMLButtonElement>(null);
 
     const settFokusTilSisteAktivePanel = () => {
-
             accordionRef?.current?.focus();
-
     };
 
     useEffect(() => {

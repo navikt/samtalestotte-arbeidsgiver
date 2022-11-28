@@ -1,43 +1,43 @@
 import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import fellesStiler from "../../utils/fellesStiler.module.css";
+import fellesStiler from '../../utils/fellesStiler.module.css';
+import { Liste } from '../../Liste/Liste';
 
 const EnkleTipsForDigitaleSamtaler = (props: InfoPanelProps) => {
-    return <EkspanderbartInfopanel
-        unikId={"enkleTipsForDigitaleSamtaler"}
-        tittel={"Enkle tips for digitale samtaler"}
-        panelLestSituasjon={"ulest"}
-    >
-        <div className={fellesStiler.marginTop1Rem}>
-            <ul className={fellesStiler.marginTop0Rem}>
-                <li>
+    return (
+        <EkspanderbartInfopanel
+            unikId={'enkleTipsForDigitaleSamtaler'}
+            tittel={'Enkle tips for digitale samtaler'}
+            panelLestSituasjon={'ulest'}
+        >
+            <Liste className={fellesStiler.marginTop0Rem}>
+                <Liste.Element>
                     Husk forberedelse og struktur også i digitale samtaler.
-                </li>
-                <li>
-                    Bli enige om tittel på avtalen når du bruker digital innkalling og digitale møterom.
-                    Husk personvernet til medarbeideren du skal snakke med.
-                </li>
-                <li>
-                    La kamera være på.
-                </li>
-                <li>
+                </Liste.Element>
+                <Liste.Element>
+                    Bli enige om tittel på avtalen når du bruker digital innkalling og digitale
+                    møterom. Husk personvernet til medarbeideren du skal snakke med.
+                </Liste.Element>
+                <Liste.Element>La kamera være på.</Liste.Element>
+                <Liste.Element>
                     Det er bedre med flere korte, enn en lang digital samtale.
-                </li>
-                <li>
+                </Liste.Element>
+                <Liste.Element>
                     Digitale samtaler trenger trygghet og gode relasjoner.
-                </li>
-                <li>
+                </Liste.Element>
+                <Liste.Element>
                     Gi medarbeideren rom til å fortelle, tål pauser og stillhet.
-                </li>
-                <li>
+                </Liste.Element>
+                <Liste.Element>
                     Bruk sikre digitale verktøy for å ivareta personvern og taushetsplikt
-                </li>
-                <li>
-                    Hvis dere har mulighet, kan dere skrive referat eller oppfølgingsplan sammen og underveis i samtalen.
-                </li>
-            </ul>
-        </div>
-    </EkspanderbartInfopanel>;
+                </Liste.Element>
+                <Liste.Element>
+                    Hvis dere har mulighet, kan dere skrive referat eller oppfølgingsplan sammen og
+                    underveis i samtalen.
+                </Liste.Element>
+            </Liste>
+        </EkspanderbartInfopanel>
+    );
 };
 
 export default EnkleTipsForDigitaleSamtaler;

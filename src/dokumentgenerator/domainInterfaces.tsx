@@ -1,16 +1,16 @@
 type ElementType =
-    "Paragraph" |
-    "Text" |
-    "BigHeader" |
-    "MediumHeader" |
-    "SmallHeader" |
-    "List" |
-    "Link" |
-    "Panel" |
-    "Columns" |
-    "HorizontalLine" |
-    "DownloadButtons" |
-    "InfoBox";
+    | 'Paragraph'
+    | 'Text'
+    | 'BigHeader'
+    | 'MediumHeader'
+    | 'SmallHeader'
+    | 'List'
+    | 'Link'
+    | 'Panel'
+    | 'Columns'
+    | 'HorizontalLine'
+    | 'DownloadButtons'
+    | 'InfoBox';
 
 export interface DocumentElement {
     type: ElementType
@@ -53,28 +53,31 @@ export const isSmallHeader = (element: DocumentElement | string | object): eleme
 }
 
 export interface Paragraph extends DocumentElement {
-    type: "Paragraph"
-    content: (Text | Link | string)[] | string
-}
-export const isParagraph = (element: DocumentElement | string | object): element is Paragraph => {
-    if(typeof element === "object" && element.hasOwnProperty("type")) {
-        return (element as DocumentElement).type === "Paragraph"
-    }
-    return false
+    type: 'Paragraph';
+    content: (Text | Link | string)[] | string;
+    inline?: boolean;
 }
 
-export interface Text extends DocumentElement {
-    type: "Text",
-    content: string,
-    bold?: boolean,
-    lineBreak?: number
-}
-export const isText = (element: DocumentElement | string | object): element is Text => {
-    if(typeof element === "object" && element.hasOwnProperty("type")) {
-        return (element as DocumentElement).type === "Text"
+export const isParagraph = (element: DocumentElement | string | object): element is Paragraph => {
+    if (typeof element === 'object' && element.hasOwnProperty('type')) {
+        return (element as DocumentElement).type === 'Paragraph';
     }
-    return false
+    return false;
+};
+
+export interface Text extends DocumentElement {
+    type: 'Text';
+    content: string;
+    bold?: boolean;
+    lineBreak?: number;
 }
+
+export const isText = (element: DocumentElement | string | object): element is Text => {
+    if (typeof element === 'object' && element.hasOwnProperty('type')) {
+        return (element as DocumentElement).type === 'Text';
+    }
+    return false;
+};
 
 export interface Link extends DocumentElement {
     type: "Link"

@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import classNames from 'classnames';
 import fellesStiler from '../utils/fellesStiler.module.css';
 import LoggbarLenke from '../felleskomponenter/LoggbarLenke/LoggbarLenke';
-import styles from './componentGenerator.module.css'
+import styles from './componentGenerator.module.css';
 import { EkspanderbartInfopanel } from '../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import { camelCase } from '../utils/stringUtils';
 import LastNedKnapp from '../felleskomponenter/Knapper/LastNedKnapp';
@@ -24,6 +24,7 @@ import {
 } from './domainInterfaces';
 import { isString, notUndefinedOrNull } from '../utils/typeGuardUtils';
 import { repeat } from '../utils/ArrayUtils';
+import { Liste } from '../Liste/Liste';
 
 export { mapComponents as generateComponents };
 
@@ -62,8 +63,8 @@ const mapComponents = (elements: (string | object)[]): ReactNode[] => {
             }
             if (isParagraph(e)) {
                 return isString(e.content)
-                    ? mapParagraph(e.content)
-                    : mapParagraph(mapComponents(e.content));
+                    ? mapParagraph(e.content, e.inline)
+                    : mapParagraph(mapComponents(e.content), e.inline);
             }
             if (isBigHeader(e)) {
                 return mapBigHeader(e.content, e.id);
@@ -93,7 +94,7 @@ const mapMediumHeader = (content: string, id?: string) => {
             size={'medium'}
             level={'3'}
             key={uuidv4()}
-            className={classNames(fellesStiler.marginTop4Rem, fellesStiler.marginBottom1Rem)}
+            className={classNames(fellesStiler.marginTop2Rem, fellesStiler.marginBottom2Rem)}
         >
             {content}
         </Heading>
@@ -115,9 +116,13 @@ const mapSmallHeader = (content: string, id?: string) => {
     );
 };
 
-const mapParagraph = (content: ReactNode) => {
+const mapParagraph = (content: ReactNode, inline: boolean = false) => {
+    if (inline) {
+        return <span key={uuidv4()}>{content}</span>;
+    }
     return <p key={uuidv4()}>{content}</p>;
 };
+
 const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) => {
     return (
         <>
@@ -142,11 +147,11 @@ const mapLink = (url: string, content: string) => (
 
 const mapList = (content: ReactNode[]) => {
     return (
-        <ul key={uuidv4()}>
+        <Liste key={uuidv4()}>
             {content.map((e) => (
-                <li key={uuidv4()}>{e}</li>
+                <Liste.Element key={uuidv4()}>{e}</Liste.Element>
             ))}
-        </ul>
+        </Liste>
     );
 };
 
@@ -160,14 +165,17 @@ const mapPanel = (title: string, content: ReactNode[], id?: string) => {
             unikId={unikId}
             panelLestSituasjon={'ulest'}
         >
-            <div className={classNames(fellesStiler.marginTop1Rem, styles.firstChildNoMarginTop)}>{content}</div>
+            <div className={classNames(styles.firstChildNoMarginTop)}>{content}</div>
         </EkspanderbartInfopanel>
     );
 };
 
 const mapColumns = (leftContent: ReactNode[], rightContent: ReactNode[]) => {
     return (
-        <div key={uuidv4()} className={classNames(fellesStiler.infoPanelKolonner, fellesStiler.marginBottom1Rem)}>
+        <div
+            key={uuidv4()}
+            className={classNames(fellesStiler.infoPanelKolonner, fellesStiler.marginBottom1Rem)}
+        >
             <div className={fellesStiler.graAvrundetBoks}>{leftContent}</div>
             <div className={fellesStiler.graAvrundetBoks}>{rightContent}</div>
         </div>
@@ -185,7 +193,6 @@ const mapInfoBox = (content: ReactNode[]) => {
 const mapHorizontalLine = () => <div key={uuidv4()} className={fellesStiler.horizontalLine} />;
 
 const mapDownloadButtons = (title: ReactNode) => {
-
     return (
         <div className={styles.downloadButtonContainer} key={uuidv4()}>
             {title}
@@ -200,6 +207,5 @@ const mapDownloadButtons = (title: ReactNode) => {
                 label="last-ned-txt"
             />
         </div>
-
     );
 };
