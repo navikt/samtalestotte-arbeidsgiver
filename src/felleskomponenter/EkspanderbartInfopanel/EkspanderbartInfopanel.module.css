@@ -22,14 +22,16 @@
   row-gap: 12px;
 }
 
-@media (--screen-sm-min) {
+/*--screen-sm-min*/
+@media (min-width: 768px) {
   .grid {
     grid-template-columns: auto auto;
     grid-template-rows: auto;
   }
 }
 
-@media (--screen-sm-min) {
+/*--screen-sm-min*/
+@media (min-width: 768px) {
   .gridWithIcon {
     grid-template-columns: auto auto auto;
   }
@@ -39,7 +41,8 @@
   display: none;
 }
 
-@media (--screen-sm-min) {
+/*--screen-sm-min*/
+@media (min-width: 768px) {
   .ikonContainer {
     display: block;
   }
@@ -99,7 +102,8 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-@media (--screen-sm-min) {
+/*--screen-sm-min*/
+@media (min-width: 768px) {
   .innholdStyle {
     padding-right: 1rem;
     padding-left: 1rem;

@@ -2,7 +2,8 @@
   display: none;
 }
 
-@media (--screen-sm-min) {
+/*--screen-sm-min*/
+@media (min-width: 768px) {
   .hideOnSmallScreen{
     display: flex;
   }
