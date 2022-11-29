@@ -27,6 +27,7 @@ const slikSkaperDuGodeSamtaler: (DocumentElement | object)[] = [
         type: 'DownloadButtons',
         title: {
             type: 'SmallHeader',
+            level: 3,
             content: 'Last ned verktøyet og rediger selv:',
             id: 'Last ned verktøyet og rediger selv',
         },

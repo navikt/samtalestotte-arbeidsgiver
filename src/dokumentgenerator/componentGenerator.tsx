@@ -9,6 +9,7 @@ import { EkspanderbartInfopanel } from '../felleskomponenter/EkspanderbartInfopa
 import { camelCase } from '../utils/stringUtils';
 import LastNedKnapp from '../felleskomponenter/Knapper/LastNedKnapp';
 import {
+    HeaderLevel,
     isBigHeader,
     isColumns,
     isDownloadButtons,
@@ -70,7 +71,7 @@ const mapComponents = (elements: (string | object)[]): ReactNode[] => {
                 return mapBigHeader(e.content, e.id);
             }
             if (isSmallHeader(e)) {
-                return mapSmallHeader(e.content, e.id);
+                return mapSmallHeader(e.content, e.level, e.id);
             }
             return undefined;
         })
@@ -101,13 +102,13 @@ const mapMediumHeader = (content: string, id?: string) => {
     );
 };
 
-const mapSmallHeader = (content: string, id?: string) => {
+const mapSmallHeader = (content: string, level: HeaderLevel = '4', id?: string) => {
     const unikId = id ? id : camelCase(content);
     return (
         <Heading
             id={unikId}
             size={'small'}
-            level={'4'}
+            level={level}
             key={uuidv4()}
             className={classNames(fellesStiler.marginTop2Rem, fellesStiler.marginBottom1Rem)}
         >

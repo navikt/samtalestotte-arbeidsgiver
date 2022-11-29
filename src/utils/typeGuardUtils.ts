@@ -1,3 +1,4 @@
+
 export function notUndefinedOrNull<T>(element: T | undefined | null): element is T {
     return element !== undefined && element !== null
 }

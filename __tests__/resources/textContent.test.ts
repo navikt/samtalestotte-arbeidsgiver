@@ -169,6 +169,7 @@ const isValidColumns = (columns: Columns): columns is Columns => {
 const isValidSmallHeader = (smallHeader: SmallHeader): smallHeader is SmallHeader => {
     if (
         (smallHeader.id === undefined || isString(smallHeader.id)) &&
+        (smallHeader.level === undefined || isNumber(smallHeader.level)) &&
         isString(smallHeader.content)
     ) {
         return true;
