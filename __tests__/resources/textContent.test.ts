@@ -24,7 +24,7 @@ import {
     SmallHeader,
     Text,
 } from '../../src/dokumentgenerator/domainInterfaces';
-import { isBoolean, isNumber, isString } from '../../src/utils/typeGuardUtils';
+import { isBoolean, isHeaderLevel, isNumber, isString } from '../../src/utils/typeGuardUtils';
 import { SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT } from '../../src/resources/textContent';
 
 test('Validerer JSON', () => {
@@ -169,6 +169,7 @@ const isValidColumns = (columns: Columns): columns is Columns => {
 const isValidSmallHeader = (smallHeader: SmallHeader): smallHeader is SmallHeader => {
     if (
         (smallHeader.id === undefined || isString(smallHeader.id)) &&
+        (smallHeader.level === undefined || isHeaderLevel(smallHeader.level)) &&
         isString(smallHeader.content)
     ) {
         return true;

@@ -33,24 +33,32 @@ export interface MediumHeader extends DocumentElement {
     content: string
     id?: string
 }
-export const isMediumHeader = (element: DocumentElement | string | object): element is MediumHeader => {
-    if(typeof element === "object" && element.hasOwnProperty("type")) {
-        return (element as DocumentElement).type === "MediumHeader"
+export const isMediumHeader = (
+    element: DocumentElement | string | object
+): element is MediumHeader => {
+    if (typeof element === 'object' && element.hasOwnProperty('type')) {
+        return (element as DocumentElement).type === 'MediumHeader';
     }
-    return false
-}
+    return false;
+};
 
 export interface SmallHeader extends DocumentElement {
-    type: "SmallHeader"
-    content: string
-    id?: string
+    type: 'SmallHeader';
+    content: string;
+    level?: HeaderLevel;
+    id?: string;
 }
-export const isSmallHeader = (element: DocumentElement | string | object): element is SmallHeader => {
-    if(typeof element === "object" && element.hasOwnProperty("type")) {
-        return (element as DocumentElement).type === "SmallHeader"
+
+export type HeaderLevel = '1' | '2' | '3' | '4' | '5' | '6';
+
+export const isSmallHeader = (
+    element: DocumentElement | string | object
+): element is SmallHeader => {
+    if (typeof element === 'object' && element.hasOwnProperty('type')) {
+        return (element as DocumentElement).type === 'SmallHeader';
     }
-    return false
-}
+    return false;
+};
 
 export interface Paragraph extends DocumentElement {
     type: 'Paragraph';
