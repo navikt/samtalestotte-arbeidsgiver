@@ -149,6 +149,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                 ],
             },
             { type: 'HorizontalLine' },
+            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'MediumHeader',
                 content:
@@ -498,7 +499,6 @@ const snakkeOmArbeid = [
                     },
                 ],
             },
-            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'InfoBox',
                 content: [
@@ -514,7 +514,6 @@ const snakkeOmArbeid = [
                     },
                 ],
             },
-            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'InfoBox',
                 content: [
@@ -608,7 +607,6 @@ const finneLøsningerSammen = [
                     },
                 ],
             },
-            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'InfoBox',
                 content: [

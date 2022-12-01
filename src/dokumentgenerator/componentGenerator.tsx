@@ -26,6 +26,7 @@ import {
 import { isString, notUndefinedOrNull } from '../utils/typeGuardUtils';
 import { repeat } from '../utils/ArrayUtils';
 import { Liste } from '../Liste/Liste';
+import { InfoBoks } from '../felleskomponenter/InfoBoks/InfoBoks';
 
 export { mapComponents as generateComponents };
 
@@ -173,22 +174,15 @@ const mapPanel = (title: string, content: ReactNode[], id?: string) => {
 
 const mapColumns = (leftContent: ReactNode[], rightContent: ReactNode[]) => {
     return (
-        <div
-            key={uuidv4()}
-            className={classNames(fellesStiler.infoPanelKolonner, fellesStiler.marginBottom1Rem)}
-        >
-            <div className={fellesStiler.graAvrundetBoks}>{leftContent}</div>
-            <div className={fellesStiler.graAvrundetBoks}>{rightContent}</div>
-        </div>
+        <>
+            <InfoBoks>{leftContent}</InfoBoks>
+            <InfoBoks>{rightContent}</InfoBoks>
+        </>
     );
 };
 
 const mapInfoBox = (content: ReactNode[]) => {
-    return (
-        <div key={uuidv4()} className={fellesStiler.graAvrundetBoks}>
-            {content}
-        </div>
-    );
+    return <InfoBoks>{content}</InfoBoks>;
 };
 
 const mapHorizontalLine = () => <div key={uuidv4()} className={fellesStiler.horizontalLine} />;
