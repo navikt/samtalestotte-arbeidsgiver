@@ -11,7 +11,6 @@ import LastNedKnapp from '../felleskomponenter/Knapper/LastNedKnapp';
 import {
     HeaderLevel,
     isBigHeader,
-    isColumns,
     isDownloadButtons,
     isHorizontalLine,
     isInfoBox,
@@ -38,9 +37,6 @@ const mapComponents = (elements: (string | object)[]): ReactNode[] => {
             }
             if (isText(e)) {
                 return mapText(e.content, e.bold, e.lineBreak);
-            }
-            if (isColumns(e)) {
-                return mapColumns(mapComponents(e.leftContent), mapComponents(e.rightContent));
             }
             if (isInfoBox(e)) {
                 return mapInfoBox(mapComponents(e.content));
@@ -169,15 +165,6 @@ const mapPanel = (title: string, content: ReactNode[], id?: string) => {
         >
             <div className={classNames(styles.firstChildNoMarginTop)}>{content}</div>
         </EkspanderbartInfopanel>
-    );
-};
-
-const mapColumns = (leftContent: ReactNode[], rightContent: ReactNode[]) => {
-    return (
-        <>
-            <InfoBoks>{leftContent}</InfoBoks>
-            <InfoBoks>{rightContent}</InfoBoks>
-        </>
     );
 };
 

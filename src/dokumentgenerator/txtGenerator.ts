@@ -1,6 +1,5 @@
 import {
     isBigHeader,
-    isColumns,
     isInfoBox,
     isLink,
     isList,
@@ -25,9 +24,6 @@ const mapComponents = (elements: (string | object)[]): string => {
             }
             if (isText(e)) {
                 return mapText(e.content, e.bold, e.lineBreak);
-            }
-            if (isColumns(e)) {
-                return mapColumns(mapComponents(e.leftContent), mapComponents(e.rightContent));
             }
             if (isInfoBox(e)) {
                 return mapInfoBox(mapComponents(e.content));
@@ -63,10 +59,6 @@ const mapComponents = (elements: (string | object)[]): string => {
 
 const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) => {
     return bold ? `${'\n'.repeat(lineBreak)}**${content}**` : `${'\n'.repeat(lineBreak)}${content}`;
-};
-
-const mapColumns = (left: string, right: string) => {
-    return `---\n${left}\n---\n${right}\n---\n`;
 };
 
 const mapInfoBox = (content: string) => {
