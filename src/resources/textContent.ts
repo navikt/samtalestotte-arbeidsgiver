@@ -138,9 +138,9 @@ const skapeGodeRammer: (Panel | object)[] = [
                                         {
                                             type: 'Link',
                                             url: GODE_GREP_FOR_AA_BYGGE_RELASJONER,
-                                            content: 'Se “Gode grep for å bygge relasjoner”',
+                                            content:
+                                                'Klikk her for å gå til “Gode grep for å bygge relasjoner” lengre ned på siden.',
                                         },
-                                        ' lengre ned på siden.',
                                     ],
                                 },
                             ],
@@ -364,30 +364,17 @@ const forberedeMedarbeiderenDin = [
                                 {
                                     type: 'Link',
                                     url: ENKLE_TIPS_FOR_DIGITALE_SAMTALER,
-                                    content: 'Les mer om “Enkle tips for digitale samtaler”',
+                                    content:
+                                        'Les “Enkle tips for digitale samtaler” lenger ned på siden.',
                                 },
-                                ' lenger ned på siden.',
                             ],
                         },
                     ],
                     [
                         'Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt, blir det enklere å finne løsninger sammen.',
                     ],
-                    ['Du kan sende tema eller spørsmål til medarbeideren på forhånd.'],
                     [
-                        {
-                            type: 'Paragraph',
-                            inline: true,
-                            content: [
-                                'Velg noen av de viktigste fra eksemplene under ',
-                                {
-                                    type: 'Link',
-                                    url: GJENNOMFOR_SAMTALEN,
-                                    content: '“Gjennomfør samtalen ved å”',
-                                },
-                                ' lenger ned på siden.',
-                            ],
-                        },
+                        'Du kan sende tema eller spørsmål til medarbeideren på forhånd. I neste seksjon finner du gode eksempler som du kan velge fra.',
                     ],
                 ],
             },
