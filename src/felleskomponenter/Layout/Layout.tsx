@@ -7,7 +7,6 @@ import { DecoratorEnv } from '../decorator/DecoratorEnv';
 import React, { useEffect, useRef } from 'react';
 import { PROD_URL } from '../../utils/konstanter';
 import { BodyShort } from '@navikt/ds-react';
-import { PageBannerSVG } from '../PageBanner/PageBannerSVG';
 import styles from './Layout.module.css';
 import classNames from 'classnames';
 import fellesStiler from '../../utils/fellesStiler.module.css';
@@ -47,9 +46,9 @@ export const Layout = (props: {
             return (
                 <link
                     key={attrs.key}
-                    href={attrs.href ? attrs.href : undefined}
-                    type={attrs.type ? attrs.type : undefined}
-                    rel={attrs.rel ? attrs.rel : undefined}
+                    href={attrs.href ?? undefined}
+                    type={attrs.type ?? undefined}
+                    rel={attrs.rel ?? undefined}
                     sizes={attrs.sizes ? attrs.sizes : undefined}
                 />
             );
@@ -90,14 +89,6 @@ export const Layout = (props: {
                 />
                 <div className={styles.layoutWrapper}>
                     <div className={styles.layoutContent} ref={layoutContentRef}>
-                        <div
-                            className={classNames(
-                                styles.layoutSmallScreenIllustration,
-                                fellesStiler.largeScreenMarginSides3rem
-                            )}
-                        >
-                            <PageBannerSVG />
-                        </div>
                         <div className={classNames(styles.layoutPrintHeader)}>
                             <BodyShort size="small">{PROD_URL}</BodyShort>
                         </div>
@@ -106,7 +97,10 @@ export const Layout = (props: {
                             knappetekst="Skriv ut nettside"
                             utskriftsinnholdRef={layoutContentRef}
                             kjørFørUtskrift={loggUtskriftsklikk}
-                            wrapperClassnames={[fellesStiler.marginTop6Rem, fellesStiler.marginSides2_25rem]}
+                            wrapperClassnames={[
+                                fellesStiler.marginTop6Rem,
+                                fellesStiler.marginSides2_25rem,
+                            ]}
                         />
                     </div>
                 </div>
