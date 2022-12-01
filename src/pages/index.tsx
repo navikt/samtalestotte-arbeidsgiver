@@ -75,7 +75,6 @@ const Home = (props: { page: PageProps }) => {
                 >
                     <HvorforBrukeTidPaaSamtaler
                         className={classNames(
-                            fellesStiler.paddingSides1rem,
                             fellesStiler.largeScreenMarginSides3rem
                         )}
                     />
@@ -84,13 +83,11 @@ const Home = (props: { page: PageProps }) => {
                     />
                     <MerInspirasjonOgGodeGrep
                         className={classNames(
-                            fellesStiler.paddingSides1rem,
                             fellesStiler.largeScreenMarginSides3rem
                         )}
                     />
                     <VisteDuAt
                         className={classNames(
-                            fellesStiler.paddingSides1rem,
                             fellesStiler.largeScreenMarginSides3rem
                         )}
                     />
