@@ -93,8 +93,8 @@ const PsykiskHelsePåArbeidsplassen = () => {
                         </Liste.Element>
                         <Liste.Element>
                             <LoggbarLenke href={IDEBANKEN_PSYKISK_HELSE}>
-                                Les mer om "Slik kan du bidra til bedre psykisk helse på
-                                arbeidsplassen" hos idebanken.
+                                Les mer om «Slik kan du bidra til bedre psykisk helse på
+                                arbeidsplassen» hos idebanken.
                             </LoggbarLenke>
                         </Liste.Element>
                     </Liste>
