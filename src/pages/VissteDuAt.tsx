@@ -10,7 +10,7 @@ const VisteDuAt = ({ className }: { className?: string }) => {
     return (
         <div
             className={classNames(
-                styles.visteDuContainer,
+                styles.vissteDuContainer,
                 fellesStiler.marginTop4Rem,
                 fellesStiler.breakBeforePage,
                 className
@@ -28,7 +28,6 @@ const VisteDuAt = ({ className }: { className?: string }) => {
                 </p>
                 <LoggbarLenke
                     className={classNames(
-                        styles.visteDuLink,
                         fellesStiler.marginBottom1Rem,
                         fellesStiler.marginTop0Rem
                     )}

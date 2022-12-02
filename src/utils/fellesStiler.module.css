@@ -105,7 +105,7 @@
   break-before: page;
 }
 
-.paddingSides1rem {
+.contentPaddingSides {
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -116,9 +116,15 @@
     margin-left: 3rem;
     margin-right: 3rem;
   }
+
   .marginSides2_25rem {
     margin-left: 2.25rem;
     margin-right: 2.25rem;
+  }
+
+  .contentPaddingSides {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
