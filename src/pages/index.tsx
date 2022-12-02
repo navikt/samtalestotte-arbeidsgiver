@@ -75,20 +75,23 @@ const Home = (props: { page: PageProps }) => {
                 >
                     <HvorforBrukeTidPaaSamtaler
                         className={classNames(
+                            fellesStiler.contentPaddingSides,
                             fellesStiler.largeScreenMarginSides3rem
                         )}
                     />
                     <SlikSkaperDuGodeSamtaler
-                        className={classNames(fellesStiler.paddingSides1rem)}
+                        className={classNames(fellesStiler.contentPaddingSides)}
                     />
                     <MerInspirasjonOgGodeGrep
                         className={classNames(
+                            fellesStiler.contentPaddingSides,
                             fellesStiler.largeScreenMarginSides3rem
                         )}
                     />
                     <VisteDuAt
                         className={classNames(
-                            fellesStiler.largeScreenMarginSides3rem
+                            fellesStiler.largeScreenMarginSides3rem,
+                            fellesStiler.marginLeft1Rem
                         )}
                     />
                 </Layout>
