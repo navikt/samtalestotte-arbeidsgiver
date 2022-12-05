@@ -66,7 +66,7 @@ const Home = (props: { page: PageProps }) => {
                 <link rel="icon" href="favicon.ico" />
             </Head>
 
-            <main>
+            <main id="maincontent" role="main" tabIndex={-1}>
                 <Layout
                     title={props.page ? props.page.title : 'kunne ikke hente tittel'}
                     isFrontPage={true}
