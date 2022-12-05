@@ -7,7 +7,6 @@ type ElementType =
     | 'List'
     | 'Link'
     | 'Panel'
-    | 'Columns'
     | 'HorizontalLine'
     | 'DownloadButtons'
     | 'InfoBox';
@@ -111,27 +110,23 @@ export const isList = (element: DocumentElement | string | object): element is L
     return false
 }
 
-export interface Panel extends DocumentElement{
-    type: "Panel"
-    title: string
-    id?: string
-    content: (Paragraph | List | HorizontalLine | SmallHeader | MediumHeader | BigHeader | Columns | InfoBox)[]
+export interface Panel extends DocumentElement {
+    type: 'Panel';
+    title: string;
+    id?: string;
+    content: (
+        | Paragraph
+        | List
+        | HorizontalLine
+        | SmallHeader
+        | MediumHeader
+        | BigHeader
+        | InfoBox
+    )[];
 }
 export const isPanel = (element: DocumentElement | string | object): element is Panel => {
     if(typeof element === "object" && element.hasOwnProperty("type")) {
         return (element as DocumentElement).type === "Panel"
-    }
-    return false
-}
-
-export interface Columns extends DocumentElement {
-    type: "Columns"
-    leftContent: (Paragraph | List | HorizontalLine | SmallHeader | MediumHeader | BigHeader)[]
-    rightContent: (Paragraph | List | HorizontalLine | SmallHeader | MediumHeader | BigHeader)[]
-}
-export const isColumns = (element: DocumentElement | string | object): element is Columns => {
-    if(typeof element === "object" && element.hasOwnProperty("type")) {
-        return (element as DocumentElement).type === "Columns"
     }
     return false
 }

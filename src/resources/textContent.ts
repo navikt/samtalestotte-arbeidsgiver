@@ -8,7 +8,6 @@ import {
     RETTNINGSLINJER_FOR_SYKEFRAVAERSOPPFOLGNING,
 } from './urls';
 import {
-    Columns,
     DocumentElement,
     HorizontalLine,
     InfoBox,
@@ -74,8 +73,8 @@ const skapeGodeRammer: (Panel | object)[] = [
                 id: 'Dette kan du gjørde i Gode samtaler forutsetter trygghet',
             },
             {
-                type: 'Columns',
-                leftContent: [
+                type: 'InfoBox',
+                content: [
                     {
                         type: 'SmallHeader',
                         content: 'på kort sikt:',
@@ -105,7 +104,10 @@ const skapeGodeRammer: (Panel | object)[] = [
                         ],
                     },
                 ],
-                rightContent: [
+            },
+            {
+                type: 'InfoBox',
+                content: [
                     {
                         type: 'SmallHeader',
                         content: 'over tid og som kontinuerlig arbeid:',
@@ -149,6 +151,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                 ],
             },
             { type: 'HorizontalLine' },
+            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'MediumHeader',
                 content:
@@ -173,8 +176,8 @@ const skapeGodeRammer: (Panel | object)[] = [
                 id: 'Dette kan du gjørde i Gode Rutiner',
             },
             {
-                type: 'Columns',
-                leftContent: [
+                type: 'InfoBox',
+                content: [
                     {
                         type: 'SmallHeader',
                         content: 'på kort sikt:',
@@ -192,7 +195,10 @@ const skapeGodeRammer: (Panel | object)[] = [
                         ],
                     },
                 ],
-                rightContent: [
+            },
+            {
+                type: 'InfoBox',
+                content: [
                     {
                         type: 'SmallHeader',
                         content: 'over tid og som kontinuerlig arbeid:',
@@ -485,7 +491,6 @@ const snakkeOmArbeid = [
                     },
                 ],
             },
-            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'InfoBox',
                 content: [
@@ -501,7 +506,6 @@ const snakkeOmArbeid = [
                     },
                 ],
             },
-            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'InfoBox',
                 content: [
@@ -595,7 +599,6 @@ const finneLøsningerSammen = [
                     },
                 ],
             },
-            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'InfoBox',
                 content: [

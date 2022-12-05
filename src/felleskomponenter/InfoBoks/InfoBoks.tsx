@@ -6,7 +6,13 @@ import classNames from 'classnames';
 export const InfoBoks: React.FC<{
     overskrift?: string;
 }> = (props) => (
-    <div className={fellesStiler.graAvrundetBoks}>
+    <div
+        className={classNames(
+            fellesStiler.graAvrundetBoks,
+            fellesStiler.marginBottom2Rem,
+            fellesStiler.marginTop1Rem
+        )}
+    >
         <Heading
             size={'small'}
             level={'5'}

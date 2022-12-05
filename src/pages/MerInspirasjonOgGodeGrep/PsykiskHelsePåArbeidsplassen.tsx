@@ -6,7 +6,6 @@ import {
     ARBEIDSGIVERLOS_ANSATTE_SOM_SLITTER_PSYKISK,
     IDEBANKEN_PSYKISK_HELSE,
 } from '../../resources/urls';
-import classNames from 'classnames';
 import { Liste } from '../../Liste/Liste';
 import { InfoBoks } from '../../felleskomponenter/InfoBoks/InfoBoks';
 
@@ -58,48 +57,46 @@ const PsykiskHelsePåArbeidsplassen = () => {
                 Dette kan du gjøre:
             </Heading>
 
-            <div className={classNames(fellesStiler.infoPanelKolonner, fellesStiler.marginTop1Rem)}>
-                <InfoBoks overskrift="på kort sikt:">
-                    <Liste>
-                        <Liste.Element>
-                            Vis omsorg, spør hvordan noen har det, lytt og still krav.
-                        </Liste.Element>
-                        <Liste.Element>
-                            Gjennomfør flere korte samtaler. Husk: positive tilbakemeldinger og
-                            skriftlighet.
-                        </Liste.Element>
-                        <Liste.Element>
-                            Bruk veiledningen i «Slik skaper du gode samtaler» (lenke til egen side)
-                            til å forberede og gjennomføre en samtale om arbeid.
-                        </Liste.Element>
-                        <Liste.Element>
-                            Du kan be om veiledning i forkant av samtalen hvis du har behov.
-                            HR-/personalavdeling, bedriftshelsetjenesten eller NAV har erfaring og
-                            kan hjelpe deg.
-                        </Liste.Element>
-                        <Liste.Element>
-                            <LoggbarLenke href={ARBEIDSGIVERLOS_ANSATTE_SOM_SLITTER_PSYKISK}>
-                                Les mer om hjelp du kan få fra NAVs arbeidsgiverlos hvis en ansatt
-                                sliter psykisk
-                            </LoggbarLenke>
-                        </Liste.Element>
-                    </Liste>
-                </InfoBoks>
-                <InfoBoks overskrift="over tid og som kontinuerlig arbeid:">
-                    <Liste>
-                        <Liste.Element>
-                            Se etter tegn fra lista over og ta initiativ til en samtale før et
-                            sykefravær oppstår.
-                        </Liste.Element>
-                        <Liste.Element>
-                            <LoggbarLenke href={IDEBANKEN_PSYKISK_HELSE}>
-                                Les mer om «Slik kan du bidra til bedre psykisk helse på
-                                arbeidsplassen» hos idebanken.
-                            </LoggbarLenke>
-                        </Liste.Element>
-                    </Liste>
-                </InfoBoks>
-            </div>
+            <InfoBoks overskrift="på kort sikt:">
+                <Liste>
+                    <Liste.Element>
+                        Vis omsorg, spør hvordan noen har det, lytt og still krav.
+                    </Liste.Element>
+                    <Liste.Element>
+                        Gjennomfør flere korte samtaler. Husk: positive tilbakemeldinger og
+                        skriftlighet.
+                    </Liste.Element>
+                    <Liste.Element>
+                        Bruk veiledningen i «Slik skaper du gode samtaler» (lenke til egen side) til
+                        å forberede og gjennomføre en samtale om arbeid.
+                    </Liste.Element>
+                    <Liste.Element>
+                        Du kan be om veiledning i forkant av samtalen hvis du har behov.
+                        HR-/personalavdeling, bedriftshelsetjenesten eller NAV har erfaring og kan
+                        hjelpe deg.
+                    </Liste.Element>
+                    <Liste.Element>
+                        <LoggbarLenke href={ARBEIDSGIVERLOS_ANSATTE_SOM_SLITTER_PSYKISK}>
+                            Les mer om hjelp du kan få fra NAVs arbeidsgiverlos hvis en ansatt
+                            sliter psykisk
+                        </LoggbarLenke>
+                    </Liste.Element>
+                </Liste>
+            </InfoBoks>
+            <InfoBoks overskrift="over tid og som kontinuerlig arbeid:">
+                <Liste>
+                    <Liste.Element>
+                        Se etter tegn fra lista over og ta initiativ til en samtale før et
+                        sykefravær oppstår.
+                    </Liste.Element>
+                    <Liste.Element>
+                        <LoggbarLenke href={IDEBANKEN_PSYKISK_HELSE}>
+                            Les mer om «Slik kan du bidra til bedre psykisk helse på arbeidsplassen»
+                            hos idebanken.
+                        </LoggbarLenke>
+                    </Liste.Element>
+                </Liste>
+            </InfoBoks>
         </EkspanderbartInfopanel>
     );
 };
