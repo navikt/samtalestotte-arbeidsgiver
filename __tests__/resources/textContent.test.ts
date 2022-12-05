@@ -1,11 +1,9 @@
 import {
     BigHeader,
-    Columns,
     DocumentElement,
     HorizontalLine,
     InfoBox,
     isBigHeader,
-    isColumns,
     isDownloadButtons,
     isHorizontalLine,
     isInfoBox,
@@ -46,9 +44,6 @@ const isValidDomainObjects = (
         }
         if (isInfoBox(e)) {
             return isValidInfoBox(e);
-        }
-        if (isColumns(e)) {
-            return isValidColumns(e);
         }
         if (isSmallHeader(e)) {
             return isValidSmallHeader(e);
@@ -152,20 +147,6 @@ const isValidInfoBox = (infoBox: InfoBox): infoBox is InfoBox => {
     throw new Error(`${infoBox.content.map((e) => e.type)} is not a valid InfoBox object`);
 };
 
-const isValidColumns = (columns: Columns): columns is Columns => {
-    if (
-        columns.rightContent.every(validateTableContent) &&
-        columns.leftContent.every(validateTableContent)
-    ) {
-        return true;
-    }
-    throw new Error(
-        `left: ${columns.leftContent.map((e) => e.type)} right: ${columns.rightContent.map(
-            (e) => e.type
-        )} is not a valid Columns object`
-    );
-};
-
 const isValidSmallHeader = (smallHeader: SmallHeader): smallHeader is SmallHeader => {
     if (
         (smallHeader.id === undefined || isString(smallHeader.id)) &&
@@ -203,9 +184,7 @@ const validatePanelContent = (
         | MediumHeader
         | BigHeader
         | InfoBox
-        | Columns
 ) => {
-    if (isColumns(e)) return isValidColumns(e);
     if (isInfoBox(e)) return isValidInfoBox(e);
     if (isParagraph(e)) return isValidParagraph(e);
     if (isList(e)) return isValidList(e);

@@ -10,7 +10,7 @@ const VisteDuAt = ({ className }: { className?: string }) => {
     return (
         <div
             className={classNames(
-                styles.visteDuContainer,
+                styles.vissteDuContainer,
                 fellesStiler.marginTop4Rem,
                 fellesStiler.breakBeforePage,
                 className
@@ -26,23 +26,23 @@ const VisteDuAt = ({ className }: { className?: string }) => {
                     og veiledning for å gjennomføre enkeltsamtaler. NAV kan også gi mer omfattende
                     rådgivning hos dere på arbeidsplassen.
                 </p>
-                <LoggbarLenke
-                    className={classNames(
-                        styles.visteDuLink,
-                        fellesStiler.marginBottom1Rem,
-                        fellesStiler.marginTop0Rem
-                    )}
-                    href={KONTAKT_OSS}
-                >
-                    Kontakt NAV
-                </LoggbarLenke>
-                <LoggbarLenke
-                    className={classNames(styles.visteDuLink, fellesStiler.marginTop0Rem)}
-                    href={FOREBYGGE_SYKEFRAVAER}
-                >
-                    Les mer om NAVs tjenester for å forebygge sykefravær.
-                </LoggbarLenke>
             </BodyLong>
+            <LoggbarLenke
+                className={classNames(
+                    styles.visteDuLink,
+                    fellesStiler.marginBottom1Rem,
+                    fellesStiler.marginTop0Rem
+                )}
+                href={KONTAKT_OSS}
+            >
+                Kontakt NAV
+            </LoggbarLenke>
+            <LoggbarLenke
+                className={classNames(styles.visteDuLink, fellesStiler.marginTop0Rem)}
+                href={FOREBYGGE_SYKEFRAVAER}
+            >
+                Les mer om NAVs tjenester for å forebygge sykefravær.
+            </LoggbarLenke>
         </div>
     );
 };

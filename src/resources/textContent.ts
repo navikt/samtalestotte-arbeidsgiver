@@ -8,7 +8,6 @@ import {
     RETTNINGSLINJER_FOR_SYKEFRAVAERSOPPFOLGNING,
 } from './urls';
 import {
-    Columns,
     DocumentElement,
     HorizontalLine,
     InfoBox,
@@ -74,8 +73,8 @@ const skapeGodeRammer: (Panel | object)[] = [
                 id: 'Dette kan du gjørde i Gode samtaler forutsetter trygghet',
             },
             {
-                type: 'Columns',
-                leftContent: [
+                type: 'InfoBox',
+                content: [
                     {
                         type: 'SmallHeader',
                         content: 'på kort sikt:',
@@ -94,7 +93,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                                             type: 'Link',
                                             url: DEN_VIKTIGE_SAMTALEN,
                                             content:
-                                                'Les mer i heftet “Den viktige samtalen” hos idebanken.',
+                                                'Les mer i heftet «Den viktige samtalen» hos idebanken.',
                                         },
                                     ],
                                 },
@@ -105,7 +104,10 @@ const skapeGodeRammer: (Panel | object)[] = [
                         ],
                     },
                 ],
-                rightContent: [
+            },
+            {
+                type: 'InfoBox',
+                content: [
                     {
                         type: 'SmallHeader',
                         content: 'over tid og som kontinuerlig arbeid:',
@@ -124,7 +126,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                                             type: 'Link',
                                             url: DEN_VIKTIGE_SAMTALEN,
                                             content:
-                                                'Les mer i heftet “Den viktige samtalen” hos idebanken.',
+                                                'Les mer i heftet «Den viktige samtalen» hos idebanken.',
                                         },
                                     ],
                                 },
@@ -139,7 +141,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                                             type: 'Link',
                                             url: GODE_GREP_FOR_AA_BYGGE_RELASJONER,
                                             content:
-                                                'Klikk her for å gå til “Gode grep for å bygge relasjoner” lengre ned på siden.',
+                                                'Se «Gode grep for å bygge relasjoner» lengre ned på siden.',
                                         },
                                     ],
                                 },
@@ -149,6 +151,7 @@ const skapeGodeRammer: (Panel | object)[] = [
                 ],
             },
             { type: 'HorizontalLine' },
+            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'MediumHeader',
                 content:
@@ -173,8 +176,8 @@ const skapeGodeRammer: (Panel | object)[] = [
                 id: 'Dette kan du gjørde i Gode Rutiner',
             },
             {
-                type: 'Columns',
-                leftContent: [
+                type: 'InfoBox',
+                content: [
                     {
                         type: 'SmallHeader',
                         content: 'på kort sikt:',
@@ -192,7 +195,10 @@ const skapeGodeRammer: (Panel | object)[] = [
                         ],
                     },
                 ],
-                rightContent: [
+            },
+            {
+                type: 'InfoBox',
+                content: [
                     {
                         type: 'SmallHeader',
                         content: 'over tid og som kontinuerlig arbeid:',
@@ -299,15 +305,15 @@ const planleggeInnholdISamtalen: (Panel | object)[] = [
                                 },
                                 {
                                     type: 'Text',
-                                    content: 'Velg tema og hjelpespørsmål under ',
+                                    content: 'Velg tema og hjelpespørsmål lenger ned på siden. ',
                                 },
                                 { type: 'Text', content: '', lineBreak: 0 },
                                 {
                                     type: 'Link',
                                     url: GJENNOMFOR_SAMTALEN,
-                                    content: '“Gjennomfør samtalen ved å”',
+                                    content:
+                                        'Klikk her for å gå til avsnittet som beskriver hvordan du gjennomfører samtalen.',
                                 },
-                                { type: 'Text', content: ' lenger ned på siden.' },
                             ],
                         },
                     ],
@@ -364,8 +370,7 @@ const forberedeMedarbeiderenDin = [
                                 {
                                     type: 'Link',
                                     url: ENKLE_TIPS_FOR_DIGITALE_SAMTALER,
-                                    content:
-                                        'Les “Enkle tips for digitale samtaler” lenger ned på siden.',
+                                    content: 'Les mer om «Enkle tips for digitale samtaler» lenger ned på siden.',
                                 },
                             ],
                         },
@@ -374,7 +379,7 @@ const forberedeMedarbeiderenDin = [
                         'Gjør medarbeideren kjent med mål og tema for møtet på forhånd. Når begge er forberedt, blir det enklere å finne løsninger sammen.',
                     ],
                     [
-                        'Du kan sende tema eller spørsmål til medarbeideren på forhånd. I neste seksjon finner du gode eksempler som du kan velge fra.',
+                        'Du kan sende tema eller spørsmål til medarbeideren på forhånd. Du finner gode eksempler som du kan velge fra i neste avsnitt, som heter «Gjennomfør samtalen ved å».',
                     ],
                 ],
             },
@@ -435,7 +440,7 @@ const snakkeOmArbeid = [
                 content: [
                     ['Bruk åpne spørsmål med spørreord som hva, hvor, hvordan, hvem eller når.'],
                     [
-                        'Unngå ordet “hvorfor”. Hvorfor kan ofte oppleves som en anklage eller for å fordele skyld.',
+                        'Unngå ordet «hvorfor». Hvorfor kan ofte oppleves som en anklage eller for å fordele skyld.',
                     ],
                     ['Tål stillhet slik at medarbeideren får tid til å tenke før svarene kommer.'],
                 ],
@@ -485,7 +490,6 @@ const snakkeOmArbeid = [
                     },
                 ],
             },
-            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'InfoBox',
                 content: [
@@ -501,7 +505,6 @@ const snakkeOmArbeid = [
                     },
                 ],
             },
-            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'InfoBox',
                 content: [
@@ -595,7 +598,6 @@ const finneLøsningerSammen = [
                     },
                 ],
             },
-            { type: 'Paragraph', content: [{ type: 'Text', content: '', lineBreak: 1 }] },
             {
                 type: 'InfoBox',
                 content: [
