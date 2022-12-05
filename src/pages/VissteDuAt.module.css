@@ -1,9 +1,11 @@
-.visteDuContainer {
+.vissteDuContainer {
   border-radius: 10px;
   background: #FAFAFA;
   border: 1px solid black;
-  padding: 2em;
+  padding: 1.5rem;
   display: grid;
+  margin-left: 1rem;
+  margin-right: 1rem;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto;
   grid-template-areas:
@@ -11,6 +13,15 @@
     "ikon paragraf"
     ". link"
     ". link";
+}
+
+/*--screen-sm-min*/
+@media (min-width: 768px) {
+  .vissteDuContainer {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding: 2rem;
+  }
 }
 
 .visteDuHeader {
@@ -25,7 +36,7 @@
 }
 
 .visteDuParagraf {
-   grid-area: paragraf;
+  grid-area: paragraf;
 }
 
 .visteDuLink {

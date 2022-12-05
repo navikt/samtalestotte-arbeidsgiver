@@ -56,30 +56,28 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                 <Heading className={fellesStiler.marginBottom025rem} size={'small'} level={'4'}>
                     Dette kan du gjøre:
                 </Heading>
-                <div className={fellesStiler.infoPanelKolonner}>
-                    <InfoBoks overskrift="på kort sikt:">
-                        <Liste>
-                            <Liste.Element>
-                                Undersøk om det finnes en oversikt over mulig tilrettelegging. Hvis
-                                dere har en personalavdeling, kan disse ofte hjelpe deg.
-                            </Liste.Element>
-                            <Liste.Element>
-                                Vurder om du bør dele oversikten over mulig tilrettelegging med
-                                medarbeideren før samtalen.
-                            </Liste.Element>
-                        </Liste>
-                    </InfoBoks>
-                    <InfoBoks overskrift="over tid og som kontinuerlig arbeid:">
-                        <Liste>
-                            <Liste.Element>
-                                Lag en liste over mulig tilrettelegging på deres arbeidsplass.{' '}
-                                <LoggbarLenke href={SLIK_LYKKES_DERE}>
-                                    Se beskrivelse av prosess og maler på idebanken.
-                                </LoggbarLenke>
-                            </Liste.Element>
-                        </Liste>
-                    </InfoBoks>
-                </div>
+                <InfoBoks overskrift="på kort sikt:">
+                    <Liste>
+                        <Liste.Element>
+                            Undersøk om det finnes en oversikt over mulig tilrettelegging. Hvis dere
+                            har en personalavdeling, kan disse ofte hjelpe deg.
+                        </Liste.Element>
+                        <Liste.Element>
+                            Vurder om du bør dele oversikten over mulig tilrettelegging med
+                            medarbeideren før samtalen.
+                        </Liste.Element>
+                    </Liste>
+                </InfoBoks>
+                <InfoBoks overskrift="over tid og som kontinuerlig arbeid:">
+                    <Liste>
+                        <Liste.Element>
+                            Lag en liste over mulig tilrettelegging på deres arbeidsplass.{' '}
+                            <LoggbarLenke href={SLIK_LYKKES_DERE}>
+                                Se beskrivelse av prosess og maler på idebanken.
+                            </LoggbarLenke>
+                        </Liste.Element>
+                    </Liste>
+                </InfoBoks>
 
                 <div
                     className={classNames(
@@ -95,52 +93,44 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                 <Heading className={fellesStiler.marginBottom025rem} size={'small'} level={'4'}>
                     Dette kan du gjøre:
                 </Heading>
-                <div
-                    className={classNames(
-                        fellesStiler.infoPanelKolonner,
-                        fellesStiler.marginBottom2Rem
-                    )}
-                >
-                    <InfoBoks overskrift="på kort sikt:">
-                        <Liste>
-                            <Liste.Element>
-                                <LoggbarLenke href={TILRETTELEGGING}>
-                                    Les mer om arbeidsgivers plikter til å tilrettelegge på
-                                    arbeidsplassen hos arbeidstilsynet.
-                                </LoggbarLenke>
-                            </Liste.Element>
-                            <Liste.Element>
-                                NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt
-                                og medarbeideres medvirkningsplikt i forbindelse med
-                                sykefraværsoppfølging.{' '}
-                                <LoggbarLenke href={NETTKURS}>Gå til nettkurs.</LoggbarLenke>
-                            </Liste.Element>
-                            <Liste.Element>
-                                <LoggbarLenke href={FOLGE_OPP_TILRETTELEGGING}>
-                                    Les mer om tilrettelegging i sykefraværsoppfølging
-                                </LoggbarLenke>
-                            </Liste.Element>
-                            <Liste.Element>
-                                <LoggbarLenke href={OKONOMISKE_VIRKEMIDLER}>
-                                    Les mer om NAVs støtteordninger ved tilrettelegging for ansatte
-                                </LoggbarLenke>
-                            </Liste.Element>
-                        </Liste>
-                    </InfoBoks>
+                <InfoBoks overskrift="på kort sikt:">
+                    <Liste>
+                        <Liste.Element>
+                            <LoggbarLenke href={TILRETTELEGGING}>
+                                Les mer om arbeidsgivers plikter til å tilrettelegge på
+                                arbeidsplassen hos arbeidstilsynet.
+                            </LoggbarLenke>
+                        </Liste.Element>
+                        <Liste.Element>
+                            NAV tilbyr nettkurs (12 min) om arbeidsgivers tilretteleggingsplikt og
+                            medarbeideres medvirkningsplikt i forbindelse med sykefraværsoppfølging.{' '}
+                            <LoggbarLenke href={NETTKURS}>Gå til nettkurs.</LoggbarLenke>
+                        </Liste.Element>
+                        <Liste.Element>
+                            <LoggbarLenke href={FOLGE_OPP_TILRETTELEGGING}>
+                                Les mer om tilrettelegging i sykefraværsoppfølging
+                            </LoggbarLenke>
+                        </Liste.Element>
+                        <Liste.Element>
+                            <LoggbarLenke href={OKONOMISKE_VIRKEMIDLER}>
+                                Les mer om NAVs støtteordninger ved tilrettelegging for ansatte
+                            </LoggbarLenke>
+                        </Liste.Element>
+                    </Liste>
+                </InfoBoks>
 
-                    <InfoBoks overskrift="over tid og som kontinuerlig arbeid:">
-                        <Liste>
-                            <Liste.Element>Lag en plan for å lære mer.</Liste.Element>
-                            <Liste.Element>Hva du trenger å vite mer om?</Liste.Element>
-                            <Liste.Element>Hvordan kan du lære mer?</Liste.Element>
-                            <Liste.Element>Når du skal gjennomføre?</Liste.Element>
-                            <Liste.Element>
-                                Husk å ta med tillitsvalgte og verneombud slik at dere sammen lærer
-                                mer om tilrettelegging.
-                            </Liste.Element>
-                        </Liste>
-                    </InfoBoks>
-                </div>
+                <InfoBoks overskrift="over tid og som kontinuerlig arbeid:">
+                    <Liste>
+                        <Liste.Element>Lag en plan for å lære mer.</Liste.Element>
+                        <Liste.Element>Hva du trenger å vite mer om?</Liste.Element>
+                        <Liste.Element>Hvordan kan du lære mer?</Liste.Element>
+                        <Liste.Element>Når du skal gjennomføre?</Liste.Element>
+                        <Liste.Element>
+                            Husk å ta med tillitsvalgte og verneombud slik at dere sammen lærer mer
+                            om tilrettelegging.
+                        </Liste.Element>
+                    </Liste>
+                </InfoBoks>
             </div>
         </EkspanderbartInfopanel>
     );

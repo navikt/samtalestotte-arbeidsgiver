@@ -10,7 +10,7 @@ const VisteDuAt = ({ className }: { className?: string }) => {
     return (
         <div
             className={classNames(
-                styles.visteDuContainer,
+                styles.vissteDuContainer,
                 fellesStiler.marginTop4Rem,
                 fellesStiler.breakBeforePage,
                 className

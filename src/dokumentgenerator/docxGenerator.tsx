@@ -2,7 +2,6 @@ import { camelCase } from '../utils/stringUtils';
 import {
     DocumentElement,
     isBigHeader,
-    isColumns,
     isInfoBox,
     isLink,
     isList,
@@ -21,7 +20,6 @@ import {
     Paragraph,
     ShadingType,
     Table,
-    TableBorders,
     TableCell,
     TableOfContents,
     TableRow,
@@ -47,9 +45,6 @@ export const generateDocX = (elements: (string | object)[]) => {
 const mapJson = (elements: (string | object)[]): DocxTypes[] => {
     return elements
         .map((e) => {
-            if (isColumns(e)) {
-                return mapColumns(e.leftContent, e.rightContent);
-            }
             if (isInfoBox(e)) {
                 return mapInfoBox(e.content);
             }
@@ -82,16 +77,6 @@ const mapString = (text: string) => {
 };
 const mapText = (text: string, bold: boolean = false, lineBreak: number = 0) => {
     return new TextRun({ bold: bold, text: text, break: lineBreak });
-};
-const mapColumns = (leftContent: DocumentElement[], rightContent: DocumentElement[]) => {
-    return new Table({
-        borders: TableBorders.NONE,
-        rows: [
-            new TableRow({
-                children: [mapTableCell(leftContent), mapTableCell(rightContent)],
-            }),
-        ],
-    });
 };
 
 const mapInfoBox = (content: DocumentElement[]) => {
