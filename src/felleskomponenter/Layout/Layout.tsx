@@ -69,7 +69,7 @@ export const Layout = (props: {
     }
 
     return (
-        <div>
+        <>
             <Head>{headerLinks}</Head>
             <DecoratorHeader
                 html={
@@ -78,33 +78,35 @@ export const Layout = (props: {
                         : props.decoratorParts?.decoratorHeader
                 }
             />
-            <div id="app" className="app">
-                <PageBanner
-                    isFrontPage={true}
-                    title={props.title}
-                    iconUrl={props.bannerIconUrl === undefined ? '' : props.bannerIconUrl}
-                    kontekst={
-                        'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid'
-                    }
-                />
-                <div className={styles.layoutWrapper}>
-                    <div className={styles.layoutContent} ref={layoutContentRef}>
-                        <div className={classNames(styles.layoutPrintHeader)}>
-                            <BodyShort size="small">{PROD_URL}</BodyShort>
+            <main id="maincontent" role="main" tabIndex={-1}>
+                <div id="app" className="app">
+                    <PageBanner
+                        isFrontPage={true}
+                        title={props.title}
+                        iconUrl={props.bannerIconUrl === undefined ? '' : props.bannerIconUrl}
+                        kontekst={
+                            'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid'
+                        }
+                    />
+                    <div className={styles.layoutWrapper}>
+                        <div className={styles.layoutContent} ref={layoutContentRef}>
+                            <div className={classNames(styles.layoutPrintHeader)}>
+                                <BodyShort size="small">{PROD_URL}</BodyShort>
+                            </div>
+                            {props.children}
+                            <SkrivUtKnapp
+                                knappetekst="Skriv ut nettside"
+                                utskriftsinnholdRef={layoutContentRef}
+                                kjørFørUtskrift={loggUtskriftsklikk}
+                                wrapperClassnames={[
+                                    fellesStiler.marginTop6Rem,
+                                    fellesStiler.marginSides2_25rem,
+                                ]}
+                            />
                         </div>
-                        {props.children}
-                        <SkrivUtKnapp
-                            knappetekst="Skriv ut nettside"
-                            utskriftsinnholdRef={layoutContentRef}
-                            kjørFørUtskrift={loggUtskriftsklikk}
-                            wrapperClassnames={[
-                                fellesStiler.marginTop6Rem,
-                                fellesStiler.marginSides2_25rem,
-                            ]}
-                        />
                     </div>
                 </div>
-            </div>
+            </main>
             <DecoratorFooter
                 html={
                     props.decoratorParts?.decoratorFooter === undefined
@@ -113,6 +115,6 @@ export const Layout = (props: {
                 }
             />
             <DecoratorEnv env={props.decoratorParts?.decoratorEnv} />
-        </div>
+        </>
     );
 };
