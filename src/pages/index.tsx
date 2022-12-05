@@ -66,36 +66,34 @@ const Home = (props: { page: PageProps }) => {
                 <link rel="icon" href="favicon.ico" />
             </Head>
 
-            <main>
-                <Layout
-                    title={props.page ? props.page.title : 'kunne ikke hente tittel'}
-                    isFrontPage={true}
-                    decoratorParts={props.page.decorator}
-                    logEvent={logEvent}
-                >
-                    <HvorforBrukeTidPaaSamtaler
-                        className={classNames(
-                            fellesStiler.contentPaddingSides,
-                            fellesStiler.largeScreenMarginSides3rem
-                        )}
-                    />
-                    <SlikSkaperDuGodeSamtaler
-                        className={classNames(fellesStiler.contentPaddingSides)}
-                    />
-                    <MerInspirasjonOgGodeGrep
-                        className={classNames(
-                            fellesStiler.contentPaddingSides,
-                            fellesStiler.largeScreenMarginSides3rem
-                        )}
-                    />
-                    <VisteDuAt
-                        className={classNames(
-                            fellesStiler.largeScreenMarginSides3rem,
-                            fellesStiler.marginLeft1Rem
-                        )}
-                    />
-                </Layout>
-            </main>
+            <Layout
+                title={props.page ? props.page.title : 'kunne ikke hente tittel'}
+                isFrontPage={true}
+                decoratorParts={props.page.decorator}
+                logEvent={logEvent}
+            >
+                <HvorforBrukeTidPaaSamtaler
+                    className={classNames(
+                        fellesStiler.contentPaddingSides,
+                        fellesStiler.largeScreenMarginSides3rem
+                    )}
+                />
+                <SlikSkaperDuGodeSamtaler
+                    className={classNames(fellesStiler.contentPaddingSides)}
+                />
+                <MerInspirasjonOgGodeGrep
+                    className={classNames(
+                        fellesStiler.contentPaddingSides,
+                        fellesStiler.largeScreenMarginSides3rem
+                    )}
+                />
+                <VisteDuAt
+                    className={classNames(
+                        fellesStiler.largeScreenMarginSides3rem,
+                        fellesStiler.marginLeft1Rem
+                    )}
+                />
+            </Layout>
             <footer />
         </div>
     );
