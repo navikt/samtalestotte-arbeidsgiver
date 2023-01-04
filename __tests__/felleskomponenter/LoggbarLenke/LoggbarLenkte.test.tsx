@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM, { unmountComponentAtNode } from 'react-dom';
-import { act } from 'react-dom/test-utils';
+import ReactDOM, {unmountComponentAtNode} from 'react-dom';
+import {act} from 'react-dom/test-utils';
 import LoggbarLenke from '../../../src/felleskomponenter/LoggbarLenke/LoggbarLenke';
 import logEvent from '../../../src/amplitude/amplitude';
 
@@ -38,13 +38,12 @@ test('Should call logEvent when clicked', () => {
     const lenkeTag = container.getElementsByTagName('a')[0];
 
     act(() => {
-        lenkeTag?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        lenkeTag?.dispatchEvent(new MouseEvent('click', {bubbles: true}));
     });
 
     expect(logEvent).toBeCalledTimes(1)
-    expect(logEvent).toBeCalledWith('lenke', {
-        'URL-fra': 'http://localhost/',
-        'URL-til': 'mockHrefTil',
+    expect(logEvent).toBeCalledWith('navigere', {
+        destinasjon: 'mockHrefTil',
         lenketekst: 'TestText',
     })
 })

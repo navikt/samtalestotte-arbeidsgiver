@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from 'react';
-import { Link } from '@navikt/ds-react'
+import React, {FunctionComponent} from 'react';
+import {Link} from '@navikt/ds-react'
 import logEvent from '../../amplitude/amplitude';
 
 type LoggbarLenkeProps = {
@@ -13,12 +13,11 @@ const LoggbarLenke: FunctionComponent<LoggbarLenkeProps> = ({
     href,
     className,
 }: LoggbarLenkeProps) => {
-    const logLenke = (url: string, lenketekst: string) => {
+    const logLenke = (destinasjon: string, lenketekst: string) => {
         if (window !== undefined) {
-            logEvent('lenke', {
-                'URL-fra': window.location.href,
-                'URL-til': url,
-                lenketekst: lenketekst,
+            logEvent('navigere', {
+                destinasjon,
+                lenketekst,
             });
         }
     };

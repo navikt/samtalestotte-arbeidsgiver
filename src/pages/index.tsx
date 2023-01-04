@@ -1,15 +1,15 @@
 import Head from 'next/head';
-import { Layout } from '../felleskomponenter/Layout/Layout';
-import { getPageProps, PageProps } from '../pageProps';
+import {Layout} from '../felleskomponenter/Layout/Layout';
+import {getPageProps, PageProps} from '../pageProps';
 import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
 import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
 import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
 import VisteDuAt from './VissteDuAt';
-import { useCookies } from 'react-cookie';
-import { useEffect } from 'react';
+import {useCookies} from 'react-cookie';
+import {useEffect} from 'react';
 import * as Sentry from '@sentry/browser';
-import { getMiljø } from '../utils/miljøUtils';
+import {getMiljø} from '../utils/miljøUtils';
 import fellesStiler from '../utils/fellesStiler.module.css';
 import {
     getReferrerUrlFraUrlMedQueryParameter,
@@ -18,13 +18,13 @@ import {
     utleddApplikasjonsnavnFraUrl,
 } from '../resources/urls';
 import classNames from 'classnames';
-import { Packer } from 'docx';
+import {Packer} from 'docx';
 import * as fs from 'fs';
-import { generateDocX } from '../dokumentgenerator/docxGenerator';
-import { SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT } from '../resources/textContent';
-import { generateTxt } from '../dokumentgenerator/txtGenerator';
-import { cookiesIApplikasjon, hentReferrerUrlFraCookies } from '../utils/cookiesUtils';
-import { Cookie } from 'universal-cookie';
+import {generateDocX} from '../dokumentgenerator/docxGenerator';
+import {SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT} from '../resources/textContent';
+import {generateTxt} from '../dokumentgenerator/txtGenerator';
+import {cookiesIApplikasjon, hentReferrerUrlFraCookies} from '../utils/cookiesUtils';
+import {Cookie} from 'universal-cookie';
 
 const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
 const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
@@ -51,8 +51,7 @@ const Home = (props: { page: PageProps }) => {
         const referrerApplikasjon = hentReferrerApplikasjon(cookies);
 
         const timer = setTimeout(async () => {
-            await logEvent('sidevisning', {
-                url: 'samtalestotte-arbeidsgiver',
+            await logEvent('referrer registrert', {
                 internal_referrer: referrerApplikasjon,
             });
         }, 500);
