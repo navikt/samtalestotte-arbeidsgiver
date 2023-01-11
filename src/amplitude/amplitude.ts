@@ -15,6 +15,9 @@ export default function logEvent(eventName: string, data?: any): Promise<any> {
     return new Promise(function (resolve) {
         amplitude
             .getInstance()
-            .logEvent(eventName, {app: 'samtalestøtte-arbeidsgiver', ...data}, resolve);
+            .logEvent(eventName, {
+                app: 'samtalestotte-arbeidsgiver',
+                team: "teamia", ...data
+            }, resolve);
     });
 }
