@@ -1,14 +1,14 @@
-import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
-import { Accordion } from '@navikt/ds-react';
-import { Expand } from '@navikt/ds-icons';
+import {FunctionComponent, ReactNode, useEffect, useRef, useState} from 'react';
+import {Accordion} from '@navikt/ds-react';
+import {Expand} from '@navikt/ds-icons';
 import classNames from 'classnames';
-import logEvent from '../../amplitude/amplitude';
 import Lest from '../Ikoner/Lest';
-import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
+import {getStickyHeaderOffset, onLukkScroll} from '../../utils/scrollUtils';
 import styles from './EkspanderbartInfopanel.module.css';
-import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
-import { useCookies } from 'react-cookie';
-import { cookiesIApplikasjon, SamtalestøtteCookies } from '../../utils/cookiesUtils';
+import {sendIaTjenesterMetrikker} from '../../utils/ia-tjeneste-metrikker';
+import {useCookies} from 'react-cookie';
+import {cookiesIApplikasjon, SamtalestøtteCookies} from '../../utils/cookiesUtils';
+import {logPanelÅpnetEvent} from "../../amplitude/amplitude";
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
@@ -46,14 +46,14 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     useEffect(() => {
         const timer = setTimeout(async () => {
             erÅpen && props.panelLestSituasjon !== 'lest' && setErLest(true);
-            erÅpen && (await logEvent('knapp', { label: props.tittel, funksjon: 'åpen' }));
+            erÅpen && (await logPanelÅpnetEvent(props.unikId, props.tittel));
             erÅpen &&
-                sendIaTjenesterMetrikker(
-                    cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.orgnr,
-                    cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.altinnRettighet,
-                    cookies[SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER]?.sendtStatistikk,
-                    setCookies
-                );
+            sendIaTjenesterMetrikker(
+                cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.orgnr,
+                cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.altinnRettighet,
+                cookies[SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER]?.sendtStatistikk,
+                setCookies
+            );
         }, 500);
         return () => clearTimeout(timer);
     }, [erÅpen]);

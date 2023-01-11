@@ -21,3 +21,7 @@ export default function logEvent(eventName: string, data?: any): Promise<any> {
             }, resolve);
     });
 }
+
+export async function logPanelÅpnetEvent(panelId: string, tekst: string) {
+    await logEvent('panel åpnet', {panelId: panelId, tekst: tekst})
+}
