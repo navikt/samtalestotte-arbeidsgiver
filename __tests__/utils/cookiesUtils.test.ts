@@ -5,7 +5,6 @@ test('Henter referrer URL fra en fullverdig Cookie', async () => {
         'samtalestotte-podlet': {
             referrer: 'https://arbeidsgiver.labs.nais.io/sykefravarsstatistikk/?bedrift=910969439',
             orgnr: '987654321',
-            altinnRettighet: 'SYKEFRAVÆRSSTATISTIKK_FOR_VIRKSOMHETER',
         },
     });
     expect(result).toBe('https://arbeidsgiver.labs.nais.io/sykefravarsstatistikk/?bedrift=910969439');
@@ -16,7 +15,6 @@ test('Url kan være null eller undefined eller empty', async () => {
         'samtalestotte-podlet': {
             referrer: null,
             orgnr: '987654321',
-            altinnRettighet: 'SYKEFRAVÆRSSTATISTIKK_FOR_VIRKSOMHETER',
         },
     });
     expect(resultNull).toBe('');
@@ -24,7 +22,6 @@ test('Url kan være null eller undefined eller empty', async () => {
     const resultUndefined = hentReferrerUrlFraCookies({
         'samtalestotte-podlet': {
             orgnr: '987654321',
-            altinnRettighet: 'SYKEFRAVÆRSSTATISTIKK_FOR_VIRKSOMHETER',
         },
     });
     expect(resultUndefined).toBe('');
@@ -35,7 +32,6 @@ test('Url kan være null eller undefined eller empty', async () => {
         'samtalestotte-podlet': {
             referrer: '',
             orgnr: '987654321',
-            altinnRettighet: 'SYKEFRAVÆRSSTATISTIKK_FOR_VIRKSOMHETER',
         },
     });
     expect(resultEmpty).toBe('');

@@ -19,7 +19,6 @@ export default function LastNedKnapp(props: {
     const loggKlikkPåLastNedKnapp = (label: string) => {
         sendIaTjenesterMetrikker(
             cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.orgnr,
-            cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.altinnRettighet,
             cookies[SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER]?.sendtStatistikk,
             setCookies
         );

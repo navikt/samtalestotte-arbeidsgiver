@@ -9,7 +9,6 @@ export interface IatjenesteMetrikk {
 }
 export interface InnloggetIatjenesteMetrikk extends IatjenesteMetrikk {
     orgnr: String;
-    altinnRettighet: String;
 }
 
 let antallForsøkSendTilIaTjenesterMetrikker = 0;
@@ -33,7 +32,6 @@ const setIaTjenesterMetrikkErSendt = (
 
 export const sendIaTjenesterMetrikker = (
     orgnr: string,
-    altinnRettighet: string,
     sendtStatistikk: string,
     lagreCookieFunksjon: (
         name: SamtalestøtteCookiesType,
@@ -45,8 +43,8 @@ export const sendIaTjenesterMetrikker = (
         return;
     }
 
-    if (kanSendeInnloggetIaTjenesteMetrikker(orgnr, altinnRettighet)) {
-        sendInnloggetIATjenesteMetrikk(orgnr, altinnRettighet).then((erMetrikkSendt) => {
+    if (kanSendeInnloggetIaTjenesteMetrikker(orgnr)) {
+        sendInnloggetIATjenesteMetrikk(orgnr).then((erMetrikkSendt) => {
             setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
         });
     } else {
@@ -81,9 +79,8 @@ export const tilIsoDatoMedUtcTimezoneUtenMillis = (dato: Date): String => {
 
 export const kanSendeInnloggetIaTjenesteMetrikker = (
     orgnr: string,
-    altinnRettighet: string
 ): Boolean => {
-    return orgnr !== undefined && altinnRettighet !== undefined;
+    return orgnr !== undefined;
 };
 
 export const kanSendeIaTjenesteMetrikker = (sendtStatistikk: string): Boolean =>
@@ -115,13 +112,12 @@ export const sendUinnloggetIATjenesteMetrikk = async () => {
         return false;
     }
 };
-export const sendInnloggetIATjenesteMetrikk = async (orgnr: String, altinnRettighet: String) => {
+export const sendInnloggetIATjenesteMetrikk = async (orgnr: String) => {
     const innloggetIaTjenesteMetrikk: InnloggetIatjenesteMetrikk = {
         kilde: 'SAMTALESTØTTE',
         type: 'DIGITAL_IA_TJENESTE',
         tjenesteMottakkelsesdato: tilIsoDatoMedUtcTimezoneUtenMillis(new Date()),
         orgnr: orgnr,
-        altinnRettighet: altinnRettighet,
     };
 
     const settings = {
