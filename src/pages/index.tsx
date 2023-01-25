@@ -8,7 +8,6 @@ import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
 import VisteDuAt from './VissteDuAt';
 import {useCookies} from 'react-cookie';
 import {useEffect} from 'react';
-import * as Sentry from '@sentry/browser';
 import {getMiljø} from '../utils/miljøUtils';
 import fellesStiler from '../utils/fellesStiler.module.css';
 import {
@@ -31,12 +30,6 @@ const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
 
 const Home = (props: { page: PageProps }) => {
     const [cookies] = useCookies(cookiesIApplikasjon);
-
-    Sentry.init({
-        dsn: 'https://97af8a51172e4f9bb74ac9c05920b1d2@sentry.gc.nav.no/77',
-        environment: getMiljø(),
-        enabled: getMiljø() !== 'local',
-    });
 
     const hentReferrerApplikasjon = (applikasjonsCookies: Cookie): ReferrerApplikasjon => {
         const referrerUrlFraCookies: ReferrerUrl = hentReferrerUrlFraCookies(applikasjonsCookies);
