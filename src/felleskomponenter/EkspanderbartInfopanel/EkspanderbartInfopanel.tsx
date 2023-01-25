@@ -50,7 +50,6 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
             erÅpen &&
             sendIaTjenesterMetrikker(
                 cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.orgnr,
-                cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.altinnRettighet,
                 cookies[SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER]?.sendtStatistikk,
                 setCookies
             );
