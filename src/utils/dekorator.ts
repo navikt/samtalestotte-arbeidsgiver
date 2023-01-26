@@ -3,6 +3,7 @@ import * as cheerio from 'cheerio';
 import { createHash } from 'crypto';
 import { cache } from './cache';
 import { v4 as uuidv4 } from 'uuid';
+import {logger, predefinerteFeilmeldinger} from "./logger";
 
 export interface DecoratorParts {
     decoratorHeader: string;
@@ -69,7 +70,7 @@ const getDecoratorCached = async (decoratorParams: DecoratorParams) => {
                     resolve(body);
                 })
                 .catch((err) => {
-                    console.error('Feilet med å hente dekoratør', err);
+                    logger.error(predefinerteFeilmeldinger.feilVedHentingAvDekoratør)
                     reject(err);
                 });
         }
