@@ -10,7 +10,6 @@ COPY package.json package.json
 COPY yarn.lock yarn.lock
 COPY next.config.js next.config.js
 COPY .env .env
-COPY .babelrc .babelrc
 COPY tsconfig.json tsconfig.json
 
 USER root

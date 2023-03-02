@@ -8,7 +8,6 @@ import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
 import VisteDuAt from './VissteDuAt';
 import {useCookies} from 'react-cookie';
 import {useEffect} from 'react';
-import {getMiljø} from '../utils/miljøUtils';
 import fellesStiler from '../utils/fellesStiler.module.css';
 import {
     getReferrerUrlFraUrlMedQueryParameter,
@@ -24,6 +23,7 @@ import {SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT} from '../resources/textContent';
 import {generateTxt} from '../dokumentgenerator/txtGenerator';
 import {cookiesIApplikasjon, hentReferrerUrlFraCookies} from '../utils/cookiesUtils';
 import {Cookie} from 'universal-cookie';
+import {setSamtalestotteBreadcrumbs} from "../utils/innloggetStatus";
 
 const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
 const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
@@ -51,17 +51,19 @@ const Home = (props: { page: PageProps }) => {
         return () => clearTimeout(timer);
     }, [cookies]);
 
+    useEffect( () => {
+        setSamtalestotteBreadcrumbs()
+    }, [])
+
     return (
         <div>
             <Head>
                 <title>{props.page.appTitle}</title>
                 <link rel="icon" href="favicon.ico" />
             </Head>
-
             <Layout
                 title={props.page ? props.page.title : 'kunne ikke hente tittel'}
                 isFrontPage={true}
-                decoratorParts={props.page.decorator}
                 logEvent={logEvent}
             >
                 <HvorforBrukeTidPaaSamtaler

@@ -2,22 +2,17 @@
 /**
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
-
-const nextTranspileModules = require('next-transpile-modules');
-const withTranspileModules = nextTranspileModules(['@navikt/ds-react', '@navikt/ds-icons']);
 const csp = require('./src/csp');
 
-module.exports = withTranspileModules({
+module.exports = {
+        transpilePackages: ['@navikt/ds-react', '@navikt/ds-icons'],
         basePath: '/samtalestotte',
         i18n: {
             locales: ['no'],
             defaultLocale: 'no',
         },
-        target: 'server',
         trailingSlash: false,
         reactStrictMode: true,
-        webpack5: true,
-        cssModules: true,
         async headers() {
             return [
                 {
@@ -52,4 +47,4 @@ module.exports = withTranspileModules({
                 },
             ];
         },
-});
+};
