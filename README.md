@@ -26,7 +26,7 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 
 - Master-branch deployes automatisk til `prod`.
 - Deploy av en gitt branch til `dev`-miljøet gjøres ved å fylle inn navnet på branchen
-  i `deploy-to-dev` i filen `.github/workflows/build-deploy.yml`
+  i `deploy-to-dev` i filen `.github/workflows/build-deploy.yaml`
 
 ### Lenker til applikasjon
 
