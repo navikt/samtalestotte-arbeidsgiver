@@ -26,7 +26,7 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 
 - Master-branch deployes automatisk til `prod`.
 - Deploy av en gitt branch til `dev`-miljøet gjøres ved å fylle inn navnet på branchen
-  i `deploy-to-dev` i filen `.github/workflows/build-deploy.yml`
+  i `deploy-to-dev` i filen `.github/workflows/build-deploy.yaml`
 
 ### Lenker til applikasjon
 
@@ -46,16 +46,8 @@ Dette kan gjøres ved å laste ned å laste ned postcss plugin og sette "stylesh
 
 ---
 
-# Henvendelser
+# Kontakt
 
-## For Nav-ansatte
-* Dette Git-repositoriet eies av [Team IA i Produktområde arbeidsgiver](https://navno.sharepoint.com/sites/intranett-prosjekter-og-utvikling/SitePages/Produktomr%C3%A5de-arbeidsgiver.aspx).
-* Slack-kanaler:
-  * [#arbeidsgiver-teamia-utvikling](https://nav-it.slack.com/archives/C016KJA7CFK)
-  * [#arbeidsgiver-utvikling](https://nav-it.slack.com/archives/CD4MES6BB)
-  * [#arbeidsgiver-general](https://nav-it.slack.com/archives/CCM649PDH)
-
-## For folk utenfor Nav
-* Opprett gjerne en issue i Github for alle typer spørsmål
-* IT-utviklerne i Github-teamet https://github.com/orgs/navikt/teams/arbeidsgiver
-* IT-avdelingen i [Arbeids- og velferdsdirektoratet](https://www.nav.no/no/NAV+og+samfunn/Kontakt+NAV/Relatert+informasjon/arbeids-og-velferdsdirektoratet-kontorinformasjon)
+* For spørsmål eller henvendelser, opprett gjerne et issue her på GitHub.
+* Koden utvikles og driftes av Team IA i [Produktområde arbeidsgiver](https://navno.sharepoint.com/sites/intranett-prosjekter-og-utvikling/SitePages/Produktomr%C3%A5de-arbeidsgiver.aspx).
+* Slack-kanal [#teamia](https://nav-it.slack.com/archives/CMN0M3CDP)
