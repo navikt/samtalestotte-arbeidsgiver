@@ -14,7 +14,7 @@ spec:
       value: labs-gcp
     - name: NEXT_PUBLIC_MINSIDE_ARBEIDSGIVER_URL
       value: https://arbeidsgiver.nav.no/min-side-arbeidsgiver
-    - name: NEXT_PUBLIC_FOREBYGGE_FRAVÆR_URL
+    - name: NEXT_PUBLIC_FOREBYGGE_FRAVAR_URL
       value: https://arbeidsgiver.nav.no/forebygge-fravar
     - name: NEXT_PUBLIC_SAMTALESTOTTE_URL
       value: https://arbeidsgiver.labs.nais.io/samtalestotte
