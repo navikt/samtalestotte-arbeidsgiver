@@ -7,6 +7,21 @@ export const INNLOGGET = "INNLOGGET";
 export const UINNLOGGET = "UINNLOGGET";
 export type InnloggetStatus = typeof INNLOGGET | typeof UINNLOGGET
 
+const MINSIDE_BREADCRUMB = {
+    title: "Min side – arbeidsgiver",
+    url: process.env.NEXT_PUBLIC_MINSIDE_ARBEIDSGIVER_URL || "#"
+}
+const FOREBYGGE_FRAVAR_BREADCRUMB = {
+    title: "Forebygge fravær",
+    url: process.env.NEXT_PUBLIC_FOREBYGGE_FRAVAR_URL || "#"
+}
+const SAMTALESTOTTE_BREADCRUMB = {
+    title: "Samtalestotte",
+    url: process.env.NEXT_PUBLIC_SAMTALESTOTTE_URL || "#",
+}
+
+const AUTH_URL = process.env.NEXT_PUBLIC_AUTH_URL;
+
 const authSchema = z.object({
     authenticated: z.boolean()
 })
@@ -14,24 +29,12 @@ const authSchema = z.object({
 export function getBreadcrumbs(innlogget?: InnloggetStatus): Props["breadcrumbs"] {
     if(innlogget === INNLOGGET){
         return [
-            {
-                title: "Min side – arbeidsgiver",
-                url: process.env.NEXT_PUBLIC_MINSIDE_ARBEIDSGIVER_URL || "#"
-            },
-            {
-                title: "Forebygge fravær",
-                url: process.env.NEXT_PUBLIC_FOREBYGGE_FRAVAR_URL || "#"
-            },
-            {
-                title: "Samtalestotte",
-                url: process.env.NEXT_PUBLIC_SAMTALESTOTTE_URL || "#",
-            }
-        ]
-    }
-    return [{
-        title: "Samtalestotte",
-        url: process.env.NEXT_PUBLIC_SAMTALESTOTTE_URL || "#",
-    }]
+            MINSIDE_BREADCRUMB,
+            FOREBYGGE_FRAVAR_BREADCRUMB,
+            SAMTALESTOTTE_BREADCRUMB
+        ];
+    };
+    return [ SAMTALESTOTTE_BREADCRUMB ];
 }
 
 async function getAuthStatus(authURL: string): Promise<boolean> {
@@ -47,10 +50,9 @@ async function getAuthStatus(authURL: string): Promise<boolean> {
     }
 }
 export async function setSamtalestotteBreadcrumbs(): Promise<void> {
-    const authURL = process.env.NEXT_PUBLIC_AUTH_URL;
-    if(!isNonEmptyString(authURL)) return;
+    if(!isNonEmptyString(AUTH_URL)) return;
 
-    const innlogget = await getAuthStatus(authURL)
+    const innlogget = await getAuthStatus(AUTH_URL)
 
     if(!innlogget) return;
     const breadcrumbs = getBreadcrumbs(INNLOGGET);
