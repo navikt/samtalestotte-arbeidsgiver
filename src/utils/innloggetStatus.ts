@@ -33,7 +33,7 @@ export function getBreadcrumbs(innlogget?: InnloggetStatus): Props["breadcrumbs"
             FOREBYGGE_FRAVAR_BREADCRUMB,
             SAMTALESTOTTE_BREADCRUMB
         ];
-    };
+    }
     return [ SAMTALESTOTTE_BREADCRUMB ];
 }
 
@@ -41,7 +41,6 @@ async function getAuthStatus(authURL: string): Promise<boolean> {
     try{
         return await fetch(authURL,{credentials: "include"})
             .then(res => {
-                console.log(res)
                 return res.json()})
             .then(json => authSchema.parse(json).authenticated)
     } catch (error) {
