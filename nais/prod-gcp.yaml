@@ -9,6 +9,17 @@ spec:
   image: {{image}}
   team: arbeidsgiver
   port: 3000
+  env:
+    - name: ENVIRONMENT
+      value: prod-gcp
+    - name: NEXT_PUBLIC_AUTH_URL
+      value: https://www.nav.no/person/nav-dekoratoren-api/auth
+    - name: NEXT_PUBLIC_MINSIDE_ARBEIDSGIVER_URL
+      value: https://arbeidsgiver.nav.no/min-side-arbeidsgiver
+    - name: NEXT_PUBLIC_FOREBYGGE_FRAVÆR_URL
+      value: https://arbeidsgiver.nav.no/forebygge-fravar
+    - name: NEXT_PUBLIC_SAMTALESTOTTE_URL
+      value: https://arbeidsgiver.nav.no/samtalestotte
   ingresses:
     - https://arbeidsgiver.nav.no/samtalestotte
   liveness:

@@ -13,14 +13,13 @@ import {
 } from "@navikt/nav-dekoratoren-moduler/ssr";
 import React from "react";
 import {getBreadcrumbs} from "../utils/innloggetStatus";
-import {getMiljø} from "../utils/miljøUtils";
 
-const decoratorEnv = "prod" as Exclude<Env, "localhost">;
+const decoratorEnv = process.env.ENVIRONMENT === "prod-gcp" ? "prod" : "dev" as Exclude<Env, "localhost">
 
 const decoratorParams: Props = {
     env: decoratorEnv,
     context: "arbeidsgiver",
-    breadcrumbs: getBreadcrumbs(getMiljø())
+    breadcrumbs: getBreadcrumbs()
 };
 
 class _Document extends Document<{ decorator: Components }> {

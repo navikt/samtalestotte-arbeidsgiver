@@ -9,7 +9,6 @@ COPY public/ public/
 COPY package.json package.json
 COPY yarn.lock yarn.lock
 COPY next.config.js next.config.js
-COPY .env .env
 COPY tsconfig.json tsconfig.json
 COPY .next .next
 COPY node_modules node_modules
