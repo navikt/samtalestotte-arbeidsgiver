@@ -36,3 +36,6 @@ yarn-error.log*
 # auto-genererte dokumenter
 /public/*.docx
 /public/*.txt
+
+# Kompilerte scripts
+/scripts/dist
