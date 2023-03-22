@@ -16,6 +16,7 @@ COPY tsconfig.json tsconfig.json
 
 USER root
 RUN chown -R apprunner /var/server/public
+RUN chown -R apprunner /var/server/scripts
 USER apprunner
 
 RUN yarn install --frozen-lockfile
