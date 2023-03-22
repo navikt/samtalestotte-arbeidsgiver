@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Layout } from '../felleskomponenter/Layout/Layout';
-import { getPageProps, PageProps } from '../pageProps';
+import { getPageProps, HomeProps } from '../homeProps';
 import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
 import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
@@ -16,15 +16,10 @@ import {
     utleddApplikasjonsnavnFraUrl,
 } from '../resources/urls';
 import classNames from 'classnames';
-import { Packer } from 'docx';
-import * as fs from 'fs';
-import { generateDocX } from '../dokumentgenerator/docxGenerator';
-import { SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT } from '../resources/textContent';
-import { generateTxt } from '../dokumentgenerator/txtGenerator';
 import { cookiesIApplikasjon, hentReferrerUrlFraCookies } from '../utils/cookiesUtils';
 import { Cookie } from 'universal-cookie';
 
-const Home = (props: { page: PageProps }) => {
+const Home = (props: { page: HomeProps }) => {
     const [cookies] = useCookies(cookiesIApplikasjon);
 
     const hentReferrerApplikasjon = (applikasjonsCookies: Cookie): ReferrerApplikasjon => {
@@ -87,13 +82,13 @@ const Home = (props: { page: PageProps }) => {
     );
 };
 
-interface ServerSideProps {
+interface HomeServerSideProps {
     props: {
-        page: PageProps;
+        page: HomeProps;
     };
 }
 
-export const getServerSideProps = async (): Promise<ServerSideProps> => {
+export const getServerSideProps = async (): Promise<HomeServerSideProps> => {
     const page = await getPageProps(
         'Samtalestøtte for arbeidsgiver',
         'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.',

@@ -1,6 +1,6 @@
 import { DecoratorParts, fetchDecoratorParts } from './utils/dekorator';
 
-export interface PageProps {
+export interface HomeProps {
     appTitle: string;
     title: string;
     metaDescription: string;
@@ -8,7 +8,7 @@ export interface PageProps {
     decorator: DecoratorParts;
 }
 
-export const getPageProps = async (title: string, slug: string): Promise<PageProps> => {
+export const getPageProps = async (title: string, slug: string): Promise<HomeProps> => {
     // TODO: trenger vi breadcrumbs
     // TODO: Vi bør fikse breadcrumbs
     const breadcrumbs = [{ title: encodeURIComponent(title), url: `${process.env.APP_URL}` }];
