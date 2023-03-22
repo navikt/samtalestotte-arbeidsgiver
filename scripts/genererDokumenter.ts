@@ -1,6 +1,6 @@
-import { generateDocX } from '../dokumentgenerator/docxGenerator';
-import { SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT } from '../resources/textContent';
-import { generateTxt } from '../dokumentgenerator/txtGenerator';
+import { generateDocX } from '../src/dokumentgenerator/docxGenerator';
+import { SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT } from '../src/resources/textContent';
+import { generateTxt } from '../src/dokumentgenerator/txtGenerator';
 import { Packer } from 'docx';
 import fs from 'fs';
 
@@ -12,8 +12,7 @@ const genererDokumenter = async () => {
     fs.writeFileSync('public/Samtalestøtte-Arbeidsgiver.txt', txt);
 };
 
-genererDokumenter()
-    .catch((reason) => {
-        console.error("Greide ikke å generer dokumenter", reason)
-        throw reason
-    })
+genererDokumenter().catch((reason) => {
+    console.error('Greide ikke å generer dokumenter', reason);
+    throw reason;
+});
