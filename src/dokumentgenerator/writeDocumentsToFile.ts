@@ -8,7 +8,7 @@ async function writeToFile() {
     console.log("WRITING STATIC DOCUMENTS TO FILE")
     console.log("THIS IS DONE SEPERATLY BECAUSE NEXT JS WILL ONLY SERVE ASSETS IN /public THAT ARE THERE AT BUILD TIME")
 
-    if(!fs.existsSync(process.cwd()+'/public/Samtalestøtte-Arbeidsgiver.docx')) {
+    if(!fs.existsSync('public/Samtalestøtte-Arbeidsgiver.docx')) {
         const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
         const documentBuffer = await Packer.toBuffer(doc);
         fs.writeFileSync('public/Samtalestøtte-Arbeidsgiver.docx', documentBuffer);
