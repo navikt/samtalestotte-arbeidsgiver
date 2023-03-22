@@ -1,14 +1,13 @@
 import Head from 'next/head';
-import {Layout} from '../felleskomponenter/Layout/Layout';
-import {getPageProps, PageProps} from '../pageProps';
+import { Layout } from '../felleskomponenter/Layout/Layout';
+import { getPageProps, HomeProps } from '../homeProps';
 import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
 import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
 import MerInspirasjonOgGodeGrep from './MerInspirasjonOgGodeGrep';
 import VisteDuAt from './VissteDuAt';
-import {useCookies} from 'react-cookie';
-import {useEffect} from 'react';
-import {getMiljø} from '../utils/miljøUtils';
+import { useCookies } from 'react-cookie';
+import { useEffect } from 'react';
 import fellesStiler from '../utils/fellesStiler.module.css';
 import {
     getReferrerUrlFraUrlMedQueryParameter,
@@ -17,18 +16,10 @@ import {
     utleddApplikasjonsnavnFraUrl,
 } from '../resources/urls';
 import classNames from 'classnames';
-import {Packer} from 'docx';
-import * as fs from 'fs';
-import {generateDocX} from '../dokumentgenerator/docxGenerator';
-import {SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT} from '../resources/textContent';
-import {generateTxt} from '../dokumentgenerator/txtGenerator';
-import {cookiesIApplikasjon, hentReferrerUrlFraCookies} from '../utils/cookiesUtils';
-import {Cookie} from 'universal-cookie';
+import { cookiesIApplikasjon, hentReferrerUrlFraCookies } from '../utils/cookiesUtils';
+import { Cookie } from 'universal-cookie';
 
-const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
-const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
-
-const Home = (props: { page: PageProps }) => {
+const Home = (props: { page: HomeProps }) => {
     const [cookies] = useCookies(cookiesIApplikasjon);
 
     const hentReferrerApplikasjon = (applikasjonsCookies: Cookie): ReferrerApplikasjon => {
@@ -36,8 +27,8 @@ const Home = (props: { page: PageProps }) => {
         return referrerUrlFraCookies
             ? utleddApplikasjonsnavnFraUrl(referrerUrlFraCookies)
             : utleddApplikasjonsnavnFraUrl(
-                  getReferrerUrlFraUrlMedQueryParameter(window.location.href)
-              );
+                getReferrerUrlFraUrlMedQueryParameter(window.location.href),
+            );
     };
 
     useEffect(() => {
@@ -55,7 +46,7 @@ const Home = (props: { page: PageProps }) => {
         <div>
             <Head>
                 <title>{props.page.appTitle}</title>
-                <link rel="icon" href="favicon.ico" />
+                <link rel='icon' href='favicon.ico' />
             </Head>
 
             <Layout
@@ -67,7 +58,7 @@ const Home = (props: { page: PageProps }) => {
                 <HvorforBrukeTidPaaSamtaler
                     className={classNames(
                         fellesStiler.contentPaddingSides,
-                        fellesStiler.largeScreenMarginSides3rem
+                        fellesStiler.largeScreenMarginSides3rem,
                     )}
                 />
                 <SlikSkaperDuGodeSamtaler
@@ -76,13 +67,13 @@ const Home = (props: { page: PageProps }) => {
                 <MerInspirasjonOgGodeGrep
                     className={classNames(
                         fellesStiler.contentPaddingSides,
-                        fellesStiler.largeScreenMarginSides3rem
+                        fellesStiler.largeScreenMarginSides3rem,
                     )}
                 />
                 <VisteDuAt
                     className={classNames(
                         fellesStiler.largeScreenMarginSides3rem,
-                        fellesStiler.marginLeft1Rem
+                        fellesStiler.marginLeft1Rem,
                     )}
                 />
             </Layout>
@@ -91,28 +82,22 @@ const Home = (props: { page: PageProps }) => {
     );
 };
 
-interface StaticProps {
+interface HomeServerSideProps {
     props: {
-        page: PageProps;
+        page: HomeProps;
     };
-    revalidate: number;
 }
 
-// NextJS kaller denne
-export const getStaticProps = async (): Promise<StaticProps> => {
-    const documentBuffer = await Packer.toBuffer(doc);
-    fs.writeFileSync('public/Samtalestøtte-Arbeidsgiver.docx', documentBuffer);
-    fs.writeFileSync('public/Samtalestøtte-Arbeidsgiver.txt', txt);
-
+export const getServerSideProps = async (): Promise<HomeServerSideProps> => {
     const page = await getPageProps(
         'Samtalestøtte for arbeidsgiver',
-        'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.'
+        'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.',
     );
 
     return {
         props: { page },
-        revalidate: 60,
     };
 };
+
 
 export default Home;
