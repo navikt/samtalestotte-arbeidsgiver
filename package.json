@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -p 3005",
     "build": "next build",
+    "genererDokumenter": "node src/scripts/genererDokumenter.ts",
     "start": "next start",
     "test": "TZ=CET jest",
     "prettier": "prettier -w ./src"
