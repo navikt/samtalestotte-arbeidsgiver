@@ -12,13 +12,13 @@ spec:
   env:
     - name: ENVIRONMENT
       value: dev-gcp
-    - name: NEXT_PUBLIC_AUTH_URL
+    - name: AUTH_URL
       value: https://www.dev.nav.no/person/nav-dekoratoren-api/auth
-    - name: NEXT_PUBLIC_MINSIDE_ARBEIDSGIVER_URL
+    - name: MINSIDE_ARBEIDSGIVER_URL
       value: https://arbeidsgiver-q.nav.no/min-side-arbeidsgiver
-    - name: NEXT_PUBLIC_FOREBYGGE_FRAVAR_URL
+    - name: FOREBYGGE_FRAVAR_URL
       value: https://forebygge-fravar.dev.nav.no/forebygge-fravar
-    - name: NEXT_PUBLIC_SAMTALESTOTTE_URL
+    - name: SAMTALESTOTTE_URL
       value: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte
   ingresses:
     - https://arbeidsgiver-gcp.dev.nav.no/samtalestotte

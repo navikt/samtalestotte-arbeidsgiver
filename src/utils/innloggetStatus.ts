@@ -2,39 +2,38 @@ import { z } from "zod"
 import { logger, predefinerteFeilmeldinger } from "./logger";
 import { setBreadcrumbs, Props } from "@navikt/nav-dekoratoren-moduler";
 import { isNonEmptyString } from './stringUtils';
+import {ENVUrls} from "./envUtils";
 
 export const INNLOGGET = "INNLOGGET";
 export const UINNLOGGET = "UINNLOGGET";
 export type InnloggetStatus = typeof INNLOGGET | typeof UINNLOGGET
 
-const MINSIDE_BREADCRUMB = {
+const minsideBreadcrumb = (url: string) => ({
     title: "Min side – arbeidsgiver",
-    url: process.env.NEXT_PUBLIC_MINSIDE_ARBEIDSGIVER_URL || "#"
-}
-const FOREBYGGE_FRAVAR_BREADCRUMB = {
+    url: url
+})
+const forebyggeFravarBreadcrumb = (url: string) => ({
     title: "Forebygge fravær",
-    url: process.env.NEXT_PUBLIC_FOREBYGGE_FRAVAR_URL || "#"
-}
-const SAMTALESTOTTE_BREADCRUMB = {
+    url: url
+})
+const samtalestotteBreadcrumb = (url: string) => ({
     title: "Samtalestotte",
-    url: process.env.NEXT_PUBLIC_SAMTALESTOTTE_URL || "#",
-}
-
-const AUTH_URL = process.env.NEXT_PUBLIC_AUTH_URL;
+    url: url
+})
 
 const authSchema = z.object({
     authenticated: z.boolean()
 })
 
-export function getBreadcrumbs(innlogget?: InnloggetStatus): Props["breadcrumbs"] {
+export function getBreadcrumbs(urls: ENVUrls, innlogget?: InnloggetStatus): Props["breadcrumbs"] {
     if(innlogget === INNLOGGET){
         return [
-            MINSIDE_BREADCRUMB,
-            FOREBYGGE_FRAVAR_BREADCRUMB,
-            SAMTALESTOTTE_BREADCRUMB
+            minsideBreadcrumb(urls.MINSIDE_URL),
+            forebyggeFravarBreadcrumb(urls.FOREBYGGE_URL),
+            samtalestotteBreadcrumb(urls.SAMTALESTOTTE_URL)
         ];
     }
-    return [ SAMTALESTOTTE_BREADCRUMB ];
+    return [ samtalestotteBreadcrumb(urls.SAMTALESTOTTE_URL) ];
 }
 
 async function getAuthStatus(authURL: string): Promise<boolean> {
@@ -48,13 +47,13 @@ async function getAuthStatus(authURL: string): Promise<boolean> {
         return false;
     }
 }
-export async function setSamtalestotteBreadcrumbs(): Promise<void> {
-    if(!isNonEmptyString(AUTH_URL)) return;
+export async function setSamtalestotteBreadcrumbs(urls: ENVUrls): Promise<void> {
+    if(!isNonEmptyString(urls.AUTH_URL)) return;
 
-    const innlogget = await getAuthStatus(AUTH_URL)
+    const innlogget = await getAuthStatus(urls.AUTH_URL)
 
     if(!innlogget) return;
-    const breadcrumbs = getBreadcrumbs(INNLOGGET);
+    const breadcrumbs = getBreadcrumbs(urls, INNLOGGET);
 
-    if(breadcrumbs) setBreadcrumbs(breadcrumbs);
+    if(breadcrumbs) await setBreadcrumbs(breadcrumbs);
 }

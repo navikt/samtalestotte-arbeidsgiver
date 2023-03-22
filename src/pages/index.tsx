@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import {Layout} from '../felleskomponenter/Layout/Layout';
-import {getPageProps, PageProps} from '../pageProps';
 import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
 import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
@@ -16,19 +15,21 @@ import {
     utleddApplikasjonsnavnFraUrl,
 } from '../resources/urls';
 import classNames from 'classnames';
-import {Packer} from 'docx';
-import * as fs from 'fs';
-import {generateDocX} from '../dokumentgenerator/docxGenerator';
-import {SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT} from '../resources/textContent';
-import {generateTxt} from '../dokumentgenerator/txtGenerator';
 import {cookiesIApplikasjon, hentReferrerUrlFraCookies} from '../utils/cookiesUtils';
 import {Cookie} from 'universal-cookie';
-import {setSamtalestotteBreadcrumbs} from "../utils/innloggetStatus";
+import { setSamtalestotteBreadcrumbs } from "../utils/innloggetStatus";
+import {ENVUrls, getUrlsFromEnv} from "../utils/envUtils";
 
-const doc = generateDocX(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
-const txt = generateTxt(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
+type HomeProps =  {
+    urls : ENVUrls
+}
 
-const Home = (props: { page: PageProps }) => {
+const APP_TITLE = 'Samtalestøtte for arbeidsgiver'
+const TITLE = 'Samtalestøtte for arbeidsgiver'
+const META_DESCRIPTION = 'Samtalestøtte for arbeidsgiver'
+const SLUG = 'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.'
+
+const Home = (props: HomeProps) => {
     const [cookies] = useCookies(cookiesIApplikasjon);
 
     const hentReferrerApplikasjon = (applikasjonsCookies: Cookie): ReferrerApplikasjon => {
@@ -52,17 +53,17 @@ const Home = (props: { page: PageProps }) => {
     }, [cookies]);
 
     useEffect( () => {
-        setSamtalestotteBreadcrumbs()
+        setSamtalestotteBreadcrumbs(props.urls)
     }, [])
 
     return (
         <div>
             <Head>
-                <title>{props.page.appTitle}</title>
+                <title>{APP_TITLE}</title>
                 <link rel="icon" href="favicon.ico" />
             </Head>
             <Layout
-                title={props.page ? props.page.title : 'kunne ikke hente tittel'}
+                title={TITLE}
                 isFrontPage={true}
                 logEvent={logEvent}
             >
@@ -93,28 +94,10 @@ const Home = (props: { page: PageProps }) => {
     );
 };
 
-interface StaticProps {
-    props: {
-        page: PageProps;
-    };
-    revalidate: number;
+export const getServerSideProps = async() => {
+    const urls = getUrlsFromEnv()
+
+    return { props: {urls} }
 }
-
-// NextJS kaller denne
-export const getStaticProps = async (): Promise<StaticProps> => {
-    const documentBuffer = await Packer.toBuffer(doc);
-    fs.writeFileSync('public/Samtalestøtte-Arbeidsgiver.docx', documentBuffer);
-    fs.writeFileSync('public/Samtalestøtte-Arbeidsgiver.txt', txt);
-
-    const page = await getPageProps(
-        'Samtalestøtte for arbeidsgiver',
-        'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.'
-    );
-
-    return {
-        props: { page },
-        revalidate: 60,
-    };
-};
 
 export default Home;
