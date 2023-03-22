@@ -46,7 +46,6 @@ class _document extends Document<{ decorator: Components }> {
                 </Head>
                 <Styles />
                 <Scripts />
-
                 <body>
                 <Header />
                 <div id="app" className="app">
