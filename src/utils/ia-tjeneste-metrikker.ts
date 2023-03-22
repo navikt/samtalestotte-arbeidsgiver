@@ -1,58 +1,18 @@
-import { Cookie, CookieSetOptions } from 'universal-cookie';
-import { ETT_DØGN_I_SEKUNDER } from './konstanter';
-import { SamtalestøtteCookies, SamtalestøtteCookiesType } from './cookiesUtils';
-
 export interface IatjenesteMetrikk {
     type: String;
     kilde: String;
-    tjenesteMottakkelsesdato: String;
 }
+
 export interface InnloggetIatjenesteMetrikk extends IatjenesteMetrikk {
     orgnr: String;
 }
 
-let antallForsøkSendTilIaTjenesterMetrikker = 0;
-
-const setIaTjenesterMetrikkErSendt = (
-    erMetrikkSendt: boolean,
-    lagreCookie: (name: SamtalestøtteCookiesType, value: Cookie, options?: CookieSetOptions) => void
-) => {
-    if (erMetrikkSendt) {
-        lagreCookie(
-            SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER,
-            { sendtStatistikk: 'ja' },
-            {
-                path: '/',
-                maxAge: ETT_DØGN_I_SEKUNDER,
-                sameSite: true,
-            }
-        );
-    }
-};
-
-export const sendIaTjenesterMetrikker = (
-    orgnr: string,
-    sendtStatistikk: string,
-    lagreCookieFunksjon: (
-        name: SamtalestøtteCookiesType,
-        value: Cookie,
-        options?: CookieSetOptions
-    ) => void
-) => {
-    if (!kanSendeIaTjenesteMetrikker(sendtStatistikk)) {
-        return;
-    }
-
-    if (kanSendeInnloggetIaTjenesteMetrikker(orgnr)) {
-        sendInnloggetIATjenesteMetrikk(orgnr).then((erMetrikkSendt) => {
-            setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
-        });
+export const sendIaTjenesterMetrikker = (orgnr: string) => {
+    if (orgnr !== undefined) {
+        sendInnloggetIATjenesteMetrikk(orgnr);
     } else {
-        sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
-            setIaTjenesterMetrikkErSendt(erMetrikkSendt, lagreCookieFunksjon);
-        });
+        sendUinnloggetIATjenesteMetrikk();
     }
-    antallForsøkSendTilIaTjenesterMetrikker++;
 };
 
 const getIaTjenesterMetrikkerUrl = () => {
@@ -73,25 +33,10 @@ const getIaTjenesterMetrikkerUrl = () => {
 const iaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/uinnlogget/mottatt-iatjeneste`;
 const innloggetIaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/innlogget/mottatt-iatjeneste`;
 
-export const tilIsoDatoMedUtcTimezoneUtenMillis = (dato: Date): String => {
-    return dato.toISOString().split('.')[0] + 'Z';
-};
-
-export const kanSendeInnloggetIaTjenesteMetrikker = (
-    orgnr: string,
-): Boolean => {
-    return orgnr !== undefined;
-};
-
-export const kanSendeIaTjenesteMetrikker = (sendtStatistikk: string): Boolean =>
-    (sendtStatistikk === undefined || !Boolean(sendtStatistikk)) &&
-    antallForsøkSendTilIaTjenesterMetrikker < 5;
-
 export const sendUinnloggetIATjenesteMetrikk = async () => {
     const iaTjenesteMetrikk: IatjenesteMetrikk = {
         kilde: 'SAMTALESTØTTE',
         type: 'DIGITAL_IA_TJENESTE',
-        tjenesteMottakkelsesdato: tilIsoDatoMedUtcTimezoneUtenMillis(new Date()),
     };
 
     const settings = {
@@ -116,7 +61,6 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr: String) => {
     const innloggetIaTjenesteMetrikk: InnloggetIatjenesteMetrikk = {
         kilde: 'SAMTALESTØTTE',
         type: 'DIGITAL_IA_TJENESTE',
-        tjenesteMottakkelsesdato: tilIsoDatoMedUtcTimezoneUtenMillis(new Date()),
         orgnr: orgnr,
     };
 
