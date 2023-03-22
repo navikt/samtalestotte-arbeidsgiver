@@ -5,6 +5,7 @@ WORKDIR /var/server
 USER apprunner
 
 COPY src/ src/
+COPY scripts/ scripts/
 COPY public/ public/
 COPY package.json package.json
 COPY yarn.lock yarn.lock
@@ -15,6 +16,7 @@ COPY node_modules node_modules
 
 USER root
 RUN chown -R apprunner /var/server/public
+RUN chown -R apprunner /var/server/scripts
 USER apprunner
 
 EXPOSE 3000
