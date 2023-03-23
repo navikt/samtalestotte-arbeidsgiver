@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import styles from './SlikSkaperDuGodeSamtaler.module.css';
 import { generateComponents } from '../dokumentgenerator/componentGenerator';
 import { SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT } from '../resources/textContent';
-import { BodyLong } from '@navikt/ds-react';
 
 const elements = generateComponents(SLIK_SKAPER_DU_GODE_SAMTALER_CONTENT);
 
@@ -17,7 +16,7 @@ const SlikSkaperDuGodeSamtaler = ({ className }: { className?: string }) => {
                 className
             )}
         >
-            <BodyLong>{elements}</BodyLong>
+            <>{elements}</>
         </section>
     );
 };

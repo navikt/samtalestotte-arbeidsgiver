@@ -9,6 +9,15 @@ spec:
   image: {{image}}
   team: arbeidsgiver
   port: 3000
+  env:
+    - name: ENVIRONMENT
+      value: labs-gcp
+    - name: MINSIDE_ARBEIDSGIVER_URL
+      value: https://arbeidsgiver.nav.no/min-side-arbeidsgiver
+    - name: FOREBYGGE_FRAVAR_URL
+      value: https://arbeidsgiver.nav.no/forebygge-fravar
+    - name: SAMTALESTOTTE_URL
+      value: https://arbeidsgiver.labs.nais.io/samtalestotte
   ingresses:
     - https://arbeidsgiver.labs.nais.io/samtalestotte
   liveness:

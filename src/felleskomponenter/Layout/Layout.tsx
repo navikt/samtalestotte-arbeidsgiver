@@ -1,9 +1,4 @@
 import { PageBanner } from '../PageBanner/PageBanner';
-import { DecoratorHeader } from '../decorator/DecoratorHeader';
-import { DecoratorFooter } from '../decorator/DecoratorFooter';
-import Head from 'next/head';
-import { DecoratorParts } from '../../utils/dekorator';
-import { DecoratorEnv } from '../decorator/DecoratorEnv';
 import React, { useEffect, useRef } from 'react';
 import { PROD_URL } from '../../utils/konstanter';
 import { BodyShort } from '@navikt/ds-react';
@@ -19,12 +14,11 @@ import {
     SamtalestøtteCookies,
 } from '../../utils/cookiesUtils';
 
-export const Layout = (props: {
+export const Layout = ( props: {
     title: string;
     isFrontPage: boolean;
     logEvent: (eventName: string, data?: any) => Promise<any>;
     bannerIconUrl?: string;
-    decoratorParts?: DecoratorParts;
     children: React.ReactChild[];
 }) => {
     const layoutContentRef = useRef<HTMLDivElement>(null);
@@ -41,20 +35,6 @@ export const Layout = (props: {
         }
     }, []);
 
-    const headerLinks = (props.decoratorParts ? props.decoratorParts.linkTags : []).map(
-        (attrs, index) => {
-            return (
-                <link
-                    key={attrs.key}
-                    href={attrs.href ?? undefined}
-                    type={attrs.type ?? undefined}
-                    rel={attrs.rel ?? undefined}
-                    sizes={attrs.sizes ? attrs.sizes : undefined}
-                />
-            );
-        }
-    );
-
     function loggUtskriftsklikk() {
         props.logEvent('knapp', {
             label: 'skriv-ut',
@@ -69,14 +49,6 @@ export const Layout = (props: {
 
     return (
         <>
-            <Head>{headerLinks}</Head>
-            <DecoratorHeader
-                html={
-                    props.decoratorParts?.decoratorHeader === undefined
-                        ? ''
-                        : props.decoratorParts?.decoratorHeader
-                }
-            />
             <main id="maincontent" role="main" tabIndex={-1}>
                 <div id="app" className="app">
                     <PageBanner
@@ -106,14 +78,6 @@ export const Layout = (props: {
                     </div>
                 </div>
             </main>
-            <DecoratorFooter
-                html={
-                    props.decoratorParts?.decoratorFooter === undefined
-                        ? ''
-                        : props.decoratorParts?.decoratorFooter
-                }
-            />
-            <DecoratorEnv env={props.decoratorParts?.decoratorEnv} />
         </>
     );
 };

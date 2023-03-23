@@ -20,12 +20,10 @@ const VisteDuAt = ({ className }: { className?: string }) => {
                 Visste du at NAV hjelper virksomheter med å forebygge sykefravær?
             </Heading>
             <Information className={styles.visteDuIcon} width={'61px'} height={'61px'} />
-            <BodyLong>
-                <p className={classNames(styles.visteDuParagraf, fellesStiler.marginTop0Rem)}>
+            <BodyLong className={classNames(styles.visteDuParagraf, fellesStiler.marginTop0Rem)}>
                     NAV hjelper virksomheter med å forebygge sykefravær. Du får digitale tjenester
                     og veiledning for å gjennomføre enkeltsamtaler. NAV kan også gi mer omfattende
                     rådgivning hos dere på arbeidsplassen.
-                </p>
             </BodyLong>
             <LoggbarLenke
                 className={classNames(

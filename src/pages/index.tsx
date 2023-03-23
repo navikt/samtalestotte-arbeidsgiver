@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import { Layout } from '../felleskomponenter/Layout/Layout';
-import { getPageProps, HomeProps } from '../homeProps';
+import {Layout} from '../felleskomponenter/Layout/Layout';
 import logEvent from '../amplitude/amplitude';
 import HvorforBrukeTidPaaSamtaler from './HvorforBrukeTidPaaSamtaler';
 import SlikSkaperDuGodeSamtaler from './SlikSkaperDuGodeSamtaler';
@@ -18,8 +17,19 @@ import {
 import classNames from 'classnames';
 import { cookiesIApplikasjon, hentReferrerUrlFraCookies } from '../utils/cookiesUtils';
 import { Cookie } from 'universal-cookie';
+import { setSamtalestotteBreadcrumbs } from "../utils/innloggetStatus";
+import { ENVUrls, getUrlsFromEnv } from "../utils/envUtils";
 
-const Home = (props: { page: HomeProps }) => {
+type HomeProps =  {
+    urls : ENVUrls
+}
+
+const APP_TITLE = 'Samtalestøtte for arbeidsgiver'
+const TITLE = 'Samtalestøtte for arbeidsgiver'
+const META_DESCRIPTION = 'Samtalestøtte for arbeidsgiver'
+const SLUG = 'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.'
+
+const Home = (props: HomeProps) => {
     const [cookies] = useCookies(cookiesIApplikasjon);
 
     const hentReferrerApplikasjon = (applikasjonsCookies: Cookie): ReferrerApplikasjon => {
@@ -42,17 +52,20 @@ const Home = (props: { page: HomeProps }) => {
         return () => clearTimeout(timer);
     }, [cookies]);
 
+    useEffect( () => {
+        setSamtalestotteBreadcrumbs(props.urls)
+    }, [])
+
     return (
         <div>
             <Head>
-                <title>{props.page.appTitle}</title>
-                <link rel='icon' href='favicon.ico' />
+                <title>{APP_TITLE}</title>
+                <link rel="icon" href="favicon.ico" />
             </Head>
 
             <Layout
-                title={props.page ? props.page.title : 'kunne ikke hente tittel'}
+                title={TITLE}
                 isFrontPage={true}
-                decoratorParts={props.page.decorator}
                 logEvent={logEvent}
             >
                 <HvorforBrukeTidPaaSamtaler
@@ -82,22 +95,10 @@ const Home = (props: { page: HomeProps }) => {
     );
 };
 
-interface HomeServerSideProps {
-    props: {
-        page: HomeProps;
-    };
+export const getServerSideProps = async() => {
+    const urls = getUrlsFromEnv()
+
+    return { props: {urls} }
 }
-
-export const getServerSideProps = async (): Promise<HomeServerSideProps> => {
-    const page = await getPageProps(
-        'Samtalestøtte for arbeidsgiver',
-        'Du får hjelp til å gjennomføre samtaler med medarbeiderne og bruke erfaringene til forebyggende arbeid.',
-    );
-
-    return {
-        props: { page },
-    };
-};
-
 
 export default Home;

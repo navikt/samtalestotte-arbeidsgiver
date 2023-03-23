@@ -1,4 +1,4 @@
-name: Build and deploy master
+name: Build, test and deploy
 
 on: [ push ]
 
@@ -14,16 +14,22 @@ jobs:
     name: Build and run tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: '16'
+          registry-url: 'https://npm.pkg.github.com'
+          cache: 'yarn'
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - name: Run tests
         run: yarn test
+      - name: Build application
+        run: yarn build
       - name: Login to GitHub Docker Registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -34,11 +40,11 @@ jobs:
 
   deploy-to-dev-gcp:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/master' || 'refs/heads/fix_produser_doc'
+    if: github.ref == 'refs/heads/master' || 'refs/heads/breadcrumbs'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
@@ -53,7 +59,7 @@ jobs:
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: nais/deploy/actions/deploy@v1
         env:
           DEPLOY_SERVER: deploy.nais.io:443
@@ -68,7 +74,7 @@ jobs:
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
