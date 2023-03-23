@@ -1,20 +1,14 @@
 import { PageBanner } from '../PageBanner/PageBanner';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { PROD_URL } from '../../utils/konstanter';
 import { BodyShort } from '@navikt/ds-react';
 import styles from './Layout.module.css';
 import classNames from 'classnames';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
-import { useCookies } from 'react-cookie';
-import { sendIaTjenesterMetrikker } from '../../utils/ia-tjeneste-metrikker';
-import {
-    cookiesIApplikasjon,
-    hentReferrerUrlFraCookies,
-    SamtalestøtteCookies,
-} from '../../utils/cookiesUtils';
+import { useSendIaTjenesterMetrikker } from '../../utils/useSendIaTjenesteMetrikker';
 
-export const Layout = ( props: {
+export const Layout = (props: {
     title: string;
     isFrontPage: boolean;
     logEvent: (eventName: string, data?: any) => Promise<any>;
@@ -22,29 +16,14 @@ export const Layout = ( props: {
     children: React.ReactChild[];
 }) => {
     const layoutContentRef = useRef<HTMLDivElement>(null);
-    const [cookies, setCookies] = useCookies(cookiesIApplikasjon);
-
-    useEffect(() => {
-        let usikkerRefUrl: string | null | undefined;
-        if (window !== undefined) {
-            if (new URLSearchParams(window.location.search).get('referer') !== null) {
-                usikkerRefUrl = new URLSearchParams(window.location.search).get('referer');
-            } else {
-                usikkerRefUrl = hentReferrerUrlFraCookies(cookies);
-            }
-        }
-    }, []);
+    const sendIaMetrikk = useSendIaTjenesterMetrikker();
 
     function loggUtskriftsklikk() {
         props.logEvent('knapp', {
             label: 'skriv-ut',
             funksjon: 'skriv-ut',
         });
-        sendIaTjenesterMetrikker(
-            cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.orgnr,
-            cookies[SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER]?.sendtStatistikk,
-            setCookies
-        );
+        sendIaMetrikk();
     }
 
     return (

@@ -40,7 +40,7 @@ jobs:
 
   deploy-to-dev-gcp:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/master' || 'refs/heads/breadcrumbs'
+    if: github.ref == 'refs/heads/master' || 'refs/heads/metrikker'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:

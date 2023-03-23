@@ -1,18 +1,14 @@
-import {FunctionComponent, ReactNode, useEffect, useRef, useState} from 'react';
-import {Accordion} from '@navikt/ds-react';
-import {Expand} from '@navikt/ds-icons';
+import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
+import { Accordion } from '@navikt/ds-react';
+import { Expand } from '@navikt/ds-icons';
 import classNames from 'classnames';
 import Lest from '../Ikoner/Lest';
-import {getStickyHeaderOffset, onLukkScroll} from '../../utils/scrollUtils';
+import { getStickyHeaderOffset, onLukkScroll } from '../../utils/scrollUtils';
 import styles from './EkspanderbartInfopanel.module.css';
-import {sendIaTjenesterMetrikker} from '../../utils/ia-tjeneste-metrikker';
-import {useCookies} from 'react-cookie';
-import {cookiesIApplikasjon, SamtalestøtteCookies} from '../../utils/cookiesUtils';
-import {logPanelÅpnetEvent} from "../../amplitude/amplitude";
+import { logPanelÅpnetEvent } from '../../amplitude/amplitude';
+import { useSendIaTjenesterMetrikker } from '../../utils/useSendIaTjenesteMetrikker';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
-
-export type EkspanderbartCallback = (panelLestSituasjon: PanelLestSituasjon) => any;
 
 export interface EkspanderbartInfopanelProps {
     children: ReactNode;
@@ -31,7 +27,6 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const [erLest, setErLest] = useState<boolean>(false);
     const [panelKnapp, setPanelKnapp] = useState<HTMLElement | null>(null);
     const [hovedMeny, setHovedMeny] = useState<HTMLElement | null>(null);
-    const [cookies, setCookies] = useCookies(cookiesIApplikasjon);
 
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
 
@@ -39,20 +34,19 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
 
     const accordionRef = useRef<HTMLButtonElement>(null);
 
+    const sendIaTjenesteMetrikk = useSendIaTjenesterMetrikker();
+
     const settFokusTilSisteAktivePanel = () => {
-            accordionRef?.current?.focus();
+        accordionRef?.current?.focus();
     };
 
     useEffect(() => {
         const timer = setTimeout(async () => {
-            erÅpen && props.panelLestSituasjon !== 'lest' && setErLest(true);
-            erÅpen && (await logPanelÅpnetEvent(props.unikId, props.tittel));
-            erÅpen &&
-            sendIaTjenesterMetrikker(
-                cookies[SamtalestøtteCookies.SAMTALESTØTTE_PODLET]?.orgnr,
-                cookies[SamtalestøtteCookies.SAMTALESTØTTE_ARBEIDSGIVER]?.sendtStatistikk,
-                setCookies
-            );
+            if (erÅpen) {
+                props.panelLestSituasjon !== 'lest' && setErLest(true);
+                await logPanelÅpnetEvent(props.unikId, props.tittel);
+                sendIaTjenesteMetrikk();
+            }
         }, 500);
         return () => clearTimeout(timer);
     }, [erÅpen]);
@@ -84,8 +78,14 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                         className={classNames(styles.panel, { [styles.borderBottom]: erÅpen })}
                     >
                         <div className={classNames(styles.flexContainer)}>
-                            <div className={classNames(styles.grid, { [styles.gridWithIcon]: hasIcon })}>
-                                {hasIcon && <div className={styles.ikonContainer}>{props.ikon}</div>}
+                            <div
+                                className={classNames(styles.grid, {
+                                    [styles.gridWithIcon]: hasIcon,
+                                })}
+                            >
+                                {hasIcon && (
+                                    <div className={styles.ikonContainer}>{props.ikon}</div>
+                                )}
                                 <div className={styles.tittelTekst}>{props.tittel}</div>
                                 {erLest && <Lest width={'62px'} height={'24px'} />}
                             </div>

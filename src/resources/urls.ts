@@ -23,42 +23,4 @@ export const ENKLE_TIPS_FOR_DIGITALE_SAMTALER =
 export const GJENNOMFOR_SAMTALEN = '#GjennomforSamtalen';
 export const ARBEIDSGIVERLOS_ANSATTE_SOM_SLITTER_PSYKISK =
     'https://www.nav.no/no/nav-og-samfunn/samarbeid/arbeid-og-psykisk-helse/hva-er-en-arbeidsgiverlos';
-export const FILM_OM_PSYKISK_HELSE = 'https://vimeo.com/626190972';
 export const IDEBANKEN_PSYKISK_HELSE = 'https://mag.idebanken.org/psykisk-helse/';
-
-
-export type ReferrerUrl = string | undefined;
-export type ReferrerApplikasjon =
-    | 'oppfolgingsplanarbeidsgiver'
-    | 'forebygge-sykefravaer'
-    | 'sykefravarsstatistikk'
-    | 'UKJENT_REFERRER'
-    | undefined;
-
-export const getReferrerUrlFraUrlMedQueryParameter = (
-    urlMedReferrerSomQueryParameter: string
-): ReferrerUrl => {
-    return urlMedReferrerSomQueryParameter.split(/(?:referer|referrer)=/)?.[1];
-};
-
-const kjenteApplikasjoner: string[] = [
-    'oppfolgingsplanarbeidsgiver',
-    'forebygge-sykefravaer',
-    'sykefravarsstatistikk',
-];
-
-export const utleddApplikasjonsnavnFraUrl = (referrerUrl: ReferrerUrl): ReferrerApplikasjon => {
-    if (referrerUrl === undefined) {
-        return undefined;
-    }
-    let resultat: ReferrerApplikasjon = 'UKJENT_REFERRER';
-
-    for (let app of kjenteApplikasjoner) {
-        if (referrerUrl.includes(app)) {
-            resultat = app as ReferrerApplikasjon;
-            break;
-        }
-    }
-
-    return resultat;
-};
