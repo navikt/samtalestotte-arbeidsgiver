@@ -14,10 +14,6 @@ export const useSendIaTjenesterMetrikker: () => () => void = () => {
     const sendtStatistikk = cookies[SAMTALESTOTTE_COOKIE]?.sendtStatistikk;
 
     return () => {
-        console.log('Vi er på første linje i funksjonen');
-        console.log('orgnr er ', orgnr);
-        console.log('send statistikk er ', sendtStatistikk);
-        console.log('cookies er ', cookies);
         if (!kanSendeIaTjenesteMetrikker(sendtStatistikk)) {
             return;
         }
