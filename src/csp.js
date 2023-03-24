@@ -5,7 +5,6 @@ const csp = {
         "'report-sample'",
         "'unsafe-inline'",
         "'unsafe-eval'",
-        'www.google-analytics.com',
         'www.googletagmanager.com',
         'static.hotjar.com',
         'script.hotjar.com',
@@ -37,15 +36,12 @@ const csp = {
         'api.puzzel.com',
         'nav.boost.ai',
         'sentry.gc.nav.no',
-        'www.google-analytics.com',
-        "ta-survey-v2.herokuapp.com",
     ],
     'font-src': ['data:', '*.psplugin.com', '*.hotjar.com', 'fonts.gstatic.com', 'www.nav.no'],
     'frame-src': ['vars.hotjar.com', '*.nav.no'],
     'img-src': [
         "'self'",
         '*.hotjar.com',
-        'www.google-analytics.com',
         'www.gstatic.com',
         'translate.google.com',
         '*.nav.no',
@@ -59,7 +55,7 @@ const csp = {
 };
 
 const stringified = Object.entries(csp)
-    .map((entry) => `${entry[0]} ${entry[1].join(" ")}`)
-    .join("; ");
+    .map((entry) => `${entry[0]} ${entry[1].join(' ')}`)
+    .join('; ');
 
 module.exports = stringified;
