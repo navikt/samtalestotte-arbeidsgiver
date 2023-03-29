@@ -1,7 +1,7 @@
 export const OKONOMISKE_VIRKEMIDLER =
     'https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegging';
 export const OPPFOLGNINGSPLAN =
-    'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/oppfolgingsplan_kap';
+    'https://www.nav.no/arbeidsgiver/oppfolgingsplan';
 export const FOLGE_OPP_TILRETTELEGGING =
     'https://www.nav.no/no/bedrift/oppfolging/sykmeldt-arbeidstaker/relatert-informasjon/slik-folger-du-opp-sykmeldte/tilrettelegging_kap';
 export const NETTKURS = 'https://vimeo.com/showcase/8652435/video/573965951';
