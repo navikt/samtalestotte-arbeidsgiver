@@ -38,7 +38,7 @@ jobs:
         run: |
           docker build . -t ${IMAGE} && docker push ${IMAGE}
 
-  deploy-to-dev-gcp:
+  deploy-to-dev:
     name: Deploy to dev-gcp
     if: github.ref == 'refs/heads/master' || 'refs/heads/metrikker'
     needs: compile-test-and-build
@@ -50,25 +50,23 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           VAR: version=${{ env.IMAGE }}
-          RESOURCE: nais/dev-gcp.yaml
-          PRINT_PAYLOAD: true
+          RESOURCE: nais/dev.yaml
 
-  deploy-to-labs-gcp:
-    name: Deploy to labs-gcp
-    if: github.ref == 'refs/heads/master'
+  deploy-to-ekstern-dev:
+    name: Deploy to dev-gcp (ekstern)
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/ekstern-dev'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: nais/deploy/actions/deploy@v1
         env:
-          DEPLOY_SERVER: deploy.nais.io:443
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: labs-gcp
+          CLUSTER: dev-gcp
           VAR: version=${{ env.IMAGE }}
-          RESOURCE: nais/labs-gcp.yaml
-          PRINT_PAYLOAD: true
-  deploy-to-prod-gcp:
+          RESOURCE: nais/ekstern.dev.yaml
+
+  deploy-to-prod:
     name: Deploy to prod-gcp
     if: github.ref == 'refs/heads/master'
     needs: compile-test-and-build
@@ -80,5 +78,4 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-gcp
           VAR: version=${{ env.IMAGE }}
-          RESOURCE: nais/prod-gcp.yaml
-          PRINT_PAYLOAD: true
+          RESOURCE: nais/prod.yaml

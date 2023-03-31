@@ -10,18 +10,16 @@ spec:
   team: arbeidsgiver
   port: 3000
   env:
-    - name: ENVIRONMENT
-      value: prod-gcp
     - name: AUTH_URL
-      value: https://www.nav.no/person/nav-dekoratoren-api/auth
+      value: https://www.dev.nav.no/person/nav-dekoratoren-api/auth
     - name: MINSIDE_ARBEIDSGIVER_URL
-      value: https://arbeidsgiver.nav.no/min-side-arbeidsgiver
+      value: https://arbeidsgiver.ekstern.dev.nav.no/min-side-arbeidsgiver
     - name: FOREBYGGE_FRAVAR_URL
-      value: https://arbeidsgiver.nav.no/forebygge-fravar
+      value: https://forebygge-fravar.ekstern.dev.nav.no/forebygge-fravar
     - name: SAMTALESTOTTE_URL
-      value: https://arbeidsgiver.nav.no/samtalestotte
+      value: https://arbeidsgiver.ekstern.dev.nav.no/samtalestotte
   ingresses:
-    - https://arbeidsgiver.nav.no/samtalestotte
+    - https://arbeidsgiver.ekstern.dev.nav.no/samtalestotte
   liveness:
     path: /samtalestotte/api/isAlive
     initialDelay: 10
@@ -31,5 +29,4 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: dekoratoren.nav.no
-        - host: www.nav.no
+        - host: dekoratoren.dev.nav.no
