@@ -22,10 +22,6 @@ class _document extends Document<{ decorator: Components }> {
         const breadcrumbs = getBreadcrumbs(envUrls);
         const decoratorParams = getDecoratorParams(decoratorEnv, breadcrumbs);
 
-        console.log('decoratorEnv: ', decoratorEnv);
-        console.log('decoratorParams.env: ', decoratorParams.env);
-        console.log('decoratorParams.breadcrumbs: ', decoratorParams.breadcrumbs);
-
         const decorator = await fetchDecoratorReact(decoratorParams);
 
         return { ...initialProps, decorator };
