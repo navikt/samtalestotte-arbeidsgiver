@@ -29,4 +29,4 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: dekoratoren.dev.nav.no
+        - host: dekoratoren.ekstern.dev.nav.no
