@@ -14,7 +14,7 @@ const getDecoratorParams = (environment: Env, breadcrumbs: Props['breadcrumbs'])
 });
 
 class _document extends Document<{ decorator: Components }> {
-    static async getServerSideProps(ctx: DocumentContext) {
+    static async getInitialProps(ctx: DocumentContext) {
         const initialProps = await Document.getInitialProps(ctx);
 
         const decoratorEnv = getDecoratorEnv();
