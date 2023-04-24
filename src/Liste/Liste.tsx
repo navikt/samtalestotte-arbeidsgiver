@@ -4,6 +4,7 @@ import React from 'react';
 
 interface Props {
     className?: string;
+    children: any;
 }
 
 const Element: React.FC<Props> = (props) => (
