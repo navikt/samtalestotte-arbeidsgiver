@@ -5,6 +5,7 @@ import classNames from 'classnames';
 
 export const InfoBoks: React.FC<{
     overskrift?: string;
+    children: any;
 }> = (props) => (
     <div
         className={classNames(
