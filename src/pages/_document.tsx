@@ -1,26 +1,16 @@
-import Document, {
-    Html,
-    Head,
-    Main,
-    NextScript,
-    DocumentContext,
-} from "next/document";
-import {
-    Components,
-    Env,
-    fetchDecoratorReact,
-    Props,
-} from "@navikt/nav-dekoratoren-moduler/ssr";
-import React from "react";
-import {getBreadcrumbs} from "../utils/innloggetStatus";
-import {getUrlsFromEnv} from "../utils/envUtils";
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import { Components, Env, fetchDecoratorReact, Props } from '@navikt/nav-dekoratoren-moduler/ssr';
+import React from 'react';
+import { getBreadcrumbs } from '../utils/innloggetStatus';
+import { getUrlsFromEnv } from '../utils/envUtils';
 
-const getDecoratorEnv = () => process.env.ENVIRONMENT === "prod-gcp" ? "prod" : "dev" as Exclude<Env, "localhost">
+const getDecoratorEnv = () =>
+    process.env.NAIS_CLUSTER_NAME === 'prod-gcp' ? 'prod' : ('dev' as Exclude<Env, 'localhost'>);
 
-const getDecoratorParams = (environment: Env, breadcrumbs: Props["breadcrumbs"]): Props =>({
+const getDecoratorParams = (environment: Env, breadcrumbs: Props['breadcrumbs']): Props => ({
     env: environment,
-    context: "arbeidsgiver",
-    breadcrumbs: breadcrumbs
+    context: 'arbeidsgiver',
+    breadcrumbs: breadcrumbs,
 });
 
 class _document extends Document<{ decorator: Components }> {
@@ -47,12 +37,12 @@ class _document extends Document<{ decorator: Components }> {
                 <Styles />
                 <Scripts />
                 <body>
-                <Header />
-                <div id="app" className="app">
-                    <Main />
-                </div>
-                <Footer />
-                <NextScript />
+                    <Header />
+                    <div id="app" className="app">
+                        <Main />
+                    </div>
+                    <Footer />
+                    <NextScript />
                 </body>
             </Html>
         );

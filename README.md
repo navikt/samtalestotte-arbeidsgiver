@@ -32,7 +32,7 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 
 - i prod: https://arbeidsgiver.nav.no/samtalestotte
 - Dev-miljøer:
-  - i labs-miljø: https://arbeidsgiver.labs.nais.io/samtalestotte
+  - i dev-miljø åpent for eksterne, med mock-data: https://arbeidsgiver.ekstern.dev.nav.no/samtalestotte
   - i dev-miljø: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte -- trenger #naisdevice kjørende
     se https://doc.nais.io/device/install/ for info om det
 
