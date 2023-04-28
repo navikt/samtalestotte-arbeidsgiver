@@ -33,6 +33,9 @@ yarn-error.log*
 # idea
 /.idea
 
+# vsCode
+/.vscode
+
 # auto-genererte dokumenter
 /public/*.docx
 /public/*.txt

@@ -22,7 +22,9 @@ const LoggbarLenke: FunctionComponent<LoggbarLenkeProps> = ({
         }
     };
     return (
-        <Link onClick={() => logLenke(href, children)} href={href} className={className}>
+        <Link
+            //onClick={() => logLenke(href, children)}
+            href={href} className={className}>
             {children}
         </Link>
     );

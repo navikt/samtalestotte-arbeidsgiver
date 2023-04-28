@@ -107,11 +107,6 @@ const TipsOmTilrettelegging = (props: InfoPanelProps) => {
                             <LoggbarLenke href={NETTKURS}>Gå til nettkurs.</LoggbarLenke>
                         </Liste.Element>
                         <Liste.Element>
-                            <LoggbarLenke href={FOLGE_OPP_TILRETTELEGGING}>
-                                Les mer om tilrettelegging i sykefraværsoppfølging
-                            </LoggbarLenke>
-                        </Liste.Element>
-                        <Liste.Element>
                             <LoggbarLenke href={OKONOMISKE_VIRKEMIDLER}>
                                 Les mer om NAVs støtteordninger ved tilrettelegging for ansatte
                             </LoggbarLenke>

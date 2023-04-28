@@ -1,5 +1,5 @@
 export const OKONOMISKE_VIRKEMIDLER =
-    'https://arbeidsgiver.nav.no/veiviserarbeidsgiver/tilrettelegging';
+    'https://www.nav.no/arbeidsgiver/redusere-sykefravar#enkeltansatt'
 export const OPPFOLGNINGSPLAN =
     'https://www.nav.no/arbeidsgiver/oppfolgingsplan';
 export const FOLGE_OPP_TILRETTELEGGING =
@@ -14,7 +14,7 @@ export const KVALITETEN_PAA_SYKEFRAVAERSRUTINENE =
     'https://www.idebanken.org/kloke-grep/artikler/sjekk-kvaliteten-pa-sykefravaersrutinene';
 export const DEN_VIKTIGE_SAMTALEN = 'https://mag.idebanken.org/denviktigesamtalen/';
 export const KONTAKT_OSS = 'https://arbeidsgiver.nav.no/kontakt-oss/';
-export const FOREBYGGE_SYKEFRAVAER = 'https://arbeidsgiver.nav.no/forebygge-sykefravaer/';
+export const FOREBYGGE_SYKEFRAVAER = 'https://www.nav.no/arbeidsgiver/redusere-sykefravar';
 
 export const GODE_GREP_FOR_AA_BYGGE_RELASJONER =
     '#ekspanderbart-infopanel__godeGrepForAByggeRelasjoner-base';
