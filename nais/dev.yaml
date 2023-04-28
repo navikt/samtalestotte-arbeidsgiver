@@ -13,13 +13,13 @@ spec:
     - name: AUTH_URL
       value: https://www.dev.nav.no/person/nav-dekoratoren-api/auth
     - name: MINSIDE_ARBEIDSGIVER_URL
-      value: https://arbeidsgiver-q.nav.no/min-side-arbeidsgiver
+      value: https://min-side-arbeidsgiver.intern.dev.nav.no/min-side-arbeidsgiver
     - name: FOREBYGGE_FRAVAR_URL
-      value: https://forebygge-fravar.dev.nav.no/forebygge-fravar
+      value: https://forebygge-fravar.intern.dev.nav.no/forebygge-fravar
     - name: SAMTALESTOTTE_URL
-      value: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte
+      value: https://samtalestotte.intern.dev.nav.no/samtalestotte
   ingresses:
-    - https://arbeidsgiver-gcp.dev.nav.no/samtalestotte
+    - https://samtalestotte.intern.dev.nav.no/samtalestotte
   liveness:
     path: /samtalestotte/api/isAlive
     initialDelay: 10

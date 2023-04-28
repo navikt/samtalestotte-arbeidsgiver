@@ -38,7 +38,7 @@ const getIaTjenesterMetrikkerUrl = () => {
         case 'arbeidsgiver.nav.no':
             return 'https://arbeidsgiver.nav.no/ia-tjenester-metrikker';
         default:
-            return 'https://ia-tjenester-metrikker.dev.intern.nav.no';
+            return 'https://ia-tjenester-metrikker.intern.dev.nav.no/ia-tjenester-metrikker';
     }
 };
 
