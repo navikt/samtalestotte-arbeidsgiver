@@ -1,50 +1,34 @@
 import React from 'react';
-import ReactDOM, {unmountComponentAtNode} from 'react-dom';
+import {unmountComponentAtNode} from 'react-dom';
 import {act} from 'react-dom/test-utils';
 import LoggbarLenke from '../../../src/felleskomponenter/LoggbarLenke/LoggbarLenke';
 import logEvent from '../../../src/amplitude/amplitude';
+import {createRoot} from "react-dom/client";
+import {waitFor} from "@testing-library/dom";
+import {render} from '@testing-library/react'
 
 jest.mock("../../../src/amplitude/amplitude", () => jest.fn());
 
 let container: HTMLDivElement | null;
 
-beforeEach(() => {
-    container = document.createElement('div');
-    document.body.appendChild(container);
-});
+test('Should call logEvent when clicked',async () => {
+    const container = render(
+        <LoggbarLenke href={"mockHrefTil"} className={'loggbarlenkeTest'} data-testid='loggbar-lenke'>
+            TestText
+        </LoggbarLenke>
+    );
 
-afterEach(() => {
-    if (container !== null) {
-        unmountComponentAtNode(container);
-        container.remove();
-        container = null;
-    }
-});
-
-test('Should call logEvent when clicked', () => {
-    if (container === null) {
-        fail();
-    }
+    const lenke = container.getByRole('link');
 
     act(() => {
-        ReactDOM.render(
-            <LoggbarLenke href={"mockHrefTil"} className={'loggbarlenkeTest'}>
-                TestText
-            </LoggbarLenke>,
-            container
-        );
+        lenke.dispatchEvent(new MouseEvent('click', {bubbles: true}));
     });
-
-    const lenkeTag = container.getElementsByTagName('a')[0];
-
-    act(() => {
-        lenkeTag?.dispatchEvent(new MouseEvent('click', {bubbles: true}));
-    });
-
-    expect(logEvent).toBeCalledTimes(1)
-    expect(logEvent).toBeCalledWith('navigere', {
-        destinasjon: 'mockHrefTil',
-        lenketekst: 'TestText',
+    await waitFor(()=> {
+        expect(logEvent).toBeCalledTimes(1)
+        expect(logEvent).toBeCalledWith('navigere', {
+            destinasjon: 'mockHrefTil',
+            lenketekst: 'TestText',
+        })
     })
 })
 
