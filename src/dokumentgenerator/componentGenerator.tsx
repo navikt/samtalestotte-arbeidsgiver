@@ -180,12 +180,12 @@ const mapDownloadButtons = (title: ReactNode) => {
             {title}
             <LastNedKnapp
                 knappetekst="Last ned i Word"
-                href="/samtalestotte/Samtalestøtte-Arbeidsgiver.docx"
+                href="/samtalestotte/dokumenter/Samtalestøtte-Arbeidsgiver.docx"
                 label="last-ned-docx"
             />
             <LastNedKnapp
                 knappetekst="Last ned i .txt"
-                href="/samtalestotte/Samtalestøtte-Arbeidsgiver.txt"
+                href="/samtalestotte/dokumenter/Samtalestøtte-Arbeidsgiver.txt"
                 label="last-ned-txt"
             />
         </div>
