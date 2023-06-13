@@ -1,3 +1,0 @@
-# Ekskluderer de pregenererte dokumentene fra søkemotorkrypere
-User-agent: *
-Disallow: /dokumenter/

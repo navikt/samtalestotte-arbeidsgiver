@@ -45,6 +45,15 @@ module.exports = {
                         },
                     ],
                 },
+                {
+                    source: '/dokumenter/:path*',
+                    headers: [
+                        {
+                            key: 'X-Robots-Tag',
+                            value: 'noindex'
+                        }
+                    ]
+                }
             ];
         },
 };
