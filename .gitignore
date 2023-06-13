@@ -37,8 +37,8 @@ yarn-error.log*
 /.vscode
 
 # auto-genererte dokumenter
-/public/*.docx
-/public/*.txt
+/public/dokumenter/*.docx
+/public/dokumenter/*.txt
 
 # Kompilerte scripts
 /scripts/dist
