@@ -16,6 +16,11 @@ module.exports = {
     async redirects() {
         return [
             {
+                /*
+                * Redirect for å lede de døde lenkene til dokumentene våre til hovedsiden.
+                * Matcher '/something.docx', men ikke '/dokumenter/something.docx' som er de
+                * levende lenkene til dokumentene våre.
+                */
                 source: '/:path(^[^\\/]+\\.docx$)',
                 destination: '/',
                 permanent: true,
