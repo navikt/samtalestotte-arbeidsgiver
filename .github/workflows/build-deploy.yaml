@@ -40,7 +40,7 @@ jobs:
 
   deploy-to-dev:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/master' || 'refs/heads/metrikker'
+    if: github.ref == 'refs/heads/master' || 'refs/heads/redirect-gamle-docx'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
@@ -54,7 +54,7 @@ jobs:
 
   deploy-to-ekstern-dev:
     name: Deploy to dev-gcp (ekstern)
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/ekstern-dev'
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/redirect-gamle-docx'
     needs: compile-test-and-build
     runs-on: ubuntu-latest
     steps:
