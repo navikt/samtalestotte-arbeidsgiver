@@ -21,7 +21,7 @@ module.exports = {
                 * Matcher '/something.docx', men ikke '/dokumenter/something.docx' som er de
                 * levende lenkene til dokumentene våre.
                 */
-                source: '/:path(^[^\\/]+\\.docx$)',
+                source: '/([^\\/]+\\.docx)',
                 destination: '/',
                 permanent: true,
             },
