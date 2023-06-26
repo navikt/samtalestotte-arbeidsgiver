@@ -1,3 +1,7 @@
+import { toHaveNoViolations } from "jest-axe";
+
+expect.extend(toHaveNoViolations);
+
 // @ts-ignore
 jest.mock("react-collapse", () => {
     return {

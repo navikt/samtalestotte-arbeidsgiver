@@ -5,11 +5,22 @@ import LoggbarLenke from '../../../src/felleskomponenter/LoggbarLenke/LoggbarLen
 import logEvent from '../../../src/amplitude/amplitude';
 import {createRoot} from "react-dom/client";
 import {waitFor} from "@testing-library/dom";
-import {render} from '@testing-library/react'
+import {render} from '@testing-library/react';
+import { axe } from 'jest-axe';
 
 jest.mock("../../../src/amplitude/amplitude", () => jest.fn());
 
 let container: HTMLDivElement | null;
+
+test('uu-feil fra axe', async () => {
+    const {container} = render(
+        <LoggbarLenke href={"mockHrefTil"} className={'loggbarlenkeTest'} data-testid='loggbar-lenke'>
+            TestText
+        </LoggbarLenke>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+});
 
 test('Should call logEvent when clicked',async () => {
     const container = render(
