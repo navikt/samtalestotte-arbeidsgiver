@@ -57,7 +57,7 @@ const mapComponents = (elements: (string | object)[]): string => {
         .join('');
 };
 
-const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) => {
+const mapText = (content: string, bold = false, lineBreak = 0) => {
     return bold ? `${'\n'.repeat(lineBreak)}**${content}**` : `${'\n'.repeat(lineBreak)}${content}`;
 };
 

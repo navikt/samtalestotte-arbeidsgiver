@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 export const InfoBoks: React.FC<{
     overskrift?: string;
-    children: any;
+    children: React.ReactNode;
 }> = (props) => (
     <div
         className={classNames(

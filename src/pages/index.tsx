@@ -21,7 +21,7 @@ const TITLE = 'Samtalestøtte for arbeidsgiver';
 const Home = (props: HomeProps) => {
     useEffect(() => {
         setSamtalestotteBreadcrumbs(props.urls);
-    }, []);
+    });
 
     return (
         <div>

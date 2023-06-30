@@ -49,6 +49,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
             }
         }, 500);
         return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [erÅpen]);
 
     useEffect(() => {
@@ -58,6 +59,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     useEffect(() => {
         setPanelKnapp(document.getElementById(panelknappID));
         setHovedMeny(document.getElementById('hovedmeny'));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const innhold = (

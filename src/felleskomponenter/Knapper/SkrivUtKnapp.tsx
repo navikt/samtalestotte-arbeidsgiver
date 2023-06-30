@@ -8,8 +8,9 @@ import styles from './SkrivUtKnapp.module.css'
 
 export const SkrivUtKnapp = (props: {
     knappetekst: string;
-    utskriftsinnholdRef: any;
-    kjørFørUtskrift: () => any;
+    utskriftsinnholdRef: React.RefObject<HTMLElement>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    kjørFørUtskrift: () => void | Promise<any>;
     wrapperClassnames: string[];
 }) => {
     const knapperef = useRef<HTMLButtonElement>(null);

@@ -1,11 +1,10 @@
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import ChatDoubleBubble from '../../felleskomponenter/Ikoner/ChatDoubleBubble';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import classNames from 'classnames';
 import { Liste } from '../../Liste/Liste';
 
-const NaarKanEnSamtaleVaereAktuelt = (props: InfoPanelProps) => {
+const NaarKanEnSamtaleVaereAktuelt = () => {
     return (
         <EkspanderbartInfopanel
             unikId={'naarKanEnsamtaleVaereAktuelt'}

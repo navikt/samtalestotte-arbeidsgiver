@@ -1,7 +1,5 @@
-import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import {
-    FOLGE_OPP_TILRETTELEGGING,
     NETTKURS,
     OKONOMISKE_VIRKEMIDLER,
     SLIK_LYKKES_DERE,
@@ -14,7 +12,7 @@ import classNames from 'classnames';
 import { Liste } from '../../Liste/Liste';
 import { InfoBoks } from '../../felleskomponenter/InfoBoks/InfoBoks';
 
-const TipsOmTilrettelegging = (props: InfoPanelProps) => {
+const TipsOmTilrettelegging = () => {
     return (
         <EkspanderbartInfopanel
             unikId={'tipsOmTilrettelegging'}
