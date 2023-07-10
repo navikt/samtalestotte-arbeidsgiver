@@ -39,7 +39,7 @@ test('Should expand and display innhold when clicked', () => {
     let head = container?.getElementsByClassName('navds-accordion__header').item(0);
     let body = container?.getElementsByClassName('navds-accordion__content').item(0);
 
-    expect(body).toBeNull();
+    expect(body?.className).toContain('navds-accordion__content--closed');
 
     act(() => {
         if (head !== null) {
@@ -52,6 +52,7 @@ test('Should expand and display innhold when clicked', () => {
     body = container?.getElementsByClassName('navds-accordion__content').item(0);
 
     expect(body?.textContent).toBe('Test ChildLukk dette panelet');
+    expect(body?.className).not.toContain('navds-accordion__content--closed');
 
     act(() => {
         if (head !== null) {
@@ -63,5 +64,5 @@ test('Should expand and display innhold when clicked', () => {
 
     body = container?.getElementsByClassName('navds-accordion__content').item(0);
 
-    expect(body).toBeNull();
+    expect(body?.className).toContain('navds-accordion__content--closed');
 });

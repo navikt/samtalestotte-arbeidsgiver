@@ -31,9 +31,6 @@ export default function LastNedKnapp(props: {
                 styles.downloadButtonStyle,
                 'navds-button',
                 `navds-button--secondary`,
-                `navds-button--s`,
-                'navds-body-short',
-                'navds-body--s'
             )}
             href={props.href}
             download={download}

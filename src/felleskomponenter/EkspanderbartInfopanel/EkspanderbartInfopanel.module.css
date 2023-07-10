@@ -74,6 +74,10 @@
   margin: 0;
   border: 1px solid;
   border-radius: 4px;
+  box-shadow: none !important;
+  background-color: var(--a-bg-default);
+  align-items: center;
+  color: var(--a-text-action);
 }
 
 .panel:hover:not(:focus) {
@@ -87,6 +91,7 @@
   border: 1px solid;
   border-top: none;
   border-radius: 4px;
+  background-color: var(--a-bg-default);
 }
 
 .borderBottom > button {

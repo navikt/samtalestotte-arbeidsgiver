@@ -1,13 +1,13 @@
 .backgroundStyle {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background: var(--navds-global-color-blue-100);
-  border-radius: 10px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: var(--a-blue-100);
+    border-radius: 10px;
 }
 /*--screen-sm-min*/
 @media (min-width: 768px) {
   .backgroundStyle{
-    padding-right: 3rem;
-    padding-left: 3rem;
-  }
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
 }
