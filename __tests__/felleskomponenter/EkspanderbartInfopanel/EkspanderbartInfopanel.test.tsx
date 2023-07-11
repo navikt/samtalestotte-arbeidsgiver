@@ -36,10 +36,10 @@ test('Should expand and display innhold when clicked', () => {
         );
     });
 
-    let head = container?.getElementsByClassName('navds-accordion__header').item(0);
-    let body = container?.getElementsByClassName('navds-accordion__content').item(0);
+    let head = container?.getElementsByClassName('navds-expansioncard__header-button').item(0);
+    let body = container?.getElementsByClassName('navds-expansioncard__content').item(0);
 
-    expect(body?.className).toContain('navds-accordion__content--closed');
+    expect(body?.className).toContain('navds-expansioncard__content--closed');
 
     act(() => {
         if (head !== null) {
@@ -49,10 +49,10 @@ test('Should expand and display innhold when clicked', () => {
         }
     });
 
-    body = container?.getElementsByClassName('navds-accordion__content').item(0);
+    body = container?.getElementsByClassName('navds-expansioncard__content').item(0);
 
     expect(body?.textContent).toBe('Test ChildLukk dette panelet');
-    expect(body?.className).not.toContain('navds-accordion__content--closed');
+    expect(body?.className).not.toContain('navds-expansioncard__content--closed');
 
     act(() => {
         if (head !== null) {
@@ -62,7 +62,7 @@ test('Should expand and display innhold when clicked', () => {
         }
     });
 
-    body = container?.getElementsByClassName('navds-accordion__content').item(0);
+    body = container?.getElementsByClassName('navds-expansioncard__content').item(0);
 
-    expect(body?.className).toContain('navds-accordion__content--closed');
+    expect(body?.className).toContain('navds-expansioncard__content--closed');
 });
