@@ -1,12 +1,13 @@
 .layoutWrapper {
   min-height: 50rem;
   padding: 1.5rem 0 5rem;
+  background-color: var(--a-gray-100);
 }
 
 .layoutContent {
   max-width: 50rem;
   background-color: white;
-  padding: 0;
+  padding: 3rem 0 3rem;
   margin: auto;
   border-radius: 0.25rem;
 }

@@ -9,7 +9,7 @@ import { Liste } from '../../Liste/Liste';
 const HvorforBrukeTidPaaSamtaler = ({ className }: { className?: string }) => {
     return (
         <section className={className}>
-            <Heading size={'large'} level={'2'} className={fellesStiler.marginTop3Rem}>
+            <Heading size={'large'} level={'2'}>
                 Hvorfor bruke tid på samtaler?
             </Heading>
             <p className={classNames(fellesStiler.marginBottom2Rem)}>
