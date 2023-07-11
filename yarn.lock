@@ -1507,7 +1507,7 @@
   resolved "https://npm.pkg.github.com/download/@navikt/aksel-icons/4.6.1/b3c207959b55ef8e043758e4b42851f25d96868c#b3c207959b55ef8e043758e4b42851f25d96868c"
   integrity sha512-qMUt5oxBfur4LpRbGn0v154OvIn4Z27veIruSxYmLm++EvBhS9CeJtwzjDUQhzqH3ixgn5MDN2YZ/sMVQPlI0Q==
 
-"@navikt/ds-css@^0.14.2":
+"@navikt/ds-css@^4.6.1":
   version "4.6.1"
   resolved "https://npm.pkg.github.com/download/@navikt/ds-css/4.6.1/31e1cb6d8c5be36aa20d1e181cd76597caef5156#31e1cb6d8c5be36aa20d1e181cd76597caef5156"
   integrity sha512-5ySUuoKrcRMSvIqcfQSHFeW/NDpnz9M3SIUTXfty7t5BE/lFPnf7DEMOqZ6cHfKxpy7ozKPCbaKZwgxYFXiFsQ==
