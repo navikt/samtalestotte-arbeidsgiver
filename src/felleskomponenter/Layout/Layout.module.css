@@ -12,24 +12,6 @@
   border-radius: 0.25rem;
 }
 
-.layoutSmallScreenIllustration {
-  display: flex;
-  justify-content: center;
-  background: var(--navds-global-color-blue-100);
-  margin: 1rem 0 3rem;
-}
-
-.layoutSmallScreenIllustration svg {
-    flex-shrink: 0;
-}
-
-/*--screen-sm-min*/
-@media (min-width: 768px) {
-  .layoutSmallScreenIllustration {
-    display: none;
-  }
-}
-
 .layoutPrintHeader {
   display: none;
 }
