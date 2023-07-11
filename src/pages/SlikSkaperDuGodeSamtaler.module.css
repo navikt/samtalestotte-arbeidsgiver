@@ -1,7 +1,7 @@
 .backgroundStyle {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background: var(--a-blue-100);
+    background: var(--a-surface-selected);
     border-radius: 10px;
 }
 /*--screen-sm-min*/
