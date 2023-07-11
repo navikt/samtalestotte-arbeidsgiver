@@ -22,6 +22,14 @@
   row-gap: 12px;
 }
 
+.heading {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /*--screen-sm-min*/
 @media (min-width: 768px) {
   .grid {
@@ -78,6 +86,10 @@
   background-color: var(--a-bg-default);
   align-items: center;
   color: var(--a-text-action);
+}
+
+.panel > span {
+    width: 100%;
 }
 
 .panel:hover:not(:focus) {
