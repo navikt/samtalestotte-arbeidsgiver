@@ -10,8 +10,6 @@ const Suksesskriterier = (props: InfoPanelProps) => {
         <EkspanderbartInfopanel
             tittel={'Suksesskriterier'}
             unikId={'suksesskriterier'}
-            ikon={<Lightbulb width={'44px'} height={'44px'} />}
-            lestIkon={<Lightbulb width={'44px'} height={'44px'} />}
             panelLestSituasjon={'ulest'}
         >
             <Liste>
