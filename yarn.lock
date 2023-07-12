@@ -1512,13 +1512,6 @@
   resolved "https://npm.pkg.github.com/download/@navikt/ds-css/4.6.1/31e1cb6d8c5be36aa20d1e181cd76597caef5156#31e1cb6d8c5be36aa20d1e181cd76597caef5156"
   integrity sha512-5ySUuoKrcRMSvIqcfQSHFeW/NDpnz9M3SIUTXfty7t5BE/lFPnf7DEMOqZ6cHfKxpy7ozKPCbaKZwgxYFXiFsQ==
 
-"@navikt/ds-icons@^0.8.20":
-  version "0.8.20"
-  resolved "https://npm.pkg.github.com/download/@navikt/ds-icons/0.8.20/b3c52f1839929d2e755b1ce6da44b4e02caf6f7e#b3c52f1839929d2e755b1ce6da44b4e02caf6f7e"
-  integrity sha512-ftX5GHpH8WdGXfw94P5M3Nn1Bma/MI3TaL1zlMnXBoqs/lFo6V3BeKNTcGoFTE7mJLJDE8qrcvewCWK2E6pkgw==
-  dependencies:
-    uuid "^8.3.2"
-
 "@navikt/ds-react@^4.6.1":
   version "4.6.1"
   resolved "https://npm.pkg.github.com/download/@navikt/ds-react/4.6.1/69bc85d6d91ddac80698909894cbf83d43573392#69bc85d6d91ddac80698909894cbf83d43573392"

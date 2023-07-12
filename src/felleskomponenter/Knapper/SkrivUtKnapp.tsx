@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import ReactToPrint from 'react-to-print';
 import { Button } from '@navikt/ds-react';
-import { Print } from '@navikt/ds-icons';
-import styles from './SkrivUtKnapp.module.css'
+import { PrinterSmallIcon } from '@navikt/aksel-icons';
+import styles from './SkrivUtKnapp.module.css';
 
 export const SkrivUtKnapp = (props: {
     knappetekst: string;
@@ -27,11 +27,22 @@ export const SkrivUtKnapp = (props: {
                     <Button
                         id={'skriv-ut-knapp'}
                         ref={knapperef}
-                        className={classNames(fellesStiler.noPrint, fellesStiler.knappSomLenke, fellesStiler.marginLeft1Rem)}
+                        className={classNames(
+                            fellesStiler.noPrint,
+                            fellesStiler.knappSomLenke,
+                            fellesStiler.marginLeft1Rem
+                        )}
                         size={'medium'}
                         variant={'secondary'}
+                        icon={
+                            <PrinterSmallIcon
+                                className={fellesStiler.marginRight05Rem}
+                                fontSize="1.75rem"
+                                title={'Utskriftsikon'}
+                            />
+                        }
                     >
-                        <Print className={fellesStiler.marginRight05Rem} title={"Utskriftsikon"}/> {props.knappetekst}
+                        {props.knappetekst}
                     </Button>
                 )}
             />

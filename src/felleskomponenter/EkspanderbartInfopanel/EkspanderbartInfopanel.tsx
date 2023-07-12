@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
 import { ExpansionCard } from '@navikt/ds-react';
-import { Expand } from '@navikt/ds-icons';
+import { ChevronDownIcon } from '@navikt/aksel-icons';
 import classNames from 'classnames';
 import Lest from '../Ikoner/Lest';
 import { onLukkScroll } from '../../utils/scrollUtils';
@@ -80,7 +80,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
                         }}
                     >
                         <span className="navds-body-short">Lukk dette panelet</span>
-                        <Expand className={styles.rotate180} />
+                        <ChevronDownIcon className={styles.rotate180} />
                     </button>
                 </ExpansionCard.Content>
             </ExpansionCard>
