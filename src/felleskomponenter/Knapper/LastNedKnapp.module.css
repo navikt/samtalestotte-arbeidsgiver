@@ -1,27 +1,18 @@
-.downloadButtonStyle{
-  height: 60px;
-  width: 100%;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  text-decoration: none;
-  justify-content: center;
-  padding: 10px 20px 10px 10px;
-  background-color: var(--a-bg-default);
-}
-
-.downloadButtonStyle:hover {
-    background-color: var(--a-surface-action-hover);
-    color: var(--a-text-on-inverted);
-}
-.downloadButtonStyle:hover svg {
-    color: var(--a-text-on-inverted);
+.downloadButtonStyle {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-decoration: none;
+    justify-content: center;
+    padding: 10px 20px 10px 10px;
+    background-color: var(--a-bg-default);
 }
 
 /*--screen-sm-min*/
 @media (min-width: 768px) {
-  .downloadButtonStyle {
-    width: 250px;
-  }
+    .downloadButtonStyle {
+        width: 250px;
+    }
 }
-
