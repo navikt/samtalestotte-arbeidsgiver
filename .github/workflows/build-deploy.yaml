@@ -2,16 +2,16 @@ name: Build, test and deploy
 
 on: [ push ]
 
-env:
-  IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
-
 concurrency:
-  group: build-deploy-on-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  compile-test-and-build:
-    name: Build and run tests
+  build:
+    name: Build
+    permissions:
+      contents: "read"
+      id-token: "write"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,54 +28,55 @@ jobs:
         run: yarn test
       - name: Build application
         run: yarn build
-      - name: Login to GitHub Docker Registry
-        uses: docker/login-action@v2
+      - name: Push to Google Artifact Repository
+        uses: nais/docker-build-push@v0
+        id: docker-push
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push the Docker image
-        run: |
-          docker build . -t ${IMAGE} && docker push ${IMAGE}
+          team: arbeidsgiver
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+    outputs:
+      image: ${{ steps.docker-push.outputs.image }}
+
 
   deploy-to-dev:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/master' || 'refs/heads/redirect-gamle-docx'
-    needs: compile-test-and-build
+    if: github.ref == 'refs/heads/deploy_to_gar'
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: nais/deploy/actions/deploy@v1
         env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
-          VAR: version=${{ env.IMAGE }}
+          IMAGE: ${{ needs.build.outputs.image }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           RESOURCE: nais/dev.yaml
 
   deploy-to-ekstern-dev:
     name: Deploy to dev-gcp (ekstern)
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/redirect-gamle-docx'
-    needs: compile-test-and-build
+    if: github.ref == 'refs/heads/master'
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: nais/deploy/actions/deploy@v1
         env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
-          VAR: version=${{ env.IMAGE }}
+          IMAGE: ${{ needs.build.outputs.image }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           RESOURCE: nais/ekstern-dev.yaml
 
   deploy-to-prod:
     name: Deploy to prod-gcp
     if: github.ref == 'refs/heads/master'
-    needs: compile-test-and-build
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: nais/deploy/actions/deploy@v1
         env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-gcp
-          VAR: version=${{ env.IMAGE }}
+          IMAGE: ${{ needs.build.outputs.image }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           RESOURCE: nais/prod.yaml
