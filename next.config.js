@@ -5,7 +5,7 @@
 const csp = require('./src/csp');
 
 module.exports = {
-    transpilePackages: ['@navikt/ds-react', '@navikt/ds-icons'],
+    transpilePackages: ['@navikt/ds-react'],
     basePath: '/samtalestotte',
     i18n: {
         locales: ['no'],

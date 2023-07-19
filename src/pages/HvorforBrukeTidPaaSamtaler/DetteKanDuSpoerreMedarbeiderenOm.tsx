@@ -1,5 +1,4 @@
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import ChatBubbleCheckmark from '../../felleskomponenter/Ikoner/ChatBubbleCheckmark';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import { Liste } from '../../Liste/Liste';
 import classNames from 'classnames';
@@ -10,8 +9,6 @@ const DetteKanDuSpoerreMedarbeiderenOm = () => {
             unikId={'detteKanDuSpoerreMedarbeiderenOm'}
             tittel={'Dette kan du spørre medarbeideren om'}
             panelLestSituasjon={'ulest'}
-            ikon={<ChatBubbleCheckmark width={'44px'} height={'44px'} />}
-            lestIkon={<ChatBubbleCheckmark width={'44px'} height={'44px'} />}
         >
             <div className={classNames(fellesStiler.marginTop1Rem, fellesStiler.marginBottom2Rem)}>
                 <strong>

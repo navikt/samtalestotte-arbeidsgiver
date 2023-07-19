@@ -10,8 +10,6 @@ const NaarKanEnSamtaleVaereAktuelt = () => {
             unikId={'naarKanEnsamtaleVaereAktuelt'}
             tittel={'Når kan en samtale være aktuelt?'}
             panelLestSituasjon={'ulest'}
-            ikon={<ChatDoubleBubble width={'44px'} height={'44px'} />}
-            lestIkon={<ChatDoubleBubble width={'44px'} height={'44px'} />}
         >
             <div className={fellesStiler.marginTop1Rem}>
                 <p
