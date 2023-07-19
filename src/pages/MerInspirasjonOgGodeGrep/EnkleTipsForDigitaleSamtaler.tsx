@@ -1,9 +1,8 @@
-import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import { Liste } from '../../Liste/Liste';
 
-const EnkleTipsForDigitaleSamtaler = (props: InfoPanelProps) => {
+const EnkleTipsForDigitaleSamtaler = () => {
     return (
         <EkspanderbartInfopanel
             unikId={'enkleTipsForDigitaleSamtaler'}

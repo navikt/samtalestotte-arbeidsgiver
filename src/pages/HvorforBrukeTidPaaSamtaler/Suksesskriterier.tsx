@@ -1,11 +1,9 @@
-import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import Lightbulb from '../../felleskomponenter/Ikoner/Lightbulb';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import { Heading } from '@navikt/ds-react';
 import { Liste } from '../../Liste/Liste';
 
-const Suksesskriterier = (props: InfoPanelProps) => {
+const Suksesskriterier = () => {
     return (
         <EkspanderbartInfopanel
             tittel={'Suksesskriterier'}

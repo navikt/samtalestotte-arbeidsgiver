@@ -114,14 +114,14 @@ const mapSmallHeader = (content: string, level: HeaderLevel = '4', id?: string) 
     );
 };
 
-const mapParagraph = (content: ReactNode, inline: boolean = false) => {
+const mapParagraph = (content: ReactNode, inline = false) => {
     if (inline) {
         return <span key={uuidv4()}>{content}</span>;
     }
     return <p key={uuidv4()}>{content}</p>;
 };
 
-const mapText = (content: string, bold: boolean = false, lineBreak: number = 0) => {
+const mapText = (content: string, bold = false, lineBreak = 0) => {
     return (
         <>
             {repeat(

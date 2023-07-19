@@ -3,12 +3,12 @@ import { ETT_DØGN_I_SEKUNDER } from './konstanter';
 import { logger, predefinerteFeilmeldinger } from './logger';
 
 export interface IatjenesteMetrikk {
-    type: String;
-    kilde: String;
+    type: string;
+    kilde: string;
 }
 
 export interface InnloggetIatjenesteMetrikk extends IatjenesteMetrikk {
-    orgnr: String;
+    orgnr: string;
 }
 
 export const setIaTjenesterMetrikkErSendt = (
@@ -45,8 +45,8 @@ const getIaTjenesterMetrikkerUrl = () => {
 const iaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/uinnlogget/mottatt-iatjeneste`;
 const innloggetIaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/innlogget/mottatt-iatjeneste`;
 
-export const kanSendeIaTjenesteMetrikker = (sendtStatistikk: string): Boolean =>
-    sendtStatistikk === undefined || !Boolean(sendtStatistikk);
+export const kanSendeIaTjenesteMetrikker = (sendtStatistikk: string) =>
+    sendtStatistikk === undefined || !sendtStatistikk;
 export const sendUinnloggetIATjenesteMetrikk = async () => {
     const iaTjenesteMetrikk: IatjenesteMetrikk = {
         kilde: 'SAMTALESTØTTE',
@@ -55,7 +55,7 @@ export const sendUinnloggetIATjenesteMetrikk = async () => {
 
     const settings = {
         method: 'POST',
-        credentials: 'omit',
+        credentials: 'omit' as RequestCredentials,
         body: JSON.stringify(iaTjenesteMetrikk),
         headers: {
             Accept: 'application/json',
@@ -63,7 +63,6 @@ export const sendUinnloggetIATjenesteMetrikk = async () => {
         },
     };
     try {
-        // @ts-ignore
         const fetchResponse = await fetch(`${iaTjenesterMetrikkerAPI}`, settings);
         const data = await fetchResponse.json();
         return data.status === 'created';
@@ -71,16 +70,16 @@ export const sendUinnloggetIATjenesteMetrikk = async () => {
         return false;
     }
 };
-export const sendInnloggetIATjenesteMetrikk = async (orgnr: String) => {
+export const sendInnloggetIATjenesteMetrikk = async (orgnr: string) => {
     const innloggetIaTjenesteMetrikk: InnloggetIatjenesteMetrikk = {
         kilde: 'SAMTALESTØTTE',
         type: 'DIGITAL_IA_TJENESTE',
-        orgnr: orgnr,
+        orgnr,
     };
 
     const settings = {
         method: 'POST',
-        credentials: 'include',
+        credentials: 'include' as RequestCredentials,
         body: JSON.stringify(innloggetIaTjenesteMetrikk),
         headers: {
             Accept: 'application/json',
@@ -88,7 +87,6 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr: String) => {
         },
     };
     try {
-        // @ts-ignore
         const fetchResponse = await fetch(`${innloggetIaTjenesterMetrikkerAPI}`, settings);
         const data = await fetchResponse.json();
         return data.status === 'created';

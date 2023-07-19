@@ -1,8 +1,7 @@
-import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
 import { Liste } from '../../Liste/Liste';
 
-const GodeGrepForAByggeRelasjoner = (props: InfoPanelProps) => {
+const GodeGrepForAByggeRelasjoner = () => {
     return (
         <EkspanderbartInfopanel
             unikId={'godeGrepForAByggeRelasjoner'}

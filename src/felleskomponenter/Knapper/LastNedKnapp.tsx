@@ -23,7 +23,7 @@ export default function LastNedKnapp(props: {
     };
 
     // Bestemmer navnet på fila som lastes ned. Hvis "true" beholdes opprinnelig filnavn.
-    let download = props.filnavn ?? true;
+    const download = props.filnavn ?? true;
 
     return (
         <Link

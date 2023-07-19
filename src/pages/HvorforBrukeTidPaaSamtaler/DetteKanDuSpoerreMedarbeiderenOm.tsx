@@ -1,10 +1,9 @@
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import { Liste } from '../../Liste/Liste';
 import classNames from 'classnames';
 
-const DetteKanDuSpoerreMedarbeiderenOm = (props: InfoPanelProps) => {
+const DetteKanDuSpoerreMedarbeiderenOm = () => {
     return (
         <EkspanderbartInfopanel
             unikId={'detteKanDuSpoerreMedarbeiderenOm'}

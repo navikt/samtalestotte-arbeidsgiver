@@ -11,6 +11,7 @@ import { useSendIaTjenesterMetrikker } from '../../utils/useSendIaTjenesteMetrik
 export const Layout = (props: {
     title: string;
     isFrontPage: boolean;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     logEvent: (eventName: string, data?: any) => Promise<any>;
     bannerIconUrl?: string;
     children: React.ReactChild[];
