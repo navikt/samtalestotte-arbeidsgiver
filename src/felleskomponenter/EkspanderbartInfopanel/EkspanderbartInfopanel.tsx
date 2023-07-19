@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
+import { FunctionComponent, ReactNode, useEffect, useState } from 'react';
 import { ExpansionCard } from '@navikt/ds-react';
 import { ChevronDownIcon } from '@navikt/aksel-icons';
 import classNames from 'classnames';
@@ -46,7 +46,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
             }
         }, 500);
         return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [erÅpen]);
 
     useEffect(() => {
@@ -56,7 +56,7 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     useEffect(() => {
         setPanelKnapp(document.getElementById(panelknappID));
         setHovedMeny(document.getElementById('hovedmeny'));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
