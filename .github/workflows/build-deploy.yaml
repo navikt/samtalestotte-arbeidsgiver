@@ -1,5 +1,5 @@
 name: Build, test and deploy
-
+run-name: Build and deploy || ${{ github.event.head_commit.message }}
 on: [ push ]
 
 concurrency:
@@ -8,7 +8,7 @@ concurrency:
 
 jobs:
   docker-build-push:
-    name: Build and push docker image
+    name: Build, test and push docker image
     permissions:
       contents: read
       id-token: write
@@ -24,9 +24,11 @@ jobs:
         run: yarn install --immutable
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+      - name: Lint
+        run: yarn lint
       - name: Run tests
         run: yarn test
-      - name: Build application
+      - name: Build
         run: yarn build
       - name: Push to Google Artifact Repository
         uses: nais/docker-build-push@v0
@@ -35,7 +37,6 @@ jobs:
           team: teamia
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
-          salsa: true
     outputs:
       image: ${{ steps.docker-push.outputs.image }}
 
