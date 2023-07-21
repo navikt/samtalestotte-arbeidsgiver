@@ -44,7 +44,7 @@ jobs:
 
   deploy-to-dev:
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/deploy_to_gar'
+    if: github.ref == 'refs/heads/standalone'
     needs: docker-build-push
     runs-on: ubuntu-latest
     steps:
