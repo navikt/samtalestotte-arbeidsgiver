@@ -11,6 +11,7 @@ concurrency:
 
 jobs:
   compile-test-and-build:
+    timeout-minutes: 10
     name: Build and run tests
     runs-on: ubuntu-latest
     steps:
@@ -39,6 +40,7 @@ jobs:
           docker build . -t ${IMAGE} && docker push ${IMAGE}
 
   deploy-to-dev:
+    timeout-minutes: 5
     name: Deploy to dev-gcp
     if: github.ref == 'refs/heads/master' || 'refs/heads/redirect-gamle-docx'
     needs: compile-test-and-build
@@ -53,6 +55,7 @@ jobs:
           RESOURCE: nais/dev.yaml
 
   deploy-to-ekstern-dev:
+    timeout-minutes: 5
     name: Deploy to dev-gcp (ekstern)
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/redirect-gamle-docx'
     needs: compile-test-and-build
@@ -67,6 +70,7 @@ jobs:
           RESOURCE: nais/ekstern-dev.yaml
 
   deploy-to-prod:
+    timeout-minutes: 5
     name: Deploy to prod-gcp
     if: github.ref == 'refs/heads/master'
     needs: compile-test-and-build

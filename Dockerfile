@@ -1,21 +1,18 @@
-FROM ghcr.io/navikt/baseimages/node-express:16
+FROM node:lts-alpine
 
-WORKDIR /var/server
+WORKDIR /usr/src/app
+ENV PORT=3000 \
+    NODE_ENV=production \
+    NEXT_TELEMETRY_DISABLED=1
 
-USER apprunner
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
-COPY src/ src/
-COPY public/ public/
-COPY package.json package.json
-COPY yarn.lock yarn.lock
-COPY next.config.js next.config.js
-COPY tsconfig.json tsconfig.json
-COPY .next .next
-COPY node_modules node_modules
+COPY --chown=nextjs:nodejs .next/standalone ./
+COPY --chown=nextjs:nodejs .next/static ./.next/static
 
-USER root
-RUN chown -R apprunner /var/server/public
-USER apprunner
-
+USER nextjs
 EXPOSE 3000
-ENTRYPOINT ["yarn", "start"]
+
+ENV NODE_OPTIONS="--no-experimental-fetch"
+CMD ["node", "server.js"]
