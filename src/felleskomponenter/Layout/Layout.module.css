@@ -1,32 +1,15 @@
 .layoutWrapper {
   min-height: 50rem;
   padding: 1.5rem 0 5rem;
+  background-color: var(--a-gray-100);
 }
 
 .layoutContent {
-  max-width: 50rem;
+  max-width: 60rem;
   background-color: white;
-  padding: 0;
+  padding: 3rem 0 3rem;
   margin: auto;
   border-radius: 0.25rem;
-}
-
-.layoutSmallScreenIllustration {
-  display: flex;
-  justify-content: center;
-  background: var(--navds-global-color-blue-100);
-  margin: 1rem 0 3rem;
-}
-
-.layoutSmallScreenIllustration svg {
-    flex-shrink: 0;
-}
-
-/*--screen-sm-min*/
-@media (min-width: 768px) {
-  .layoutSmallScreenIllustration {
-    display: none;
-  }
 }
 
 .layoutPrintHeader {

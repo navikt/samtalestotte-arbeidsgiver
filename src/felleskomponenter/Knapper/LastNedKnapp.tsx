@@ -1,4 +1,4 @@
-import { Download } from '@navikt/ds-icons';
+import { DownloadIcon } from '@navikt/aksel-icons';
 import styles from './LastNedKnapp.module.css';
 import logEvent from '../../amplitude/amplitude';
 import classNames from 'classnames';
@@ -23,23 +23,20 @@ export default function LastNedKnapp(props: {
     };
 
     // Bestemmer navnet på fila som lastes ned. Hvis "true" beholdes opprinnelig filnavn.
-    let download = props.filnavn ?? true;
+    const download = props.filnavn ?? true;
 
     return (
         <Link
             className={classNames(
                 styles.downloadButtonStyle,
                 'navds-button',
-                `navds-button--secondary`,
-                `navds-button--s`,
-                'navds-body-short',
-                'navds-body--s'
+                `navds-button--secondary`
             )}
             href={props.href}
             download={download}
             onClick={() => loggKlikkPåLastNedKnapp(props.label)}
         >
-            <Download title={'Nedlastingsikon'} />
+            <DownloadIcon title={'Nedlastingsikon'} fontSize="1.75rem" />
             {props.knappetekst}
         </Link>
     );

@@ -12,7 +12,7 @@ export const PageBanner = (props: {
     <div className={styles.pageBanner}>
       <div className={styles.pageBannerInnhold}>
         <div className={styles.pageBannerTekstOgKontekst}>
-          <Heading level={"1"} size={'2xlarge'} className={styles.pageBannerTekst}>
+          <Heading level={"1"} size={'xlarge'} className={styles.pageBannerTekst}>
             {props.title}
           </Heading>
         </div>

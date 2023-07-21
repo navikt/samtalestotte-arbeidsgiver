@@ -7,18 +7,7 @@ import {
     OPPFOLGNINGSPLAN,
     RETTNINGSLINJER_FOR_SYKEFRAVAERSOPPFOLGNING,
 } from './urls';
-import {
-    DocumentElement,
-    HorizontalLine,
-    InfoBox,
-    Link,
-    List,
-    MediumHeader,
-    Panel,
-    Paragraph,
-    SmallHeader,
-    Text,
-} from '../dokumentgenerator/domainInterfaces';
+import { DocumentElement, Panel } from '../dokumentgenerator/domainInterfaces';
 
 const slikSkaperDuGodeSamtaler: (DocumentElement | object)[] = [
     { type: 'BigHeader', content: 'Slik skaper du gode samtaler' },
@@ -370,7 +359,8 @@ const forberedeMedarbeiderenDin = [
                                 {
                                     type: 'Link',
                                     url: ENKLE_TIPS_FOR_DIGITALE_SAMTALER,
-                                    content: 'Les mer om «Enkle tips for digitale samtaler» lenger ned på siden.',
+                                    content:
+                                        'Les mer om «Enkle tips for digitale samtaler» lenger ned på siden.',
                                 },
                             ],
                         },

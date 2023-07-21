@@ -1,10 +1,10 @@
 import fellesStiler from '../utils/fellesStiler.module.css';
 import classNames from 'classnames';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 interface Props {
     className?: string;
-    children: any;
+    children: ReactNode;
 }
 
 const Element: React.FC<Props> = (props) => (

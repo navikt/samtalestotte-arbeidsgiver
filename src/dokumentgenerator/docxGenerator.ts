@@ -75,7 +75,7 @@ const mapJson = (elements: (string | object)[]): DocxTypes[] => {
 const mapString = (text: string) => {
     return new TextRun(text);
 };
-const mapText = (text: string, bold: boolean = false, lineBreak: number = 0) => {
+const mapText = (text: string, bold = false, lineBreak = 0) => {
     return new TextRun({ bold: bold, text: text, break: lineBreak });
 };
 
@@ -91,7 +91,7 @@ const mapInfoBox = (content: DocumentElement[]) => {
     });
 };
 
-const mapTableCell = (content: DocumentElement[], shade: string = '#ffffff') => {
+const mapTableCell = (content: DocumentElement[], shade = '#ffffff') => {
     const children = content
         .map((e) => {
             if (isParagraph(e)) {
@@ -147,7 +147,7 @@ const mapExternalHyperLink = (text: string, url: string) => {
     });
 };
 
-const mapList = (content: (DocumentElement | string)[][], level: number = 0): Paragraph[] => {
+const mapList = (content: (DocumentElement | string)[][], level = 0): Paragraph[] => {
     return content.flatMap((x) =>
         x
             .flatMap((e, i) => {

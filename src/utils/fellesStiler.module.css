@@ -1,88 +1,88 @@
 .marginTop0Rem {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .marginTop03Rem {
-  margin-top: 0.3rem;
+    margin-top: 0.3rem;
 }
 
 .marginTop1Rem {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .marginTop2Rem {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 .marginTop3Rem {
-  margin-top: 3rem;
+    margin-top: 3rem;
 }
 
 .marginTop4Rem {
-  margin-top: 4rem;
+    margin-top: 4rem;
 }
 
 .marginTop6Rem {
-  margin-top: 6rem;
+    margin-top: 6rem;
 }
 
 .marginBottom0Rem {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .marginBottom025rem {
-  margin-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 
 .marginBottom1Rem {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .marginBottom2Rem {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .marginBottom3Rem {
-  margin-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 .marginBottom4Rem {
-  margin-bottom: 4rem;
+    margin-bottom: 4rem;
 }
 
 .marginRight05Rem {
-  margin-right: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .marginLeft1Rem {
-  margin-left: 1rem;
+    margin-left: 1rem;
 }
 
 .boldText {
-  font-weight: var(--navds-font-weight-bold);
+    font-weight: var(--a-font-weight-bold);
 }
 
 .knappSomLenke {
-  border-style: none;
-  text-decoration: underline;
+    border-style: none;
+    text-decoration: underline;
 }
 
 .horizontalLine {
-  border-top: 1px solid var(--navds-global-color-gray-200);
-  width: 100%;
+    border-top: 1px solid var(--a-gray-200);
+    width: 100%;
 }
 
 .graAvrundetBoks {
-  box-sizing: border-box;
-  padding: 1rem 2rem 1rem 1rem;
-  border: 1px solid black;
-  border-radius: 4px;
-  background: var(--navds-global-color-gray-100);
+    box-sizing: border-box;
+    padding: 1rem 2rem 1rem 1rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: var(--a-gray-100);
 }
 
 .graAvrundetBoks h4 {
-  margin-top: 4px;
-  margin-bottom: 0;
+    margin-top: 4px;
+    margin-bottom: 0;
 }
 
 .graAvrundetBoks ul {
@@ -90,46 +90,46 @@
 }
 
 .alternatingDiscList li:nth-child(odd) {
-  list-style-type: disc;
+    list-style-type: disc;
 }
 
 .alternatingDiscList li:nth-child(even) {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .spacedList li:not(:first-child) {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 .breakBeforePage {
-  break-before: page;
+    break-before: page;
 }
 
 .contentPaddingSides {
-  padding-left: 1rem;
-  padding-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 /*--screen-sm-min*/
 @media (min-width: 768px) {
-  .largeScreenMarginSides3rem {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
+    .largeScreenMarginSides3rem {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
 
-  .marginSides2_25rem {
-    margin-left: 2.25rem;
-    margin-right: 2.25rem;
-  }
+    .marginSides2_25rem {
+        margin-left: 2.25rem;
+        margin-right: 2.25rem;
+    }
 
-  .contentPaddingSides {
-    padding-left: 0;
-    padding-right: 0;
-  }
+    .contentPaddingSides {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 @media print {
-  .noPrint {
-    display: none;
-  }
+    .noPrint {
+        display: none;
+    }
 }

@@ -1,18 +1,14 @@
 import { EkspanderbartInfopanel } from '../../felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import InfoPanelProps from '../../felleskomponenter/InfoPanel/InfoPanelProps';
-import ChatDoubleBubble from '../../felleskomponenter/Ikoner/ChatDoubleBubble';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import classNames from 'classnames';
 import { Liste } from '../../Liste/Liste';
 
-const NaarKanEnSamtaleVaereAktuelt = (props: InfoPanelProps) => {
+const NaarKanEnSamtaleVaereAktuelt = () => {
     return (
         <EkspanderbartInfopanel
             unikId={'naarKanEnsamtaleVaereAktuelt'}
             tittel={'Når kan en samtale være aktuelt?'}
             panelLestSituasjon={'ulest'}
-            ikon={<ChatDoubleBubble width={'44px'} height={'44px'} />}
-            lestIkon={<ChatDoubleBubble width={'44px'} height={'44px'} />}
         >
             <div className={fellesStiler.marginTop1Rem}>
                 <p

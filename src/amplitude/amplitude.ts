@@ -1,7 +1,8 @@
 import amplitude from 'amplitude-js';
 
-let initiated = false;
+const initiated = false;
 
+//eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function logEvent(eventName: string, data?: any): Promise<any> {
     if (!initiated) {
         amplitude.getInstance().init('default', '', {
