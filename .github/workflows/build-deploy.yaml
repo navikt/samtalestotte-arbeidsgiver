@@ -8,6 +8,7 @@ concurrency:
 
 jobs:
   docker-build-push:
+    timeout-minutes: 10
     name: Build, test and push docker image
     permissions:
       contents: read
@@ -30,18 +31,20 @@ jobs:
         run: yarn test
       - name: Build
         run: yarn build
-      - name: Push to Google Artifact Repository
+      - name: Push to Google Artifact Registry
         uses: nais/docker-build-push@v0
         id: docker-push
         with:
           team: teamia
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+          salsa: false
     outputs:
       image: ${{ steps.docker-push.outputs.image }}
 
 
   deploy-to-dev:
+    timeout-minutes: 5
     name: Deploy to dev-gcp
     if: github.ref == 'refs/heads/deploy_to_gar'
     needs: docker-build-push
@@ -56,6 +59,7 @@ jobs:
           RESOURCE: nais/dev.yaml
 
   deploy-to-ekstern-dev:
+    timeout-minutes: 5
     name: Deploy to dev-gcp (ekstern)
     if: github.ref == 'refs/heads/master'
     needs: docker-build-push
@@ -70,6 +74,7 @@ jobs:
           RESOURCE: nais/ekstern-dev.yaml
 
   deploy-to-prod:
+    timeout-minutes: 5
     name: Deploy to prod-gcp
     if: github.ref == 'refs/heads/master'
     needs: docker-build-push
