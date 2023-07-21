@@ -7,6 +7,7 @@ const csp = require('./src/csp');
 module.exports = {
     transpilePackages: ['@navikt/ds-react'],
     basePath: '/samtalestotte',
+    output: "standalone",
     i18n: {
         locales: ['no'],
         defaultLocale: 'no',
