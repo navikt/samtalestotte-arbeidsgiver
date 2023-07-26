@@ -10,6 +10,7 @@ import fellesStiler from '../utils/fellesStiler.module.css';
 import classNames from 'classnames';
 import { setSamtalestotteBreadcrumbs } from '../utils/innloggetStatus';
 import { ENVUrls, getUrlsFromEnv } from '../utils/envUtils';
+import { doInitializeFaro } from '../utils/initializeFaro';
 
 type HomeProps = {
     urls: ENVUrls;
@@ -20,6 +21,7 @@ const TITLE = 'Samtalestøtte for arbeidsgiver';
 
 const Home = (props: HomeProps) => {
     useEffect(() => {
+        doInitializeFaro(props.urls.GRAFANA_AGENT_COLLECTOR_URL);
         setSamtalestotteBreadcrumbs(props.urls);
     });
 
