@@ -21,8 +21,8 @@ const TITLE = 'Samtalestøtte for arbeidsgiver';
 
 const Home = (props: HomeProps) => {
     useEffect(() => {
-        setSamtalestotteBreadcrumbs(props.urls);
         doInitializeFaro(props.urls.GRAFANA_AGENT_COLLECTOR_URL);
+        setSamtalestotteBreadcrumbs(props.urls);
     });
 
     return (

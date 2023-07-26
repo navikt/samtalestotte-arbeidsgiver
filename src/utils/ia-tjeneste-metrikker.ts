@@ -1,6 +1,5 @@
 import { Cookie, CookieSetOptions } from 'universal-cookie';
 import { ETT_DØGN_I_SEKUNDER } from './konstanter';
-import { logger, predefinerteFeilmeldinger } from './logger';
 
 export interface IatjenesteMetrikk {
     type: string;
@@ -91,7 +90,7 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr: string) => {
         const data = await fetchResponse.json();
         return data.status === 'created';
     } catch (e) {
-        logger.warn(predefinerteFeilmeldinger.klarteIkkeSendeInnloggetIaMetrikk);
+        console.warn('Klarte ikke å sende innlogget IA-tjenestemetrikk.');
         return false;
     }
 };

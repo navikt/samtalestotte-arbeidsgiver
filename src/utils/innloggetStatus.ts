@@ -1,5 +1,4 @@
 import { z } from "zod"
-import { logger, predefinerteFeilmeldinger } from "./logger";
 import { setBreadcrumbs, Props } from "@navikt/nav-dekoratoren-moduler";
 import { isNonEmptyString } from './stringUtils';
 import {ENVUrls} from "./envUtils";
@@ -43,7 +42,7 @@ async function getAuthStatus(authURL: string): Promise<boolean> {
                 return res.json()})
             .then(json => authSchema.parse(json).authenticated)
     } catch (error) {
-        logger.error(predefinerteFeilmeldinger.feilVedNettverkskall);
+        console.error('Det er oppstått en feil ved nettverkskall');
         return false;
     }
 }
