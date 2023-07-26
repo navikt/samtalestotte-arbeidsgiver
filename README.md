@@ -33,7 +33,7 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 - i prod: https://arbeidsgiver.nav.no/samtalestotte
 - Dev-miljøer:
   - i dev-miljø åpent for eksterne, med syntetiske data: https://arbeidsgiver.ekstern.dev.nav.no/samtalestotte
-  - i dev-miljø: https://arbeidsgiver-gcp.dev.nav.no/samtalestotte (trenger kjørende #naisdevice)
+  - i dev-miljø: https://samtalestotte.intern.dev.nav.no/samtalestotte (trenger kjørende #naisdevice)
 
 ## FAQ
 
