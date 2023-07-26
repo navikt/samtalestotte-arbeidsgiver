@@ -18,6 +18,8 @@ spec:
       value: https://forebygge-fravar.intern.dev.nav.no/forebygge-fravar
     - name: SAMTALESTOTTE_URL
       value: https://samtalestotte.intern.dev.nav.no/samtalestotte
+    - name: GRAFANA_AGENT_COLLECTOR_URL
+      value: https://telemetry.ekstern.dev.nav.no/collect
   ingresses:
     - https://samtalestotte.intern.dev.nav.no/samtalestotte
   liveness:
