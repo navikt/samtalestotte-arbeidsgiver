@@ -1,5 +1,6 @@
 const csp = {
     'default-src': ["'self'", 'arbeidsgiver.nav.no'],
+    'manifest-src': ["'self'", '*.nav.no'],
     'script-src': [
         "'self'",
         "'report-sample'",
