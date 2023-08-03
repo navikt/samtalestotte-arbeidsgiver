@@ -10,7 +10,7 @@ import { hentOrgnrFraLocalStorage } from './localStorage';
 export const useSendIaTjenesterMetrikker: () => () => void = () => {
     const orgnr = hentOrgnrFraLocalStorage();
     const SAMTALESTOTTE_COOKIE = 'samtalestotte-arbeidsgiver';
-    const [cookies, setCookies] = useCookies([SAMTALESTOTTE_COOKIE]);
+    const [cookies, setCookie] = useCookies([SAMTALESTOTTE_COOKIE]);
     const sendtStatistikk = cookies[SAMTALESTOTTE_COOKIE]?.sendtStatistikk;
 
     return () => {
@@ -19,11 +19,11 @@ export const useSendIaTjenesterMetrikker: () => () => void = () => {
         }
         if (orgnr) {
             sendInnloggetIATjenesteMetrikk(orgnr).then((erMetrikkSendt) => {
-                setIaTjenesterMetrikkErSendt(erMetrikkSendt, setCookies);
+                setIaTjenesterMetrikkErSendt(erMetrikkSendt, (value, options) => setCookie(SAMTALESTOTTE_COOKIE, value, options));
             });
         } else {
             sendUinnloggetIATjenesteMetrikk().then((erMetrikkSendt) => {
-                setIaTjenesterMetrikkErSendt(erMetrikkSendt, setCookies);
+                setIaTjenesterMetrikkErSendt(erMetrikkSendt, (value, options) => setCookie(SAMTALESTOTTE_COOKIE, value, options));
             });
         }
     };
