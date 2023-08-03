@@ -46,7 +46,7 @@ jobs:
   deploy-to-dev:
     timeout-minutes: 5
     name: Deploy to dev-gcp
-    if: github.ref == 'refs/heads/document-download-error'
+    if: github.ref == 'refs/heads/distroless'
     needs: docker-build-push
     runs-on: ubuntu-latest
     steps:
