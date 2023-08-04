@@ -41,7 +41,7 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 
 Denne applikasjonen bruker custom-media-queries -- se https://preset-env.cssdb.org/features/#custom-media-queries .
 Intellij vil ikke gjenkjenne dette som gyldig css med mindre du setter css dialekten til postCSS.
-Dette kan gjøres ved å laste ned å laste ned postcss plugin og sette "stylesheet dialect" til postCSS. 
+Dette kan gjøres ved å laste ned postcss plugin og sette "stylesheet dialect" til postCSS. 
 
 ---
 
