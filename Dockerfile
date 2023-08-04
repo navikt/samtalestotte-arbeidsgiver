@@ -11,4 +11,4 @@ COPY --chown=node:node public ./public
 EXPOSE 3000
 
 ENV NODE_OPTIONS="--no-experimental-fetch"
-CMD ["node", "server.js"]
+CMD ["server.js"]
