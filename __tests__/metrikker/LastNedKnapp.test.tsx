@@ -19,9 +19,9 @@ afterEach(() => {
 });
 
 test('Bør prøve å sende metrikker etter klikk', async () => {
-    render(<LastNedKnapp knappetekst="knappetekst" label="label" href="href" />);
+    render(<LastNedKnapp knappetekst="Skriv ut nettside" label="label" href="href" />);
 
-    const head = screen.getByText('knappetekst');
+    const head = screen.getByText('Skriv ut nettside');
 
     expect(kanSendeIaTjenesteMetrikker).toHaveBeenCalledTimes(0);
 

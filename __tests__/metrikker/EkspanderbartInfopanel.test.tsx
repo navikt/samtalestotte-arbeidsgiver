@@ -1,6 +1,6 @@
 import React from 'react';
 import { EkspanderbartInfopanel } from '../../src/felleskomponenter/EkspanderbartInfopanel/EkspanderbartInfopanel';
-import { render } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import { kanSendeIaTjenesteMetrikker } from '../../src/utils/ia-tjeneste-metrikker';
 
@@ -20,7 +20,7 @@ afterEach(() => {
 });
 
 test('Bør prøve å sende metrikker etter expand.', async () => {
-    const { container } = render(
+    render(
         <EkspanderbartInfopanel
             unikId={'RenderTest'}
             tittel={'Test title'}
@@ -30,16 +30,13 @@ test('Bør prøve å sende metrikker etter expand.', async () => {
         </EkspanderbartInfopanel>
     );
 
-    const head = container?.getElementsByClassName('navds-expansioncard__header-button').item(0);
+    const head = screen.getAllByRole('button')[0];
 
     expect(kanSendeIaTjenesteMetrikker).toHaveBeenCalledTimes(0);
-    act(() => {
-        if (head !== null) {
-            head?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-        }
+    head?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    jest.runAllTimers();
+
+    await waitFor(() => {
+        expect(kanSendeIaTjenesteMetrikker).toHaveBeenCalledTimes(1);
     });
-    act(() => {
-        jest.runAllTimers();
-    });
-    expect(kanSendeIaTjenesteMetrikker).toHaveBeenCalledTimes(1);
 });
