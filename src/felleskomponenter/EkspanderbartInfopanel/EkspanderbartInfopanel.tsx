@@ -38,10 +38,10 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     };
 
     useEffect(() => {
-        const timer = setTimeout(async () => {
+        const timer = setTimeout(() => {
             if (erÅpen) {
                 props.panelLestSituasjon !== 'lest' && setErLest(true);
-                await logPanelÅpnetEvent(props.unikId, props.tittel);
+                logPanelÅpnetEvent(props.unikId, props.tittel);
                 sendIaTjenesteMetrikk();
             }
         }, 500);
