@@ -66,11 +66,11 @@ const Home = (props: HomeProps) => {
         </div>
     );
 };
-export async function getServerSideProps() {
+export const getServerSideProps = async () => {
     const urls = getUrlsFromEnv();
     const kjørerMockApp = isMockApp();
 
     return { props: { urls, kjørerMockApp } };
-}
+};
 
 export default Home;
