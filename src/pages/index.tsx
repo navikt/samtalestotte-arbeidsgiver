@@ -66,7 +66,7 @@ const Home = (props: HomeProps) => {
         </div>
     );
 };
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const urls = getUrlsFromEnv();
     const kjørerMockApp = isMockApp();
 
