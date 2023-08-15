@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
 import { useSendIaTjenesterMetrikker } from '../../utils/useSendIaTjenesteMetrikker';
+import TestVersjonBanner from '../Banner/TestVersjonBanner';
 
 export const Layout = (props: {
     title: string;
@@ -15,6 +16,8 @@ export const Layout = (props: {
     logEvent: (eventName: string, data?: any) => Promise<any>;
     bannerIconUrl?: string;
     children: React.ReactChild[];
+    kjørerMockApp: boolean;
+    prodUrl: string;
 }) => {
     const layoutContentRef = useRef<HTMLDivElement>(null);
     const sendIaMetrikk = useSendIaTjenesterMetrikker();
@@ -40,6 +43,10 @@ export const Layout = (props: {
                         }
                     />
                     <div className={styles.layoutWrapper}>
+                        <TestVersjonBanner
+                            prodUrl={props.prodUrl}
+                            kjørerMockApp={props.kjørerMockApp}
+                        />
                         <div className={styles.layoutContent} ref={layoutContentRef}>
                             <div className={classNames(styles.layoutPrintHeader)}>
                                 <BodyShort size="small">{PROD_URL}</BodyShort>
