@@ -18,6 +18,8 @@ spec:
       value: https://forebygge-fravar.ekstern.dev.nav.no/forebygge-fravar
     - name: SAMTALESTOTTE_URL
       value: https://arbeidsgiver.ekstern.dev.nav.no/samtalestotte
+    - name: PROD_URL
+      value: https://arbeidsgiver.nav.no/samtalestotte
   ingresses:
     - https://arbeidsgiver.ekstern.dev.nav.no/samtalestotte
   liveness:

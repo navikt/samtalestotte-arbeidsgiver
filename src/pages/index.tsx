@@ -9,11 +9,12 @@ import { useEffect } from 'react';
 import fellesStiler from '../utils/fellesStiler.module.css';
 import classNames from 'classnames';
 import { setSamtalestotteBreadcrumbs } from '../utils/innloggetStatus';
-import { ENVUrls, getUrlsFromEnv } from '../utils/envUtils';
+import { ENVUrls, getUrlsFromEnv, isMockApp } from '../utils/envUtils';
 import { doInitializeFaro } from '../utils/initializeFaro';
 
 type HomeProps = {
     urls: ENVUrls;
+    kjørerMockApp: boolean;
 };
 
 const APP_TITLE = 'Samtalestøtte for arbeidsgiver';
@@ -32,7 +33,13 @@ const Home = (props: HomeProps) => {
                 <link rel="icon" href="favicon.ico" />
             </Head>
 
-            <Layout title={TITLE} isFrontPage={true} logEvent={logEvent}>
+            <Layout
+                title={TITLE}
+                isFrontPage={true}
+                logEvent={logEvent}
+                kjørerMockApp={props.kjørerMockApp}
+                prodUrl={props.urls.PROD_URL}
+            >
                 <HvorforBrukeTidPaaSamtaler
                     className={classNames(
                         fellesStiler.contentPaddingSides,
@@ -61,8 +68,9 @@ const Home = (props: HomeProps) => {
 };
 export const getServerSideProps = async () => {
     const urls = getUrlsFromEnv();
+    const kjørerMockApp = isMockApp();
 
-    return { props: { urls } };
+    return { props: { urls, kjørerMockApp } };
 };
 
 export default Home;
