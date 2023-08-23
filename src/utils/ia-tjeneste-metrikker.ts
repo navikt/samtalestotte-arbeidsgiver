@@ -1,5 +1,3 @@
-import { Cookie, CookieSetOptions } from 'universal-cookie';
-import { ETT_DØGN_I_SEKUNDER } from './konstanter';
 import { MetrikkKilde, MetrikkType, sendIaMetrikk } from '@navikt/ia-metrikker-client';
 
 export interface IatjenesteMetrikk {
@@ -10,22 +8,6 @@ export interface IatjenesteMetrikk {
 export interface InnloggetIatjenesteMetrikk extends IatjenesteMetrikk {
     orgnr: string;
 }
-
-export const setIaTjenesterMetrikkErSendt = (
-    erMetrikkSendt: boolean,
-    lagreCookie: (value: Cookie, options?: CookieSetOptions) => void
-) => {
-    if (erMetrikkSendt) {
-        lagreCookie(
-            { sendtStatistikk: 'ja' },
-            {
-                path: '/',
-                maxAge: ETT_DØGN_I_SEKUNDER,
-                sameSite: true,
-            }
-        );
-    }
-};
 
 const getIaTjenesterMetrikkerUrl = () => {
     if (typeof window === 'undefined') {
@@ -45,8 +27,6 @@ const getIaTjenesterMetrikkerUrl = () => {
 const iaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/uinnlogget/mottatt-iatjeneste`;
 const innloggetIaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/innlogget/mottatt-iatjeneste`;
 
-export const kanSendeIaTjenesteMetrikker = (sendtStatistikk: string) =>
-    sendtStatistikk === undefined || !sendtStatistikk;
 export const sendUinnloggetIATjenesteMetrikk = async () => {
     const iaTjenesteMetrikk: IatjenesteMetrikk = {
         kilde: 'SAMTALESTØTTE',
@@ -76,10 +56,7 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr: string) => {
         MetrikkType.DIGITAL_IA_TJENESTE,
         MetrikkKilde.SAMTALESTØTTE,
         innloggetIaTjenesterMetrikkerAPI
-    )
-        .then(() => true)
-        .catch(() => {
-            console.warn('Klarte ikke å sende innlogget IA-tjenestemetrikk.');
-            return false;
-        });
+    ).catch(() => {
+        console.warn('Klarte ikke å sende innlogget IA-tjenestemetrikk.');
+    });
 };

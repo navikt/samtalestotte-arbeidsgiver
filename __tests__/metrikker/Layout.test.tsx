@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { Layout } from '../../src/felleskomponenter/Layout/Layout';
 import {
-    kanSendeIaTjenesteMetrikker,
     sendUinnloggetIATjenesteMetrikk,
     sendInnloggetIATjenesteMetrikk,
 } from '../../src/utils/ia-tjeneste-metrikker';
@@ -10,7 +9,6 @@ import { hentOrgnrFraLocalStorage } from '../../src/utils/localStorage';
 
 jest.mock('../../src/utils/ia-tjeneste-metrikker', () => ({
     ...jest.requireActual('../../src/utils/ia-tjeneste-metrikker'),
-    kanSendeIaTjenesteMetrikker: jest.fn(() => true),
     sendUinnloggetIATjenesteMetrikk: jest.fn(() => Promise.resolve(true)),
     sendInnloggetIATjenesteMetrikk: jest.fn(() => Promise.resolve(true)),
 }));
@@ -40,7 +38,6 @@ describe('Tester metrikkutsendelser fra Layout', () => {
 
         const knapp = screen.getByText('Skriv ut nettside');
 
-        expect(kanSendeIaTjenesteMetrikker).toHaveBeenCalledTimes(0);
         expect(sendUinnloggetIATjenesteMetrikk).toHaveBeenCalledTimes(0);
         expect(sendInnloggetIATjenesteMetrikk).toHaveBeenCalledTimes(0);
         expect(knapp).toBeDefined();
@@ -49,9 +46,6 @@ describe('Tester metrikkutsendelser fra Layout', () => {
             knapp?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
         }
 
-        await waitFor(() => {
-            expect(kanSendeIaTjenesteMetrikker).toHaveBeenCalledTimes(1);
-        });
         await waitFor(() => {
             expect(sendUinnloggetIATjenesteMetrikk).toHaveBeenCalledTimes(1);
         });
@@ -73,7 +67,6 @@ describe('Tester metrikkutsendelser fra Layout', () => {
 
         const knapp = screen.getByText('Skriv ut nettside');
 
-        expect(kanSendeIaTjenesteMetrikker).toHaveBeenCalledTimes(0);
         expect(sendInnloggetIATjenesteMetrikk).toHaveBeenCalledTimes(0);
         expect(sendUinnloggetIATjenesteMetrikk).toHaveBeenCalledTimes(0);
         expect(knapp).toBeDefined();
@@ -83,9 +76,6 @@ describe('Tester metrikkutsendelser fra Layout', () => {
         }
         jest.runAllTimers();
 
-        await waitFor(() => {
-            expect(kanSendeIaTjenesteMetrikker).toHaveBeenCalledTimes(1);
-        });
         await waitFor(() => {
             expect(sendInnloggetIATjenesteMetrikk).toHaveBeenCalledTimes(1);
         });

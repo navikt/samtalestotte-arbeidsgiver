@@ -6,7 +6,7 @@ import styles from './Layout.module.css';
 import classNames from 'classnames';
 import fellesStiler from '../../utils/fellesStiler.module.css';
 import { SkrivUtKnapp } from '../Knapper/SkrivUtKnapp';
-import { useSendIaTjenesterMetrikker } from '../../utils/useSendIaTjenesteMetrikker';
+import { sendIaTjenesteMetrikk } from '../../utils/sendIaTjenesteMetrikk';
 import TestVersjonBanner from '../Banner/TestVersjonBanner';
 
 export const Layout = (props: {
@@ -20,14 +20,13 @@ export const Layout = (props: {
     prodUrl: string;
 }) => {
     const layoutContentRef = useRef<HTMLDivElement>(null);
-    const sendIaMetrikk = useSendIaTjenesterMetrikker();
 
     function loggUtskriftsklikk() {
         props.logEvent('knapp', {
             label: 'skriv-ut',
             funksjon: 'skriv-ut',
         });
-        sendIaMetrikk();
+        sendIaTjenesteMetrikk();
     }
 
     return (

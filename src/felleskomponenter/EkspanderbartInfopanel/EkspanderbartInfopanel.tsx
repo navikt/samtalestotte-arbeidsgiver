@@ -6,7 +6,7 @@ import Lest from '../Ikoner/Lest';
 import { onLukkScroll } from '../../utils/scrollUtils';
 import styles from './EkspanderbartInfopanel.module.css';
 import { logPanelÅpnetEvent } from '../../amplitude/amplitude';
-import { useSendIaTjenesterMetrikker } from '../../utils/useSendIaTjenesteMetrikker';
+import { sendIaTjenesteMetrikk } from '../../utils/sendIaTjenesteMetrikk';
 
 export type PanelLestSituasjon = 'lest' | 'ulest' | undefined;
 
@@ -27,8 +27,6 @@ export const EkspanderbartInfopanel: FunctionComponent<EkspanderbartInfopanelPro
     const [hovedMeny, setHovedMeny] = useState<HTMLElement | null>(null);
 
     const panelknappID = 'ekspanderbart-infopanel__' + props.unikId + '-base';
-
-    const sendIaTjenesteMetrikk = useSendIaTjenesterMetrikker();
 
     const setErÅpenOgScrollOmNødvendig = (erÅpen: boolean) => {
         setErÅpen(erÅpen);

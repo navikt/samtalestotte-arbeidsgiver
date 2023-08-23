@@ -4,7 +4,7 @@ import logEvent from '../../amplitude/amplitude';
 import classNames from 'classnames';
 import { Link } from '@navikt/ds-react';
 import React from 'react';
-import { useSendIaTjenesterMetrikker } from '../../utils/useSendIaTjenesteMetrikker';
+import { sendIaTjenesteMetrikk } from '../../utils/sendIaTjenesteMetrikk';
 
 export default function LastNedKnapp(props: {
     knappetekst: string;
@@ -12,8 +12,6 @@ export default function LastNedKnapp(props: {
     filnavn?: string;
     label: string;
 }) {
-    const sendIaTjenesteMetrikk = useSendIaTjenesterMetrikker();
-
     const loggKlikkPåLastNedKnapp = (label: string) => {
         sendIaTjenesteMetrikk();
         logEvent('knapp', {
