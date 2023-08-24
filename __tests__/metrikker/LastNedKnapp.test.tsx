@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { kanSendeIaTjenesteMetrikker } from '../../src/utils/ia-tjeneste-metrikker';
+import { sendUinnloggetIATjenesteMetrikk } from '../../src/utils/ia-tjeneste-metrikker';
 import LastNedKnapp from '../../src/felleskomponenter/Knapper/LastNedKnapp';
 
 jest.mock('../../src/utils/ia-tjeneste-metrikker', () => ({
     ...jest.requireActual('../../src/utils/ia-tjeneste-metrikker'),
-    kanSendeIaTjenesteMetrikker: jest.fn(() => true),
+    sendUinnloggetIATjenesteMetrikk: jest.fn(() => Promise.resolve(true)),
 }));
 
 beforeEach(() => {
@@ -23,12 +23,12 @@ test('Bør prøve å sende metrikker etter klikk', async () => {
 
     const head = screen.getByText('Skriv ut nettside');
 
-    expect(kanSendeIaTjenesteMetrikker).toHaveBeenCalledTimes(0);
+    expect(sendUinnloggetIATjenesteMetrikk).toHaveBeenCalledTimes(0);
 
     if (head !== null) {
         head?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     }
     jest.runAllTimers();
 
-    expect(kanSendeIaTjenesteMetrikker).toHaveBeenCalledTimes(1);
+    expect(sendUinnloggetIATjenesteMetrikk).toHaveBeenCalledTimes(1);
 });

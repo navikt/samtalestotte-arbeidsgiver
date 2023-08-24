@@ -1,5 +1,9 @@
-import { Cookie, CookieSetOptions } from 'universal-cookie';
-import { ETT_DØGN_I_SEKUNDER } from './konstanter';
+import {
+    MetrikkKilde,
+    MetrikkType,
+    sendIaMetrikk,
+    getIaMetrikkerApiUrl,
+} from '@navikt/ia-metrikker-client';
 
 export interface IatjenesteMetrikk {
     type: string;
@@ -10,42 +14,23 @@ export interface InnloggetIatjenesteMetrikk extends IatjenesteMetrikk {
     orgnr: string;
 }
 
-export const setIaTjenesterMetrikkErSendt = (
-    erMetrikkSendt: boolean,
-    lagreCookie: (value: Cookie, options?: CookieSetOptions) => void
-) => {
-    if (erMetrikkSendt) {
-        lagreCookie(
-            { sendtStatistikk: 'ja' },
-            {
-                path: '/',
-                maxAge: ETT_DØGN_I_SEKUNDER,
-                sameSite: true,
-            }
-        );
-    }
-};
-
 const getIaTjenesterMetrikkerUrl = () => {
     if (typeof window === 'undefined') {
-        return 'http://localhost:8080/ia-tjenester-metrikker';
+        return 'http://localhost:8080';
     }
 
     switch (window.location.hostname) {
         case 'localhost':
-            return 'http://localhost:8080/ia-tjenester-metrikker';
+            return 'http://localhost:8080';
         case 'arbeidsgiver.nav.no':
-            return 'https://arbeidsgiver.nav.no/ia-tjenester-metrikker';
+            return 'https://arbeidsgiver.nav.no';
         default:
-            return 'https://ia-tjenester-metrikker.intern.dev.nav.no/ia-tjenester-metrikker';
+            return 'https://ia-tjenester-metrikker.intern.dev.nav.no';
     }
 };
 
-const iaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/uinnlogget/mottatt-iatjeneste`;
-const innloggetIaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/innlogget/mottatt-iatjeneste`;
+const iaTjenesterMetrikkerAPI = `${getIaTjenesterMetrikkerUrl()}/ia-tjenester-metrikker/uinnlogget/mottatt-iatjeneste`;
 
-export const kanSendeIaTjenesteMetrikker = (sendtStatistikk: string) =>
-    sendtStatistikk === undefined || !sendtStatistikk;
 export const sendUinnloggetIATjenesteMetrikk = async () => {
     const iaTjenesteMetrikk: IatjenesteMetrikk = {
         kilde: 'SAMTALESTØTTE',
@@ -70,27 +55,12 @@ export const sendUinnloggetIATjenesteMetrikk = async () => {
     }
 };
 export const sendInnloggetIATjenesteMetrikk = async (orgnr: string) => {
-    const innloggetIaTjenesteMetrikk: InnloggetIatjenesteMetrikk = {
-        kilde: 'SAMTALESTØTTE',
-        type: 'DIGITAL_IA_TJENESTE',
+    return sendIaMetrikk(
         orgnr,
-    };
-
-    const settings = {
-        method: 'POST',
-        credentials: 'include' as RequestCredentials,
-        body: JSON.stringify(innloggetIaTjenesteMetrikk),
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-    };
-    try {
-        const fetchResponse = await fetch(`${innloggetIaTjenesterMetrikkerAPI}`, settings);
-        const data = await fetchResponse.json();
-        return data.status === 'created';
-    } catch (e) {
+        MetrikkType.DIGITAL_IA_TJENESTE,
+        MetrikkKilde.SAMTALESTØTTE,
+        getIaMetrikkerApiUrl(getIaTjenesterMetrikkerUrl())
+    ).catch(() => {
         console.warn('Klarte ikke å sende innlogget IA-tjenestemetrikk.');
-        return false;
-    }
+    });
 };
