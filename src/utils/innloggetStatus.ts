@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { setBreadcrumbs, Props } from "@navikt/nav-dekoratoren-moduler";
+import { setBreadcrumbs, DecoratorParams } from "@navikt/nav-dekoratoren-moduler";
 import { isNonEmptyString } from './stringUtils';
 import {ENVUrls} from "./envUtils";
 
@@ -24,7 +24,7 @@ const authSchema = z.object({
     authenticated: z.boolean()
 })
 
-export function getBreadcrumbs(urls: ENVUrls, innlogget?: InnloggetStatus): Props["breadcrumbs"] {
+export function getBreadcrumbs(urls: ENVUrls, innlogget?: InnloggetStatus): DecoratorParams["breadcrumbs"] {
     if(innlogget === INNLOGGET){
         return [
             minsideBreadcrumb(urls.MINSIDE_URL),
