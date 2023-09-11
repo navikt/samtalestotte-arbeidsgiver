@@ -8,7 +8,6 @@ import Document, {
 } from 'next/document';
 import {
     fetchDecoratorReact,
-    DecoratorEnvProps,
     DecoratorParams,
     DecoratorComponents,
 } from '@navikt/nav-dekoratoren-moduler/ssr';
@@ -16,8 +15,8 @@ import React from 'react';
 import { getBreadcrumbs } from '../utils/innloggetStatus';
 import { getUrlsFromEnv } from '../utils/envUtils';
 
-const getDecoratorEnv = () =>
-    process.env.NAIS_CLUSTER_NAME === 'prod-gcp' ? 'prod' : ('dev' as DecoratorEnvProps['env']);
+const getDecoratorEnv: () => 'prod' | 'dev' = () =>
+    process.env.NAIS_CLUSTER_NAME === 'prod-gcp' ? 'prod' : 'dev';
 
 const getDecoratorParams = (
     breadcrumbs: DecoratorParams['breadcrumbs']
@@ -37,8 +36,6 @@ class _document extends Document<DocumentProps & { Decorator: DecoratorComponent
 
         const Decorator = await fetchDecoratorReact({
             env: decoratorEnv,
-            localUrl: '',
-            serviceDiscovery: true,
             params: getDecoratorParams(breadcrumbs),
         });
 
