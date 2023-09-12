@@ -4,6 +4,7 @@ import {
     sendIaMetrikk,
     getIaMetrikkerApiUrl,
 } from '@navikt/ia-metrikker-client';
+import { send } from 'process';
 
 export interface IatjenesteMetrikk {
     type: string;
@@ -51,6 +52,7 @@ export const sendUinnloggetIATjenesteMetrikk = async () => {
         const data = await fetchResponse.json();
         return data.status === 'created';
     } catch (e) {
+        console.warn('Klarte ikke å sende uinnlogget IA-tjenestemetrikk.');
         return false;
     }
 };
@@ -62,5 +64,6 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr: string) => {
         getIaMetrikkerApiUrl(getIaTjenesterMetrikkerUrl())
     ).catch(() => {
         console.warn('Klarte ikke å sende innlogget IA-tjenestemetrikk.');
+        return sendUinnloggetIATjenesteMetrikk();
     });
 };
