@@ -62,7 +62,6 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr: string) => {
         MetrikkKilde.SAMTALESTØTTE,
         getIaMetrikkerApiUrl(getIaTjenesterMetrikkerUrl())
     ).catch(() => {
-        console.warn('Klarte ikke å sende innlogget IA-tjenestemetrikk.');
         // Vi anntar at vi ikke fikk sende metrikk, da vi ikke faktisk er innlogget.
         return sendUinnloggetIATjenesteMetrikk();
     });
