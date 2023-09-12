@@ -4,7 +4,6 @@ import {
     sendIaMetrikk,
     getIaMetrikkerApiUrl,
 } from '@navikt/ia-metrikker-client';
-import { send } from 'process';
 
 export interface IatjenesteMetrikk {
     type: string;
