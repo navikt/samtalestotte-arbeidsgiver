@@ -51,6 +51,7 @@ export const sendUinnloggetIATjenesteMetrikk = async () => {
         const data = await fetchResponse.json();
         return data.status === 'created';
     } catch (e) {
+        console.warn('Klarte ikke å sende uinnlogget IA-tjenestemetrikk.');
         return false;
     }
 };
@@ -61,6 +62,7 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr: string) => {
         MetrikkKilde.SAMTALESTØTTE,
         getIaMetrikkerApiUrl(getIaTjenesterMetrikkerUrl())
     ).catch(() => {
-        console.warn('Klarte ikke å sende innlogget IA-tjenestemetrikk.');
+        // Vi anntar at vi ikke fikk sende metrikk, da vi ikke faktisk er innlogget.
+        return sendUinnloggetIATjenesteMetrikk();
     });
 };
