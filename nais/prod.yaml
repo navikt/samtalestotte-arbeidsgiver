@@ -30,6 +30,9 @@ spec:
     initialDelay: 10
   accessPolicy:
     outbound:
+      rules:
+        - application: nav-dekoratoren
+          namespace: personbruker
       external:
         - host: dekoratoren.nav.no
         - host: www.nav.no
