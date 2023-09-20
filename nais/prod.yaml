@@ -26,6 +26,8 @@ spec:
       value: "prod-gcp:arbeidsgiver:ia-tjenester-metrikker"
   ingresses:
     - https://arbeidsgiver.nav.no/samtalestotte
+  tokenx:
+    enabled: true
   idporten:
     enabled: true
     sidecar:
