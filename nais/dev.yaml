@@ -20,6 +20,10 @@ spec:
       value: https://samtalestotte.intern.dev.nav.no/samtalestotte
     - name: GRAFANA_AGENT_COLLECTOR_URL
       value: https://telemetry.ekstern.dev.nav.no/collect
+    - name: IA_TJENESTER_METRIKKER_HOSTNAME
+      value: ia-tjenester-metrikker.intern.dev.nav.no
+    - name: IA_TJENESTER_METRIKKER_AUDIENCE
+      value: "dev-gcp:arbeidsgiver:ia-tjenester-metrikker"
   ingresses:
     - https://samtalestotte.intern.dev.nav.no/samtalestotte
   liveness:
@@ -32,3 +36,4 @@ spec:
     outbound:
       external:
         - host: dekoratoren.ekstern.dev.nav.no
+        - host: ia-tjenester-metrikker.intern.dev.nav.no

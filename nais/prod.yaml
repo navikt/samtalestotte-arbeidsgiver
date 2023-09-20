@@ -20,6 +20,10 @@ spec:
       value: https://arbeidsgiver.nav.no/samtalestotte
     - name: GRAFANA_AGENT_COLLECTOR_URL
       value: https://telemetry.nav.no/collect
+    - name: IA_TJENESTER_METRIKKER_HOSTNAME
+      value: arbeidsgiver.nav.no
+    - name: IA_TJENESTER_METRIKKER_AUDIENCE
+      value: "prod-gcp:arbeidsgiver:ia-tjenester-metrikker"
   ingresses:
     - https://arbeidsgiver.nav.no/samtalestotte
   liveness:
@@ -36,3 +40,4 @@ spec:
       external:
         - host: dekoratoren.nav.no
         - host: www.nav.no
+        - host: arbeidsgiver.nav.no

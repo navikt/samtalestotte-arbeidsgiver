@@ -1,9 +1,5 @@
-import {
-    MetrikkKilde,
-    MetrikkType,
-    sendIaMetrikk,
-    getIaMetrikkerApiUrl,
-} from '@navikt/ia-metrikker-client';
+import { MetrikkKilde, MetrikkType, sendIaMetrikk } from '@navikt/ia-metrikker-client';
+import { METRIKKER_URL } from './konstanter';
 
 export interface IatjenesteMetrikk {
     type: string;
@@ -60,7 +56,7 @@ export const sendInnloggetIATjenesteMetrikk = async (orgnr: string) => {
         orgnr,
         MetrikkType.DIGITAL_IA_TJENESTE,
         MetrikkKilde.SAMTALESTØTTE,
-        getIaMetrikkerApiUrl(getIaTjenesterMetrikkerUrl())
+        METRIKKER_URL
     ).catch(() => {
         // Vi anntar at vi ikke fikk sende metrikk, da vi ikke faktisk er innlogget.
         return sendUinnloggetIATjenesteMetrikk();
