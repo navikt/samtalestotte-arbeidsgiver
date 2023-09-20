@@ -26,6 +26,11 @@ spec:
       value: "dev-gcp:arbeidsgiver:ia-tjenester-metrikker"
   ingresses:
     - https://samtalestotte.intern.dev.nav.no/samtalestotte
+  idporten:
+    enabled: true
+    sidecar:
+      enabled: true
+      autoLogin: false
   liveness:
     path: /samtalestotte/api/isAlive
     initialDelay: 10
